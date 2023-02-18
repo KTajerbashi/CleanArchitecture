@@ -9,18 +9,15 @@ namespace DataLayer.Entities
 {
     public class User
     {
-        [Key]
         public int UserId { get; set; }
-        [Required]
         public string Fullname { get; set; }
-        [Required]
         public string Username { get; set; }
-        [Required]
         public string Password { get; set; }
-        [Required]
         public UserRole Role { get; set; }
+        public DateTime CreateDate { get; set; }
+        public ICollection<Post> Posts { get; set; }
+        public bool IsDelete { get; set; }
 
-        public ICollection<Post>? Posts { get; set; } 
     }
     public enum UserRole
     {

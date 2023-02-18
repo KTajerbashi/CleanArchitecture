@@ -10,7 +10,6 @@ namespace DataLayer.Entities
 {
     public class Post
     {
-        [Key]
         public int PostId { get; set; }
         public int UserId { get; set; }
         public int CategoryId { get; set; }
@@ -19,12 +18,12 @@ namespace DataLayer.Entities
         public String Description { get; set; }
         public int Visit { get; set; }
         public string Slug { get; set; }
+        public DateTime CreateDate { get; set; }
+        public bool IsDelete { get; set; }
 
 
         public ICollection<Comments> Comments { get; set; }
-        [ForeignKey("UserId")]
         public User User { get; set; }
-        [ForeignKey("CategoryId")]
         public Category Category { get; set; }
     }
 }

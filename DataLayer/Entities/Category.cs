@@ -9,13 +9,14 @@ namespace DataLayer.Entities
 {
     public class Category
     {
-        [Key]
         public int CategoryId { get; set; }
-        public String? Slug { get; set; }
-        public String? Title { get; set; }
-        public String? MetaTag { get; set; }
-        public String? MetaDescription { get; set; }
-        public ICollection<Post>? Posts { get; set; }
+        public String Slug { get; set; }
+        public String Title { get; set; }
+        public String MetaTag { get; set; }
+        public String MetaDescription { get; set; }
+        public DateTime CreateDate { get; set; }
+        public bool IsDelete { get; set; }
+        public ICollection<Post> Posts { get; set; }
 
     }
 }

@@ -10,14 +10,14 @@ namespace DataLayer.Entities
 {
     public class Comments
     {
-        [Key]
         public int CommentId { get; set; }
         public int PostId { get; set; }
         public int UserId { get; set; }
-        [Required(ErrorMessage ="متن را وارد کنید")]
         public String? Text { get; set; }
-
-        [ForeignKey("PostId")]
         public Post? Post { get; set; }
+        public DateTime CreateDate { get; set; }
+        public bool IsDelete { get; set; }
+
+
     }
 }
