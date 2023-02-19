@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Tajer\source\repos\WebBlog\WebBlog
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,6 +30,58 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_About_Section.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0Fib3V0X1NlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_Contact_Section.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0NvbnRhY3RfU2VjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_Fact_Section.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0ZhY3RfU2VjdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0Zvb3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hlYWRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_Hero.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hlcm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_Portfolio_Section.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1BvcnRmb2xpb19TZWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_Resume_Section.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1Jlc3VtZV9TZWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_Scripts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1NjcmlwdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_Services_Section.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1NlcnZpY2VzX1NlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_Skill_Section.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1NraWxsX1NlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_Styles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1N0eWxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_Testimonials_Section.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1Rlc3RpbW9uaWFsc19TZWN0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Tajer/source/repos/WebBlog/WebBlog/Pages/_ViewImports.cshtml]
