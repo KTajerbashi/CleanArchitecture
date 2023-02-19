@@ -1,5 +1,4 @@
-﻿using DataLayer.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace DataLayer
@@ -9,10 +8,6 @@ namespace DataLayer
         public DB_Context(DbContextOptions<DB_Context> Options) : base(Options) { }
 
 
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Post> Posts { get; set; }
-        public virtual DbSet<Comments> Comments { get; set; }
-        public virtual DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,13 +17,13 @@ namespace DataLayer
             }
             base.OnModelCreating(modelBuilder);
             //
-            modelBuilder.Entity<User>().HasKey(s => s.UserId);
+            //modelBuilder.Entity<User>().HasKey(s => s.UserId);
 
-            modelBuilder.Entity<Comments>().HasKey(s => s.CommentId);
+            //modelBuilder.Entity<Comments>().HasKey(s => s.CommentId);
 
-            modelBuilder.Entity<Post>().HasKey(s => s.PostId);
+            //modelBuilder.Entity<Post>().HasKey(s => s.PostId);
 
-            modelBuilder.Entity<Category>().HasKey(s => s.CategoryId);
+            //modelBuilder.Entity<Category>().HasKey(s => s.CategoryId);
         }
 
     }
