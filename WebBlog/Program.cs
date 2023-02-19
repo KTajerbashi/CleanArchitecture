@@ -9,9 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
 builder.Services.AddDbContext<DB_Context>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default"))
-    );
+);
 
 builder.Services.AddDbContext<DB_Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));

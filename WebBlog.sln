@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebBlog", "WebBlog\WebBlog.csproj", "{1F39E7D5-B382-4984-97D4-F21548B417DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebBlog", "WebBlog\WebBlog.csproj", "{1F39E7D5-B382-4984-97D4-F21548B417DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{4A14F1DC-07BE-410E-BFE3-8CDA50024A14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\DataLayer.csproj", "{4A14F1DC-07BE-410E-BFE3-8CDA50024A14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLogicLayer", "BLogicLayer\BLogicLayer.csproj", "{173B69A6-B30E-4F23-84D8-6C2792A41AE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLogicLayer", "BLogicLayer\BLogicLayer.csproj", "{173B69A6-B30E-4F23-84D8-6C2792A41AE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
