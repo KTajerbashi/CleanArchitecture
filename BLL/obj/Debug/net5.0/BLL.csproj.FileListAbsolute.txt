@@ -1,0 +1,12 @@
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\bin\Debug\net5.0\BLL.deps.json
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\bin\Debug\net5.0\BLL.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\bin\Debug\net5.0\BLL.pdb
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\BLL.csproj.AssemblyReference.cache
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\BLL.AssemblyInfoInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\BLL.AssemblyInfo.cs
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\BLL.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\refint\BLL.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\BLL.pdb
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\ref\BLL.dll
