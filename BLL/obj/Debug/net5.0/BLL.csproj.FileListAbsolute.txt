@@ -10,3 +10,6 @@ C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\B
 C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\refint\BLL.dll
 C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\BLL.pdb
 C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\ref\BLL.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\bin\Debug\net5.0\DAL.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\bin\Debug\net5.0\DAL.pdb
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\BLL\obj\Debug\net5.0\BLL.csproj.CopyComplete

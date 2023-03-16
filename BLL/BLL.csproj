@@ -9,4 +9,8 @@
     <Folder Include="Service\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+  </ItemGroup>
+
 </Project>
