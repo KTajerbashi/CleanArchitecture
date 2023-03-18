@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace DAL.Data
 {
-    public class ApplicationContext
+    public class ApplicationContext:ApplicationContextBase
     {
+        public ApplicationContext(ApplicationContextBase context):base (context)
+        {
+
+        }
 
     }
 }
