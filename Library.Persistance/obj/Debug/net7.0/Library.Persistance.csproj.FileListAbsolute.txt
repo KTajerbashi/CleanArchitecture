@@ -1,0 +1,12 @@
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Persistance\bin\Debug\net7.0\Library.Persistance.deps.json
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Persistance\bin\Debug\net7.0\Library.Persistance.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Persistance\bin\Debug\net7.0\Library.Persistance.pdb
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Persistance\obj\Debug\net7.0\Library.Persistance.csproj.AssemblyReference.cache
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Persistance\obj\Debug\net7.0\Library.Persistance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Persistance\obj\Debug\net7.0\Library.Persistance.AssemblyInfoInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Persistance\obj\Debug\net7.0\Library.Persistance.AssemblyInfo.cs
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Persistance\obj\Debug\net7.0\Library.Persistance.csproj.CoreCompileInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Persistance\obj\Debug\net7.0\Library.Persistance.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Persistance\obj\Debug\net7.0\refint\Library.Persistance.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Persistance\obj\Debug\net7.0\Library.Persistance.pdb
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Persistance\obj\Debug\net7.0\ref\Library.Persistance.dll

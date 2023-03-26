@@ -1,0 +1,15 @@
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\bin\Debug\net5.0\DAL.deps.json
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\bin\Debug\net5.0\DAL.runtimeconfig.json
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\bin\Debug\net5.0\DAL.runtimeconfig.dev.json
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\bin\Debug\net5.0\DAL.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\bin\Debug\net5.0\DAL.pdb
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\obj\Debug\net5.0\DAL.csproj.AssemblyReference.cache
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\obj\Debug\net5.0\DAL.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\obj\Debug\net5.0\refint\DAL.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\obj\Debug\net5.0\DAL.pdb
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\DAL\obj\Debug\net5.0\ref\DAL.dll
