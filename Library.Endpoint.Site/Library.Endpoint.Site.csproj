@@ -1008,6 +1008,7 @@
     <None Include="wwwroot\Admin\plugins\timepicker\bootstrap-timepicker.js" />
     <None Include="wwwroot\Admin\plugins\timepicker\bootstrap-timepicker.min.css" />
     <None Include="wwwroot\Admin\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 
 </Project>

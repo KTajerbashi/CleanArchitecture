@@ -3989,16 +3989,160 @@
       "PackagePath": "staticwebassets\\Admin\\plugins\\timepicker\\bootstrap-timepicker.min.js"
     },
     {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\css\\all.min.css"
+    },
+    {
       "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\css\\swiper-bundle.min.css",
+      "PackagePath": "staticwebassets\\css\\swiper-bundle.min.css"
     },
     {
       "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\fonts\\Vazir-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Vazir-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\banner-bg.jpg",
+      "PackagePath": "staticwebassets\\image\\banner-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\blog-1.jpg",
+      "PackagePath": "staticwebassets\\image\\blog-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\blog-2.jpg",
+      "PackagePath": "staticwebassets\\image\\blog-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\blog-3.jpg",
+      "PackagePath": "staticwebassets\\image\\blog-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\blog-4.jpg",
+      "PackagePath": "staticwebassets\\image\\blog-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\blog-5.jpg",
+      "PackagePath": "staticwebassets\\image\\blog-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book-1.png",
+      "PackagePath": "staticwebassets\\image\\book-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book-10.png",
+      "PackagePath": "staticwebassets\\image\\book-10.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book-2.png",
+      "PackagePath": "staticwebassets\\image\\book-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book-3.png",
+      "PackagePath": "staticwebassets\\image\\book-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book-4.png",
+      "PackagePath": "staticwebassets\\image\\book-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book-5.png",
+      "PackagePath": "staticwebassets\\image\\book-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book-6.png",
+      "PackagePath": "staticwebassets\\image\\book-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book-7.png",
+      "PackagePath": "staticwebassets\\image\\book-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book-8.png",
+      "PackagePath": "staticwebassets\\image\\book-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book-9.png",
+      "PackagePath": "staticwebassets\\image\\book-9.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book3.png",
+      "PackagePath": "staticwebassets\\image\\book3.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book5.png",
+      "PackagePath": "staticwebassets\\image\\book5.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\book7.png",
+      "PackagePath": "staticwebassets\\image\\book7.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\deal-img.jpg",
+      "PackagePath": "staticwebassets\\image\\deal-img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\letter-bg.jpg",
+      "PackagePath": "staticwebassets\\image\\letter-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\loader-img.gif",
+      "PackagePath": "staticwebassets\\image\\loader-img.gif"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\pic-1.png",
+      "PackagePath": "staticwebassets\\image\\pic-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\pic-2.png",
+      "PackagePath": "staticwebassets\\image\\pic-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\pic-3.png",
+      "PackagePath": "staticwebassets\\image\\pic-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\pic-4.png",
+      "PackagePath": "staticwebassets\\image\\pic-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\pic-5.png",
+      "PackagePath": "staticwebassets\\image\\pic-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\pic-6.png",
+      "PackagePath": "staticwebassets\\image\\pic-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\stand.png",
+      "PackagePath": "staticwebassets\\image\\stand.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\image\\worldmap.png",
+      "PackagePath": "staticwebassets\\image\\worldmap.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
       "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\js\\swiper-bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\swiper-bundle.min.js"
     },
     {
       "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\lib\\bootstrap\\LICENSE",
