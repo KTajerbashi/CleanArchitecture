@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CrkNIrOU76CoBIj5JcDHz2dnLsVE+yt0yLadLdkiQjk=",
+  "Hash": "wK74WTEJY7D0WKbKB1iy5j3B8fdUDcfpmgWuQlF+3xg=",
   "Source": "Library.Endpoint.Site",
   "BasePath": "_content/Library.Endpoint.Site",
   "Mode": "Default",
@@ -16983,23 +16983,6 @@
       "OriginalItemSpec": "wwwroot\\Admin\\plugins\\timepicker\\bootstrap-timepicker.min.js"
     },
     {
-      "Identity": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\css\\all.min.css",
-      "SourceId": "Library.Endpoint.Site",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\",
-      "BasePath": "_content/Library.Endpoint.Site",
-      "RelativePath": "css/all.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\all.min.css"
-    },
-    {
       "Identity": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\css\\site.css",
       "SourceId": "Library.Endpoint.Site",
       "SourceType": "Discovered",
@@ -17032,23 +17015,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\style.css"
-    },
-    {
-      "Identity": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\css\\swiper-bundle.min.css",
-      "SourceId": "Library.Endpoint.Site",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\",
-      "BasePath": "_content/Library.Endpoint.Site",
-      "RelativePath": "css/swiper-bundle.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\swiper-bundle.min.css"
     },
     {
       "Identity": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\favicon.ico",

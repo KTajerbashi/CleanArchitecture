@@ -3989,20 +3989,12 @@
       "PackagePath": "staticwebassets\\Admin\\plugins\\timepicker\\bootstrap-timepicker.min.js"
     },
     {
-      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\css\\all.min.css",
-      "PackagePath": "staticwebassets\\css\\all.min.css"
-    },
-    {
       "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\css\\style.css",
       "PackagePath": "staticwebassets\\css\\style.css"
-    },
-    {
-      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\css\\swiper-bundle.min.css",
-      "PackagePath": "staticwebassets\\css\\swiper-bundle.min.css"
     },
     {
       "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Endpoint.Site\\wwwroot\\favicon.ico",
