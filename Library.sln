@@ -24,17 +24,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{5EFE2D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B76ECEA2-D952-434A-A71C-F1A18F54D859}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Common", "Library.Common\Library.Common.csproj", "{DDE2EA05-05F0-4DA1-8BE7-0EB96A78CE8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Common", "Library.Common\Library.Common.csproj", "{DDE2EA05-05F0-4DA1-8BE7-0EB96A78CE8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Application", "Library.Application\Library.Application.csproj", "{2F2E4BC3-A67F-4696-BDC1-C5F7BAA123C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Application", "Library.Application\Library.Application.csproj", "{2F2E4BC3-A67F-4696-BDC1-C5F7BAA123C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Domain", "Library.Domain\Library.Domain.csproj", "{CD94A083-89E1-4767-949D-02D83807BC2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Domain", "Library.Domain\Library.Domain.csproj", "{CD94A083-89E1-4767-949D-02D83807BC2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Infrastructure", "Library.Infrastructure\Library.Infrastructure.csproj", "{52C9B0B7-AF95-4AB6-8DBF-3A38DF332291}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Infrastructure", "Library.Infrastructure\Library.Infrastructure.csproj", "{52C9B0B7-AF95-4AB6-8DBF-3A38DF332291}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Persistance", "Library.Persistance\Library.Persistance.csproj", "{BB927C58-8596-48FC-B302-181F69A66193}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Persistance", "Library.Persistance\Library.Persistance.csproj", "{BB927C58-8596-48FC-B302-181F69A66193}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Endpoint.Site", "Library.Endpoint.Site\Library.Endpoint.Site.csproj", "{B50DCF2A-E537-446B-A847-941689CFB6D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Endpoint.Site", "Library.Endpoint.Site\Library.Endpoint.Site.csproj", "{B50DCF2A-E537-446B-A847-941689CFB6D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

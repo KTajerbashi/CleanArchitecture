@@ -1,5 +1,5 @@
 using Library.Application;
-using Library.Persistance.Contexts;
+using Library.Persistance;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,8 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 builder.Services.AddScoped<IDataBaseContext, DataBaseContext>();
 builder.Services.AddScoped<IGetUsersServices, GetUsersServices>();
+builder.Services.AddScoped<IGetRolesServices, GetRolesServices>();
+
 builder.Services.AddEntityFrameworkSqlServer().AddDbContext<DataBaseContext>(option => option.UseSqlServer(connectionString));
 
 var app = builder.Build();
