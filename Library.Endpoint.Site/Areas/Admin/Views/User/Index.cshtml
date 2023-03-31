@@ -1,0 +1,345 @@
+﻿@using Library.Application
+@model ResultGetUserDto;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-wrapper" style="min-height: 701px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>ایمیل ها</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">خانه</a></li>
+                        <li class="breadcrumb-item active">ایمیل‌ها</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="compose.html" class="btn btn-primary btn-block mb-3">ایجاد ایمیل جدید</a>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">پوشه‌ها</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item active">
+                                <a href="#" class="nav-link">
+                                    <i class="fa fa-inbox"></i> اینباکس
+                                    <span class="badge bg-primary float-left">۱۲</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fa fa-envelope-o"></i> ارسال شده
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fa fa-file-text-o"></i> پیش نویس
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fa fa-filter"></i> هرزنامه
+                                    <span class="badge bg-warning float-left">۶۵</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fa fa-trash-o"></i> سطل زباله
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /. box -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">برچشب‌ها</h3>
+
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fa fa-circle-o text-danger"></i>
+                                    مهم
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fa fa-circle-o text-warning"></i> شخصی
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fa fa-circle-o text-primary"></i>
+                                    شبکه اجتماعی
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-9">
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                        <h3 class="card-title">اینباکس</h3>
+
+                        <div class="card-tools">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" placeholder="جستجو ایمیل">
+                                <div class="input-group-append">
+                                    <div class="btn btn-primary">
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-tools -->
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body p-0">
+                        <div class="mailbox-controls">
+                            <!-- Check all button -->
+                            <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                                <i class="fa fa-square-o"></i>
+                            </button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
+                            </div>
+                            <!-- /.btn-group -->
+                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                            <div class="float-left">
+                                ۱-۵۰/۲۰۰
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                </div>
+                                <!-- /.btn-group -->
+                            </div>
+                            <!-- /.float-right -->
+                        </div>
+                        <div class="table-responsive mailbox-messages">
+                            <table class="table table-hover table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date">۵ دقیقه قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">۲۸ دقیقه قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">۱۱ ساعت قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date">۱۵ ساعت قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">دیروز</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">۲ روز قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">۲ روز قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date">۲ روز قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date">۲ روز قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date">۲ روز قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">۴ روز قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date">۱۲ روز قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">۱۲ روز قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">۱۴ روز قبل</td>
+                                    </tr>
+                                    <tr>
+                                        <td><div class="icheckbox_flat-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">وبسایت راکت</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>اعلان وبسایت</b> - لورم ایپسوم متن ساختگی برای استفاده طراحان گرافیک است.
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">۱۵ روز قبل</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- /.table -->
+                        </div>
+                        <!-- /.mail-box-messages -->
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer p-0">
+                        <div class="mailbox-controls">
+                            <!-- Check all button -->
+                            <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                                <i class="fa fa-square-o"></i>
+                            </button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
+                            </div>
+                            <!-- /.btn-group -->
+                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                            <div class="float-left">
+                                ۱-۵۰/۲۰۰
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                </div>
+                                <!-- /.btn-group -->
+                            </div>
+                            <!-- /.float-right -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /. box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>

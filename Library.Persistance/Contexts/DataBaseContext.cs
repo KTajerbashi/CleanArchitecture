@@ -1,14 +1,10 @@
-﻿using Library.Domain.Entity.Users;
+﻿using Library.Application;
+using Library.Domain.Entity.Users;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Library.Persistance.Contexts
 {
-    public class DataBaseContext : DbContext
+    public class DataBaseContext : DbContext, IDataBaseContext
     {
         public DataBaseContext(DbContextOptions options) : base(options)
         {

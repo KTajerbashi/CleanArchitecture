@@ -10,3 +10,8 @@ C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Application\ob
 C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Application\obj\Debug\net7.0\refint\Library.Application.dll
 C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Application\obj\Debug\net7.0\Library.Application.pdb
 C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Application\obj\Debug\net7.0\ref\Library.Application.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Application\bin\Debug\net7.0\Library.Common.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Application\bin\Debug\net7.0\Library.Domain.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Application\bin\Debug\net7.0\Library.Common.pdb
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Application\bin\Debug\net7.0\Library.Domain.pdb
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Application\obj\Debug\net7.0\Library.Application.csproj.CopyComplete
