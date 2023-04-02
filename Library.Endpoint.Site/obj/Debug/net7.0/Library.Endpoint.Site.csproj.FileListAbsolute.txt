@@ -281,3 +281,5 @@ C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Endpoint.Site\
 C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Endpoint.Site\obj\Debug\net7.0\Library.Endpoint.Site.pdb
 C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Endpoint.Site\obj\Debug\net7.0\Library.Endpoint.Site.genruntimeconfig.cache
 C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Endpoint.Site\obj\Debug\net7.0\ref\Library.Endpoint.Site.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Endpoint.Site\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\Tajer\Desktop\Visual Studio\ASP.NET Core\Library\Library.Endpoint.Site\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

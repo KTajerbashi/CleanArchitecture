@@ -1,3 +1,4 @@
+using AutoMapper;
 using Library.Application;
 using Library.Persistance;
 using Microsoft.AspNetCore.Builder;
@@ -11,9 +12,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+builder.Services.AddScoped<IMapper, Mapper>();
+builder.Services.AddScoped(typeof(IBaseService<,,>), typeof(BaseService<,>));
+builder.Services.AddScoped(typeof(IRdsCrudService<,,>), typeof(RdsCrudService<,>));
 builder.Services.AddScoped<IDataBaseContext, DataBaseContext>();
 builder.Services.AddScoped<IGetUsersServices, GetUsersServices>();
-builder.Services.AddScoped<IGetRolesServices, GetRolesServices>();
+//builder.Services.AddScoped<IGetRolesServices, GetRolesServices>();
 
 builder.Services.AddEntityFrameworkSqlServer().AddDbContext<DataBaseContext>(option => option.UseSqlServer(connectionString));
 

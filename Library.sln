@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{6E90FDDE-845F-4998-99A1-1BFB38EAC508}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{F7419235-7E28-49D1-B8CF-25E61DE5C928}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{FE4D400F-122F-4CDE-91E8-137BF0C15371}"
 	ProjectSection(SolutionItems) = preProject
 		information.txt = information.txt
@@ -42,14 +38,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6E90FDDE-845F-4998-99A1-1BFB38EAC508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E90FDDE-845F-4998-99A1-1BFB38EAC508}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E90FDDE-845F-4998-99A1-1BFB38EAC508}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E90FDDE-845F-4998-99A1-1BFB38EAC508}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F7419235-7E28-49D1-B8CF-25E61DE5C928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F7419235-7E28-49D1-B8CF-25E61DE5C928}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F7419235-7E28-49D1-B8CF-25E61DE5C928}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F7419235-7E28-49D1-B8CF-25E61DE5C928}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DDE2EA05-05F0-4DA1-8BE7-0EB96A78CE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DDE2EA05-05F0-4DA1-8BE7-0EB96A78CE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDE2EA05-05F0-4DA1-8BE7-0EB96A78CE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
