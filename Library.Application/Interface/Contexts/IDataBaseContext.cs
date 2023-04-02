@@ -1,4 +1,5 @@
 ﻿using Library.Domain;
+using Library.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Library.Application
@@ -9,7 +10,6 @@ namespace Library.Application
         //  ازین پس برای استفاده از کانتکس از همین اینترفس استفاده میکنیم
         DbSet<User> Users { get; set; }
         DbSet<Role> Roles { get; set; }
-        DbSet<UserRole> UserRoles { get; set; }
 
         int SaveChanges(bool acceptAllChangesOnSuccess);
         int SaveChanges();

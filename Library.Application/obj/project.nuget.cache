@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "7mQbIhrct9i9c4zeAOFzsa3jcbRXREmWvJRlgQ1n7VvwxtpRAsZAKsvKJCb9/SuREsuhWLHye9uFyvK4drPqiA==",
+  "dgSpecHash": "ZwmkHMxZuS4ggonOeHW1e5Cw4HrLYPXK3fDxdW9zE3o2o0UYCCY7ORQ891VCNcZnqZ6B6+ow72qVICYdhmgxnw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\ASP.NET Core\\Library\\Library.Application\\Library.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Tajer\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\Tajer\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\Tajer\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Tajer\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.4\\microsoft.entityframeworkcore.7.0.4.nupkg.sha512",
     "C:\\Users\\Tajer\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.4\\microsoft.entityframeworkcore.abstractions.7.0.4.nupkg.sha512",
     "C:\\Users\\Tajer\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.4\\microsoft.entityframeworkcore.analyzers.7.0.4.nupkg.sha512",
