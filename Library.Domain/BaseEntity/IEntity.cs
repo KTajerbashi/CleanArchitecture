@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Domain
+namespace Library.Domain.Entity
 {
-    public class Role
+    public interface IEntity
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public ICollection<UserRole> UserRoles { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsDelted { get; set; }
+
     }
 }
