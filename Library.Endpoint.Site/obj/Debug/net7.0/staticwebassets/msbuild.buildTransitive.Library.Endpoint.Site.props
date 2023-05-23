@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Library.Endpoint.Site.props" />
-</Project>
