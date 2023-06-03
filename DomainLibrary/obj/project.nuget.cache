@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "vlZfhW4mMNwRWo11Y8KJBJKrhMka7vMjYW2wmMAZjQ1RLsCF75c3taFitlfb4LwpJN2vF5QxkPUlzO51e5Ym7Q==",
+  "dgSpecHash": "rL9ecMmP64SRk/B5Jul6eT0ftJwWKdQGydyAyIO3MymU/exp8lxXw8ISE2T2OskKR9f1R/8dyOvKT2dHs2SUzg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\DomainLibrary\\DomainLibrary.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Tajer\\.nuget\\packages\\mediatr\\12.0.1\\mediatr.12.0.1.nupkg.sha512",
+    "C:\\Users\\Tajer\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Tajer\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
