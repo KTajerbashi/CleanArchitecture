@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Library-Clean-Architecture.props" />
+</Project>

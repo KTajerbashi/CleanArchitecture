@@ -1,0 +1,12 @@
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\ApplicationLibrary\bin\Debug\net7.0\ApplicationLibrary.deps.json
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\ApplicationLibrary\bin\Debug\net7.0\ApplicationLibrary.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\ApplicationLibrary\bin\Debug\net7.0\ApplicationLibrary.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\ApplicationLibrary\obj\Debug\net7.0\ApplicationLibrary.csproj.AssemblyReference.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\ApplicationLibrary\obj\Debug\net7.0\ApplicationLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\ApplicationLibrary\obj\Debug\net7.0\ApplicationLibrary.AssemblyInfoInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\ApplicationLibrary\obj\Debug\net7.0\ApplicationLibrary.AssemblyInfo.cs
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\ApplicationLibrary\obj\Debug\net7.0\ApplicationLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\ApplicationLibrary\obj\Debug\net7.0\ApplicationLibrary.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\ApplicationLibrary\obj\Debug\net7.0\refint\ApplicationLibrary.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\ApplicationLibrary\obj\Debug\net7.0\ApplicationLibrary.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\ApplicationLibrary\obj\Debug\net7.0\ref\ApplicationLibrary.dll

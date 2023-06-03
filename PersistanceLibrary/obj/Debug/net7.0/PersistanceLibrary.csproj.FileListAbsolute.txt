@@ -1,0 +1,12 @@
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\PersistanceLibrary\bin\Debug\net7.0\PersistanceLibrary.deps.json
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\PersistanceLibrary\bin\Debug\net7.0\PersistanceLibrary.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\PersistanceLibrary\bin\Debug\net7.0\PersistanceLibrary.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\PersistanceLibrary\obj\Debug\net7.0\PersistanceLibrary.csproj.AssemblyReference.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\PersistanceLibrary\obj\Debug\net7.0\PersistanceLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\PersistanceLibrary\obj\Debug\net7.0\PersistanceLibrary.AssemblyInfoInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\PersistanceLibrary\obj\Debug\net7.0\PersistanceLibrary.AssemblyInfo.cs
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\PersistanceLibrary\obj\Debug\net7.0\PersistanceLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\PersistanceLibrary\obj\Debug\net7.0\PersistanceLibrary.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\PersistanceLibrary\obj\Debug\net7.0\refint\PersistanceLibrary.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\PersistanceLibrary\obj\Debug\net7.0\PersistanceLibrary.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\PersistanceLibrary\obj\Debug\net7.0\ref\PersistanceLibrary.dll
