@@ -1,0 +1,12 @@
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\InfrastructureLibrary\bin\Debug\net7.0\InfrastructureLibrary.deps.json
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\InfrastructureLibrary\bin\Debug\net7.0\InfrastructureLibrary.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\InfrastructureLibrary\bin\Debug\net7.0\InfrastructureLibrary.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\InfrastructureLibrary\obj\Debug\net7.0\InfrastructureLibrary.csproj.AssemblyReference.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\InfrastructureLibrary\obj\Debug\net7.0\InfrastructureLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\InfrastructureLibrary\obj\Debug\net7.0\InfrastructureLibrary.AssemblyInfoInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\InfrastructureLibrary\obj\Debug\net7.0\InfrastructureLibrary.AssemblyInfo.cs
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\InfrastructureLibrary\obj\Debug\net7.0\InfrastructureLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\InfrastructureLibrary\obj\Debug\net7.0\InfrastructureLibrary.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\InfrastructureLibrary\obj\Debug\net7.0\refint\InfrastructureLibrary.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\InfrastructureLibrary\obj\Debug\net7.0\InfrastructureLibrary.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\InfrastructureLibrary\obj\Debug\net7.0\ref\InfrastructureLibrary.dll
