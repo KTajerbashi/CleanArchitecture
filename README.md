@@ -8,6 +8,7 @@
   <li>Microsoft.AspNetCore.Authentication.JwtBearer</li>
   <li>Microsoft.AspNetCore.Authentication - gRPC</li>
   <li>Newtonsoft Json.NET</li>
+  <li>RestFul API</li>
   <li>CacheManager</li>
   <li>Swashbuckle.AspNetCore.Swagger</li>
   <li>Microsoft.EntityFrameworkCore</li>
