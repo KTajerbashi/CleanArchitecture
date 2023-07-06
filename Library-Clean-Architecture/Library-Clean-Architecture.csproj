@@ -18,7 +18,8 @@
 
   <ItemGroup>
     <Folder Include="Controller\" />
-    <Folder Include="Services\" />
+    <Folder Include="Services\WebServices\SOAP API\" />
+    <Folder Include="Services\WebServices\Restful API\" />
   </ItemGroup>
 
 </Project>

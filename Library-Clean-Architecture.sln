@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library-Clean-Architecture"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D8643C16-5718-4126-B5B1-F9233474EC09}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2B09AFD4-7DEC-4AA6-A83D-64FBA86B5857}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{465383D5-0CBB-48A6-9C17-0B0D131950DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{BCAC41B9-B3C1-41BB-85A4-859A441FDDBC}"
@@ -26,6 +24,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Library", "Infrastructure.Library\Infrastructure.Library.csproj", "{1B940BD0-E5DD-4E2F-BAB5-0E00F7C67A63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistance.Library", "Persistance.Library\Persistance.Library.csproj", "{51D2D8EB-F9BA-4597-A95F-231322D239A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{DD71B32D-6AB7-4737-9C94-50C58A929220}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{45294FAB-1B3B-4AAA-A80E-740002AD4B48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

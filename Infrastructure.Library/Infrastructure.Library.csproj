@@ -6,4 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="MailServices\" />
+    <Folder Include="FileSystem\" />
+    <Folder Include="SmsServices\" />
+    <Folder Include="WebServices\" />
+  </ItemGroup>
+
 </Project>
