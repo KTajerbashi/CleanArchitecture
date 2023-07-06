@@ -242,11 +242,6 @@ This layer handles database and caching-related operations. This layer implement
 </ul>
 
 <hr />
-<div>
-  <h4>Description About Infrastructure Layer & Persistance Layer</h4>
-  Layer Infrastructure and Layer Persistance are complementary to each other, and to use these layers, it is necessary to implement your architecture in a highly flexible manner so that our common goals and requirements can be implemented in the best possible way. The design of these two layers depends on the database, web services, Sms Services, mail Services etc...
-</div>
-<hr />
 <h4>Presentation Layer → </h4> 
 The Presentation layer is responsible for handling the user interface and user input. It contains the code that handles HTTP requests, renders HTML templates, and interacts with JavaScript on the client side.
 
