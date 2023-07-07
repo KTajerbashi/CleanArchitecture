@@ -172,6 +172,12 @@ Integration tests are performed here.
   <li>Abstractions/Contracts/Interfaces</li>
   <li>Application Services/Handlers</li>
   <li>Ports</li>
+  <li>
+    <dl>
+      <dt>Interfaces</dt>
+        <dd>IDataBaseContext</dd>
+    </dl>
+  </li>
   <li>Commands and Queries</li>
   <li>Exceptions</li>
   <li>Models (DTOs)</li>
@@ -180,6 +186,12 @@ Integration tests are performed here.
   <li>Behaviors</li>
   <li>Specifications</li>
 </ul>
+
+<h4>Application layer refernce</h4>
+<ul>
+  <li>Domain Layer</li>
+</ul>
+
 <h4>Application layer packages</h4>
 <ul>
   <li>MediatR</li>
@@ -215,9 +227,15 @@ The Infrastructure layer contains classes for accessing external resources. Thes
   <li>Payment Services</li>
   <li>Social Logins</li>
 </ul>
+
+<h4>Infrastructure layer refernce</h4>
+<ul>
+  <li>null</li>
+</ul>
+
 <h4>Infrastructure layer packages</h4>
 <ul>
-  <li>MediatR</li>
+  <li>null</li>
 </ul>
 
 <hr />
@@ -236,9 +254,18 @@ This layer handles database and caching-related operations. This layer implement
   <li>Distributed Caching e.g. Redis, Memcached, etc.</li>
 </ul>
 
+<h4>Persistence layer reference</h4>
+<ul>
+  <li>Domain Layer</li>
+  <li>Application Layer</li>
+</ul>
+
 <h4>Persistence layer packages</h4>
 <ul>
-  <li>MediatR</li>
+  <li>Microsoft.EntityFrameworkCore</li>
+  <li>Microsoft.EntityFrameworkCore.Tools</li>
+  <li>Microsoft.EntityFrameworkCore.Relational</li>
+  <li>Microsoft.EntityFrameworkCore.SqlServer</li>
 </ul>
 
 <hr />
@@ -267,19 +294,22 @@ The main project contains the presentation layer and implements the ASP.NET Core
   <li>Java Script Files</li>
   <li>Security using ASP.NET Core Identity + IdentityServer</li>
 </ul>
+
+<h4>Presentation layer reference</h4>
+<ul>
+  <li>Application Layer</li>
+  <li>Persistance Layer</li>
+</ul>
+
 <h4>Presentation layer packages</h4>
 <ul>
   <li>Microsoft.EntityFrameworkCore</li>
   <li>Microsoft.EntityFrameworkCore.Design</li>
   <li>Microsoft.EntityFrameworkCore.SqlServer</li>
-  <li>Microsoft.EntityFrameworkCore.Tools</li>
-  <li>Microsoft.EntityFrameworkCore.Relational</li>
-  <li>Security using ASP.NET Core Identity + IdentityServer</li>
 </ul>
 
 <hr />
 <h1>Technologies</h1>
-
 <ul>
   <li>Web API using ASP.NET Core 7</li>
   <li>Open API with Swashbuckle</li>
