@@ -10,3 +10,6 @@ C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchi
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\refint\Application.Library.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\Application.Library.pdb
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\ref\Application.Library.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Domain.Library.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Domain.Library.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\Application.Library.csproj.CopyComplete

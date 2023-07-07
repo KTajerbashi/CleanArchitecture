@@ -4,14 +4,84 @@
     "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\Library-Clean-Architecture.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\Library-Clean-Architecture.csproj": {
+    "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\Application.Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\Library-Clean-Architecture.csproj",
-        "projectName": "Library-Clean-Architecture",
-        "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\Library-Clean-Architecture.csproj",
+        "projectUniqueName": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\Application.Library.csproj",
+        "projectName": "Application.Library",
+        "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\Application.Library.csproj",
         "packagesPath": "C:\\Users\\Tajer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\obj\\",
+        "outputPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Tajer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Domain.Library\\Domain.Library.csproj": {
+                "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Domain.Library\\Domain.Library.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Domain.Library\\Domain.Library.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Domain.Library\\Domain.Library.csproj",
+        "projectName": "Domain.Library",
+        "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Domain.Library\\Domain.Library.csproj",
+        "packagesPath": "C:\\Users\\Tajer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Domain.Library\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,7 +114,88 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\Library-Clean-Architecture.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\Library-Clean-Architecture.csproj",
+        "projectName": "Library-Clean-Architecture",
+        "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\Library-Clean-Architecture.csproj",
+        "packagesPath": "C:\\Users\\Tajer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Tajer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\Application.Library.csproj": {
+                "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\Application.Library.csproj"
+              },
+              "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Persistance.Library\\Persistance.Library.csproj": {
+                "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Persistance.Library\\Persistance.Library.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
             "NLog": {
               "target": "Package",
               "version": "[5.2.2, )"
@@ -85,6 +236,97 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Persistance.Library\\Persistance.Library.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Persistance.Library\\Persistance.Library.csproj",
+        "projectName": "Persistance.Library",
+        "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Persistance.Library\\Persistance.Library.csproj",
+        "packagesPath": "C:\\Users\\Tajer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Persistance.Library\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Tajer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\Application.Library.csproj": {
+                "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\Application.Library.csproj"
+              },
+              "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Domain.Library\\Domain.Library.csproj": {
+                "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Domain.Library\\Domain.Library.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
