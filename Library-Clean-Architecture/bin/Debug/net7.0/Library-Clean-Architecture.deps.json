@@ -8,16 +8,12 @@
     ".NETCoreApp,Version=v7.0": {
       "Library-Clean-Architecture/1.0.0": {
         "dependencies": {
+          "Application.Library": "1.0.0",
+          "Microsoft.CSharp": "4.5.0",
           "Microsoft.EntityFrameworkCore": "7.0.8",
           "Microsoft.EntityFrameworkCore.Design": "7.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.8",
-          "NLog": "5.2.2",
-          "NLog.Extensions.Logging": "5.3.2",
-          "NLog.Web.AspNetCore": "5.3.2",
-          "Persistance.Library": "1.0.0",
-          "bootstrap": "5.3.0",
-          "jQuery": "3.7.0",
-          "jQuery.Validation": "1.19.5"
+          "Persistance.Library": "1.0.0"
         },
         "runtime": {
           "Library-Clean-Architecture.dll": {}
@@ -57,19 +53,12 @@
           }
         }
       },
-      "bootstrap/5.3.0": {},
       "Humanizer.Core/2.14.1": {
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
           }
-        }
-      },
-      "jQuery/3.7.0": {},
-      "jQuery.Validation/1.19.5": {
-        "dependencies": {
-          "jQuery": "3.7.0"
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -397,38 +386,6 @@
           }
         }
       },
-      "NLog/5.2.2": {
-        "runtime": {
-          "lib/netstandard2.0/NLog.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.2.2.1914"
-          }
-        }
-      },
-      "NLog.Extensions.Logging/5.3.2": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
-          "Microsoft.Extensions.Logging": "7.0.0",
-          "NLog": "5.2.2"
-        },
-        "runtime": {
-          "lib/net6.0/NLog.Extensions.Logging.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.3.2.373"
-          }
-        }
-      },
-      "NLog.Web.AspNetCore/5.3.2": {
-        "dependencies": {
-          "NLog.Extensions.Logging": "5.3.2"
-        },
-        "runtime": {
-          "lib/net6.0/NLog.Web.AspNetCore.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.3.2.901"
-          }
-        }
-      },
       "System.Buffers/4.5.1": {},
       "System.CodeDom/4.4.0": {
         "runtime": {
@@ -709,33 +666,12 @@
       "path": "azure.identity/1.6.0",
       "hashPath": "azure.identity.1.6.0.nupkg.sha512"
     },
-    "bootstrap/5.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Glct0CeNsN5ETcAmV4IsIGa8VEvnWphT4Wb+IaF7/4KAMaZjxpr0eZ8Uf6H/gWKPcUB2p235/3alyhmYBbU6FQ==",
-      "path": "bootstrap/5.3.0",
-      "hashPath": "bootstrap.5.3.0.nupkg.sha512"
-    },
     "Humanizer.Core/2.14.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
-    },
-    "jQuery/3.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Ao474k6pawdNMzmcObA8GtsqUg9vAMHhDsDEs5TZEc4nTy2vtv8wsBI2c4OyR1OEyNUJG3O2AvGZZlXmRLpoZg==",
-      "path": "jquery/3.7.0",
-      "hashPath": "jquery.3.7.0.nupkg.sha512"
-    },
-    "jQuery.Validation/1.19.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-lBHoaszLpKYxiVCWwIoxdqSCrlqnW9jeVMinMQ0uNMFcl3rmY8XyeaerfGLRbkVRUzh/fM3APaKepEezrR5AcA==",
-      "path": "jquery.validation/1.19.5",
-      "hashPath": "jquery.validation.1.19.5.nupkg.sha512"
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
@@ -974,27 +910,6 @@
       "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
-    },
-    "NLog/5.2.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-r6Q9740g29gTwmTWlsgdIFm0mhNsfNZmbvWKX/Fxmi8X89ZrpUowHM2T2X1lP7RVpND+ef+XnfKL5g6Q1iNGXA==",
-      "path": "nlog/5.2.2",
-      "hashPath": "nlog.5.2.2.nupkg.sha512"
-    },
-    "NLog.Extensions.Logging/5.3.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-v6swUNj9KHH4tWKH3+eCuFsp/BfpkWmbz1XPCIXb9fnSVsEHcfyRnfXjuksfMdIULgR/i1RzbQUU8WsNVpBglg==",
-      "path": "nlog.extensions.logging/5.3.2",
-      "hashPath": "nlog.extensions.logging.5.3.2.nupkg.sha512"
-    },
-    "NLog.Web.AspNetCore/5.3.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-SLBeDj30nu1sjc3DsPhTdXSL90915eeQknYbSCZOthccxqVJS1RZna0sh746kDaD21ktnYMubXT+gNWgn3oGpA==",
-      "path": "nlog.web.aspnetcore/5.3.2",
-      "hashPath": "nlog.web.aspnetcore.5.3.2.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

@@ -26,12 +26,12 @@ namespace Application.Library.Service
                 userRoles.Add(new UserRole
                 {
                     Role = roles,
-                    RoleId=roles.Id,
-                    UserId=user.Id,
-                    User=user,
+                    RoleId = roles.Id,
+                    UserId = user.Id,
+                    User = user,
                 });
             }
-            user.UserRoles= userRoles;
+            user.UserRoles = userRoles;
             _context.Users.Add(user);
             _context.SaveChanges();
 

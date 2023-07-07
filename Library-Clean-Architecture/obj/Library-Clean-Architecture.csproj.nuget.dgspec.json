@@ -226,6 +226,9 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\Application.Library.csproj": {
+                "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\Application.Library.csproj"
+              },
               "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Persistance.Library\\Persistance.Library.csproj": {
                 "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Persistance.Library\\Persistance.Library.csproj"
               }
@@ -242,6 +245,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.8, )"
@@ -255,30 +262,6 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.8, )"
-            },
-            "NLog": {
-              "target": "Package",
-              "version": "[5.2.2, )"
-            },
-            "NLog.Extensions.Logging": {
-              "target": "Package",
-              "version": "[5.3.2, )"
-            },
-            "NLog.Web.AspNetCore": {
-              "target": "Package",
-              "version": "[5.3.2, )"
-            },
-            "bootstrap": {
-              "target": "Package",
-              "version": "[5.3.0, )"
-            },
-            "jQuery": {
-              "target": "Package",
-              "version": "[3.7.0, )"
-            },
-            "jQuery.Validation": {
-              "target": "Package",
-              "version": "[1.19.5, )"
             }
           },
           "imports": [
