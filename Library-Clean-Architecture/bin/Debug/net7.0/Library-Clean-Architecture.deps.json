@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v7.0": {
       "Library-Clean-Architecture/1.0.0": {
         "dependencies": {
-          "Application.Library": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.8",
           "Microsoft.EntityFrameworkCore.Design": "7.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.8",
@@ -657,11 +656,17 @@
       },
       "Application.Library/1.0.0": {
         "dependencies": {
+          "Common.Library": "1.0.0",
           "Domain.Library": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.8"
         },
         "runtime": {
           "Application.Library.dll": {}
+        }
+      },
+      "Common.Library/1.0.0": {
+        "runtime": {
+          "Common.Library.dll": {}
         }
       },
       "Domain.Library/1.0.0": {
@@ -1195,6 +1200,11 @@
       "hashPath": "system.windows.extensions.5.0.0.nupkg.sha512"
     },
     "Application.Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Common.Library/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

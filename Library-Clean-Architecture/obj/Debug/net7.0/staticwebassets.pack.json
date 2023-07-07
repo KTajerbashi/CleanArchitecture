@@ -177,10 +177,6 @@
       "PackagePath": "staticwebassets\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Library-Clean-Architecture.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Library-Clean-Architecture.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },

@@ -1409,6 +1409,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Common.Library": "1.0.0",
           "Domain.Library": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.8"
         },
@@ -1417,6 +1418,16 @@
         },
         "runtime": {
           "bin/placeholder/Application.Library.dll": {}
+        }
+      },
+      "Common.Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Common.Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.Library.dll": {}
         }
       },
       "Domain.Library/1.0.0": {
@@ -3956,6 +3967,11 @@
       "path": "../Application.Library/Application.Library.csproj",
       "msbuildProject": "../Application.Library/Application.Library.csproj"
     },
+    "Common.Library/1.0.0": {
+      "type": "project",
+      "path": "../Common.Library/Common.Library.csproj",
+      "msbuildProject": "../Common.Library/Common.Library.csproj"
+    },
     "Domain.Library/1.0.0": {
       "type": "project",
       "path": "../Domain.Library/Domain.Library.csproj",
@@ -3969,7 +3985,6 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Application.Library >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.8",
@@ -4015,9 +4030,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\Application.Library.csproj": {
-              "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\Application.Library.csproj"
-            },
             "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Persistance.Library\\Persistance.Library.csproj": {
               "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Persistance.Library\\Persistance.Library.csproj"
             }

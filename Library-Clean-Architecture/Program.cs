@@ -1,18 +1,19 @@
 using Application.Library.Interfaces;
-using Library_Clean_Architecture.Data;
+using Application.Library.Service;
 using Microsoft.EntityFrameworkCore;
 using Persistance.Library.DbContexts;
 
 var builder = WebApplication.CreateBuilder(args);
 //  Use Model One
-var conectionString = @"Data Source=.; Initial Catalog=CleanArchLibraryDb; User id=sa; Password=123123; Integrated Security=true;TrustServerCertificate=True; ";
+var conectionString = @"Data Source=.; Initial Catalog=CleanArchLibraryDb; User id=sa; Password=123123; Integrated Security=true; TrustServerCertificate=True;";
 
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
-builder.Services.AddScoped<IDatabaseContext,DatabaseContext>();
+builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
+builder.Services.AddScoped<IGetUsersService, GetUsersService>();
+builder.Services.AddScoped<IRegisterUserService, RegisterUserService>();
 
 //  Use Model One
 builder.Services.AddEntityFrameworkSqlServer().AddDbContext<DatabaseContext>(option => option.UseSqlServer(conectionString));
@@ -34,7 +35,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthorization();
+
 app.MapBlazorHub();
+
 app.MapFallbackToPage("/_Host");
 
 app.Run();

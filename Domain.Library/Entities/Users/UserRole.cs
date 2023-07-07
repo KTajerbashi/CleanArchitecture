@@ -1,12 +1,9 @@
 ﻿using Domain.Library.Bases.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Library.Entities
 {
+    [Table("UserRole", Schema = "SEC")]
     public class UserRole : BaseEntity
     {
         public virtual User User { get; set; }

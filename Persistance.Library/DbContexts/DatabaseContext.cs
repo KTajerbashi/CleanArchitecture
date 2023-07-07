@@ -1,4 +1,5 @@
 ﻿using Application.Library.Interfaces;
+using Common.Library;
 using Domain.Library.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -19,6 +20,13 @@ namespace Persistance.Library.DbContexts
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Role>().HasData(new Role { Id = 1, Title = nameof(UserRolesSeed.Admin) });
+            modelBuilder.Entity<Role>().HasData(new Role { Id = 2, Title = nameof(UserRolesSeed.Operator) });
+            modelBuilder.Entity<Role>().HasData(new Role { Id = 3, Title = nameof(UserRolesSeed.Customer) });
+        }
 
 
     }

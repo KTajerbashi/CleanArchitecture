@@ -1137,6 +1137,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Common.Library": "1.0.0",
           "Domain.Library": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.8"
         },
@@ -1145,6 +1146,16 @@
         },
         "runtime": {
           "bin/placeholder/Application.Library.dll": {}
+        }
+      },
+      "Common.Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Common.Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.Library.dll": {}
         }
       },
       "Domain.Library/1.0.0": {
@@ -3481,6 +3492,11 @@
       "type": "project",
       "path": "../Application.Library/Application.Library.csproj",
       "msbuildProject": "../Application.Library/Application.Library.csproj"
+    },
+    "Common.Library/1.0.0": {
+      "type": "project",
+      "path": "../Common.Library/Common.Library.csproj",
+      "msbuildProject": "../Common.Library/Common.Library.csproj"
     },
     "Domain.Library/1.0.0": {
       "type": "project",

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "Application.Library/1.0.0": {
         "dependencies": {
+          "Common.Library": "1.0.0",
           "Domain.Library": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.8"
         },
@@ -126,6 +127,11 @@
           }
         }
       },
+      "Common.Library/1.0.0": {
+        "runtime": {
+          "Common.Library.dll": {}
+        }
+      },
       "Domain.Library/1.0.0": {
         "runtime": {
           "Domain.Library.dll": {}
@@ -215,6 +221,11 @@
       "sha512": "sha512-um1KU5kxcRp3CNuI8o/GrZtD4AIOXDk+RLsytjZ9QPok3ttLUelLKpilVPuaFT3TFjOhSibUAso0odbOaCDj3Q==",
       "path": "microsoft.extensions.primitives/7.0.0",
       "hashPath": "microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+    },
+    "Common.Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Domain.Library/1.0.0": {
       "type": "project",

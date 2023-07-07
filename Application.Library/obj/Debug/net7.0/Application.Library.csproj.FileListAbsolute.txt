@@ -13,3 +13,5 @@ C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchi
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Domain.Library.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Domain.Library.pdb
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\Application.Library.csproj.CopyComplete
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Common.Library.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Common.Library.pdb

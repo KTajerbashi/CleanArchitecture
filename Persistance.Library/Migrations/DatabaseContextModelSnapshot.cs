@@ -51,7 +51,39 @@ namespace Persistance.Library.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Role", "SEC");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            CreateDate = new DateTime(2023, 7, 7, 20, 20, 59, 583, DateTimeKind.Local).AddTicks(1991),
+                            DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = false,
+                            IsDeleted = false,
+                            Title = "Admin",
+                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            CreateDate = new DateTime(2023, 7, 7, 20, 20, 59, 583, DateTimeKind.Local).AddTicks(2055),
+                            DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = false,
+                            IsDeleted = false,
+                            Title = "Operator",
+                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            CreateDate = new DateTime(2023, 7, 7, 20, 20, 59, 583, DateTimeKind.Local).AddTicks(2071),
+                            DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsActive = false,
+                            IsDeleted = false,
+                            Title = "Customer",
+                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.User", b =>
@@ -99,7 +131,7 @@ namespace Persistance.Library.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("User", "SEC");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.UserRole", b =>
@@ -137,7 +169,7 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserRoles");
+                    b.ToTable("UserRole", "SEC");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.UserRole", b =>

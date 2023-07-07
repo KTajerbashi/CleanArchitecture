@@ -23,13 +23,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controller\" />
+    <Folder Include="Data\" />
+    <Folder Include="Views\" />
+    <Folder Include="Pages\" />
     <Folder Include="Services\WebServices\SOAP API\" />
     <Folder Include="Services\WebServices\Restful API\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application.Library\Application.Library.csproj" />
     <ProjectReference Include="..\Persistance.Library\Persistance.Library.csproj" />
   </ItemGroup>
 

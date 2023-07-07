@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XsMkEYSgkAXDlUpebwTZDYkMYBgXfymCcfm2n0d5VHU=",
+  "Hash": "F+DFhDztL66VzQ3Mg9HgCR4Se8unX9cMQ7MnYI2poHA=",
   "Source": "Library-Clean-Architecture",
   "BasePath": "_content/Library-Clean-Architecture",
   "Mode": "Default",
@@ -763,40 +763,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Tajer\\.nuget\\packages\\bootstrap\\5.3.0\\contentFiles\\any\\any\\wwwroot\\js\\bootstrap.min.js.map"
-    },
-    {
-      "Identity": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Library-Clean-Architecture.styles.css",
-      "SourceId": "Library-Clean-Architecture",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/Library-Clean-Architecture",
-      "RelativePath": "Library-Clean-Architecture.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Library-Clean-Architecture.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Library-Clean-Architecture.bundle.scp.css",
-      "SourceId": "Library-Clean-Architecture",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/Library-Clean-Architecture",
-      "RelativePath": "Library-Clean-Architecture.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Library-Clean-Architecture.bundle.scp.css"
     },
     {
       "Identity": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
