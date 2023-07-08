@@ -11,41 +11,35 @@ namespace Library_Clean_Architecture.Controllers
         private readonly IGetUsersService _usersService;
         private readonly IRegisterUserService _registerUserService;
         private readonly IGetRolesService _getRolesService;
+        private readonly IRemoveUserService _removeUserService;
 
-        //public HomeController(
-        //    IGetUsersService usersService,
-        //    IRegisterUserService registerUserService,
-        //    IGetRolesService getRolesService,
-        //    ILogger<HomeController> logger
-        //    )
-        //{
-        //    _usersService = usersService;
-        //    _registerUserService = registerUserService;
-        //    _getRolesService = getRolesService;
-        //    _logger = logger;
-
-        //}
         public HomeController(
             ILogger<HomeController> logger,
             IGetUsersService usersService,
             IRegisterUserService registerUserService,
-            IGetRolesService getRolesService
+            IGetRolesService getRolesService,
+            IRemoveUserService removeUserService
             )
         {
             _logger = logger;
             _usersService = usersService;
             _getRolesService = getRolesService;
             _registerUserService = registerUserService;
+            _removeUserService = removeUserService;
 
         }
 
         public IActionResult Index()
         {
             ViewBag.Roles = _getRolesService.Execute();
+            ViewBag.DatsSource = _usersService.Execute(new RequestGetUsers
+            {
+                SearchKey = ""
+            });
             return View();
         }
         [HttpPost]
-        public IActionResult Create(string Name, string Family, string Email, long RoleId,string Username,string Password)
+        public IActionResult Create(string Name, string Family, string Email, long RoleId, string Username, string Password)
         {
             var result = _registerUserService.Execute(new RequestRegisterUserDto
             {
@@ -63,7 +57,14 @@ namespace Library_Clean_Architecture.Controllers
                 }
 
             });
-            return Json(result);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Remove(long id)
+        {
+            var result = _removeUserService.RemoveUser(id);
+            return RedirectToAction("Index");
+            //return Json(result);
         }
 
         public IActionResult Privacy()

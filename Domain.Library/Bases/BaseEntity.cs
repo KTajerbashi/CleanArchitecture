@@ -2,7 +2,7 @@
 
 namespace Domain.Library
 {
-    public class BaseEntity<T> : IEntity
+    public abstract class BaseEntity<T> : IEntity
     {
         public T Id { get; set; }
         public bool IsActive { get; set; } = true;
@@ -10,5 +10,9 @@ namespace Domain.Library
         public DateTime CreateDate { get; set; } = DateTime.Now;
         public DateTime DeletedDate { get; set; }
         public DateTime UpdateDate { get; set; }
+    }
+    public abstract class BaseEntity : BaseEntity<long>
+    {
+
     }
 }

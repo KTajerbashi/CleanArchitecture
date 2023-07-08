@@ -3,7 +3,7 @@
 namespace Domain.Library.Entities
 {
     [Table("User", Schema = "SEC")]
-    public class User : BaseEntity<long>
+    public class User : BaseEntity
     {
         public string Name { get; set; }
         public string Family { get; set; }

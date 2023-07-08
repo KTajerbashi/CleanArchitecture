@@ -3,7 +3,7 @@
 namespace Domain.Library.Entities
 {
     [Table("UserRole", Schema = "SEC")]
-    public class UserRole : BaseEntity<int>
+    public class UserRole : BaseEntity
     {
         public virtual User User { get; set; }
         public long UserId { get; set; }

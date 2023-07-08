@@ -12,7 +12,7 @@ using Persistance.Library.DbContexts;
 namespace Persistance.Library.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230708183949_Initial_Database")]
+    [Migration("20230708213712_Initial_Database")]
     partial class Initial_Database
     {
         /// <inheritdoc />
@@ -60,7 +60,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             Id = 1L,
-                            CreateDate = new DateTime(2023, 7, 8, 22, 9, 49, 823, DateTimeKind.Local).AddTicks(7353),
+                            CreateDate = new DateTime(2023, 7, 9, 1, 7, 12, 220, DateTimeKind.Local).AddTicks(818),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -70,7 +70,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             Id = 2L,
-                            CreateDate = new DateTime(2023, 7, 8, 22, 9, 49, 823, DateTimeKind.Local).AddTicks(7404),
+                            CreateDate = new DateTime(2023, 7, 9, 1, 7, 12, 220, DateTimeKind.Local).AddTicks(877),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -80,7 +80,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             Id = 3L,
-                            CreateDate = new DateTime(2023, 7, 8, 22, 9, 49, 823, DateTimeKind.Local).AddTicks(7419),
+                            CreateDate = new DateTime(2023, 7, 9, 1, 7, 12, 220, DateTimeKind.Local).AddTicks(893),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -105,7 +105,7 @@ namespace Persistance.Library.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Family")
                         .IsRequired()
@@ -134,16 +134,19 @@ namespace Persistance.Library.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
                     b.ToTable("User", "SEC");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.UserRole", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");

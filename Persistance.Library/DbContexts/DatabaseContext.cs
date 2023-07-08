@@ -21,7 +21,13 @@ namespace Persistance.Library.DbContexts
             modelBuilder.Entity<Role>().HasData(new Role { Id = 1, Title = nameof(UserRolesSeed.Admin) });
             modelBuilder.Entity<Role>().HasData(new Role { Id = 2, Title = nameof(UserRolesSeed.Operator) });
             modelBuilder.Entity<Role>().HasData(new Role { Id = 3, Title = nameof(UserRolesSeed.Customer) });
+
+
+            modelBuilder.Entity<User>().HasIndex(c => c.Email).IsUnique();
+            modelBuilder.Entity<User>().HasQueryFilter(u => u.IsActive && !u.IsDeleted);
+
         }
+
 
 
     }
