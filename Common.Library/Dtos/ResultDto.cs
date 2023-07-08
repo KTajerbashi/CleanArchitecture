@@ -1,6 +1,7 @@
-﻿namespace Common.Library
+﻿
+namespace Common.Library
 {
-    public class ResultDto<T> : DTO
+    public class ResultDto<T>
     {
         public bool IsSuccess { get; set; }
         public string Message { get; set; }

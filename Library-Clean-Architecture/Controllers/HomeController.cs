@@ -44,6 +44,27 @@ namespace Library_Clean_Architecture.Controllers
             ViewBag.Roles = _getRolesService.Execute();
             return View();
         }
+        [HttpPost]
+        public IActionResult Create(string Name, string Family, string Email, long RoleId,string Username,string Password)
+        {
+            var result = _registerUserService.Execute(new RequestRegisterUserDto
+            {
+                Name = Name,
+                Family = Family,
+                Email = Email,
+                Username = Username,
+                Password = Password,
+                Roles = new List<RolesInRegisterUserDto>()
+                {
+                    new RolesInRegisterUserDto
+                    {
+                        Id=RoleId
+                    }
+                }
+
+            });
+            return Json(result);
+        }
 
         public IActionResult Privacy()
         {

@@ -1,10 +1,9 @@
-﻿using Domain.Library.Bases.Services;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Library.Entities
 {
     [Table("User", Schema = "SEC")]
-    public class User : BaseEntity
+    public class User : BaseEntity<long>
     {
         public string Name { get; set; }
         public string Family { get; set; }

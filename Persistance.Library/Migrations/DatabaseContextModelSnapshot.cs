@@ -57,9 +57,9 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             Id = 1L,
-                            CreateDate = new DateTime(2023, 7, 7, 20, 20, 59, 583, DateTimeKind.Local).AddTicks(1991),
+                            CreateDate = new DateTime(2023, 7, 8, 22, 9, 49, 823, DateTimeKind.Local).AddTicks(7353),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             Title = "Admin",
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -67,9 +67,9 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             Id = 2L,
-                            CreateDate = new DateTime(2023, 7, 7, 20, 20, 59, 583, DateTimeKind.Local).AddTicks(2055),
+                            CreateDate = new DateTime(2023, 7, 8, 22, 9, 49, 823, DateTimeKind.Local).AddTicks(7404),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             Title = "Operator",
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -77,9 +77,9 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             Id = 3L,
-                            CreateDate = new DateTime(2023, 7, 7, 20, 20, 59, 583, DateTimeKind.Local).AddTicks(2071),
+                            CreateDate = new DateTime(2023, 7, 8, 22, 9, 49, 823, DateTimeKind.Local).AddTicks(7419),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             Title = "Customer",
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
@@ -136,11 +136,11 @@ namespace Persistance.Library.Migrations
 
             modelBuilder.Entity("Domain.Library.Entities.UserRole", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");

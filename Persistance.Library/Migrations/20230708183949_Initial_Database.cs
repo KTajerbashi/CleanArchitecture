@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -62,7 +63,7 @@ namespace Persistance.Library.Migrations
                 schema: "SEC",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<long>(type: "bigint", nullable: false),
                     RoleId = table.Column<long>(type: "bigint", nullable: false),
@@ -97,9 +98,9 @@ namespace Persistance.Library.Migrations
                 columns: new[] { "Id", "CreateDate", "DeletedDate", "IsActive", "IsDeleted", "Title", "UpdateDate" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2023, 7, 7, 20, 20, 59, 583, DateTimeKind.Local).AddTicks(1991), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, "Admin", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2L, new DateTime(2023, 7, 7, 20, 20, 59, 583, DateTimeKind.Local).AddTicks(2055), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, "Operator", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 3L, new DateTime(2023, 7, 7, 20, 20, 59, 583, DateTimeKind.Local).AddTicks(2071), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, false, "Customer", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 1L, new DateTime(2023, 7, 8, 22, 9, 49, 823, DateTimeKind.Local).AddTicks(7353), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, false, "Admin", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2L, new DateTime(2023, 7, 8, 22, 9, 49, 823, DateTimeKind.Local).AddTicks(7404), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, false, "Operator", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 3L, new DateTime(2023, 7, 8, 22, 9, 49, 823, DateTimeKind.Local).AddTicks(7419), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, false, "Customer", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.CreateIndex(

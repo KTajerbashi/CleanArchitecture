@@ -2,7 +2,7 @@
 
 namespace Application.Library.Service
 {
-    public class GetUsersDto : IDTO
+    public class GetUsersDto : IDto
     {
         public string Name { get; set; }
         public string Family { get; set; }

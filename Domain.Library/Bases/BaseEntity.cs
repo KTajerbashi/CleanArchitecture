@@ -1,10 +1,10 @@
-﻿using Domain.Library.Bases.Interfaces;
+﻿using System.Numerics;
 
-namespace Domain.Library.Bases.Services
+namespace Domain.Library
 {
-    public class BaseEntity : IBaseEntity
+    public class BaseEntity<T> : IEntity
     {
-        public long Id { get; set; }
+        public T Id { get; set; }
         public bool IsActive { get; set; } = true;
         public bool IsDeleted { get; set; } = false;
         public DateTime CreateDate { get; set; } = DateTime.Now;

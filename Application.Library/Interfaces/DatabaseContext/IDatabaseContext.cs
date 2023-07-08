@@ -1,5 +1,8 @@
 ﻿using Domain.Library.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Internal;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Application.Library.Interfaces
 {

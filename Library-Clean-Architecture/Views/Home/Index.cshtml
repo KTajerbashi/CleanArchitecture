@@ -1,8 +1,55 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var roles =  ViewBag.Roles;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col-3 p-1">
+            <div class="bg-dark bg-gradient text-light rounded-2">
+                @foreach (var i in roles.Data)
+                {
+                    <div>@i.Title</div>
+                }
+            </div>
+        </div>
+         <div class="col-3 p-1">
+            <div class="bg-dark bg-gradient text-light rounded-2">
+                @foreach (var i in roles.Data)
+                {
+                    <div>@i.Title</div>
+                }
+            </div>
+        </div>
+     <div class="col-6 p-1">
+            <div class="bg-dark bg-gradient text-light rounded-2 text-center">
+            <form class="d-flex flex-column justify-content-center align-items-center" asp-controller="Home" asp-action="Create" method="post">
+                    <input type="text" name="Name" id="Name" class="input form-control rounded-5" placeholder="نام را وارد کنید ..." />
+                    <input type="text" name="Family" id="Family" class="input form-control rounded-5" placeholder="فامیل را وارد کنید ..." />
+                    <input type="text" name="Email" id="Email" class="input form-control rounded-5" placeholder="ایمیل را وارد کنید ..." />
+                    <hr />
+                    <input type="text" name="Username" id="Username" class="input form-control rounded-5" placeholder="نام کاربری را وارد کنید ..." />
+                    <input type="password" name="Password" id="Password" class="input form-control rounded-5" placeholder="رمز کاربری را وارد کنید ..." />
+                    <select name="RoleId" class="form-control input">
+                        @foreach (var role in roles.Data)
+                        {
+                                <option class="form-control w-100" name="RoleId" value=@role.Id>@role.Title</option>
+                        }
+                    </select>
+                    <input type="submit" name="submit" id="submit" class="btn-success bg-gradient form-control w-50" value="ثبت نام"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    
 </div>
+<style>
+    .input{
+        background: rgba(0,0,0,0.5);
+        color: white;
+        border: 1px solid #0000;
+        border-bottom: 1px solid #180;
+        outline: none;
+
+    }
+</style>

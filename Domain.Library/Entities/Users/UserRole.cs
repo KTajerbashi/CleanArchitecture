@@ -1,10 +1,9 @@
-﻿using Domain.Library.Bases.Services;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Library.Entities
 {
     [Table("UserRole", Schema = "SEC")]
-    public class UserRole : BaseEntity
+    public class UserRole : BaseEntity<int>
     {
         public virtual User User { get; set; }
         public long UserId { get; set; }

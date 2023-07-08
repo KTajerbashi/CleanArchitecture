@@ -1,26 +1,31 @@
 ﻿using Application.Library.Interfaces;
+using Common.Library;
 
 namespace Application.Library.Service
 {
-    public class GetRolesService : IGetRolesService
+    public partial class GetRolesService : IGetRolesService
     {
         private readonly IDatabaseContext _context;
         public GetRolesService(IDatabaseContext context)
         {
             _context = context;
         }
-        public List<ResultGetRolesDto> Execute()
+
+        ResultDto<List<RolesDto>> IGetRolesService.Execute()
         {
-            _context.Roles.AsQueryable();
-            var data = _context.Roles.Where(r => !r.IsDeleted && r.IsActive).ToList();
-
-            var items = data.Select(c => new ResultGetRolesDto()
+            var roles = _context.Roles.ToList().Select(r => new RolesDto
             {
-                Id = c.Id,
-                Title= c.Title,
-            });
+                Id = r.Id,
+                Title = r.Title,
+            }).ToList();
 
-            return items.ToList();
+            var item = new ResultDto<List<RolesDto>>()
+            {
+                Data = roles,
+                IsSuccess = true,
+                Message = ""
+            };
+            return item ;
         }
     }
 }
