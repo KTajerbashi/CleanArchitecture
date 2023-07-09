@@ -18,9 +18,9 @@ namespace Persistance.Library.DbContexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Role>().HasData(new Role { Id = 1, Title = nameof(UserRolesSeed.Admin) });
-            modelBuilder.Entity<Role>().HasData(new Role { Id = 2, Title = nameof(UserRolesSeed.Operator) });
-            modelBuilder.Entity<Role>().HasData(new Role { Id = 3, Title = nameof(UserRolesSeed.Customer) });
+            modelBuilder.Entity<Role>().HasData(new Role { ID = 1, Title = nameof(UserRolesSeed.Admin) });
+            modelBuilder.Entity<Role>().HasData(new Role { ID = 2, Title = nameof(UserRolesSeed.Operator) });
+            modelBuilder.Entity<Role>().HasData(new Role { ID = 3, Title = nameof(UserRolesSeed.Customer) });
 
 
             modelBuilder.Entity<User>().HasIndex(c => c.Email).IsUnique();

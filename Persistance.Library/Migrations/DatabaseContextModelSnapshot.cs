@@ -24,11 +24,11 @@ namespace Persistance.Library.Migrations
 
             modelBuilder.Entity("Domain.Library.Entities.Role", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -49,15 +49,15 @@ namespace Persistance.Library.Migrations
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.ToTable("Role", "SEC");
 
                     b.HasData(
                         new
                         {
-                            Id = 1L,
-                            CreateDate = new DateTime(2023, 7, 9, 1, 17, 36, 921, DateTimeKind.Local).AddTicks(3139),
+                            ID = 1L,
+                            CreateDate = new DateTime(2023, 7, 9, 22, 57, 50, 676, DateTimeKind.Local).AddTicks(5347),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -66,8 +66,8 @@ namespace Persistance.Library.Migrations
                         },
                         new
                         {
-                            Id = 2L,
-                            CreateDate = new DateTime(2023, 7, 9, 1, 17, 36, 921, DateTimeKind.Local).AddTicks(3240),
+                            ID = 2L,
+                            CreateDate = new DateTime(2023, 7, 9, 22, 57, 50, 676, DateTimeKind.Local).AddTicks(5400),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -76,8 +76,8 @@ namespace Persistance.Library.Migrations
                         },
                         new
                         {
-                            Id = 3L,
-                            CreateDate = new DateTime(2023, 7, 9, 1, 17, 36, 921, DateTimeKind.Local).AddTicks(3258),
+                            ID = 3L,
+                            CreateDate = new DateTime(2023, 7, 9, 22, 57, 50, 676, DateTimeKind.Local).AddTicks(5416),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -88,11 +88,11 @@ namespace Persistance.Library.Migrations
 
             modelBuilder.Entity("Domain.Library.Entities.User", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -129,7 +129,7 @@ namespace Persistance.Library.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.HasIndex("Email")
                         .IsUnique();
@@ -139,11 +139,11 @@ namespace Persistance.Library.Migrations
 
             modelBuilder.Entity("Domain.Library.Entities.UserRole", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
@@ -166,7 +166,7 @@ namespace Persistance.Library.Migrations
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.HasIndex("RoleId");
 

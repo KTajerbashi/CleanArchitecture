@@ -1,6 +1,8 @@
 ﻿using Application.Library.Interfaces;
 using Common.Library;
+using Common.Library.Configuration;
 using Domain.Library.Entities;
+using System.ComponentModel;
 
 namespace Application.Library.Service
 {
@@ -11,14 +13,14 @@ namespace Application.Library.Service
         {
             _context = context;
         }
-        public ResultDto<ResultRegisterUserDto> Execute(RequestRegisterUserDto request)
+        public ResultDTO<ResultRegisterUserDto> Execute(RequestRegisterUserDto request)
         {
             //  TO DO Fluent Validation
             try
             {
                 if (string.IsNullOrWhiteSpace(request.Email))
                 {
-                    return new ResultDto<ResultRegisterUserDto>()
+                    return new ResultDTO<ResultRegisterUserDto>()
                     {
                         Data = new ResultRegisterUserDto()
                         {
@@ -30,7 +32,7 @@ namespace Application.Library.Service
                 }
                 if (string.IsNullOrWhiteSpace(request.Name))
                 {
-                    return new ResultDto<ResultRegisterUserDto>()
+                    return new ResultDTO<ResultRegisterUserDto>()
                     {
                         Data = new ResultRegisterUserDto()
                         {
@@ -42,7 +44,7 @@ namespace Application.Library.Service
                 }
                 if (string.IsNullOrWhiteSpace(request.Family))
                 {
-                    return new ResultDto<ResultRegisterUserDto>()
+                    return new ResultDTO<ResultRegisterUserDto>()
                     {
                         Data = new ResultRegisterUserDto()
                         {
@@ -64,7 +66,7 @@ namespace Application.Library.Service
                 Name= request.Name,
                 Family= request.Family,
                 Username= request.Username,
-                Password= request.Password,
+                Password= PasswordHash.GetHash(request.Password),
             };
             List<UserRole> userRoles = new List<UserRole>();
             foreach (var item in request.Roles)
@@ -73,8 +75,8 @@ namespace Application.Library.Service
                 userRoles.Add(new UserRole
                 {
                     Role = roles,
-                    RoleId = roles.Id,
-                    UserId = user.Id,
+                    RoleId = roles.ID,
+                    UserId = user.ID,
                     User = user,
                 });
             }
@@ -82,11 +84,11 @@ namespace Application.Library.Service
             _context.Users.Add(user);
             _context.SaveChanges();
 
-            return new ResultDto<ResultRegisterUserDto>()
+            return new ResultDTO<ResultRegisterUserDto>()
             {
                 Data = new ResultRegisterUserDto()
                 {
-                    UserId = user.Id,
+                    UserId = user.ID,
                 },
                 IsSuccess = true,
                 Message = "ثبت نام با موفقیت انجام شد"

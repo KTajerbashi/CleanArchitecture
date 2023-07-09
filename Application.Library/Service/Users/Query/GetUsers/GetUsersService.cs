@@ -24,7 +24,7 @@ namespace Application.Library.Service
 
             var userResult = paging.Select(p => new GetUsersDto
             {
-                Id = p.Id,
+                ID = p.ID,
                 Name = p.Name,
                 Family = p.Family,
                 Email = p.Email,

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LPrPso2E3Y+mPRHe37UgcyRkgWOW2XAEtCittenJfFYpnoMU7+Wy7vLSOnlMZkNjonr0y0tFsjikenBnokhmTw==",
+  "dgSpecHash": "u5kntG9vvJecV7ARGv81hUU03Jb8PxJrxZY7W0Hwp/elDxXdoqDY+kIAawLsFUoDzmW3KDwm4Tp3muFc1ocb7Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Application.Library\\Application.Library.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Tajer\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Tajer\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.8\\microsoft.entityframeworkcore.7.0.8.nupkg.sha512",
     "C:\\Users\\Tajer\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.8\\microsoft.entityframeworkcore.abstractions.7.0.8.nupkg.sha512",
     "C:\\Users\\Tajer\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.8\\microsoft.entityframeworkcore.analyzers.7.0.8.nupkg.sha512",

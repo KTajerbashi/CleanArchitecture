@@ -2,7 +2,7 @@
 
 namespace Application.Library
 {
-    public class RolesDto : Dto<long>
+    public class RolesDto : DTO<long>
     {
         public string Title { get; set; }
     }

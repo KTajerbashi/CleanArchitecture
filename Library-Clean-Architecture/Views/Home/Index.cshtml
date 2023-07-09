@@ -19,7 +19,7 @@
                     <select name="RoleId" class="form-control input">
                         @foreach (var role in roles.Data)
                         {
-                            <option class="form-control w-100" name="RoleId" value=@role.Id>@role.Title</option>
+                            <option class="form-control w-100" name="RoleId" value=@role.ID>@role.Title</option>
                         }
                     </select>
                     <input type="submit" name="submit" id="submit" class="btn-success bg-gradient form-control w-50" value="ثبت نام" />
@@ -46,16 +46,16 @@
 
                         @foreach (var row in DataSource.Users)
                         {
-                            <tr onclick="RowClicked(@row.Id)">
-                                <td>@row.Id</td>
+                            <tr onclick="RowClicked(@row.ID)">
+                                <td>@row.ID</td>
                                 <td>@row.Name</td>
                                 <td>@row.Family</td>
                                 <td>@row.Email</td>
                                 <td>@row.Username</td>
                                 <td>@row.Password</td>
                                 <td>
-                                    <button class="btn btn-danger rounded-3" onclick="DeleteRow(@row.Id)">حذف</button>
-                                    <button class="btn btn-warning rounded-3" onclick="UpdateRow(@row.Id)">ویرایش</button>
+                                    <button class="btn btn-danger rounded-3" onclick="DeleteRow(@row.ID)">حذف</button>
+                                    <button class="btn btn-warning rounded-3" onclick="UpdateRow(@row.ID)">ویرایش</button>
                                 </td>
                             </tr>
                         }

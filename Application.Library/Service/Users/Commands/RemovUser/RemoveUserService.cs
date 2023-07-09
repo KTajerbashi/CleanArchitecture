@@ -17,12 +17,12 @@ namespace Application.Library.Service
             _context = context;
         }
 
-        public ResultDto<User> RemoveUser(long userId)
+        public ResultDTO<User> RemoveUser(long userId)
         {
             var userData = _context.Users.Find(userId);
             if (userData == null)
             {
-                return new ResultDto<User>
+                return new ResultDTO<User>
                 {
                     IsSuccess = false,
                     Message = "کاربر یافت نشد"
@@ -31,7 +31,7 @@ namespace Application.Library.Service
             userData.DeletedDate = DateTime.Now;
             userData.IsDeleted = true;
             _context.SaveChanges();
-            return new ResultDto<User>
+            return new ResultDTO<User>
             {
                 IsSuccess = true,
                 Message = "کاربر با موفقیت حذف شده است"

@@ -5,6 +5,6 @@ namespace Application.Library.Service
 {
     public interface IRemoveUserService
     {
-        ResultDto<User> RemoveUser(long userId);
+        ResultDTO<User> RemoveUser(long userId);
     }
 }

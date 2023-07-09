@@ -6,7 +6,7 @@ namespace Application.Library.Service
 {
     public interface IRegisterUserService
     {
-        ResultDto<ResultRegisterUserDto> Execute(RequestRegisterUserDto request);
+        ResultDTO<ResultRegisterUserDto> Execute(RequestRegisterUserDto request);
     }
 
 }

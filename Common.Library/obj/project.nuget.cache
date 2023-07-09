@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7w4oo3qqajMfe4Ra9i+UEPBYOFTNQsla3pgfuPugtcNgVO2HUBcMY3oJ4UTyCwDOPZ6PrDGQfTekrwKytmALIw==",
+  "dgSpecHash": "eByA+873VBrNv7x0cdkT0ZzIPTHdILUiyAHXVR1TBnvMoEwO34FUQe3nKmt6NzlOaMEg21uZclCRc2HwJaLHcA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Common.Library\\Common.Library.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Tajer\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

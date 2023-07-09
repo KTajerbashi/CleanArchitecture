@@ -21,7 +21,7 @@ namespace Persistance.Library.Migrations
                 schema: "SEC",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
+                    ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
@@ -32,7 +32,7 @@ namespace Persistance.Library.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Role", x => x.Id);
+                    table.PrimaryKey("PK_Role", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -40,7 +40,7 @@ namespace Persistance.Library.Migrations
                 schema: "SEC",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
+                    ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Family = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -55,7 +55,7 @@ namespace Persistance.Library.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User", x => x.Id);
+                    table.PrimaryKey("PK_User", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -63,7 +63,7 @@ namespace Persistance.Library.Migrations
                 schema: "SEC",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
+                    ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<long>(type: "bigint", nullable: false),
                     RoleId = table.Column<long>(type: "bigint", nullable: false),
@@ -75,32 +75,32 @@ namespace Persistance.Library.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserRole", x => x.Id);
+                    table.PrimaryKey("PK_UserRole", x => x.ID);
                     table.ForeignKey(
                         name: "FK_UserRole_Role_RoleId",
                         column: x => x.RoleId,
                         principalSchema: "SEC",
                         principalTable: "Role",
-                        principalColumn: "Id",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_UserRole_User_UserId",
                         column: x => x.UserId,
                         principalSchema: "SEC",
                         principalTable: "User",
-                        principalColumn: "Id",
+                        principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
                 schema: "SEC",
                 table: "Role",
-                columns: new[] { "Id", "CreateDate", "DeletedDate", "IsActive", "IsDeleted", "Title", "UpdateDate" },
+                columns: new[] { "ID", "CreateDate", "DeletedDate", "IsActive", "IsDeleted", "Title", "UpdateDate" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2023, 7, 9, 1, 7, 12, 220, DateTimeKind.Local).AddTicks(818), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, false, "Admin", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2L, new DateTime(2023, 7, 9, 1, 7, 12, 220, DateTimeKind.Local).AddTicks(877), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, false, "Operator", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 3L, new DateTime(2023, 7, 9, 1, 7, 12, 220, DateTimeKind.Local).AddTicks(893), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, false, "Customer", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 1L, new DateTime(2023, 7, 9, 22, 57, 50, 676, DateTimeKind.Local).AddTicks(5347), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, false, "Admin", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2L, new DateTime(2023, 7, 9, 22, 57, 50, 676, DateTimeKind.Local).AddTicks(5400), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, false, "Operator", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 3L, new DateTime(2023, 7, 9, 22, 57, 50, 676, DateTimeKind.Local).AddTicks(5416), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), true, false, "Customer", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.CreateIndex(

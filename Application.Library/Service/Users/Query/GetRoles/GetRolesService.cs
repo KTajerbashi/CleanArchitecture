@@ -11,15 +11,15 @@ namespace Application.Library.Service
             _context = context;
         }
 
-        ResultDto<List<RolesDto>> IGetRolesService.Execute()
+        ResultDTO<List<RolesDto>> IGetRolesService.Execute()
         {
             var roles = _context.Roles.ToList().Select(r => new RolesDto
             {
-                Id = r.Id,
+                ID = r.ID,
                 Title = r.Title,
             }).ToList();
 
-            var item = new ResultDto<List<RolesDto>>()
+            var item = new ResultDTO<List<RolesDto>>()
             {
                 Data = roles,
                 IsSuccess = true,

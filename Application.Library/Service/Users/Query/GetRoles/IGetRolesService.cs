@@ -5,6 +5,6 @@ namespace Application.Library.Service
 {
     public interface IGetRolesService
     {
-        ResultDto<List<RolesDto>> Execute();
+        ResultDTO<List<RolesDto>> Execute();
     }
 }
