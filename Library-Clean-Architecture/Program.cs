@@ -1,5 +1,7 @@
 using Application.Library.Interfaces;
+using Application.Library.Interfaces.Patterns;
 using Application.Library.Service;
+using Application.Library.Service.Products;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Persistance.Library.DbContexts;
@@ -22,13 +24,17 @@ builder.Services.AddAuthentication(option =>
     option.ExpireTimeSpan = TimeSpan.FromMinutes(5.0);
 });
 
-// Add services to the container.
+//  Add services to the container.
 builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
 builder.Services.AddScoped<IGetUsersService, GetUsersService>();
 builder.Services.AddScoped<IRegisterUserService, RegisterUserService>();
 builder.Services.AddScoped<IGetRolesService, GetRolesService>();
 builder.Services.AddScoped<IRemoveUserService, RemoveUserService>();
 builder.Services.AddScoped<IUserLoginServices, UserLoginServices>();
+builder.Services.AddScoped<IGetCategoriesService, GetCategoriesService>();
+
+//  Facad Injection
+builder.Services.AddScoped<IProductFacad, ProductFacad>();
 
 //  Use Model One
 builder.Services.AddEntityFrameworkSqlServer().AddDbContext<DatabaseContext>(option => option.UseSqlServer(conectionString));
@@ -36,7 +42,7 @@ builder.Services.AddEntityFrameworkSqlServer().AddDbContext<DatabaseContext>(opt
 
 var app = builder.Build();
 //  DataBaseContext Injection
-// Configure the HTTP request pipeline.
+//  Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

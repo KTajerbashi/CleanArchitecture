@@ -26,9 +26,6 @@ namespace Persistance.Library.DbContexts
             //  User Data
             UserConfig(modelBuilder);
 
-
-
-
             // Query Filter
             ApplyQueryFilter(modelBuilder);
 

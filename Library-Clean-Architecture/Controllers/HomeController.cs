@@ -1,4 +1,5 @@
-﻿using Application.Library.Service;
+﻿using Application.Library.Interfaces.Patterns;
+using Application.Library.Service;
 using Library_Clean_Architecture.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -12,13 +13,17 @@ namespace Library_Clean_Architecture.Controllers
         private readonly IRegisterUserService _registerUserService;
         private readonly IGetRolesService _getRolesService;
         private readonly IRemoveUserService _removeUserService;
+        private readonly IGetCategoriesService _getCategoriesService;
+        private readonly IProductFacad _productFacad;
 
         public HomeController(
             ILogger<HomeController> logger,
             IGetUsersService usersService,
             IRegisterUserService registerUserService,
             IGetRolesService getRolesService,
-            IRemoveUserService removeUserService
+            IRemoveUserService removeUserService,
+            IGetCategoriesService getCategoriesService,
+            IProductFacad productFacad
             )
         {
             _logger = logger;
@@ -26,16 +31,21 @@ namespace Library_Clean_Architecture.Controllers
             _getRolesService = getRolesService;
             _registerUserService = registerUserService;
             _removeUserService = removeUserService;
-
+            _getCategoriesService = getCategoriesService;
+            _productFacad = productFacad;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(long? parentId)
         {
             ViewBag.Roles = _getRolesService.Execute();
-            ViewBag.User = User.Identity.Name;
+            ViewBag.User = User;
             ViewBag.DatsSource = _usersService.Execute(new RequestGetUsers
             {
                 SearchKey = ""
+            });
+            ViewBag.Categories = _productFacad.GetCategoriesService.Execute(new RequestDTO
+            {
+                ParentId = parentId
             });
             return View();
         }
