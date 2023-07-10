@@ -22,6 +22,43 @@ namespace Persistance.Library.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Domain.Library.Entities.Category", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("ParentCategoryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ParentCategoryId");
+
+                    b.ToTable("Category", "SEC");
+                });
+
             modelBuilder.Entity("Domain.Library.Entities.Role", b =>
                 {
                     b.Property<long>("ID")
@@ -57,7 +94,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 1L,
-                            CreateDate = new DateTime(2023, 7, 9, 22, 57, 50, 676, DateTimeKind.Local).AddTicks(5347),
+                            CreateDate = new DateTime(2023, 7, 10, 20, 11, 21, 597, DateTimeKind.Local).AddTicks(2734),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -67,7 +104,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 2L,
-                            CreateDate = new DateTime(2023, 7, 9, 22, 57, 50, 676, DateTimeKind.Local).AddTicks(5400),
+                            CreateDate = new DateTime(2023, 7, 10, 20, 11, 21, 597, DateTimeKind.Local).AddTicks(2781),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -77,7 +114,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 3L,
-                            CreateDate = new DateTime(2023, 7, 9, 22, 57, 50, 676, DateTimeKind.Local).AddTicks(5416),
+                            CreateDate = new DateTime(2023, 7, 10, 20, 11, 21, 597, DateTimeKind.Local).AddTicks(2791),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -175,6 +212,15 @@ namespace Persistance.Library.Migrations
                     b.ToTable("UserRole", "SEC");
                 });
 
+            modelBuilder.Entity("Domain.Library.Entities.Category", b =>
+                {
+                    b.HasOne("Domain.Library.Entities.Category", "ParentCategory")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("ParentCategoryId");
+
+                    b.Navigation("ParentCategory");
+                });
+
             modelBuilder.Entity("Domain.Library.Entities.UserRole", b =>
                 {
                     b.HasOne("Domain.Library.Entities.Role", "Role")
@@ -192,6 +238,11 @@ namespace Persistance.Library.Migrations
                     b.Navigation("Role");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Domain.Library.Entities.Category", b =>
+                {
+                    b.Navigation("SubCategories");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.User", b =>

@@ -21,14 +21,6 @@ namespace Library_Clean_Architecture.Controllers
             _userLoginServices = userLoginServices;
             _registerUserServices = registerUserService;
         }
-        public ActionResult Login()
-        {
-            return View();
-        }
-        public ActionResult Logout()
-        {
-            return View();
-        }
         public ActionResult Signin(string ReturnUrl = "/")
         {
             ViewBag.ReturnUrl = ReturnUrl;
@@ -45,8 +37,8 @@ namespace Library_Clean_Architecture.Controllers
                 {
                     new Claim(ClaimTypes.NameIdentifier,signupResult.Data.UserId.ToString()),
                     new Claim(ClaimTypes.Email,Email),
-                    new Claim(ClaimTypes.Name,signupResult.Data.UserId.ToString()),
-                    new Claim(ClaimTypes.Role,signupResult.Data.UserId.ToString()),
+                    new Claim(ClaimTypes.Name,signupResult.Data.Name.ToString()),
+                    new Claim(ClaimTypes.Role,signupResult.Data.Role.ToString()),
                 };
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principle = new ClaimsPrincipal(identity);

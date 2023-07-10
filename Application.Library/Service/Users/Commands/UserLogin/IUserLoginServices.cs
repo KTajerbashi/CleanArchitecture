@@ -72,8 +72,7 @@ namespace Application.Library.Service
             {
                 roles += $"{item.Role.Title}";
             }
-
-            return new ResultDTO<ResultUserLoginDTO>()
+            var result = new ResultDTO<ResultUserLoginDTO>()
             {
                 Data = new ResultUserLoginDTO()
                 {
@@ -84,6 +83,7 @@ namespace Application.Library.Service
                 IsSuccess = true,
                 Message = "ورود به سایت با موفقیت انجام شد"
             };
+            return result;
 
         }
     }

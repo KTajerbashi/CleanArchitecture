@@ -1,0 +1,85 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container p-5 rounded-3 loginContainer">
+    <div class="row">
+        <div class="col-12">
+            <form class="form-container">
+                <input type="text" class="form-control inputlogin" placeholder="نام کاربری/ایمیل را وارد کنید ..." name="Email" id="Email" required />
+                <input type="text" class="form-control inputlogin" placeholder="رمز کاربری را وارد کنید ..." name="Password" id="Password" required />
+                <input onclick="LoginHandler()" class="btn btn-success bg-gradient text-center mt-2" value="ورود" name="Password" id="Password" />
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const LoginHandler = () => {
+        var Email = $("#Email").val();
+        var Password = $("#Password").val();
+        var model = {
+            email: Email,
+            password: Password
+        };
+        console.log(model);
+        $.ajax({
+            url: "/Authentication/Signin",
+            type: "POST",
+            data: model
+        }).done(function (res) {
+            if (res.isSuccess) {
+                alert("ورود با موفقیت");
+                window.location.replace("/");
+            } else {
+                alert(res.message);
+            }
+        });
+    }
+
+
+    const AjaxRequest = (model) => {
+        $.ajax({
+            contentType: '',
+            dataType: 'json',
+            type: 'POST',
+            url: '',
+            data: model,
+            success: () => {
+
+            },
+            error: () => {
+
+            },
+
+        });
+    }
+</script>
+
+<style>
+    .loginContainer {
+        margin-top: 2rem;
+        background: #eeee;
+        box-shadow: 0 0 10px 5px #0003;
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .inputlogin {
+        background: rgba(0,0,0,0.0);
+        border: 1px solid #0000;
+        border-bottom: 1px solid #00A;
+        margin: 0.5rem 0;
+        outline: none;
+    }
+
+        .inputlogin:focus {
+            outline: none;
+        }
+</style>

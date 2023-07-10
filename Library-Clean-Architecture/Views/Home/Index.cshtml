@@ -1,14 +1,57 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     var roles =  ViewBag.Roles;
+    var User =  ViewBag.User;
     var DataSource =  ViewBag.DatsSource;
     var Model =  ViewBag.Model;
 }
 
+<div class="container-fluid bg-dark text-center py-3">
+    <div class="row d-flex flex-row justify-content-between">
+        <div class="col-6 p-1">
+            <form class="d-flex flex-row">
+                <input type="text" placeholder="جستجو کنید ...." class="input-search" />
+                <span>
+                    <button class="btn btn-dark bg-gradient shadow text-light">جستجو</button>
+                </span>
+            </form>
+        </div>
+        <div class="col-6 p-1 d-flex flex-row justify-content-end">
+            @if (User != null)
+            {
+                <a class="btn btn-dark bg-gradient text-light m-2" href="@Url.Action("SignOut","Authentication")">خوش آمدید : @User</a>
+            }
+            else
+            {
+                <a class="btn text-primary" href="@Url.Action("Signin","Authentication")">ورود</a>
+                <button class="btn text-info">ثبت نام</button>
+            }
+        </div>
+    </div>
+</div>
 <div class="container-fluid text-center">
     <div class="row">
-        <div class="col-6 p-3 bg-dark bg-gradient rounded-3 shadow">
-            <div class="text-light rounded-2 text-center">
+        <div class="col-6 p-3">
+            <div class="bg-dark bg-gradient shadow text-light rounded-2 text-center p-3">
+                <form class="d-flex flex-column justify-content-center align-items-center" asp-controller="Home" asp-action="Create" method="post">
+                    <input type="text" name="Name" id="Name" class="input form-control rounded-5" placeholder="نام را وارد کنید ..." />
+                    <input type="text" name="Family" id="Family" class="input form-control rounded-5" placeholder="فامیل را وارد کنید ..." />
+                    <input type="text" name="Email" id="Email" class="input form-control rounded-5" placeholder="ایمیل را وارد کنید ..." />
+                    <hr />
+                    <input type="text" name="Username" id="Username" class="input form-control rounded-5" placeholder="نام کاربری را وارد کنید ..." />
+                    <input type="password" name="Password" id="Password" class="input form-control rounded-5" placeholder="رمز کاربری را وارد کنید ..." />
+                    <select name="RoleId" class="form-control input">
+                        @foreach (var role in roles.Data)
+                        {
+                            <option class="form-control w-100" name="RoleId" value=@role.ID>@role.Title</option>
+                        }
+                    </select>
+                    <input type="submit" name="submit" id="submit" class="btn-success bg-gradient form-control w-50" value="ثبت نام" />
+                </form>
+            </div>
+        </div>
+        <div class="col-6 p-3">
+            <div class="bg-dark bg-gradient shadow text-light rounded-2 text-center p-3">
                 <form class="d-flex flex-column justify-content-center align-items-center" asp-controller="Home" asp-action="Create" method="post">
                     <input type="text" name="Name" id="Name" class="input form-control rounded-5" placeholder="نام را وارد کنید ..." />
                     <input type="text" name="Family" id="Family" class="input form-control rounded-5" placeholder="فامیل را وارد کنید ..." />
@@ -38,7 +81,6 @@
                             <th>فامیل</th>
                             <th>ایمیل</th>
                             <th>نام کاربری</th>
-                            <th>رمز کاربری</th>
                             <th>عملیات</th>
                         </tr>
                     </thead>
@@ -52,7 +94,6 @@
                                 <td>@row.Family</td>
                                 <td>@row.Email</td>
                                 <td>@row.Username</td>
-                                <td>@row.Password</td>
                                 <td>
                                     <button class="btn btn-danger rounded-3" onclick="DeleteRow(@row.ID)">حذف</button>
                                     <button class="btn btn-warning rounded-3" onclick="UpdateRow(@row.ID)">ویرایش</button>

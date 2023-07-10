@@ -20,24 +20,12 @@
         .input-search::placeholder{
             color: rgba(255,255,255,0.8);
         }
+        a{
+            text-decoration: none !important;
+        }
     </style>
-    <div class="container-fluid bg-dark text-center py-3">
-        <div class="row d-flex flex-row justify-content-between">
-            <div class="col-6 p-1">
-                <form class="d-flex flex-row">
-                    <input type="text" placeholder="جستجو کنید ...." class="input-search" />
-                    <span>
-                        <button class="btn btn-dark bg-gradient shadow text-light">جستجو</button>
-                    </span>
-                </form>
-            </div>
-            <div class="col-6 p-1 d-flex flex-row justify-content-end">
-                <button class="btn text-primary">ورود</button>
-                <button class="btn text-info">ثبت نام</button>
-            </div>
-        </div>
-    </div>
-    <div class="container">
+ 
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

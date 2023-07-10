@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Tajer/Desktop/Visual Studio/Repository Project/GitHub/LibraryCleanArchitecture/Library-Clean-Architecture/Views/Authentication/Signin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGljYXRpb25cU2lnbmluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Tajer/Desktop/Visual Studio/Repository Project/GitHub/LibraryCleanArchitecture/Library-Clean-Architecture/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

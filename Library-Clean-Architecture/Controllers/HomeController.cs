@@ -32,6 +32,7 @@ namespace Library_Clean_Architecture.Controllers
         public IActionResult Index()
         {
             ViewBag.Roles = _getRolesService.Execute();
+            ViewBag.User = User.Identity.Name;
             ViewBag.DatsSource = _usersService.Execute(new RequestGetUsers
             {
                 SearchKey = ""
