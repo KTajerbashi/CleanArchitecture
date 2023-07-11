@@ -30,7 +30,8 @@ namespace Library_Clean_Architecture.Controllers
         public ActionResult AddNewCategory(RequestDTO request)
         {
             var result = _productFacad.AddNewCategoryService.Execute(request);
-            return Json(result);
+            //return Json(result);
+            return RedirectToAction("Index","Home");
         }
     }
 }

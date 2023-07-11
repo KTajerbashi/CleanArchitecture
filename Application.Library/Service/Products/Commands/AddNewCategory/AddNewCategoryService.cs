@@ -22,13 +22,16 @@ namespace Application.Library.Service
                     Message = "نام دسته بندی را وارد کنید "
                 };
             }
+
             Category category= new Category()
             {
                 Name = request.Name,
                 ParentCategory= GetParent(request.ParentId)
             };
+
             _context.Categories.Add(category);
             _context.SaveChanges();
+            
             return new ResultDTO()
             {
                 IsSuccess = true,

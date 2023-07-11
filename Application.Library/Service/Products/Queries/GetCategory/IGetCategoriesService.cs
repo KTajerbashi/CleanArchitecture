@@ -34,7 +34,7 @@ namespace Application.Library.Service
                 .ToList()
                 .Select(p => new CategoryDTO
                 {
-                    Id = p.ID,
+                    ID = p.ID,
                     Name = p.Name,
                     Parent= p.ParentCategoryId != null ?
                     new ParentCategoryDTO
@@ -45,6 +45,7 @@ namespace Application.Library.Service
                     :null,
                     HasChild = p.SubCategories.Count() > 0 ? true: false,
                 }).ToList();
+
             return new ResultDTO<List<CategoryDTO>>()
             {
                 Data = categories,
@@ -56,7 +57,7 @@ namespace Application.Library.Service
     }
     public class CategoryDTO
     {
-        public long Id { get; set; }
+        public long ID { get; set; }
         public string Name { get; set; }
         public bool HasChild { get; set; }
         public ParentCategoryDTO Parent { get; set; }
