@@ -2049,6 +2049,14 @@
       "PackagePath": "staticwebassets\\images\\ProductImages\\63729658713733979811738344_783.jpg"
     },
     {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\images\\ProductImages\\638247173242814645body.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductImages\\638247173242814645body.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\images\\ProductImages\\638247176878619501Microsoft_.NET_logo.svg.png",
+      "PackagePath": "staticwebassets\\images\\ProductImages\\638247176878619501Microsoft_.NET_logo.svg.png"
+    },
+    {
       "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

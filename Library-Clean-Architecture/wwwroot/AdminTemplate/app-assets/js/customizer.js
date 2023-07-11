@@ -51,9 +51,9 @@ $('.calendar').persianDatepicker({
                 $('.logo-img img').attr('src','../app-assets/img/logo-dark.png');
             }
             else{
-                if($('.logo-img img').attr('src') == '../app-assets/img/logo-dark.png'){
-                    $('.logo-img img').attr('src','../app-assets/img/logo.png');
-                }
+                //if($('.logo-img img').attr('src') == '../app-assets/img/logo-dark.png'){
+                //    $('.logo-img img').attr('src','../app-assets/img/logo.png');
+                //}
             }
         });
 

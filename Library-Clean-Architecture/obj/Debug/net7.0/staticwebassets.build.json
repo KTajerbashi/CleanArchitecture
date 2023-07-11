@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4BAGVSkMHQLPBAGMrq8F9T9qSweWzB6ZWsMxDcl1zd4=",
+  "Hash": "OEhLYTixm2RWxYJF8Mjh7eJ2bLAJGgY1pv8Sja5loJk=",
   "Source": "Library-Clean-Architecture",
   "BasePath": "_content/Library-Clean-Architecture",
   "Mode": "Default",
@@ -5795,6 +5795,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\ProductImages\\63729658713733979811738344_783.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\images\\ProductImages\\638247173242814645body.jpg",
+      "SourceId": "Library-Clean-Architecture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\",
+      "BasePath": "_content/Library-Clean-Architecture",
+      "RelativePath": "images/ProductImages/638247173242814645body.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\ProductImages\\638247173242814645body.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\images\\ProductImages\\638247176878619501Microsoft_.NET_logo.svg.png",
+      "SourceId": "Library-Clean-Architecture",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\",
+      "BasePath": "_content/Library-Clean-Architecture",
+      "RelativePath": "images/ProductImages/638247176878619501Microsoft_.NET_logo.svg.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\ProductImages\\638247176878619501Microsoft_.NET_logo.svg.png"
     },
     {
       "Identity": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\js\\site.js",

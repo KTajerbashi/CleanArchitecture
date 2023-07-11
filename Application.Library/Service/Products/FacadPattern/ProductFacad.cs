@@ -10,7 +10,14 @@ namespace Application.Library.Service.Products
         private readonly IDatabaseContext _context;
         private readonly IHostingEnvironment _environment;
 
-        public ProductFacad(IDatabaseContext context) { _context = context; }
+        public ProductFacad(
+            IDatabaseContext context,
+            IHostingEnvironment hostingEnvironment
+            )
+        {
+            _context = context;
+            _environment = hostingEnvironment;
+        }
 
         private AddNewCategoryService _addNewCategory;
         public AddNewCategoryService AddNewCategoryService
@@ -66,21 +73,21 @@ namespace Application.Library.Service.Products
             {
                 return _getProductDetailForAdminService = _getProductDetailForAdminService ?? new GetProductDetailForAdminService(_context);
             }
-        }    
-        
-        
+        }
+
+
         private IGetProductForSiteService   _getProductForSiteService;
-        public IGetProductForSiteService  GetProductForSiteService
+        public IGetProductForSiteService GetProductForSiteService
         {
             get
             {
                 return _getProductForSiteService = _getProductForSiteService ?? new GetProductForSiteService(_context);
             }
-        }    
-        
-        
+        }
+
+
         private IGetProductDetailForSiteService  _getProductDetailForSiteService;
-        public IGetProductDetailForSiteService  GetProductDetailForSiteService
+        public IGetProductDetailForSiteService GetProductDetailForSiteService
         {
             get
             {
