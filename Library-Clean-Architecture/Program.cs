@@ -25,14 +25,19 @@ builder.Services.AddAuthentication(option =>
 });
 
 //  Add services to the container.
+//  Database
 builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
-builder.Services.AddScoped<IGetUsersService, GetUsersService>();
+//  User
 builder.Services.AddScoped<IRegisterUserService, RegisterUserService>();
-builder.Services.AddScoped<IGetRolesService, GetRolesService>();
 builder.Services.AddScoped<IRemoveUserService, RemoveUserService>();
+builder.Services.AddScoped<IGetUsersService, GetUsersService>();
 builder.Services.AddScoped<IUserLoginServices, UserLoginServices>();
-builder.Services.AddScoped<IGetCategoriesService, GetCategoriesService>();
 builder.Services.AddScoped<IUserSatusChangeService, UserSatusChangeService>();
+//  Role
+builder.Services.AddScoped<IGetRolesService, GetRolesService>();
+//  Category
+builder.Services.AddScoped<IGetCategoriesService, GetCategoriesService>();
+//  Product
 builder.Services.AddScoped<IEditUserService, EditUserService>();
 
 //  Facad Injection

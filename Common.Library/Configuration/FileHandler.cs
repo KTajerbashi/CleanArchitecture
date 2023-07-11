@@ -16,7 +16,9 @@ namespace Common.Library.Configuration
             if (file != null)
             {
                 string folder = $@"images\ProductImages\";
+
                 var uploadsRootFolder = Path.Combine(_environment.WebRootPath, folder);
+                
                 if (!Directory.Exists(uploadsRootFolder))
                 {
                     Directory.CreateDirectory(uploadsRootFolder);

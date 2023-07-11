@@ -21,5 +21,6 @@ namespace Domain.Library.Entities
         public long CategoryId { get; set; }
 
         public virtual ICollection<ProductImages> ProductImages { get; set; }
+        public virtual ICollection<ProductFeatures> ProductFeatures { get; set; }
     }
 }

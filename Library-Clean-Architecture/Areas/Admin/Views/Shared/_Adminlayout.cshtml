@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -64,8 +63,8 @@
                                     <a href="~/admin/users/Create" class="menu-item">ثبت نام کاربر جدید *</a>
                                 </li>
                             </ul>
-                        </li>  
-                        
+                        </li>
+
                         <li class="has-sub nav-item">
                             <a href="#"><i class="icon-crop"></i><span data-i18n="" class="menu-title">  دسته بندی ها </span></a>
                             <ul class="menu-content">
@@ -77,6 +76,19 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="has-sub nav-item">
+                            <a href="#"><i class="icon-crop"></i><span data-i18n="" class="menu-title"> محصولات </span></a>
+                            <ul class="menu-content">
+                                <li>
+                                    <a href="~/admin/products" class="menu-item">لیست محصولات</a>
+                                </li>
+                                <li>
+                                    <a href="~/admin/products/addNewProduct" class="menu-item">افزودن محصول جدید *</a>
+                                </li>
+                            </ul>
+                        </li>
+
 
                     </ul>
                 </div>
@@ -161,7 +173,7 @@
 
         <div class="main-panel">
             <div class="main-content">
-               @RenderBody()
+                @RenderBody()
             </div>
 
             <footer class="footer footer-static footer-light">
@@ -401,7 +413,7 @@
     </div>
     <!-- BEGIN VENDOR JS-->
 
-    
+
     <script src="~/AdminTemplate/app-assets/vendors/js/core/jquery-3.3.1.min.js"></script>
     <script src="~/AdminTemplate/app-assets/js/persian-datepicker.min.js"></script>
     <script src="~/AdminTemplate/app-assets/vendors/js/core/popper.min.js"></script>
@@ -421,9 +433,8 @@
     <!-- END CONVEX JS-->
     <!-- BEGIN PAGE LEVEL JS-->
     <!-- END PAGE LEVEL JS-->
+    @RenderSection("Scripts",false)
 
-    @RenderSection("Scripts",false)   
-    
     @RenderSection("Modals",false)
 </body>
 

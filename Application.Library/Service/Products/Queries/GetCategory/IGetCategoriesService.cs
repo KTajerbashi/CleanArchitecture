@@ -1,12 +1,6 @@
 ﻿using Application.Library.Interfaces;
 using Common.Library;
-using Domain.Library.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Library.Service
 {
@@ -39,7 +33,7 @@ namespace Application.Library.Service
                     Parent= p.ParentCategoryId != null ?
                     new ParentCategoryDTO
                     {
-                        Id= p.ParentCategory.ID,
+                        ID= p.ParentCategory.ID,
                         Name = p.ParentCategory.Name,
                     }
                     :null,
@@ -65,7 +59,7 @@ namespace Application.Library.Service
 
     public class ParentCategoryDTO
     {
-        public long Id { get; set; }
+        public long ID { get; set; }
         public string Name { get; set; }
     }
 }

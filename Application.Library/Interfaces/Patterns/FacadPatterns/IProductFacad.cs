@@ -11,5 +11,14 @@ namespace Application.Library.Interfaces.Patterns
         AddNewProductService AddNewProductService { get; }
         IGetAllCategoriesService GetAllCategoriesService { get; }
 
+
+
+        /// <summary>
+        /// دریافت لیست محصولات
+        /// </summary>
+        IGetProductForAdminService GetProductForAdminService { get; }
+        IGetProductDetailForAdminService GetProductDetailForAdminService { get; }
+        IGetProductForSiteService GetProductForSiteService { get; }
+        IGetProductDetailForSiteService GetProductDetailForSiteService { get; }
     }
 }

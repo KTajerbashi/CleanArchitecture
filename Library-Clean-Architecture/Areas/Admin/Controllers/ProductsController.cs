@@ -15,9 +15,14 @@ namespace Library_Clean_Architecture.Admin.Controllers
         {
             _productFacad = productFacad;
         }
-        public IActionResult Index()
+        public IActionResult Index(int Page = 1, int PageSize = 20)
         {
-            return View();
+            return View(_productFacad.GetProductForAdminService.Execute(Page, PageSize).Data);
+        }
+
+        public IActionResult Detail(long Id)
+        {
+            return View(_productFacad.GetProductDetailForAdminService.Execute(Id).Data);
         }
 
         [HttpGet]

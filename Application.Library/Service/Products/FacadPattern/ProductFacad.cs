@@ -48,5 +48,44 @@ namespace Application.Library.Service.Products
             }
         }
 
+
+        private IGetProductForAdminService _getProductForAdminService;
+        public IGetProductForAdminService GetProductForAdminService
+        {
+            get
+            {
+                return _getProductForAdminService = _getProductForAdminService ?? new GetProductForAdminService(_context);
+            }
+        }
+
+
+        private IGetProductDetailForAdminService _getProductDetailForAdminService;
+        public IGetProductDetailForAdminService GetProductDetailForAdminService
+        {
+            get
+            {
+                return _getProductDetailForAdminService = _getProductDetailForAdminService ?? new GetProductDetailForAdminService(_context);
+            }
+        }    
+        
+        
+        private IGetProductForSiteService   _getProductForSiteService;
+        public IGetProductForSiteService  GetProductForSiteService
+        {
+            get
+            {
+                return _getProductForSiteService = _getProductForSiteService ?? new GetProductForSiteService(_context);
+            }
+        }    
+        
+        
+        private IGetProductDetailForSiteService  _getProductDetailForSiteService;
+        public IGetProductDetailForSiteService  GetProductDetailForSiteService
+        {
+            get
+            {
+                return _getProductDetailForSiteService = _getProductDetailForSiteService ?? new GetProductDetailForSiteService(_context);
+            }
+        }
     }
 }
