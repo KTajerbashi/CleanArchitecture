@@ -1,4 +1,5 @@
 ﻿using Application.Library.Service;
+using Application.Library.Service.Products.Commands.AddNewProduct;
 
 namespace Application.Library.Interfaces.Patterns
 {
@@ -6,5 +7,9 @@ namespace Application.Library.Interfaces.Patterns
     {
         AddNewCategoryService AddNewCategoryService { get; }
         IGetCategoriesService GetCategoriesService { get; }
+
+        AddNewProductService AddNewProductService { get; }
+        IGetAllCategoriesService GetAllCategoriesService { get; }
+
     }
 }

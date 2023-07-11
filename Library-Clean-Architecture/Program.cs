@@ -32,6 +32,8 @@ builder.Services.AddScoped<IGetRolesService, GetRolesService>();
 builder.Services.AddScoped<IRemoveUserService, RemoveUserService>();
 builder.Services.AddScoped<IUserLoginServices, UserLoginServices>();
 builder.Services.AddScoped<IGetCategoriesService, GetCategoriesService>();
+builder.Services.AddScoped<IUserSatusChangeService, UserSatusChangeService>();
+builder.Services.AddScoped<IEditUserService, EditUserService>();
 
 //  Facad Injection
 builder.Services.AddScoped<IProductFacad, ProductFacad>();
@@ -61,7 +63,9 @@ app.UseAuthentication();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapControllerRoute(
+  name: "areas",
+  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 app.MapDefaultControllerRoute();
 
 

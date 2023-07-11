@@ -1,0 +1,157 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "ثبت نام کاربر جدید";
+    Layout = "~/Areas/Admin/Views/Shared/_Adminlayout.cshtml";
+    var Roles = ViewBag.Roles;
+}
+
+<section class="basic-elements">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2 class="content-header">فرم ثبت نام کاربر جدید</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title mb-0">اطلاعات کاربر جدید را وارد نمایید</h4>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="px-3">
+                        <div class="form">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicInput">نام و نام خانوادگی</label>
+                                            <input type="text" class="form-control" id="fullname">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="helpInputTop">پست الکترونیک</label>
+                                            <small class="text-muted"><i>info@bugeto.net</i></small>
+                                            <input type="text" class="form-control" id="email">
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="basicSelect">نقش</label>
+                                            <select class="form-control" id="RoleId" name="Role" asp-items="@Roles">
+                                            </select>
+                                            <p><small class="text-muted">سطح دسترسی کاربر مورد نظر را تعیین کنید</small></p>
+
+                                        </fieldset>
+                                    </div>
+
+
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">رمز عبور</label>
+                                            <input type="password" class="form-control" id="Password">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <label for="disabledInput">تکرار رمز عبور</label>
+                                            <input type="password" class="form-control" id="RePassword">
+                                        </fieldset>
+                                    </div>
+
+                                    <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                        <fieldset class="form-group">
+                                            <br />
+                                            <a onclick="Registeruser()" class="btn btn-success col-md-12">تکمیل ثبت نام </a>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+@section Scripts
+{
+
+    <link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
+    <script src="~/Sweetalert2/sweetalert2.min.js"></script>
+
+
+    <script>
+        function Registeruser() {
+            swal.fire({
+                title: 'ثبت نام کاربر',
+                text: "آیا میخواهید ثبت نام کاربر را انجام دهید؟",
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'بله ثبت نام انجام شود',
+                cancelButtonText: 'خیر'
+            }).then((result) => {
+                if (result.value) {
+
+                    var fullname = $("#fullname").val();
+                    var email = $("#email").val();
+                    var RoleId = $("#RoleId").val();
+                    var Password = $("#Password").val();
+                    var RePassword = $("#RePassword").val();
+
+                    var postData = {
+                        'fullname': fullname,
+                        'email': email,
+                        'RoleId': RoleId,
+                        'Password': Password,
+                        'RePassword': RePassword,
+                    };
+
+                    $.ajax({
+                        contentType: 'application/x-www-form-urlencoded',
+                        dataType: 'json',
+                        type: "POST",
+                        url: "Create",
+                        data: postData,
+                        success: function (data) {
+                            if (data.isSuccess == true) {
+                                swal.fire(
+                                    'موفق!',
+                                    data.message,
+                                    'success'
+                                ).then(function (isConfirm) {
+                                    location.reload();
+                                });
+
+
+                            }
+                            else {
+
+                                swal.fire(
+                                    'هشدار!',
+                                    data.message,
+                                    'warning'
+                                ) ;
+
+                            }
+                        },
+                        error: function (request, status, error) {
+                            alert(request.responseText);
+                        }
+
+                    });
+
+                }
+            })
+        }
+    </script>
+}

@@ -1,8 +1,2036 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Library-Clean-Architecture.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Library-Clean-Architecture.bundle.scp.css"
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\css\\app.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\css\\persian-datepicker.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\css\\persian-datepicker.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\css\\style-rtl.alpha6.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\css\\style-rtl.alpha6.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Bold.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Bold.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Bold.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Bold.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Bold.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Bold.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Light.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Light.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Light.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Light.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Light.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Light.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Light.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Medium.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Medium.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Medium.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Medium.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Medium.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Medium.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_UltraLight.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_UltraLight.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_UltraLight.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_UltraLight.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_UltraLight.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_UltraLight.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_UltraLight.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\IRANSansWeb_UltraLight.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Bold.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Bold.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Bold.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Bold.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Bold.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Bold.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Light.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Light.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Light.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Light.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Light.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Light.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Light.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Medium.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Medium.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Medium.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Medium.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Medium.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Medium.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_UltraLight.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_UltraLight.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_UltraLight.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_UltraLight.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_UltraLight.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_UltraLight.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_UltraLight.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\IRANSansWeb_UltraLight.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\feather2467.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\feather2467.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\feather2467.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\feather2467.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\feather2467.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\feather2467.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\feather2467.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\fonts\\feather2467.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\feather\\style.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\feather\\style.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\font-awesome\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\font-awesome\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\meteocons\\fonts\\meteoconsddea.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\meteocons\\fonts\\meteoconsddea.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\meteocons\\fonts\\meteoconsddea.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\meteocons\\fonts\\meteoconsddea.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\meteocons\\style.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\meteocons\\style.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\simple-line-icons\\fonts\\Simple-Line-Icons.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\simple-line-icons\\fonts\\Simple-Line-Icons.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\simple-line-icons\\fonts\\Simple-Line-Icons.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\simple-line-icons\\fonts\\Simple-Line-Icons.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\simple-line-icons\\fonts\\Simple-Line-Icons.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\simple-line-icons\\fonts\\Simple-Line-Icons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\simple-line-icons\\fonts\\Simple-Line-Iconsd41d.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\simple-line-icons\\fonts\\Simple-Line-Iconsd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\fonts\\simple-line-icons\\style.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\fonts\\simple-line-icons\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\flags\\br.png",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\flags\\br.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\flags\\de.png",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\flags\\de.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\flags\\es.png",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\flags\\es.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\flags\\us.png",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\flags\\us.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\1.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\10.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\11.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\12.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\14.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\16.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\16.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\17.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\17.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\18.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\18.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\19.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\2.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\20.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\20.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\21.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\21.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\22.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\22.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\23.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\23.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\24.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\24.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\25.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\25.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\26.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\26.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\27.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\27.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\28.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\28.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\29.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\29.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\3.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\30.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\30.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\31.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\31.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\32.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\32.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\33.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\33.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\4.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\5.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\6.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\7.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\8.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\gallery\\9.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\gallery\\9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\ico\\apple-icon-120.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\ico\\apple-icon-120.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\ico\\apple-icon-152.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\ico\\apple-icon-152.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\ico\\apple-icon-60.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\ico\\apple-icon-60.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\ico\\apple-icon-76.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\ico\\apple-icon-76.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\ico\\favicon-32.png",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\ico\\favicon-32.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\logo.png",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\logos\\logo-big-black.png",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\logos\\logo-big-black.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\logos\\logo-color-big.png",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\logos\\logo-color-big.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\pages\\sativa.png",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\pages\\sativa.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\pages\\signature-scan.png",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\pages\\signature-scan.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\01.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\02.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\03.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\04.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\05.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\05.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\1.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\14.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\15.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\15.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\16.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\16.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\17.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\17.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\2.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\3.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\4.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\5.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\7.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\photos\\8.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\photos\\8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portfolio\\portfolio-1.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portfolio\\portfolio-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portfolio\\portfolio-2.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portfolio\\portfolio-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portfolio\\portfolio-3.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portfolio\\portfolio-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portfolio\\portfolio-4.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portfolio\\portfolio-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portfolio\\portfolio-5.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portfolio\\portfolio-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portfolio\\portfolio-6.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portfolio\\portfolio-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\medium\\avatar-m-9.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\medium\\avatar-m-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-1.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-11.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-12.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-14.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-15.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-15.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-16.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-16.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-17.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-17.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-18.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-18.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-19.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-20.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-20.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-21.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-21.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-22.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-22.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-23.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-23.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-24.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-24.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-27.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-27.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-3.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-4.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-5.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-6.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-7.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-8.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-9.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\portrait\\small\\avatar-s-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\sidebar-bg\\01.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\sidebar-bg\\01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\sidebar-bg\\02.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\sidebar-bg\\02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\sidebar-bg\\03.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\sidebar-bg\\03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\sidebar-bg\\04.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\sidebar-bg\\04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\sidebar-bg\\05.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\sidebar-bg\\05.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\sidebar-bg\\06.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\sidebar-bg\\06.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\sidebar-bg\\07.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\sidebar-bg\\07.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\sidebar-bg\\08.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\sidebar-bg\\08.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\tour\\cross.png",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\tour\\cross.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\img\\width-600\\portfolio-14.jpg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\img\\width-600\\portfolio-14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\app-sidebar.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\app-sidebar.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\chartist.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\chartist.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\chartjs.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\chartjs.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\chat.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\chat.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\coming-soon.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\coming-soon.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\components-modal.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\components-modal.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\customizer.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\customizer.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\dashboard-analytics.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\dashboard-analytics.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\dashboard-ecommerce.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\dashboard-ecommerce.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\data-tables\\datatable-advanced.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\data-tables\\datatable-advanced.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\data-tables\\datatable-api.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\data-tables\\datatable-api.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\data-tables\\datatable-basic.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\data-tables\\datatable-basic.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\data-tables\\datatable-styling.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\data-tables\\datatable-styling.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\data-tables\\datatables-sources.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\data-tables\\datatables-sources.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\draggable.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\draggable.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\dropzone.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\dropzone.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\form-typeahead.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\form-typeahead.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\form-validation.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\form-validation.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\fullcalendar.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\fullcalendar.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\horizontal-timeline.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\horizontal-timeline.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\maps.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\maps.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\notification-sidebar.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\notification-sidebar.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\persian-datepicker.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\persian-datepicker.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\pick-a-datetime.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\pick-a-datetime.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\popover.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\popover.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\quill.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\quill.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\rating.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\rating.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\sweet-alerts.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\sweet-alerts.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\switch.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\switch.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\tagging.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\tagging.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\taskboard.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\taskboard.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\toastr.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\toastr.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\tooltip.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\tooltip.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\tour.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\tour.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\js\\wizard-steps.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\js\\wizard-steps.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\chartist.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\chartist.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\dragula.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\dragula.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\dropzone.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\dropzone.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular-4.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular-4.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold-4.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold-4.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular-4.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular-4.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold-4.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold-4.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic-4.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic-4.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic.woff2",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular-4.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular-4.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular-4.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular-4.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular-4.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular-4.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular-4.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular-4.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular-4.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular-4.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular-2.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular-2.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular-3.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular-3.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular-4.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular-4.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular.html",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular.html"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\fullcalendar.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\fullcalendar.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\hopscotch.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\hopscotch.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\katex.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\katex.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\monokai-sublime.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\monokai-sublime.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\perfect-scrollbar.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\perfect-scrollbar.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\pickadate\\pickadate.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\pickadate\\pickadate.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\prism.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\prism.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\quill.bubble.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\quill.bubble.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\quill.snow.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\quill.snow.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\raty\\fonts\\raty.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\raty\\fonts\\raty.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\raty\\fonts\\raty.svg",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\raty\\fonts\\raty.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\raty\\fonts\\raty.ttf",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\raty\\fonts\\raty.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\raty\\fonts\\raty.woff",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\raty\\fonts\\raty.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\raty\\fonts\\ratyd41d.eot",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\raty\\fonts\\ratyd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\raty\\jquery.raty.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\raty\\jquery.raty.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\sweetalert2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\switchery.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\switchery.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\tables\\datatable\\datatables.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\tables\\datatable\\datatables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\tables\\datatable\\responsive.dataTables.min.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\tables\\datatable\\responsive.dataTables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\tagging.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\tagging.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\toastr.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\toastr.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\css\\wizard.css",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\css\\wizard.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\chart.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\chart.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\chartist.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\chartist.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\core\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\core\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\core\\jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\core\\jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\core\\popper.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\core\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\buttons.flash.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\buttons.flash.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\buttons.html5.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\buttons.html5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\buttons.print.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\buttons.print.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\dataTables.buttons.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\dataTables.buttons.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\dataTables.responsive.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\dataTables.responsive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\datatables.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\datatables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\jszip.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\jszip.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\pdfmake.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\pdfmake.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\vfs_fonts.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\datatable\\vfs_fonts.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\dragula.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\dragula.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\dropzone.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\dropzone.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\fullcalendar.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\fullcalendar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\gmaps.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\gmaps.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\highlight.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\highlight.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\hopscotch.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\hopscotch.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\jqBootstrapValidation.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\jqBootstrapValidation.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\jquery-ui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\jquery.countdown.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\jquery.countdown.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\jquery.matchHeight-min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\jquery.matchHeight-min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\jquery.raty.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\jquery.raty.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\jquery.steps.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\jquery.steps.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\katex.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\katex.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\moment.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\moment.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\pace\\pace.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\pace\\pace.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\perfect-scrollbar.jquery.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\perfect-scrollbar.jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\pickadate\\legacy.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\pickadate\\legacy.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\pickadate\\picker.date.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\pickadate\\picker.date.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\pickadate\\picker.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\pickadate\\picker.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\pickadate\\picker.time.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\pickadate\\picker.time.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\prism.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\prism.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\quill.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\quill.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\screenfull.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\screenfull.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\sweetalert2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\switchery.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\switchery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\tagging.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\tagging.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\toastr.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\toastr.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\typeahead\\bloodhound.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\typeahead\\bloodhound.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\typeahead\\handlebars.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\typeahead\\handlebars.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\AdminTemplate\\app-assets\\vendors\\js\\typeahead\\typeahead.bundle.min.js",
+      "PackagePath": "staticwebassets\\AdminTemplate\\app-assets\\vendors\\js\\typeahead\\typeahead.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\css\\main.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\main.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\responsive.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\bootstrap-slider.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\bootstrap-slider.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\bootstrap.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\lightgallery.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\lightgallery.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\materialdesignicons.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\materialdesignicons.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\nice-select.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\nice-select.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\noUISlider.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\noUISlider.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\css\\vendor\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\css\\vendor\\owl.carousel.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Black.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Black.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Bold.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Bold.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Light.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Light.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Medium.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_Medium.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_UltraLight.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\eot\\IRANSansWeb_UltraLight.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Black.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Black.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Bold.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Bold.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Light.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Light.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Medium.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_Medium.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_UltraLight.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\ttf\\IRANSansWeb_UltraLight.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Black.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Black.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Bold.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Bold.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Light.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Light.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Medium.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_Medium.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_UltraLight.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff2\\IRANSansWeb_UltraLight.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Black.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Black.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Bold.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Bold.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Light.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Light.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Medium.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_Medium.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_UltraLight.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\IRANSans\\woff\\IRANSansWeb_UltraLight.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\lightgallery\\lg.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.eot",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.eot"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.ttf",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.woff",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.woff"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.woff2",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\fonts\\materialdesignicons-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\404.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\404.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-1.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-10.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-11.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-2.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-3.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-4.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-5.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-6.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-7.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-8.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\adplacement\\a-9.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\adplacement\\a-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\blog\\2017 Home Selling Results.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\2017 Home Selling Results.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\blog\\fortnite-battle-royale-iphone.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\fortnite-battle-royale-iphone.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\blog\\fortnite-battle-royale-money-revenue-earnings-2018-how-much.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\fortnite-battle-royale-money-revenue-earnings-2018-how-much.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\blog\\inRqLEr.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\inRqLEr.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\blog\\iphone-7-plus-water-damage-repair-.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\iphone-7-plus-water-damage-repair-.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\blog\\shutterstock.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\shutterstock.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\blog\\women-calligrapher-in-cozy-home-working.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\blog\\women-calligrapher-in-cozy-home-working.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\brand\\adata.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\adata.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\brand\\huawei.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\huawei.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\brand\\nokia.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\nokia.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\brand\\panasonic.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\panasonic.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\brand\\parskhazar.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\parskhazar.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\brand\\samsung.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\samsung.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\brand\\shahab.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\shahab.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\brand\\xvison.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\brand\\xvison.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\cover\\laptop-cover.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\cover\\laptop-cover.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\footer\\license\\L-1.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\footer\\license\\L-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\footer\\license\\L-2.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\footer\\license\\L-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\loading.gif",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\logo.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\man.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\man.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\child.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\child.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\cup.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\cup.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\edit.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\edit.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\home.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\home.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\makeup.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\makeup.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\print.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\print.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\smartphone.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\smartphone.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\category\\suit.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\category\\suit.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\cosmetic.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\cosmetic.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\digital.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\digital.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\img-card-2.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\img-card-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\img-card.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\img-card.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\menu-main\\kitchen.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\menu-main\\kitchen.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\contact-us.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\contact-us.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\delivery.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\delivery.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\origin-guarantee.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\origin-guarantee.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\payment-terms.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\payment-terms.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-1.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-2.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-3.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-4.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-5.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-6.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-7.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10-big-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\product-img\\product-img-note10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\return-policy.svg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\return-policy.svg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\tab-content\\note10-1.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\tab-content\\note10-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\tab-content\\note10-2.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\tab-content\\note10-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\tab-content\\note10-3.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\tab-content\\note10-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\tab-content\\note10-4.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\tab-content\\note10-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\tab-content\\note10-5.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\tab-content\\note10-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\page-single-product\\tab-content\\note10-6.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\page-single-product\\tab-content\\note10-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\shopping-cart.png",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\shopping-cart.png"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-amazing\\as-1.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-amazing\\as-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-amazing\\as-2.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-amazing\\as-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-amazing\\as-3.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-amazing\\as-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-amazing\\as-4.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-amazing\\as-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-amazing\\as-5.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-amazing\\as-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-main\\sm-1.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-main\\sm-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-main\\sm-2.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-main\\sm-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-main\\sm-3.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-main\\sm-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-main\\sm-4.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-main\\sm-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-main\\sm-5.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-main\\sm-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-moment\\sm-1.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-moment\\sm-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-moment\\sm-2.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-moment\\sm-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-moment\\sm-3.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-moment\\sm-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-moment\\sm-4.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-moment\\sm-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-moment\\sm-5.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-moment\\sm-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\Avocado.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\Avocado.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\DNR 290T-366T.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\DNR 290T-366T.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\ECM2013.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\ECM2013.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\Galaxy-S10-SM-G973F.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\Galaxy-S10-SM-G973F.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\P-Smart-2019.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\P-Smart-2019.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\SL1200_-300x300.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\SL1200_-300x300.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\SWF-40R.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\SWF-40R.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\Samsung-S10Plus.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\Samsung-S10Plus.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\Stove-lopez.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\Stove-lopez.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\asus-laptop.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\asus-laptop.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\boxing.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\boxing.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\btt.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\btt.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\camera-canon-4000D.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\camera-canon-4000D.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\camera-instax-mini-70.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\camera-instax-mini-70.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\camera-nikon-3500D.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\camera-nikon-3500D.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\camera-nikon.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\camera-nikon.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\camera-samsung.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\camera-samsung.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\computer-appel.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\computer-appel.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\honer.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\honer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\huawei-p-smart.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\huawei-p-smart.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\huawei.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\huawei.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\iphone-11-pro-max.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\iphone-11-pro-max.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\iphone-xs-max-space.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\iphone-xs-max-space.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\mitbook.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\mitbook.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\t-shirt-1.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\t-shirt-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\t-shirt-2.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\t-shirt-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\t-shirt-3.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\t-shirt-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\images\\slider-product\\zenbook.jpg",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\images\\slider-product\\zenbook.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\ResizeSensor.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\ResizeSensor.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\bootstrap-slider.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\bootstrap-slider.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\bootstrap.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\countdown.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\countdown.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\jquery-3.2.1.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\jquery-3.2.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\jquery.countdown.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\jquery.countdown.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\jquery.ez-plus.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\jquery.ez-plus.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\jquery.nice-select.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\jquery.nice-select.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\lightgallery-all.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\lightgallery-all.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\nouislider.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\nouislider.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\theia-sticky-sidebar.min.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\theia-sticky-sidebar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\SiteTemplate\\assets\\js\\vendor\\wNumb.js",
+      "PackagePath": "staticwebassets\\SiteTemplate\\assets\\js\\vendor\\wNumb.js"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\Sweetalert2\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\Sweetalert2\\sweetalert2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\Sweetalert2\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\Sweetalert2\\sweetalert2.min.js"
     },
     {
       "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\css\\site.css",
@@ -11,6 +2039,14 @@
     {
       "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\images\\ProductImages\\6372965868834451536t8Zh249QiFmVnkQdCCtHK.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductImages\\6372965868834451536t8Zh249QiFmVnkQdCCtHK.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\images\\ProductImages\\63729658713733979811738344_783.jpg",
+      "PackagePath": "staticwebassets\\images\\ProductImages\\63729658713733979811738344_783.jpg"
     },
     {
       "Id": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\wwwroot\\js\\site.js",

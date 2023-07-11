@@ -16,6 +16,9 @@ namespace Persistance.Library.DbContexts
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductImages> ProductImages { get; set; }
+        public virtual DbSet<ProductFeatures> ProductFeatures { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

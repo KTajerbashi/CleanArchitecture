@@ -1,44 +1,1169 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Library_Clean_Architecture</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Library_Clean_Architecture.styles.css" asp-append-version="true" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه اینترنتی کالا مارکت</title>
+    <!-- font---------------------------------------->
+    <link rel="stylesheet" href="~/SiteTemplate/assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="~/SiteTemplate/assets/css/vendor/materialdesignicons.css">
+    <!-- plugin-------------------------------------->
+    <link rel="stylesheet" href="~/SiteTemplate/assets/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="~/SiteTemplate/assets/css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/SiteTemplate/assets/css/vendor/nice-select.css">
+    <!-- main-style---------------------------------->
+    <link rel="stylesheet" href="~/SiteTemplate/assets/css/main.css">
+    <link rel="stylesheet" href="~/SiteTemplate/assets/css/responsive.css">
 </head>
-<body dir="rtl">
-    <style>
-        .input-search{
-            background: rgba(0,0,0,0.1);
-            color: #eee;
-            outline: none;
-            border: 1px solid #eee0;
-            border-bottom: 1px solid #eee
-        }
-        .input-search::placeholder{
-            color: rgba(255,255,255,0.8);
-        }
-        a{
-            text-decoration: none !important;
-        }
-    </style>
- 
-    <div class="container-fluid">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+<body>
+    <!-- header-------------------------------->
+    <header class="header-main">
+        <div class="container-main">
+            <div class="d-block">
+                <section class="h-main-row">
+                    <div class="col-lg-9 col-xs-12 pr">
+                        <div class="header-right">
+                            <div class="col-lg-3 pr">
+                                <div class="header-logo row text-right">
+                                    <a href="#">
+                                        <img src="~/SiteTemplate/assets/images/logo.png" alt="دیجی اسمارت">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 pl">
+                                <div class="header-search row text-right">
+                                    <div class="header-search-box">
+                                        <form action="#" class="form-search">
+                                            <input type="search" class="header-search-input" name="search-input" placeholder="نام کالا، برند و یا دسته مورد نظر خود را جستجو کنید…">
+                                            <div class="action-btns">
+                                                <button class="btn btn-search" type="submit">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                                <div class="search-filter">
+                                                    <div class="form-ui">
+                                                        <div class="custom-select-ui">
+                                                            <select class="right">
+                                                                <option>همه دسته ها</option>
+                                                                <option>کالای دیجیتال</option>
+                                                                <option>آرایشی بهداشتی</option>
+                                                                <option>ابزاری اداری</option>
+                                                                <option>مد پوشاک</option>
+                                                                <option>خانه آشپز خانه</option>
+                                                                <option>لوازم تحریر و هنر</option>
+                                                                <option>کودک و نوزاد</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-xs-12 pl">
+                        <div class="header-left">
+                            <div class="header-account text-left">
+                                <div class="d-block">
+                                    <div class="account-box">
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <div class="nav-account d-block pl">
+                                                <span class="icon-account">
+                                                    <img src="~/SiteTemplate/assets/images/man.png" class="avator">
+                                                </span>
+                                                <span class="title-account">@User.Identity.Name</span>
+                                                <div class="dropdown-menu">
+                                                    <ul class="account-uls mb-0">
+                                                        <li class="account-item">
+                                                            <a href="#" class="account-link">پنل کاربری</a>
+                                                        </li>
+                                                        <li class="account-item">
+                                                            <a href="#" class="account-link">سفارشات من</a>
+                                                        </li>
+                                                        <li class="account-item">
+                                                            <a href="#" class="account-link">تنظیمات</a>
+                                                        </li>
+                                                        <li class="account-item">
+                                                            <a href="~/authentication/SignOut" class="account-link">خروج</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="nav-account d-block pl">
+                                                <a href="~/authentication/signup">
+                                                    <span class="title-account">ثبت نام</span>
+                                                </a>
+                                             
+                                                <a href="~/authentication/signin">
+                                                    <span class="title-account">ورود</span>
+                                                </a>
+                                            </div>
+                                        }
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Library_Clean_Architecture - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div>
+                    <nav class="header-main-nav">
+                        <div class="d-block">
+                            <div class="align-items-center">
+                                <ul class="menu-ul mega-menu-level-one">
+                                    <li id="nav-menu-item" class="menu-item nav-overlay">
+                                        <a href="#" class="current-link-menu">
+                                            کالای دیجیتال
+                                        </a>
+                                        <ul class="sub-menu is-mega-menu mega-menu-level-two">
+                                            <li class="menu-mega-item menu-item-type-mega-menu">
+                                                <a href="#" class="mega-menu-link">
+                                                    موبایل
+                                                </a>
+                                                <ul class="sub-menu mega-menu-level-three">
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            اپل
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            سامسونگ
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            نوکیا
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ایسوس
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            هواوی
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            الجی
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            اچ تی سی
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            سونی
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu">
+                                                <a href="#" class="mega-menu-link">
+                                                    تبلت و کتابخوان
+                                                </a>
+                                                <ul class="sub-menu mega-menu-level-three">
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            اپل
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            سامسونگ
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            نوکیا
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ایسوس
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ایسر
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            الجی
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            اچ تی سی
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu">
+                                                <a href="#" class="mega-menu-link">
+                                                    کامپیوتر و تجهیزات جانبی
+                                                </a>
+                                                <ul class="sub-menu mega-menu-level-three">
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            هارد دیسک
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ماوس
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            کیبورد
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            نمایشگر
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            پردازنده
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            مادربرد
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            کارت گرافیک
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu">
+                                                <a href="#" class="mega-menu-link">
+                                                    دوربین
+                                                </a>
+                                                <ul class="sub-menu mega-menu-level-three">
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            دوربین عکاسی
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            دوربین فیلم برداری
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            تلسکوپ
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            میکروسکوپ و ذره بین
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            لوازم جانبی عکاسی و فیلم برداری
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <div class="bg-image">
+                                                <img src="~/SiteTemplate/assets/images/menu-main/digital.png" alt="">
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li id="nav-menu-item" class="menu-item nav-overlay" data-id="190">
+                                        <a href="#" class="current-link-menu">
+                                            آرایشی و بهداشتی
+                                        </a>
+                                        <ul class="sub-menu is-mega-menu mega-menu-level-two">
+                                            <li class="menu-mega-item menu-item-type-mega-menu">
+                                                <a href="#" class="mega-menu-link">
+                                                    لوازم آرایشی
+                                                </a>
+                                                <ul class="sub-menu mega-menu-level-three">
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            آرایش چشم و ابرو
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            آرایش لب
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            آرایش صورت
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            تجهیزات جانبی آرایش
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            سنگ پا و زیبایی ناخن
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            مواد آرایش مو
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            کرم و مراقبت پوست
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            شامپو و مراقبت مو
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu">
+                                                <a href="#" class="mega-menu-link">
+                                                    لوازم شخصی برقی
+                                                </a>
+                                                <ul class="sub-menu mega-menu-level-three">
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ماشین اصلاح صورت
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ماشین اصلاح سر
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            سشوار
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            اصلاح بدن آقایان
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            اصلاح موی گوش، بینی و ابرو
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            برس پاک سازی
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            اتو مو و حالت دهنده
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu">
+                                                <a href="#" class="mega-menu-link">
+                                                    لوازم بهداشتی
+                                                </a>
+                                                <ul class="sub-menu mega-menu-level-three">
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            کرم و مراقبت پوست
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            شامپو و مراقبت مو
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            بهداشت دهان و دندان
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            بهداشت و مراقبت بدن
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ضد تعریق
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu">
+                                                <a href="#" class="mega-menu-link">
+                                                    ابزار سلامت و طبی
+                                                </a>
+                                                <ul class="sub-menu mega-menu-level-three">
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            مچ بند و ساعت هوشمند
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ترازو
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            کالای خواب و استراحت طبی
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            تست قند خون
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            تب سنج
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            فشارسنج
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ابزار مراقبت پا
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            نمایشگر ضربان قلب
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <div class="bg-image">
+                                                <img src="~/SiteTemplate/assets/images/menu-main/cosmetic.png" alt="">
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li id="nav-menu-item" class="menu-item">
+                                        <a href="#" class="current-link-menu">
+                                            ابزار و اداری
+                                        </a>
+                                    </li>
+                                    <li id="nav-menu-item" class="menu-item">
+                                        <a href="#" class="current-link-menu">
+                                            مد و پوشاک
+                                        </a>
+                                    </li>
+                                    <li id="nav-menu-item" class="menu-item nav-overlay">
+                                        <a href="#" class="current-link-menu">
+                                            خانه و آشپزخانه
+                                        </a>
+                                        <ul class="sub-menu is-mega-menu mega-menu-level-two">
+                                            <li class="menu-mega-item menu-item-type-mega-menu">
+                                                <a href="#" class="mega-menu-link">
+                                                    لوازم آرایشی
+                                                </a>
+                                                <ul class="sub-menu mega-menu-level-three">
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            آرایش چشم و ابرو
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            آرایش لب
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            آرایش صورت
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            تجهیزات جانبی آرایش
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            سنگ پا و زیبایی ناخن
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            مواد آرایش مو
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            کرم و مراقبت پوست
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            شامپو و مراقبت مو
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu">
+                                                <a href="#" class="mega-menu-link">
+                                                    لوازم شخصی برقی
+                                                </a>
+                                                <ul class="sub-menu mega-menu-level-three">
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ماشین اصلاح صورت
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ماشین اصلاح سر
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            سشوار
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            اصلاح بدن آقایان
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            اصلاح موی گوش، بینی و ابرو
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            برس پاک سازی
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            اتو مو و حالت دهنده
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu">
+                                                <a href="#" class="mega-menu-link">
+                                                    لوازم بهداشتی
+                                                </a>
+                                                <ul class="sub-menu mega-menu-level-three">
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            کرم و مراقبت پوست
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            شامپو و مراقبت مو
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            بهداشت دهان و دندان
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            بهداشت و مراقبت بدن
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ضد تعریق
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu">
+                                                <a href="#" class="mega-menu-link">
+                                                    ابزار سلامت و طبی
+                                                </a>
+                                                <ul class="sub-menu mega-menu-level-three">
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            مچ بند و ساعت هوشمند
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ترازو
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            کالای خواب و استراحت طبی
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            تست قند خون
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            تب سنج
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            فشارسنج
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            ابزار مراقبت پا
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item-three">
+                                                        <a href="#">
+                                                            نمایشگر ضربان قلب
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <div class="bg-image">
+                                                <img src="~/SiteTemplate/assets/images/menu-main/kitchen.png" alt="">
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li id="nav-menu-item" class="menu-item nav-overlay">
+                                        <a href="#" class="current-link-menu">
+                                            لوازم تحریر و هنر
+                                        </a>
+                                        <ul class="sub-menu is-mega-menu-small">
+                                            <li class="menu-mega-item menu-item-type-mega-menu item-small">
+                                                <a href="#" class="mega-menu-link">
+                                                    کتاب و مجله
+                                                </a>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu item-small">
+                                                <a href="#" class="mega-menu-link">
+                                                    کتاب صوتی
+                                                </a>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu item-small">
+                                                <a href="#" class="mega-menu-link">
+                                                    محتوای آموزشی
+                                                </a>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu item-small">
+                                                <a href="#" class="mega-menu-link">
+                                                    لوازم تحریر
+                                                    <i class="fa fa-angle-left"></i>
+                                                </a>
+                                                <ul class="sub-menu is-mega-menu-small-three">
+                                                    <li class="menu-mega-item menu-item-type-mega-menu item-small-three">
+                                                        <a href="#">
+                                                            چراغ مطالعه
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item menu-item-type-mega-menu item-small-three">
+                                                        <a href="#">
+                                                            نوشت افزار
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item menu-item-type-mega-menu item-small-three">
+                                                        <a href="#">
+                                                            دفتر و کاغذ
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item menu-item-type-mega-menu item-small-three">
+                                                        <a href="#">
+                                                            میز تحریر
+                                                        </a>
+                                                    </li>
+                                                    <li class="menu-mega-item menu-item-type-mega-menu item-small-three">
+                                                        <a href="#">
+                                                            البوم عکس
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-mega-item menu-item-type-mega-menu item-small">
+                                                <a href="#" class="mega-menu-link">
+                                                    نرم افزار
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li id="nav-menu-item" class="menu-item">
+                                        <a href="#" class="current-link-menu">
+                                            کودک و نوزاد
+                                        </a>
+                                    </li>
+                                    <div class="divider-space-card d-block">
+                                        <div class="header-cart-basket">
+                                            <a href="#" class="cart-basket-box">
+                                                <span class="icon-cart">
+                                                    <i class="mdi mdi-cart"></i>
+                                                </span>
+                                                <span class="title-cart">سبد خرید</span>
+                                                <span class="price-cart">
+                                                    25,000,000
+                                                    <span>تومان</span>
+                                                </span>
+                                                <span class="count-cart">2</span>
+                                            </a>
+                                            <div class="widget-shopping-cart">
+                                                <div class="widget-shopping-cart-content">
+                                                    <ul class="product-list-widget">
+                                                        <li class="mini-cart-item">
+                                                            <div class="mini-cart-item-content">
+                                                                <a href="#" class="mini-cart-item-close">
+                                                                    <i class="fa fa-trash"></i>
+                                                                </a>
+                                                                <a href="#" class="mini-cart-item-image d-block">
+                                                                    <img src="~/SiteTemplate/assets/images/menu-main/img-card.jpg">
+                                                                </a>
+                                                                <span class="product-name-card">لپ تاپ چووی الترابوک 14 اینچ پرو</span>
+                                                                <div class="variation">
+                                                                    <span class="variation-n">فروشنده : </span>
+                                                                    <p class="mb-0">دیجی اسمارت </p>
+                                                                </div>
+                                                                <div class="quantity">
+                                                                    <span class="quantity-Price-amount">
+                                                                        15,000,000
+                                                                        <span>تومان</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="mini-cart-item">
+                                                            <div class="mini-cart-item-content">
+                                                                <a href="#" class="mini-cart-item-close">
+                                                                    <i class="fa fa-trash"></i>
+                                                                </a>
+                                                                <a href="#" class="mini-cart-item-image d-block">
+                                                                    <img src="~/SiteTemplate/assets/images/menu-main/img-card-2.jpg">
+                                                                </a>
+                                                                <span class="product-name-card">هواوای میت بوک X پرو 13.9 اینچ</span>
+                                                                <div class="variation">
+                                                                    <span class="variation-n">فروشنده : </span>
+                                                                    <p class="mb-0">دیجی اسمارت </p>
+                                                                </div>
+                                                                <div class="quantity">
+                                                                    <span class="quantity-Price-amount">
+                                                                        10,000,000
+                                                                        <span>تومان</span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="mini-card-total">
+                                                        <strong>قیمت کل : </strong>
+                                                        <span class="price-total">
+                                                            25,000,000
+                                                            <span>تومان</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="mini-card-button">
+                                                        <a href="cart.html" class="view-card">مشاهده سبد خرید</a>
+                                                        <a href="checkout.html" class="card-checkout">تسویه حساب</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <!--    responsive-megamenu-mobile----------------->
+                <nav class="sidebar">
+                    <div class="nav-header">
+                        <div class="header-cover"></div>
+                        <div class="logo-wrap">
+                            <a class="logo-icon" href="#"><img alt="logo-icon" src="~/SiteTemplate/assets/images/logo.png" width="40"></a>
+                        </div>
+                    </div>
+                    <ul class="nav-categories ul-base">
+                        <li>
+                            <a href="#" class="collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><i class="mdi mdi-chevron-down"></i>کالای دیجیتال</a>
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" style="">
+                                <ul>
+                                    <li class="has-sub">
+                                        <a href="#" class="category-level-2">لوازم جانبی گوشی</a>
+                                        <ul>
+                                            <li><a href="#" class="category-level-3">کیف و کاور گوشی</a></li>
+                                            <li><a href="#" class="category-level-3">پاور بانک(شارژر همراه)</a></li>
+                                            <li><a href="#" class="category-level-3">پایه نگهدارنده گوشی</a></li>
+                                            <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="#" class="category-level-2">گوشی موبایل</a>
+                                        <ul>
+                                            <li><a href="#" class="category-level-3">سامسونگ</a></li>
+                                            <li><a href="#" class="category-level-3">هوآوی</a></li>
+                                            <li><a href="#" class="category-level-3">اپل</a></li>
+                                            <li><a href="#" class="category-level-3">شیائومی</a></li>
+                                            <li><a href="#" class="category-level-3">آنر</a></li>
+                                            <li><a href="#" class="category-level-3">نوکیا</a></li>
+                                            <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="#" class="category-level-2">دوربین</a>
+                                        <ul>
+                                            <li><a href="#" class="category-level-3">دوربین عکاسی دیجیتال</a></li>
+                                            <li><a href="#" class="category-level-3">دوربین ورزشی و فیلم برداری</a></li>
+                                            <li><a href="#" class="category-level-3">دوربین چاپ سریع</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="mdi mdi-chevron-down"></i>آرایشی و بهداشتی</a>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample" style="">
+                                <ul>
+                                    <li class="has-sub">
+                                        <a href="#" class="category-level-2">لوازم جانبی گوشی</a>
+                                        <ul>
+                                            <li><a href="#" class="category-level-3">کیف و کاور گوشی</a></li>
+                                            <li><a href="#" class="category-level-3">پاور بانک(شارژر همراه)</a></li>
+                                            <li><a href="#" class="category-level-3">پایه نگهدارنده گوشی</a></li>
+                                            <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="#" class="category-level-2">گوشی موبایل</a>
+                                        <ul>
+                                            <li><a href="#" class="category-level-3">سامسونگ</a></li>
+                                            <li><a href="#" class="category-level-3">هوآوی</a></li>
+                                            <li><a href="#" class="category-level-3">اپل</a></li>
+                                            <li><a href="#" class="category-level-3">شیائومی</a></li>
+                                            <li><a href="#" class="category-level-3">آنر</a></li>
+                                            <li><a href="#" class="category-level-3">نوکیا</a></li>
+                                            <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="#" class="category-level-2">دوربین</a>
+                                        <ul>
+                                            <li><a href="#" class="category-level-3">دوربین عکاسی دیجیتال</a></li>
+                                            <li><a href="#" class="category-level-3">دوربین ورزشی و فیلم برداری</a></li>
+                                            <li><a href="#" class="category-level-3">دوربین چاپ سریع</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#">ابزار و اداری</a></li>
+                        <li><a href="#">مد و پوشاک</a></li>
+                        <li>
+                            <a href="#" class="collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="mdi mdi-chevron-down"></i>خانه و آشپزخانه</a>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample" style="">
+                                <ul>
+                                    <li class="has-sub">
+                                        <a href="#" class="category-level-2">لوازم جانبی گوشی</a>
+                                        <ul>
+                                            <li><a href="#" class="category-level-3">کیف و کاور گوشی</a></li>
+                                            <li><a href="#" class="category-level-3">پاور بانک(شارژر همراه)</a></li>
+                                            <li><a href="#" class="category-level-3">پایه نگهدارنده گوشی</a></li>
+                                            <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="#" class="category-level-2">گوشی موبایل</a>
+                                        <ul>
+                                            <li><a href="#" class="category-level-3">سامسونگ</a></li>
+                                            <li><a href="#" class="category-level-3">هوآوی</a></li>
+                                            <li><a href="#" class="category-level-3">اپل</a></li>
+                                            <li><a href="#" class="category-level-3">شیائومی</a></li>
+                                            <li><a href="#" class="category-level-3">آنر</a></li>
+                                            <li><a href="#" class="category-level-3">نوکیا</a></li>
+                                            <li><a href="#" class="category-level-3">همه موارد این دسته</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-sub">
+                                        <a href="#" class="category-level-2">دوربین</a>
+                                        <ul>
+                                            <li><a href="#" class="category-level-3">دوربین عکاسی دیجیتال</a></li>
+                                            <li><a href="#" class="category-level-3">دوربین ورزشی و فیلم برداری</a></li>
+                                            <li><a href="#" class="category-level-3">دوربین چاپ سریع</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#">لوازم تحریر و هنر</a></li>
+                        <li><a href="#">کودک و نوزاد</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-btn nav-slider">
+                    <span class="linee1"></span>
+                    <span class="linee2"></span>
+                    <span class="linee3"></span>
+                </div>
+                <div class="overlay"></div>
+                <!--    responsive-megamenu-mobile----------------->
+            </div>
         </div>
+    </header>
+    <div class="nav-categories-overlay"></div>
+
+
+    @RenderBody()
+
+
+
+    <!-- footer------------------------------------------->
+    <footer class="footer-main-site">
+        <section class="d-block d-xl-block d-lg-block d-md-block d-sm-block order-1">
+            <div class="footer-shopping-features">
+                <div class="container-fluid">
+                    <div class="col-12">
+                        <div class="item">
+                            <span class="icon-shopping">
+                                <i class="fa fa-paper-plane"></i>
+                            </span>
+                            <span class="title-shopping">تحویل اکسپرس</span>
+                            <span class="desc-shopping">در کمترین زمان دریافت کنید</span>
+                        </div>
+                        <div class="item">
+                            <span class="icon-shopping">
+                                <i class="fa fa-volume-control-phone"></i>
+                            </span>
+                            <span class="title-shopping">پشتیبانی ۲۴ ساعته</span>
+                            <span class="desc-shopping">پشتیبانی هفت روز هفته</span>
+                        </div>
+                        <div class="item">
+                            <span class="icon-shopping">
+                                <i class="fa fa-home"></i>
+                            </span>
+                            <span class="title-shopping">پرداخت در محل</span>
+                            <span class="desc-shopping">هنگام دریافت پرداخت کنید</span>
+                        </div>
+                        <div class="item">
+                            <span class="icon-shopping">
+                                <i class="fa fa-repeat"></i>
+                            </span>
+                            <span class="title-shopping">۷ روز ضمانت بازگشت</span>
+                            <span class="desc-shopping">هفت روز مهلت دارید </span>
+                        </div>
+                        <div class="item">
+                            <span class="icon-shopping">
+                                <i class="fa fa-shield"></i>
+                            </span>
+                            <span class="title-shopping">ضمانت اصل‌بودن کالا</span>
+                            <span class="desc-shopping">تایید اصالت کالا</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="d-block d-xl-block d-lg-block d-md-block d-sm-block order-1">
+            <div class="container-fluid">
+                <div class="col-12">
+                    <div class="footer-middlebar">
+                        <div class="col-lg-8 d-block pr">
+                            <div class="footer-links">
+                                <div class="col-lg-3 col-md-3 col-xs-12 pr">
+                                    <div class="row">
+                                        <section class="footer-links-col">
+                                            <div class="headline-links">
+                                                <a href="#">
+                                                    با دیجی اسمارت
+                                                </a>
+                                            </div>
+                                            <ul class="footer-menu-ul">
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        اتاق خبر دیجی اسمارت
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        فروش در دیجی اسمارت
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        همکاری با سازمان‌ها
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        فرصت‌های شغلی
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-xs-12 pr">
+                                    <div class="row">
+                                        <section class="footer-links-col">
+                                            <div class="headline-links">
+                                                <a href="#">
+                                                    خدمات مشتریان
+                                                </a>
+                                            </div>
+                                            <ul class="footer-menu-ul">
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        پاسخ به پرسش‌های متداول
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        رویه‌های بازگرداندن کالا
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        شرایط استفاده
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        حریم خصوصی
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </section>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-xs-12 pr">
+                                    <div class="row">
+                                        <section class="footer-links-col">
+                                            <div class="headline-links">
+                                                <a href="#">
+                                                    راهنمای خرید از دیجی اسمارت
+                                                </a>
+                                            </div>
+                                            <ul class="footer-menu-ul">
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        نحوه ثبت سفارش
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        رویه ارسال سفارش
+                                                    </a>
+                                                </li>
+                                                <li class="menu-item-type-custom">
+                                                    <a href="#">
+                                                        شیوه‌های پرداخت
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-block pl">
+                            <div class="shortcode-widget-area">
+                                <form action="#" class="form-newsletter">
+                                    <fieldset>
+                                        <span class="form-newsletter-title"> با عضویت در خبرنامه از آخرین اخبار و محصولات سایت مطلع شوید...</span>
+                                        <div class="input-group-newsletter">
+                                            <input type="email" class="input-field form-control" placeholder="آدرس ایمیل خود را وارد کنید">
+                                            <button class="btn btn-info btn-secondary" type="submit">ارسال</button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="footer-more-info">
+                            <div class="col-lg-10 pr">
+                                <div class="footer-content d-block">
+                                    <div class="text pr-1">
+                                        <h2 class="title">فروشگاه اینترنتی دیجی اسمارت</h2>
+                                        <p class="desc"> دیجی اسمارت به عنوان یکی از قدیمی‌ترین فروشگاه های اینترنتی با بیش از یک دهه تجربه، با پایبندی به سه اصل کلیدی، پرداخت در محل، 7 روز ضمانت بازگشت کالا و تضمین اصل‌بودن کالا، موفق شده تا همگام با فروشگاه‌های معتبر جهان، به بزرگ‌ترین فروشگاه اینترنتی ایران تبدیل شود. به محض ورود به دیجی اسمارت با یک سایت پر از کالا رو به رو می‌شوید! هر آنچه که نیاز دارید و به ذهن شما خطور می‌کند در اینجا پیدا خواهید کرد.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 pl">
+                                <div class="footer-safety-partner">
+                                    <div class="widget widget-product card mb-0">
+                                        <div class="product-carousel-symbol owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
+                                            <div class="owl-stage-outer">
+                                                <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2234px;">
+                                                    <div class="owl-item active" style="width: 300.75px; margin-left: 10px;">
+                                                        <div class="item">
+                                                            <a href="#" class="d-block hover-img-link">
+                                                                <img src="~/SiteTemplate/assets/images/footer/license/L-1.png" class="img-fluid img-brand" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="owl-item active" style="width: 300.75px; margin-left: 10px;">
+                                                        <div class="item">
+                                                            <a href="#" class="d-block hover-img-link mt-0">
+                                                                <img src="~/SiteTemplate/assets/images/footer/license/L-2.png" class="img-fluid img-brand" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer-copyright">
+                                <div class="footer-copyright-text">
+                                    <p>تمامی مطالب، عکس ها و... متعلق به سایت فروشگاهی دیجی اسمارت می باشد.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <!-- footer------------------------------------------->
+    <!-- scroll_Progress------------------------->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- scroll_Progress------------------------->
+
 </body>
+<!-- file js---------------------------------------------------->
+
+
+<script src="~/SiteTemplate/~/SiteTemplate/assets/js/vendor/jquery-3.2.1.min.js"></script>
+<script src="~/SiteTemplate/assets/js/vendor/bootstrap.js"></script>
+<!-- plugin----------------------------------------------------->
+<script src="~/SiteTemplate/assets/js/vendor/owl.carousel.min.js"></script>
+<script src="~/SiteTemplate/assets/js/vendor/jquery.countdown.js"></script>
+<script src="~/SiteTemplate/assets/js/vendor/jquery.nice-select.min.js"></script>
+<!-- main js---------------------------------------------------->
+<script src="~/SiteTemplate/assets/js/main.js"></script>
 </html>

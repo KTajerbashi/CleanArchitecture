@@ -12,7 +12,7 @@ namespace Common.Library
     public class ResultDTO : IResultDTO
     {
         public bool IsSuccess { get; set; }
-        public string Message { get; set; }
+        public string? Message { get; set; }
     }
     public class ResultDTO<T> : IResultDTO
     {

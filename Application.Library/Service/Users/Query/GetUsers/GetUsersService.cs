@@ -10,7 +10,7 @@ namespace Application.Library.Service
         {
             _context = context;
         }
-        public ResultGetUsersDto Execute(RequestGetUsers request)
+        public ResultGetUsersDTO Execute(RequestGetUserDTO request)
         {
             var users = _context.Users.AsQueryable();
 
@@ -30,9 +30,10 @@ namespace Application.Library.Service
                 Email = p.Email,
                 Username = p.Username,
                 Password = p.Password,
+                IsActive = p.IsActive
             }).ToList();
 
-            return new ResultGetUsersDto
+            return new ResultGetUsersDTO
             {
                 Rows = rowsCount,
                 Users = userResult

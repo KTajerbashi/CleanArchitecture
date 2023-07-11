@@ -12,6 +12,10 @@ namespace Application.Library.Interfaces
         DbSet<Role> Roles { get; set; }
         DbSet<UserRole> UserRoles { get; set; }
         DbSet<Category> Categories { get; set; }
+        DbSet<Product> Products{ get; set; }
+        DbSet<ProductImages> ProductImages { get; set; }
+        DbSet<ProductFeatures> ProductFeatures { get; set; }
+
 
         //  For Save Data in Database by this interface use these methods
         int SaveChanges(bool acceptAllChangesOnSuccess);
