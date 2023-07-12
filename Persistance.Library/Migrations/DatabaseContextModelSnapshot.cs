@@ -17,10 +17,93 @@ namespace Persistance.Library.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.8")
+                .HasAnnotation("ProductVersion", "7.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Domain.Library.Entities.Cart", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<Guid>("BrowserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Finished")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Carts");
+                });
+
+            modelBuilder.Entity("Domain.Library.Entities.CartItem", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<long>("CartId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("CartId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CartItems");
+                });
 
             modelBuilder.Entity("Domain.Library.Entities.Category", b =>
                 {
@@ -57,6 +140,45 @@ namespace Persistance.Library.Migrations
                     b.HasIndex("ParentCategoryId");
 
                     b.ToTable("Category", "SEC");
+                });
+
+            modelBuilder.Entity("Domain.Library.Entities.HomePageImages", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ImageLocation")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Src")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("HomePageImages");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.Product", b =>
@@ -105,6 +227,9 @@ namespace Persistance.Library.Migrations
 
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("ViewCount")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
@@ -226,7 +351,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 1L,
-                            CreateDate = new DateTime(2023, 7, 11, 22, 11, 8, 873, DateTimeKind.Local).AddTicks(7835),
+                            CreateDate = new DateTime(2023, 7, 12, 22, 54, 0, 735, DateTimeKind.Local).AddTicks(8826),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -236,7 +361,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 2L,
-                            CreateDate = new DateTime(2023, 7, 11, 22, 11, 8, 873, DateTimeKind.Local).AddTicks(7883),
+                            CreateDate = new DateTime(2023, 7, 12, 22, 54, 0, 735, DateTimeKind.Local).AddTicks(8998),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -246,13 +371,49 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 3L,
-                            CreateDate = new DateTime(2023, 7, 11, 22, 11, 8, 873, DateTimeKind.Local).AddTicks(7892),
+                            CreateDate = new DateTime(2023, 7, 12, 22, 54, 0, 735, DateTimeKind.Local).AddTicks(9015),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
                             Title = "Customer",
                             UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
+                });
+
+            modelBuilder.Entity("Domain.Library.Entities.Slider", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Src")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Sliders");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.User", b =>
@@ -344,6 +505,34 @@ namespace Persistance.Library.Migrations
                     b.ToTable("UserRole", "SEC");
                 });
 
+            modelBuilder.Entity("Domain.Library.Entities.Cart", b =>
+                {
+                    b.HasOne("Domain.Library.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Domain.Library.Entities.CartItem", b =>
+                {
+                    b.HasOne("Domain.Library.Entities.Cart", "Cart")
+                        .WithMany("CartItems")
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Library.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cart");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Domain.Library.Entities.Category", b =>
                 {
                     b.HasOne("Domain.Library.Entities.Category", "ParentCategory")
@@ -367,7 +556,7 @@ namespace Persistance.Library.Migrations
             modelBuilder.Entity("Domain.Library.Entities.ProductFeatures", b =>
                 {
                     b.HasOne("Domain.Library.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("ProductFeatures")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -405,6 +594,11 @@ namespace Persistance.Library.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Domain.Library.Entities.Cart", b =>
+                {
+                    b.Navigation("CartItems");
+                });
+
             modelBuilder.Entity("Domain.Library.Entities.Category", b =>
                 {
                     b.Navigation("SubCategories");
@@ -412,6 +606,8 @@ namespace Persistance.Library.Migrations
 
             modelBuilder.Entity("Domain.Library.Entities.Product", b =>
                 {
+                    b.Navigation("ProductFeatures");
+
                     b.Navigation("ProductImages");
                 });
 

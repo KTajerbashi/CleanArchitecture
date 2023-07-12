@@ -37,8 +37,24 @@ builder.Services.AddScoped<IUserSatusChangeService, UserSatusChangeService>();
 builder.Services.AddScoped<IGetRolesService, GetRolesService>();
 //  Category
 builder.Services.AddScoped<IGetCategoriesService, GetCategoriesService>();
+builder.Services.AddScoped<IGetCategoryService, GetCategoryService>();
 //  Product
 builder.Services.AddScoped<IEditUserService, EditUserService>();
+
+//  Injections
+builder.Services.AddScoped<IGetMenuItemService, GetMenuItemService>();
+builder.Services.AddScoped<IAddNewSliderService, AddNewSliderService>();
+builder.Services.AddScoped<IGetSliderService, GetSliderService>();
+builder.Services.AddScoped<IAddHomePageImagesService, AddHomePageImagesService>();
+builder.Services.AddScoped<IGetHomePageImagesService, GetHomePageImagesService>();
+builder.Services.AddScoped<ICartService, CartService>();
+//builder.Services.AddScoped<IAddRequestPayService, AddRequestPayService>();
+//builder.Services.AddScoped<IGetRequestPayService, GetRequestPayService>();
+//builder.Services.AddScoped<IAddNewOrderService, AddNewOrderService>();
+//builder.Services.AddScoped<IGetUserOrdersService, GetUserOrdersService>();
+//builder.Services.AddScoped<IGetOrdersForAdminService, GetOrdersForAdminService>();
+//builder.Services.AddScoped<IGetRequestPayForAdminService, GetRequestPayForAdminService>();
+
 
 //  Facad Injection
 builder.Services.AddScoped<IProductFacad, ProductFacad>();

@@ -1,64 +1,38 @@
-﻿using Application.Library.Interfaces;
-using Common.Library;
-using Microsoft.EntityFrameworkCore;
+﻿using Common.Library;
 
 namespace Application.Library.Service
 {
     public interface IGetProductForSiteService
     {
-        ResultDTO<ResultProductForSiteDto> Execute(int Page);
+        ResultDTO<ResultProductForSiteDto> Execute(Ordering ordering,string SearchKey, int Page,int pageSize, long? CatId );
     }
-
-
-    public class GetProductForSiteService : IGetProductForSiteService
+    public enum Ordering
     {
 
-        private readonly IDatabaseContext _context;
-        public GetProductForSiteService(IDatabaseContext context)
-        {
-            _context = context;
-        }
-        public ResultDTO<ResultProductForSiteDto> Execute(int Page)
-        {
-            int totalRow = 0;
-            var poducts = _context.Products
-                .Include(p=> p.ProductImages)
-                .ToPaged(Page, 5, out totalRow);
-
-            Random rd = new Random();
-            return new ResultDTO<ResultProductForSiteDto>
-            {
-                Data = new ResultProductForSiteDto
-                {
-                    TotalRow = totalRow,
-                    Products = poducts.Select(p => new ProductForSiteDto
-                    {
-                        ID = p.ID,
-                        Star = rd.Next(1, 5),
-                        Title = p.Name,
-                        ImageSrc = p.ProductImages.FirstOrDefault().Src,
-                        Price = p.Price
-                    }).ToList(),
-                },
-                IsSuccess = true,
-            };
-        }
+        NotOrder=0,
+        /// <summary>
+        /// پربازدیدترین
+        /// </summary>
+        MostVisited=1,
+        /// <summary>
+        /// پرفروشترین
+        /// </summary>
+        Bestselling=2,
+        /// <summary>
+        /// محبوبترین
+        /// </summary>
+        MostPopular=3,
+        /// <summary>
+        /// جدیدترین
+        /// </summary>
+        theNewest=4,
+        /// <summary>
+        /// ارزانترین
+        /// </summary>
+        Cheapest=5,
+        /// <summary>
+        /// گرانترین
+        /// </summary>
+        theMostExpensive=6
     }
-
-    public class ResultProductForSiteDto
-    {
-
-        public List<ProductForSiteDto> Products { get; set; }
-        public int TotalRow { get; set; }
-    }
-
-    public class ProductForSiteDto
-    {
-        public long ID { get; set; }
-        public string Title { get; set; }
-        public string ImageSrc { get; set; }
-        public int Star { get; set; }
-        public int Price { get; set; }
-    }
-
 }

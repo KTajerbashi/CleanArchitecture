@@ -1,0 +1,23 @@
+﻿@using Application.Library.Service;
+@model   List<CategoryDto>; 
+@{
+    Layout = null;
+}
+
+<form  asp-action="Index" asp-controller="Products" class="form-search" method="get">
+    <input  type="search" class="header-search-input" name="SearchKey" placeholder="نام کالا، برند و یا دسته مورد نظر خود را جستجو کنید…">
+    <div class="action-btns">
+        <button class="btn btn-search" type="submit">
+            <i class="fa fa-search"></i>
+        </button>
+        <div class="search-filter">
+            <div class="form-ui">
+                <div class="custom-select-ui">
+                    <select class="right"  name="CatId" asp-items="@(new SelectList(Model,"CatId","CategoryName"))">
+                       <option>همه دسته ها</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

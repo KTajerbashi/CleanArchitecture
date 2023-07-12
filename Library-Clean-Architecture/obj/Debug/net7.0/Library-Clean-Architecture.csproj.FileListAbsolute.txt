@@ -10,6 +10,8 @@ C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchi
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\Azure.Identity.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\BCrypt.Net-Next.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\Humanizer.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\LazZiya.ExpressLocalization.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\LazZiya.TagHelpers.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -65,6 +67,7 @@ C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchi
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\Library-Clean-Architecture.AssemblyInfoInputs.cache
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\Library-Clean-Architecture.AssemblyInfo.cs
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\Library-Clean-Architecture.csproj.CoreCompileInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\Library-Clean-Architecture.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\Library-Clean-Architecture.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\Library-Clean-Architecture.RazorAssemblyInfo.cache
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\Library-Clean-Architecture.RazorAssemblyInfo.cs
@@ -82,6 +85,3 @@ C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchi
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\Library-Clean-Architecture.pdb
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\Library-Clean-Architecture.genruntimeconfig.cache
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\ref\Library-Clean-Architecture.dll
-C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\LazZiya.ExpressLocalization.dll
-C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\LazZiya.TagHelpers.dll
-C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\Library-Clean-Architecture.MvcApplicationPartsAssemblyInfo.cs

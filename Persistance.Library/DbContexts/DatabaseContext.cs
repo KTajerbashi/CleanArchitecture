@@ -2,7 +2,6 @@
 using Common.Library;
 using Domain.Library.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
 
 namespace Persistance.Library.DbContexts
 {
@@ -12,13 +11,20 @@ namespace Persistance.Library.DbContexts
         {
 
         }
-        public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<UserRole> UserRoles { get; set; }
-        public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductImages> ProductImages { get; set; }
-        public virtual DbSet<ProductFeatures> ProductFeatures { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductImages> ProductImages { get; set; }
+        public DbSet<ProductFeatures> ProductFeatures { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
+        public DbSet<HomePageImages> HomePageImages { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
+        //public DbSet<RequestPay> RequestPays { get; set; }
+        //public DbSet<Order> Orders { get; set; }
+        //public DbSet<OrderDetail> OrderDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

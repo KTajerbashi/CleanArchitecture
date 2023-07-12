@@ -1,0 +1,33 @@
+﻿@using Application.Library.Service;
+@model List<MenuItemDto>
+@{
+    Layout = null;
+}
+
+
+@foreach (var item in Model)
+{
+
+    <li id="nav-menu-item" class="menu-item nav-overlay">
+        <a href="#" class="current-link-menu">
+            @item.Name
+        </a>
+
+        @if (item.Child.Count() > 0)
+        {
+    <ul class="sub-menu is-mega-menu-small">
+
+        @foreach (var itemChild in item.Child)
+        {
+            <li class="menu-mega-item menu-item-type-mega-menu item-small">
+                <a href="~/products/index?CatId=@itemChild.CatId" class="mega-menu-link">
+                    @itemChild.Name
+                </a>
+            </li>
+        }
+    </ul>
+        }
+
+    </li>
+}
+

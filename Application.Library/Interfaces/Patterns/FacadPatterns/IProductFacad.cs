@@ -20,5 +20,7 @@ namespace Application.Library.Interfaces.Patterns
         IGetProductDetailForAdminService GetProductDetailForAdminService { get; }
         IGetProductForSiteService GetProductForSiteService { get; }
         IGetProductDetailForSiteService GetProductDetailForSiteService { get; }
+
+
     }
 }

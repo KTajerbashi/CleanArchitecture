@@ -16,6 +16,7 @@
     <Folder Include="Models\" />
     <Folder Include="CommonQueries\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Service\Common\Commands\" />
     <Folder Include="Service\Users\Commands\UpdateUser\" />
     <Folder Include="Validators\" />
   </ItemGroup>
