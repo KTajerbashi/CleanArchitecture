@@ -25,9 +25,11 @@ namespace Application.Library.Service
         }
         public ResultDTO Execute(requestAddHomePageImagesDto request)
         {
-
+            if (string.IsNullOrEmpty(request.Link))
+            {
+                request.Link = "+";
+            }
             var resultUpload = UploadFile(request.file);
-
             HomePageImages homePageImages = new HomePageImages()
             {
                 link = request.Link,

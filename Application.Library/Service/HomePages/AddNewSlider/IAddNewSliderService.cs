@@ -26,7 +26,7 @@ namespace Application.Library.Service
         public ResultDTO Execute(IFormFile file, string Link)
         {
             var resultUpload = UploadFile(file);
-
+            Link = string.IsNullOrEmpty(Link) ? "-" : Link;
 
             Slider slider = new Slider()
             {

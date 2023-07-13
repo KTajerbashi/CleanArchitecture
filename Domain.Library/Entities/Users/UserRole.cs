@@ -2,7 +2,7 @@
 
 namespace Domain.Library.Entities
 {
-    [Table("UserRole", Schema = "SEC")]
+    [Table("UserRoles", Schema = "SEC")]
     public class UserRole : BaseEntity
     {
         public virtual User User { get; set; }

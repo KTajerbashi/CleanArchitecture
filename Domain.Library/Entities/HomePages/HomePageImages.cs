@@ -1,6 +1,9 @@
 ﻿
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Domain.Library.Entities
 {
+    [Table("HomePaheImages", Schema = "GEN")]
     public class HomePageImages : BaseEntity
     {
         public string Src { get; set; }

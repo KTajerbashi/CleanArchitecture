@@ -12,14 +12,18 @@ namespace Library_Clean_Architecture.Utilities
         {
             try
             {
+                if (string.IsNullOrEmpty(User.Identity.Name))
+                {
+                    return -1;
+                }
                 var claimsIdentity = User.Identity as ClaimsIdentity;
                 long userId = long.Parse(claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value);
                 return userId;
             }
-            catch (Exception)
+            catch
             {
 
-                return null;
+                return 0;
             }
 
         }
@@ -31,12 +35,13 @@ namespace Library_Clean_Architecture.Utilities
             {
                 var claimsIdentity = User.Identity as ClaimsIdentity;
 
-                return claimsIdentity.FindFirst(ClaimTypes.Email).Value;
-            }
-            catch (Exception)
-            {
+                string item =  claimsIdentity.FindFirst(ClaimTypes.Email).Value;
 
-                return null;
+                return item;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString(), ex);
             }
 
         }
@@ -54,9 +59,9 @@ namespace Library_Clean_Architecture.Utilities
                 }
                 return rolse;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return null;
+                throw new Exception(ex.ToString());
             }
 
         }

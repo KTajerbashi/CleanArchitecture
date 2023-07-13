@@ -64,6 +64,8 @@ namespace Library_Clean_Architecture.Controllers
             {
                 Email = request.Email,
                 Name = request.Name,
+                Username = request.Username,
+                Family = request.Family,
                 Password = request.Password,
                 RePasword = request.RePassword,
                 Roles = new List<RolesInRegisterUserDto>()

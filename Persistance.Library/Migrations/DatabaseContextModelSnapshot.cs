@@ -58,7 +58,7 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Carts");
+                    b.ToTable("Carts", "GEN");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.CartItem", b =>
@@ -102,7 +102,7 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("CartItems", "GEN");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.Category", b =>
@@ -139,7 +139,7 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("ParentCategoryId");
 
-                    b.ToTable("Category", "SEC");
+                    b.ToTable("Categories", "SEC");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.HomePageImages", b =>
@@ -178,7 +178,96 @@ namespace Persistance.Library.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("HomePageImages");
+                    b.ToTable("HomePaheImages", "GEN");
+                });
+
+            modelBuilder.Entity("Domain.Library.Entities.Order", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("OrderState")
+                        .HasColumnType("int");
+
+                    b.Property<long>("RequestPayId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("RequestPayId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders", "GEN");
+                });
+
+            modelBuilder.Entity("Domain.Library.Entities.OrderDetail", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("OrderId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderDetails", "GEN");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.Product", b =>
@@ -235,7 +324,7 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", "GEN");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.ProductFeatures", b =>
@@ -276,7 +365,7 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductFeatures");
+                    b.ToTable("ProductFeatures", "GEN");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.ProductImages", b =>
@@ -313,7 +402,59 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("ProductImages", "GEN");
+                });
+
+            modelBuilder.Entity("Domain.Library.Entities.RequestPay", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Authority")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("Guid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsPay")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("PayDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("RefId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RequestPays", "Pay");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.Role", b =>
@@ -345,13 +486,13 @@ namespace Persistance.Library.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Role", "SEC");
+                    b.ToTable("Roles", "SEC");
 
                     b.HasData(
                         new
                         {
                             ID = 1L,
-                            CreateDate = new DateTime(2023, 7, 12, 22, 54, 0, 735, DateTimeKind.Local).AddTicks(8826),
+                            CreateDate = new DateTime(2023, 7, 14, 1, 16, 18, 151, DateTimeKind.Local).AddTicks(5773),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -361,7 +502,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 2L,
-                            CreateDate = new DateTime(2023, 7, 12, 22, 54, 0, 735, DateTimeKind.Local).AddTicks(8998),
+                            CreateDate = new DateTime(2023, 7, 14, 1, 16, 18, 151, DateTimeKind.Local).AddTicks(5821),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -371,7 +512,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 3L,
-                            CreateDate = new DateTime(2023, 7, 12, 22, 54, 0, 735, DateTimeKind.Local).AddTicks(9015),
+                            CreateDate = new DateTime(2023, 7, 14, 1, 16, 18, 151, DateTimeKind.Local).AddTicks(5831),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -413,7 +554,7 @@ namespace Persistance.Library.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Sliders");
+                    b.ToTable("Sliders", "GEN");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.User", b =>
@@ -464,7 +605,7 @@ namespace Persistance.Library.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("User", "SEC");
+                    b.ToTable("Users", "SEC");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.UserRole", b =>
@@ -502,7 +643,7 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserRole", "SEC");
+                    b.ToTable("UserRoles", "SEC");
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.Cart", b =>
@@ -542,6 +683,44 @@ namespace Persistance.Library.Migrations
                     b.Navigation("ParentCategory");
                 });
 
+            modelBuilder.Entity("Domain.Library.Entities.Order", b =>
+                {
+                    b.HasOne("Domain.Library.Entities.RequestPay", "RequestPay")
+                        .WithMany("Orders")
+                        .HasForeignKey("RequestPayId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Library.Entities.User", "User")
+                        .WithMany("Orders")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("RequestPay");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Domain.Library.Entities.OrderDetail", b =>
+                {
+                    b.HasOne("Domain.Library.Entities.Order", "Order")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Library.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Domain.Library.Entities.Product", b =>
                 {
                     b.HasOne("Domain.Library.Entities.Category", "Category")
@@ -575,6 +754,17 @@ namespace Persistance.Library.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Domain.Library.Entities.RequestPay", b =>
+                {
+                    b.HasOne("Domain.Library.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Domain.Library.Entities.UserRole", b =>
                 {
                     b.HasOne("Domain.Library.Entities.Role", "Role")
@@ -604,6 +794,11 @@ namespace Persistance.Library.Migrations
                     b.Navigation("SubCategories");
                 });
 
+            modelBuilder.Entity("Domain.Library.Entities.Order", b =>
+                {
+                    b.Navigation("OrderDetails");
+                });
+
             modelBuilder.Entity("Domain.Library.Entities.Product", b =>
                 {
                     b.Navigation("ProductFeatures");
@@ -611,8 +806,15 @@ namespace Persistance.Library.Migrations
                     b.Navigation("ProductImages");
                 });
 
+            modelBuilder.Entity("Domain.Library.Entities.RequestPay", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
             modelBuilder.Entity("Domain.Library.Entities.User", b =>
                 {
+                    b.Navigation("Orders");
+
                     b.Navigation("UserRoles");
                 });
 #pragma warning restore 612, 618

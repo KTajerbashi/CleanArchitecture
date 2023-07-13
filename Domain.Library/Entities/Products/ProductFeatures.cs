@@ -1,5 +1,8 @@
-﻿namespace Domain.Library.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain.Library.Entities
 {
+    [Table("ProductFeatures", Schema = "GEN")]
     public class ProductFeatures : BaseEntity
     {
         public virtual Product Product { get; set; }

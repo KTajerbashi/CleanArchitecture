@@ -1,6 +1,6 @@
 ﻿@using Application.Library.Service;
 @model List<CategoryDTO>
-@{ 
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Adminlayout.cshtml";
 }
@@ -20,7 +20,7 @@
                         </div>
                         <div class="card-body collapse show">
                             <div class="card-block card-dashboard">
-                                <p class="card-text">دسته بندی محصولات فروشگاه</p>
+                                <p class="card-text">دسته بندی محصولات فروشگاه باگتو</p>
                                 <a href="~/admin/categories/addnewcategory" class="btn btn-success">افزودن دسته بندی جدید</a>
 
                                 <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
@@ -43,28 +43,27 @@
                                                         <td>
                                                             @{
                                                                 string parent = item.Parent != null ? item.Parent.Name : "-";
-                                                            }
+                                                        }
 
-                                                            <text> @parent </text>
-                                                        </td>
-                                                        <td>
-                                                            @if (item.Parent == null)
-                                                            {
-                                                                <a href="~/admin/categories/addnewcategory?ParentId=@item.ID" class="btn btn-success">افزودن فرزند</a>
-                                                            }
+                                                        <text> @parent </text>
+                                                    </td>
+                                                    <td>
+                                                        @if (item.Parent == null)
+                                                        {
+                                                            <a href="~/admin/categories/addnewcategory?ParentId=@item.ID" class="btn btn-success">افزودن فرزند</a>
+                                                        }
 
-                                                            @if (item.HasChild == true)
-                                                            {
-                                                                <a href="~/admin/categories/index?ParentId=@item.ID" class="btn btn-info">مشاهده لیست فرزند ها </a>
-                                                            }
+                                                        @if (item.HasChild == true)
+                                                        {
+                                                            <a href="~/admin/categories/index?ParentId=@item.ID" class="btn btn-info">مشاهده لیست فرزند ها </a>
+                                                        }
 
-                                                        </td>
-                                                    </tr>
-                                                }
+                                                    </td>
+                                                </tr>
+                                            }
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>

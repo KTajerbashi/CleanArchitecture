@@ -22,9 +22,9 @@ namespace Persistance.Library.DbContexts
         public DbSet<HomePageImages> HomePageImages { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
-        //public DbSet<RequestPay> RequestPays { get; set; }
-        //public DbSet<Order> Orders { get; set; }
-        //public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<RequestPay> RequestPays { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,6 +34,9 @@ namespace Persistance.Library.DbContexts
 
             //  User Data
             UserConfig(modelBuilder);
+
+            //  Apply Relational
+            ApplyRelational(modelBuilder);
 
             // Query Filter
             ApplyQueryFilter(modelBuilder);
@@ -46,6 +49,18 @@ namespace Persistance.Library.DbContexts
             modelBuilder.Entity<Role>().HasData(new Role { ID = 2, Title = nameof(UserRolesSeed.Operator) });
             modelBuilder.Entity<Role>().HasData(new Role { ID = 3, Title = nameof(UserRolesSeed.Customer) });
 
+        }
+        public void ApplyRelational(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Order>()
+               .HasOne(p => p.User)
+               .WithMany(p => p.Orders)
+               .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Order>()
+                .HasOne(p => p.RequestPay)
+                .WithMany(p => p.Orders)
+                .OnDelete(DeleteBehavior.NoAction);
         }
         public void UserConfig(ModelBuilder modelBuilder)
         {
@@ -60,6 +75,16 @@ namespace Persistance.Library.DbContexts
             modelBuilder.Entity<Role>().HasQueryFilter(p => !p.IsDeleted);
             modelBuilder.Entity<UserRole>().HasQueryFilter(p => !p.IsDeleted);
             modelBuilder.Entity<Category>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<ProductImages>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<ProductFeatures>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<Slider>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<HomePageImages>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<Cart>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<CartItem>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<RequestPay>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<Order>().HasQueryFilter(p => !p.IsDeleted);
+            modelBuilder.Entity<OrderDetail>().HasQueryFilter(p => !p.IsDeleted);
         }
 
     }

@@ -2,7 +2,7 @@
 
 namespace Domain.Library.Entities
 {
-    [Table("Role", Schema = "SEC")]
+    [Table("Roles", Schema = "SEC")]
     public class Role : BaseEntity
     {
         public string Title { get; set; }

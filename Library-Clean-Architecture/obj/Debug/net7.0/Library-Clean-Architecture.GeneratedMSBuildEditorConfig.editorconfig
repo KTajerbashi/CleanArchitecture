@@ -24,6 +24,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Tajer/Desktop/Visual Studio/Repository Project/GitHub/LibraryCleanArchitecture/Library-Clean-Architecture/Areas/Admin/Views/HomePageImages/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVBhZ2VJbWFnZXNcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/Desktop/Visual Studio/Repository Project/GitHub/LibraryCleanArchitecture/Library-Clean-Architecture/Areas/Admin/Views/Orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Tajer/Desktop/Visual Studio/Repository Project/GitHub/LibraryCleanArchitecture/Library-Clean-Architecture/Areas/Admin/Views/Products/AddNewProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdHNcQWRkTmV3UHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,8 +44,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Tajer/Desktop/Visual Studio/Repository Project/GitHub/LibraryCleanArchitecture/Library-Clean-Architecture/Areas/Admin/Views/RequestPay/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVxdWVzdFBheVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Tajer/Desktop/Visual Studio/Repository Project/GitHub/LibraryCleanArchitecture/Library-Clean-Architecture/Areas/Admin/Views/Shared/_Adminlayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbmxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/Desktop/Visual Studio/Repository Project/GitHub/LibraryCleanArchitecture/Library-Clean-Architecture/Areas/Admin/Views/Sliders/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2xpZGVyc1xBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tajer/Desktop/Visual Studio/Repository Project/GitHub/LibraryCleanArchitecture/Library-Clean-Architecture/Areas/Admin/Views/Sliders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2xpZGVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Tajer/Desktop/Visual Studio/Repository Project/GitHub/LibraryCleanArchitecture/Library-Clean-Architecture/Areas/Admin/Views/Users/Create.cshtml]

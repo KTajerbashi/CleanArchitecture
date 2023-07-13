@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Library.Entities
 {
-    [Table("Category", Schema = "SEC")]
+    [Table("Categories", Schema = "SEC")]
     public class Category : BaseEntity
     {
         public string Name { get; set; }

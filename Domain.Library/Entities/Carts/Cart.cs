@@ -1,5 +1,8 @@
-﻿namespace Domain.Library.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain.Library.Entities
 {
+    [Table("Carts", Schema = "GEN")]
     public class Cart : BaseEntity
     {
         public virtual User User { get; set; }
@@ -11,6 +14,7 @@
     }
 
 
+    [Table("CartItems", Schema = "GEN")]
     public class CartItem : BaseEntity
     {
         public virtual Product Product { get; set; }

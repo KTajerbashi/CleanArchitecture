@@ -1,5 +1,9 @@
-﻿@{
+﻿@using Domain.Library.Entities;
+@using Library_Clean_Architecture.HomePages;
+@model HomePageViewModel;
+@{
     ViewData["Title"] = "Home Page";
+    int _sliderCount = 1;
 }
 
 <!-- header-------------------------------->
@@ -10,28 +14,41 @@
             <div class="slider-main-container d-block">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
+
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+
+                        @for (int i = 1; i <= Model.Sliders.Count - 1; i++)
+                        {
+                            <li data-target="#carouselExampleIndicators" data-slide-to="@i"></li>
+                        }
                     </ol>
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="~/SiteTemplate/assets/images/slider-main/sm-1.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/SiteTemplate/assets/images/slider-main/sm-2.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/SiteTemplate/assets/images/slider-main/sm-3.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/SiteTemplate/assets/images/slider-main/sm-4.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="~/SiteTemplate/assets/images/slider-main/sm-5.jpg" class="d-block w-100" alt="...">
-                        </div>
+                        @foreach (var item in Model.Sliders)
+                        {
+
+                            if (_sliderCount == 1)
+                            {
+                                <div class="carousel-item active">
+                                    <a href="@item.Link">
+                                        <img src="~/@item.Src" class="d-block w-100" alt="...">
+                                    </a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="carousel-item">
+                                    <a href="@item.Link">
+                                        <img src="~/@item.Src" class="d-block w-100" alt="...">
+                                    </a>
+                                </div>
+                            }
+
+
+
+                            _sliderCount++;
+                        }
+
+
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="fa fa-angle-left" aria-hidden="true"></span>
@@ -49,12 +66,12 @@
             <div class="adplacement-container-column">
                 <a href="#" class="adplacement-item">
                     <div class="adplacement-sponsored-box">
-                        <img src="~/SiteTemplate/assets/images/adplacement/a-1.jpg">
+                        <img src="~/@Model.PageImages.Where(p=> p.ImageLocation == ImageLocation.L1)?.FirstOrDefault()?.Src?? '' ">
                     </div>
                 </a>
                 <a href="#" class="adplacement-item">
                     <div class="adplacement-sponsored-box">
-                        <img src="~/SiteTemplate/assets/images/adplacement/a-2.jpg">
+                        <img src="~/@Model.PageImages.Where(p=> p.ImageLocation == ImageLocation.L2)?.FirstOrDefault()?.Src?? '' ">
                     </div>
                 </a>
             </div>
@@ -63,7 +80,7 @@
             <div class="adplacement-container-column mt-4">
                 <a href="#" class="adplacement-item img-banner">
                     <div class="adplacement-sponsored-box">
-                        <img src="~/SiteTemplate/assets/images/adplacement/a-3.jpg">
+                        <img src="~/@Model.PageImages.Where(p=> p.ImageLocation == ImageLocation.R1)?.FirstOrDefault()?.Src?? '' ">
                     </div>
                 </a>
             </div>
@@ -462,38 +479,24 @@
             <div class="col-12">
                 <a href="#" class="adplacement-item mb-4">
                     <div class="adplacement-sponsored_box">
-                        <img src="~/SiteTemplate/assets/images/adplacement/a-8.jpg">
+                        <img src="~/@Model.PageImages.Where(p=> p.ImageLocation == ImageLocation.CenterFullScreen)?.FirstOrDefault()?.Src?? ''">
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-lg-3 pr">
-                <a href="#" class="adplacement-item">
-                    <div class="adplacement-sponsored_box">
-                        <img src="~/SiteTemplate/assets/images/adplacement/a-4.jpg">
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-lg-3 pr">
-                <a href="#" class="adplacement-item">
-                    <div class="adplacement-sponsored_box">
-                        <img src="~/SiteTemplate/assets/images/adplacement/a-5.jpg">
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-lg-3 pr">
-                <a href="#" class="adplacement-item">
-                    <div class="adplacement-sponsored_box">
-                        <img src="~/SiteTemplate/assets/images/adplacement/a-6.jpg">
-                    </div>
-                </a>
-            </div>
-            <div class="col-6 col-lg-3 pr">
-                <a href="#" class="adplacement-item">
-                    <div class="adplacement-sponsored_box">
-                        <img src="~/SiteTemplate/assets/images/adplacement/a-7.jpg">
-                    </div>
-                </a>
-            </div>
+
+            @foreach (var item in Model.PageImages.Where(p => p.ImageLocation == ImageLocation.G1).ToList())
+            {
+                <div class="col-6 col-lg-3 pr">
+                    <a href="#" class="adplacement-item">
+                        <div class="adplacement-sponsored_box">
+                            <img src="~/@item.Src">
+                        </div>
+                    </a>
+                </div>
+            }
+
+
+
         </div>
     </div>
 </div>
@@ -511,86 +514,29 @@
                     <div class="product-carousel owl-carousel owl-theme owl-rtl owl-loaded owl-drag">
                         <div class="owl-stage-outer">
                             <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2234px;">
-                                <div class="owl-item active" style="width: 309.083px; margin-left: 10px;">
-                                    <div class="item">
-                                        <a href="#" class="d-block hover-img-link">
-                                            <img src="~/SiteTemplate/assets/images/slider-product/camera-canon-4000D.jpg" class="img-fluid" alt="">
-                                        </a>
-                                        <h2 class="post-title">
-                                            <a href="#">
-                                                دوربین دیجیتال کانن مدل EOS 4000D به همراه لنز 18-55 میلی متر IS II
+
+                                @foreach (var item in Model.Camera)
+                                {
+                                    <div class="owl-item active" style="width: 309.083px; margin-left: 10px;">
+                                        <div class="item">
+                                            <a href="~/produtcs/detail/@item.ID" class="d-block hover-img-link">
+                                                <img src="~/@item.ImageSrc" class="img-fluid" alt="">
                                             </a>
-                                        </h2>
-                                        <div class="price">
-                                            <del><span>۱۲,۰۰۰,۰۰<span>تومان</span></span></del>
-                                            <ins><span>۱۰,۵۰۰,۰۰۰<span>تومان</span></span></ins>
+                                            <h2 class="post-title">
+                                                <a href="#">
+                                                    @item.Title
+                                                </a>
+                                            </h2>
+                                            <div class="price">
+                                                @*<del><span>۱۲,۰۰۰,۰۰<span>تومان</span></span></del>*@
+                                                <ins><span>@item.Price<span>تومان</span></span></ins>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="owl-item active" style="width: 309.083px; margin-left: 10px;">
-                                    <div class="item">
-                                        <a href="#" class="d-block hover-img-link">
-                                            <img src="~/SiteTemplate/assets/images/slider-product/camera-samsung.jpg" class="img-fluid" alt="">
-                                        </a>
-                                        <h2 class="post-title">
-                                            <a href="#">
-                                                دوربین دیجیتال سامسونگ مدل ST150F
-                                            </a>
-                                        </h2>
-                                        <div class="price">
-                                            <del><span>۳,۲۰۰,۰۰۰<span>تومان</span></span></del>
-                                            <ins><span>۲,۵۰۰,۰۰۰<span>تومان</span></span></ins>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="owl-item active" style="width: 309.083px; margin-left: 10px;">
-                                    <div class="item">
-                                        <a href="#" class="d-block hover-img-link">
-                                            <img src="~/SiteTemplate/assets/images/slider-product/camera-nikon-3500D.jpg" class="img-fluid" alt="">
-                                        </a>
-                                        <h2 class="post-title">
-                                            <a href="#">
-                                                دوربین دیجیتال نیکون مدل D3500 به همراه لنز 18-55 میلی متر VR AF-P
-                                            </a>
-                                        </h2>
-                                        <div class="price">
-                                            <del><span>۳,۵۰۰,۰۰۰<span>تومان</span></span></del>
-                                            <ins><span>۲,۰۰۰,۰۰۰<span>تومان</span></span></ins>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="owl-item active" style="width: 309.083px; margin-left: 10px;">
-                                    <div class="item">
-                                        <a href="#" class="d-block hover-img-link">
-                                            <img src="~/SiteTemplate/assets/images/slider-product/camera-instax-mini-70.jpg" class="img-fluid" alt="">
-                                        </a>
-                                        <h2 class="post-title">
-                                            <a href="#">
-                                                دوربین عکاسی چاپ سریع فوجی فیلم مدل Instax mini 70
-                                            </a>
-                                        </h2>
-                                        <div class="price">
-                                            <del><span>۶,۵۰۰,۰۰۰<span>تومان</span></span></del>
-                                            <ins><span>۴,۲۰۰,۰۰۰<span>تومان</span></span></ins>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="owl-item" style="width: 309.083px; margin-left: 10px;">
-                                    <div class="item">
-                                        <a href="#" class="d-block hover-img-link">
-                                            <img src="~/SiteTemplate/assets/images/slider-product/camera-nikon.jpg" class="img-fluid" alt="">
-                                        </a>
-                                        <h2 class="post-title">
-                                            <a href="#">
-                                                دوربین دیجیتال بدون آینه نیکون مدل Z6 به همراه لنز 24-70 میلی متر f/4 S
-                                            </a>
-                                        </h2>
-                                        <div class="price">
-                                            <del><span>۷,۵۰۰,۰۰۰<span>تومان</span></span></del>
-                                            <ins><span>۶,۰۰۰,۰۰۰<span>تومان</span></span></ins>
-                                        </div>
-                                    </div>
-                                </div>
+                                }
+
+
+
                             </div>
                         </div>
                         <div class="owl-nav">
@@ -820,34 +766,19 @@
         <div class="container-fluid">
             <div class="row pr">
                 <div class="adplacement-container-row">
-                    <div class="col-6 col-lg-3 pr">
-                        <a href="#" class="adplacement-item">
-                            <div class="adplacement-sponsored_box">
-                                <img src="~/SiteTemplate/assets/images/adplacement/a-4.jpg">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-lg-3 pr">
-                        <a href="#" class="adplacement-item">
-                            <div class="adplacement-sponsored_box">
-                                <img src="~/SiteTemplate/assets/images/adplacement/a-5.jpg">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-lg-3 pr">
-                        <a href="#" class="adplacement-item">
-                            <div class="adplacement-sponsored_box">
-                                <img src="~/SiteTemplate/assets/images/adplacement/a-6.jpg">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-lg-3 pr">
-                        <a href="#" class="adplacement-item">
-                            <div class="adplacement-sponsored_box">
-                                <img src="~/SiteTemplate/assets/images/adplacement/a-7.jpg">
-                            </div>
-                        </a>
-                    </div>
+
+                    @foreach (var item in Model.PageImages.Where(p => p.ImageLocation == ImageLocation.G2).ToList())
+                    {
+                        <div class="col-6 col-lg-3 pr">
+                            <a href="#" class="adplacement-item">
+                                <div class="adplacement-sponsored_box">
+                                    <img src="~/@item.Src">
+                                </div>
+                            </a>
+                        </div>
+                    }
+
+
                 </div>
             </div>
         </div>

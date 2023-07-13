@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Library_Clean_Architecture.Utilities;
+@{
     Layout = null;
 }
 
@@ -13,7 +14,7 @@
     <meta name="description" content="Convex admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Convex admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Admin Layout</title>
+    <title>Grids - Convex bootstrap 4 admin dashboard template</title>
     <link rel="apple-touch-icon" sizes="60x60" href="~/AdminTemplate/app-assets/img/ico/apple-icon-60.html">
     <link rel="apple-touch-icon" sizes="76x76" href="~/AdminTemplate/app-assets/img/ico/apple-icon-76.html">
     <link rel="apple-touch-icon" sizes="120x120" href="~/AdminTemplate/app-assets/img/ico/apple-icon-120.html">
@@ -40,12 +41,7 @@
             <div class="sidebar-header">
                 <div class="logo clearfix">
                     <a href="index-2.html" class="logo-text float-right">
-                        @*
-                        <div class="logo-img">
-                        <img src="~/AdminTemplate/app-assets/img/logo.png" alt="Convex Logo" />
-                        </div>
-                        *@
-                        <span class="text align-middle">پنل مدیریت</span>
+                        <div class="logo-img"><img src="~/AdminTemplate/app-assets/img/logo.png" alt="Convex Logo" /></div><span class="text align-middle">CONVEX</span>
                     </a><a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i data-toggle="expanded" class="ft-disc toggle-icon"></i></a><a id="sidebarClose" href="javascript:;" class="nav-close d-block d-md-block d-lg-none d-xl-none"><i class="ft-circle"></i></a>
                 </div>
             </div>
@@ -71,29 +67,73 @@
                         </li>
 
                         <li class="has-sub nav-item">
-                            <a href="#"><i class="icon-crop"></i><span data-i18n="" class="menu-title">  دسته بندی ها </span></a>
+                            <a href="#"><i class="icon-users"></i><span data-i18n="" class="menu-title">مدیریت سفارشات</span></a>
                             <ul class="menu-content">
                                 <li>
-                                    <a href="~/admin/categories/" class="menu-item">دسته بندی ها</a>
+                                    <a href="~/admin/orders/index?orderState=Processing" class="menu-item">در حال پردازش</a>
                                 </li>
                                 <li>
-                                    <a href="~/admin/categories/addnewcategory" class="menu-item">افزودن دسته بندی جدید *</a>
+                                    <a href="~/admin/orders/index?orderState=Delivered" class="menu-item">تحویل شده ها </a>
+                                </li>
+                                <li>
+                                    <a href="~/admin/orders/index?orderState=Canceled" class="menu-item"> لغو شده</a>
                                 </li>
                             </ul>
                         </li>
+
+                        @if (ClaimUtility.GetRolse(User).Where(p => p == "Operator").Count() >= 1)
+                        {
+                            <li class="has-sub nav-item">
+                                <a href="#"><i class="icon-crop"></i><span data-i18n="" class="menu-title">  دسته بندی ها </span></a>
+                                <ul class="menu-content">
+                                    <li>
+                                        <a href="~/admin/categories/" class="menu-item">دسته بندی ها</a>
+                                    </li>
+                                    <li>
+                                        <a href="~/admin/categories/addnewcategory" class="menu-item">افزودن دسته بندی جدید *</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        }
 
                         <li class="has-sub nav-item">
                             <a href="#"><i class="icon-crop"></i><span data-i18n="" class="menu-title"> محصولات </span></a>
                             <ul class="menu-content">
                                 <li>
-                                    <a href="~/admin/products" class="menu-item">لیست محصولات</a>
+                                    <a href="~/admin/products/" class="menu-item">لیست محصولات</a>
                                 </li>
                                 <li>
-                                    <a href="~/admin/products/addNewProduct" class="menu-item">افزودن محصول جدید *</a>
+                                    <a href="~/admin/products/addnewproduct" class="menu-item">افزودن محصول جدید *</a>
                                 </li>
                             </ul>
                         </li>
 
+                        <li class="has-sub nav-item">
+                            <a href="#"><i class="icon-picture"></i><span data-i18n="" class="menu-title"> اسلایدر </span></a>
+                            <ul class="menu-content">
+                                <li>
+                                    <a href="~/admin/sliders/" class="menu-item">مجموعه اسلایدر</a>
+                                </li>
+                                <li>
+                                    <a href="~/admin/sliders/add" class="menu-item">افزودن عکس اسلایدر *</a>
+                                </li>
+                                <li>
+                                    <a href="~/admin/homePageImages/add" class="menu-item">افزودن عکس در موقعیت *</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="has-sub nav-item">
+                            <a href="#"><i class="icon-crop"></i><span data-i18n="" class="menu-title"> مدیریت فاکتورها </span></a>
+                            <ul class="menu-content">
+                                <li>
+                                    <a href="~/admin/RequestPay/" class="menu-item">لیست  </a>
+                                </li>
+
+                            </ul>
+                        </li>
 
                     </ul>
                 </div>

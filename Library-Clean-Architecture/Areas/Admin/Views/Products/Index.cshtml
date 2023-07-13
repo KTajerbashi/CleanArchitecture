@@ -1,10 +1,12 @@
 ﻿@using Application.Library.Service;
 @addTagHelper *, LazZiya.TagHelpers
-@model ProductForAdminDto;
+@model  ProductForAdminDto;
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "لیست محصولات";
     Layout = "~/Areas/Admin/Views/Shared/_Adminlayout.cshtml";
 }
+
 
 <div class="content-wrapper">
     <div class="container-fluid">
@@ -41,7 +43,7 @@
                                                         <td>@item.Brand</td>
                                                         <td>@item.Price.ToString("n0")</td>
                                                         <td>@item.Inventory</td>
-                                                        <td>@(item.Displayed ? "فعال" : "غیر فعال")</td>
+                                                        <td>@item.Displayed</td>
                                                         <td>
                                                             <a class="btn btn-danger">حذف</a>
                                                             <a href="~/admin/products/detail/@item.ID" class="btn btn-info">اطلاعات بیشتر</a>
@@ -53,7 +55,7 @@
                                     </div>
                                 </div>
 
-                                <div class="text-center">
+                                <div class="  text-center">
                                     <paging total-records="Model.RowCount"
                                             page-no="Model.CurrentPage"
                                             page-size="Model.PageSize"
@@ -65,6 +67,7 @@
                                             show-last-numbered-page="true"
                                             query-string-key-page-no="Page"
                                             query-string-key-page-size="PageSize"
+                                            
                                             gap-size="2">
                                     </paging>
 
@@ -76,4 +79,4 @@
             </div>
         </section>
     </div>
-</div>>
+</div>

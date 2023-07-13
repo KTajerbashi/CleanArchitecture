@@ -2,7 +2,6 @@
 @{
     ViewData["Title"] = "ثبت نام کاربر جدید";
     Layout = "~/Areas/Admin/Views/Shared/_Adminlayout.cshtml";
-    var Roles = ViewBag.Roles;
 }
 
 <section class="basic-elements">
@@ -33,7 +32,7 @@
                                     <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
                                         <fieldset class="form-group">
                                             <label for="helpInputTop">پست الکترونیک</label>
-                                            <small class="text-muted"><i>info@bugeto.net</i></small>
+                                            <small class="text-muted"><i>info@Email.com</i></small>
                                             <input type="text" class="form-control" id="email">
                                         </fieldset>
                                     </div>
@@ -41,7 +40,7 @@
                                     <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
                                         <fieldset class="form-group">
                                             <label for="basicSelect">نقش</label>
-                                            <select class="form-control" id="RoleId" name="Role" asp-items="@Roles">
+                                            <select class="form-control" id="RoleId" name="Role" asp-items="@ViewBag.Roles">
                                             </select>
                                             <p><small class="text-muted">سطح دسترسی کاربر مورد نظر را تعیین کنید</small></p>
 

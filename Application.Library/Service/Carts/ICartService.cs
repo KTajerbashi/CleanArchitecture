@@ -130,7 +130,7 @@ namespace Application.Library.Service
             catch (Exception ex)
             {
 
-                throw;
+               throw new Exception(ex.ToString());
             }
 
         }
@@ -186,13 +186,13 @@ namespace Application.Library.Service
         public long CartId { get; set; }
         public int ProductCount { get; set; }
         public int SumAmount { get; set; }
-        public List<CartItemDto> CartItems { get; set; }
+        public List<CartItemDto>? CartItems { get; set; }
     }
     public class CartItemDto
     {
         public long Id { get; set; }
-        public string Product { get; set; }
-        public string Images { get; set; }
+        public string? Product { get; set; }
+        public string? Images { get; set; }
         public int Count { get; set; }
         public int Price { get; set; }
     }

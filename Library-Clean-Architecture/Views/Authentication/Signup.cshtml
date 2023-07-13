@@ -42,8 +42,10 @@
                                 </div>
                                 <div class="Login-to-account mt-4">
                                     <div class="account-box-content">
-                                        <h4>ثبت نام در دیجی اسمارت</h4>
+                                        <h4>ثبت نام در فروشگاه</h4>
                                         <form method="post" class="form-account text-right">
+
+
                                             <div class="form-account-title">
                                                 <label for="name">نام</label>
                                                 <input type="text" class="number-email-input" id="Name">
@@ -56,7 +58,11 @@
 
                                             <div class="form-account-title">
                                                 <label for="email-phone">ایمیل  </label>
-                                                <input type="email" class="number-email-input" id="Email">
+                                                <input type="email" class="number-email-input" name="Email" id="Email">
+                                            </div>
+                                            <div class="form-account-title">
+                                                <label for="username">نام کاربری</label>
+                                                <input type="text" class="password-input" id="Username">
                                             </div>
                                             <div class="form-account-title">
                                                 <label for="password">رمز عبور</label>
@@ -74,7 +80,7 @@
                                                 <label for="remember" class="remember-me mr-0"><a href="#">حریم خصوصی</a> و <a href="#">شرایط قوانین </a>استفاده از سرویس های سایت دیجی‌اسمارت را مطالعه نموده و با کلیه موارد آن موافقم.</label>
                                             </div>
                                             <div class="form-row-account">
-                                                <a onclick="Registeruser()" class="btn btn-primary btn-register">ثبت نام در فروشگاه</a>
+                                                <a onclick="Registeruser()" class="btn btn-primary text-light shadow w-100 btn-register">ثبت نام در فروشگاه</a>
                                             </div>
                                         </form>
                                     </div>
@@ -117,14 +123,18 @@
 <script>
     function Registeruser() {
  
-        var FullName = $("#FullName").val();
+        var Name = $("#Name").val();
+        var Family = $("#Family").val();
         var Email = $("#Email").val();
+        var Username = $("#Username").val();
         var Password = $("#Password").val();
         var RePassword = $("#RePassword").val();
 
         var postData = {
-            'FullName': FullName,
+            'Name': Name,
+            'Family': Family,
             'Email': Email,
+            'Username': Username,
             'Password': Password,
             'RePassword': RePassword,
         };

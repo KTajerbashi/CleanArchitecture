@@ -8,7 +8,7 @@ using Persistance.Library.DbContexts;
 
 var builder = WebApplication.CreateBuilder(args);
 //  Use Model One
-var conectionString = @"Data Source=.; Initial Catalog=CleanArchLibraryDb; User id=sa; Password=123123; Integrated Security=true; TrustServerCertificate=True;";
+var conectionString = @"Data Source=DESKTOP-9EC7HCL; Initial Catalog=CleanArchLibraryDb; User id=sa; Password=123123; Integrated Security=true; TrustServerCertificate=True;";
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -48,12 +48,12 @@ builder.Services.AddScoped<IGetSliderService, GetSliderService>();
 builder.Services.AddScoped<IAddHomePageImagesService, AddHomePageImagesService>();
 builder.Services.AddScoped<IGetHomePageImagesService, GetHomePageImagesService>();
 builder.Services.AddScoped<ICartService, CartService>();
-//builder.Services.AddScoped<IAddRequestPayService, AddRequestPayService>();
-//builder.Services.AddScoped<IGetRequestPayService, GetRequestPayService>();
-//builder.Services.AddScoped<IAddNewOrderService, AddNewOrderService>();
-//builder.Services.AddScoped<IGetUserOrdersService, GetUserOrdersService>();
-//builder.Services.AddScoped<IGetOrdersForAdminService, GetOrdersForAdminService>();
-//builder.Services.AddScoped<IGetRequestPayForAdminService, GetRequestPayForAdminService>();
+builder.Services.AddScoped<IAddRequestPayService, AddRequestPayService>();
+builder.Services.AddScoped<IGetRequestPayService, GetRequestPayService>();
+builder.Services.AddScoped<IAddNewOrderService, AddNewOrderService>();
+builder.Services.AddScoped<IGetUserOrdersService, GetUserOrdersService>();
+builder.Services.AddScoped<IGetOrdersForAdminService, GetOrdersForAdminService>();
+builder.Services.AddScoped<IGetRequestPayForAdminService, GetRequestPayForAdminService>();
 
 
 //  Facad Injection
