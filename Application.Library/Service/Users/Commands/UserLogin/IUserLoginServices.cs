@@ -46,7 +46,6 @@ namespace Application.Library.Service
                 {
                     Data = new ResultUserLoginDTO()
                     {
-
                     },
                     IsSuccess = false,
                     Message = "کاربری با این اطلاعات پیدا نشد"
@@ -60,23 +59,23 @@ namespace Application.Library.Service
                 {
                     Data = new ResultUserLoginDTO()
                     {
-
                     },
                     IsSuccess = false,
                     Message = "رمز کاربری اشتباه است"
                 };
             }
-            var roles = "";
+            var roles = new List<string>();
 
             foreach (var item in user.UserRoles)
             {
-                roles += $"{item.Role.Title}";
+                roles.Add(item.Role.Title);
             }
+
             var result = new ResultDTO<ResultUserLoginDTO>()
             {
                 Data = new ResultUserLoginDTO()
                 {
-                    Role = roles,
+                    Roles = roles,
                     UserId = user.ID,
                     Name= user.Name,
                 },
@@ -95,7 +94,7 @@ namespace Application.Library.Service
         public bool IsSuccess { get; set; }
         public string Email { get; set; }
         public string Name { get; set; }
-        public string Role { get; set; }
+        public List<string> Roles { get; set; }
 
 
     }

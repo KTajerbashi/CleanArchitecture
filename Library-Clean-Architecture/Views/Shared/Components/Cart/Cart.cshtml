@@ -12,7 +12,7 @@
             </span>
             <span class="title-cart">سبد خرید</span>
             <span class="price-cart">
-               @Model.SumAmount.ToString("n0")
+                @Model.SumAmount.ToString("n0")
                 <span>تومان</span>
             </span>
             <span class="count-cart">@Model.ProductCount</span>
@@ -32,13 +32,10 @@
                                     <img src="~/@item.Images">
                                 </a>
                                 <span class="product-name-card">@item.Product</span>
-                               
-                                <div class="quantity">
-                                    <span class="quantity-Price-amount">
-                                        @item.Price.ToString("n0")
-                                        <span>تومان</span>
-                                    </span>
-                                </div>
+                                <span class="quantity-Price-amount">
+                                    @item.Price.ToString("n0")
+                                    <span>تومان</span>
+                                </span>
                             </div>
                         </li>
                     }

@@ -45,7 +45,7 @@ namespace Application.Library.Service
         }
     }
 
-    public class ResultRequestPayDto
+    public partial class ResultRequestPayDto
     {
         public Guid guid { get; set; }
         public int Amount { get; set; }
@@ -53,3 +53,4 @@ namespace Application.Library.Service
         public long RequestPayId { get; set; }
     }
 }
+

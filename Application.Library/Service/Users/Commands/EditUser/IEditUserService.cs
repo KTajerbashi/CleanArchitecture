@@ -3,6 +3,7 @@ using Common.Library;
 
 namespace Application.Library.Service
 {
+    //  Add Transaction Script  Mode Service
     public interface IEditUserService
     {
         ResultDTO Execute(RequestEdituserDto request);

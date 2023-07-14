@@ -1,6 +1,11 @@
 ﻿using Application.Library.Interfaces;
 using Common.Library;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Application.Library.Service
 {
@@ -23,7 +28,7 @@ namespace Application.Library.Service
                 .ToList()
                  .Select(p => new RequestPayDto
                  {
-                     ID=p.ID,
+                     Id=p.ID,
                      Amount = p.Amount,
                      Authority = p.Authority,
                      Guid = p.Guid,
@@ -31,7 +36,7 @@ namespace Application.Library.Service
                      PayDate = p.PayDate,
                      RefId = p.RefId,
                      UserId = p.UserId,
-                     UserName = p.User.Name
+                     UserName = p.User.Username
                  }).ToList();
 
             return new ResultDTO<List<RequestPayDto>>()
@@ -41,13 +46,13 @@ namespace Application.Library.Service
             };
         }
     }
-    public partial class RequestPayDto
+    public class RequestPayDto
     {
-        public long ID { get; set; }
+        public long Id { get; set; }
         public Guid Guid { get; set; }
         public string UserName { get; set; }
         public long UserId { get; set; }
-        //public int Amount { get; set; }
+        public int Amount { get; set; }
         public bool IsPay { get; set; }
         public DateTime? PayDate { get; set; }
         public string Authority { get; set; }

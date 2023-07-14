@@ -417,7 +417,6 @@ namespace Persistance.Library.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Authority")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreateDate")
@@ -492,7 +491,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 1L,
-                            CreateDate = new DateTime(2023, 7, 14, 1, 16, 18, 151, DateTimeKind.Local).AddTicks(5773),
+                            CreateDate = new DateTime(2023, 7, 15, 1, 5, 11, 890, DateTimeKind.Local).AddTicks(5089),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -502,7 +501,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 2L,
-                            CreateDate = new DateTime(2023, 7, 14, 1, 16, 18, 151, DateTimeKind.Local).AddTicks(5821),
+                            CreateDate = new DateTime(2023, 7, 15, 1, 5, 11, 890, DateTimeKind.Local).AddTicks(5131),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -512,7 +511,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 3L,
-                            CreateDate = new DateTime(2023, 7, 14, 1, 16, 18, 151, DateTimeKind.Local).AddTicks(5831),
+                            CreateDate = new DateTime(2023, 7, 15, 1, 5, 11, 890, DateTimeKind.Local).AddTicks(5143),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,

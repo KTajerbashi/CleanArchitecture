@@ -2,16 +2,26 @@ using Application.Library.Interfaces;
 using Application.Library.Interfaces.Patterns;
 using Application.Library.Service;
 using Application.Library.Service.Products;
+using Common.Library;
+using Domain.Library.Entities;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Persistance.Library.DbContexts;
 
 var builder = WebApplication.CreateBuilder(args);
 //  Use Model One
-var conectionString = @"Data Source=DESKTOP-9EC7HCL; Initial Catalog=CleanArchLibraryDb; User id=sa; Password=123123; Integrated Security=true; TrustServerCertificate=True;";
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//  Authorization Services
+builder.Services.AddAuthorization(option =>
+{
+    option.AddPolicy(UserRolesSeed.Admin, policy => policy.RequireRole(UserRolesSeed.Admin));
+    option.AddPolicy(UserRolesSeed.Customer, policy => policy.RequireRole(UserRolesSeed.Customer));
+    option.AddPolicy(UserRolesSeed.Operator, policy => policy.RequireRole(UserRolesSeed.Operator));
+});
+
 //  Authentication Services
 builder.Services.AddAuthentication(option =>
 {
@@ -20,7 +30,7 @@ builder.Services.AddAuthentication(option =>
     option.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
 }).AddCookie(option =>
 {
-    option.LoginPath = new PathString("/");
+    option.LoginPath = new PathString("/Authentication/Signin");
     option.ExpireTimeSpan = TimeSpan.FromMinutes(5.0);
 });
 
@@ -60,6 +70,7 @@ builder.Services.AddScoped<IGetRequestPayForAdminService, GetRequestPayForAdminS
 builder.Services.AddScoped<IProductFacad, ProductFacad>();
 
 //  Use Model One
+var conectionString = @"Data Source=DESKTOP-9EC7HCL; Initial Catalog=CleanArchLibraryDb; User id=sa; Password=123123; Integrated Security=true; TrustServerCertificate=True;";
 builder.Services.AddEntityFrameworkSqlServer().AddDbContext<DatabaseContext>(option => option.UseSqlServer(conectionString));
 
 
@@ -78,15 +89,18 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
 app.UseAuthentication();
+
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 app.MapControllerRoute(
   name: "areas",
   pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
 app.MapDefaultControllerRoute();
 
 

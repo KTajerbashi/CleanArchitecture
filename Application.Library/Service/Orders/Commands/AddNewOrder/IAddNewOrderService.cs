@@ -60,7 +60,7 @@ namespace Application.Library.Service
             _context.OrderDetails.AddRange(orderDetails);
 
             _context.SaveChanges();
-            
+
             return new ResultDTO()
             {
                 IsSuccess = true,

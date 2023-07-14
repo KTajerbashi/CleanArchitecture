@@ -28,7 +28,6 @@ namespace Library_Clean_Architecture.Controllers
 
         public IActionResult Index()
         {
-
             HomePageViewModel homePage = new HomePageViewModel()
             {
                 Sliders = _getSliderService.Execute().Data,
@@ -51,7 +50,34 @@ namespace Library_Clean_Architecture.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
+        public IActionResult SetCookie()
+        {
+            Response.Cookies.Append("Cookie1","This is First Cookie");
+            Response.Cookies.Append(
+                "Cookie2",
+                "This is First Cookie",
+                new CookieOptions
+                {
+                    Expires = DateTime.Now,
+                    HttpOnly= true,
+                    Secure = Request.IsHttps,
+                    Path = Request.PathBase.HasValue ? Request.PathBase.Value.ToString() : "/"
+                });
+            return View();
+        }
+        public IActionResult GetCookie()
+        {
+            //  Get Cookie
+            var cookie1 = Request.Cookies["Cookie1"].ToString();
+            var cookie2 = Request.Cookies["Cookie2"].ToString();
+            return Ok($@"Cookie 1 : {cookie1}\n Cookie 2 : {cookie2}");
+        }
+        public IActionResult RemoveCookie()
+        {
+            Response.Cookies.Delete("Cookie1");
+            Response.Cookies.Delete("Cookie2");
+            return Ok($@"Cookies Deleted");
+        }
 
 
     }

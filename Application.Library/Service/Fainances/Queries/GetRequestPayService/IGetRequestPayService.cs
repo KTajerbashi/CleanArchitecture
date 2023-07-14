@@ -1,11 +1,16 @@
 ﻿using Application.Library.Interfaces;
 using Common.Library;
-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 namespace Application.Library.Service
 {
     public interface IGetRequestPayService
     {
-        ResultDTO<RequestPayDto> Execute(Guid guid);
+        ResultDTO<RequestPayDTO> Execute(Guid guid);
     }
 
     public class GetRequestPayService : IGetRequestPayService
@@ -15,18 +20,18 @@ namespace Application.Library.Service
         {
             _context = context;
         }
-        public ResultDTO<RequestPayDto> Execute(Guid guid)
+        public ResultDTO<RequestPayDTO> Execute(Guid guid)
         {
             var requestPay = _context.RequestPays.Where(p => p.Guid == guid).FirstOrDefault();
 
             if (requestPay != null)
             {
-                return new ResultDTO<RequestPayDto>()
+                return new ResultDTO<RequestPayDTO>()
                 {
-                    Data = new RequestPayDto()
+                    Data = new RequestPayDTO()
                     {
                         Amount = requestPay.Amount,
-                        Id = requestPay.ID,
+                        Id=requestPay.ID,
                     }
                 };
             }
@@ -37,10 +42,10 @@ namespace Application.Library.Service
         }
     }
 
-    public partial class RequestPayDto
+    public class RequestPayDTO
     {
-        public long Id { get; set; }
         public int Amount { get; set; }
+        public long Id { get; set; }
 
     }
 }
