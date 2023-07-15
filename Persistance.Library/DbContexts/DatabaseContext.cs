@@ -36,7 +36,7 @@ namespace Persistance.Library.DbContexts
             UserConfig(modelBuilder);
 
             //  Apply Relational
-            ApplyRelational(modelBuilder);
+            ApplyRelationalOrder(modelBuilder);
 
             // Query Filter
             ApplyQueryFilter(modelBuilder);
@@ -50,7 +50,9 @@ namespace Persistance.Library.DbContexts
             modelBuilder.Entity<Role>().HasData(new Role { ID = 3, Title = nameof(UserRolesSeed.Customer) });
 
         }
-        public void ApplyRelational(ModelBuilder modelBuilder)
+        // Order To User And Order to Request Pay Relation
+
+        public void ApplyRelationalOrder(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Order>()
                .HasOne(p => p.User)

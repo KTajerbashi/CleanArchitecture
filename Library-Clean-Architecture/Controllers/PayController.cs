@@ -78,7 +78,7 @@ namespace Library_Clean_Architecture.Controllers
                 Authority = authority
             }, Payment.Mode.sandbox);
 
-
+            //  Rest Sharp
             //var client = new RestClient("https://www.zarinpal.com/pg/rest/WebGate/PaymentVerification.json");
             //client.Timeout = -1;
             //var request = new RestRequest(Method.POST);
@@ -100,10 +100,6 @@ namespace Library_Clean_Architecture.Controllers
 
                 //redirect to orders
                 return RedirectToAction("Index", "Orders");
-            }
-            else
-            {
-
             }
 
             return View();

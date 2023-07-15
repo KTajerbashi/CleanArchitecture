@@ -1,11 +1,13 @@
 ﻿using Application.Library.Interfaces.Patterns;
 using Application.Library.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Library_Clean_Architecture.Admin.Controllers
 {
 
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class CategoriesController : Controller
     {
 

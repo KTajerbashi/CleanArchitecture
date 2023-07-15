@@ -6,40 +6,47 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>سفارشات شما</h1>
-
-<table style="border:dashed" class="table table-responsive table-active table-bordered">
-    <thead>
-        <tr style="border:solid">
-            <th>شماره سفارش</th>
-            <th>شماره فاکتور</th>
-            <th>وضعیت سفارش</th>
-            <th>محصولات در این سفارش</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr style="border:solid">
-                <td>@item.OrderId</td>
-                <td>@item.OrderState </td>
-                <td>@item.RequestPayId </td>
-
-                <td>
-                    <table>
-                        @foreach (var detail in item.OrderDetails)
-                        {
-                         <tr  style="border:outset">
-                             <td> @detail.ProductName</td>
-                             <td> @detail.Price</td>
-                             <td> @detail.Count</td>
-                         </tr>
-                        }
-                    </table>
-
-                </td>
+<style>
+    .table-body-container{
+        width: 100%;
+    }
+</style>
+<div class="container p-5 text-center">
+    <h1 class="w-100 bg-dark bg-gradient text-light rounded-5">سفارشات شما</h1>
+    <table style="border:dashed" class="table table-hover table-responsive table-active table-bordered">
+        <thead>
+            <tr>
+                <th>شماره سفارش</th>
+                <th>شماره فاکتور</th>
+                <th>وضعیت سفارش</th>
+                <th>محصولات در این سفارش</th>
             </tr>
-        }
+        </thead>
+        <tbody class="table-body-container">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.OrderId</td>
+                    <td>@item.OrderState </td>
+                    <td>@item.RequestPayId </td>
 
-    </tbody>
-</table>
+                    <td>
+                        <table>
+                            @foreach (var detail in item.OrderDetails)
+                            {
+                                <tr style="border:outset" class="w-100">
+                                    <td> @detail.ProductName</td>
+                                    <td> @detail.Price</td>
+                                    <td> @detail.Count</td>
+                                </tr>
+                            }
+                        </table>
+
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+</div>

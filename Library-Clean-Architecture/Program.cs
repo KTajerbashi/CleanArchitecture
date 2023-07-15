@@ -32,6 +32,7 @@ builder.Services.AddAuthentication(option =>
 {
     option.LoginPath = new PathString("/Authentication/Signin");
     option.ExpireTimeSpan = TimeSpan.FromMinutes(5.0);
+    option.AccessDeniedPath = new PathString("/Authentication/Signin");
 });
 
 //  Add services to the container.
