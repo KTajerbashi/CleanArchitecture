@@ -1,3 +1,4 @@
+global using Microsoft.AspNetCore.Mvc;
 using Application.Library.Interfaces;
 using Application.Library.Interfaces.Patterns;
 using Application.Library.Service;
