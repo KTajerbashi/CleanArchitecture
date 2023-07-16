@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistance.Library.DbContexts;
 
@@ -11,9 +12,11 @@ using Persistance.Library.DbContexts;
 namespace Persistance.Library.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20230716194941_UserConfiguration")]
+    partial class UserConfiguration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -491,7 +494,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 1L,
-                            CreateDate = new DateTime(2023, 7, 16, 23, 58, 10, 150, DateTimeKind.Local).AddTicks(3425),
+                            CreateDate = new DateTime(2023, 7, 16, 23, 19, 41, 250, DateTimeKind.Local).AddTicks(5629),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -501,7 +504,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 2L,
-                            CreateDate = new DateTime(2023, 7, 16, 23, 58, 10, 150, DateTimeKind.Local).AddTicks(3454),
+                            CreateDate = new DateTime(2023, 7, 16, 23, 19, 41, 250, DateTimeKind.Local).AddTicks(5673),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -511,7 +514,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 3L,
-                            CreateDate = new DateTime(2023, 7, 16, 23, 58, 10, 150, DateTimeKind.Local).AddTicks(3458),
+                            CreateDate = new DateTime(2023, 7, 16, 23, 19, 41, 250, DateTimeKind.Local).AddTicks(5709),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,

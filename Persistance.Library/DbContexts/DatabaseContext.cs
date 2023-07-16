@@ -2,6 +2,8 @@
 using Common.Library;
 using Domain.Library.Entities;
 using Microsoft.EntityFrameworkCore;
+using Persistance.Library.EntityConfigurations;
+using System.Reflection;
 
 namespace Persistance.Library.DbContexts
 {
@@ -29,65 +31,49 @@ namespace Persistance.Library.DbContexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //  Seed Data
-            SeedData(modelBuilder);
-
-            //  User Data
-            UserConfig(modelBuilder);
-
-            //  Apply Relational
-            ApplyRelationalOrder(modelBuilder);
-
-            // Query Filter
-            ApplyQueryFilter(modelBuilder);
-
-        }
-        public void SeedData(ModelBuilder modelBuilder)
-        {
-            //  Role
-            modelBuilder.Entity<Role>().HasData(new Role { ID = 1, Title = nameof(UserRolesSeed.Admin) });
-            modelBuilder.Entity<Role>().HasData(new Role { ID = 2, Title = nameof(UserRolesSeed.Operator) });
-            modelBuilder.Entity<Role>().HasData(new Role { ID = 3, Title = nameof(UserRolesSeed.Customer) });
-
-        }
-        // Order To User And Order to Request Pay Relation
-
-        public void ApplyRelationalOrder(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Order>()
-               .HasOne(p => p.User)
-               .WithMany(p => p.Orders)
-               .OnDelete(DeleteBehavior.NoAction);
-
-            modelBuilder.Entity<Order>()
-                .HasOne(p => p.RequestPay)
-                .WithMany(p => p.Orders)
-                .OnDelete(DeleteBehavior.NoAction);
-        }
-        public void UserConfig(ModelBuilder modelBuilder)
-        {
             //  User
-            modelBuilder.Entity<User>().HasIndex(c => c.Email).IsUnique();
-            modelBuilder.Entity<User>().HasQueryFilter(u => u.IsActive && !u.IsDeleted);
-        }
+            //modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
 
-        public void ApplyQueryFilter(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<User>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<Role>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<UserRole>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<Category>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<ProductImages>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<ProductFeatures>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<Slider>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<HomePageImages>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<Cart>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<CartItem>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<RequestPay>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<Order>().HasQueryFilter(p => !p.IsDeleted);
-            modelBuilder.Entity<OrderDetail>().HasQueryFilter(p => !p.IsDeleted);
-        }
+            //  Role
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
 
+            //  UserRole
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+
+            //  Category
+            modelBuilder.ApplyConfiguration(new CategoriesConfiguration());
+
+            //  Product
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+
+            //  ProductImages
+            modelBuilder.ApplyConfiguration(new ProductImagesConfiguration());
+
+            //  ProductFeatures
+            modelBuilder.ApplyConfiguration(new ProductFeaturesConfiguration());
+
+            //  Slider
+            modelBuilder.ApplyConfiguration(new SliderConfiguration());
+
+            //  HomePageImages
+            modelBuilder.ApplyConfiguration(new HomePageImagesConfiguration());
+
+            //  Cart
+            modelBuilder.ApplyConfiguration(new CartConfiguration());
+
+            //  CartItem
+            modelBuilder.ApplyConfiguration(new CartItemConfiguration());
+
+            //  RequestPay
+            modelBuilder.ApplyConfiguration(new RequestPayConfiguration());
+
+            //  Order
+            modelBuilder.ApplyConfiguration(new OrderConfiguration());
+
+            //  OrderDetail
+            modelBuilder.ApplyConfiguration(new OrderDetailConfiguration());
+
+        }
     }
 }
