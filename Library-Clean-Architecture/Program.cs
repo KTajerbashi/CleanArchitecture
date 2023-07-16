@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Persistance.Library.DbContexts;
 
+
 var builder = WebApplication.CreateBuilder(args);
 //  Use Model One
 
@@ -35,6 +36,9 @@ builder.Services.AddAuthentication(option =>
     option.ExpireTimeSpan = TimeSpan.FromMinutes(5.0);
     option.AccessDeniedPath = new PathString("/Authentication/Signin");
 });
+//  AppSettings.json
+var author = builder.Configuration["Author"];
+var cstr = builder.Configuration["Author"];
 
 //  Add services to the container.
 //  Database
