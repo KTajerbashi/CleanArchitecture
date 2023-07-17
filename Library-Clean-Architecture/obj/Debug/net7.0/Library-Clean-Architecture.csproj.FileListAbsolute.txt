@@ -9,6 +9,7 @@ C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchi
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\Azure.Core.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\Azure.Identity.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\BCrypt.Net-Next.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\FluentValidation.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\Humanizer.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\LazZiya.ExpressLocalization.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\LazZiya.TagHelpers.dll

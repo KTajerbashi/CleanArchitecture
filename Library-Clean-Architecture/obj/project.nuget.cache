@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "o0PmwPHBrCzxaE9Nh3T/FRcbli9mfJ9gi02d5Cy+NI9xqDnND3cw2ZF0Kthx00u0rPw0wrTdAzGmpUVX+pcppg==",
+  "dgSpecHash": "jFXIZQq6Q7U37mujXOryTrG/1r+dx3lb3Ir6AmKRw6flU4v59ZhuTiksljEEaJ5Wo7k1631v/zn5kW9LPJLKdA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Library-Clean-Architecture\\Library-Clean-Architecture.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tajer\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Tajer\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Tajer\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\Tajer\\.nuget\\packages\\fluentvalidation\\11.6.0\\fluentvalidation.11.6.0.nupkg.sha512",
     "C:\\Users\\Tajer\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Tajer\\.nuget\\packages\\lazziya.expresslocalization\\4.0.4\\lazziya.expresslocalization.4.0.4.nupkg.sha512",
     "C:\\Users\\Tajer\\.nuget\\packages\\lazziya.taghelpers\\6.0.2\\lazziya.taghelpers.6.0.2.nupkg.sha512",
