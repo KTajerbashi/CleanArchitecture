@@ -35,9 +35,8 @@ namespace Library_Clean_Architecture.Controllers
                 Camera=_productFacad.GetProductForSiteService.Execute( Ordering.theNewest
                 ,null,1,6,25).Data.Products,
             };
-            var item = homePage;
             var list = homePage.PageImages.Where(p=> p.ImageLocation == ImageLocation.L1)?.FirstOrDefault()?.Src?? null;
-            return View(item);
+            return View(list);
         }
 
         public IActionResult Privacy()
