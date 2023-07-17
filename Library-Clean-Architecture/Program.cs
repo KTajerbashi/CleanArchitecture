@@ -11,7 +11,11 @@ using Persistance.Library.DbContexts;
 
 
 var builder = WebApplication.CreateBuilder(args);
-//  Use Model One
+//  Use Model Two
+//ConfigurationManager configuration = builder.Configuration;
+//builder.Services.AddDbContext<DatabaseContext>(
+//        option => option.UseSqlServer(configuration.GetConnectionString("Default"))
+//);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

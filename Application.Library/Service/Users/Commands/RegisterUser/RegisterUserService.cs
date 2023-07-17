@@ -1,4 +1,5 @@
 ﻿using Application.Library.Interfaces;
+using Application.Library.Validators;
 using Common.Library;
 using Common.Library.Configuration;
 using Domain.Library.Entities;
@@ -16,6 +17,22 @@ namespace Application.Library.Service
         public ResultDTO<ResultRegisterUserDto> Execute(RequestRegisterUserDto request)
         {
             //  TO DO Fluent Validation
+            #region Fluent
+            var validator = new UserValidation();
+            var result = validator.Validate(request);
+            if (!result.IsValid)
+            {
+                return new ResultDTO<ResultRegisterUserDto>()
+                {
+                    Data = new ResultRegisterUserDto()
+                    {
+                        UserId = 0,
+                    },
+                    IsSuccess = false,
+                    Message = result.Errors[0].ErrorMessage
+                };
+            }
+            #endregion
             try
             {
                 if (string.IsNullOrWhiteSpace(request.Email))

@@ -491,7 +491,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 1L,
-                            CreateDate = new DateTime(2023, 7, 16, 23, 58, 10, 150, DateTimeKind.Local).AddTicks(3425),
+                            CreateDate = new DateTime(2023, 7, 17, 22, 59, 16, 527, DateTimeKind.Local).AddTicks(387),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -501,7 +501,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 2L,
-                            CreateDate = new DateTime(2023, 7, 16, 23, 58, 10, 150, DateTimeKind.Local).AddTicks(3454),
+                            CreateDate = new DateTime(2023, 7, 17, 22, 59, 16, 527, DateTimeKind.Local).AddTicks(418),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
@@ -511,7 +511,7 @@ namespace Persistance.Library.Migrations
                         new
                         {
                             ID = 3L,
-                            CreateDate = new DateTime(2023, 7, 16, 23, 58, 10, 150, DateTimeKind.Local).AddTicks(3458),
+                            CreateDate = new DateTime(2023, 7, 17, 22, 59, 16, 527, DateTimeKind.Local).AddTicks(421),
                             DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             IsDeleted = false,
