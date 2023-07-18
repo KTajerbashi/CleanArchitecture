@@ -7,6 +7,11 @@ namespace Application.Library.Validators
     {
         public UserValidation() 
         {
+            //  Cascade
+            //  در صورتی که یکی از شروط فیلد بود شروط بعدی رو چک نکند
+            CascadeMode = CascadeMode.Stop; //  این برای همه شرط های موجود در کلاس اعمال میشود
+
+
             RuleFor(x => x.Email)
                 .NotNull().WithMessage("ایمیل خالی است")
                 .EmailAddress().WithMessage("ایمیل درست نیست")
@@ -50,15 +55,14 @@ namespace Application.Library.Validators
                 RuleFor(x => x.Phone).Null();
             });
 
-            //  Cascade
-            //  در صورتی که یکی از شروط فیلد بود شروط بعدی رو چک نکند
-            CascadeMode = CascadeMode.Stop; //  این برای همه شرط های موجود در کلاس اعمال میشود
-
+            
             RuleFor(x => x.Email)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty()
                 .EmailAddress()
                 ;
+            //  Use Custome IRuleBuilder
+            RuleFor(x => x.Name).StartAndEndControl("a","z");
         }
     }
 }

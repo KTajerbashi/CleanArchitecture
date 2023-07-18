@@ -10,6 +10,8 @@ C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchi
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\Azure.Identity.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\BCrypt.Net-Next.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\FluentValidation.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\Humanizer.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\LazZiya.ExpressLocalization.dll
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\LazZiya.TagHelpers.dll
@@ -91,5 +93,3 @@ C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchi
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\Library-Clean-Architecture.pdb
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\Library-Clean-Architecture.genruntimeconfig.cache
 C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\obj\Debug\net7.0\ref\Library-Clean-Architecture.dll
-C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\FluentValidation.AspNetCore.dll
-C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Library-Clean-Architecture\bin\Debug\net7.0\FluentValidation.DependencyInjectionExtensions.dll
