@@ -3,6 +3,7 @@ using Application.Library.Validators;
 using Common.Library;
 using Common.Library.Configuration;
 using Domain.Library.Entities;
+using FluentValidation;
 using System.ComponentModel;
 
 namespace Application.Library.Service
@@ -19,7 +20,13 @@ namespace Application.Library.Service
             //  TO DO Fluent Validation
             #region Fluent
             var validator = new UserValidation();
-            var result = validator.Validate(request);
+            //  Type 1
+            var result = validator.Validate(request,rule =>
+                rule.IncludeRuleSets(CRUD.Add.ToString())
+                .ThrowOnFailures()
+            );
+            //  Type 2
+            validator.ValidateAndThrow(request);
             if (!result.IsValid)
             {
                 return new ResultDTO<ResultRegisterUserDto>()
