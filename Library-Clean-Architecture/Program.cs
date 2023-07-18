@@ -3,8 +3,10 @@ using Application.Library.Interfaces;
 using Application.Library.Interfaces.Patterns;
 using Application.Library.Service;
 using Application.Library.Service.Products;
+using Application.Library.Validators;
 using Common.Library;
 using Domain.Library.Entities;
+using FluentValidation;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Persistance.Library.DbContexts;
@@ -16,6 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddDbContext<DatabaseContext>(
 //        option => option.UseSqlServer(configuration.GetConnectionString("Default"))
 //);
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -43,6 +46,12 @@ builder.Services.AddAuthentication(option =>
 //  AppSettings.json
 var author = builder.Configuration["Author"];
 var cstr = builder.Configuration["Author"];
+
+
+//  Fluent Validation
+//  Cascade Global
+FluentValidation.ValidatorOptions.Global.CascadeMode = FluentValidation.CascadeMode.Stop;
+builder.Services.AddTransient<IValidator<RequestRegisterUserDto>, UserValidation>();
 
 //  Add services to the container.
 //  Database
