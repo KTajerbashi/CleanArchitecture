@@ -8,26 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Areas\Admin\Views\Categories\AddNewCategory.cshtml" />
-    <None Include="Areas\Admin\Views\Categories\Index.cshtml" />
-    <None Include="Areas\Admin\Views\HomePageImages\Add.cshtml" />
-    <None Include="Areas\Admin\Views\Orders\Index.cshtml" />
-    <None Include="Areas\Admin\Views\Products\AddNewProduct.cshtml" />
-    <None Include="Areas\Admin\Views\Products\Detail.cshtml" />
-    <None Include="Areas\Admin\Views\Products\Index.cshtml" />
-    <None Include="Areas\Admin\Views\RequestPay\Index.cshtml" />
-    <None Include="Areas\Admin\Views\Shared\_Adminlayout.cshtml" />
-    <None Include="Areas\Admin\Views\Sliders\Add.cshtml" />
-    <None Include="Areas\Admin\Views\Users\Create.cshtml" />
-    <None Include="Areas\Admin\Views\Users\Index.cshtml" />
-    <None Include="Views\Shared\Components\GetMenu\GetMenu.cshtml" />
-    <None Include="Views\Shared\Components\Search\Search.cshtml" />
-    <None Include="Views\Shared\Error.cshtml" />
-    <None Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="LazZiya.ExpressLocalization" Version="4.0.4" />
     <PackageReference Include="LazZiya.TagHelpers" Version="6.0.2" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
@@ -46,16 +26,10 @@
     <ProjectReference Include="..\Persistance.Library\Persistance.Library.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <Content Update="Views\Shared\_Layout.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
-  </ItemGroup>
-
+  </ItemGroup>-->
 </Project>

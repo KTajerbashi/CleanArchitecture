@@ -25,8 +25,11 @@ namespace Library_Clean_Architecture.Controllers
             _homePageImagesService = homePageImagesService;
             _productFacad = productFacad;
         }
+      
 
-        public IActionResult Index()
+
+        
+            public IActionResult Index(int id)
         {
             HomePageViewModel homePage = new HomePageViewModel()
             {
@@ -51,14 +54,14 @@ namespace Library_Clean_Architecture.Controllers
         }
         public IActionResult SetCookie()
         {
-            Response.Cookies.Append("Cookie1","This is First Cookie");
+            Response.Cookies.Append("Cookie1", "This is First Cookie");
             Response.Cookies.Append(
                 "Cookie2",
                 "This is First Cookie",
                 new CookieOptions
                 {
                     Expires = DateTime.Now,
-                    HttpOnly= true,
+                    HttpOnly = true,
                     Secure = Request.IsHttps,
                     Path = Request.PathBase.HasValue ? Request.PathBase.Value.ToString() : "/"
                 });
