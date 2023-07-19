@@ -17,29 +17,6 @@ namespace Application.Library.Service
         }
         public ResultDTO<ResultRegisterUserDto> Execute(RequestRegisterUserDto request)
         {
-            //  TO DO Fluent Validation
-            #region Fluent
-            var validator = new UserValidation();
-            //  Type 1
-            var result = validator.Validate(request,rule =>
-                rule.IncludeRuleSets(CRUD.Add.ToString())
-                .ThrowOnFailures()
-            );
-            //  Type 2
-            validator.ValidateAndThrow(request);
-            if (!result.IsValid)
-            {
-                return new ResultDTO<ResultRegisterUserDto>()
-                {
-                    Data = new ResultRegisterUserDto()
-                    {
-                        UserId = 0,
-                    },
-                    IsSuccess = false,
-                    Message = result.Errors[0].ErrorMessage
-                };
-            }
-            #endregion
             try
             {
                 if (string.IsNullOrWhiteSpace(request.Email))

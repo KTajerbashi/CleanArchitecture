@@ -32,6 +32,7 @@ namespace Library_Clean_Architecture.Controllers
         {
             if (string.IsNullOrWhiteSpace(request.Name) ||
                 string.IsNullOrWhiteSpace(request.Family) ||
+                string.IsNullOrWhiteSpace(request.Username) ||
                 string.IsNullOrWhiteSpace(request.Email) ||
                 string.IsNullOrWhiteSpace(request.Password) ||
                 string.IsNullOrWhiteSpace(request.RePassword))
@@ -66,6 +67,7 @@ namespace Library_Clean_Architecture.Controllers
                 Email = request.Email,
                 Name = request.Name,
                 Family = request.Family,
+                Username = request.Username,
                 Password = request.Password,
                 RePasword = request.RePassword,
                 Roles = new List<RolesInRegisterUserDto>()

@@ -1,0 +1,17 @@
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Application.Library.deps.json
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Application.Library.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Application.Library.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Common.Library.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Domain.Library.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Common.Library.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\bin\Debug\net7.0\Domain.Library.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\Application.Library.csproj.AssemblyReference.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\Application.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\Application.Library.AssemblyInfoInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\Application.Library.AssemblyInfo.cs
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\Application.Library.csproj.CoreCompileInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\Application.Library.csproj.CopyComplete
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\Application.Library.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\refint\Application.Library.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\Application.Library.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\GitHub\LibraryCleanArchitecture\Application.Library\obj\Debug\net7.0\ref\Application.Library.dll

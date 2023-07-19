@@ -19,37 +19,43 @@
 
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 
-                        @for (int i = 0; i <= Model.Sliders.Count ; i++)
+                        @if (Model != null)
                         {
-                            <li data-target="#carouselExampleIndicators" data-slide-to="@i"></li>
+                            @for (int i = 0; i <= Model.Sliders.Count; i++)
+                            {
+                                <li data-target="#carouselExampleIndicators" data-slide-to="@i"></li>
+                            }
                         }
                     </ol>
                     <div class="carousel-inner">
-                        @foreach (var item in Model.Sliders)
+                        @if (Model != null)
                         {
-
-                            if (_sliderCount == 1)
+                            @foreach (var item in Model.Sliders)
                             {
-                                <div class="carousel-item active">
-                                    <a href="@item.Link">
-                                        <img src="~/@item.Src" class="d-block w-100" alt="...">
-                                    </a>
-                                </div>
+
+                                if (_sliderCount == 1)
+                                {
+                                    <div class="carousel-item active">
+                                        <a href="@item.Link">
+                                            <img src="~/@item.Src" class="d-block w-100" alt="...">
+                                        </a>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="carousel-item">
+                                        <a href="@item.Link">
+                                            <img src="~/@item.Src" class="d-block w-100" alt="...">
+                                        </a>
+                                    </div>
+                                }
+
+
+
+                                _sliderCount++;
                             }
-                            else
-                            {
-                                <div class="carousel-item">
-                                    <a href="@item.Link">
-                                        <img src="~/@item.Src" class="d-block w-100" alt="...">
-                                    </a>
-                                </div>
-                            }
 
-
-
-                            _sliderCount++;
                         }
-
 
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -68,12 +74,18 @@
             <div class="adplacement-container-column">
                 <a href="#" class="adplacement-item">
                     <div class="adplacement-sponsored-box">
-                        <img src="~/@Model.PageImages.Where(p=> p.ImageLocation == ImageLocation.L1)?.FirstOrDefault()?.Src?? '' ">
+                        @if (Model != null)
+                        {
+                            <img src="~/@Model.PageImages.Where(p=> p.ImageLocation == ImageLocation.L1)?.FirstOrDefault()?.Src?? '' ">
+                        }
                     </div>
                 </a>
                 <a href="#" class="adplacement-item">
                     <div class="adplacement-sponsored-box">
-                        <img src="~/@Model.PageImages.Where(p=> p.ImageLocation == ImageLocation.L2)?.FirstOrDefault()?.Src?? '' ">
+                        @if (Model != null)
+                        {
+                            <img src="~/@Model.PageImages.Where(p=> p.ImageLocation == ImageLocation.L2)?.FirstOrDefault()?.Src?? '' ">
+                        }
                     </div>
                 </a>
             </div>
@@ -82,7 +94,10 @@
             <div class="adplacement-container-column mt-4">
                 <a href="#" class="adplacement-item img-banner">
                     <div class="adplacement-sponsored-box">
-                        <img src="~/@Model.PageImages.Where(p=> p.ImageLocation == ImageLocation.R1)?.FirstOrDefault()?.Src?? '' ">
+                        @if (Model != null)
+                        {
+                            <img src="~/@Model.PageImages.Where(p=> p.ImageLocation == ImageLocation.R1)?.FirstOrDefault()?.Src?? '' ">
+                        }
                     </div>
                 </a>
             </div>
@@ -481,24 +496,26 @@
             <div class="col-12">
                 <a href="#" class="adplacement-item mb-4">
                     <div class="adplacement-sponsored_box">
-                        <img src="~/@Model.PageImages.Where(p=> p.ImageLocation == ImageLocation.CenterFullScreen)?.FirstOrDefault()?.Src?? ''">
+                        @if (Model != null)
+                        {
+                            <img src="~/@Model.PageImages.Where(p=> p.ImageLocation == ImageLocation.CenterFullScreen)?.FirstOrDefault()?.Src?? ''">
+                        }
                     </div>
                 </a>
             </div>
-
-            @foreach (var item in Model.PageImages.Where(p => p.ImageLocation == ImageLocation.G1).ToList())
+            @if (Model != null)
             {
-                <div class="col-6 col-lg-3 pr">
-                    <a href="#" class="adplacement-item">
-                        <div class="adplacement-sponsored_box">
-                            <img src="~/@item.Src">
-                        </div>
-                    </a>
-                </div>
+                @foreach (var item in Model.PageImages.Where(p => p.ImageLocation == ImageLocation.G1).ToList())
+                {
+                    <div class="col-6 col-lg-3 pr">
+                        <a href="#" class="adplacement-item">
+                            <div class="adplacement-sponsored_box">
+                                <img src="~/@item.Src">
+                            </div>
+                        </a>
+                    </div>
+                }
             }
-
-
-
         </div>
     </div>
 </div>
@@ -517,24 +534,27 @@
                         <div class="owl-stage-outer">
                             <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2234px;">
 
-                                @foreach (var item in Model.Camera)
+                                @if (Model != null)
                                 {
-                                    <div class="owl-item active" style="width: 309.083px; margin-left: 10px;">
-                                        <div class="item">
-                                            <a href="~/produtcs/detail/@item.ID" class="d-block hover-img-link">
-                                                <img src="~/@item.ImageSrc" class="img-fluid" alt="">
-                                            </a>
-                                            <h2 class="post-title">
-                                                <a href="#">
-                                                    @item.Title
+                                    @foreach (var item in Model.Camera)
+                                    {
+                                        <div class="owl-item active" style="width: 309.083px; margin-left: 10px;">
+                                            <div class="item">
+                                                <a href="~/produtcs/detail/@item.ID" class="d-block hover-img-link">
+                                                    <img src="~/@item.ImageSrc" class="img-fluid" alt="">
                                                 </a>
-                                            </h2>
-                                            <div class="price">
-                                                @*<del><span>۱۲,۰۰۰,۰۰<span>تومان</span></span></del>*@
-                                                <ins><span>@item.Price<span>تومان</span></span></ins>
+                                                <h2 class="post-title">
+                                                    <a href="#">
+                                                        @item.Title
+                                                    </a>
+                                                </h2>
+                                                <div class="price">
+                                                    @*<del><span>۱۲,۰۰۰,۰۰<span>تومان</span></span></del>*@
+                                                    <ins><span>@item.Price<span>تومان</span></span></ins>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    }
                                 }
 
 
@@ -768,19 +788,19 @@
         <div class="container-fluid">
             <div class="row pr">
                 <div class="adplacement-container-row">
-
-                    @foreach (var item in Model.PageImages.Where(p => p.ImageLocation == ImageLocation.G2).ToList())
+                    @if (Model != null)
                     {
-                        <div class="col-6 col-lg-3 pr">
-                            <a href="#" class="adplacement-item">
-                                <div class="adplacement-sponsored_box">
-                                    <img src="~/@item.Src">
-                                </div>
-                            </a>
-                        </div>
+                        @foreach (var item in Model.PageImages.Where(p => p.ImageLocation == ImageLocation.G2).ToList())
+                        {
+                            <div class="col-6 col-lg-3 pr">
+                                <a href="#" class="adplacement-item">
+                                    <div class="adplacement-sponsored_box">
+                                        <img src="~/@item.Src">
+                                    </div>
+                                </a>
+                            </div>
+                        }
                     }
-
-
                 </div>
             </div>
         </div>
@@ -1077,6 +1097,3 @@
     </div>
 </div>
 <!-- header-------------------------------->
-
-
-

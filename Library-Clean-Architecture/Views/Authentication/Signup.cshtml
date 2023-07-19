@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "ثبت نام";
     Layout = null;
 }
@@ -119,10 +118,9 @@
 <link href="~/Sweetalert2/sweetalert2.min.css" rel="stylesheet" />
 <script src="~/Sweetalert2/sweetalert2.min.js"></script>
 
-
 <script>
     function Registeruser() {
- 
+
         var Name = $("#Name").val();
         var Family = $("#Family").val();
         var Email = $("#Email").val();
@@ -138,7 +136,7 @@
             'Password': Password,
             'RePassword': RePassword,
         };
-
+        console.log("Model : ", postData);
         $.ajax({
             contentType: 'application/x-www-form-urlencoded',
             dataType: 'json',
