@@ -25,11 +25,7 @@ namespace Library_Clean_Architecture.Controllers
             _homePageImagesService = homePageImagesService;
             _productFacad = productFacad;
         }
-      
-
-
-        
-            public IActionResult Index(int id)
+        public IActionResult Index(int id)
         {
             HomePageViewModel homePage = new HomePageViewModel()
             {
@@ -38,8 +34,7 @@ namespace Library_Clean_Architecture.Controllers
                 Camera=_productFacad.GetProductForSiteService.Execute( Ordering.theNewest
                 ,null,1,6,25).Data.Products,
             };
-            var list = homePage.PageImages.Where(p=> p.ImageLocation == ImageLocation.L1)?.FirstOrDefault()?.Src?? null;
-            return View(list);
+            return View(homePage);
         }
 
         public IActionResult Privacy()

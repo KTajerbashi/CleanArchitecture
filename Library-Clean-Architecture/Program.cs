@@ -66,7 +66,14 @@ builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IRegisterUserService, RegisterUserService>();
 builder.Services.AddScoped<IUserLoginServices, UserLoginServices>();
 builder.Services.AddScoped<IGetUsersService, GetUsersService>();
+builder.Services.AddScoped<IRemoveUserService, RemoveUserService>();
+builder.Services.AddScoped<IUserSatusChangeService, UserSatusChangeService>();
 builder.Services.AddScoped<IGetRolesService, GetRolesService>();
+builder.Services.AddScoped<IEditUserService, EditUserService>();
+builder.Services.AddScoped<IGetOrdersForAdminService, GetOrdersForAdminService>();
+builder.Services.AddScoped<IAddNewSliderService, AddNewSliderService>();
+builder.Services.AddScoped<IAddHomePageImagesService, AddHomePageImagesService>();
+builder.Services.AddScoped<IGetRequestPayForAdminService, GetRequestPayForAdminService>();
 
 //  Facad Injection
 builder.Services.AddScoped<IProductFacad, ProductFacad>();

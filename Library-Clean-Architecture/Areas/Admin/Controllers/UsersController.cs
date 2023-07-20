@@ -40,10 +40,6 @@ namespace Library_Clean_Architecture.Admin.Controllers
             }));
         }
 
-
-
-
-
         [HttpGet]
         public IActionResult Create()
         {
@@ -53,12 +49,14 @@ namespace Library_Clean_Architecture.Admin.Controllers
 
 
         [HttpPost]
-        public IActionResult Create(string Email, string Name, long RoleId, string Password, string RePassword)
+        public IActionResult Create(string Email, string Name, string Family, string Username, long RoleId, string Password, string RePassword)
         {
             var result = _registerUserService.Execute(new RequestRegisterUserDto
             {
                 Email = Email,
+                Username = Username,
                 Name = Name,
+                Family = Family,
                 Roles = new List<RolesInRegisterUserDto>()
                    {
                         new RolesInRegisterUserDto

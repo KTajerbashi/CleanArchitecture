@@ -36,6 +36,7 @@ namespace Application.Library.Service.Products
             }
         }
 
+
         public AddNewProductService _addNewProductService;
         public AddNewProductService AddNewProductService
         {
