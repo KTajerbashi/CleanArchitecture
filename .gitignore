@@ -2,3 +2,10 @@
 *.png
 *.jpeg
 *.mp3
+*.vsix
+*.vsidx
+/.vs
+/bin
+/obj
+*.dll
+*.pdb

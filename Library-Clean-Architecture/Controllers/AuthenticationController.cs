@@ -1,4 +1,5 @@
-﻿using Application.Library.Service;
+﻿using Application.Library.Interfaces.Patterns;
+using Application.Library.Service;
 using Common.Library;
 using Library_Clean_Architecture.AuthenticationViewModel;
 using Microsoft.AspNetCore.Authentication;
@@ -12,13 +13,11 @@ namespace Library_Clean_Architecture.Controllers
     public class AuthenticationController : Controller
     {
 
-        private readonly IRegisterUserService _registerUserService;
-        private readonly IUserLoginServices _userLoginService;
+        private readonly IUserFacad _userServices;
 
-        public AuthenticationController(IRegisterUserService registerUserService, IUserLoginServices userLoginService)
+        public AuthenticationController(IUserFacad userLoginService)
         {
-            _registerUserService = registerUserService;
-            _userLoginService = userLoginService;
+            _userServices = userLoginService;
         }
 
         [HttpGet]
@@ -62,7 +61,7 @@ namespace Library_Clean_Architecture.Controllers
             }
 
 
-            var signeupResult = _registerUserService.Execute(new RequestRegisterUserDto
+            var signeupResult = _userServices.RegisterUserService.Execute(new RequestRegisterUserDto
             {
                 Email = request.Email,
                 Name = request.Name,
@@ -109,7 +108,7 @@ namespace Library_Clean_Architecture.Controllers
         [HttpPost]
         public IActionResult Signin(string Email, string Password, string url = "/")
         {
-            var signupResult = _userLoginService.Execute(Email, Password);
+            var signupResult = _userServices.UserLoginServices.Execute(Email, Password);
             if (signupResult.IsSuccess == true)
             {
                 var claims = new List<Claim>()

@@ -63,13 +63,6 @@ builder.Services.AddScoped<IGetHomePageImagesService, GetHomePageImagesService>(
 builder.Services.AddScoped<IGetCategoryService, GetCategoryService>();
 builder.Services.AddScoped<IGetMenuItemService, GetMenuItemService>();
 builder.Services.AddScoped<ICartService, CartService>();
-builder.Services.AddScoped<IRegisterUserService, RegisterUserService>();
-builder.Services.AddScoped<IUserLoginServices, UserLoginServices>();
-builder.Services.AddScoped<IGetUsersService, GetUsersService>();
-builder.Services.AddScoped<IRemoveUserService, RemoveUserService>();
-builder.Services.AddScoped<IUserSatusChangeService, UserSatusChangeService>();
-builder.Services.AddScoped<IGetRolesService, GetRolesService>();
-builder.Services.AddScoped<IEditUserService, EditUserService>();
 builder.Services.AddScoped<IGetOrdersForAdminService, GetOrdersForAdminService>();
 builder.Services.AddScoped<IAddNewSliderService, AddNewSliderService>();
 builder.Services.AddScoped<IAddHomePageImagesService, AddHomePageImagesService>();
@@ -77,6 +70,7 @@ builder.Services.AddScoped<IGetRequestPayForAdminService, GetRequestPayForAdminS
 
 //  Facad Injection
 builder.Services.AddScoped<IProductFacad, ProductFacad>();
+builder.Services.AddScoped<IUserFacad, UserFacad>();
 
 //  Use Model One
 //var conectionString = @"Data Source=DESKTOP-9EC7HCL; Initial Catalog=CleanArchLibraryDb; User id=sa; Password=123123; Integrated Security=true; TrustServerCertificate=True;";

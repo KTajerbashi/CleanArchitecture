@@ -6,21 +6,21 @@ namespace Application.Library.Interfaces.Patterns
     public interface IProductFacad
     {
         AddNewCategoryService AddNewCategoryService { get; }
-        IGetCategoriesService GetCategoriesService { get; }
+
 
         AddNewProductService AddNewProductService { get; }
-        IGetAllCategoriesService GetAllCategoriesService { get; }
 
 
 
         /// <summary>
         /// دریافت لیست محصولات
         /// </summary>
+        IGetCategoriesService GetCategoriesService { get; }
+        IGetAllCategoriesService GetAllCategoriesService { get; }
         IGetProductForAdminService GetProductForAdminService { get; }
         IGetProductDetailForAdminService GetProductDetailForAdminService { get; }
         IGetProductForSiteService GetProductForSiteService { get; }
         IGetProductDetailForSiteService GetProductDetailForSiteService { get; }
-
 
     }
 }

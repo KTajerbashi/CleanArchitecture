@@ -11,7 +11,7 @@ namespace Application.Library.Service
             _context = context;
         }
 
-        ResultDTO<List<RolesDto>> IGetRolesService.Execute()
+        public ResultDTO<List<RolesDto>> Execute()
         {
             var roles = _context.Roles.ToList().Select(r => new RolesDto
             {

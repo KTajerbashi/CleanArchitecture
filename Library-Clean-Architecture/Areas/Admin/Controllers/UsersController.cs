@@ -1,4 +1,5 @@
-﻿using Application.Library.Service;
+﻿using Application.Library.Interfaces.Patterns;
+using Application.Library.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,31 +10,16 @@ namespace Library_Clean_Architecture.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class UsersController : Controller
     {
-        private readonly IGetUsersService _getUsersService;
-        private readonly IGetRolesService _getRolesService;
-        private readonly IRegisterUserService _registerUserService;
-        private readonly IRemoveUserService _removeUserService;
-        private readonly IUserSatusChangeService _userSatusChangeService;
-        private readonly IEditUserService _editUserService;
-        public UsersController(IGetUsersService getUsersService
-            , IGetRolesService getRolesService
-            , IRegisterUserService registerUserService
-            , IRemoveUserService removeUserService
-            , IUserSatusChangeService userSatusChangeService
-            , IEditUserService editUserService)
+        private readonly IUserFacad _userServices;
+        public UsersController(IUserFacad userServices)
         {
-            _getUsersService = getUsersService;
-            _getRolesService = getRolesService;
-            _registerUserService = registerUserService;
-            _removeUserService = removeUserService;
-            _userSatusChangeService = userSatusChangeService;
-            _editUserService = editUserService;
+            _userServices = userServices;
         }
 
 
         public IActionResult Index(string serchkey, int page = 1)
         {
-            return View(_getUsersService.Execute(new RequestGetUserDTO
+            return View(_userServices.GetUsersService.Execute(new RequestGetUserDTO
             {
                 Page = page,
                 SearchKey = serchkey,
@@ -43,7 +29,7 @@ namespace Library_Clean_Architecture.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            ViewBag.Roles = new SelectList(_getRolesService.Execute().Data, "ID", "Title");
+            ViewBag.Roles = new SelectList(_userServices.GetRolesService.Execute().Data, "ID", "Title");
             return View();
         }
 
@@ -51,7 +37,7 @@ namespace Library_Clean_Architecture.Admin.Controllers
         [HttpPost]
         public IActionResult Create(string Email, string Name, string Family, string Username, long RoleId, string Password, string RePassword)
         {
-            var result = _registerUserService.Execute(new RequestRegisterUserDto
+            var result = _userServices.RegisterUserService.Execute(new RequestRegisterUserDto
             {
                 Email = Email,
                 Username = Username,
@@ -73,19 +59,19 @@ namespace Library_Clean_Architecture.Admin.Controllers
         [HttpPost]
         public IActionResult Delete(long UserId)
         {
-            return Json(_removeUserService.RemoveUser(UserId));
+            return Json(_userServices.RemoveUserService.RemoveUser(UserId));
         }
 
         [HttpPost]
         public IActionResult UserSatusChange(long UserId)
         {
-            return Json(_userSatusChangeService.Execute(UserId));
+            return Json(_userServices.UserSatusChangeService.Execute(UserId));
         }
 
         [HttpPost]
         public IActionResult Edit(long UserId, string Name)
         {
-            return Json(_editUserService.Execute(new RequestEdituserDto
+            return Json(_userServices.EditUserService.Execute(new RequestEdituserDto
             {
                 Name = Name,
                 UserId = UserId,
