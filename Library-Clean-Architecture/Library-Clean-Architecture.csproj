@@ -26,6 +26,11 @@
     <ProjectReference Include="..\Persistance.Library\Persistance.Library.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="ViewComponents\" />
+  </ItemGroup>
+
   <!--<ItemGroup>
     <Content Update="Views\Shared\_Layout.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>

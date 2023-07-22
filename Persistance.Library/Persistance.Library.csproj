@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Domain.Library\Domain.Library.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="EntityConfigurations\" />
+  </ItemGroup>
+
 </Project>

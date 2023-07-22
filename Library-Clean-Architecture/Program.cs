@@ -1,91 +1,19 @@
-global using Microsoft.AspNetCore.Mvc;
-using Application.Library.Interfaces;
-using Application.Library.Interfaces.Patterns;
-using Application.Library.Service;
-using Application.Library.Service.Products;
-using Application.Library.Validators;
-using Common.Library;
-using Domain.Library.Entities;
-using FluentValidation;
-using Library_Clean_Architecture.AuthenticationViewModel;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using Persistance.Library.DbContexts;
 
 
 var builder = WebApplication.CreateBuilder(args);
-//  Use Model Two
-//ConfigurationManager configuration = builder.Configuration;
-//builder.Services.AddDbContext<DatabaseContext>(
-//        option => option.UseSqlServer(configuration.GetConnectionString("Default"))
-//);
-
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-//  Authorization Services
-builder.Services.AddAuthorization(option =>
-{
-    option.AddPolicy(UserRolesSeed.Admin, policy => policy.RequireRole(UserRolesSeed.Admin));
-    option.AddPolicy(UserRolesSeed.Customer, policy => policy.RequireRole(UserRolesSeed.Customer));
-    option.AddPolicy(UserRolesSeed.Operator, policy => policy.RequireRole(UserRolesSeed.Operator));
-});
-
-//  Authentication Services
-builder.Services.AddAuthentication(option =>
-{
-    option.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    option.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    option.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-}).AddCookie(option =>
-{
-    option.LoginPath = new PathString("/Authentication/Signin");
-    option.ExpireTimeSpan = TimeSpan.FromMinutes(5.0);
-    option.AccessDeniedPath = new PathString("/Authentication/Signin");
-});
 //  AppSettings.json
-var author = builder.Configuration["Author"];
 var cstr = builder.Configuration.GetConnectionString("Default");
 
 
-//  Fluent Validation
-//  Cascade Global
-FluentValidation.ValidatorOptions.Global.CascadeMode = FluentValidation.CascadeMode.Stop;
-builder.Services.AddTransient<IValidator<RequestRegisterUserDto>, UserValidation>();
-
-//  Add services to the container.
-//  Database
-builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
-
-builder.Services.AddScoped<IGetSliderService, GetSliderService>();
-builder.Services.AddScoped<IGetHomePageImagesService, GetHomePageImagesService>();
-builder.Services.AddScoped<IGetCategoryService, GetCategoryService>();
-builder.Services.AddScoped<IGetMenuItemService, GetMenuItemService>();
-builder.Services.AddScoped<ICartService, CartService>();
-builder.Services.AddScoped<IGetOrdersForAdminService, GetOrdersForAdminService>();
-builder.Services.AddScoped<IAddNewSliderService, AddNewSliderService>();
-builder.Services.AddScoped<IAddHomePageImagesService, AddHomePageImagesService>();
-builder.Services.AddScoped<IGetRequestPayForAdminService, GetRequestPayForAdminService>();
-
-//  Facad Injection
-builder.Services.AddScoped<IProductFacad, ProductFacad>();
-builder.Services.AddScoped<IUserFacad, UserFacad>();
-
-//  Use Model One
-//var conectionString = @"Data Source=DESKTOP-9EC7HCL; Initial Catalog=CleanArchLibraryDb; User id=sa; Password=123123; Integrated Security=true; TrustServerCertificate=True;";
-//builder.Services.AddEntityFrameworkSqlServer().AddDbContext<DatabaseContext>(option => option.UseSqlServer(conectionString));
-//  Use Model Two
-builder.Services.AddEntityFrameworkSqlServer().AddDbContext<DatabaseContext>(option => option.UseSqlServer(cstr));
-
 
 var app = builder.Build();
-//  DataBaseContext Injection
-//  Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 app.UseHttpsRedirection();

@@ -7,17 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Service\Products\Queries\0\**" />
-    <EmbeddedResource Remove="Service\Products\Queries\0\**" />
-    <None Remove="Service\Products\Queries\0\**" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Folder Include="Interfaces\Patterns\FacadPatterns\" />
     <Folder Include="Models\" />
     <Folder Include="CommonQueries\" />
     <Folder Include="Exceptions\" />
-    <Folder Include="Service\Common\Commands\" />
-    <Folder Include="Service\Users\Commands\UpdateUser\" />
+    <Folder Include="Service\" />
+    <Folder Include="Validators\EntityValidation\" />
   </ItemGroup>
 
   <ItemGroup>
