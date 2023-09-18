@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Infrastructure.Library\\Infrastructure.Library.csproj",
+      "projectUniqueName": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\Library\\Library_Backend\\Infrastructure.Library\\Infrastructure.Library.csproj",
       "projectName": "Infrastructure.Library",
-      "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Infrastructure.Library\\Infrastructure.Library.csproj",
+      "projectPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\Library\\Library_Backend\\Infrastructure.Library\\Infrastructure.Library.csproj",
       "packagesPath": "C:\\Users\\Tajer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Infrastructure.Library\\obj\\",
+      "outputPath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\Library\\Library_Backend\\Infrastructure.Library\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

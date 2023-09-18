@@ -7,5 +7,13 @@
 *.vsix
 *.vsidx
 /.vs
-/bin
 /obj
+.idea
+Application.Library/bin
+Application.Library/obj
+Common.Library/bin
+Common.Library/obj
+Domain.Library/bin
+Domain.Library/obj
+Persistance.Library/bin
+Persistance.Library/obj

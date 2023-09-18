@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZRcCRCnjWniAkb039GQIEdOJ0UYfs33NhxXVKAA89sR95dGzzH0DlW0blkAgZrhtgkt96vdHH9BGyxU5visKuA==",
+  "dgSpecHash": "UMTA15Vjx5LYmWoC1d8waN08p4+5dKeE0mPTLgZsAEVu8WisTmwzKAvaM9snHiR7YffzfQvbNG/szeYq4z7VEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\GitHub\\LibraryCleanArchitecture\\Infrastructure.Library\\Infrastructure.Library.csproj",
+  "projectFilePath": "C:\\Users\\Tajer\\Desktop\\Visual Studio\\Repository Project\\Library\\Library_Backend\\Infrastructure.Library\\Infrastructure.Library.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
