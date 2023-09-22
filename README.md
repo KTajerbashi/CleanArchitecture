@@ -321,3 +321,10 @@ The main project contains the presentation layer and implements the ASP.NET Core
   <li>Containerized with Docker</li>
   <li>Security using ASP.NET Core Identity + IdentityServer</li>
 </ul>
+
+<hr />
+<h1>Design Patterns</h1>
+<ul>
+  <li>Unit Of Work and Facad Pattern for Service Repositories</li>
+  <li>CQRS Pattern for Read&Write on Application Layer</li>
+</ul>
