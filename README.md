@@ -3,25 +3,34 @@
 
 <h6>Main Layer</h6>
 
+<div align="center">
+  
 ![Diagram-Clean-Architecture](https://github.com/KTajerbashi/CleanArchitectureLibrary/assets/89404392/39ce33b8-7f72-4209-aabe-730e64b4ff49)
-
-
+</div>
 <hr/>
 
-### This is a 5-layer model that fully covers all dimensions of clean architecture, and it should be noted that you can not use the <b>Persistance</b> layer and develop your project with only 4 other layers.
+### Clean Architecture is a standard and optimal structure for layering and this structure has various design types, we use onion type for our software design and in clean architecture we have 4 or 5 layers which belong to our design time. or customizing the designer in the software, but we must check 3 logics
+<ul>
+  <li>Presentation Layer UI framework (Presentation Layer)</li>
+  <li>Software logic or Software Engineering (Domain Layer & Application Layer)</li>
+  <li>Database (Infrastructure Layer & Persistence Layer)</li>
+</ul>
 
+### Each logic has a layer, but the software designer decides how many folders or layers each logic makes.
 <h6>Special Cases Layer</h6>
+<div align="center">
 
 ![Clean-Architecture-1](https://github.com/KTajerbashi/CleanArchitectureLibrary/assets/89404392/9ab25657-b91f-4a80-96aa-d32fa018372d)
-
+</div>
+<hr/>
 <h1>Why do we need to architect?</h1>
 <p>
-  Software architecture is the foundation of a software system. Like any other engineering field, if the foundation is not solid, you can’t guarantee the quality of what is built on top of it. When this foundation is built, an architect needs to take several important decisions for software quality, maintenance, and successful delivery in the future. The greater the size and complexity of a software system, the more you will need a well-thought-out architecture to succeed. A good software architecture provides several benefits such as:
+  Software architecture is the foundation of a software system. Like any other engineering field, if the foundation is not solid, you can’t guarantee the quality of what is built on top of it. When this foundation is built, an architect needs to make several important decisions for software quality, maintenance, and successful delivery in the future. The greater the size and complexity of a software system, the more you will need a well-thought-out architecture to succeed. A good software architecture provides several benefits such as:
 </p>
 <ul>
   <li>
     <h6>Testable</h6>
-    A good software architecture enables fast and reliable tests that are easy to write, execute and maintain.   </li>
+    A good software architecture enables fast and reliable tests that are easy to write, execute, and maintain.   </li>
   <li>
     <h6>Maintainable</h6>
     A good software architecture makes it easier to maintain existing software as the structure of the code is visible and well-kn
@@ -42,13 +51,15 @@
   <hr />
 <h1>What is Clean Architecture?</h1>
 <p>
-  Clean Architecture is introduced by Robert C. Martin (also known as Uncle Bob) in 2012 and has gained popularity in recent years. It is derived from many architectural guidelines like Hexagonal Architecture, Onion Architecture, etc. and it emphasizes the separation of concerns and maintainability of code. In this architecture, the business logic is kept separate from the infrastructure and presentation layers, which allows developers to build scalable, testable, and maintainable software.
+  Clean Architecture was introduced by Robert C. Martin (also known as Uncle Bob) in 2012 and has gained popularity in recent years. It is derived from many architectural guidelines like Hexagonal Architecture, Onion Architecture, etc. and it emphasizes the separation of concerns and maintainability of code. In this architecture, the business logic is kept separate from the infrastructure and presentation layers, which allows developers to build scalable, testable, and maintainable software.
 </p>
-
+<div align="center">
+  
 ![1](https://github.com/KTajerbashi/CleanArchitectureLibrary/assets/89404392/8812ba51-e190-4153-b896-4464da5699ea)
+</div>
 
 <p>
-  The Domain and Application layers are the center stage of the Clean Architecture and are often known as the Core of the System. The Domain layer contains enterprise logic and types and the Application layer contains business logic and types. The difference is that enterprise logic could be shared across many systems, whereas business logic will typically only be used within a system. The Infrastructure layer contains data access or other infrastructure concerns and dependencies flow inwards. The Core should not be dependent on the Infrastructure layer rather Infrastructure layer depends on the Core. This functionality is achieved by defining abstractions, or interfaces within Core, which are then implemented by types defined in the Infrastructure layer.
+  The Domain and Application layers are the center stage of the Clean Architecture and are often known as the Core of the System. The Domain layer contains enterprise logic and types and the Application layer contains business logic and types. The difference is that enterprise logic can be shared across many systems, whereas business logic will typically only be used within a system. The Infrastructure layer contains data access or other infrastructure concerns and dependencies flow inwards. The Core should not be dependent on the Infrastructure layer rather Infrastructure layer depends on the Core. This functionality is achieved by defining abstractions, or interfaces within Core, which are then implemented by types defined in the Infrastructure layer.
 </p>
 <hr />
 <h1>Key Principles of Clean Architecture</h1>
@@ -59,7 +70,7 @@
   <li>
     <h5>Separation of Concerns</h5>
     <p>
-      Clean architecture organized the code into layers in such a way that each layer is responsible for a specific part of the application. All layers of the system are independent or decoupled, allowing us to introduce a change and test business logic or user interfaces without impacting other layers or areas of the application.
+      Clean architecture organizes the code into layers in such a way that each layer is responsible for a specific part of the application. All layers of the system are independent or decoupled, allowing us to introduce a change and test business logic or user interfaces without impacting other layers or areas of the application.
     </p>
   </li>
   <li>
