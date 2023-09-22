@@ -17,12 +17,12 @@ namespace Persistance.Library.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.9")
+                .HasAnnotation("ProductVersion", "7.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Library.Entities.Cart", b =>
+            modelBuilder.Entity("Domain.Library.Entities.SEC.Location", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -30,397 +30,14 @@ namespace Persistance.Library.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
 
-                    b.Property<Guid>("BrowserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("Finished")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("UserId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Carts", "GEN");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.CartItem", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
-
-                    b.Property<long>("CartId")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<long>("ProductId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("CartId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("CartItems", "GEN");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.Category", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long?>("ParentCategoryId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("ParentCategoryId");
-
-                    b.ToTable("Categories", "SEC");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.HomePageImages", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ImageLocation")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Src")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("link")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("HomePaheImages", "GEN");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.Order", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("OrderState")
-                        .HasColumnType("int");
-
-                    b.Property<long>("RequestPayId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("RequestPayId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Orders", "GEN");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.OrderDetail", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
-
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<long>("OrderId")
-                        .HasColumnType("bigint");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<long>("ProductId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("OrderDetails", "GEN");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.Product", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
-
-                    b.Property<string>("Brand")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("CategoryId")
+                    b.Property<long>("CreateBy")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Displayed")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Inventory")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("ViewCount")
-                        .HasColumnType("int");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Products", "GEN");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.ProductFeatures", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
+                    b.Property<long>("DeletedBy")
                         .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DisplayName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<long>("ProductId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Value")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ProductFeatures", "GEN");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.ProductImages", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<long>("ProductId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Src")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ProductImages", "GEN");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.RequestPay", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Authority")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DeletedDate")
                         .HasColumnType("datetime2");
@@ -434,29 +51,26 @@ namespace Persistance.Library.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsPay")
-                        .HasColumnType("bit");
+                    b.Property<byte?>("Slider")
+                        .HasColumnType("tinyint");
 
-                    b.Property<DateTime?>("PayDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long>("RefId")
-                        .HasColumnType("bigint");
+                    b.Property<byte?>("SlidersPosition")
+                        .HasColumnType("tinyint");
 
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("UserId")
+                    b.Property<long>("UpdatedBy")
                         .HasColumnType("bigint");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ID");
 
-                    b.ToTable("RequestPays", "Pay");
+                    b.ToTable("Location", "SEC");
                 });
 
-            modelBuilder.Entity("Domain.Library.Entities.Role", b =>
+            modelBuilder.Entity("Domain.Library.Entities.SEC.Person", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -464,119 +78,28 @@ namespace Persistance.Library.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Roles", "SEC");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1L,
-                            CreateDate = new DateTime(2023, 7, 19, 23, 36, 3, 904, DateTimeKind.Local).AddTicks(8503),
-                            DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
-                            IsDeleted = false,
-                            Title = "Admin",
-                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            ID = 2L,
-                            CreateDate = new DateTime(2023, 7, 19, 23, 36, 3, 904, DateTimeKind.Local).AddTicks(8537),
-                            DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
-                            IsDeleted = false,
-                            Title = "Operator",
-                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            ID = 3L,
-                            CreateDate = new DateTime(2023, 7, 19, 23, 36, 3, 904, DateTimeKind.Local).AddTicks(8571),
-                            DeletedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            IsActive = true,
-                            IsDeleted = false,
-                            Title = "Customer",
-                            UpdateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.Slider", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
+                    b.Property<long>("CreateBy")
                         .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
-
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Src")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("link")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Sliders", "GEN");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.User", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
+                    b.Property<long>("DeletedBy")
                         .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DeletedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Family")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("Guid")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -592,8 +115,15 @@ namespace Persistance.Library.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<long>("UpdatedBy")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Username")
                         .IsRequired()
@@ -601,13 +131,12 @@ namespace Persistance.Library.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("Email")
-                        .IsUnique();
+                    b.HasIndex("ID");
 
-                    b.ToTable("Users", "SEC");
+                    b.ToTable("People", "SEC");
                 });
 
-            modelBuilder.Entity("Domain.Library.Entities.UserRole", b =>
+            modelBuilder.Entity("Domain.Library.Entities.SEC.PersonRole", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -615,11 +144,20 @@ namespace Persistance.Library.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
 
+                    b.Property<long>("CreateBy")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<long>("DeletedBy")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime>("DeletedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<Guid>("Guid")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -627,194 +165,337 @@ namespace Persistance.Library.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<long>("RoleId")
+                    b.Property<long>("PersonID")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("RoleID")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("UserId")
+                    b.Property<long>("UpdatedBy")
                         .HasColumnType("bigint");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("RoleId");
+                    b.HasIndex("ID");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("PersonID");
 
-                    b.ToTable("UserRoles", "SEC");
+                    b.HasIndex("RoleID");
+
+                    b.ToTable("PersonRoles", "SEC");
                 });
 
-            modelBuilder.Entity("Domain.Library.Entities.Cart", b =>
+            modelBuilder.Entity("Domain.Library.Entities.SEC.Picture", b =>
                 {
-                    b.HasOne("Domain.Library.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
 
-                    b.Navigation("User");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("CreateBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("DeletedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Folder")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("Guid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("PersonID")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ID");
+
+                    b.HasIndex("PersonID");
+
+                    b.ToTable("Pictures", "SEC");
                 });
 
-            modelBuilder.Entity("Domain.Library.Entities.CartItem", b =>
+            modelBuilder.Entity("Domain.Library.Entities.SEC.PictureLocation", b =>
                 {
-                    b.HasOne("Domain.Library.Entities.Cart", "Cart")
-                        .WithMany("CartItems")
-                        .HasForeignKey("CartId")
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<long>("CreateBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("DeletedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("Guid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("LocationID")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("PictureID")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ID");
+
+                    b.HasIndex("LocationID");
+
+                    b.HasIndex("PictureID");
+
+                    b.ToTable("PictureLocations", "SEC");
+                });
+
+            modelBuilder.Entity("Domain.Library.Entities.SEC.Privilege", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<long>("CreateBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Delete")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("DeletedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("Guid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Read")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("RoleID")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool>("Update")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<bool>("Write")
+                        .HasColumnType("bit");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ID");
+
+                    b.HasIndex("RoleID")
+                        .IsUnique();
+
+                    b.ToTable("Privileges", "SEC");
+                });
+
+            modelBuilder.Entity("Domain.Library.Entities.SEC.Role", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
+
+                    b.Property<long>("CreateBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("DeletedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("Guid")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("UpdatedBy")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ID");
+
+                    b.ToTable("Roles", "SEC");
+                });
+
+            modelBuilder.Entity("Domain.Library.Entities.SEC.PersonRole", b =>
+                {
+                    b.HasOne("Domain.Library.Entities.SEC.Person", "Person")
+                        .WithMany("PersonRoles")
+                        .HasForeignKey("PersonID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Library.Entities.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
+                    b.HasOne("Domain.Library.Entities.SEC.Role", "Role")
+                        .WithMany("PersonRoles")
+                        .HasForeignKey("RoleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Cart");
+                    b.Navigation("Person");
 
-                    b.Navigation("Product");
+                    b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("Domain.Library.Entities.Category", b =>
+            modelBuilder.Entity("Domain.Library.Entities.SEC.Picture", b =>
                 {
-                    b.HasOne("Domain.Library.Entities.Category", "ParentCategory")
-                        .WithMany("SubCategories")
-                        .HasForeignKey("ParentCategoryId");
-
-                    b.Navigation("ParentCategory");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.Order", b =>
-                {
-                    b.HasOne("Domain.Library.Entities.RequestPay", "RequestPay")
-                        .WithMany("Orders")
-                        .HasForeignKey("RequestPayId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Library.Entities.User", "User")
-                        .WithMany("Orders")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("RequestPay");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.OrderDetail", b =>
-                {
-                    b.HasOne("Domain.Library.Entities.Order", "Order")
-                        .WithMany("OrderDetails")
-                        .HasForeignKey("OrderId")
+                    b.HasOne("Domain.Library.Entities.SEC.Person", "Person")
+                        .WithMany("Pictures")
+                        .HasForeignKey("PersonID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Library.Entities.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Order");
-
-                    b.Navigation("Product");
+                    b.Navigation("Person");
                 });
 
-            modelBuilder.Entity("Domain.Library.Entities.Product", b =>
+            modelBuilder.Entity("Domain.Library.Entities.SEC.PictureLocation", b =>
                 {
-                    b.HasOne("Domain.Library.Entities.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
+                    b.HasOne("Domain.Library.Entities.SEC.Location", "Location")
+                        .WithMany("PictureLocations")
+                        .HasForeignKey("LocationID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.HasOne("Domain.Library.Entities.SEC.Picture", "Picture")
+                        .WithMany("PictureLocations")
+                        .HasForeignKey("PictureID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Location");
+
+                    b.Navigation("Picture");
                 });
 
-            modelBuilder.Entity("Domain.Library.Entities.ProductFeatures", b =>
+            modelBuilder.Entity("Domain.Library.Entities.SEC.Privilege", b =>
                 {
-                    b.HasOne("Domain.Library.Entities.Product", "Product")
-                        .WithMany("ProductFeatures")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.ProductImages", b =>
-                {
-                    b.HasOne("Domain.Library.Entities.Product", "Product")
-                        .WithMany("ProductImages")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.RequestPay", b =>
-                {
-                    b.HasOne("Domain.Library.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.UserRole", b =>
-                {
-                    b.HasOne("Domain.Library.Entities.Role", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Library.Entities.User", "User")
-                        .WithMany("UserRoles")
-                        .HasForeignKey("UserId")
+                    b.HasOne("Domain.Library.Entities.SEC.Role", "Role")
+                        .WithOne("Privilege")
+                        .HasForeignKey("Domain.Library.Entities.SEC.Privilege", "RoleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Role");
-
-                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Domain.Library.Entities.Cart", b =>
+            modelBuilder.Entity("Domain.Library.Entities.SEC.Location", b =>
                 {
-                    b.Navigation("CartItems");
+                    b.Navigation("PictureLocations");
                 });
 
-            modelBuilder.Entity("Domain.Library.Entities.Category", b =>
+            modelBuilder.Entity("Domain.Library.Entities.SEC.Person", b =>
                 {
-                    b.Navigation("SubCategories");
+                    b.Navigation("PersonRoles");
+
+                    b.Navigation("Pictures");
                 });
 
-            modelBuilder.Entity("Domain.Library.Entities.Order", b =>
+            modelBuilder.Entity("Domain.Library.Entities.SEC.Picture", b =>
                 {
-                    b.Navigation("OrderDetails");
+                    b.Navigation("PictureLocations");
                 });
 
-            modelBuilder.Entity("Domain.Library.Entities.Product", b =>
+            modelBuilder.Entity("Domain.Library.Entities.SEC.Role", b =>
                 {
-                    b.Navigation("ProductFeatures");
+                    b.Navigation("PersonRoles");
 
-                    b.Navigation("ProductImages");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.RequestPay", b =>
-                {
-                    b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("Domain.Library.Entities.User", b =>
-                {
-                    b.Navigation("Orders");
-
-                    b.Navigation("UserRoles");
+                    b.Navigation("Privilege")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

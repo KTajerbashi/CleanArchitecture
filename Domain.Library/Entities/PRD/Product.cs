@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Library.Entities.PRD
 {
-    [Table("Products",Schema ="PRD")]
-    public class Product
+    [Table("Products", Schema = "PRD")]
+    public class Product : BaseEntity
     {
     }
 }

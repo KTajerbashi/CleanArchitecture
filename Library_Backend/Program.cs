@@ -1,16 +1,22 @@
+using Application.Library.Interfaces;
+using Application.Library.Interfaces.Patterns.FacadPatterns;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Persistance.Library.DbContexts;
+using Persistance.Library.ServiceRepository.FacadPattern;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddAutoMapper(typeof(Program));
 //  AppSettings.json
 var cstr = builder.Configuration.GetConnectionString("Default");
-
+builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
+builder.Services.AddSqlServer<DatabaseContext>(cstr);
 //  Access To Appsetting.json
 ConfigurationManager configuration = builder.Configuration;
 // Add services to the container.
+builder.Services.AddScoped<IFacadRepositories, FacadRepositories>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

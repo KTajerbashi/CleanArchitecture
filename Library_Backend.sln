@@ -24,6 +24,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistance.Library", "Persistance.Library\Persistance.Library.csproj", "{51D2D8EB-F9BA-4597-A95F-231322D239A4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{DD71B32D-6AB7-4737-9C94-50C58A929220}"
+	ProjectSection(SolutionItems) = preProject
+		Architecture.txt = Architecture.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{45294FAB-1B3B-4AAA-A80E-740002AD4B48}"
 EndProject

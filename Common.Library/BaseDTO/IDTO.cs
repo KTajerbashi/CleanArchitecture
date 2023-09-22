@@ -13,4 +13,8 @@ namespace Common.Library
     {
         public T ID { get; set; }
     }
+    public abstract class DTO : DTO<long>
+    {
+
+    }
 }

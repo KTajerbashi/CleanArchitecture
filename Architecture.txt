@@ -1,0 +1,86 @@
+Clean Architecture Layers : => {
+	(1): Domain.Library =>{
+		*: Domain Entity =>{}
+		*: Aggregates =>{}
+		*: Value Object =>{}
+		*: Domain Events =>{}
+		*: Enumerations =>{}
+		*: Constants =>{}
+	}
+	(2): Application.Library =>{
+		*: Abstraction =>{}
+		*: Contracts =>{}
+		*: Parts =>{}
+		*: Interfaces =>{}
+		*: Business Services =>{}
+		*: Commands & Queries =>{}
+		*: Application Exceptions =>{}
+		*: DTOs =>{}
+		*: Request & Response Models =>{}
+		*: Domain Entities to DTOs mappers =>{}
+		*: Validators =>{}
+		*: Behaviors =>{}
+		*: Specifications =>{}
+	}
+	(3): Persistance.Library =>{
+		*: Data Context =>{}
+		*: Repositories =>{}
+		*: Data Migrations =>{}
+		*: Data Seeding =>{}
+		*: In Memory Caching =>{}
+		*: Distributed Caching e.g. Redis, Memcached .etc =>{}
+	
+	}
+	(4): Infrastructure.Library =>{
+		*: Authentication and Identity Services =>{}
+		*: File/Object Storage =>{}
+		*: Message Queue Storage =>{}
+		*: Third-Party Services =>{}
+		*: Email and Notification Services =>{}
+		*: Logging Services =>{}
+		*: Payment Services =>{}
+		*: Social Logins =>{}
+	}
+	(5): Presentation =>{
+		*: Web Pages =>{}
+		*: Web Components =>{}
+		*: Web APIs =>{}
+		*: Controller =>{}
+		*: Views =>{}
+		*: Middleware =>{}
+		*: Filter =>{}
+		*: Attributes =>{}
+		*: View Models =>{}
+		*: Style Sheets =>{}
+		*: Javascript Files =>{}
+	}
+}
+================================================================================
+Layer References : => {
+	(1): Domain =>{
+
+	}	
+	(2): Common =>{
+		1: Domain Layer : For mapper to DTOs and Views
+	}
+	(3): Application =>{
+		1: Domain Layer : For mapper to DTOs and Views
+		2: Common Layer : For Matual Logics and Usage
+	}
+	(4): Persistance =>{
+		2: Application Layer : For Implementaion Interface Service Repositories and Make CRUD Action
+	}
+	(5): Infrastructure =>{
+		1: Persistance Layer : For Inject Database Context to program.cs
+		2: Application Layer : For Implementation Interface Service Repository 
+	}
+	(6): Presentation =>{
+		1: Infrastructure Layer : For Inject Database Context to program.cs
+		2: Application Layer : For Call Interface Service Repository to Controller and Inject Facad Patten Or UnitOfWork
+		3: Common Layer : For access Matuals
+	}
+	
+	
+
+}
+================================================================================
