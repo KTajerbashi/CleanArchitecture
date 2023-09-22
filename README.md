@@ -176,6 +176,8 @@ Integration tests are performed here.
     <dl>
       <dt>Interfaces</dt>
         <dd>IDataBaseContext</dd>
+        <dd>IUnitOfWork</dd>
+        <dd>IFacadRepository</dd>
     </dl>
   </li>
   <li>Commands and Queries</li>
