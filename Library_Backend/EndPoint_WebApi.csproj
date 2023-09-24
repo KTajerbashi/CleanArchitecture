@@ -36,10 +36,12 @@
     <ProjectReference Include="..\Persistance.Library\Persistance.Library.csproj" />
   </ItemGroup>
 
-  <!--<ItemGroup>
-    <Content Update="Views\Shared\_Layout.cshtml">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-  </ItemGroup>-->
+  <ItemGroup>
+    <Folder Include="ResourceLanguage\" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
 </Project>

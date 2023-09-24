@@ -1,4 +1,5 @@
-﻿using Domain.Library.Entities.SEC;
+﻿using Common.Library.Utilities;
+using Domain.Library.Entities.SEC;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,6 +9,10 @@ namespace Persistance.Library.EntityConfigurations.SEC
     {
         public void Configure(EntityTypeBuilder<Picture> builder)
         {
+
+            builder.HasQueryFilter(x => x.IsDeleted == false);
+            builder.HasComment(ClassExtention.GetDescription(typeof(Picture)));
+
             builder.HasIndex(x => x.ID);
 
             builder.HasMany(x => x.PictureLocations)

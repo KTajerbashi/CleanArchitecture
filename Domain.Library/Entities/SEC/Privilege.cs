@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace Domain.Library.Entities.SEC
 {
     [Table("Privileges",Schema ="SEC")]
+    [Description("این جدول اطلاعات سطح دسترسی برای نقش ها را نگهداری میکند")]
     public class Privilege : BaseEntity
     {
         [Description("خواندن")]

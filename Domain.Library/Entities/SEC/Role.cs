@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace Domain.Library.Entities.SEC
 {
     [Table("Roles",Schema ="SEC")]
+    [Description("این جدول نقش های های کاربری را نگهداری میکند")]
     public class Role: BaseEntity
     {
         [Description("عنوان")]

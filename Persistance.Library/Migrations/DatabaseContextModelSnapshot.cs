@@ -17,7 +17,7 @@ namespace Persistance.Library.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.10")
+                .HasAnnotation("ProductVersion", "7.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -67,7 +67,10 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("ID");
 
-                    b.ToTable("Location", "SEC");
+                    b.ToTable("Location", "SEC", t =>
+                        {
+                            t.HasComment("برای موقعیت تصاویر و اسلایدر ها");
+                        });
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.SEC.Person", b =>
@@ -133,7 +136,10 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("ID");
 
-                    b.ToTable("People", "SEC");
+                    b.ToTable("People", "SEC", t =>
+                        {
+                            t.HasComment("این جدول اطلاعات افراد داخل دتابس را ذخیره میکند");
+                        });
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.SEC.PersonRole", b =>
@@ -185,7 +191,10 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("RoleID");
 
-                    b.ToTable("PersonRoles", "SEC");
+                    b.ToTable("PersonRoles", "SEC", t =>
+                        {
+                            t.HasComment("این جدول نقش های افراد ذخیره میکند");
+                        });
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.SEC.Picture", b =>
@@ -248,7 +257,10 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("PersonID");
 
-                    b.ToTable("Pictures", "SEC");
+                    b.ToTable("Pictures", "SEC", t =>
+                        {
+                            t.HasComment("این جدول اطلاعات تصاویر ذخیره شده را نگهداری میکند");
+                        });
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.SEC.PictureLocation", b =>
@@ -300,7 +312,10 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("PictureID");
 
-                    b.ToTable("PictureLocations", "SEC");
+                    b.ToTable("PictureLocations", "SEC", t =>
+                        {
+                            t.HasComment("این جدول موقعیت نمایش هر تصویر را نمایش میدهد");
+                        });
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.SEC.Privilege", b =>
@@ -360,7 +375,10 @@ namespace Persistance.Library.Migrations
                     b.HasIndex("RoleID")
                         .IsUnique();
 
-                    b.ToTable("Privileges", "SEC");
+                    b.ToTable("Privileges", "SEC", t =>
+                        {
+                            t.HasComment("این جدول اطلاعات سطح دسترسی برای نقش ها را نگهداری میکند");
+                        });
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.SEC.Role", b =>
@@ -410,7 +428,10 @@ namespace Persistance.Library.Migrations
 
                     b.HasIndex("ID");
 
-                    b.ToTable("Roles", "SEC");
+                    b.ToTable("Roles", "SEC", t =>
+                        {
+                            t.HasComment("این جدول نقش های های کاربری را نگهداری میکند");
+                        });
                 });
 
             modelBuilder.Entity("Domain.Library.Entities.SEC.PersonRole", b =>

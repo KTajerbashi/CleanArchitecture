@@ -1,7 +1,9 @@
 ﻿using Application.Library.Interfaces.Patterns.FacadPatterns;
 using Application.Library.Interfaces.SEC.Person.DTOs;
 using Common.Library;
+using Domain.Library.Entities.PRD;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 
 namespace EndPoint_WebApi.Controllers.SEC
 {
@@ -15,71 +17,108 @@ namespace EndPoint_WebApi.Controllers.SEC
             _service = service;
         }
 
-
-
+        /// <summary>
+        /// Get All People
+        /// </summary>
+        /// <remarks>Awesomeness!</remarks>
+        /// <response code="200">Product created</response>
+        /// <response code="400">Product has missing/invalid values</response>
+        /// <response code="500">Oops! Can't create your product right now</response>
         [HttpGet("GetAll")]
-        public async Task<ResultDTO<IEnumerable<PersonDTO>>> GetAll()
-        {
-            return await _service.PersonGetAllRepository.Execute();
-        }
+        [ProducesResponseType(typeof(Product), 200)]
+        [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
+        [ProducesResponseType(500)]
+        public async Task<ResultDTO<IEnumerable<PersonDTO>>> GetAll() => await _service.PersonGetAllRepository.Execute();
 
-
+        /// <summary>
+        /// Get Person By Id
+        /// </summary>
+        /// <remarks>Awesomeness!</remarks>
+        /// <response code="200">Product created</response>
+        /// <response code="400">Product has missing/invalid values</response>
+        /// <response code="500">Oops! Can't create your product right now</response>
         [HttpGet("GetById")]
-        public async Task<ResultDTO<PersonDTO>> GetById(long Id)
-        {
-            return await _service.PersonGetByIDRepository.Execute(Id);
-        }
+        [ProducesResponseType(typeof(Product), 200)]
+        [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
+        [ProducesResponseType(500)]
+        public async Task<ResultDTO<PersonDTO>> GetById(long Id) => await _service.PersonGetByIDRepository.Execute(Id);
 
-
+        /// <summary>
+        /// Get Person By Guid
+        /// </summary>
+        /// <remarks>Awesomeness!</remarks>
+        /// <response code="200">Product created</response>
+        /// <response code="400">Product has missing/invalid values</response>
+        /// <response code="500">Oops! Can't create your product right now</response>
         [HttpGet("GetByGuid")]
-        public async Task<ResultDTO<PersonDTO>> GetByGuid(Guid guid)
-        {
-            return await _service.PersonGetByGuidRepository.Execute(guid);
-        }
+        [ProducesResponseType(typeof(Product), 200)]
+        [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
+        [ProducesResponseType(500)]
+        public async Task<ResultDTO<PersonDTO>> GetByGuid(Guid guid) => await _service.PersonGetByGuidRepository.Execute(guid);
 
-
+        /// <summary>
+        /// Get Person By Name
+        /// </summary>
+        /// <remarks>Awesomeness!</remarks>
+        /// <response code="200">Product created</response>
+        /// <response code="400">Product has missing/invalid values</response>
+        /// <response code="500">Oops! Can't create your product right now</response>
         [HttpGet("GetByName")]
-        public async Task<ResultDTO<PersonDTO>> GetByName(string name)
-        {
-            return await _service.PersonGetByNameRepository.Execute(name);
-        }
+        [ProducesResponseType(typeof(Product), 200)]
+        [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
+        [ProducesResponseType(500)]
+        public async Task<ResultDTO<PersonDTO>> GetByName(string name) => await _service.PersonGetByNameRepository.Execute(name);
 
-
+        /// <summary>
+        /// Create Person
+        /// </summary>
+        /// <remarks>Awesomeness!</remarks>
+        /// <response code="200">Product created</response>
+        /// <response code="400">Product has missing/invalid values</response>
+        /// <response code="500">Oops! Can't create your product right now</response>
         [HttpPost("Create")]
-        public async Task<ResultDTO<long>> Create(PersonDTO model)
-        {
-            var result = await _service.PersonCreateRepository.Execute(model);
-            _service.SaveChangesAsync();
-            return result;
-        }
+        [ProducesResponseType(typeof(Product), 200)]
+        [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
+        [ProducesResponseType(500)]
+        public async Task<ResultDTO<long>> Create(PersonDTO model) => await _service.PersonCreateRepository.Execute(model);
 
-
+        /// <summary>
+        /// Change Person Entity State
+        /// </summary>
+        /// <remarks>Awesomeness!</remarks>
+        /// <response code="200">Product created</response>
+        /// <response code="400">Product has missing/invalid values</response>
+        /// <response code="500">Oops! Can't create your product right now</response>
         [HttpPut("Change")]
-        public async Task<ResultDTO<long>> Change(PersonDTO model)
-        {
-            var result = await _service.PersonChangeRepository.Execute(model);
-            _service.SaveChangesAsync();
-            return result;
-        }
+        [ProducesResponseType(typeof(Product), 200)]
+        [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
+        [ProducesResponseType(500)]
+        public async Task<ResultDTO<long>> Change(PersonDTO model) => await _service.PersonChangeRepository.Execute(model);
 
-
+        /// <summary>
+        /// Update Person
+        /// </summary>
+        /// <remarks>Awesomeness!</remarks>
+        /// <response code="200">Product created</response>
+        /// <response code="400">Product has missing/invalid values</response>
+        /// <response code="500">Oops! Can't create your product right now</response>
         [HttpPut("Update")]
-        public async Task<ResultDTO<long>> Update(PersonDTO model)
-        {
-            var result = await _service.PersonUpdateRepository.Execute(model);
-            _service.SaveChangesAsync();
-            return result;
-        }
+        [ProducesResponseType(typeof(Product), 200)]
+        [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
+        [ProducesResponseType(500)]
+        public async Task<ResultDTO<long>> Update(PersonDTO model) => await _service.PersonUpdateRepository.Execute(model);
 
-
-
+        /// <summary>
+        /// Delete Person
+        /// </summary>
+        /// <remarks>Awesomeness!</remarks>
+        /// <response code="200">Product created</response>
+        /// <response code="400">Product has missing/invalid values</response>
+        /// <response code="500">Oops! Can't create your product right now</response>
         [HttpDelete("Delete")]
-        public async Task<ResultDTO<long>> Delete(string guid)
-        {
-            var result = await _service.PersonDeleteRepository.Execute(Guid.Parse(guid));
-            _service.SaveChangesAsync();
-            return result;
-
-        }
+        [ProducesResponseType(typeof(Product), 200)]
+        [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
+        [ProducesResponseType(500)]
+        public async Task<ResultDTO<long>> Delete(string guid) => await _service.PersonDeleteRepository.Execute(Guid.Parse(guid));
     }
 }

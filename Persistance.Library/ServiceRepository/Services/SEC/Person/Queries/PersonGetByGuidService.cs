@@ -22,12 +22,11 @@ namespace Persistance.Library.ServiceRepository.Services.SEC.Person.Queries
         {
             var model = await _context.People.Where(x => x.Guid == guid).SingleAsync();
             var result = _mapper.Map<PersonDTO>(model);
-            return new ResultDTO<PersonDTO>()
+            if (model == null)
             {
-                Message = " با موققیت انجام شد ",
-                Success = true,
-                Data = result
-            };
+                return RequestResult<PersonDTO>.NotFound(result);
+            }
+            return RequestResult<PersonDTO>.Ok(result);
         }
     }
 }

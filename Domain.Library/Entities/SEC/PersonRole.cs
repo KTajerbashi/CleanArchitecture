@@ -1,8 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Library.Entities.SEC
 {
     [Table("PersonRoles", Schema = "SEC")]
+    [Description("این جدول نقش های افراد ذخیره میکند")]
     public class PersonRole : BaseEntity
     {
         [ForeignKey("Person")]

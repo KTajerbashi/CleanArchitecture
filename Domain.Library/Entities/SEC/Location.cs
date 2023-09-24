@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Domain.Library.Entities.SEC
 {
     [Table("Location", Schema = "SEC")]
+    [Description("برای موقعیت تصاویر و اسلایدر ها")]
     public class Location : BaseEntity
     {
         [Description("سلایدر های وب سایت")]

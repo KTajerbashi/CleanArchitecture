@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Domain.Library.Entities.SEC
 {
     [Table("People", Schema = "SEC")]
+    [Description("این جدول اطلاعات افراد داخل دتابس را ذخیره میکند")]
     public class Person : BaseEntity
     {
         [Description("نام")]

@@ -23,12 +23,8 @@ namespace Persistance.Library.ServiceRepository.Services
             var entity = _mapper.Map<Person>(model);
             entity.Guid = Guid.NewGuid();
             var data = await _context.People.AddAsync(entity);
-            return new ResultDTO<long>()
-            {
-                Success = true,
-                Message = " با موققیت انجام شد ",
-                Data = data.Entity.ID
-            };
+            await _context.SaveChangesAsync();
+            return RequestResult<long>.Ok(entity.ID);
         }
     }
 }

@@ -21,14 +21,13 @@ namespace Persistance.Library.ServiceRepository.Services
         }
         public async Task<ResultDTO<IEnumerable<PersonDTO>>> Execute()
         {
-            var data = await _context.People.ToListAsync();
+            var data = await _context.People.Skip(0).Take(20).ToListAsync();
             var result = _mapper.Map<IEnumerable<PersonDTO>>(data);
-            return new ResultDTO<IEnumerable<PersonDTO>>()
+            if (data == null)
             {
-                Message = " با موققیت انجام شد ",
-                Success = true,
-                Data = result
-            };
+                return RequestResult<IEnumerable<PersonDTO>>.NotFound(result);
+            }
+            return RequestResult<IEnumerable<PersonDTO>>.Ok(result);
         }
     }
 }

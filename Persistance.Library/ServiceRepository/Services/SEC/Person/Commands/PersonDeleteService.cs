@@ -21,16 +21,16 @@ namespace Persistance.Library.ServiceRepository.Services
         }
         public async Task<ResultDTO<long>> Execute(Guid guid)
         {
-            var model = _context.People.Find(guid);
-            var entity = _mapper.Map<Person>(model);
-            var data = _context.People.Remove(entity);
-            await Task.Delay(1000);
-            return new ResultDTO<long>()
+            var model = _context.People.Where(x => x.Guid == guid).FirstOrDefault();
+            if (model == null)
             {
-                Success = true,
-                Message = " با موققیت انجام شد ",
-                Data = data.Entity.ID
-            };
+                return RequestResult<long>.NotFound(model.ID);
+            }
+            var entity = _mapper.Map<Person>(model);
+            var data = _context.People.Find(entity.ID);
+            data.IsDeleted = true;
+            await _context.SaveChangesAsync();
+            return RequestResult<long>.Ok(model.ID);
         }
     }
 }

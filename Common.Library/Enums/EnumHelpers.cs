@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
 namespace Common.Library
@@ -67,5 +68,21 @@ namespace Common.Library
             }
 
         }
+    }
+    public enum StatusCode : int
+    {
+        [Description("با موفقیت انجام شد")]
+        OK=200,
+        [Description("درخواست نادرست است")]
+        BadRequest=400,
+        [Description("پیدا نشد")]
+        NotFound=404,
+        [Description("متد قابل دستری نیست")]
+        MethodNotAllowed=405,
+        [Description("نعداد درخواست ها بیشتر از حد مجاز شد")]
+        TooManyRequests =409,
+        [Description("سرویس در دست تعمیر است لطفا صبور باشد")]
+        InternalServerError=500,
+
     }
 }

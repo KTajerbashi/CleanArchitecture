@@ -1,9 +1,12 @@
 using Application.Library.Interfaces;
 using Application.Library.Interfaces.Patterns.FacadPatterns;
+using EndPoint_WebApi.Middlewares;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Persistance.Library.DbContexts;
 using Persistance.Library.ServiceRepository.FacadPattern;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -40,10 +43,10 @@ builder.Services.AddSwaggerGen(c =>
             Url = new Uri("https://github.com/Tajerbashi"),
         }
     });
-    // Set the comments path for the Swagger JSON and UI.
-    //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    ////var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    //c.IncludeXmlComments(xmlPath);
+    var filePath = Path.Combine(System.AppContext.BaseDirectory, "MyApi.xml");
+    //c.IncludeXmlComments(filePath);
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 });
 
 var app = builder.Build();
@@ -52,15 +55,17 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Values Api V1");
+    });
     app.UseStaticFiles();
 }
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
+app.UseMiddleware<ErrorHandlerMiddleware>();
 app.MapControllers();
-
 //app.MapControllerRoute(
 //    name: "default",
 //    pattern: "{controller=Home}/{action=Index}/{id?}");

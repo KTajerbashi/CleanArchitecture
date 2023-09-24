@@ -36,7 +36,8 @@ namespace Persistance.Library.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Location", x => x.ID);
-                });
+                },
+                comment: "برای موقعیت تصاویر و اسلایدر ها");
 
             migrationBuilder.CreateTable(
                 name: "People",
@@ -64,7 +65,8 @@ namespace Persistance.Library.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_People", x => x.ID);
-                });
+                },
+                comment: "این جدول اطلاعات افراد داخل دتابس را ذخیره میکند");
 
             migrationBuilder.CreateTable(
                 name: "Roles",
@@ -88,7 +90,8 @@ namespace Persistance.Library.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.ID);
-                });
+                },
+                comment: "این جدول نقش های های کاربری را نگهداری میکند");
 
             migrationBuilder.CreateTable(
                 name: "Pictures",
@@ -122,7 +125,8 @@ namespace Persistance.Library.Migrations
                         principalTable: "People",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
-                });
+                },
+                comment: "این جدول اطلاعات تصاویر ذخیره شده را نگهداری میکند");
 
             migrationBuilder.CreateTable(
                 name: "PersonRoles",
@@ -160,7 +164,8 @@ namespace Persistance.Library.Migrations
                         principalTable: "Roles",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
-                });
+                },
+                comment: "این جدول نقش های افراد ذخیره میکند");
 
             migrationBuilder.CreateTable(
                 name: "Privileges",
@@ -194,7 +199,8 @@ namespace Persistance.Library.Migrations
                         principalTable: "Roles",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
-                });
+                },
+                comment: "این جدول اطلاعات سطح دسترسی برای نقش ها را نگهداری میکند");
 
             migrationBuilder.CreateTable(
                 name: "PictureLocations",
@@ -232,7 +238,8 @@ namespace Persistance.Library.Migrations
                         principalTable: "Pictures",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
-                });
+                },
+                comment: "این جدول موقعیت نمایش هر تصویر را نمایش میدهد");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Location_ID",

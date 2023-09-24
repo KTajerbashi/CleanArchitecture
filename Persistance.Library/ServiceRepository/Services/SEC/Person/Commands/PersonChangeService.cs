@@ -21,15 +21,10 @@ namespace Persistance.Library.ServiceRepository.Services
         }
         public async Task<ResultDTO<long>> Execute(PersonDTO model)
         {
-            var result = _mapper.Map<Person>(model);
-            var data = _context.People.Update(result);
-            await Task.Delay(1000);
-            return new ResultDTO<long>()
-            {
-                Message = " با موققیت انجام شد ",
-                Success = true,
-                Data = data.Entity.ID
-            };
+            var entity = _mapper.Map<Person>(model);
+            var data = _context.People.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return RequestResult<long>.Ok(model.ID);
         }
     }
 }

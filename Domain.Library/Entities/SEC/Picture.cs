@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Domain.Library.Entities.SEC
 {
     [Table("Pictures", Schema = "SEC")]
+    [Description("این جدول اطلاعات تصاویر ذخیره شده را نگهداری میکند")]
     public class Picture : BaseEntity
     {
         [Description("نام عکس")]

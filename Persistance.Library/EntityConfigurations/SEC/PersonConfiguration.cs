@@ -1,4 +1,5 @@
 ﻿using Application.Library.Interfaces.SEC.Person.DTOs;
+using Common.Library.Utilities;
 using Domain.Library.Entities.SEC;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -14,6 +15,9 @@ namespace Persistance.Library.EntityConfigurations.SEC
     {
         public void Configure(EntityTypeBuilder<Person> builder)
         {
+            builder.HasQueryFilter(x => x.IsDeleted == false);
+            builder.HasComment(ClassExtention.GetDescription(typeof(Person)));
+
             builder.HasIndex(i => i.ID);
             builder.HasMany(p => p.PersonRoles).WithOne(r => r.Person).HasForeignKey(f => f.PersonID);
             builder.HasMany(p => p.Pictures).WithOne(r => r.Person).HasForeignKey(f => f.PersonID);
