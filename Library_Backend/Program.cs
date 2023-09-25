@@ -2,16 +2,16 @@ using Application.Library.Interfaces;
 using Application.Library.Interfaces.Patterns.FacadPatterns;
 using EndPoint_WebApi.Middlewares;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Persistance.Library.DbContexts;
+using Persistance.Library.MapperProfile;
 using Persistance.Library.ServiceRepository.FacadPattern;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(AutoMapperConfiguration));
 //  AppSettings.json
 var cstr = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
@@ -66,14 +66,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseMiddleware<ErrorHandlerMiddleware>();
 app.MapControllers();
-//app.MapControllerRoute(
-//    name: "default",
-//    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-//app.MapControllerRoute(
-//  name: "Admin",
-//  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-
 app.MapDefaultControllerRoute();
 
 

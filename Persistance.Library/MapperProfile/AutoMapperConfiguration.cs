@@ -14,19 +14,23 @@ namespace Persistance.Library.MapperProfile
     }
     public class AutoMapperConfiguration : Profile, IAutoMapperConfiguration
     {
-        public static Mapper InitializeAutomapper()
+        public AutoMapperConfiguration()
         {
-            //Provide all the Mapping Configuration
-            var config = new MapperConfiguration(cfg =>
-            {
-                //Configuring Employee and EmployeeDTO
-                cfg.CreateMap<Person, PersonDTO>().ReverseMap();
-                //Any Other Mapping Configuration ....
-            });
-            //Create an Instance of Mapper and return that Instance
-            var mapper = new Mapper(config);
-            return mapper;
+            CreateMap<Person,PersonDTO>().ReverseMap();
         }
+        //public static Mapper InitializeAutomapper()
+        //{
+        //    //Provide all the Mapping Configuration
+        //    var config = new MapperConfiguration(cfg =>
+        //    {
+        //        //Configuring Employee and EmployeeDTO
+        //        cfg.CreateMap<Person, PersonDTO>().ReverseMap();
+        //        //Any Other Mapping Configuration ....
+        //    });
+        //    //Create an Instance of Mapper and return that Instance
+        //    var mapper = new Mapper(config);
+        //    return mapper;
+        //}
 
     }
 }

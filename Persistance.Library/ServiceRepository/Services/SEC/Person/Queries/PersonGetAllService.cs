@@ -15,19 +15,19 @@ namespace Persistance.Library.ServiceRepository.Services
         private readonly IMapper _mapper;
         public PersonGetAllService(IDatabaseContext context, IMapper mapper)
         {
-            var config =AutoMapperConfiguration.InitializeAutomapper();
+            //var config =AutoMapperConfiguration.InitializeAutomapper();
             _context = context;
-            _mapper = config;
+            _mapper = mapper;
         }
         public async Task<ResultDTO<IEnumerable<PersonDTO>>> Execute()
         {
             var data = await _context.People.Skip(0).Take(20).ToListAsync();
             var result = _mapper.Map<IEnumerable<PersonDTO>>(data);
-            if (data == null)
+            if (data.Count > 0)
             {
-                return RequestResult<IEnumerable<PersonDTO>>.NotFound(result);
+                return RequestResult<IEnumerable<PersonDTO>>.Ok(result);
             }
-            return RequestResult<IEnumerable<PersonDTO>>.Ok(result);
+            return RequestResult<IEnumerable<PersonDTO>>.NotFound(result);
         }
     }
 }

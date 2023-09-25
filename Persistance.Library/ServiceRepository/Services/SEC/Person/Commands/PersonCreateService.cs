@@ -14,9 +14,9 @@ namespace Persistance.Library.ServiceRepository.Services
         private readonly IMapper _mapper;
         public PersonCreateService(IDatabaseContext context, IMapper mapper)
         {
-            var config =AutoMapperConfiguration.InitializeAutomapper();
+            //var config =AutoMapperConfiguration.InitializeAutomapper();
             _context = context;
-            _mapper = config;
+            _mapper = mapper;
         }
         public async Task<ResultDTO<long>> Execute(PersonDTO model)
         {

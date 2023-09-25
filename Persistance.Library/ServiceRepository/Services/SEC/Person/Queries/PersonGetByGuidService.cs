@@ -14,9 +14,9 @@ namespace Persistance.Library.ServiceRepository.Services.SEC.Person.Queries
         private readonly IMapper _mapper;
         public PersonGetByGuidService(IDatabaseContext context, IMapper mapper)
         {
-            var config =AutoMapperConfiguration.InitializeAutomapper();
+            //var config =AutoMapperConfiguration.InitializeAutomapper();
             _context = context;
-            _mapper = config;
+            _mapper = mapper;
         }
         public async Task<ResultDTO<PersonDTO>> Execute(Guid guid)
         {
