@@ -1,6 +1,7 @@
 using Application.Library.Interfaces;
 using Application.Library.Interfaces.Patterns.FacadPatterns;
 using EndPoint_WebApi.Middlewares;
+using Infrastructure.Library.Extentions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Persistance.Library.DbContexts;
@@ -15,6 +16,7 @@ builder.Services.AddAutoMapper(typeof(AutoMapperConfiguration));
 //  AppSettings.json
 var cstr = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddScoped<IDatabaseContext, DatabaseContext>();
+builder.Services.AddSingleton<UpTimeService>();
 builder.Services.AddSqlServer<DatabaseContext>(cstr);
 //  Access To Appsetting.json
 ConfigurationManager configuration = builder.Configuration;
@@ -60,6 +62,8 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Values Api V1");
     });
     app.UseStaticFiles();
+    app.UseDeveloperExceptionPage();
+    //app.UseWelcomePage();
 }
 app.UseHttpsRedirection();
 
@@ -67,6 +71,6 @@ app.UseAuthorization();
 app.UseMiddleware<ErrorHandlerMiddleware>();
 app.MapControllers();
 app.MapDefaultControllerRoute();
-
+app.UseRouting();
 
 app.Run();

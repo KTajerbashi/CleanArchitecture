@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application.Library\Application.Library.csproj" />
+    <ProjectReference Include="..\Infrastructure.Library\Infrastructure.Library.csproj" />
     <ProjectReference Include="..\Persistance.Library\Persistance.Library.csproj" />
   </ItemGroup>
 

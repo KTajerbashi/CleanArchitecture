@@ -120,5 +120,8 @@ namespace EndPoint_WebApi.Controllers.SEC
         [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
         [ProducesResponseType(500)]
         public async Task<ResultDTO<long>> Delete(string guid) => await _service.PersonDeleteRepository.Execute(Guid.Parse(guid));
+
+
+
     }
 }

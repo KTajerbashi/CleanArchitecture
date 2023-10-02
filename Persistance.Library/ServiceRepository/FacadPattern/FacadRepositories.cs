@@ -4,6 +4,7 @@ using Application.Library.Interfaces.Patterns.UnitOfWork;
 using Application.Library.Interfaces.SEC.Person.Commands;
 using Application.Library.Interfaces.SEC.Person.Queries;
 using AutoMapper;
+using Infrastructure.Library.Extentions;
 using Persistance.Library.ServiceRepository.Services;
 using Persistance.Library.ServiceRepository.Services.SEC.Person.Queries;
 
@@ -86,6 +87,7 @@ namespace Persistance.Library.ServiceRepository.FacadPattern
             }
         }
 
+        
         public void BeginTransaction()
         {
             throw new NotImplementedException();

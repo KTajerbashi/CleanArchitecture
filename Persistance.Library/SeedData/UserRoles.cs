@@ -1,4 +1,4 @@
-﻿namespace Persistance.Library.Seed
+﻿namespace Persistance.Library.SeedData
 {
     public class UserRolesSeed
     {
