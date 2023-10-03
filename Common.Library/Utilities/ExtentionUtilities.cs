@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace Common.Library.Utilities
 {
-    public static class ClassExtention
+    public static class ExtentionUtilities
     {
         public static string GetDescription(Type type)
         {

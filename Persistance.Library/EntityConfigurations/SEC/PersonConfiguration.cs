@@ -16,7 +16,7 @@ namespace Persistance.Library.EntityConfigurations.SEC
         public void Configure(EntityTypeBuilder<Person> builder)
         {
             builder.HasQueryFilter(x => x.IsDeleted == false);
-            builder.HasComment(ClassExtention.GetDescription(typeof(Person)));
+            builder.HasComment(ExtentionUtilities.GetDescription(typeof(Person)));
 
             builder.HasIndex(i => i.ID);
             builder.HasMany(p => p.PersonRoles).WithOne(r => r.Person).HasForeignKey(f => f.PersonID);

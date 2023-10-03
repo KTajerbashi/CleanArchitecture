@@ -1,8 +1,9 @@
+
+
 using Application.Library.Interfaces;
 using Application.Library.Interfaces.Patterns.FacadPatterns;
 using EndPoint_WebApi.Middlewares;
 using Infrastructure.Library.Extentions;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Persistance.Library.DbContexts;
 using Persistance.Library.MapperProfile;
@@ -72,5 +73,7 @@ app.UseMiddleware<ErrorHandlerMiddleware>();
 app.MapControllers();
 app.MapDefaultControllerRoute();
 app.UseRouting();
-
+app.MapControllerRoute(
+    name: "default",
+    pattern: "aps/{controller=Home}/{action=Index}/{id?}");
 app.Run();

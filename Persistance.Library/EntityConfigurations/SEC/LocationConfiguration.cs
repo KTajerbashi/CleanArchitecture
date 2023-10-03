@@ -10,7 +10,7 @@ namespace Persistance.Library.EntityConfigurations.SEC
         public void Configure(EntityTypeBuilder<Location> builder)
         {
             builder.HasQueryFilter(x => x.IsDeleted == false);
-            builder.HasComment(ClassExtention.GetDescription(typeof(Location)));
+            builder.HasComment(ExtentionUtilities.GetDescription(typeof(Location)));
             builder.HasIndex(i => i.ID);
             builder
                 .HasMany(pl => pl.PictureLocations)

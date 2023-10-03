@@ -11,7 +11,7 @@ namespace Persistance.Library.EntityConfigurations.SEC
         {
 
             builder.HasQueryFilter(x => x.IsDeleted == false);
-            builder.HasComment(ClassExtention.GetDescription(typeof(PersonRole)));
+            builder.HasComment(ExtentionUtilities.GetDescription(typeof(PersonRole)));
 
             builder.HasIndex(x => x.ID);
 

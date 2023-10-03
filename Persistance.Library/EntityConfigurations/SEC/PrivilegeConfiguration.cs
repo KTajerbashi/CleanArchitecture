@@ -10,7 +10,7 @@ namespace Persistance.Library.EntityConfigurations.SEC
         public void Configure(EntityTypeBuilder<Privilege> builder)
         {
             builder.HasQueryFilter(x => x.IsDeleted == false);
-            builder.HasComment(ClassExtention.GetDescription(typeof(Privilege)));
+            builder.HasComment(ExtentionUtilities.GetDescription(typeof(Privilege)));
 
             builder.HasIndex(x => x.ID);
 
