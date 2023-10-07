@@ -1,0 +1,15 @@
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\bin\Debug\net7.0\Endpoint.Console.exe
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\bin\Debug\net7.0\Endpoint.Console.deps.json
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\bin\Debug\net7.0\Endpoint.Console.runtimeconfig.json
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\bin\Debug\net7.0\Endpoint.Console.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\bin\Debug\net7.0\Endpoint.Console.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\obj\Debug\net7.0\Endpoint.Console.csproj.AssemblyReference.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\obj\Debug\net7.0\Endpoint.Console.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\obj\Debug\net7.0\Endpoint.Console.AssemblyInfoInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\obj\Debug\net7.0\Endpoint.Console.AssemblyInfo.cs
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\obj\Debug\net7.0\Endpoint.Console.csproj.CoreCompileInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\obj\Debug\net7.0\Endpoint.Console.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\obj\Debug\net7.0\refint\Endpoint.Console.dll
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\obj\Debug\net7.0\Endpoint.Console.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\obj\Debug\net7.0\Endpoint.Console.genruntimeconfig.cache
+C:\Users\Tajer\Desktop\Visual Studio\Repository Project\Library\Library_Backend\Endpoint.Console\obj\Debug\net7.0\ref\Endpoint.Console.dll

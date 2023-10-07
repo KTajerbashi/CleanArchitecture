@@ -3,11 +3,11 @@ using System.Net;
 using System.Text.Json;
 namespace EndPoint_WebApi.Middlewares
 {
-    public class ErrorHandlerMiddleware
+    public class ExceptionHandlerMiddleware
     {
         private readonly RequestDelegate _next;
 
-        public ErrorHandlerMiddleware(RequestDelegate next)
+        public ExceptionHandlerMiddleware(RequestDelegate next)
         {
             _next = next;
         }

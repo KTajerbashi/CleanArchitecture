@@ -67,9 +67,11 @@ if (app.Environment.IsDevelopment())
     //app.UseWelcomePage();
 }
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-app.UseMiddleware<ErrorHandlerMiddleware>();
+app.UseMiddleware<LoggerHandlerMiddleware>();
+app.UseMiddleware<ExceptionHandlerMiddleware>();
+app.UseLoggerHandlerMiddleware();
+app.UseHttpLogging();
 app.MapControllers();
 app.MapDefaultControllerRoute();
 app.UseRouting();
