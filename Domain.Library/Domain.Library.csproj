@@ -6,16 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Aggregates\" />
-    <Folder Include="Domain Events\" />
-    <Folder Include="Enumerations\" />
-    <Folder Include="Constants\" />
-    <Folder Include="Value Objects\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Common.Library\Common.Library.csproj" />
-  </ItemGroup>
-
 </Project>

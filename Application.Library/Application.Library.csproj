@@ -6,36 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\CNT\" />
-    <Folder Include="Interfaces\LOG\" />
-    <Folder Include="Interfaces\PRD\" />
-    <Folder Include="Interfaces\SEC\Person\Views\" />
-    <Folder Include="Interfaces\SEC\Picture\Commands\" />
-    <Folder Include="Interfaces\SEC\Picture\DTOs\" />
-    <Folder Include="Interfaces\SEC\Picture\Queries\" />
-    <Folder Include="Interfaces\SEC\Picture\Views\" />
-    <Folder Include="Interfaces\SEC\Role\Commands\" />
-    <Folder Include="Interfaces\SEC\Role\Queries\" />
-    <Folder Include="Interfaces\SEC\Role\Views\" />
-    <Folder Include="Validators\EntityValidation\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="11.7.1" />
-    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
-    <PackageReference Include="Microsoft.Extensions.Features" Version="7.0.11" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Common.Library\Common.Library.csproj" />
-    <ProjectReference Include="..\Domain.Library\Domain.Library.csproj" />
-    <ProjectReference Include="..\Infrastructure.Library\Infrastructure.Library.csproj" />
-  </ItemGroup>
-
 </Project>
