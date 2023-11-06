@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\SEC\UserRepositories\Commands\" />
     <Folder Include="Repositories\SEC\UserRepositories\Queries\" />
   </ItemGroup>
 
