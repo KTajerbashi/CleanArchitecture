@@ -19,3 +19,9 @@
 
 /End.Point.Test/obj
 /End.Point.Test/bin
+
+/XUnitTest_Application/obj
+/XUnitTest_Application/bin
+
+/NUnitTest_Application/obj
+/NUnitTest_Application/bin
