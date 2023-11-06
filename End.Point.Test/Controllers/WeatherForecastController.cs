@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace WEB_API.Controllers
+namespace End.Point.Test.Controllers
 {
     [ApiController]
-    [Route("service/[controller]")]
+    [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

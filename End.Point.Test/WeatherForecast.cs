@@ -1,4 +1,4 @@
-namespace WEB_API
+namespace End.Point.Test
 {
     public class WeatherForecast
     {

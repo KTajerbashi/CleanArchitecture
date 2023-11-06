@@ -7,7 +7,7 @@ using NLog;
 namespace WEB_API.Controllers.SEC
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("service/[controller]")]
     public class UserController : ControllerBase
     {
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
