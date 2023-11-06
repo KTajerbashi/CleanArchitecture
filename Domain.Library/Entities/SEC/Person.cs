@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Domain.Library.BasesEntity;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Library.Entities.SEC

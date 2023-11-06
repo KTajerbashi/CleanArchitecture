@@ -1,12 +1,30 @@
+using Application.Library.DatabaseServices;
+using Application.Library.Validations.SEC;
+using Domain.Library.Entities.SEC;
+using FluentValidation;
+using Infrastructure.Library.DatabaseServices.SqlServer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using System.Reflection;
+using Persistance.Library.EF.Identity;
+using Persistance.Library.ProfileMapper;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
-
+builder.Services.AddAutoMapper(typeof(AutoMapperConfiguration));
+builder.Services.AddDbContext<IDatabaseRepository, ApplicationDatabase>(sql => sql.UseSqlServer(configuration.GetConnectionString("Default"))); ;
 builder.Services.AddControllers();
+//  Fluent Validation
+builder.Services.AddScoped<IValidator<User>, UserValidations>();
+//  Identity
+builder.Services.AddDbContext<ApplicationDatabase>(sql => sql.UseSqlServer(configuration.GetConnectionString("Authentication")));
+builder.Services
+    .AddIdentity<AppUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDatabase>()
+    .AddDefaultTokenProviders();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -60,13 +78,18 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Values Api V1");
         c.SwaggerEndpoint("/swagger/v2/swagger.json", "Values Api V2");
     });
-    
+
 
 }
 app.UseStaticFiles();
 app.UseDeveloperExceptionPage();
 app.UseHttpsRedirection();
+//  Identity
+app.UseAuthentication();
 app.UseAuthorization();
+
+
+
 app.MapControllers();
 app.MapControllerRoute(
     name: "default",

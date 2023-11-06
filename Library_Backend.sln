@@ -5,13 +5,22 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Library", "Domain.Library\Domain.Library.csproj", "{BC4858CE-5AC5-4B32-8EC6-BAF50F3F7DBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Library", "Application.Library\Application.Library.csproj", "{03A671C2-C7CD-4037-B634-9DA443C1CC6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Library", "Application.Library\Application.Library.csproj", "{03A671C2-C7CD-4037-B634-9DA443C1CC6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Library", "Infrastructure.Library\Infrastructure.Library.csproj", "{136B3EB9-64F2-43B4-9076-57E8D12C08BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Library", "Infrastructure.Library\Infrastructure.Library.csproj", "{136B3EB9-64F2-43B4-9076-57E8D12C08BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistance.Library", "Persistance.Library\Persistance.Library.csproj", "{4F8B1780-F9FB-456E-B6B6-810E9CF3A4F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistance.Library", "Persistance.Library\Persistance.Library.csproj", "{4F8B1780-F9FB-456E-B6B6-810E9CF3A4F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEB_API", "WEB_API\WEB_API.csproj", "{A2B81C86-B6EF-43E6-B0BE-98486061881B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WEB_API", "WEB_API\WEB_API.csproj", "{A2B81C86-B6EF-43E6-B0BE-98486061881B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{339DDEC0-5BEB-41D4-BA68-A08C9FD47E4D}"
+	ProjectSection(SolutionItems) = preProject
+		ApplicationLayer.txt = ApplicationLayer.txt
+		DomainLayer.txt = DomainLayer.txt
+		InfrastructureLayer.txt = InfrastructureLayer.txt
+		PersistanceLayer.txt = PersistanceLayer.txt
+		WebApiLayer.txt = WebApiLayer.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

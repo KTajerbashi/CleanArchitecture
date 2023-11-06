@@ -1,4 +1,5 @@
-﻿using Domain.Library.BaseEntity;
+﻿using Domain.Library.BasesEntity;
+using Domain.Library.Entities.CNT;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,10 +10,7 @@ namespace Domain.Library.Entities.SEC
     public class Location : GeneralEntity
     {
         [Description("سلایدر های وب سایت")]
-        public Sliders? Slider { get; set; }
-        [Description("موقعیت نمایش")]
-        public SlidersPosition? SlidersPosition { get; set; }
-
+        public Slider? Slider { get; set; }
 
         [Description("لیست تصاویر که درین موقعیت نمایش داده میشود")]
         public ICollection<PictureLocation> PictureLocations { get; set; }
