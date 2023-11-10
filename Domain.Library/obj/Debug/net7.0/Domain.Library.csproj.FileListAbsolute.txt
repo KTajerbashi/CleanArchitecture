@@ -10,3 +10,15 @@ D:\Visual Studio\Solutions\Team\Library_Backend\Domain.Library\obj\Debug\net7.0\
 D:\Visual Studio\Solutions\Team\Library_Backend\Domain.Library\obj\Debug\net7.0\Domain.Library.pdb
 D:\Visual Studio\Solutions\Team\Library_Backend\Domain.Library\obj\Debug\net7.0\ref\Domain.Library.dll
 D:\Visual Studio\Solutions\Team\Library_Backend\Domain.Library\obj\Debug\net7.0\Domain.Library.csproj.AssemblyReference.cache
+C:\Users\Tajer\Desktop\Visual Studio\Solutions\Git Tajerbashi\Library\Library_Backend\Domain.Library\bin\Debug\net7.0\Domain.Library.deps.json
+C:\Users\Tajer\Desktop\Visual Studio\Solutions\Git Tajerbashi\Library\Library_Backend\Domain.Library\bin\Debug\net7.0\Domain.Library.dll
+C:\Users\Tajer\Desktop\Visual Studio\Solutions\Git Tajerbashi\Library\Library_Backend\Domain.Library\bin\Debug\net7.0\Domain.Library.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Solutions\Git Tajerbashi\Library\Library_Backend\Domain.Library\obj\Debug\net7.0\Domain.Library.csproj.AssemblyReference.cache
+C:\Users\Tajer\Desktop\Visual Studio\Solutions\Git Tajerbashi\Library\Library_Backend\Domain.Library\obj\Debug\net7.0\Domain.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tajer\Desktop\Visual Studio\Solutions\Git Tajerbashi\Library\Library_Backend\Domain.Library\obj\Debug\net7.0\Domain.Library.AssemblyInfoInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Solutions\Git Tajerbashi\Library\Library_Backend\Domain.Library\obj\Debug\net7.0\Domain.Library.AssemblyInfo.cs
+C:\Users\Tajer\Desktop\Visual Studio\Solutions\Git Tajerbashi\Library\Library_Backend\Domain.Library\obj\Debug\net7.0\Domain.Library.csproj.CoreCompileInputs.cache
+C:\Users\Tajer\Desktop\Visual Studio\Solutions\Git Tajerbashi\Library\Library_Backend\Domain.Library\obj\Debug\net7.0\Domain.Library.dll
+C:\Users\Tajer\Desktop\Visual Studio\Solutions\Git Tajerbashi\Library\Library_Backend\Domain.Library\obj\Debug\net7.0\refint\Domain.Library.dll
+C:\Users\Tajer\Desktop\Visual Studio\Solutions\Git Tajerbashi\Library\Library_Backend\Domain.Library\obj\Debug\net7.0\Domain.Library.pdb
+C:\Users\Tajer\Desktop\Visual Studio\Solutions\Git Tajerbashi\Library\Library_Backend\Domain.Library\obj\Debug\net7.0\ref\Domain.Library.dll
