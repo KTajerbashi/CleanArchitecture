@@ -39,6 +39,12 @@ namespace Domain.Library.Entities.SEC
         [Description("کاربر ویراش")]
         public long? UpdateBy { get; set; }
 
+        [Description("حذف شده"), DefaultValue(false)]
+        public bool IsDeleted { get; set; }
+
+        [Description("فعال"), DefaultValue(false)]
+        public bool IsActive { get; set; }
+
         public ICollection<MenuRole> MenuRoles { get; set; }
 
         //#region Relation

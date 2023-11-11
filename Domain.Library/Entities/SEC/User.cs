@@ -45,6 +45,9 @@ namespace Domain.Library.Entities.SEC
         [Description("حذف شده"), DefaultValue(false)]
         public bool IsDeleted { get; set; }
 
+        [Description("فعال"), DefaultValue(false)]
+        public bool IsActive { get; set; }
+
         [Description("تاریخ و زمان آخرین تغییر")]
         public DateTime? UpdateDate { get; set; }
 

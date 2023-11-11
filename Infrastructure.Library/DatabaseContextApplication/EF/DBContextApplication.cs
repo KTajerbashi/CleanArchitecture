@@ -51,7 +51,9 @@ namespace Infrastructure.Library.DatabaseContextApplication.EF
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<User>().ToTable("Users", "SEC");
+            base.OnModelCreating(builder);
+
+            builder.Entity<User>().ToTable("Users", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
             builder.Entity<Role>().ToTable("Roles", "SEC");
             builder.Entity<RoleClaim>().ToTable("RoleClaims", "SEC");
             builder.Entity<UserClaim>().ToTable("UserClaims", "SEC");
@@ -67,7 +69,6 @@ namespace Infrastructure.Library.DatabaseContextApplication.EF
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
             FluentApiConfiguration.Configurations(builder);
-            base.OnModelCreating(builder);
         }
 
 

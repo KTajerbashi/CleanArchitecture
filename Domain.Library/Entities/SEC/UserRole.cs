@@ -7,6 +7,9 @@ namespace Domain.Library.Entities.SEC
     [Table("UserRoles", Schema = "SEC"), Description("نقش کاربران")]
     public class UserRole : IdentityUserRole<long>
     {
+        [Description("کلید")]
+        public Guid Guid { get; set; }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity), Description("کد")]
         public long ID { get; set; }
 
@@ -21,5 +24,8 @@ namespace Domain.Library.Entities.SEC
 
         [Description("فعال")]
         public bool IsActive { get; set; }
+        [Description("حذف شده"), DefaultValue(false)]
+        public bool IsDeleted { get; set; }
+
     }
 }
