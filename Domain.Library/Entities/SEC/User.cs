@@ -51,7 +51,6 @@ namespace Domain.Library.Entities.SEC
         [Description("کد کاربر آخرین تغییر")]
         public long? UpdateBy { get; set; }
 
-        public virtual ICollection<Factor> AdminFactores { get; set; }
         public virtual ICollection<Factor> CustomerFactores { get; set; }
         //#region Relation
         //public virtual ICollection<UserToken> UserTokens { get; set; }

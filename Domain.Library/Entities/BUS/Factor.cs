@@ -19,11 +19,6 @@ namespace Domain.Library.Entities.BUS
         public long CustomerID { get; set; }
         public User Customer { get; set; }
 
-
-        [ForeignKey("Admin")]
-        public long AdminID { get; set; }
-        public User Admin { get; set; }
-
         public ICollection<FactorProduct> FactorProducts { get; set; }
     }
     public class FactorConfiguration : IEntityTypeConfiguration<Factor>
@@ -31,10 +26,6 @@ namespace Domain.Library.Entities.BUS
         public void Configure(EntityTypeBuilder<Factor> builder)
         {
             builder.HasIndex(x => new { x.ID });
-
-            builder.HasOne(x => x.Admin)
-                .WithMany(x => x.AdminFactores)
-                .HasForeignKey(x => x.AdminID);
 
             builder.HasOne(x => x.Customer)
                 .WithMany(x => x.CustomerFactores)
