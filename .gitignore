@@ -1,7 +1,7 @@
-Domian.Library/obj
-Domian.Library/bin
-Domian.Library.XUnit/obj
-Domian.Library.XUnit/bin
+Domain.Library/bin
+Domain.Library/obj
+Domain.Library.XUnit/obj
+Domain.Library.XUnit/bin
 
 Application.Library/obj
 Application.Library/bin
@@ -16,5 +16,5 @@ Infrastructure.Library.XUnit/bin
 Web_Api/obj
 Web_Api/bin
 
-/.vs
+.vs
 
