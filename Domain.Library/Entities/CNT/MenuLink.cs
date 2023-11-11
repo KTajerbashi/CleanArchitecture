@@ -11,13 +11,13 @@ namespace Domain.Library.Entities.CNT
     {
         [ForeignKey(nameof(MenuLink))]
         public long? ParentId { get; set; }
-        public MenuLink MenuLinkChild { get; set; }
+        public virtual MenuLink MenuLinkChild { get; set; }
 
         public string Route { get; set; }
         public string Icon { get; set; }
         public bool IsPublic { get; set; }
         public int Order { get; set; }
-        public ICollection<MenuRole> MenuRoles { get; set; }
+        public virtual ICollection<MenuRole> MenuRoles { get; set; }
     }
     public class MenuLinkConfiguration : IEntityTypeConfiguration<MenuLink>
     {

@@ -1,7 +1,10 @@
+using Application.Library.Patterns.UnitOfWork;
 using Infrastructure.Library.DatabaseContextApplication.EF;
 using Infrastructure.Library.DatabaseContextApplication.ProfileMapper;
+using Infrastructure.Library.Patterns.UnitOfWorks;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 // Add services to the container.
@@ -11,7 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DBContextApplication>(sql => sql.UseSqlServer(configuration.GetConnectionString("ConnectionString")));
-
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 //  Authentication Services
 builder.Services.AddAuthentication(option =>

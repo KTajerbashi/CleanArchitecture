@@ -52,17 +52,47 @@ namespace Infrastructure.Library.DatabaseContextApplication.EF
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-
+            #region SEC
             builder.Entity<User>().ToTable("Users", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
-            builder.Entity<Role>().ToTable("Roles", "SEC");
-            builder.Entity<RoleClaim>().ToTable("RoleClaims", "SEC");
-            builder.Entity<UserClaim>().ToTable("UserClaims", "SEC");
-            builder.Entity<UserLogin>().ToTable("UserLogins", "SEC").HasKey(l => new { l.LoginProvider, l.ProviderKey, l.UserId });
-            builder.Entity<UserRole>().ToTable("UserRoles", "SEC").HasKey(x => new { x.ID, x.UserId, x.RoleId });
-            builder.Entity<UserToken>().ToTable("UserTokens", "SEC");
+            builder.Entity<Role>().ToTable("Roles", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<RoleClaim>().ToTable("RoleClaims", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<UserClaim>().ToTable("UserClaims", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<UserLogin>().ToTable("UserLogins", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive).HasKey(l => new { l.LoginProvider, l.ProviderKey, l.UserId });
+            builder.Entity<UserRole>().ToTable("UserRoles", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive).HasKey(x => new { x.ID, x.UserId, x.RoleId });
+            builder.Entity<UserToken>().ToTable("UserTokens", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
             builder.Entity<User>().HasIndex(x => x.NationalCode).IsUnique();
+            #endregion
 
+            #region BUS
+            builder.Entity<Product>().HasQueryFilter(x => !x.IsDeleted && x.IsActive).HasKey(x => x.ID);
+            builder.Entity<ProductDetail>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<ProductType>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<Author>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<Category>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<Factor>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<FactorProduct>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            #endregion
 
+            #region CNT
+            builder.Entity<MenuLink>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<MenuRole>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            #endregion
+            #region GEN
+            builder.Entity<FileObject>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<Picture>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            #endregion
+            #region LOG
+            //builder.Entity<DataHistory>().HasQueryFilter(x => x.Value );
+            builder.Entity<SystemLog>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<UserLog>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+
+            #endregion
+
+            #region RPT
+            builder.Entity<ProductReport>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<Report>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<UserReport>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            #endregion
 
             foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             {

@@ -11,11 +11,11 @@ namespace Domain.Library.Entities.BUS
     {
         [ForeignKey("Product")]
         public long ProductID { get; set; }
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
 
         [ForeignKey("Factor")]
         public long FactorID { get; set; }
-        public Factor Factor { get; set; }
+        public virtual Factor Factor { get; set; }
     }
     public class FactorProductConfiguration : IEntityTypeConfiguration<FactorProduct>
     {

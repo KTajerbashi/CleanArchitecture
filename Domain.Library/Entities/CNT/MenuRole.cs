@@ -12,11 +12,11 @@ namespace Domain.Library.Entities.CNT
     {
         [ForeignKey("MenuLink")]
         public long MenuLinkID { get; set; }
-        public MenuLink MenuLink { get; set; }
+        public virtual MenuLink MenuLink { get; set; }
 
         [ForeignKey("Role")]
         public long RoleID { get; set; }
-        public Role Role { get; set; }
+        public virtual Role Role { get; set; }
     }
     public class MenuRoleConfiguration : IEntityTypeConfiguration<MenuRole>
     {

@@ -9,8 +9,7 @@ namespace Domain.Library.Entities.BUS
     [Table("ProductTypes", Schema ="BUS"),Description("نوع محصول")]
     public class ProductType : GeneralEntity
     {
-        public ICollection<Product> Products { get; set; }
-
+        public virtual ICollection<Product> Products { get; set; }
     }
     public class ProductTypeConfiguration : IEntityTypeConfiguration<ProductType>
     {

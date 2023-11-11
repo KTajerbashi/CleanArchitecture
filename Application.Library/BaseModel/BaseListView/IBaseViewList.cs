@@ -3,4 +3,8 @@
     public interface IBaseViewList
     {
     }
+    public class BaseViewList
+    {
+
+    }
 }

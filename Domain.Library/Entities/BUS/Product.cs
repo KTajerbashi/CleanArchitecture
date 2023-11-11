@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Domain.Library.Entities.BUS
 {
@@ -18,15 +17,15 @@ namespace Domain.Library.Entities.BUS
 
         [ForeignKey("Category")]
         public long CategoryID { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
         [ForeignKey("ProductType")]
         public long ProductTypeID { get; set; }
-        public ProductType ProductType { get; set; }
+        public virtual ProductType ProductType { get; set; }
 
-        public ICollection<ProductDetail> ProductDetails { get; set; }
-        public ICollection<FactorProduct> FactorProducts { get; set; }
-        public ICollection<Picture> Pictures { get; set; }
+        public virtual ICollection<ProductDetail> ProductDetails { get; set; }
+        public virtual ICollection<FactorProduct> FactorProducts { get; set; }
+        public virtual ICollection<Picture> Pictures { get; set; }
         public string AttachmentObject { get; set; }
 
     }
@@ -35,28 +34,26 @@ namespace Domain.Library.Entities.BUS
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            builder.HasIndex(p => p.ID).IsUnique();
 
             builder.HasOne(x => x.Category)
-                .WithMany(x => x.Products)
+                .WithMany(p => p.Products)
                 .HasForeignKey(x => x.CategoryID);
 
             builder.HasOne(x => x.ProductType)
-                .WithMany(x => x.Products)
-                .HasForeignKey(x => x.ProductTypeID);
+               .WithMany(p => p.Products)
+               .HasForeignKey(x => x.ProductTypeID);
 
             builder.HasMany(x => x.ProductDetails)
                 .WithOne(x => x.Product)
-                .HasForeignKey(x => x.ID);
+                .HasPrincipalKey(x => x.ID);
 
             builder.HasMany(x => x.FactorProducts)
                 .WithOne(x => x.Product)
-                .HasForeignKey(x => x.ID);
+                .HasPrincipalKey(x => x.ID);
 
             builder.HasMany(x => x.Pictures)
                 .WithOne(x => x.Product)
-                .HasForeignKey(x => x.ProductID);
-
+                .HasPrincipalKey(x => x.ID);
 
 
         }

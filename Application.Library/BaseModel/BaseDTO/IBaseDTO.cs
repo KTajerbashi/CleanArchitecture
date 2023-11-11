@@ -17,9 +17,13 @@ namespace Application.Library.BaseModel.BaseDTO
         public long? UpdateBy { get; set; }
 
         public DateTime? UpdateDate { get; set; }
+        public long? CreateBy { get; set; }
+
+        public DateTime? CreateDate { get; set; }
     }
     public class BaseDTO : BaseDTO<long>
     {
 
     }
+    
 }

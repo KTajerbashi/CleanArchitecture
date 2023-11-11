@@ -17,9 +17,9 @@ namespace Domain.Library.Entities.BUS
 
         [ForeignKey("Customer")]
         public long CustomerID { get; set; }
-        public User Customer { get; set; }
+        public virtual User Customer { get; set; }
 
-        public ICollection<FactorProduct> FactorProducts { get; set; }
+        public virtual ICollection<FactorProduct> FactorProducts { get; set; }
     }
     public class FactorConfiguration : IEntityTypeConfiguration<Factor>
     {

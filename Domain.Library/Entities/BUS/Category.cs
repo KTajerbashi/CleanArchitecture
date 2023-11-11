@@ -9,7 +9,7 @@ namespace Domain.Library.Entities.BUS
     [Table("Categories", Schema ="BUS"),Description("دسته بندی ها")]
     public class Category : GeneralEntity
     {
-        public ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
     public class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {

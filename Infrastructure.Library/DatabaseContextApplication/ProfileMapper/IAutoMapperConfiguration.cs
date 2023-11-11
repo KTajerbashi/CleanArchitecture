@@ -1,16 +1,48 @@
-﻿using AutoMapper;
+﻿using Application.Library.Repositories.BUS.ProductRepositories.Models.DTOs;
+using Application.Library.Repositories.BUS.ProductRepositories.Models.Views;
+using Application.Library.Repositories.SEC.UserRepositories.Models.DTOs;
+using Application.Library.Repositories.SEC.UserRepositories.Models.Views;
+using AutoMapper;
+using Domain.Library.Entities.BUS;
+using Domain.Library.Entities.SEC;
 
 namespace Infrastructure.Library.DatabaseContextApplication.ProfileMapper
 {
-    public interface IAutoMapperConfiguration
+
+    public class AutoMapperConfiguration : Profile
     {
-    }
-    public class AutoMapperConfiguration : Profile, IAutoMapperConfiguration
-    {
-        private readonly IAutoMapperConfiguration _mapper;
-        public AutoMapperConfiguration(IAutoMapperConfiguration mapper)
+        public AutoMapperConfiguration()
         {
-            _mapper = mapper;
+
+
+
+            #region SEC
+            CreateMap<User, UserDTO>();
+            CreateMap<User, UserView>();
+            #endregion
+
+
+            #region RPT
+            #endregion
+
+
+            #region BUS
+            CreateMap<Product, ProductDTO>();
+            CreateMap<Product, ProductView>();
+
+            #endregion
+
+
+            #region CNT
+            #endregion
+
+
+            #region GEN
+            #endregion
+
+
+            #region LOG
+            #endregion
         }
 
     }

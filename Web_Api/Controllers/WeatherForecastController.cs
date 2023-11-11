@@ -1,3 +1,6 @@
+using Application.Library.BaseModel.BaseDTO;
+using Application.Library.Patterns.UnitOfWork;
+using Application.Library.Repositories.BUS.ProductRepositories.Models.Views;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web_Api.Controllers
@@ -21,6 +24,7 @@ namespace Web_Api.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
@@ -29,5 +33,7 @@ namespace Web_Api.Controllers
             })
             .ToArray();
         }
+
+        
     }
 }
