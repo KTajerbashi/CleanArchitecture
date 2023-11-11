@@ -16,3 +16,5 @@ Infrastructure.Library.XUnit/bin
 Web_Api/obj
 Web_Api/bin
 
+/.vs
+
