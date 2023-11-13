@@ -5,6 +5,6 @@ namespace Application.Library.Repositories.SEC.UserRepositories.Commands
 {
     public interface IUserUpdateRepository
     {
-        Result<UserDTO> Execute(UserDTO user,Guid guid);
+        Task<Result<UserDTO>> Execute(UserDTO user,Guid guid);
     }
 }

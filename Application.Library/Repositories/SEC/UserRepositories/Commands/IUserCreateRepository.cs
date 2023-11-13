@@ -5,6 +5,6 @@ namespace Application.Library.Repositories.SEC.UserRepositories.Commands
 {
     public interface IUserCreateRepository
     {
-        Result<UserDTO> Execute(UserDTO user);
+        Task<Result<UserDTO>> Execute(UserDTO user);
     }
 }

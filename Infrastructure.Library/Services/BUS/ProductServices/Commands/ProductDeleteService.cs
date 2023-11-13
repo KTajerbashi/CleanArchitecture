@@ -16,12 +16,12 @@ namespace Infrastructure.Library.Services.BUS.ProductServices.Commands
             _context = context;
             _mapper = mapper;
         }
-        public Result<ProductDTO> Execute(Guid guid)
+        public async Task<Result<ProductDTO>> Execute(Guid guid)
         {
             var model = _context.Products.Single(x => x.Guid.Equals(guid));
             model.IsDeleted = true;
             _context.Entry(model).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            _context.SaveChanges();
+             await _context.SaveChangesAsync();
             return new Result<ProductDTO>
             {
                 Data = null,

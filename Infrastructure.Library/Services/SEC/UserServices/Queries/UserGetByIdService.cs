@@ -15,7 +15,7 @@ namespace Infrastructure.Library.Services.SEC.UserServices.Queries
             _context = context;
             _mapper = mapper;
         }
-        public Result<UserView> Execute(Guid guid)
+        public Task<Result<UserView>> Execute(Guid guid)
         {
             throw new NotImplementedException();
         }

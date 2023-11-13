@@ -5,6 +5,6 @@ namespace Application.Library.Repositories.SEC.UserRepositories.Queries
 {
     public interface IUserGetByIdRepository
     {
-        Result<UserView> Execute(Guid guid);
+        Task<Result<UserView>> Execute(Guid guid);
     }
 }

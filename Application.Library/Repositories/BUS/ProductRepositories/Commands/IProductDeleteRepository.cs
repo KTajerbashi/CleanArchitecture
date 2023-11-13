@@ -5,6 +5,6 @@ namespace Application.Library.Repositories.BUS.ProductRepositories.Commands
 {
     public interface IProductDeleteRepository
     {
-        Result<ProductDTO> Execute(Guid guid);
+        Task<Result<ProductDTO>> Execute(Guid guid);
     }
 }

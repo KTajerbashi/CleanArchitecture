@@ -3,8 +3,10 @@ using Infrastructure.Library.DatabaseContextApplication.EF;
 using Infrastructure.Library.DatabaseContextApplication.ProfileMapper;
 using Infrastructure.Library.Patterns.UnitOfWorks;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -78,10 +80,48 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Architecture Api V1");
         c.SwaggerEndpoint("/swagger/v2/swagger.json", "Authentication Api V2");
     });
-}
 
+    app.UseExceptionHandler(exceptionHandlerApp =>
+    {
+        exceptionHandlerApp.Run(async context =>
+        {
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+
+            // using static System.Net.Mime.MediaTypeNames;
+            context.Response.ContentType = Text.Plain;
+
+            await context.Response.WriteAsync("An exception was thrown.");
+
+            var exceptionHandlerPathFeature =
+                context.Features.Get<IExceptionHandlerPathFeature>();
+
+            if (exceptionHandlerPathFeature?.Error is FileNotFoundException)
+            {
+                await context.Response.WriteAsync(" The file was not found.");
+            }
+
+            if (exceptionHandlerPathFeature?.Path == "/")
+            {
+                await context.Response.WriteAsync(" Page: Home.");
+            }
+        });
+    });
+}
+app.UseHsts();
 app.UseHttpsRedirection();
 
+app.UseStatusCodePagesWithRedirects("/StatusCode/{0}");
+
+//app.UseStatusCodePages();
+//app.UseStatusCodePages(Text.Plain, "Status Code Page: {0}");
+app.UseStatusCodePages(async statusCodeContext =>
+{
+    // using static System.Net.Mime.MediaTypeNames;
+    statusCodeContext.HttpContext.Response.ContentType = Text.Plain;
+
+    await statusCodeContext.HttpContext.Response.WriteAsync(
+        $"Status Code Page: {statusCodeContext.HttpContext.Response.StatusCode}");
+});
 app.UseAuthentication();
 
 app.UseAuthorization();

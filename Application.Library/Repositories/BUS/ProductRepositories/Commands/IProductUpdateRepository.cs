@@ -5,6 +5,6 @@ namespace Application.Library.Repositories.BUS.ProductRepositories.Commands
 {
     public interface IProductUpdateRepository
     {
-        Result<ProductDTO> Execute(ProductDTO product,Guid guid);
+        Task<Result<ProductDTO>> Execute(ProductDTO product,Guid guid);
     }
 }

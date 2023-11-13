@@ -5,6 +5,6 @@ namespace Application.Library.Repositories.BUS.ProductRepositories.Commands
 {
     public interface IProducCreatetRepository
     {
-        Result<ProductDTO> Execute(ProductDTO product);
+        Task<Result<ProductDTO>> Execute(ProductDTO product);
     }
 }

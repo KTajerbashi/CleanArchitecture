@@ -64,7 +64,7 @@ namespace Infrastructure.Library.DatabaseContextApplication.EF
             #endregion
 
             #region BUS
-            builder.Entity<Product>().HasQueryFilter(x => !x.IsDeleted && x.IsActive).HasKey(x => x.ID);
+            builder.Entity<Product>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
             builder.Entity<ProductDetail>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
             builder.Entity<ProductType>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);
             builder.Entity<Author>().HasQueryFilter(x => !x.IsDeleted && x.IsActive);

@@ -5,7 +5,7 @@ namespace Application.Library.Repositories.BUS.ProductRepositories.Queries
 {
     public interface IProductGetAllRepository
     {
-        Result<List<ProductView>> Execute();
+        Task<Result<List<ProductView>>> Execute();
     }
 
 }

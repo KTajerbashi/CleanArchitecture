@@ -5,7 +5,6 @@ namespace Application.Library.Repositories.SEC.UserRepositories.Queries
 {
     public interface IUserGetSearchRepository
     {
-        Result<List<UserView>> Execute(string search);
-
+        Task<Result<List<UserView>>> Execute(string search);
     }
 }

@@ -15,12 +15,15 @@ namespace Web_Api.Controllers.BUS
             _unitOfWork = unitOfWork;
         }
         [HttpGet(Name = "GetProducts")]
-        public Result<List<ProductView>> GetProduct()
+        public async Task<Result<List<ProductView>>> GetProduct()
         {
+            await Task.Delay(0);
             var result = _unitOfWork.ProductFacad.GetAllProductRepository.Execute();
             return new Result<List<ProductView>>
             {
-                Data = result.Data,
+                //#TODO
+                //Data = result.Data,
+                Data = null,
                 Message = "",
                 Status = true
             };

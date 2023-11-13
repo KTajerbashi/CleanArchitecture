@@ -15,7 +15,7 @@ namespace Infrastructure.Library.Services.SEC.UserServices.Commands
             _context = context;
             _mapper = mapper;
         }
-        public Result<bool> Execute(Guid guid)
+        public Task<Result<bool>> Execute(Guid guid)
         {
             throw new NotImplementedException();
         }

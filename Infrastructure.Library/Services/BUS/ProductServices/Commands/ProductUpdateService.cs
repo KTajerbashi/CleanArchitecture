@@ -16,12 +16,12 @@ namespace Infrastructure.Library.Services.BUS.ProductServices.Commands
             _context = context;
             _mapper = mapper;
         }
-        public Result<ProductDTO> Execute(ProductDTO user, Guid guid)
+        public async Task<Result<ProductDTO>> Execute(ProductDTO user, Guid guid)
         {
             var model = _context.Products.Where(x => x.Guid.Equals(guid)).Single();
             model = _mapper.Map<Product>(user);
             _context.Products.Update(model);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return new Result<ProductDTO>
             {
                 Data = user,

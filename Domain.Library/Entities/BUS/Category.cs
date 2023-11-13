@@ -9,14 +9,14 @@ namespace Domain.Library.Entities.BUS
     [Table("Categories", Schema ="BUS"),Description("دسته بندی ها")]
     public class Category : GeneralEntity
     {
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<ProductType> ProductTypes { get; set; }
     }
     public class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasIndex(x => x.ID).IsUnique();
-            builder.HasMany(x => x.Products)
+            builder.HasMany(x => x.ProductTypes)
                 .WithOne(x => x.Category)
                 .HasForeignKey(x => x.ID);
         }

@@ -15,7 +15,7 @@ namespace Infrastructure.Library.Services.SEC.UserServices.Commands
             _context = context;
             _mapper = mapper;
         }
-        public Result<UserDTO> Execute(UserDTO user)
+        public Task<Result<UserDTO>> Execute(UserDTO user)
         {
             throw new NotImplementedException();
         }

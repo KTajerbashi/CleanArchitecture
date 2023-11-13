@@ -4,6 +4,6 @@ namespace Application.Library.Repositories.SEC.UserRepositories.Commands
 {
     public interface IUserDeleteRepository
     {
-        Result<bool> Execute(Guid guid);
+        Task<Result<bool>> Execute(Guid guid);
     }
 }

@@ -17,11 +17,11 @@ namespace Infrastructure.Library.Services.BUS.ProductServices.Commands
             _mapper = mapper;
         }
 
-        public Result<ProductDTO> Execute(ProductDTO product)
+        public async Task<Result<ProductDTO>> Execute(ProductDTO product)
         {
             var entity = _mapper.Map<Product>(product);
             _context.Products.Add(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return new Result<ProductDTO>
             {
                 Data = product,
