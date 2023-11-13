@@ -14,9 +14,9 @@ namespace Infrastructure.Library.Patterns.UnitOfWorks
     {
         private readonly DBContextApplication _context;
         private readonly IMapper _mapper;
-        public UnitOfWork(DBContextApplication context, IMapper mapper)
+        public UnitOfWork(DBContextApplication _context, IMapper mapper)
         {
-            _context = context;
+            this._context = _context;
             _mapper = mapper;
         }
 

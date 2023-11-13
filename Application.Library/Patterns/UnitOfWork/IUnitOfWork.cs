@@ -4,7 +4,7 @@ using Application.Library.Patterns.Facad.SEC;
 
 namespace Application.Library.Patterns.UnitOfWork
 {
-    public interface IUnitOfWork:IDisposable
+    public interface IUnitOfWork : IDisposable
     {
         void Commit();
         void BeginTransAction();

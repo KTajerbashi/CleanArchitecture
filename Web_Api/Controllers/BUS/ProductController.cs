@@ -1,6 +1,7 @@
 ﻿using Application.Library.BaseModel.BaseDTO;
 using Application.Library.Patterns.UnitOfWork;
 using Application.Library.Repositories.BUS.ProductRepositories.Models.Views;
+using Infrastructure.Library.Patterns.UnitOfWorks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web_Api.Controllers.BUS
@@ -10,6 +11,7 @@ namespace Web_Api.Controllers.BUS
     public class ProductController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWorkFactory _factory;
         public ProductController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
@@ -18,6 +20,12 @@ namespace Web_Api.Controllers.BUS
         public async Task<Result<List<ProductView>>> GetProduct()
         {
             await Task.Delay(0);
+
+            using (var unitOfWork = _factory.BeginTransAction())
+            {
+                unitOfWork.Commit();
+            }
+
             var result = _unitOfWork.ProductFacad.GetAllProductRepository.Execute();
             return new Result<List<ProductView>>
             {
