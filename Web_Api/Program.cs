@@ -3,9 +3,11 @@ using Infrastructure.Library.DatabaseContextApplication.EF;
 using Infrastructure.Library.DatabaseContextApplication.ProfileMapper;
 using Infrastructure.Library.Patterns.UnitOfWorks;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 using static System.Net.Mime.MediaTypeNames;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,10 +17,110 @@ builder.Services.AddAutoMapper(typeof(AutoMapperConfiguration));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
+builder.Services.AddSwaggerGen(setup =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
+    #region Doc1
+    //setup.SwaggerDoc("v1", new OpenApiInfo
+    //{
+    //    Title = "Architecture",
+    //    Version = "v1",
+    //    Description = "Clean Architecture Domain Drive Design Patter",
+    //    TermsOfService = new Uri("https://github.com/Tajerbashi/Architecture"),
+    //    Contact = new OpenApiContact
+    //    {
+    //        Name = "Kamran Tajerbashi",
+    //        Email = "kamrantajerbashi@gmail.com",
+    //        Url = new Uri("https://github.com/KTajerbashi"),
+    //    },
+    //    License = new OpenApiLicense
+    //    {
+    //        Name = "Tajerbashi Company On Git Hub",
+    //        Url = new Uri("https://github.com/Tajerbashi"),
+    //    }
+    //});
+    #endregion
+
+    #region Doc2
+    //setup.SwaggerDoc("v2", new OpenApiInfo
+    //{
+    //    Title = "Authentication",
+    //    Version = "v2",
+    //    Description = "Clean Architecture Domain Drive Design Patter",
+    //    TermsOfService = new Uri("https://github.com/Tajerbashi/Architecture"),
+    //    Contact = new OpenApiContact
+    //    {
+    //        Name = "Kamran Tajerbashi",
+    //        Email = "kamrantajerbashi@gmail.com",
+    //        Url = new Uri("https://github.com/KTajerbashi"),
+    //    },
+    //    License = new OpenApiLicense
+    //    {
+    //        Name = "Tajerbashi Company On Git Hub",
+    //        Url = new Uri("https://github.com/Tajerbashi"),
+    //    }
+    //});
+    #endregion
+
+    #region JWT
+    //var jwtSecurityScheme = new OpenApiSecurityScheme
+    //{
+    //    BearerFormat = "JWT",
+    //    Name = "JWT Authentication",
+    //    In = ParameterLocation.Header,
+    //    Type = SecuritySchemeType.Http,
+    //    Scheme = JwtBearerDefaults.AuthenticationScheme,
+    //    Description = "Put **_ONLY_** your JWT Bearer token on textbox below!",
+
+    //    Reference = new OpenApiReference
+    //    {
+    //        Id = JwtBearerDefaults.AuthenticationScheme,
+    //        Type = ReferenceType.SecurityScheme
+    //    }
+    //};
+    //setup.AddSecurityDefinition(jwtSecurityScheme.Reference.Id, jwtSecurityScheme);
+    //setup.AddSecurityRequirement(new OpenApiSecurityRequirement
+    //{
+    //    { jwtSecurityScheme, Array.Empty<string>() }
+    //});
+    #endregion
+
+    #region Auth
+    //setup.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    //{
+    //    Description = @"JWT Authorization header using the Bearer scheme. \r\n\r\n 
+    //                  Enter 'Bearer' [space] and then your token in the text input below.
+    //                  \r\n\r\nExample: 'Bearer 12345abcdef'",
+    //    Name = "Authorization",
+    //    In = ParameterLocation.Header,
+    //    Type = SecuritySchemeType.ApiKey,
+    //    Scheme = "Bearer"
+    //});
+
+    //setup.AddSecurityRequirement(new OpenApiSecurityRequirement()
+    //  {
+    //    {
+    //      new OpenApiSecurityScheme
+    //      {
+    //        Reference = new OpenApiReference
+    //          {
+    //            Type = ReferenceType.SecurityScheme,
+    //            Id = "Bearer"
+    //          },
+    //          Scheme = "oauth2",
+    //          Name = "Bearer",
+    //          In = ParameterLocation.Header,
+
+    //        },
+    //        new List<string>()
+    //      }
+    //    });
+    //var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    //var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    //setup.IncludeXmlComments(xmlPath);
+    #endregion
+
+    #region Secure SW UI
+    setup.SwaggerDoc("v1", new OpenApiInfo {
         Title = "Architecture",
         Version = "v1",
         Description = "Clean Architecture Domain Drive Design Patter",
@@ -35,24 +137,30 @@ builder.Services.AddSwaggerGen(c =>
             Url = new Uri("https://github.com/Tajerbashi"),
         }
     });
-    c.SwaggerDoc("v2", new OpenApiInfo
+    setup.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Title = "Authentication",
-        Version = "v2",
-        Description = "Clean Architecture Domain Drive Design Patter",
-        TermsOfService = new Uri("https://github.com/Tajerbashi/Architecture"),
-        Contact = new OpenApiContact
+        In = ParameterLocation.Header,
+        Description = "Please enter a valid token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "Bearer"
+    });
+    setup.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
         {
-            Name = "Kamran Tajerbashi",
-            Email = "kamrantajerbashi@gmail.com",
-            Url = new Uri("https://github.com/KTajerbashi"),
-        },
-        License = new OpenApiLicense
-        {
-            Name = "Tajerbashi Company On Git Hub",
-            Url = new Uri("https://github.com/Tajerbashi"),
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new string[]{}
         }
     });
+    #endregion
 });
 builder.Services.AddDbContext<DBContextApplication>(sql => sql.UseSqlServer(configuration.GetConnectionString("ConnectionString")));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();

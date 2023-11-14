@@ -2,10 +2,12 @@
 using Application.Library.Patterns.UnitOfWork;
 using Application.Library.Repositories.BUS.ProductRepositories.Models.Views;
 using Infrastructure.Library.Patterns.UnitOfWorks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web_Api.Controllers.BUS
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]/[action]")]
     public class ProductController : ControllerBase
@@ -16,7 +18,8 @@ namespace Web_Api.Controllers.BUS
         {
             _unitOfWork = unitOfWork;
         }
-        [HttpGet(Name = "GetProducts")]
+        //[HttpGet(Name = "GetProducts")]
+        [HttpGet(Name = "GetProducts"), Authorize]
         public async Task<Result<List<ProductView>>> GetProduct()
         {
             await Task.Delay(0);

@@ -45,8 +45,6 @@ namespace Domain.Library.Entities.BUS
             builder.HasMany(x => x.Pictures)
                 .WithOne(x => x.Product)
                 .HasPrincipalKey(x => x.ID);
-
-
         }
     }
 }
