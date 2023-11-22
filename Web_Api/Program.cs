@@ -14,8 +14,12 @@ using static System.Net.Mime.MediaTypeNames;
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 // Add services to the container.
-builder.Services.AddAutoMapper(typeof(AutoMapperConfiguration));
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(AutoMapperConfiguration));
+builder.Services.AddDbContext<DBContextApplication>(sql => sql.UseSqlServer(configuration.GetConnectionString("ConnectionString")));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddSingleton<IDapperRepository, DapperService>();
+builder.Services.AddScoped<IBaseRepository, BaseService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(setup =>
@@ -164,17 +168,15 @@ builder.Services.AddSwaggerGen(setup =>
     });
     #endregion
 });
-builder.Services.AddDbContext<DBContextApplication>(sql => sql.UseSqlServer(configuration.GetConnectionString("ConnectionString")));
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IBaseRepository, BaseService>();
-builder.Services.AddSingleton<IDapperRepository, DapperService>();
+
 //  Authentication Services
 builder.Services.AddAuthentication(option =>
 {
     option.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     option.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     option.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-}).AddCookie(option =>
+}).AddCookie(
+    option =>
 {
     option.LoginPath = new PathString("/Authentication/Signin");
     option.ExpireTimeSpan = TimeSpan.FromMinutes(5.0);

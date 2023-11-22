@@ -4,6 +4,7 @@ using Application.Library.Patterns.Facad.SEC;
 using Application.Library.Patterns.UnitOfWork;
 using AutoMapper;
 using Infrastructure.Library.DatabaseContextApplication.EF;
+using Infrastructure.Library.ORM.Dapper;
 using Infrastructure.Library.Patterns.Facad.BUS;
 using Infrastructure.Library.Patterns.Facad.RPT;
 using Infrastructure.Library.Patterns.Facad.SEC;
@@ -14,10 +15,12 @@ namespace Infrastructure.Library.Patterns.UnitOfWorks
     {
         private readonly DBContextApplication _context;
         private readonly IMapper _mapper;
-        public UnitOfWork(DBContextApplication _context, IMapper mapper)
+        private readonly IDapperRepository _dapper;
+        public UnitOfWork(DBContextApplication context, IMapper mapper, IDapperRepository dapper)
         {
-            this._context = _context;
+            _context = context;
             _mapper = mapper;
+            _dapper = dapper;
         }
 
         private ProductFacad _productFacad;
@@ -25,7 +28,7 @@ namespace Infrastructure.Library.Patterns.UnitOfWorks
         {
             get
             {
-                return _productFacad = _productFacad ?? new ProductFacad(_context, _mapper);
+                return _productFacad = _productFacad ?? new ProductFacad(_context, _mapper, _dapper);
             }
         }
 
