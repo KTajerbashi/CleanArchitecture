@@ -2,20 +2,19 @@
 using Application.Library.Repositories.BUS.ProductRepositories.Models.Views;
 using Application.Library.Repositories.BUS.ProductRepositories.Queries;
 using AutoMapper;
+using Infrastructure.Library.BaseServices;
 using Infrastructure.Library.DatabaseContextApplication.EF;
+using Infrastructure.Library.ORM.Dapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Library.Services.BUS.ProductServices.Queries
 {
-    public class ProductGetByIdService : IProductGetByIdRepository
+    public class ProductGetByIdService :BaseService, IProductGetByIdRepository
     {
-        private readonly DBContextApplication _context;
-        private readonly IMapper _mapper;
-        public ProductGetByIdService(DBContextApplication context, IMapper mapper)
+        public ProductGetByIdService(DBContextApplication context, IMapper mapper, IDapperRepository dapper) : base(context, mapper, dapper)
         {
-            _context = context;
-            _mapper = mapper;
         }
+
         public async Task<Result<ProductView>> Execute(Guid guid)
         {
             return new Result<ProductView>

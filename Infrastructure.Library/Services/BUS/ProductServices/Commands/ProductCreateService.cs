@@ -3,18 +3,16 @@ using Application.Library.Repositories.BUS.ProductRepositories.Commands;
 using Application.Library.Repositories.BUS.ProductRepositories.Models.DTOs;
 using AutoMapper;
 using Domain.Library.Entities.BUS;
+using Infrastructure.Library.BaseServices;
 using Infrastructure.Library.DatabaseContextApplication.EF;
+using Infrastructure.Library.ORM.Dapper;
 
 namespace Infrastructure.Library.Services.BUS.ProductServices.Commands
 {
-    public class ProductCreateService : IProducCreatetRepository
+    public class ProductCreateService : BaseService, IProducCreatetRepository
     {
-        private readonly DBContextApplication _context;
-        private readonly IMapper _mapper;
-        public ProductCreateService(DBContextApplication context, IMapper mapper)
+        public ProductCreateService(DBContextApplication context, IMapper mapper, IDapperRepository dapper) : base(context, mapper, dapper)
         {
-            _context = context;
-            _mapper = mapper;
         }
 
         public async Task<Result<ProductDTO>> Execute(ProductDTO product)

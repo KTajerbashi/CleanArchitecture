@@ -4,6 +4,7 @@ using Application.Library.Repositories.BUS.ProductRepositories.Models.DTOs;
 using AutoMapper;
 using Domain.Library.Entities.BUS;
 using Infrastructure.Library.DatabaseContextApplication.EF;
+using Infrastructure.Library.ORM.Dapper;
 
 namespace Infrastructure.Library.Services.BUS.ProductServices.Commands
 {
@@ -11,10 +12,12 @@ namespace Infrastructure.Library.Services.BUS.ProductServices.Commands
     {
         private readonly DBContextApplication _context;
         private readonly IMapper _mapper;
-        public ProductUpdateService(DBContextApplication context, IMapper mapper)
+        private readonly IDapperRepository _dapper;
+        public ProductUpdateService(DBContextApplication context, IMapper mapper,IDapperRepository dapper)
         {
             _context = context;
             _mapper = mapper;
+            _dapper = dapper;
         }
         public async Task<Result<ProductDTO>> Execute(ProductDTO user, Guid guid)
         {

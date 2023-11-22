@@ -1,13 +1,14 @@
+using Application.Library.BaseRepositories;
 using Application.Library.Patterns.UnitOfWork;
+using Infrastructure.Library.BaseServices;
 using Infrastructure.Library.DatabaseContextApplication.EF;
 using Infrastructure.Library.DatabaseContextApplication.ProfileMapper;
+using Infrastructure.Library.ORM.Dapper;
 using Infrastructure.Library.Patterns.UnitOfWorks;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using System.Reflection;
 using static System.Net.Mime.MediaTypeNames;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -120,7 +121,8 @@ builder.Services.AddSwaggerGen(setup =>
     #endregion
 
     #region Secure SW UI
-    setup.SwaggerDoc("v1", new OpenApiInfo {
+    setup.SwaggerDoc("v1", new OpenApiInfo
+    {
         Title = "Architecture",
         Version = "v1",
         Description = "Clean Architecture Domain Drive Design Patter",
@@ -164,7 +166,8 @@ builder.Services.AddSwaggerGen(setup =>
 });
 builder.Services.AddDbContext<DBContextApplication>(sql => sql.UseSqlServer(configuration.GetConnectionString("ConnectionString")));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
+builder.Services.AddScoped<IBaseRepository, BaseService>();
+builder.Services.AddSingleton<IDapperRepository, DapperService>();
 //  Authentication Services
 builder.Services.AddAuthentication(option =>
 {

@@ -2,20 +2,18 @@
 using Application.Library.Repositories.BUS.ProductRepositories.Models.Views;
 using Application.Library.Repositories.BUS.ProductRepositories.Queries;
 using AutoMapper;
+using Infrastructure.Library.BaseServices;
 using Infrastructure.Library.DatabaseContextApplication.EF;
+using Infrastructure.Library.ORM.Dapper;
 using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace Infrastructure.Library.Services.BUS.ProductServices.Queries
 {
-    public class ProductGetBySearchService : IProductGetBySearchRepository
+    public class ProductGetBySearchService :BaseService, IProductGetBySearchRepository
     {
-        private readonly DBContextApplication _context;
-        private readonly IMapper _mapper;
-        public ProductGetBySearchService(DBContextApplication context, IMapper mapper)
+        public ProductGetBySearchService(DBContextApplication context, IMapper mapper, IDapperRepository dapper) : base(context, mapper, dapper)
         {
-            _context = context;
-            _mapper = mapper;
         }
         public async Task<Result<List<ProductView>>> Execute(string search)
         {
