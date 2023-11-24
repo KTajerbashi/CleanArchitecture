@@ -19,7 +19,7 @@ builder.Services.AddAutoMapper(typeof(AutoMapperConfiguration));
 builder.Services.AddDbContext<DBContextApplication>(sql => sql.UseSqlServer(configuration.GetConnectionString("ConnectionString")));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddSingleton<IDapperRepository, DapperService>();
-builder.Services.AddScoped<IBaseRepository, BaseService>();
+//builder.Services.AddScoped<IBaseRepository, BaseService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(setup =>

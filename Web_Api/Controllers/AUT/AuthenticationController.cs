@@ -9,7 +9,6 @@ namespace Web_Api.Controllers.AUT
     [Route("[controller]")]
     public class AuthenticationController : Controller
     {
-
         [Route("Login")]
         [HttpPost]
         [PasswordPropertyText]
