@@ -17,7 +17,7 @@ namespace Infrastructure.Library.DatabaseContextApplication.EF
 {
     public class DBContextApplication : IdentityDbContext<User, Role, long, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>
     {
-        public DBContextApplication(DbContextOptions option) : base(option)
+        public DBContextApplication(DbContextOptions<DBContextApplication> option) : base(option)
         {
 
         }
@@ -100,26 +100,15 @@ namespace Infrastructure.Library.DatabaseContextApplication.EF
             }
             FluentApiConfiguration.Configurations(builder);
         }
-
-
-
-
         protected void Creating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
         }
-
-
-
-
-
         private void Configuration(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
         }
-
         private volatile bool isGeneratedDataHistory = false;
-
         public int SaveChanges(bool? ignoreDataHistory = default)
         {
             try
@@ -143,7 +132,6 @@ namespace Infrastructure.Library.DatabaseContextApplication.EF
                 isGeneratedDataHistory = false;
             }
         }
-
         public (List<DataHistory> addHistory, List<EntityEntry> addEntity) GenerateDataChange()
         {
             if (isGeneratedDataHistory)
@@ -193,7 +181,6 @@ namespace Infrastructure.Library.DatabaseContextApplication.EF
 
             return (addStateList, addEntityList);
         }
-
         /// <summary>
         /// محتوایی که داره اینسرت یا اپدیت میشه حروف عربی اش را جایگزین میکند
         /// </summary>

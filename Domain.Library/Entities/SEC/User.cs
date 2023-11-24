@@ -67,4 +67,5 @@ namespace Domain.Library.Entities.SEC
         //public virtual ICollection<CustomUserToken> CustomUserTokens { get; set; }
         //#endregion
     }
+
 }
