@@ -18,3 +18,5 @@ Web_Api/bin
 
 .vs
 
+Identity.Library/obj
+Identity.Library/bin
