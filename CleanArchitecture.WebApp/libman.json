@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap@5.3.3",
+      "destination": "wwwroot/lib/bootstrap/",
+      "files": [
+        "js/bootstrap.min.js",
+        "css/bootstrap-grid.min.css",
+        "css/bootstrap-grid.rtl.min.css",
+        "css/bootstrap-reboot.min.css",
+        "css/bootstrap-reboot.rtl.min.css",
+        "css/bootstrap-utilities.min.css",
+        "css/bootstrap-utilities.rtl.min.css",
+        "css/bootstrap.min.css",
+        "css/bootstrap.rtl.min.css",
+        "js/bootstrap.bundle.min.js",
+        "js/bootstrap.esm.min.js"
+      ]
+    }
+  ]
+}
