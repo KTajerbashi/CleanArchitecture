@@ -1,6 +1,4 @@
-﻿using Application.Library.BaseModel.BaseViewModel;
-
-namespace CleanArchitecture.Application.Library.BaseModel.BaseDTO
+﻿namespace CleanArchitecture.Application.Library.BaseModel.BaseDTO
 {
 
     public class Result<T>
