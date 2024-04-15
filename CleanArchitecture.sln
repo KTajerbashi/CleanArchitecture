@@ -3,14 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web_Api", "Web_Api\Web_Api.csproj", "{20A471E0-AAB1-4806-B60A-590ED7A05266}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Library", "Domain.Library\Domain.Library.csproj", "{EEC6BD94-820C-46CD-9D48-11140DC77125}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Library", "Application.Library\Application.Library.csproj", "{A62529FB-EEB4-40F1-9AAD-6DF0BC0F83BC}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Library", "Infrastructure.Library\Infrastructure.Library.csproj", "{5F5285C2-2C76-4AEB-B1B1-A57B79FBF686}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{ED9E18AC-7079-4509-B929-C4820FE5F90F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Identity.Library", "Identity.Library\Identity.Library.csproj", "{32B9A0F9-D549-42A3-87B5-E8003F0694E3}"
@@ -33,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Applicati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Infrastructure.TestLibrary", "CleanArchitecture.Infrastructure.TestLibrary\CleanArchitecture.Infrastructure.TestLibrary.csproj", "{8CB0836F-9BDC-4734-9227-974E7B910ACE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.WebApp", "CleanArchitecture.WebApp\CleanArchitecture.WebApp.csproj", "{E73AA49E-75F8-4935-8459-1E41A3B5E043}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.WebApp", "CleanArchitecture.WebApp\CleanArchitecture.WebApp.csproj", "{E73AA49E-75F8-4935-8459-1E41A3B5E043}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,22 +33,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{20A471E0-AAB1-4806-B60A-590ED7A05266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20A471E0-AAB1-4806-B60A-590ED7A05266}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20A471E0-AAB1-4806-B60A-590ED7A05266}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20A471E0-AAB1-4806-B60A-590ED7A05266}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EEC6BD94-820C-46CD-9D48-11140DC77125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EEC6BD94-820C-46CD-9D48-11140DC77125}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EEC6BD94-820C-46CD-9D48-11140DC77125}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EEC6BD94-820C-46CD-9D48-11140DC77125}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A62529FB-EEB4-40F1-9AAD-6DF0BC0F83BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A62529FB-EEB4-40F1-9AAD-6DF0BC0F83BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A62529FB-EEB4-40F1-9AAD-6DF0BC0F83BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A62529FB-EEB4-40F1-9AAD-6DF0BC0F83BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5F5285C2-2C76-4AEB-B1B1-A57B79FBF686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F5285C2-2C76-4AEB-B1B1-A57B79FBF686}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F5285C2-2C76-4AEB-B1B1-A57B79FBF686}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F5285C2-2C76-4AEB-B1B1-A57B79FBF686}.Release|Any CPU.Build.0 = Release|Any CPU
 		{32B9A0F9-D549-42A3-87B5-E8003F0694E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{32B9A0F9-D549-42A3-87B5-E8003F0694E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32B9A0F9-D549-42A3-87B5-E8003F0694E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -98,10 +74,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{20A471E0-AAB1-4806-B60A-590ED7A05266} = {6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}
-		{EEC6BD94-820C-46CD-9D48-11140DC77125} = {6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}
-		{A62529FB-EEB4-40F1-9AAD-6DF0BC0F83BC} = {6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}
-		{5F5285C2-2C76-4AEB-B1B1-A57B79FBF686} = {6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}
 		{32B9A0F9-D549-42A3-87B5-E8003F0694E3} = {6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}
 		{45069043-C659-4D92-B61B-E42B75B96041} = {ABD358DB-4857-42EC-8C99-DB3BCD3F977A}
 		{E877BD89-7AB8-4199-B61D-D75BD8610507} = {ABD358DB-4857-42EC-8C99-DB3BCD3F977A}
