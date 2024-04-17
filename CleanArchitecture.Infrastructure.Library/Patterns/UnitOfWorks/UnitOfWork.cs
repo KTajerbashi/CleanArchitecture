@@ -1,77 +1,43 @@
-﻿using Application.Library.Patterns.Facad.BUS;
-using Application.Library.Patterns.Facad.RPT;
-using Application.Library.Patterns.Facad.SEC;
-using Application.Library.Patterns.UnitOfWork;
-using AutoMapper;
-using CleanArchitecture.Infrastructure.Library.DatabaseContextApplication.EF;
-using CleanArchitecture.Infrastructure.Library.ORM.Dapper;
-using CleanArchitecture.Infrastructure.Library.Patterns.Facad.BUS;
-using CleanArchitecture.Infrastructure.Library.Patterns.Facad.RPT;
-using CleanArchitecture.Infrastructure.Library.Patterns.Facad.SEC;
+﻿using AutoMapper;
+using CleanArchitecture.Application.Library.Patterns.Facad.SEC;
+using CleanArchitecture.Application.Library.Patterns.UnitOfWork;
 
 namespace CleanArchitecture.Infrastructure.Library.Patterns.UnitOfWorks
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly DBContextApplication _context;
         private readonly IMapper _mapper;
-        private readonly IDapperRepository _dapper;
-        public UnitOfWork(DBContextApplication context, IMapper mapper, IDapperRepository dapper)
+
+        public UnitOfWork(IMapper mapper)
         {
-            _context = context;
             _mapper = mapper;
-            _dapper = dapper;
         }
 
-        private ProductFacad _productFacad;
-        public IProductFacad ProductFacad
-        {
-            get
-            {
-                return _productFacad = _productFacad ?? new ProductFacad(_context, _mapper, _dapper);
-            }
-        }
+        public IUserFacad UserFacad => throw new NotImplementedException();
 
-        private UserFacad _userFacad;
-        public IUserFacad UsertFacad
-        {
-            get
-            {
-                return _userFacad = _userFacad ?? new UserFacad(_context, _mapper);
-            }
-        }
-
-        public ReportFacad _reportFacad;
-        public IReportFacad ReportFacad
-        {
-            get
-            {
-                return _reportFacad = _reportFacad ?? new ReportFacad(_context, _mapper);
-            }
-        }
         public void BeginTransAction()
         {
-            _context.Database.BeginTransaction();
+            throw new NotImplementedException();
         }
 
         public void Commit()
         {
-            _context.Database.CommitTransaction();
+            throw new NotImplementedException();
         }
 
         public void Dispose()
         {
-            _context.Dispose();
+            throw new NotImplementedException();
         }
 
         public void RollBack()
         {
-            _context.Database.RollbackTransaction();
+            throw new NotImplementedException();
         }
 
         public void SaveChanges()
         {
-            _context.SaveChanges();
+            throw new NotImplementedException();
         }
     }
 }
