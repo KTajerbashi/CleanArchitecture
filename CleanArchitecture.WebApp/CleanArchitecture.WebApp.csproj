@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArchitecture.Application.Library\CleanArchitecture.Application.Library.csproj" />
+    <ProjectReference Include="..\CleanArchitecture.Infrastructure.Library\CleanArchitecture.Infrastructure.Library.csproj" />
+  </ItemGroup>
+
 </Project>
