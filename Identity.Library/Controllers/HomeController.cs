@@ -1,4 +1,5 @@
-﻿using Identity.Library.Models;
+﻿using Identity.Library.MessageServices.RabbitMQ.ProducerSending;
+using Identity.Library.Models;
 using Identity.Library.Services.BackgroundTask.TimerService;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,12 @@ namespace Identity.Library.Controllers
     [Route("Identity/[controller]/[action]")]
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> logger;
+        private int Counter = 0;
+        public HomeController(ILogger<HomeController> logger)
+        {
+            this.logger = logger;
+        }
         [HttpGet]
         public IActionResult Index()
         {
@@ -36,6 +43,14 @@ namespace Identity.Library.Controllers
                 Result = false,
             };
             return Ok(model);
+        }
+        [HttpGet]
+        public string SendMessages()
+        {
+            RabbitMQService service = new RabbitMQService(Counter);
+            Counter++;
+            service.Execute();
+            return "";
         }
     }
 }
