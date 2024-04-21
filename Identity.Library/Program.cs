@@ -1,5 +1,6 @@
-using Identity.Library.Services.BackgroundTask.BackgroundServiceTask;
-using Identity.Library.Services.BackgroundTask.SendEmailTask;
+using Identity.Library.BackgroundTaskServices.Consumers.Services;
+using Identity.Library.BackgroundTaskServices.Producers.Services;
+using Identity.Library.BackgroundTaskServices.Queues.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSingleton<IBackgroundTaskQueue>(p =>
+{
+    return new BackgroundTaskQueue(5);
+});
+builder.Services.AddSingleton<CreatePdfFile>();
+builder.Services.AddHostedService<QueuedHostedService>();
 //builder.Services.AddHostedService<SendEmail>();
 
 //builder.Services.AddHostedService<BackgroundTaskService>();

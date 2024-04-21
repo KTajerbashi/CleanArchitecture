@@ -1,4 +1,5 @@
-﻿using Identity.Library.MessageServices.RabbitMQ.ProducerSending;
+﻿using Identity.Library.BackgroundTaskServices.Producers.Services;
+using Identity.Library.MessageServices.RabbitMQ.ProducerSending;
 using Identity.Library.Models;
 using Identity.Library.Services.BackgroundTask.TimerService;
 using Microsoft.AspNetCore.Mvc;
@@ -10,10 +11,12 @@ namespace Identity.Library.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> logger;
+        private readonly IServiceProvider serviceProvider;
         private int Counter = 0;
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IServiceProvider serviceProvider)
         {
             this.logger = logger;
+            this.serviceProvider = serviceProvider;
         }
         [HttpGet]
         public IActionResult Index()
@@ -24,11 +27,11 @@ namespace Identity.Library.Controllers
 
             Console.WriteLine("Change One Calling {2000} {1000}");
             var timer = new Timer(service.Execute,autoEvent,2000,1000);
-            
+
             autoEvent.WaitOne();    ///
 
             Console.WriteLine("Change One Calling {0} {500}");
-            timer.Change(0,500);
+            timer.Change(0, 500);
             autoEvent.WaitOne();    ///
 
 
@@ -51,6 +54,15 @@ namespace Identity.Library.Controllers
             Counter++;
             service.Execute();
             return "";
+        }
+
+        [HttpGet]
+        public string CreateFile()
+        {
+            //createPdfFile.Create();
+            CreatePdfFile createPdfFile = serviceProvider.GetRequiredService<CreatePdfFile>();
+            createPdfFile.Create();
+            return "در حال پردازش فایل";
         }
     }
 }
