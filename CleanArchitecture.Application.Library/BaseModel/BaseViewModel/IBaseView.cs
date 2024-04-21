@@ -1,5 +1,4 @@
-﻿using Application.Library.BaseModel.BaseDTO;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace CleanArchitecture.Application.Library.BaseModel.BaseViewModel
 {

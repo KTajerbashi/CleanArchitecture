@@ -7,7 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DatabaseContextApplication\DataSeed\Model\" />
+    <Folder Include="Patterns\Facad\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArchitecture.Application.Library\CleanArchitecture.Application.Library.csproj" />
+    <ProjectReference Include="..\CleanArchitecture.Domain.Library\CleanArchitecture.Domain.Library.csproj" />
+    <ProjectReference Include="..\CleanArchitecture.Persistance.Library\CleanArchitecture.Persistence.Library.csproj" />
   </ItemGroup>
 
 </Project>

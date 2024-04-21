@@ -1,5 +1,4 @@
-﻿using CleanArchitecture.Domain.Library.Entities.BUS;
-using CleanArchitecture.Domain.Library.Enums;
+﻿using CleanArchitecture.Domain.Library.Enums;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -53,19 +52,6 @@ namespace CleanArchitecture.Domain.Library.Entities.SEC
 
         [Description("کد کاربر آخرین تغییر")]
         public long? UpdateBy { get; set; }
-
-        public virtual ICollection<Factor> CustomerFactores { get; set; }
-        //#region Relation
-        //public virtual ICollection<UserToken> UserTokens { get; set; }
-
-        //public virtual ICollection<UserRole> Roles { get; set; }
-
-        //public virtual ICollection<UserLogin> Logins { get; set; }
-
-        //public virtual ICollection<UserClaim> Claims { get; set; }
-
-        //public virtual ICollection<CustomUserToken> CustomUserTokens { get; set; }
-        //#endregion
     }
 
 }

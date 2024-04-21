@@ -1,20 +1,11 @@
-﻿using Application.Library.BaseModel.BaseDTO;
-using Application.Library.Repositories.SEC.UserRepositories.Commands;
-using AutoMapper;
-using CleanArchitecture.Infrastructure.Library.DatabaseContextApplication.EF;
+﻿using AutoMapper;
+using CleanArchitecture.Application.Library.BaseModel.BaseDTO;
+using CleanArchitecture.Application.Library.Repositories.SEC.UserRepositories.Commands;
 
 namespace CleanArchitecture.Infrastructure.Library.Services.SEC.UserServices.Commands
 {
     public class UserDeleteService : IUserDeleteRepository
     {
-
-        private readonly DBContextApplication _context;
-        private readonly IMapper _mapper;
-        public UserDeleteService(DBContextApplication context, IMapper mapper)
-        {
-            _context = context;
-            _mapper = mapper;
-        }
         public Task<Result<bool>> Execute(Guid guid)
         {
             throw new NotImplementedException();

@@ -1,13 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using System.Reflection.Emit;
-using CleanArchitecture.Domain.Library.Entities.CNT;
-
 namespace CleanArchitecture.Domain.Library.Entities.SEC
 {
     [Table("Roles", Schema = "SEC"), Description("نقش ها")]
@@ -45,8 +39,6 @@ namespace CleanArchitecture.Domain.Library.Entities.SEC
         [Description("فعال"), DefaultValue(false)]
         public bool IsActive { get; set; }
 
-        public ICollection<MenuRole> MenuRoles { get; set; }
-
         //#region Relation
         //public virtual ICollection<UserRole> Users { get; set; }
 
@@ -57,12 +49,5 @@ namespace CleanArchitecture.Domain.Library.Entities.SEC
             return $"{Title} ({Name})";
         }
     }
-    public class RoleConfiguration : IEntityTypeConfiguration<Role>
-    {
-        public void Configure(EntityTypeBuilder<Role> builder)
-        {
-            builder.HasMany(m => m.MenuRoles)
-                .WithOne(r => r.Role);
-        }
-    }
+
 }

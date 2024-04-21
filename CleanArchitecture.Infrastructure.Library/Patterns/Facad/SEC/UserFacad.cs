@@ -1,10 +1,8 @@
-﻿using Application.Library.Patterns.Facad.SEC;
-using Application.Library.Repositories.SEC.UserRepositories.Commands;
-using Application.Library.Repositories.SEC.UserRepositories.Queries;
-using AutoMapper;
-using CleanArchitecture.Infrastructure.Library.DatabaseContextApplication.EF;
-using CleanArchitecture.Infrastructure.Library.Services.SEC.UserServices.Commands;
-using CleanArchitecture.Infrastructure.Library.Services.SEC.UserServices.Queries;
+﻿using AutoMapper;
+using CleanArchitecture.Application.Library.Patterns.Facad.SEC;
+using CleanArchitecture.Application.Library.Repositories.SEC.UserRepositories.Commands;
+using CleanArchitecture.Application.Library.Repositories.SEC.UserRepositories.Queries;
+using CleanArchitecture.Persistence.Library.DataContext;
 
 namespace CleanArchitecture.Infrastructure.Library.Patterns.Facad.SEC
 {
@@ -18,56 +16,16 @@ namespace CleanArchitecture.Infrastructure.Library.Patterns.Facad.SEC
             _mapper = mapper;
         }
 
+        public IUserCreateRepository UserCreateRepository => throw new NotImplementedException();
 
-        private UserCreateService _userCreateService;
-        public IUserCreateRepository UserCreateRepository
-        {
-            get
-            {
-                return _userCreateService = _userCreateService ?? new UserCreateService(_context, _mapper);
-            }
-        }
+        public IUserUpdateRepository UserUpdateRepository => throw new NotImplementedException();
 
-        private UserUpdateService _userUpdateService;
-        public IUserUpdateRepository UserUpdateRepository
-        {
-            get
-            {
-                return _userUpdateService = _userUpdateService ?? new UserUpdateService(_context, _mapper);
-            }
-        }
-        private UserDeleteService _userDeleteService;
-        public IUserDeleteRepository UserDeleteRepository
-        {
-            get
-            {
-                return _userDeleteService = _userDeleteService ?? new UserDeleteService(_context, _mapper);
-            }
-        }
+        public IUserDeleteRepository UserDeleteRepository => throw new NotImplementedException();
 
-        private UserGetAllService _userGetAllService;
-        public IUserGetAllRepository UserGetAllRepository
-        {
-            get
-            {
-                return _userGetAllService = _userGetAllService ?? new UserGetAllService(_context, _mapper);
-            }
-        }
-        public UserGetByIdService _userGetByIdService;
-        public IUserGetByIdRepository UserGetByIdRepository
-        {
-            get
-            {
-                return _userGetByIdService = _userGetByIdService ?? new UserGetByIdService(_context, _mapper);
-            }
-        }
-        public UserGetSearchService _userGetSearchService;
-        public IUserGetSearchRepository UserGetSearchRepository
-        {
-            get
-            {
-                return _userGetSearchService = _userGetSearchService ?? new UserGetSearchService(_context, _mapper);
-            }
-        }
+        public IUserGetAllRepository UserGetAllRepository => throw new NotImplementedException();
+
+        public IUserGetByIdRepository UserGetByIdRepository => throw new NotImplementedException();
+
+        public IUserGetSearchRepository UserGetSearchRepository => throw new NotImplementedException();
     }
 }

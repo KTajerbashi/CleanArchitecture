@@ -1,8 +1,12 @@
+using CleanArchitecture.WebApp.MessageContainer.RabbitMQ.ConsumerReceiveMessage;
+
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager Configuration = builder.Configuration;
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddControllers();
+builder.Services.AddHostedService<ReceiverMessageTask>();
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())

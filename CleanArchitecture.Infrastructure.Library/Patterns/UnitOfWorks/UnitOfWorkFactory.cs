@@ -1,9 +1,6 @@
-﻿using Application.Library.Patterns.UnitOfWork;
-using AutoMapper;
-using CleanArchitecture.Infrastructure.Library.DatabaseContextApplication.EF;
-using CleanArchitecture.Infrastructure.Library.ORM.Dapper;
-using Infrastructure.Library.Patterns.UnitOfWorks;
-using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using CleanArchitecture.Application.Library.Patterns.UnitOfWork;
+using CleanArchitecture.Persistence.Library.DataContext;
 
 namespace CleanArchitecture.Infrastructure.Library.Patterns.UnitOfWorks
 {
@@ -13,17 +10,18 @@ namespace CleanArchitecture.Infrastructure.Library.Patterns.UnitOfWorks
     }
     public class UnitOfWorkFactory : IUnitOfWorkFactory
     {
-        private readonly DBContextApplication _context;
         private readonly IMapper _mapper;
-        private readonly IDapperRepository _dapper;
-        public UnitOfWorkFactory(DBContextApplication context, IDapperRepository dapper)
+        private readonly DBContextApplication _context;
+
+        public UnitOfWorkFactory(DBContextApplication context, IMapper mapper)
         {
             _context = context;
-            _dapper = dapper;
+            _mapper = mapper;
         }
+
         public IUnitOfWork BeginTransAction()
         {
-            return new UnitOfWork(_context, _mapper, _dapper);
+            throw new NotImplementedException();
         }
     }
 }

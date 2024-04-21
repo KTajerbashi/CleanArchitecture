@@ -11,7 +11,7 @@ builder.Services.AddSwaggerGen();
 
 //builder.Services.AddHostedService<SendEmail>();
 
-builder.Services.AddHostedService<BackgroundTaskService>();
+//builder.Services.AddHostedService<BackgroundTaskService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
