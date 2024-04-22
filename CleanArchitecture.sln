@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Persistence.Library", "CleanArchitecture.Persistance.Library\CleanArchitecture.Persistence.Library.csproj", "{93016EA1-3FD6-4CE9-9441-F874CA70A245}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Old_Solution", "Old_Solution", "{6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalKernel", "ExternalKernel", "{6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Domain.TestLibrary", "CleanArchitecture.Domain.TestLibrary\CleanArchitecture.Domain.TestLibrary.csproj", "{BA80EE11-35F7-4BFF-B7CD-FFBFC10788DB}"
 EndProject
