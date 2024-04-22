@@ -64,7 +64,7 @@ namespace WorkerServiceBackupDatabase
             sqlBackup.FormatMedia = false;
             sqlBackup.SqlBackup(server);
             sqlBackup.Devices.Remove(backupDeviceItem);
-            _logger.LogInformation("Successful Backup is Created!");
+            _logger.LogInformation($"Successful Backup is Created! {DateTime.Now}");
 
 
         }
