@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.WebApp", "CleanArchitecture.WebApp\CleanArchitecture.WebApp.csproj", "{E73AA49E-75F8-4935-8459-1E41A3B5E043}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerServiceBackupDatabase", "WorkerServiceBackupDatabase\WorkerServiceBackupDatabase.csproj", "{41A360DF-6AEA-4C6B-9EC8-8E7379E595B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{E73AA49E-75F8-4935-8459-1E41A3B5E043}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E73AA49E-75F8-4935-8459-1E41A3B5E043}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E73AA49E-75F8-4935-8459-1E41A3B5E043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41A360DF-6AEA-4C6B-9EC8-8E7379E595B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41A360DF-6AEA-4C6B-9EC8-8E7379E595B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41A360DF-6AEA-4C6B-9EC8-8E7379E595B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41A360DF-6AEA-4C6B-9EC8-8E7379E595B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{BF334C4F-56C0-40E2-BC15-2E31175CD02A} = {ED9E18AC-7079-4509-B929-C4820FE5F90F}
 		{8CB0836F-9BDC-4734-9227-974E7B910ACE} = {ED9E18AC-7079-4509-B929-C4820FE5F90F}
 		{E73AA49E-75F8-4935-8459-1E41A3B5E043} = {ABD358DB-4857-42EC-8C99-DB3BCD3F977A}
+		{41A360DF-6AEA-4C6B-9EC8-8E7379E595B1} = {6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A57D86D6-5EF8-4745-9B92-13AE22320AE5}
