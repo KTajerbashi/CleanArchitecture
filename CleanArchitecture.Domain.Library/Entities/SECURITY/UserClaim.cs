@@ -2,10 +2,10 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CleanArchitecture.Domain.Library.Entities.SEC
+namespace CleanArchitecture.Domain.Library.Entities.Security
 {
-    [Table("UserLogin", Schema = "SEC"), Description("ورود کاربر")]
-    public class UserLogin : IdentityUserLogin<long>
+    [Table("UserClaim", Schema = "SEC"), Description("مدعی کاربر")]
+    public class UserClaim : IdentityUserClaim<long>
     {
 
         [Description("کلید")]

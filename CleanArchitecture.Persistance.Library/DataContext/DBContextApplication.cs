@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Domain.Library.Entities.SEC;
+﻿using CleanArchitecture.Domain.Library.Entities.Security;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

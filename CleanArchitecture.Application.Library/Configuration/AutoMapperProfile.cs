@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Application.Library.Repositories.SEC.UserRepositories.Models.DTOs;
 using CleanArchitecture.Application.Library.Repositories.SEC.UserRepositories.Models.Views;
-using CleanArchitecture.Domain.Library.Entities.SEC;
+using CleanArchitecture.Domain.Library.Entities.Security;
 
 namespace CleanArchitecture.Application.Library.Configuration
 {

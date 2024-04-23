@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace CleanArchitecture.Domain.Library.Entities.SEC
+namespace CleanArchitecture.Domain.Library.Entities.Security
 {
     [Table("Roles", Schema = "SEC"), Description("نقش ها")]
     public class Role : IdentityRole<long>
@@ -39,11 +39,6 @@ namespace CleanArchitecture.Domain.Library.Entities.SEC
         [Description("فعال"), DefaultValue(false)]
         public bool IsActive { get; set; }
 
-        //#region Relation
-        //public virtual ICollection<UserRole> Users { get; set; }
-
-        //public virtual ICollection<RoleClaim> Claims { get; set; }
-        //#endregion
         public override string ToString()
         {
             return $"{Title} ({Name})";
