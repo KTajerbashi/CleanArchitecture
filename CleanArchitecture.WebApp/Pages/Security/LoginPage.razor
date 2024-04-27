@@ -1,8 +1,47 @@
 ﻿@page "/Security/Login"
-
 @layout PublicLayout
-<h3>LoginPage</h3>
+@using CleanArchitecture.Application.Library.Repositories.Security.Login.Models
+@using Microsoft.AspNetCore.Components.Forms
+
+<EditForm Model="LoginModel" OnSubmit="SubmitForm">
+    <div class="container shadow py-5 my-5 rounded-5">
+        <div class="row d-flex flex-column justify-content-center align-items-center my-5">
+            <div class="col-6 alert alert-primary text-center">
+                صفحه ورود به نرم افزار
+            </div>
+            <div class="alert alert-danger shadow d-none col-6">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+            </div>
+            <div class="form-group m-3 col-6">
+                <label for="todo-item">نام کاربری  </label>
+                <InputText class="form-control mt-1" id="Username" @bind-Value="LoginModel.Username"></InputText>
+            </div>
+            <div class="form-group m-3 col-6">
+                <label for="todo-item">رمز کاربری </label>
+                <InputText type="password" class="form-control mt-1" id="Password" @bind-Value="LoginModel.Password"></InputText>
+            </div>
+            <div class="form-group m-3 col-6 d-flex flex-row justify-content-between">
+                <div>
+                    <InputCheckbox id="IsRemember" @bind-Value="LoginModel.IsRemember" />
+                    <label for="todo-item">مرا بخاطر بسپار ! </label>
+                </div>
+                <a href="#" for="todo-item">رمز خود را فراموش کردم ! </a>
+            </div>
+            <div class="form-group m-3 col-6">
+                <button type="submit" class="btn btn-primary w-100 rounded-5 shadow" @onclick="SubmitForm">ورود</button>
+                <button type="submit" class="btn btn-success w-100 mt-3 rounded-5 shadow" @onclick="SubmitForm">ثبت نام</button>
+            </div>
+        </div>
+    </div>
+</EditForm>
 
 @code {
+    public LoginModel LoginModel { get; set; } = new LoginModel();
 
+
+    public void SubmitForm()
+    {
+
+    }
 }

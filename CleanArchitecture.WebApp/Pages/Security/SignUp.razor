@@ -1,7 +1,61 @@
 ﻿@page "/Security/SignUp"
+@using CleanArchitecture.Application.Library.Repositories.Security.Register.Model
+@using Microsoft.AspNetCore.Components.Forms
 @layout PublicLayout
-<h3>SignUp</h3>
+
+<EditForm Model="Model" OnSubmit="SubmitForm">
+    <div class="container shadow py-5 my-5 rounded-5">
+        <div class="row d-flex flex-column justify-content-center align-items-center my-5">
+            <div class="col-6 alert alert-primary text-center shadow">
+                صفحه ثبت نام در نرم افزار
+            </div>
+            <div class="alert alert-danger shadow d-none col-6">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+            </div>
+            <div class="form-group col-6">
+                <label for="todo-item">نام  </label>
+                <InputText class="form-control mt-1" id="Name" @bind-Value="Model.Name"></InputText>
+            </div>
+            <div class="form-group col-6">
+                <label for="todo-item">فامیل</label>
+                <InputText class="form-control mt-1" id="Family" @bind-Value="Model.Family"></InputText>
+            </div>
+            <div class="form-group col-6">
+                <label for="todo-item">ایمیل</label>
+                <InputText class="form-control mt-1" id="Email" @bind-Value="Model.Email"></InputText>
+            </div>
+            <div class="form-group col-6">
+                <label for="todo-item">تلفن</label>
+                <InputText class="form-control mt-1" id="Phone" @bind-Value="Model.Phone"></InputText>
+            </div>
+            <div class="form-group col-6">
+                <label for="todo-item">نام کاربری</label>
+                <InputText class="form-control mt-1" id="Username" @bind-Value="Model.Username"></InputText>
+            </div>
+            <div class="form-group col-6">
+                <label for="todo-item">رمز کاربری </label>
+                <InputText type="password" class="form-control mt-1" id="Password" @bind-Value="Model.Password"></InputText>
+            </div>
+            <div class="form-group col-6">
+                <label for="todo-item">تکرار رمز کاربری</label>
+                <InputText type="password" class="form-control mt-1" id="RePassword" @bind-Value="Model.RePassword"></InputText>
+            </div>
+
+            <div class="form-group m-3 col-6">
+                <button type="submit" class="btn btn-success w-100 mt-3 rounded-5 shadow" @onclick="SubmitForm">ثبت نام</button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
 
 @code {
+    public RegisterUserModel Model { get; set; } = new RegisterUserModel();
 
+
+    public void SubmitForm()
+    {
+
+    }
 }

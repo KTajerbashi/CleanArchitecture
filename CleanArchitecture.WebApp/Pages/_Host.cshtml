@@ -1,7 +1,6 @@
 ﻿@page "/"
 @using Microsoft.AspNetCore.Components.Web
 @namespace CleanArchitecture.WebApp.Pages
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,22 +18,22 @@
     <link href="~/lib/bootstrap/css/bootstrap-utilities.rtl.min.css" rel="stylesheet" />
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
-<body>
+<body dir="rtl">
     <component type="typeof(App)" render-mode="ServerPrerendered" />
 
     <div id="blazor-error-ui">
-       <div class="d-flex flex-row justify-content-between">
-            <div>
+        <div class="d-flex flex-row justify-content-between">
+            <a class="dismiss btn btn-danger">🗙</a>
+            <div class="text-danger me-5 px-5">
                 <environment include="Staging,Production">
-                    An error has occurred. This application may no longer respond until reloaded.
+                    خطایی رخ داده است. این برنامه ممکن است دیگر پاسخ ندهد تا زمانی که دوباره بارگیری شود.
                 </environment>
                 <environment include="Development">
-                    An unhandled exception has occurred. See browser dev tools for details.
+                    یک استثناء کنترل نشده رخ داده است. برای جزئیات بیشتر به ابزارهای توسعه دهنده مرورگر مراجعه کنید.
                 </environment>
             </div>
-            <a href="" class="reload">Reload</a>
-            <a class="dismiss">🗙</a>
-       </div>
+            <a href="" class="reload btn btn-danger rounded-3 shadow">تازه سازی</a>
+        </div>
     </div>
 
     <script src="_framework/blazor.server.js"></script>
