@@ -1,8 +1,8 @@
 ﻿namespace CleanArchitecture.Application.Library.BaseModel.BaseDTO
 {
-    public interface IBaseDTO
+    public interface IResult<T>
     {
+
     }
-    
 
 }

@@ -1,7 +1,6 @@
 ﻿namespace CleanArchitecture.Application.Library.BaseModel.BaseDTO
 {
-
-    public class Result<T>
+    public class Result<T> : IResult<T>
     {
         public bool Status { get; set; }
         public string Message { get; set; }

@@ -14,4 +14,10 @@
     <ProjectReference Include="..\CleanArchitecture.Domain.Library\CleanArchitecture.Domain.Library.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\Security\Sample\Commands\" />
+    <Folder Include="Repositories\Security\Sample\Models\" />
+    <Folder Include="Repositories\Security\Sample\Queries\" />
+  </ItemGroup>
+
 </Project>

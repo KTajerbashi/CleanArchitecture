@@ -10,8 +10,8 @@ namespace CleanArchitecture.Application.Library.Configuration
         public AutoMapperProfile()
         {
             #region Securit
-            CreateMap<User, UserDTO>();
-            CreateMap<User, UserView>();
+            CreateMap<UserEntity, UserDTO>();
+            CreateMap<UserEntity, UserView>();
             #endregion
         }
     }
