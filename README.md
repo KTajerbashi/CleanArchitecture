@@ -107,14 +107,14 @@ Clean architecture aims to create an architecture that can withstand changes and
       </p>
     </div>
     <div>
-      <h4>Presentatino Layer</h4>
+      <h4>Presentation Layer</h4>
       <img/>
       <p>
         The Presentation Layer is responsible for handling the user interface and presentation logic.
         It’s the layer that interacts with the user and provides a way for them to interact with the application.
         This layer is implement using ASP.NET Core, which provides a robust set of tools and libraries for creating user interfaces. 
         The presentation layer is responsible for receiving user input and displaying the output, but it’s not responsible for the application’s business logic.
-      </p>[](url)
+      </p>
     </div>
     <p>
     Clean Architecture with ASP.NET Core involves four layers: the Presentation Layer, Application Layer, Domain Layer, and Infrastructure Layer. 
