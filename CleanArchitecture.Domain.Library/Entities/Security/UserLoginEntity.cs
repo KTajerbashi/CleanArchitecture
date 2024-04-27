@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CleanArchitecture.Domain.Library.Entities.Security
 {
     [Table("UserLogin", Schema = "SEC"), Description("ورود کاربر")]
-    public class UserLogin : IdentityUserLogin<long>
+    public class UserLoginEntity : IdentityUserLogin<long>
     {
 
         [Description("کلید")]

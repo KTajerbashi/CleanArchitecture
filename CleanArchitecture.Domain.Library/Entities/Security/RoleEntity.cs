@@ -5,20 +5,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CleanArchitecture.Domain.Library.Entities.Security
 {
     [Table("Roles", Schema = "SEC"), Description("نقش ها")]
-    public class Role : IdentityRole<long>
+    public class RoleEntity : IdentityRole<long>
     {
         [Description("کلید")]
         public Guid Guid { get; set; }
-        public Role()
+        public RoleEntity()
         {
         }
 
-        public Role(string name)
+        public RoleEntity(string name)
         {
             Name = name;
         }
 
-        public Role(string name, string title)
+        public RoleEntity(string name, string title)
             : this(name)
         {
             Title = title;

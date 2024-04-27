@@ -5,22 +5,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CleanArchitecture.Domain.Library.Entities.Security
 {
     /// <summary>
-    /// مدعی نقش
+    /// توکن کاربر
     /// </summary>
-    [Table("RoleClaim", Schema = "SEC"), Description("مدعی نقش")]
-    public class RoleClaim : IdentityRoleClaim<long>
+    [Table("UserToken", Schema = "SEC"), Description("توکن کاربر")]
+    public class UserTokenEntity : IdentityUserToken<long>
     {
-
         [Description("کلید")]
         public Guid Guid { get; set; }
-
-
+        [Description("فعال")]
+        public bool IsActive { get; set; }
         [Description("حذف شده"), DefaultValue(false)]
         public bool IsDeleted { get; set; }
-
-        [Description("فعال"), DefaultValue(false)]
-        public bool IsActive { get; set; }
-
-
     }
 }

@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CleanArchitecture.Domain.Library.Entities.Security
 {
     [Table("Users", Schema = "SEC"), Description("کاربران")]
-    public class User : IdentityUser<long>
+    public class UserEntity : IdentityUser<long>
     {
 
         [Description("کلید")]
