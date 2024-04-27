@@ -6,9 +6,13 @@ namespace CleanArchitecture.Persistence.Library.DataContext
 {
     public class DBContextApplication : IdentityDbContext<UserEntity, RoleEntity, long, UserClaimEntity, UserRoleEntity, UserLoginEntity, RoleClaimEntity, UserTokenEntity>
     {
-        public DBContextApplication(DbContextOptions<DBContextApplication> option) : base(option)
+        public DBContextApplication(DbContextOptions options) : base(options)
         {
+        }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -30,14 +34,7 @@ namespace CleanArchitecture.Persistence.Library.DataContext
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
         }
-        protected void Creating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
-        private void Configuration(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-        }
+      
     }
 
 }

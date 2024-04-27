@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using CleanArchitecture.Application.Library.Repositories.SEC.UserRepositories.Models.DTOs;
-using CleanArchitecture.Application.Library.Repositories.SEC.UserRepositories.Models.Views;
 using CleanArchitecture.Domain.Library.Entities.Security;
 
 namespace CleanArchitecture.Application.Library.Configuration
@@ -10,8 +8,8 @@ namespace CleanArchitecture.Application.Library.Configuration
         public AutoMapperProfile()
         {
             #region Securit
-            CreateMap<UserEntity, UserDTO>();
-            CreateMap<UserEntity, UserView>();
+            //CreateMap<UserEntity, UserDTO>();
+            //CreateMap<UserEntity, UserView>();
             #endregion
         }
     }

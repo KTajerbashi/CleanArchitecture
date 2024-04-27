@@ -1,7 +1,13 @@
-using CleanArchitecture.WebApp.MessageContainer.RabbitMQ.ConsumerReceiveMessage;
+using CleanArchitecture.Persistence.Library.DataContext;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager Configuration = builder.Configuration;
+builder.Services.AddDbContext<DBContextApplication>(options =>
+{
+    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+});
+
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddControllers();
