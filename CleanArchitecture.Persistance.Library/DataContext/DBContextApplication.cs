@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.Persistence.Library.DataContext
 {
-    public class DBContextApplication : IdentityDbContext<User, Role, long, UserClaim, UserRole, UserLogin, RoleClaim, UserToken>
+    public class DBContextApplication : IdentityDbContext<UserEntity, RoleEntity, long, UserClaimEntity, UserRoleEntity, UserLoginEntity, RoleClaimEntity, UserTokenEntity>
     {
         public DBContextApplication(DbContextOptions<DBContextApplication> option) : base(option)
         {
@@ -14,15 +14,15 @@ namespace CleanArchitecture.Persistence.Library.DataContext
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            #region SEC
-            builder.Entity<User>().ToTable("Users", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
-            builder.Entity<Role>().ToTable("Roles", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
-            builder.Entity<RoleClaim>().ToTable("RoleClaims", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
-            builder.Entity<UserClaim>().ToTable("UserClaims", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
-            builder.Entity<UserLogin>().ToTable("UserLogins", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive).HasKey(l => new { l.LoginProvider, l.ProviderKey, l.UserId });
-            builder.Entity<UserRole>().ToTable("UserRoles", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive).HasKey(x => new { x.ID, x.UserId, x.RoleId });
-            builder.Entity<UserToken>().ToTable("UserTokens", "SEC").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
-            builder.Entity<User>().HasIndex(x => x.NationalCode).IsUnique();
+            #region Security
+            builder.Entity<UserEntity>().ToTable("Users", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<RoleEntity>().ToTable("Roles", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<RoleClaimEntity>().ToTable("RoleClaims", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<UserClaimEntity>().ToTable("UserClaims", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<UserLoginEntity>().ToTable("UserLogins", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive).HasKey(l => new { l.LoginProvider, l.ProviderKey, l.UserId });
+            builder.Entity<UserRoleEntity>().ToTable("UserRoles", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive).HasKey(x => new { x.ID, x.UserId, x.RoleId });
+            builder.Entity<UserTokenEntity>().ToTable("UserTokens", "Security").HasQueryFilter(x => !x.IsDeleted && x.IsActive);
+            builder.Entity<UserEntity>().HasIndex(x => x.NationalCode).IsUnique();
             #endregion
 
             foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))

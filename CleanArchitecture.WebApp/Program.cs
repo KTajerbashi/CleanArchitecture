@@ -5,7 +5,7 @@ ConfigurationManager Configuration = builder.Configuration;
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddControllers();
-builder.Services.AddHostedService<ReceiverMessageTask>();
+
 
 var app = builder.Build();
 

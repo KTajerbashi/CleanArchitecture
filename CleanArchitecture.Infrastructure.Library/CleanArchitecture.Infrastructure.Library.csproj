@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Patterns\Facad\" />
+    <Compile Remove="Patterns\**" />
+    <EmbeddedResource Remove="Patterns\**" />
+    <None Remove="Patterns\**" />
   </ItemGroup>
 
   <ItemGroup>
