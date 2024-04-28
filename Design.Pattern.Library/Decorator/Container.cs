@@ -2,9 +2,9 @@
 
 namespace Design.Pattern.Library.Decorator
 {
-    public class DecoratorContainer
+    public class Container
     {
-        public DecoratorContainer(DesignConsole design)
+        public Container(DesignConsole design)
         {
             design.NewLine();
             ConcreteComponent component = new();
@@ -18,5 +18,4 @@ namespace Design.Pattern.Library.Decorator
             design.NewLine();
         }
     }
-
 }
