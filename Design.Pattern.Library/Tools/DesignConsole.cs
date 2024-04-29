@@ -28,13 +28,13 @@
         public void Start(string title)
         {
             Console.WriteLine("======================================================");
-            Console.WriteLine($"== == == == Start Of {title}  == == == == ==");
+            Console.WriteLine($"== == == == Start Of {title}");
             Console.WriteLine("======================================================");
         }
         public void End(string title)
         {
             Console.WriteLine("======================================================");
-            Console.WriteLine($"== == == == == == End Of {title} == == == == == ==");
+            Console.WriteLine($"== == == == End Of {title} ");
             Console.WriteLine("======================================================");
         }
     }

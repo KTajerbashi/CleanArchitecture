@@ -1,21 +1,30 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Design.Pattern.Library.Decorator;
+using Design.Pattern.Library.Decorator.Draw;
 using Design.Pattern.Library.Tools;
 
 DesignConsole Design = new();
 
 
-Design.Background(ConsoleColor.Green);
-Design.ForeColor(ConsoleColor.Black);
+Design.ForeColor(ConsoleColor.White);
 
 Design.Start("Start Application");
-Design.NewLine();
 #region Decorator
-Design.Background(ConsoleColor.Blue);
 Design.ForeColor(ConsoleColor.Yellow);
 Design.Start("Start Decoration Design Pattern");
 
-DecoratorContainer decorator =new(Design);
+Design.Start("DrawPaint");
+Design.Title("DrawPaint");
+DrawPaint drawPaint = new();
+drawPaint.Draw();
+
+Design.Title("DrawPaint Concrete Decorator Drawing");
+ConcreteDecoratorDrawing concreteDecoratorDrawing = new(drawPaint);
+concreteDecoratorDrawing.Draw();
+
+Design.NewLine();
+Design.End("DrawPaint");
+
 
 Design.End("End Decoration Design Pattern");
 Design.Background(ConsoleColor.Green);
