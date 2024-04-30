@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Design.Pattern.Library.Bridge.Abstractions;
+using Design.Pattern.Library.Bridge.Draw.Abstraction;
+using Design.Pattern.Library.Bridge.Draw.Implementation;
 using Design.Pattern.Library.Bridge.MailService.Abstraction;
 using Design.Pattern.Library.Bridge.MailService.Models;
 using Design.Pattern.Library.Decorator;
@@ -28,6 +30,7 @@ Design.Start("Bridge");
 RefinedAbstractionClass refined = new();
 refined.Function();
 
+Design.NewLine();
 RefinedMailService refinedMail = new();
 refinedMail.SendEmail(new EmailDTO
 {
@@ -35,6 +38,15 @@ refinedMail.SendEmail(new EmailDTO
     Title="CV Application",
     Message="This is a Application",
 });
+
+Design.NewLine();
+Circle vectorCircle = new Circle(new VectorRenderer(), 5);
+vectorCircle.Draw();
+
+Design.NewLine();
+Square rasterSquare = new Square(new RasterRenderer(), 10);
+rasterSquare.Draw();
+
 Design.End("Bridge");
 #endregion
 
