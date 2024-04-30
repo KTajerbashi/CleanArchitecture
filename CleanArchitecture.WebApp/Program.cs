@@ -1,13 +1,14 @@
-using CleanArchitecture.Persistence.Library.DataContext;
-using Microsoft.EntityFrameworkCore;
+using CleanArchitecture.WebApp.AppSettings;
+using CleanArchitecture.WebApp.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager Configuration = builder.Configuration;
-builder.Services.AddDbContext<DBContextApplication>(options =>
-{
-    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
-});
+var appSetting = Configuration.Get<AppSetting>();
 
+builder.Services.AddDatabaseContext(appSetting.ConnectionStrings.DefaultConnection);
+builder.Services.AddIdentity();
+builder.Services.AddClaims();
+builder.Services.AddPolicy();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddControllers();
