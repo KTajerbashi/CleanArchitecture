@@ -20,7 +20,10 @@
         {
             Console.WriteLine("\n");
         }
-
+        public void Section()
+        {
+            Console.WriteLine("\n:::::::::::::::::::::::::::::::::::::::::::::::::::::::\n");
+        }
         public void Title(string title)
         {
             Console.WriteLine($"\n== == == == == == {title} == == == == == ==\n");
@@ -36,6 +39,7 @@
             Console.WriteLine("======================================================");
             Console.WriteLine($"== == == == End Of {title} ");
             Console.WriteLine("======================================================");
+            Section();
         }
     }
 }
