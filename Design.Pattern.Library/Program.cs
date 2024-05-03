@@ -1,6 +1,7 @@
 ﻿using Design.Pattern.Library.Composite.AssembleSystem;
 using Design.Pattern.Library.Tools;
 
+
 DesignConsole Design = new();
 
 
