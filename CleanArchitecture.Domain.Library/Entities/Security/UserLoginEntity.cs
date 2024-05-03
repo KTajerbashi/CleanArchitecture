@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CleanArchitecture.Domain.Library.Entities.Security
 {
-    [Table("UserLogin", Schema = "SEC"), Description("ورود کاربر")]
+    [Table("UserLogin", Schema = "Security"), Description("ورود کاربر")]
     public class UserLoginEntity : IdentityUserLogin<long>
     {
 

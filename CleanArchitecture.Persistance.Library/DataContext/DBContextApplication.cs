@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Domain.Library.Entities.Security;
+﻿using CleanArchitecture.Domain.Library.Entities.Constance;
+using CleanArchitecture.Domain.Library.Entities.Security;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,7 +35,14 @@ namespace CleanArchitecture.Persistence.Library.DataContext
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
         }
-      
+
+
+        public DbSet<MenuLinkEntity> MenuLinkEntities { get; set; }
+        public DbSet<CategoryEntity> CategoryEntities { get; set; }
+        public DbSet<VariableEntity> VariableEntities { get; set; }
+
+
+
     }
 
 }

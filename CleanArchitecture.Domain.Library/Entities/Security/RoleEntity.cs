@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace CleanArchitecture.Domain.Library.Entities.Security
 {
-    [Table("Roles", Schema = "SEC"), Description("نقش ها")]
+    [Table("Roles", Schema = "Security"), Description("نقش ها")]
     public class RoleEntity : IdentityRole<long>
     {
         [Description("کلید")]

@@ -21,4 +21,9 @@ namespace CleanArchitecture.Domain.Library.BaseEntities
         public DateTime UpdateDate { get; set; }
         public DateTime DeleteDate { get; set; }
     }
+    public abstract class GeneralEntity : BaseEntity
+    {
+        public string Title { get; set; }
+        public string Description { get; set; }
+    }
 }

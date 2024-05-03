@@ -7,7 +7,7 @@ namespace CleanArchitecture.Domain.Library.Entities.Security
     /// <summary>
     /// توکن کاربر
     /// </summary>
-    [Table("UserToken", Schema = "SEC"), Description("توکن کاربر")]
+    [Table("UserToken", Schema = "Security"), Description("توکن کاربر")]
     public class UserTokenEntity : IdentityUserToken<long>
     {
         [Description("کلید")]

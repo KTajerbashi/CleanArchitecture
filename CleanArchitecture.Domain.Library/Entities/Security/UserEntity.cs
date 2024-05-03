@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CleanArchitecture.Domain.Library.Entities.Security
 {
-    [Table("Users", Schema = "SEC"), Description("کاربران")]
+    [Table("Users", Schema = "Security"), Description("کاربران")]
     public class UserEntity : IdentityUser<long>
     {
 

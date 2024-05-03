@@ -7,7 +7,7 @@ namespace CleanArchitecture.Domain.Library.Entities.Security
     /// <summary>
     /// مدعی نقش
     /// </summary>
-    [Table("RoleClaim", Schema = "SEC"), Description("مدعی نقش")]
+    [Table("RoleClaim", Schema = "Security"), Description("مدعی نقش")]
     public class RoleClaimEntity : IdentityRoleClaim<long>
     {
 
