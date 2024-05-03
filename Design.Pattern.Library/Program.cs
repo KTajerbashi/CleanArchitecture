@@ -1,4 +1,4 @@
-﻿using Design.Pattern.Library.Composite;
+﻿using Design.Pattern.Library.Composite.AssembleSystem;
 using Design.Pattern.Library.Tools;
 
 DesignConsole Design = new();
@@ -58,25 +58,53 @@ Design.Start("Start Application");
 #endregion
 
 #region Composite
-Design.Pattern.Library.Composite.Component component = new Composite("RouteItem",new Component[]
-{
-    new Leaf("Leaf 1"),
-    new Composite("Composite 1",new Component[]
-    {
-        new Leaf("Leaf 1-1"),
-        new Leaf("Leaf 1-2"),
-        new Composite("Composite 1-1",new Component[]
-        {
-            new Leaf("Leaf 1-1-1"),
-            new Composite("Empty Composite",new Component[]{ })
-        }),
-        new Composite("Composite 1-2"),
-    }),
-    new Leaf("Leaf 2"),
-    new Leaf("Leaf 3"),
-    new Leaf("Leaf 4"),
-});
-component.Display(1);
+//Design.Pattern.Library.Composite.Component component = new Composite("RouteItem",new Component[]
+//{
+//    new Leaf("Leaf 1"),
+//    new Composite("Composite 1",new Component[]
+//    {
+//        new Leaf("Leaf 1-1"),
+//        new Leaf("Leaf 1-2"),
+//        new Composite("Composite 1-1",new Component[]
+//        {
+//            new Leaf("Leaf 1-1-1"),
+//            new Composite("Empty Composite",new Component[]{ })
+//        }),
+//        new Composite("Composite 1-2"),
+//    }),
+//    new Leaf("Leaf 2"),
+//    new Leaf("Leaf 3"),
+//    new Leaf("Leaf 4"),
+//});
+//component.Display(1);
+
+IComponent Hdd = new Leaf("Hard Disk",10000);
+IComponent Ram = new Leaf("RAM",16000);
+IComponent Cpu = new Leaf("CPU",15000);
+IComponent Vga = new Leaf("VGA",20000);
+IComponent Keyboard = new Leaf("Keyboard",2200);
+IComponent Mouse = new Leaf("Mouse",2300);
+IComponent Monitor = new Leaf("Monitor",5000);
+
+Composite MotherBoard = new Composite("MotherBoard",1000);
+Composite Case = new Composite("Case",23000);
+Composite Peripherais = new Composite("Peripherais",0);
+Composite Computer = new Composite("Computer",0);
+MotherBoard.AddComponent(Cpu);
+MotherBoard.AddComponent(Ram);
+MotherBoard.AddComponent(Vga);
+
+Case.AddComponent(MotherBoard);
+Case.AddComponent(Hdd);
+
+Peripherais.AddComponent(Mouse);
+Peripherais.AddComponent(Keyboard);
+
+Computer.AddComponent(Case);
+Computer.AddComponent(Peripherais);
+Computer.AddComponent(Monitor);
+
+Computer.DisplayPrice();
 #endregion
 
 Design.ForeColor(ConsoleColor.White);
