@@ -1,14 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using Design.Pattern.Library.Bridge.Abstractions;
-using Design.Pattern.Library.Bridge.Draw.Abstraction;
-using Design.Pattern.Library.Bridge.Draw.Implementation;
-using Design.Pattern.Library.Bridge.MailService.Abstraction;
-using Design.Pattern.Library.Bridge.MailService.Models;
-using Design.Pattern.Library.Decorator;
-using Design.Pattern.Library.Decorator.Draw;
-using Design.Pattern.Library.Facade.Pattern;
-using Design.Pattern.Library.Proxy.MainSource;
-using Design.Pattern.Library.Proxy.Pattern;
+﻿using Design.Pattern.Library.Composite;
 using Design.Pattern.Library.Tools;
 
 DesignConsole Design = new();
@@ -65,6 +55,28 @@ Design.Start("Start Application");
 //IBankRepository bank = new BankServerProxy();
 //bank.Deposit();
 //bank.Harvest();
+#endregion
+
+#region Composite
+Design.Pattern.Library.Composite.Component component = new Composite("RouteItem",new Component[]
+{
+    new Leaf("Leaf 1"),
+    new Composite("Composite 1",new Component[]
+    {
+        new Leaf("Leaf 1-1"),
+        new Leaf("Leaf 1-2"),
+        new Composite("Composite 1-1",new Component[]
+        {
+            new Leaf("Leaf 1-1-1"),
+            new Composite("Empty Composite",new Component[]{ })
+        }),
+        new Composite("Composite 1-2"),
+    }),
+    new Leaf("Leaf 2"),
+    new Leaf("Leaf 3"),
+    new Leaf("Leaf 4"),
+});
+component.Display(1);
 #endregion
 
 Design.ForeColor(ConsoleColor.White);
