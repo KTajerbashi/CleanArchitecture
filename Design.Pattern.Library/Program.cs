@@ -7,6 +7,8 @@ using Design.Pattern.Library.Bridge.MailService.Models;
 using Design.Pattern.Library.Decorator;
 using Design.Pattern.Library.Decorator.Draw;
 using Design.Pattern.Library.Facade.Pattern;
+using Design.Pattern.Library.Proxy.MainSource;
+using Design.Pattern.Library.Proxy.Pattern;
 using Design.Pattern.Library.Tools;
 
 DesignConsole Design = new();
@@ -53,12 +55,17 @@ Design.Start("Start Application");
 #endregion
 
 #region Facade
-IFacadContainer facad = new FacadContainer();
-facad.BackupRepository.Execute();
-facad.DrawRepository.Execute();
-facad.EmailRepository.Execute();
+//IFacadContainer facad = new FacadContainer();
+//facad.BackupRepository.Execute();
+//facad.DrawRepository.Execute();
+//facad.EmailRepository.Execute();
 #endregion
 
+#region Proxy
+//IBankRepository bank = new BankServerProxy();
+//bank.Deposit();
+//bank.Harvest();
+#endregion
 
 Design.ForeColor(ConsoleColor.White);
 Design.Background(ConsoleColor.Black);
