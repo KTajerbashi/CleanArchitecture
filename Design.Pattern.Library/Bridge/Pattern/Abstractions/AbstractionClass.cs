@@ -1,14 +1,14 @@
-﻿using Design.Pattern.Library.Bridge.Implementors;
+﻿using Design.Pattern.Library.Bridge.Pattern.Implementors;
 
-namespace Design.Pattern.Library.Bridge.Abstractions
+namespace Design.Pattern.Library.Bridge.Pattern.Abstractions
 {
     public abstract class AbstractionClass
     {
-        private  ImplementorClass implementorClass;
+        private ImplementorClass implementorClass;
 
         protected AbstractionClass()
         {
-            this.implementorClass = new ConcreteImplementor();
+            implementorClass = new ConcreteImplementor();
         }
 
         public virtual void Function()

@@ -1,4 +1,4 @@
-﻿namespace Design.Pattern.Library.Bridge.Implementors
+﻿namespace Design.Pattern.Library.Bridge.Pattern.Implementors
 {
     public abstract class ImplementorClass
     {

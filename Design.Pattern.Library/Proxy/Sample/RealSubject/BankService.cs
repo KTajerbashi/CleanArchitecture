@@ -1,6 +1,6 @@
-﻿using Design.Pattern.Library.Proxy.MainSource;
+﻿using Design.Pattern.Library.Proxy.Sample.MainSource;
 
-namespace Design.Pattern.Library.Proxy.RealSubject
+namespace Design.Pattern.Library.Proxy.Sample.RealSubject
 {
     internal class BankService : IBankRepository
     {

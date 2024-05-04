@@ -1,7 +1,7 @@
-﻿using Design.Pattern.Library.Proxy.MainSource;
-using Design.Pattern.Library.Proxy.RealSubject;
+﻿using Design.Pattern.Library.Proxy.Sample.MainSource;
+using Design.Pattern.Library.Proxy.Sample.RealSubject;
 
-namespace Design.Pattern.Library.Proxy.Pattern
+namespace Design.Pattern.Library.Proxy.Sample
 {
     public class BankServerProxy : IBankRepository
     {
@@ -9,7 +9,7 @@ namespace Design.Pattern.Library.Proxy.Pattern
 
         public void Deposit()
         {
-           
+
             bankService.Deposit();
         }
 

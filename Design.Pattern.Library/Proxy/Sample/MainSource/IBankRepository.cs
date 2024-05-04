@@ -1,4 +1,4 @@
-﻿namespace Design.Pattern.Library.Proxy.MainSource
+﻿namespace Design.Pattern.Library.Proxy.Sample.MainSource
 {
     public interface IBankRepository
     {
