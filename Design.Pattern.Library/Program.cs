@@ -1,4 +1,5 @@
 ﻿using Design.Pattern.Library.Composite.AssembleSystem;
+using Design.Pattern.Library.Flyweight.Pattern;
 using Design.Pattern.Library.Tools;
 
 
@@ -79,33 +80,55 @@ Design.Start("Start Application");
 //});
 //component.Display(1);
 
-IComponent Hdd = new Leaf("Hard Disk",10000);
-IComponent Ram = new Leaf("RAM",16000);
-IComponent Cpu = new Leaf("CPU",15000);
-IComponent Vga = new Leaf("VGA",20000);
-IComponent Keyboard = new Leaf("Keyboard",2200);
-IComponent Mouse = new Leaf("Mouse",2300);
-IComponent Monitor = new Leaf("Monitor",5000);
+//IComponent Hdd = new Leaf("Hard Disk",10000);
+//IComponent Ram = new Leaf("RAM",16000);
+//IComponent Cpu = new Leaf("CPU",15000);
+//IComponent Vga = new Leaf("VGA",20000);
+//IComponent Keyboard = new Leaf("Keyboard",2200);
+//IComponent Mouse = new Leaf("Mouse",2300);
+//IComponent Monitor = new Leaf("Monitor",5000);
 
-Composite MotherBoard = new Composite("MotherBoard",1000);
-Composite Case = new Composite("Case",23000);
-Composite Peripherais = new Composite("Peripherais",0);
-Composite Computer = new Composite("Computer",0);
-MotherBoard.AddComponent(Cpu);
-MotherBoard.AddComponent(Ram);
-MotherBoard.AddComponent(Vga);
+//Composite MotherBoard = new Composite("MotherBoard",1000);
+//Composite Case = new Composite("Case",23000);
+//Composite Peripherais = new Composite("Peripherais",0);
+//Composite Computer = new Composite("Computer",0);
+//MotherBoard.AddComponent(Cpu);
+//MotherBoard.AddComponent(Ram);
+//MotherBoard.AddComponent(Vga);
 
-Case.AddComponent(MotherBoard);
-Case.AddComponent(Hdd);
+//Case.AddComponent(MotherBoard);
+//Case.AddComponent(Hdd);
 
-Peripherais.AddComponent(Mouse);
-Peripherais.AddComponent(Keyboard);
+//Peripherais.AddComponent(Mouse);
+//Peripherais.AddComponent(Keyboard);
 
-Computer.AddComponent(Case);
-Computer.AddComponent(Peripherais);
-Computer.AddComponent(Monitor);
+//Computer.AddComponent(Case);
+//Computer.AddComponent(Peripherais);
+//Computer.AddComponent(Monitor);
 
-Computer.DisplayPrice();
+//Computer.DisplayPrice();
+#endregion
+
+#region Flyweight
+FlyweightFactory factory = new();
+var obj1 =factory.GetFlyweight("Test1");
+var obj2 =factory.GetFlyweight("Test2");
+var obj3 =factory.GetFlyweight("Test1");
+
+obj1.Operation("Sample 1");
+obj2.Operation("Sample 2");
+obj3.Operation("Sample 3");
+
+UnSharedFlyweight flyweightShared = new(new Flyweight[]
+{
+    factory.GetFlyweight("Test 1"),
+    factory.GetFlyweight("Test 2"),
+    factory.GetFlyweight("Test 3"),
+    factory.GetFlyweight("Test 4"),
+});
+
+flyweightShared.Operation("UnSharedFlyweight ====> Extrinsic");
+
 #endregion
 
 Design.ForeColor(ConsoleColor.White);
