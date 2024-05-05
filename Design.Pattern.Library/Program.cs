@@ -1,4 +1,5 @@
 ﻿using Design.Pattern.Library.Composite.AssembleSystem;
+using Design.Pattern.Library.Flyweight.Game;
 using Design.Pattern.Library.Flyweight.Pattern;
 using Design.Pattern.Library.Tools;
 
@@ -110,25 +111,45 @@ Design.Start("Start Application");
 #endregion
 
 #region Flyweight
-FlyweightFactory factory = new();
-var obj1 =factory.GetFlyweight("Test1");
-var obj2 =factory.GetFlyweight("Test2");
-var obj3 =factory.GetFlyweight("Test1");
+#region Sample 
+//FlyweightFactory factory = new();
+//var obj1 =factory.GetFlyweight("Test1");
+//var obj2 =factory.GetFlyweight("Test2");
+//var obj3 =factory.GetFlyweight("Test1");
 
-obj1.Operation("Sample 1");
-obj2.Operation("Sample 2");
-obj3.Operation("Sample 3");
+//obj1.Operation("Sample 1");
+//obj2.Operation("Sample 2");
+//obj3.Operation("Sample 3");
 
-UnSharedFlyweight flyweightShared = new(new Flyweight[]
+//UnSharedFlyweight flyweightShared = new(new Flyweight[]
+//{
+//    factory.GetFlyweight("Test 1"),
+//    factory.GetFlyweight("Test 2"),
+//    factory.GetFlyweight("Test 3"),
+//    factory.GetFlyweight("Test 4"),
+//});
+
+//flyweightShared.Operation("UnSharedFlyweight ====> Extrinsic");
+#endregion
+
+SoldierFlyWeightFactory soldierFactory = new();
+List<SoldierFlyWeight> soldierFlyWeights = new List<SoldierFlyWeight>();
+//for (int i = 0; i < 1000000; i++)
+//{
+//    var temp = new ConcreteSoldierFlyWeight
+//    {
+//        SoldierType = "Sarbaz"
+//    };
+//    temp.Render(10, 50, 10, i);
+//    soldierFlyWeights.Add(temp);
+//}
+
+for (int i = 0; i < 1000000; i++)
 {
-    factory.GetFlyweight("Test 1"),
-    factory.GetFlyweight("Test 2"),
-    factory.GetFlyweight("Test 3"),
-    factory.GetFlyweight("Test 4"),
-});
-
-flyweightShared.Operation("UnSharedFlyweight ====> Extrinsic");
-
+    var temp = soldierFactory.GetSoldier("Sarbaz");
+    temp.Render(10,20,10,i);
+    //soldierFlyWeights.Add(temp);
+}
 #endregion
 
 Design.ForeColor(ConsoleColor.White);
