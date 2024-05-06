@@ -1,4 +1,6 @@
-﻿using Design.Pattern.Library.Composite.AssembleSystem;
+﻿using Design.Pattern.Library.Adapter.Pattern.ClassAdapter;
+using Design.Pattern.Library.Adapter.Pattern.ObjectAdapter;
+using Design.Pattern.Library.Composite.AssembleSystem;
 using Design.Pattern.Library.Flyweight.Game;
 using Design.Pattern.Library.Flyweight.Pattern;
 using Design.Pattern.Library.Tools;
@@ -132,26 +134,36 @@ Design.Start("Start Application");
 //flyweightShared.Operation("UnSharedFlyweight ====> Extrinsic");
 #endregion
 
-SoldierFlyWeightFactory soldierFactory = new();
-List<SoldierFlyWeight> soldierFlyWeights = new List<SoldierFlyWeight>();
+//SoldierFlyWeightFactory soldierFactory = new();
+//List<SoldierFlyWeight> soldierFlyWeights = new List<SoldierFlyWeight>();
+////for (int i = 0; i < 1000000; i++)
+////{
+////    var temp = new ConcreteSoldierFlyWeight
+////    {
+////        SoldierType = "Sarbaz"
+////    };
+////    temp.Render(10, 50, 10, i);
+////    soldierFlyWeights.Add(temp);
+////}
+
 //for (int i = 0; i < 1000000; i++)
 //{
-//    var temp = new ConcreteSoldierFlyWeight
-//    {
-//        SoldierType = "Sarbaz"
-//    };
-//    temp.Render(10, 50, 10, i);
-//    soldierFlyWeights.Add(temp);
+//    var temp = soldierFactory.GetSoldier("Sarbaz");
+//    temp.Render(10,20,10,i);
+//    //soldierFlyWeights.Add(temp);
 //}
-
-for (int i = 0; i < 1000000; i++)
-{
-    var temp = soldierFactory.GetSoldier("Sarbaz");
-    temp.Render(10,20,10,i);
-    //soldierFlyWeights.Add(temp);
-}
 #endregion
 
+
+
+#region Adapter
+// Object Adapter
+//Target target = new Adapter(new Adaptee());
+//target.Operation();
+//  Class Adapter
+//ITarget target1 = new Design.Pattern.Library.Adapter.Pattern.ClassAdapter.Adapter();
+//target1.Operation();
+#endregion
 Design.ForeColor(ConsoleColor.White);
 Design.Background(ConsoleColor.Black);
 Design.NewLine();
