@@ -1,4 +1,7 @@
-﻿using Design.Pattern.Library.Adapter.Pattern.ClassAdapter;
+﻿using Design.Pattern.Library.Adapter.Notifications;
+using Design.Pattern.Library.Adapter.Notifications.ExternalServices;
+using Design.Pattern.Library.Adapter.Notifications.Pattern;
+using Design.Pattern.Library.Adapter.Pattern.ClassAdapter;
 using Design.Pattern.Library.Adapter.Pattern.ObjectAdapter;
 using Design.Pattern.Library.Composite.AssembleSystem;
 using Design.Pattern.Library.Flyweight.Game;
@@ -163,6 +166,16 @@ Design.Start("Start Application");
 //  Class Adapter
 //ITarget target1 = new Design.Pattern.Library.Adapter.Pattern.ClassAdapter.Adapter();
 //target1.Operation();
+//  Notification
+
+//ISendMessage telgram = new TelegramService();
+//telgram.Send();
+//ISendMessage whatsapp = new WhatsAppService();
+//whatsapp.Send();
+//ISendMessage adapter = new GmailAdapter();
+//adapter.Send();
+
+
 #endregion
 Design.ForeColor(ConsoleColor.White);
 Design.Background(ConsoleColor.Black);
