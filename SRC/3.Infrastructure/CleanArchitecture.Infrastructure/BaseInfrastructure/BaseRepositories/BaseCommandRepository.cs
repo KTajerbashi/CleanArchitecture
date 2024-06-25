@@ -16,7 +16,7 @@ namespace CleanArchitecture.Infrastructure.BaseInfrastructure.BaseRepositories;
 /// <typeparam name="TId"></typeparam>
 public class BaseCommandRepository<TEntity, TDbContext, TId>
     : IBaseCommandRepository<TEntity, TId>, IUnitOfWork
-    where TEntity : Entity<TId>
+    where TEntity : class, IEntity<TId>, new()
     where TDbContext : BaseDatabaseContext
     where TId : struct,
                 IComparable,

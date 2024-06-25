@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace CleanArchitecture.Domain.BasesDomain;
 
-public interface IEntity
+public interface IEntity<T>
 {
+    T Id { get; set; }
+    BusinessId Key { get; set; }
 }
-public abstract class Entity<T> : IEntity
+public abstract class Entity<T> : IEntity<T>
 {
     public T Id { get; set; }
     public BusinessId Key { get; set; }

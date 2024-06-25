@@ -1,8 +1,14 @@
-﻿namespace CleanArchitecture.Infrastructure.BaseInfrastructure.DatabaseContext;
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace CleanArchitecture.Infrastructure.BaseInfrastructure.DatabaseContext;
 
 public abstract class BaseQueryDatabaseContext : BaseDatabaseContext
 {
 
+    protected BaseQueryDatabaseContext(DbContextOptions options):base(options)
+    {
+        
+    }
     /// <summary>
     /// 
     /// </summary>

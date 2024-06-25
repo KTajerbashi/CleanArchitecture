@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using CleanArchitecture.Domain.BasesDomain;
+using CleanArchitecture.Domain.BasesDomain.ValueObjects.BusinessId;
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,24 +8,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CleanArchitecture.Domain.Security;
 
 [Table("Roles", Schema = "Security"), Description("نقش ها")]
-public class RoleEntity : IdentityRole<long>
+public class RoleEntity : IdentityRole<long>, IEntity<long>
 {
-    [Description("کلید")]
-    public Guid Guid { get; set; }
-    public RoleEntity()
-    {
-    }
+    public RoleEntity() { }
 
-    public RoleEntity(string name)
-    {
-        Name = name;
-    }
+    public RoleEntity(string name) { Name = name; }
 
-    public RoleEntity(string name, string title)
-        : this(name)
+    public RoleEntity(string name, string title) : this(name)
     {
         Title = title;
     }
+
+    [Description("کلید")]
+    public BusinessId Key { get; set; }
 
     [Description("عنوان نقش"), StringLength(100)]
     public string Title { get; set; }

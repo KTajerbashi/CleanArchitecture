@@ -1,15 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using CleanArchitecture.Domain.BasesDomain;
+using CleanArchitecture.Domain.BasesDomain.ValueObjects.BusinessId;
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CleanArchitecture.Domain.Security;
 
 [Table("UserClaim", Schema = "Security"), Description("مدعی کاربر")]
-public class UserClaimEntity : IdentityUserClaim<long>
+public class UserClaimEntity : IdentityUserClaim<long>, IEntity<int>
 {
 
     [Description("کلید")]
-    public Guid Guid { get; set; }
+    public BusinessId Key { get; set; }
 
     [Description("حذف شده"), DefaultValue(false)]
     public bool IsDeleted { get; set; }

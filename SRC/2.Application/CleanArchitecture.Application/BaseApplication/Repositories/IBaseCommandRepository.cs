@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 namespace CleanArchitecture.Application.BaseApplication.Repositories;
 
 public interface IBaseCommandRepository<TEntity, TId> : IUnitOfWork
-    where TEntity : Entity<TId>
+    where TEntity : IEntity<TId>, new()
     where TId : struct,
           IComparable,
           IComparable<TId>,
