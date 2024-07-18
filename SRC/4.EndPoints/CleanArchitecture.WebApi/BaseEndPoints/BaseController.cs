@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Application.BaseApplication.Models.Command;
-using CleanArchitecture.Application.BaseApplication.Models.Query;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecture.WebApi.BaseEndPoints;
 
@@ -10,6 +8,6 @@ public abstract class BaseController : Controller
 {
     public BaseController()
     {
-        
+
     }
 }

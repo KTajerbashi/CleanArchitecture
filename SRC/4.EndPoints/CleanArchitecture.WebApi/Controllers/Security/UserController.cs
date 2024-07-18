@@ -1,20 +1,17 @@
-﻿using CleanArchitecture.Application.Repositories.Security.Model;
-using CleanArchitecture.Application.Repositories.Security.Repository;
+﻿using CleanArchitecture.Application.Repositories.Security.User.Model;
+using CleanArchitecture.Application.Repositories.Security.User.Repository;
 using CleanArchitecture.Domain.Security;
 using CleanArchitecture.WebApi.BaseEndPoints;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecture.WebApi.Controllers.Security;
 
-public class HomeController : BaseController
+public class UserController : BaseController
 {
-    private readonly ICommandUserRepository commandUserRepository;
-    private readonly IQueryUserRepository queryUserRepository;
-
-    public HomeController(ICommandUserRepository commandUserRepository, IQueryUserRepository queryUserRepository)
+    private readonly IUserRepository commandUserRepository;
+    public UserController(IUserRepository commandUserRepository)
     {
         this.commandUserRepository = commandUserRepository;
-        this.queryUserRepository = queryUserRepository;
     }
 
 
@@ -32,7 +29,7 @@ public class HomeController : BaseController
 
         };
         commandUserRepository.Insert(entity);
-        commandUserRepository.SaveChange();
+        await commandUserRepository.SaveChangeAsync();
         return Ok(entity);
     }
 }
