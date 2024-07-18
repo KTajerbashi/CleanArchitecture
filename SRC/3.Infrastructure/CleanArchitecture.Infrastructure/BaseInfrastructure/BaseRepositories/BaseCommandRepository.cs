@@ -2,7 +2,7 @@
 using CleanArchitecture.Application.BaseApplication.Repositories;
 using CleanArchitecture.Domain.BasesDomain;
 using CleanArchitecture.Domain.BasesDomain.ValueObjects.BusinessId;
-using CleanArchitecture.Infrastructure.BaseInfrastructure.DatabaseContext;
+using CleanArchitecture.Infrastructure.BaseInfrastructure.BaseDatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -17,7 +17,7 @@ namespace CleanArchitecture.Infrastructure.BaseInfrastructure.BaseRepositories;
 public class BaseCommandRepository<TEntity, TDbContext, TId>
     : IBaseCommandRepository<TEntity, TId>, IUnitOfWork
     where TEntity : class, IEntity<TId>, new()
-    where TDbContext : BaseDatabaseContext
+    where TDbContext : BaseCommandDatabaseContext
     where TId : struct,
                 IComparable,
                 IComparable<TId>,
@@ -66,7 +66,7 @@ public class BaseCommandRepository<TEntity, TDbContext, TId>
     #region Insert
     public void Insert(TEntity entity)
     {
-        _dbContext.Set<TEntity>().AddAsync(entity);
+        _dbContext.Set<TEntity>().Add(entity);
     }
 
     public async Task InsertAsync(TEntity entity)

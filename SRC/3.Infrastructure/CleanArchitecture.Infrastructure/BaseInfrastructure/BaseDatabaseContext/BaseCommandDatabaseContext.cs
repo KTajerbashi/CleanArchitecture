@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitecture.Infrastructure.BaseInfrastructure.DatabaseContext;
+namespace CleanArchitecture.Infrastructure.BaseInfrastructure.BaseDatabaseContext;
 
 public abstract class BaseCommandDatabaseContext : BaseDatabaseContext
 {

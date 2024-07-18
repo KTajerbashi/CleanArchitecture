@@ -4,16 +4,19 @@ using CleanArchitecture.Infrastructure.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace CleanArchitecture.Infrastructure.Migrations
 {
-    [DbContext(typeof(CommandDatabaseContext))]
-    partial class CommandDatabaseContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(CleanArchitectureCommandDb))]
+    [Migration("20240718215405_Initial_Database")]
+    partial class Initial_Database
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,7 +55,7 @@ namespace CleanArchitecture.Infrastructure.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetRoleClaims", (string)null);
+                    b.ToTable("RoleClaims", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Domain.Security.RoleEntity", b =>
@@ -102,7 +105,7 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         .HasDatabaseName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
-                    b.ToTable("AspNetRoles", (string)null);
+                    b.ToTable("Roles", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Domain.Security.UserClaimEntity", b =>
@@ -135,7 +138,7 @@ namespace CleanArchitecture.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserClaims", (string)null);
+                    b.ToTable("UserClaims", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Domain.Security.UserEntity", b =>
@@ -244,7 +247,7 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.ToTable("AspNetUsers", (string)null);
+                    b.ToTable("Users", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Domain.Security.UserLoginEntity", b =>
@@ -277,7 +280,7 @@ namespace CleanArchitecture.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserLogins", (string)null);
+                    b.ToTable("UserLogins", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Domain.Security.UserRoleEntity", b =>
@@ -316,7 +319,7 @@ namespace CleanArchitecture.Infrastructure.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetUserRoles", (string)null);
+                    b.ToTable("UserRoles", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Domain.Security.UserTokenEntity", b =>
@@ -347,7 +350,7 @@ namespace CleanArchitecture.Infrastructure.Migrations
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("AspNetUserTokens", (string)null);
+                    b.ToTable("UserTokens", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Domain.Security.RoleClaimEntity", b =>

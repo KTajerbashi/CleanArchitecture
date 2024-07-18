@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitecture.Infrastructure.BaseInfrastructure.DatabaseContext;
+namespace CleanArchitecture.Infrastructure.BaseInfrastructure.BaseDatabaseContext;
 
 public abstract class BaseQueryDatabaseContext : BaseDatabaseContext
 {
@@ -9,6 +9,9 @@ public abstract class BaseQueryDatabaseContext : BaseDatabaseContext
     {
         
     }
+
+
+    #region Save Changes
     /// <summary>
     /// 
     /// </summary>
@@ -18,7 +21,7 @@ public abstract class BaseQueryDatabaseContext : BaseDatabaseContext
     {
         throw new NotImplementedException();
     }
-   
+
     /// <summary>
     /// 
     /// </summary>
@@ -30,7 +33,7 @@ public abstract class BaseQueryDatabaseContext : BaseDatabaseContext
     {
         throw new NotImplementedException();
     }
-    
+
     /// <summary>
     /// 
     /// </summary>
@@ -41,7 +44,7 @@ public abstract class BaseQueryDatabaseContext : BaseDatabaseContext
     {
         throw new NotImplementedException();
     }
-   
+
     /// <summary>
     /// 
     /// </summary>
@@ -53,4 +56,5 @@ public abstract class BaseQueryDatabaseContext : BaseDatabaseContext
         throw new NotImplementedException();
     }
 
+    #endregion
 }

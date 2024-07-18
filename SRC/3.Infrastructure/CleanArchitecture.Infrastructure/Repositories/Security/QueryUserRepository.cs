@@ -1,12 +1,14 @@
-﻿using CleanArchitecture.Application.Repositories.Security.Repository;
+﻿using CleanArchitecture.Application.Repositories.Security.User.Queries;
+using CleanArchitecture.Domain.Security;
 using CleanArchitecture.Infrastructure.BaseInfrastructure.BaseRepositories;
 using CleanArchitecture.Infrastructure.DatabaseContext;
+using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.Infrastructure.Repositories.Security;
 
-public class QueryUserRepository : BaseQueryRepository<QueryDatabaseContext>, IQueryUserRepository
+public class QueryUserRepository : BaseQueryRepository<CleanArchitectureQueryDb,UserEntity,long>, IUserQueryRepository
 {
-    public QueryUserRepository(QueryDatabaseContext dbContext) : base(dbContext)
+    public QueryUserRepository(CleanArchitectureQueryDb dbContext) : base(dbContext)
     {
     }
 
