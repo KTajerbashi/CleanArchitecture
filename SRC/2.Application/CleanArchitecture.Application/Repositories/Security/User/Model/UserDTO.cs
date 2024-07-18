@@ -1,7 +1,7 @@
 ﻿using CleanArchitecture.Application.BaseApplication.Models.Command;
 using CleanArchitecture.Domain.Security.Enums;
 
-namespace CleanArchitecture.Application.Repositories.Security.Model;
+namespace CleanArchitecture.Application.Repositories.Security.User.Model;
 
 public class UserDTO : CommandModel
 {
