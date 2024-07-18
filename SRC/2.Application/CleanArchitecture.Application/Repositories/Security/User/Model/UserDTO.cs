@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Application.BaseApplication.Models.Command;
+﻿using CleanArchitecture.Application.BaseApplication.Models.DTOs;
 using CleanArchitecture.Domain.Security.Enums;
 
 namespace CleanArchitecture.Application.Repositories.Security.User.Model;
 
-public class UserDTO : CommandModel
+public class UserDTO : ModelDTO
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }

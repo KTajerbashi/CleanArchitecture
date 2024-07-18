@@ -5,8 +5,8 @@ using System.Linq.Expressions;
 
 namespace CleanArchitecture.Application.BaseApplication.Repositories;
 
-public interface IBaseCommandRepository<TEntity, TId> : IUnitOfWork
-    where TEntity : IEntity<TId>, new()
+public interface IBaseRepository<TEntity, TId> : IUnitOfWork
+    where TEntity : IEntity<TId>
     where TId : struct,
           IComparable,
           IComparable<TId>,
@@ -138,22 +138,6 @@ public interface IBaseCommandRepository<TEntity, TId> : IUnitOfWork
     /// <returns></returns>
     Task<TEntity> GetGraphAsync(BusinessId businessId);
     #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     bool Exists(Expression<Func<TEntity, bool>> expression);
     Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> expression);
