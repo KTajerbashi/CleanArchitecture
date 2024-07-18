@@ -1,5 +1,4 @@
-﻿using CleanArchitecture.Application.Repositories.Security.User.Command;
-using CleanArchitecture.Application.Repositories.Security.User.Queries;
+﻿using CleanArchitecture.Application.Repositories.Security.User.Repository;
 using CleanArchitecture.Infrastructure.DatabaseContext;
 using CleanArchitecture.Infrastructure.Repositories.Security;
 using Microsoft.EntityFrameworkCore;
@@ -15,29 +14,20 @@ public static class InfrastructureDIContainer
         return services
             .AddRepositories()
             .AddCommandDatabase(configuration)
-            .AddQueryDatabase(configuration)
             ;
     }
-    public static IServiceCollection AddRepositories(this IServiceCollection services)
+    private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-        services.AddScoped<IUserCommandRepository, CommandUserRepository>();
-        services.AddScoped<IUserQueryRepository, QueryUserRepository>();
+        services.AddScoped<IUserRepository, CommandUserRepository>();
         return services;
     }
-    public static IServiceCollection AddCommandDatabase(this IServiceCollection services, IConfiguration configuration)
+    private static IServiceCollection AddCommandDatabase(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<CleanArchitectureCommandDb>(config =>
+        services.AddDbContext<CleanArchitectureDb>(config =>
         {
             config.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
         });
         return services;
     }
-    public static IServiceCollection AddQueryDatabase(this IServiceCollection services, IConfiguration configuration)
-    {
-        services.AddDbContext<CleanArchitectureQueryDb>(config =>
-        {
-            config.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-        });
-        return services;
-    }
+
 }

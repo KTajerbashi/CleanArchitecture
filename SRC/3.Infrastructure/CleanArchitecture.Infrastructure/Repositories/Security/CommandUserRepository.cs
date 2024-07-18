@@ -1,13 +1,13 @@
-﻿using CleanArchitecture.Application.Repositories.Security.User.Command;
+﻿using CleanArchitecture.Application.Repositories.Security.User.Repository;
 using CleanArchitecture.Domain.Security;
-using CleanArchitecture.Infrastructure.BaseInfrastructure.BaseRepositories;
+using CleanArchitecture.Infrastructure.BaseInfrastructure.BaseApplication;
 using CleanArchitecture.Infrastructure.DatabaseContext;
 
 namespace CleanArchitecture.Infrastructure.Repositories.Security;
 
-public class CommandUserRepository : BaseCommandRepository<UserEntity, CleanArchitectureCommandDb, long>, IUserCommandRepository
+public class CommandUserRepository : BaseRepository<CleanArchitectureDb, UserEntity, long>, IUserRepository
 {
-    public CommandUserRepository(CleanArchitectureCommandDb dbContext) : base(dbContext)
+    public CommandUserRepository(CleanArchitectureDb context) : base(context)
     {
     }
 }
