@@ -26,157 +26,157 @@ public abstract class BaseRepository<TContext, TEntity, TDTO, TView, TId> : IBas
         this.context = context;
     }
 
-    public bool AddOrUpdate(TDTO entity)
+    public virtual bool AddOrUpdate(TDTO entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task AddOrUpdateAsync(TDTO entity)
+    public virtual Task AddOrUpdateAsync(TDTO entity)
     {
         throw new NotImplementedException();
     }
 
-    public void BeginTransaction()
+    public virtual void BeginTransaction()
     {
         throw new NotImplementedException();
     }
 
-    public void BeginTransactionAsync()
+    public virtual void BeginTransactionAsync()
     {
         throw new NotImplementedException();
     }
 
-    public void CommitTransaction()
+    public virtual void CommitTransaction()
     {
         throw new NotImplementedException();
     }
 
-    public void CommitTransactionAsync()
+    public virtual void CommitTransactionAsync()
     {
         throw new NotImplementedException();
     }
 
-    public bool Delete(TId id)
+    public virtual bool Delete(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public bool Delete(TDTO entity)
+    public virtual bool Delete(TDTO entity)
     {
         throw new NotImplementedException();
     }
 
-    public bool DeleteGraph(TId id)
+    public virtual bool DeleteGraph(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public bool Exists(Expression<Func<TDTO, bool>> expression)
+    public virtual bool Exists(Expression<Func<TDTO, bool>> expression)
     {
         throw new NotImplementedException();
     }
 
-    public Task<bool> ExistsAsync(Expression<Func<TDTO, bool>> expression)
+    public virtual Task<bool> ExistsAsync(Expression<Func<TDTO, bool>> expression)
     {
         throw new NotImplementedException();
     }
 
-    public TView Get(TId id)
+    public virtual TView Get(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public TView Get(Guid Guid)
+    public virtual TView Get(Guid Guid)
     {
         throw new NotImplementedException();
     }
 
-    public TView Get()
+    public virtual TView Get()
     {
         throw new NotImplementedException();
     }
 
-    public Task<TView> GetAsync(TId id)
+    public virtual Task<TView> GetAsync(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<TView> GetAsync(Guid Guid)
+    public virtual Task<TView> GetAsync(Guid Guid)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<TView>> GetAsync()
+    public virtual Task<IEnumerable<TView>> GetAsync()
     {
         throw new NotImplementedException();
     }
 
-    public TView GetGraph(TId id)
+    public virtual TView GetGraph(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public TView GetGraph(Guid Guid)
+    public virtual TView GetGraph(Guid Guid)
     {
         throw new NotImplementedException();
     }
 
-    public Task<TView> GetGraphAsync(TId id)
+    public virtual Task<TView> GetGraphAsync(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<TView> GetGraphAsync(Guid Guid)
+    public virtual Task<TView> GetGraphAsync(Guid Guid)
     {
         throw new NotImplementedException();
     }
 
-    public bool Insert(TDTO entity)
+    public virtual bool Insert(TDTO entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task InsertAsync(TDTO entity)
+    public virtual Task InsertAsync(TDTO entity)
     {
         throw new NotImplementedException();
     }
 
-    public void RollbackTransaction()
+    public virtual void RollbackTransaction()
     {
         throw new NotImplementedException();
     }
 
-    public void RollbackTransactionAsync()
+    public virtual void RollbackTransactionAsync()
     {
         throw new NotImplementedException();
     }
 
-    public int SaveChange()
+    public virtual int SaveChange()
     {
         throw new NotImplementedException();
     }
 
-    public Task<int> SaveChangeAsync()
+    public virtual Task<int> SaveChangeAsync()
     {
         throw new NotImplementedException();
     }
 
-    public bool Update(TDTO entity)
+    public virtual bool Update(TDTO entity)
     {
         throw new NotImplementedException();
     }
 
-    public bool Update(TDTO entity, TId id)
+    public virtual bool Update(TDTO entity, TId id)
     {
         throw new NotImplementedException();
     }
 
-    public Task UpdateAsync(TDTO entity)
+    public virtual Task UpdateAsync(TDTO entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task UpdateAsync(TDTO entity, TId id)
+    public virtual Task UpdateAsync(TDTO entity, TId id)
     {
         throw new NotImplementedException();
     }

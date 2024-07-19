@@ -1,5 +1,6 @@
 using CleanArchitecture.Infrastructure.DIContainer;
 using CleanArchitecture.Application.DIContainer;
+using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,14 +12,14 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationServices();
 builder.Services.AddDataAccess(builder.Configuration);
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseMiddleware<ExceptionMiddleware>();
+app.UseRouting();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
