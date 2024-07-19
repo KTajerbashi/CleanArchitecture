@@ -12,14 +12,9 @@ public static class InfrastructureDIContainer
     public static IServiceCollection AddDataAccess(this IServiceCollection services, IConfiguration configuration)
     {
         return services
-            .AddRepositories()
             .AddCommandDatabase(configuration)
+            .AddRepositories()
             ;
-    }
-    private static IServiceCollection AddRepositories(this IServiceCollection services)
-    {
-        services.AddScoped<IUserRepository, CommandUserRepository>();
-        return services;
     }
     private static IServiceCollection AddCommandDatabase(this IServiceCollection services, IConfiguration configuration)
     {
@@ -29,5 +24,11 @@ public static class InfrastructureDIContainer
         });
         return services;
     }
+    private static IServiceCollection AddRepositories(this IServiceCollection services)
+    {
+        services.AddScoped<IUserRepository, UserRepository>();
+        return services;
+    }
+
 
 }

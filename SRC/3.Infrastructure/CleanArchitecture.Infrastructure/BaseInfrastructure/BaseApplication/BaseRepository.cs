@@ -1,14 +1,17 @@
-﻿using CleanArchitecture.Application.BaseApplication.Repositories;
+﻿using CleanArchitecture.Application.BaseApplication.Models.DTOs;
+using CleanArchitecture.Application.BaseApplication.Models.Views;
+using CleanArchitecture.Application.BaseApplication.Repositories;
 using CleanArchitecture.Domain.BasesDomain;
-using CleanArchitecture.Domain.BasesDomain.ValueObjects.BusinessId;
 using CleanArchitecture.Infrastructure.DatabaseContext;
 using System.Linq.Expressions;
 
 namespace CleanArchitecture.Infrastructure.BaseInfrastructure.BaseApplication;
 
-public abstract class BaseRepository<TContext, TEntity, TId> : IBaseRepository<TEntity, TId>
+public abstract class BaseRepository<TContext, TEntity, TDTO, TView, TId> : IBaseRepository<TEntity, TDTO,TView, TId>
     where TContext : CleanArchitectureDb
     where TEntity : IEntity<TId>
+    where TDTO : IModelDTO<TId>
+    where TView : IModelView
     where TId : struct,
           IComparable,
           IComparable<TId>,
@@ -23,12 +26,12 @@ public abstract class BaseRepository<TContext, TEntity, TId> : IBaseRepository<T
         this.context = context;
     }
 
-    public void AddOrUpdate(TEntity entity)
+    public bool AddOrUpdate(TDTO entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task AddOrUpdateAsync(TEntity entity)
+    public Task AddOrUpdateAsync(TDTO entity)
     {
         throw new NotImplementedException();
     }
@@ -53,77 +56,87 @@ public abstract class BaseRepository<TContext, TEntity, TId> : IBaseRepository<T
         throw new NotImplementedException();
     }
 
-    public void Delete(TId id)
+    public bool Delete(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public void Delete(TEntity entity)
+    public bool Delete(TDTO entity)
     {
         throw new NotImplementedException();
     }
 
-    public void DeleteGraph(TId id)
+    public bool DeleteGraph(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public bool Exists(Expression<Func<TEntity, bool>> expression)
+    public bool Exists(Expression<Func<TDTO, bool>> expression)
     {
         throw new NotImplementedException();
     }
 
-    public Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> expression)
+    public Task<bool> ExistsAsync(Expression<Func<TDTO, bool>> expression)
     {
         throw new NotImplementedException();
     }
 
-    public TEntity Get(TId id)
+    public TView Get(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public TEntity Get(BusinessId businessId)
+    public TView Get(Guid Guid)
     {
         throw new NotImplementedException();
     }
 
-    public Task<TEntity> GetAsync(TId id)
+    public TView Get()
     {
         throw new NotImplementedException();
     }
 
-    public Task<TEntity> GetAsync(BusinessId businessId)
+    public Task<TView> GetAsync(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public TEntity GetGraph(TId id)
+    public Task<TView> GetAsync(Guid Guid)
     {
         throw new NotImplementedException();
     }
 
-    public TEntity GetGraph(BusinessId businessId)
+    public Task<IEnumerable<TView>> GetAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<TEntity> GetGraphAsync(TId id)
+    public TView GetGraph(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<TEntity> GetGraphAsync(BusinessId businessId)
+    public TView GetGraph(Guid Guid)
     {
         throw new NotImplementedException();
     }
 
-    public void Insert(TEntity entity)
+    public Task<TView> GetGraphAsync(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public Task InsertAsync(TEntity entity)
+    public Task<TView> GetGraphAsync(Guid Guid)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Insert(TDTO entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task InsertAsync(TDTO entity)
     {
         throw new NotImplementedException();
     }
@@ -148,22 +161,22 @@ public abstract class BaseRepository<TContext, TEntity, TId> : IBaseRepository<T
         throw new NotImplementedException();
     }
 
-    public void Update(TEntity entity)
+    public bool Update(TDTO entity)
     {
         throw new NotImplementedException();
     }
 
-    public void Update(TEntity entity, TId id)
+    public bool Update(TDTO entity, TId id)
     {
         throw new NotImplementedException();
     }
 
-    public Task UpdateAsync(TEntity entity)
+    public Task UpdateAsync(TDTO entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task UpdateAsync(TEntity entity, TId id)
+    public Task UpdateAsync(TDTO entity, TId id)
     {
         throw new NotImplementedException();
     }

@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Domain.Security;
+﻿using CleanArchitecture.Domain.Security.Entities;
 using CleanArchitecture.Infrastructure.Configurations.Security;
 using Microsoft.EntityFrameworkCore;
 
