@@ -10,4 +10,9 @@ public abstract class BaseController : Controller
     {
 
     }
+
+    public async Task<IActionResult> OkResultAsync<T>(T model)
+    {
+        return await Task.FromResult(Ok(model));
+    }
 }

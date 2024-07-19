@@ -20,8 +20,4 @@
     <ProjectReference Include="..\..\3.Infrastructure\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DIContainer\" />
-  </ItemGroup>
-
 </Project>
