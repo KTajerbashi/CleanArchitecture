@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\ExternalKernel\ObjectMapper\ObjectMapper.csproj" />
     <ProjectReference Include="..\..\1.Domain\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj" />
     <ProjectReference Include="..\..\2.Application\CleanArchitecture.Application\CleanArchitecture.Application.csproj" />
     <ProjectReference Include="..\..\3.Infrastructure\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj" />

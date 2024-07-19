@@ -1,6 +1,8 @@
 using CleanArchitecture.Infrastructure.DIContainer;
 using CleanArchitecture.Application.DIContainer;
 using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
+using ObjectMapper.Implementations.Extensions.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,6 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationServices();
 builder.Services.AddDataAccess(builder.Configuration);
+
+builder.Services.AddAutoMapperProfiles(builder.Configuration, "AutoMapper");
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

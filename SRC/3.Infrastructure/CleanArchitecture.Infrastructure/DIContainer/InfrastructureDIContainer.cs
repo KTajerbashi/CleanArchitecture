@@ -1,6 +1,6 @@
 ﻿using CleanArchitecture.Application.Repositories.Security.User.Repository;
 using CleanArchitecture.Infrastructure.DatabaseContext;
-using CleanArchitecture.Infrastructure.Repositories.Security;
+using CleanArchitecture.Infrastructure.Repositories.Security.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

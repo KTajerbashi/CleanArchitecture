@@ -3,6 +3,7 @@ using CleanArchitecture.Application.BaseApplication.Models.Views;
 using CleanArchitecture.Application.BaseApplication.Repositories;
 using CleanArchitecture.Domain.BasesDomain;
 using CleanArchitecture.Infrastructure.DatabaseContext;
+using ObjectMapper.Abstraction;
 using System.Linq.Expressions;
 
 namespace CleanArchitecture.Infrastructure.BaseInfrastructure.BaseApplication;
@@ -20,10 +21,11 @@ public abstract class BaseRepository<TContext, TEntity, TDTO, TView, TId> : IBas
           IFormattable
 {
     protected readonly TContext context;
-
-    protected BaseRepository(TContext context)
+    protected readonly IMapperAdapter MapperFacad;
+    protected BaseRepository(TContext context, IMapperAdapter mapperFacad)
     {
         this.context = context;
+        MapperFacad = mapperFacad;
     }
 
     public virtual bool AddOrUpdate(TDTO entity)

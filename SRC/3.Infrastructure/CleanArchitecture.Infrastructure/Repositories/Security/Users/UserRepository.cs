@@ -5,16 +5,18 @@ using CleanArchitecture.Application.Repositories.Security.User.Repository;
 using CleanArchitecture.Domain.Security.Entities;
 using CleanArchitecture.Infrastructure.BaseInfrastructure.BaseApplication;
 using CleanArchitecture.Infrastructure.DatabaseContext;
+using ObjectMapper.Abstraction;
 
-namespace CleanArchitecture.Infrastructure.Repositories.Security;
-
-public class UserRepository : BaseRepository<CleanArchitectureDb, UserEntity,UserDTO,UserView, long>, IUserRepository
+namespace CleanArchitecture.Infrastructure.Repositories.Security.Users;
+public class UserRepository : BaseRepository<CleanArchitectureDb, UserEntity, UserDTO, UserView, long>, IUserRepository
 {
-    public UserRepository(CleanArchitectureDb context) : base(context)
+    public UserRepository(CleanArchitectureDb context, IMapperAdapter mapperFacad) : base(context, mapperFacad)
     {
     }
+
     public override Task InsertAsync(UserDTO entity)
     {
+        var result = MapperFacad.Map<UserDTO,UserEntity>(entity);
         throw new UnauthorizedException("وارد سامانه شوید");
     }
     public override Task UpdateAsync(UserDTO entity)

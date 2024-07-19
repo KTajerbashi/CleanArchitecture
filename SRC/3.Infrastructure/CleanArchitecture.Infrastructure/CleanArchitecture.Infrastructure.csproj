@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\ExternalKernel\ObjectMapper\ObjectMapper.csproj" />
     <ProjectReference Include="..\..\1.Domain\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj" />
     <ProjectReference Include="..\..\2.Application\CleanArchitecture.Application\CleanArchitecture.Application.csproj" />
   </ItemGroup>
