@@ -1,8 +1,7 @@
 ﻿using CleanArchitecture.Application.BaseApplication.Models.DTOs;
 using CleanArchitecture.Domain.Security.Enums;
 
-namespace CleanArchitecture.Application.Repositories.Security.User.Model;
-
+namespace CleanArchitecture.Application.Repositories.Security.User.Model.DTOs;
 public class UserDTO : ModelDTO
 {
     public string FirstName { get; set; }

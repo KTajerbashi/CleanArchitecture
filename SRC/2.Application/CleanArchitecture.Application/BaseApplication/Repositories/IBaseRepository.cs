@@ -1,12 +1,15 @@
-﻿using CleanArchitecture.Application.BaseApplication.Patterns;
+﻿using CleanArchitecture.Application.BaseApplication.Models.DTOs;
+using CleanArchitecture.Application.BaseApplication.Models.Views;
+using CleanArchitecture.Application.BaseApplication.Patterns;
 using CleanArchitecture.Domain.BasesDomain;
-using CleanArchitecture.Domain.BasesDomain.ValueObjects.BusinessId;
 using System.Linq.Expressions;
 
 namespace CleanArchitecture.Application.BaseApplication.Repositories;
 
-public interface IBaseRepository<TEntity, TId> : IUnitOfWork
+public interface IBaseRepository<TEntity, TDTO, TView, TId> : IUnitOfWork
     where TEntity : IEntity<TId>
+    where TDTO : IModelDTO<TId>
+    where TView : IModelView
     where TId : struct,
           IComparable,
           IComparable<TId>,
@@ -19,13 +22,13 @@ public interface IBaseRepository<TEntity, TId> : IUnitOfWork
     /// داده‌های جدید را به دیتابیس اضافه می‌کند
     /// </summary>
     /// <param name="entity">نمونه داده‌ای که باید به دیتابیس اضافه شود.</param>
-    void Insert(TEntity entity);
+    bool Insert(TDTO entity);
 
     /// <summary>
     /// داده‌های جدید را به دیتابیس اضافه می‌کند
     /// </summary>
     /// <param name="entity">نمونه داده‌ای که باید به دیتابیس اضافه شود.</param>
-    Task InsertAsync(TEntity entity);
+    Task InsertAsync(TDTO entity);
     #endregion
 
     #region Update
@@ -33,14 +36,14 @@ public interface IBaseRepository<TEntity, TId> : IUnitOfWork
     /// ویرایش اطلاعات
     /// </summary>
     /// <param name="entity"></param>
-    void Update(TEntity entity);
+    bool Update(TDTO entity);
 
     /// <summary>
     /// ویرایش اطلاعات
     /// </summary>
     /// <param name="entity"></param>
     /// <param name="id"></param>
-    void Update(TEntity entity, TId id);
+    bool Update(TDTO entity, TId id);
 
 
     /// <summary>
@@ -48,7 +51,7 @@ public interface IBaseRepository<TEntity, TId> : IUnitOfWork
     /// </summary>
     /// <param name="entity"></param>
     /// <returns></returns>
-    Task UpdateAsync(TEntity entity);
+    Task UpdateAsync(TDTO entity);
 
     /// <summary>
     /// ویرایش اطلاعات
@@ -56,7 +59,7 @@ public interface IBaseRepository<TEntity, TId> : IUnitOfWork
     /// <param name="entity"></param>
     /// <param name="id"></param>
     /// <returns></returns>
-    Task UpdateAsync(TEntity entity, TId id);
+    Task UpdateAsync(TDTO entity, TId id);
     #endregion
 
     #region Delete
@@ -64,19 +67,19 @@ public interface IBaseRepository<TEntity, TId> : IUnitOfWork
     /// یک شی را با شناسه حذف می کند
     /// </summary>
     /// <param name="id">شناسه</param>
-    void Delete(TId id);
+    bool Delete(TId id);
 
     /// <summary>
     /// حذف یک شی به همراه تمامی فرزندان آن را انجام می دهد
     /// </summary>
     /// <param name="id">شناسه</param>
-    void DeleteGraph(TId id);
+    bool DeleteGraph(TId id);
 
     /// <summary>
     /// یک شی را دریافت کرده و از دیتابیس حذف می‌کند
     /// </summary>
     /// <param name="entity"></param>
-    void Delete(TEntity entity);
+    bool Delete(TDTO entity);
     #endregion
 
     #region AddOrUpdate
@@ -84,13 +87,13 @@ public interface IBaseRepository<TEntity, TId> : IUnitOfWork
     /// 
     /// </summary>
     /// <param name="entity"></param>
-    void AddOrUpdate(TEntity entity);
+    bool AddOrUpdate(TDTO entity);
     /// <summary>
     /// 
     /// </summary>
     /// <param name="entity"></param>
     /// <returns></returns>
-    Task AddOrUpdateAsync(TEntity entity);
+    Task AddOrUpdateAsync(TDTO entity);
     #endregion
 
     #region Get
@@ -99,14 +102,17 @@ public interface IBaseRepository<TEntity, TId> : IUnitOfWork
     /// </summary>
     /// <param name="id">شناسه شی مورد نیاز</param>
     /// <returns>نمونه ساخته شده از شی</returns>
-    TEntity Get(TId id);
-    Task<TEntity> GetAsync(TId id);
+    TView Get(TId id);
+    Task<TView> GetAsync(TId id);
 
-    TEntity Get(BusinessId businessId);
-    Task<TEntity> GetAsync(BusinessId businessId);
+    TView Get(Guid Guid);
+    Task<TView> GetAsync(Guid Guid);
     #endregion
 
     #region GetList
+    TView Get();
+    Task<IEnumerable<TView>> GetAsync();
+
     #endregion
 
     #region Graph
@@ -115,30 +121,30 @@ public interface IBaseRepository<TEntity, TId> : IUnitOfWork
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    TEntity GetGraph(TId id);
-    
+    TView GetGraph(TId id);
+
     /// <summary>
     /// /
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    Task<TEntity> GetGraphAsync(TId id);
+    Task<TView> GetGraphAsync(TId id);
 
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="businessId"></param>
+    /// <param name="Guid"></param>
     /// <returns></returns>
-    TEntity GetGraph(BusinessId businessId);
-    
+    TView GetGraph(Guid Guid);
+
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="businessId"></param>
+    /// <param name="Guid"></param>
     /// <returns></returns>
-    Task<TEntity> GetGraphAsync(BusinessId businessId);
+    Task<TView> GetGraphAsync(Guid Guid);
     #endregion
 
-    bool Exists(Expression<Func<TEntity, bool>> expression);
-    Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> expression);
+    bool Exists(Expression<Func<TDTO, bool>> expression);
+    Task<bool> ExistsAsync(Expression<Func<TDTO, bool>> expression);
 }

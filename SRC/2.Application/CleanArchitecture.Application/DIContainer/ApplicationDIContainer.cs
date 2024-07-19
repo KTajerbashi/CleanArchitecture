@@ -6,6 +6,7 @@ public static class ApplicationDIContainer
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
+
         return services;
     }
 }
