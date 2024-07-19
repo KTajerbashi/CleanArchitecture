@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CleanArchitecture.Domain.Constance;
+namespace CleanArchitecture.Domain.Constance.Entities;
 
 /// <summary>
 /// مدعی نقش

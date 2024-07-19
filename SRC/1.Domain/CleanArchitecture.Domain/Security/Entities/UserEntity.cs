@@ -1,19 +1,18 @@
 ﻿using CleanArchitecture.Domain.BasesDomain;
-using CleanArchitecture.Domain.BasesDomain.ValueObjects.BusinessId;
 using CleanArchitecture.Domain.Security.Enums;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CleanArchitecture.Domain.Security;
+namespace CleanArchitecture.Domain.Security.Entities;
 
 [Table("Users", Schema = "Security"), Description("کاربران")]
 public class UserEntity : IdentityUser<long>, IEntity<long>
 {
 
     [Description("کلید")]
-    public BusinessId Key { get; set; }
+    public Guid Key { get; set; }
 
     [Description("نام"), StringLength(450)]
     public string FirstName { get; set; }

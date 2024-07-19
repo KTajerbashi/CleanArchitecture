@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CleanArchitecture.Domain.Constance;
+namespace CleanArchitecture.Domain.Constance.Entities;
 
 /// <summary>
 /// منو بار
@@ -17,4 +17,5 @@ public class MenuLinkEntity : GeneralEntity
     [ForeignKey(nameof(Children))]
     public long ParentId { get; set; }
     public MenuLinkEntity Children { get; set; }
+
 }

@@ -1,16 +1,15 @@
 ﻿using CleanArchitecture.Domain.BasesDomain;
-using CleanArchitecture.Domain.BasesDomain.ValueObjects.BusinessId;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CleanArchitecture.Domain.Security;
+namespace CleanArchitecture.Domain.Security.Entities;
 
 [Table("UserRoles", Schema = "Security"), Description("نقش کاربران")]
 public class UserRoleEntity : IdentityUserRole<long>, IEntity<long>
 {
     [Description("کلید")]
-    public BusinessId Key { get; set; }
+    public Guid Key { get; set; }
 
     [Description("کلید")]
     [NotMapped]

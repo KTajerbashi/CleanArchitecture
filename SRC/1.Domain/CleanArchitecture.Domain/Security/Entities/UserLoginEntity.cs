@@ -1,19 +1,16 @@
 ﻿using CleanArchitecture.Domain.BasesDomain;
-using CleanArchitecture.Domain.BasesDomain.ValueObjects.BusinessId;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CleanArchitecture.Domain.Security;
+namespace CleanArchitecture.Domain.Security.Entities;
 
-/// <summary>
-/// مدعی نقش
-/// </summary>
-[Table("RoleClaim", Schema = "Security"), Description("مدعی نقش")]
-public class RoleClaimEntity : IdentityRoleClaim<long>, IEntity<int>
+[Table("UserLogin", Schema = "Security"), Description("ورود کاربر")]
+public class UserLoginEntity : IdentityUserLogin<long>, IEntity<long>
 {
+
     [Description("کلید")]
-    public BusinessId Key { get; set; }
+    public Guid Key { get; set; }
 
     [Description("حذف شده"), DefaultValue(false)]
     public bool IsDeleted { get; set; }
@@ -21,6 +18,8 @@ public class RoleClaimEntity : IdentityRoleClaim<long>, IEntity<int>
     [Description("فعال"), DefaultValue(false)]
     public bool IsActive { get; set; }
 
+    [Description("کلید")]
+    public long Id { get; set; }
 
 }
 

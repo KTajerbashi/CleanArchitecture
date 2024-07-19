@@ -1,10 +1,9 @@
 ﻿using CleanArchitecture.Domain.BasesDomain;
-using CleanArchitecture.Domain.BasesDomain.ValueObjects.BusinessId;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CleanArchitecture.Domain.Security;
+namespace CleanArchitecture.Domain.Security.Entities;
 
 /// <summary>
 /// توکن کاربر
@@ -13,7 +12,7 @@ namespace CleanArchitecture.Domain.Security;
 public class UserTokenEntity : IdentityUserToken<long>, IEntity<int>
 {
     [Description("کلید")]
-    public BusinessId Key { get; set; }
+    public Guid Key { get; set; }
 
     public int Id { get; set; }
 
