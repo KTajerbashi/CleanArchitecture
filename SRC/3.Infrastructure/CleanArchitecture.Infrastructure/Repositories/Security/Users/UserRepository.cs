@@ -5,13 +5,16 @@ using CleanArchitecture.Application.Repositories.Security.User.Repository;
 using CleanArchitecture.Domain.Security.Entities;
 using CleanArchitecture.Infrastructure.BaseInfrastructure.BaseApplication;
 using CleanArchitecture.Infrastructure.DatabaseContext;
+using Microsoft.Extensions.Logging;
 using ObjectMapper.Abstraction;
 
 namespace CleanArchitecture.Infrastructure.Repositories.Security.Users;
 public class UserRepository : BaseRepository<CleanArchitectureDb, UserEntity, UserDTO, UserView, long>, IUserRepository
 {
-    public UserRepository(CleanArchitectureDb context, IMapperAdapter mapperFacad) : base(context, mapperFacad)
+    private readonly ILogger<UserRepository> _logger;
+    public UserRepository(CleanArchitectureDb context, IMapperAdapter mapperFacad, ILogger<UserRepository> logger) : base(context, mapperFacad, logger)
     {
+        _logger = logger;
     }
 
     public override Task InsertAsync(UserDTO entity)

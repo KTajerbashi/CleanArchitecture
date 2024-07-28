@@ -3,12 +3,15 @@ using CleanArchitecture.Application.BaseApplication.Models.Views;
 using CleanArchitecture.Application.BaseApplication.Repositories;
 using CleanArchitecture.Domain.BasesDomain;
 using CleanArchitecture.Infrastructure.DatabaseContext;
+using CleanArchitecture.Infrastructure.Repositories.Security.Users;
+using Microsoft.Extensions.Logging;
 using ObjectMapper.Abstraction;
 using System.Linq.Expressions;
 
 namespace CleanArchitecture.Infrastructure.BaseInfrastructure.BaseApplication;
 
-public abstract class BaseRepository<TContext, TEntity, TDTO, TView, TId> : IBaseRepository<TEntity, TDTO,TView, TId>
+public abstract class BaseRepository<TContext, TEntity, TDTO, TView, TId> 
+    : IBaseRepository<TEntity, TDTO,TView, TId>
     where TContext : CleanArchitectureDb
     where TEntity : IEntity<TId>
     where TDTO : IModelDTO<TId>
@@ -20,12 +23,15 @@ public abstract class BaseRepository<TContext, TEntity, TDTO, TView, TId> : IBas
           IEquatable<TId>,
           IFormattable
 {
+    protected readonly ILogger Logger;
     protected readonly TContext context;
     protected readonly IMapperAdapter MapperFacad;
-    protected BaseRepository(TContext context, IMapperAdapter mapperFacad)
+    protected BaseRepository(TContext context, IMapperAdapter mapperFacad, ILogger logger)
     {
         this.context = context;
         MapperFacad = mapperFacad;
+        Logger = logger;
+        Logger.LogInformation("BaseRepository");
     }
 
     public virtual bool AddOrUpdate(TDTO entity)
