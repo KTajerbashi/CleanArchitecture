@@ -2,6 +2,9 @@
 using CleanArchitecture.WebApi.DIContainer.DependencyInjections;
 using ObjectMapper.Implementations.Extensions.DependencyInjection;
 using Serilog;
+using CleanArchitecture.WebApi.DIContainer.IdentityExtensions;
+using CleanArchitecture.WebApi.DIContainer.SwaggerExtensions;
+using CleanArchitecture.WebApi.DIContainer.ContextAccessor;
 
 namespace CleanArchitecture.WebApi.DIContainer.StartUp;
 
@@ -12,14 +15,27 @@ public static class ServiceCollection
         try
         {
             IConfiguration configuration = builder.Configuration;
-            // Add services to the container.
-            builder.Host.UseSerilog();
+            //Add services to the container.
+            builder.Host.UseSerilog((context, service, configuration) =>
+            {
+                configuration.WriteTo.Console();
+                configuration.WriteTo.File($"Log_{DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}.log");
+                configuration.WriteTo.File($"Log_{DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}.txt");
+            });
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddHttpContextAccessor();
+            builder.Services.AddScoped<IUserManagement, UserManagement>();
+            // Swagger Services
+            builder.Services.AddSwaggerServiceConfiguration();
+
+
             builder.Services.AddApplicationContainer().AddInfrastructureContainer(configuration);
             builder.Services.AddAutoMapperProfiles(builder.Configuration, "AutoMapper");
-            
+            builder.Services.AddIdentityServiceConfiguration(configuration);
+
+
+
             return builder.Build();
         }
         catch (Exception)
@@ -30,16 +46,14 @@ public static class ServiceCollection
 
     public static WebApplication PipLineConfiguration(this WebApplication app)
     {
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
         app.UseMiddleware<ExceptionMiddleware>();
         app.UseRouting();
         app.UseHttpsRedirection();
 
-        app.UseAuthorization();
+        /// Swagger Pipeline
+        app.AddSwaggerServiceConfiguration();
+        /// Identity Pipeline
+        app.AddIdentityServiceConfiguration();
 
         app.MapControllers();
         return app;

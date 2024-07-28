@@ -45,6 +45,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.EndPointA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectMapper", "ExternalKernel\ObjectMapper\ObjectMapper.csproj", "{E15BBF9A-E2EB-4A7B-9F31-36670B4A8576}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions.Library", "ExternalKernel\Extensions.Library\Extensions.Library\Extensions.Library.csproj", "{ED240DA7-5EC8-4A03-B396-5CA2A3245224}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{E15BBF9A-E2EB-4A7B-9F31-36670B4A8576}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E15BBF9A-E2EB-4A7B-9F31-36670B4A8576}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E15BBF9A-E2EB-4A7B-9F31-36670B4A8576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED240DA7-5EC8-4A03-B396-5CA2A3245224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED240DA7-5EC8-4A03-B396-5CA2A3245224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED240DA7-5EC8-4A03-B396-5CA2A3245224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED240DA7-5EC8-4A03-B396-5CA2A3245224}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +120,7 @@ Global
 		{2253BF1E-19F6-4418-81EA-13BC198F0505} = {63678156-0B43-4C35-BC9A-CB2FDBFEEDAA}
 		{147D6513-E153-44A5-A3FD-8AAD0B1C5800} = {BC4E891F-2B16-4EFB-A7D7-94A83962252C}
 		{E15BBF9A-E2EB-4A7B-9F31-36670B4A8576} = {6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}
+		{ED240DA7-5EC8-4A03-B396-5CA2A3245224} = {6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A57D86D6-5EF8-4745-9B92-13AE22320AE5}
