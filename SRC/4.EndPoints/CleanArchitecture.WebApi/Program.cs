@@ -1,7 +1,7 @@
 using CleanArchitecture.WebApi.DIContainer;
 using CleanArchitecture.WebApi.DIContainer.StartUp;
 
-SeriLogExtension.StartApplication(() =>
+StartUpApplication.StartApplication(() =>
 {
     WebApplication
             .CreateBuilder(args)
