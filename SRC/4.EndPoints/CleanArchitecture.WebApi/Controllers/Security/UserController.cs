@@ -3,15 +3,29 @@ using CleanArchitecture.Application.Repositories.Security.User.Repository;
 using CleanArchitecture.Domain.Security;
 using CleanArchitecture.WebApi.BaseEndPoints;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace CleanArchitecture.WebApi.Controllers.Security;
 
 public class UserController : BaseController
 {
+    private readonly ILogger<UserController> logger;
     private readonly IUserRepository _userRepository;
-    public UserController(IUserRepository userRepository)
+    public UserController(IUserRepository userRepository, ILogger<UserController> logger)
     {
         _userRepository = userRepository;
+        Log.Information("Logging an entry with custom data");
+        Log.ForContext("EntityName", "MyEntity")
+           .ForContext("LastData", "OldData")
+           .ForContext("NewData", "NewData")
+           .ForContext("ServiceName", "MyService")
+           .ForContext("MethodName", "MyMethod")
+           .ForContext("NameSpace", "MyNamespace")
+           .ForContext("Parameters", "param1, param2")
+           .ForContext("CreateDate", DateTime.Now)
+           .Information("Custom log entry");
+        this.logger = logger;
+        logger.LogInformation("1234000");
     }
 
 

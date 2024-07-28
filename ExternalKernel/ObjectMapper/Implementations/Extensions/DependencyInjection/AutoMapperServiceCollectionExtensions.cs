@@ -10,18 +10,11 @@ namespace ObjectMapper.Implementations.Extensions.DependencyInjection;
 
 public static class AutoMapperServiceCollectionExtensions
 {
-    /// <summary>
-    /// 
-    /// ======================================
-    /// در ادامه مرحله چهارم اجرا میشود
-    /// </summary>
-    /// <param name="services"></param>
-    /// <param name="configuration"></param>
-    /// <param name="sectionName"></param>
-    /// <returns></returns>
-    public static IServiceCollection AddAutoMapperProfiles(this IServiceCollection services,
-                                                          IConfiguration configuration,
-                                                          string sectionName)
+    public static IServiceCollection AddAutoMapperProfiles(
+        this IServiceCollection services,
+        IConfiguration configuration,
+        string sectionName
+        )
         => services.AddAutoMapperProfiles(configuration.GetSection(sectionName));
 
     public static IServiceCollection AddAutoMapperProfiles(this IServiceCollection services, IConfiguration configuration)
