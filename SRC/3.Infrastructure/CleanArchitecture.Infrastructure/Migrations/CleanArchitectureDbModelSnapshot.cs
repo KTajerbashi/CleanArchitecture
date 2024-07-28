@@ -103,6 +103,28 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("Roles", "Security");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            IsActive = true,
+                            IsDeleted = false,
+                            Key = new Guid("2dc54295-5416-4224-94c7-e29feacda1fa"),
+                            Name = "Admin",
+                            NormalizedName = "ADMIN",
+                            Title = "ادمین"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            IsActive = true,
+                            IsDeleted = false,
+                            Key = new Guid("e7a6fc70-8fe5-4ec5-87cc-9abdd2843644"),
+                            Name = "User",
+                            NormalizedName = "USER",
+                            Title = "کاربر"
+                        });
                 });
 
             modelBuilder.Entity("CleanArchitecture.Domain.Security.Entities.UserClaimEntity", b =>
@@ -245,6 +267,52 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("Users", "Security");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            AccessFailedCount = 0,
+                            AvatarFile = "Null",
+                            ConcurrencyStamp = "f90d6fe1-199d-453d-92e7-3ed146021d85",
+                            Email = "Admin@mail.com",
+                            EmailConfirmed = false,
+                            FirstName = "ادمین",
+                            Gender = (byte)0,
+                            IsActive = true,
+                            IsDeleted = false,
+                            Key = new Guid("1f164366-9a67-403e-a04e-ed979fcc0940"),
+                            LastName = "ادمین",
+                            LockoutEnabled = false,
+                            NationalCode = "1020304050",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPHzLN4j0uBmEXNbQqimR37MCaHF2YB0Yc+kBBug4W4FCW1mIEVpWkUnKP1IAg7frw==",
+                            PhoneNumberConfirmed = false,
+                            SignFile = "Null",
+                            TwoFactorEnabled = false,
+                            UserName = "ادمین"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            AccessFailedCount = 0,
+                            AvatarFile = "Null",
+                            ConcurrencyStamp = "e2a7dec3-84c2-4e06-871c-a25e861c28f7",
+                            Email = "User@mail.com",
+                            EmailConfirmed = false,
+                            FirstName = "کاربر",
+                            Gender = (byte)0,
+                            IsActive = true,
+                            IsDeleted = false,
+                            Key = new Guid("cd11ef15-a376-44f0-9667-db4d08eee47e"),
+                            LastName = "کاربر",
+                            LockoutEnabled = false,
+                            NationalCode = "1020304050",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMBA+J/BX0WbKEfA3A/yrWfSdcrHPwnQZWumE5K2nkitTcrlmolud8PmWzy4W/bGxg==",
+                            PhoneNumberConfirmed = false,
+                            SignFile = "Null",
+                            TwoFactorEnabled = false,
+                            UserName = "کاربر"
+                        });
                 });
 
             modelBuilder.Entity("CleanArchitecture.Domain.Security.Entities.UserLoginEntity", b =>
@@ -317,6 +385,28 @@ namespace CleanArchitecture.Infrastructure.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("UserRoles", "Security");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1L,
+                            RoleId = 1L,
+                            ID = 0L,
+                            IsActive = false,
+                            IsDefault = false,
+                            IsDeleted = false,
+                            Key = new Guid("00000000-0000-0000-0000-000000000000")
+                        },
+                        new
+                        {
+                            UserId = 2L,
+                            RoleId = 2L,
+                            ID = 0L,
+                            IsActive = false,
+                            IsDefault = false,
+                            IsDeleted = false,
+                            Key = new Guid("00000000-0000-0000-0000-000000000000")
+                        });
                 });
 
             modelBuilder.Entity("CleanArchitecture.Domain.Security.Entities.UserTokenEntity", b =>

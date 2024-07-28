@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace CleanArchitecture.Infrastructure.Migrations
 {
     /// <inheritdoc />
@@ -211,6 +213,36 @@ namespace CleanArchitecture.Infrastructure.Migrations
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                schema: "Security",
+                table: "Roles",
+                columns: new[] { "Id", "ConcurrencyStamp", "IsActive", "IsDeleted", "Key", "Name", "NormalizedName", "Title", "UpdateBy", "UpdateDate" },
+                values: new object[,]
+                {
+                    { 1L, null, true, false, new Guid("2dc54295-5416-4224-94c7-e29feacda1fa"), "Admin", "ADMIN", "ادمین", null, null },
+                    { 2L, null, true, false, new Guid("e7a6fc70-8fe5-4ec5-87cc-9abdd2843644"), "User", "USER", "کاربر", null, null }
+                });
+
+            migrationBuilder.InsertData(
+                schema: "Security",
+                table: "Users",
+                columns: new[] { "Id", "AccessFailedCount", "AvatarFile", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "Gender", "IsActive", "IsDeleted", "Key", "LastName", "LockoutEnabled", "LockoutEnd", "NationalCode", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "SignFile", "TwoFactorEnabled", "UpdateBy", "UpdateDate", "UserName" },
+                values: new object[,]
+                {
+                    { 1L, 0, "Null", "f90d6fe1-199d-453d-92e7-3ed146021d85", "Admin@mail.com", false, "ادمین", (byte)0, true, false, new Guid("1f164366-9a67-403e-a04e-ed979fcc0940"), "ادمین", false, null, "1020304050", null, null, "AQAAAAIAAYagAAAAEPHzLN4j0uBmEXNbQqimR37MCaHF2YB0Yc+kBBug4W4FCW1mIEVpWkUnKP1IAg7frw==", null, false, null, "Null", false, null, null, "ادمین" },
+                    { 2L, 0, "Null", "e2a7dec3-84c2-4e06-871c-a25e861c28f7", "User@mail.com", false, "کاربر", (byte)0, true, false, new Guid("cd11ef15-a376-44f0-9667-db4d08eee47e"), "کاربر", false, null, "1020304050", null, null, "AQAAAAIAAYagAAAAEMBA+J/BX0WbKEfA3A/yrWfSdcrHPwnQZWumE5K2nkitTcrlmolud8PmWzy4W/bGxg==", null, false, null, "Null", false, null, null, "کاربر" }
+                });
+
+            migrationBuilder.InsertData(
+                schema: "Security",
+                table: "UserRoles",
+                columns: new[] { "RoleId", "UserId", "EndDate", "IsActive", "IsDefault", "IsDeleted", "Key", "StartDate" },
+                values: new object[,]
+                {
+                    { 1L, 1L, null, false, false, false, new Guid("00000000-0000-0000-0000-000000000000"), null },
+                    { 2L, 2L, null, false, false, false, new Guid("00000000-0000-0000-0000-000000000000"), null }
                 });
 
             migrationBuilder.CreateIndex(

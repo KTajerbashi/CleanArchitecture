@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Domain.Security.Entities;
+using CleanArchitecture.Infrastructure.Configurations.DataSeeds;
 using CleanArchitecture.Infrastructure.Configurations.Security;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,7 +9,8 @@ public static class ModelBuilderExtensions
 {
     public static ModelBuilder AddModelBuilder(this ModelBuilder modelBuilder)
         => modelBuilder.AddEntityModelBuilder()
-        .AddEntityConfigurationModelBuilder();
+        .AddEntityConfigurationModelBuilder()
+        .AddUserSeed();
     private static ModelBuilder AddEntityModelBuilder(this ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<UserEntity>().ToTable("Users", "Security");
