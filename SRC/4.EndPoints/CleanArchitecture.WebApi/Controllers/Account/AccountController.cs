@@ -4,7 +4,7 @@ using CleanArchitecture.WebApi.BaseEndPoints;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 
-namespace CleanArchitecture.WebApi.Controllers.Security;
+namespace CleanArchitecture.WebApi.Controllers.Account;
 public class AccountController : BaseController
 {
     private readonly ILogger<AccountController> logger;
