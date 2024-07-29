@@ -1,7 +1,6 @@
-﻿using CleanArchitecture.Domain.Security.Entities;
-using CleanArchitecture.WebApi.BaseEndPoints;
+﻿using CleanArchitecture.WebApi.BaseEndPoints;
 using CleanArchitecture.WebApi.Models;
-using Microsoft.AspNetCore.Identity;
+using CleanArchitecture.WebApi.UserManagement.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -12,15 +11,13 @@ namespace CleanArchitecture.WebApi.Controllers.Security;
 
 public class AuthController : BaseController
 {
-    private readonly UserManager<UserEntity> _userManager;
-    private readonly SignInManager<UserEntity> _signInManager;
+    private readonly IIdentityService _identityService;
     private readonly IConfiguration _configuration;
 
-    public AuthController(UserManager<UserEntity> userManager, SignInManager<UserEntity> signInManager, IConfiguration configuration)
+    public AuthController(IIdentityService identityService, IConfiguration configuration)
     {
-        _userManager = userManager;
-        _signInManager = signInManager;
         _configuration = configuration;
+        _identityService = identityService;
     }
 
     [HttpPost("login")]
@@ -28,11 +25,11 @@ public class AuthController : BaseController
     {
         if (ModelState.IsValid)
         {
-            var user = await _userManager.FindByNameAsync(model.Username);
-            if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+            var user = await _identityService.UserManager.FindByNameAsync(model.Username);
+            if (user != null && await _identityService.UserManager.CheckPasswordAsync(user, model.Password))
             {
-                await _userManager.UpdateSecurityStampAsync(user);
-                await _signInManager.SignInAsync(user, isPersistent: model.IsRemember);
+                await _identityService.UserManager.UpdateSecurityStampAsync(user);
+                await _identityService.SignInManager.SignInAsync(user, isPersistent: model.IsRemember);
                 //var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.IsRemember, lockoutOnFailure: true);
                 var result = new{Succeeded=true };
                 if (result.Succeeded)
@@ -62,7 +59,7 @@ public class AuthController : BaseController
     [HttpPost("logout")]
     public async Task<IActionResult> Logout()
     {
-        await _signInManager.SignOutAsync();
+        await _identityService.SignInManager.SignOutAsync();
         return Ok();
     }
 

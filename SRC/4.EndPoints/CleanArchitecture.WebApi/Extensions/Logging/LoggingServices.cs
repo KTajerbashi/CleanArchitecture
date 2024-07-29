@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Data;
 
-namespace CleanArchitecture.WebApi.DIContainer.LoggingExtensions;
+namespace CleanArchitecture.WebApi.Extensions.Logging;
 
 public static class LoggingServices
 {

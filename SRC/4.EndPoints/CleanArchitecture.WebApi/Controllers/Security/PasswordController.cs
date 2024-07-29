@@ -1,8 +1,7 @@
-﻿using CleanArchitecture.Domain.Security.Entities;
-using CleanArchitecture.WebApi.BaseEndPoints;
+﻿using CleanArchitecture.WebApi.BaseEndPoints;
 using CleanArchitecture.WebApi.Models;
+using CleanArchitecture.WebApi.UserManagement.Repositories;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -10,24 +9,24 @@ namespace CleanArchitecture.WebApi.Controllers.Security;
 
 public class PasswordController : BaseController
 {
-    private readonly UserManager<UserEntity> _userManager;
+    private readonly IIdentityService _identityService;
 
-    public PasswordController(UserManager<UserEntity> userManager)
+    public PasswordController(IIdentityService identityService)
     {
-        _userManager = userManager;
+        _identityService = identityService;
     }
 
     [HttpPost("reset")]
     public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordModel model)
     {
-        var user = await _userManager.FindByEmailAsync(model.Email);
+        var user = await _identityService.UserManager.FindByEmailAsync(model.Email);
         if (user == null)
         {
             return NotFound();
         }
 
-        var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-        var result = await _userManager.ResetPasswordAsync(user, token, model.NewPassword);
+        var token = await _identityService.UserManager.GeneratePasswordResetTokenAsync(user);
+        var result = await _identityService.UserManager.ResetPasswordAsync(user, token, model.NewPassword);
 
         if (result.Succeeded)
         {
@@ -42,14 +41,14 @@ public class PasswordController : BaseController
     public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordModel model)
     {
         var userId = User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
-        var user = await _userManager.FindByIdAsync(userId);
+        var user = await _identityService.UserManager.FindByIdAsync(userId);
 
         if (user == null)
         {
             return NotFound();
         }
 
-        var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
+        var result = await _identityService.UserManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
 
         if (result.Succeeded)
         {

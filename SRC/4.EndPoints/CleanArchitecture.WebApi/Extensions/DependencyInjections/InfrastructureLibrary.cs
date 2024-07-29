@@ -1,7 +1,6 @@
-﻿using CleanArchitecture.Infrastructure.DIContainer;
+﻿using CleanArchitecture.Infrastructure.DependencyInjections;
 
-
-namespace CleanArchitecture.WebApi.DIContainer.DependencyInjections;
+namespace CleanArchitecture.WebApi.Extensions.DependencyInjections;
 
 public static class InfrastructureLibrary
 {

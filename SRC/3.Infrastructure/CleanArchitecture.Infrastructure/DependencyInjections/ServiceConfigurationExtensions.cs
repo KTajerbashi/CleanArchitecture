@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitecture.Infrastructure.DIContainer;
+namespace CleanArchitecture.Infrastructure.DependencyInjections;
 
-public static class InfrastructureDIContainer
+public static class ServiceConfigurationExtensions
 {
     public static IServiceCollection AddDataAccess(this IServiceCollection services, IConfiguration configuration)
     {

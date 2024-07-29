@@ -1,12 +1,12 @@
-﻿using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
-using CleanArchitecture.WebApi.DIContainer.DependencyInjections;
+﻿using CleanArchitecture.WebApi.Extensions.DependencyInjections;
+using CleanArchitecture.WebApi.Extensions.Identity;
+using CleanArchitecture.WebApi.Extensions.Swagger;
+using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
+using CleanArchitecture.WebApi.UserManagement.DependencyInjection;
 using ObjectMapper.Implementations.Extensions.DependencyInjection;
 using Serilog;
-using CleanArchitecture.WebApi.DIContainer.IdentityExtensions;
-using CleanArchitecture.WebApi.DIContainer.SwaggerExtensions;
-using CleanArchitecture.WebApi.DIContainer.ContextAccessor;
 
-namespace CleanArchitecture.WebApi.DIContainer.StartUp;
+namespace CleanArchitecture.WebApi.Extensions.StartUp;
 
 public static class ServiceCollection
 {
@@ -25,7 +25,7 @@ public static class ServiceCollection
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddHttpContextAccessor();
-            builder.Services.AddScoped<IUserManagement, UserManagement>();
+            builder.Services.AddUserManagement();
             // Swagger Services
             builder.Services.AddSwaggerServiceConfiguration();
 

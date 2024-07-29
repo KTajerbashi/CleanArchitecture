@@ -6,7 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
 
-namespace CleanArchitecture.WebApi.DIContainer.IdentityExtensions;
+namespace CleanArchitecture.WebApi.Extensions.Identity;
 
 public static class IdentityExtensions
 {
@@ -41,8 +41,8 @@ public static class IdentityExtensions
             "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
             options.User.RequireUniqueEmail = false;
         });
-        
-        
+
+
         services.ConfigureApplicationCookie(options =>
         {
             // Cookie settings
@@ -53,13 +53,13 @@ public static class IdentityExtensions
             options.AccessDeniedPath = "/Identity/Account/AccessDenied";
             options.SlidingExpiration = true;
         });
-        
-        
-        
-        
+
+
+
+
         // Configure JWT Authentication
         var key = Encoding.ASCII.GetBytes(configuration["Jwt:Key"]);
-        
+
         services.AddAuthentication(x =>
         {
             x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

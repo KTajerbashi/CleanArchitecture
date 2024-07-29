@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.WebApi.DIContainer.LoggingExtensions;
+﻿using CleanArchitecture.WebApi.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.MSSqlServer;
 
-namespace CleanArchitecture.WebApi.DIContainer;
+namespace CleanArchitecture.WebApi.Extensions;
 
 public class StartUpApplication
 {

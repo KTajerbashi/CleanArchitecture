@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.WebApi.DIContainer.DependencyInjections;
+﻿namespace CleanArchitecture.WebApi.Extensions.DependencyInjections;
 public static class ApplicationLibrary
 {
     public static IServiceCollection AddApplicationContainer(this IServiceCollection services) =>

@@ -1,5 +1,5 @@
-using CleanArchitecture.WebApi.DIContainer;
-using CleanArchitecture.WebApi.DIContainer.StartUp;
+using CleanArchitecture.WebApi.Extensions;
+using CleanArchitecture.WebApi.Extensions.StartUp;
 
 StartUpApplication.StartApplication(() =>
 {
