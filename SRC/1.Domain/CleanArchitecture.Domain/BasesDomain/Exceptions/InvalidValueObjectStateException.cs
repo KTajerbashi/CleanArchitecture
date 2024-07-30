@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Domain.Exceptions;
+﻿namespace CleanArchitecture.Domain.BasesDomain.Exceptions;
 
 public class InvalidValueObjectStateException : DomainStateException
 {

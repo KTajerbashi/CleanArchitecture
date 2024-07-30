@@ -11,6 +11,8 @@ namespace CleanArchitecture.Domain.Security.Entities;
 public class UserEntity : IdentityUser<long>, IEntity<long>
 {
 
+    
+
     [Description("کلید")]
     public Guid Key { get; set; }
 

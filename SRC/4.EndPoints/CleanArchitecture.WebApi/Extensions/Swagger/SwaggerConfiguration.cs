@@ -1,68 +1,88 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using CleanArchitecture.WebApi.Extensions.Swagger.Filters;
+using CleanArchitecture.WebApi.Extensions.Swagger.Options;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerUI;
+using System.Reflection;
 
 namespace CleanArchitecture.WebApi.Extensions.Swagger;
 
 public static class SwaggerConfiguration
 {
-    public static IServiceCollection AddSwaggerServiceConfiguration(this IServiceCollection services)
+    public static IServiceCollection AddSwaggerServiceConfiguration(this IServiceCollection services, IConfiguration configuration, string sectionName)
     {
-        services.AddSwaggerGen(c =>
+        var swaggerOption = configuration.GetSection(sectionName).Get<SwaggerOption>();
+        if (swaggerOption != null && swaggerOption.SwaggerDoc != null && swaggerOption.Enabled == true)
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanArchitecture", Version = "v1" });
-
-            // Define the security scheme
-            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            services.AddSwaggerGen(option =>
             {
-                Description = @"
-                    JWT Authorization header using the Bearer scheme.  
-                    Enter 'Bearer' [space] and then your token in the text input below.
-                    Example: 'Bearer 12345abcdef'",
-                Name = "Authorization",
-                In = ParameterLocation.Header,
-                Type = SecuritySchemeType.ApiKey,
-                Scheme = "Bearer"
-            });
-
-            c.AddSecurityRequirement(new OpenApiSecurityRequirement()
-            {
+                option.SwaggerDoc(swaggerOption.SwaggerDoc.Name, new OpenApiInfo
                 {
-                    new OpenApiSecurityScheme
+                    Title = swaggerOption.SwaggerDoc.Title,
+                    Version = swaggerOption.SwaggerDoc.Version
+                });
+                option.TagActionsBy(api =>
+                {
+                    if (api.GroupName != null)
+                        return new[] { api.GroupName };
+
+                    var controllerActionDescriptor = api.ActionDescriptor as ControllerActionDescriptor;
+
+                    if (controllerActionDescriptor != null)
+                        return new[] { controllerActionDescriptor.ControllerName };
+
+                    throw new InvalidOperationException("Unable to determine tag for endpoint.");
+                });
+
+                option.DocInclusionPredicate((name, api) => true);
+                var oAuthOption = configuration.GetSection("OAuth").Get<SwaggerOAuthOption>();
+                if (oAuthOption != null && oAuthOption.Enabled)
+                {
+                    option.AddSecurityDefinition("OAuth2", new OpenApiSecurityScheme
                     {
-                        Reference = new OpenApiReference
-                        {
-                            Type = ReferenceType.SecurityScheme,
-                            Id = "Bearer"
-                        },
-                        Scheme = "oauth2",
-                        Name = "Bearer",
+                        Name = "Authorization",
+                        Description = "OAuth2",
+                        BearerFormat = "Bearer <token>",
                         In = ParameterLocation.Header,
-                    },
-                    new List<string>()
+                        Type = SecuritySchemeType.OAuth2,
+                        Flows = new OpenApiOAuthFlows
+                        {
+                            AuthorizationCode = new OpenApiOAuthFlow
+                            {
+                                AuthorizationUrl = new Uri(oAuthOption.AuthorizationUrl),
+                                TokenUrl = new Uri(oAuthOption.TokenUrl),
+                                Scopes = oAuthOption.Scopes
+                            }
+                        },
+                    }); ;
+
+                    option.OperationFilter<AddParamsToHeader>();
                 }
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                //option.IncludeXmlComments(xmlPath);
+
             });
-        });
+        }
         return services;
     }
 
-    public static WebApplication AddSwaggerServiceConfiguration(this WebApplication app)
+    public static void UseSwaggerUI(this WebApplication app, string sectionName)
     {
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseDeveloperExceptionPage();
-        }
-        else
-        {
-            app.UseExceptionHandler("/Home/Error");
-            app.UseHsts();
-        }
+        var swaggerOption = app.Configuration
+            .GetSection(sectionName)
+            .Get<SwaggerOption>();
 
-        app.UseSwagger();
-        app.UseSwaggerUI(c =>
+        if (swaggerOption != null && swaggerOption.SwaggerDoc != null && swaggerOption.Enabled == true)
         {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "CleanArchitecture API V1");
-            c.RoutePrefix = "swagger";
-        });
-
-        return app;
+            app.UseSwagger();
+            app.UseSwaggerUI(option =>
+            {
+                option.DocExpansion(DocExpansion.None);
+                option.SwaggerEndpoint(swaggerOption.SwaggerDoc.URL, swaggerOption.SwaggerDoc.Title);
+                option.RoutePrefix = swaggerOption.SwaggerDoc.Key;
+                option.OAuthUsePkce();
+            });
+        }
     }
 }

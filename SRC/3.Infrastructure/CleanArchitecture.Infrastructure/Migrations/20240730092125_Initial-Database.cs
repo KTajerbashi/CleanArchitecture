@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CleanArchitecture.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial_Database : Migration
+    public partial class InitialDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -221,8 +221,8 @@ namespace CleanArchitecture.Infrastructure.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "IsActive", "IsDeleted", "Key", "Name", "NormalizedName", "Title", "UpdateBy", "UpdateDate" },
                 values: new object[,]
                 {
-                    { 1L, null, true, false, new Guid("2dc54295-5416-4224-94c7-e29feacda1fa"), "Admin", "ADMIN", "ادمین", null, null },
-                    { 2L, null, true, false, new Guid("e7a6fc70-8fe5-4ec5-87cc-9abdd2843644"), "User", "USER", "کاربر", null, null }
+                    { 1L, null, true, false, new Guid("6895b6d1-a818-4925-b1a7-e85bd161e17b"), "Admin", "ADMIN", "ادمین", null, null },
+                    { 2L, null, true, false, new Guid("44fb58e4-c0ad-41db-b289-0c33ced22749"), "User", "USER", "کاربر", null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -231,8 +231,8 @@ namespace CleanArchitecture.Infrastructure.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "AvatarFile", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "Gender", "IsActive", "IsDeleted", "Key", "LastName", "LockoutEnabled", "LockoutEnd", "NationalCode", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "SignFile", "TwoFactorEnabled", "UpdateBy", "UpdateDate", "UserName" },
                 values: new object[,]
                 {
-                    { 1L, 0, "Null", "f90d6fe1-199d-453d-92e7-3ed146021d85", "Admin@mail.com", false, "ادمین", (byte)0, true, false, new Guid("1f164366-9a67-403e-a04e-ed979fcc0940"), "ادمین", false, null, "1020304050", null, null, "AQAAAAIAAYagAAAAEPHzLN4j0uBmEXNbQqimR37MCaHF2YB0Yc+kBBug4W4FCW1mIEVpWkUnKP1IAg7frw==", null, false, null, "Null", false, null, null, "ادمین" },
-                    { 2L, 0, "Null", "e2a7dec3-84c2-4e06-871c-a25e861c28f7", "User@mail.com", false, "کاربر", (byte)0, true, false, new Guid("cd11ef15-a376-44f0-9667-db4d08eee47e"), "کاربر", false, null, "1020304050", null, null, "AQAAAAIAAYagAAAAEMBA+J/BX0WbKEfA3A/yrWfSdcrHPwnQZWumE5K2nkitTcrlmolud8PmWzy4W/bGxg==", null, false, null, "Null", false, null, null, "کاربر" }
+                    { 1L, 0, "Null", "6c4708fa-ab9a-4aa5-83f4-7302a7985849", "Admin@mail.com", false, "ادمین", (byte)0, true, false, new Guid("5889f0e4-a1aa-4cfb-8099-de612a8eaa66"), "ادمین", false, null, "1020304050", "ADMIN@MAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEBNPJEVxBSQv1dXPQyjKWZrUTkV8rwCHXmAMRvXHYj12Y6ltF0WmcRynNy4h/VIabg==", null, false, null, "Null", false, null, null, "Admin" },
+                    { 2L, 0, "Null", "edae9486-b8a2-4423-ac3d-b7621985b309", "User@mail.com", false, "کاربر", (byte)0, true, false, new Guid("301e8ccf-9cdf-4794-9fd9-d969d0298f56"), "کاربر", false, null, "1020304050", "USER@MAIL.COM", "USER", "AQAAAAIAAYagAAAAECDTdodquX9YfPMVP7N4SKsPqDhIEImGxvB9TqLymAyqgcSmPg/nAHDSQiq4U3XhKA==", null, false, null, "Null", false, null, null, "User" }
                 });
 
             migrationBuilder.InsertData(

@@ -20,6 +20,7 @@ public class StartUpApplication
             .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
             .Enrich.FromLogContext()
             .WriteTo.Console()
+            .WriteTo.File($"Logs/log_{DateTime.Now.ToString()}.txt", rollingInterval: RollingInterval.Day)
             .WriteTo.MSSqlServer(
                 connectionString: configuration.GetConnectionString("DefaultConnection"),
                 sinkOptions: new MSSqlServerSinkOptions

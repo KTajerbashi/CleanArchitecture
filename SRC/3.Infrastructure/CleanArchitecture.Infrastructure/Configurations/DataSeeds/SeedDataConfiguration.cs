@@ -13,8 +13,10 @@ public static class SeedDataConfiguration
             Id = 1,
             FirstName="ادمین",
             LastName="ادمین",
-            UserName="ادمین",
+            UserName="Admin",
+            NormalizedUserName="Admin".ToUpper(),
             Email = "Admin@mail.com",
+            NormalizedEmail = "Admin@mail.com".ToUpper(),
             Gender = Domain.Security.Enums.GenderTypeEnum.Male,
             IsActive=true,
             IsDeleted=false,
@@ -40,15 +42,17 @@ public static class SeedDataConfiguration
             Id = 2,
             FirstName="کاربر",
             LastName="کاربر",
-            UserName="کاربر",
+            UserName="User",
+            NormalizedUserName = "USER",
             Email = "User@mail.com",
+            NormalizedEmail = "User@mail.com".ToUpper(),
             Gender = Domain.Security.Enums.GenderTypeEnum.Male,
             IsActive=true,
             IsDeleted=false,
             Key = Guid.NewGuid(),
             AvatarFile = "Null",
             NationalCode = "1020304050",
-            SignFile = "Null"
+            SignFile = "Null",
         };
         var normalRole = new RoleEntity
         {

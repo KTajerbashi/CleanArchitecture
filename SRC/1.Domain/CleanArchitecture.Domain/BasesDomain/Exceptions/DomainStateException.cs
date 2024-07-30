@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Domain.Exceptions;
+﻿namespace CleanArchitecture.Domain.BasesDomain.Exceptions;
 /// <summary>
 /// خطاهای لایه Domain مربوط به Entityها و ValueObjectها به کمک Extension برای لایه‌های بالاتر ارسال می‌شود
 /// با توجه به اینکه هم Entity و هم ValueObject به یک شکل خطا را ارسال می‌کنند یک کلاس Exception طراحی و پیاده سازی شده است.

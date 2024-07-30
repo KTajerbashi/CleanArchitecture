@@ -3,6 +3,7 @@ using CleanArchitecture.WebApi.Extensions.Identity;
 using CleanArchitecture.WebApi.Extensions.Swagger;
 using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
 using CleanArchitecture.WebApi.UserManagement.DependencyInjection;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using ObjectMapper.Implementations.Extensions.DependencyInjection;
 using Serilog;
 
@@ -22,18 +23,36 @@ public static class ServiceCollection
                 configuration.WriteTo.File($"Log_{DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}.log");
                 configuration.WriteTo.File($"Log_{DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}.txt");
             });
-            builder.Services.AddControllers();
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddHttpContextAccessor();
+            builder.Services.AddApplicationContainer();
+
+            builder.Services.AddInfrastructureContainer(configuration);
+
             builder.Services.AddUserManagement();
-            // Swagger Services
-            builder.Services.AddSwaggerServiceConfiguration();
 
+            builder.Services.AddEndpointsApiExplorer();
 
-            builder.Services.AddApplicationContainer().AddInfrastructureContainer(configuration);
+            builder.Services.AddControllers();
+
+            builder.Services.AddEndpointsApiExplorer();
+
             builder.Services.AddAutoMapperProfiles(builder.Configuration, "AutoMapper");
+
+
+            builder.Services.AddHttpContextAccessor();
+            
+
+            builder.Services.AddAntiforgery(options =>
+            {
+                options.HeaderName = "X-CSRF-TOKEN";
+            });
+
+
             builder.Services.AddIdentityServiceConfiguration(configuration);
 
+            // Swagger Services
+            builder.Services.AddMvc();
+
+            builder.Services.AddSwaggerServiceConfiguration(configuration, "Swagger");
 
 
             return builder.Build();
@@ -46,16 +65,40 @@ public static class ServiceCollection
 
     public static WebApplication PipLineConfiguration(this WebApplication app)
     {
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
+        }
+        else
+        {
+            app.UseExceptionHandler("/Home/Error");
+            app.UseHsts();
+        }
+
         app.UseMiddleware<ExceptionMiddleware>();
+        app.UseStaticFiles();
         app.UseRouting();
-        app.UseHttpsRedirection();
+
+        //app.UseSerilogRequestLogging();
 
         /// Swagger Pipeline
-        app.AddSwaggerServiceConfiguration();
+        app.UseSwaggerUI("Swagger");
+
+        //app.UseStatusCodePages();
+
+        //app.UseCors(delegate (CorsPolicyBuilder builder)
+        //{
+        //    builder.AllowAnyOrigin();
+        //    builder.AllowAnyHeader();
+        //    builder.AllowAnyMethod();
+        //});
+        //app.UseHttpsRedirection();
+
         /// Identity Pipeline
-        app.AddIdentityServiceConfiguration();
+        app.UseIdentityServiceConfiguration();
 
         app.MapControllers();
+        
         return app;
     }
 }

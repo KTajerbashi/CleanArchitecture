@@ -3,7 +3,6 @@ using CleanArchitecture.Infrastructure.DatabaseContext;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
 using System.Text;
 
 namespace CleanArchitecture.WebApi.Extensions.Identity;
@@ -11,16 +10,22 @@ namespace CleanArchitecture.WebApi.Extensions.Identity;
 public static class IdentityExtensions
 {
     public static IServiceCollection AddIdentityServiceConfiguration(this IServiceCollection services, IConfiguration configuration)
-    {
-        services.AddIdentity<UserEntity, RoleEntity>(options =>
-        {
-            options.User.RequireUniqueEmail = false;
-        })
-            .AddRoles<RoleEntity>()
-            .AddEntityFrameworkStores<CleanArchitectureDb>()
-            .AddDefaultTokenProviders()
-
+    =>
+        services
+                .AddIdentiyOptions()
+                .AddCookieConfiguration()
+                //.AddJWTServices(configuration)
+                .AddPolicies()
                 ;
+
+    private static IServiceCollection AddIdentiyOptions(this IServiceCollection services)
+    {
+        services
+            .AddIdentity<UserEntity, RoleEntity>()
+            .AddRoles<RoleEntity>()
+            .AddDefaultTokenProviders()
+            .AddEntityFrameworkStores<CleanArchitectureDb>();
+
         services.Configure<IdentityOptions>(options =>
         {
             // Password settings.
@@ -42,21 +47,27 @@ public static class IdentityExtensions
             options.User.RequireUniqueEmail = false;
         });
 
+        return services;
+    }
 
+    private static IServiceCollection AddCookieConfiguration(this IServiceCollection services)
+    {
         services.ConfigureApplicationCookie(options =>
         {
             // Cookie settings
             options.Cookie.HttpOnly = true;
-            options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+            options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
 
-            options.LoginPath = "/Identity/Account/Login";
-            options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+            options.LoginPath = "/api/Account/Login";
+            options.AccessDeniedPath = "/api/Account/AccessDenied";
             options.SlidingExpiration = true;
         });
 
-
-
-
+        return services;
+    }
+    
+    private static IServiceCollection AddJWTServices(this IServiceCollection services, IConfiguration configuration)
+    {
         // Configure JWT Authentication
         var key = Encoding.ASCII.GetBytes(configuration["Jwt:Key"]);
 
@@ -71,31 +82,28 @@ public static class IdentityExtensions
             x.SaveToken = true;
             x.TokenValidationParameters = new TokenValidationParameters
             {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
                 ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(key),
-                ValidateIssuer = false,
-                ValidateAudience = false
+                ValidIssuer = configuration["Jwt:Issuer"],
+                ValidAudience = configuration["Jwt:Issuer"],
+                IssuerSigningKey = new SymmetricSecurityKey(key)
             };
         });
-
-        return services.AddPolicies();
-    }
-
-    public static WebApplication AddIdentityServiceConfiguration(this WebApplication app)
-    {
-        app.UseAuthorization();
-        app.UseAuthentication();
-        return app;
-    }
-
-
-    public static IServiceCollection AddPolicies(this IServiceCollection services)
-    {
-        services.AddAuthorization(options =>
-        {
-            options.AddPolicy("AdminOnly", policy => policy.RequireClaim(ClaimTypes.Role, "Admin"));
-        });
         return services;
+    }
+
+    private static IServiceCollection AddPolicies(this IServiceCollection services)
+    {
+
+        return services;
+    }
+
+    public static void UseIdentityServiceConfiguration(this WebApplication app)
+    {
+        app.UseAuthentication();
+        app.UseAuthorization();
     }
 
 
