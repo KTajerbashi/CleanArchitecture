@@ -16,10 +16,7 @@ public class UserTokenEntity : IdentityUserToken<long>, IEntity<int>
 
     public int Id { get; set; }
 
-    [Description("فعال")]
-    public bool IsActive { get; set; }
-    [Description("حذف شده"), DefaultValue(false)]
-    public bool IsDeleted { get; set; }
+
 }
 
 

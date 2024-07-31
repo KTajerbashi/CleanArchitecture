@@ -11,12 +11,11 @@ public class UserRoleEntity : IdentityUserRole<long>, IEntity<long>
     [Description("کلید")]
     public Guid Key { get; set; }
 
-    [Description("کلید")]
-    [NotMapped]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity), Description("کد")]
     public long Id { get; set; }
 
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity), Description("کد")]
-    public long ID { get; set; }
+    [Description("نقش پیشفرض")]
+    public bool IsDefault { get; set; }
 
     [Description("تاریخ شروع")]
     public DateTime? StartDate { get; set; }
@@ -24,13 +23,6 @@ public class UserRoleEntity : IdentityUserRole<long>, IEntity<long>
     [Description("تاریخ پایان")]
     public DateTime? EndDate { get; set; }
 
-    [Description("پیش فرض")]
-    public bool IsDefault { get; set; }
-
-    [Description("فعال")]
-    public bool IsActive { get; set; }
-    [Description("حذف شده"), DefaultValue(false)]
-    public bool IsDeleted { get; set; }
 
 }
 

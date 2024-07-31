@@ -1,5 +1,8 @@
 ﻿using CleanArchitecture.Domain.Security.Entities;
 using CleanArchitecture.Infrastructure.DatabaseContext;
+using CleanArchitecture.WebApi.Extensions.Identity.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -12,11 +15,44 @@ public static class IdentityExtensions
     public static IServiceCollection AddIdentityServiceConfiguration(this IServiceCollection services, IConfiguration configuration)
     =>
         services
-                .AddIdentiyOptions()
                 .AddCookieConfiguration()
+                .AddIdentiyOptions()
                 //.AddJWTServices(configuration)
                 .AddPolicies()
                 ;
+    private static IServiceCollection AddCookieConfiguration(this IServiceCollection services)
+    {
+        services
+            .AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+            .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+            {
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+
+                options.LoginPath = "/Account/Login"; // Set your login path
+                options.LogoutPath = "/Account/Logout"; // Set your logout path
+                options.AccessDeniedPath = "/Account/AccessDenied"; // Set your access denied path
+            });
+
+        //services.ConfigureApplicationCookie(options =>
+        //{
+        //    // Cookie settings
+        //    options.Cookie.HttpOnly = true;
+        //    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+
+        //    options.LoginPath = "/api/Account/Login";
+        //    options.AccessDeniedPath = "/api/Account/AccessDenied";
+        //    options.SlidingExpiration = true;
+        //});
+        services.AddScoped<IClaimsTransformation, ClaimsTransformer>();
+        return services;
+    }
 
     private static IServiceCollection AddIdentiyOptions(this IServiceCollection services)
     {
@@ -50,22 +86,7 @@ public static class IdentityExtensions
         return services;
     }
 
-    private static IServiceCollection AddCookieConfiguration(this IServiceCollection services)
-    {
-        services.ConfigureApplicationCookie(options =>
-        {
-            // Cookie settings
-            options.Cookie.HttpOnly = true;
-            options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
 
-            options.LoginPath = "/api/Account/Login";
-            options.AccessDeniedPath = "/api/Account/AccessDenied";
-            options.SlidingExpiration = true;
-        });
-
-        return services;
-    }
-    
     private static IServiceCollection AddJWTServices(this IServiceCollection services, IConfiguration configuration)
     {
         // Configure JWT Authentication

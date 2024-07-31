@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Infrastructure.BaseInfrastructure.BaseDatabaseContext;
+using CleanArchitecture.Infrastructure.Configurations.Interceptors;
 using CleanArchitecture.Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +26,11 @@ public class CleanArchitectureDb : BaseDatabaseContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-        builder.AddModelBuilder();
+        builder.AddModelBuilder(this);
+    }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.AddInterceptors(new ShadowPropertyInterceptor());
+        base.OnConfiguring(optionsBuilder);
     }
 }

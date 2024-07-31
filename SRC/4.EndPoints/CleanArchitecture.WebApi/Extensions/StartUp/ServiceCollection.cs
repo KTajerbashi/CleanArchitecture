@@ -6,6 +6,7 @@ using CleanArchitecture.WebApi.UserManagement.DependencyInjection;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using ObjectMapper.Implementations.Extensions.DependencyInjection;
 using Serilog;
+using System.Text.Json.Serialization;
 
 namespace CleanArchitecture.WebApi.Extensions.StartUp;
 
@@ -31,7 +32,8 @@ public static class ServiceCollection
 
             builder.Services.AddEndpointsApiExplorer();
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+                .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
             builder.Services.AddEndpointsApiExplorer();
 
@@ -39,7 +41,7 @@ public static class ServiceCollection
 
 
             builder.Services.AddHttpContextAccessor();
-            
+
 
             builder.Services.AddAntiforgery(options =>
             {
@@ -98,7 +100,7 @@ public static class ServiceCollection
         app.UseIdentityServiceConfiguration();
 
         app.MapControllers();
-        
+
         return app;
     }
 }

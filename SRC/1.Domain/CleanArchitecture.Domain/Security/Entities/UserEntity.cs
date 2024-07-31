@@ -10,9 +10,6 @@ namespace CleanArchitecture.Domain.Security.Entities;
 [Table("Users", Schema = "Security"), Description("کاربران")]
 public class UserEntity : IdentityUser<long>, IEntity<long>
 {
-
-    
-
     [Description("کلید")]
     public Guid Key { get; set; }
 
@@ -43,17 +40,5 @@ public class UserEntity : IdentityUser<long>, IEntity<long>
 
     [Description("امضا")]
     public string SignFile { get; set; }
-
-    [Description("حذف شده"), DefaultValue(false)]
-    public bool IsDeleted { get; set; }
-
-    [Description("فعال"), DefaultValue(false)]
-    public bool IsActive { get; set; }
-
-    [Description("تاریخ و زمان آخرین تغییر")]
-    public DateTime? UpdateDate { get; set; }
-
-    [Description("کد کاربر آخرین تغییر")]
-    public long? UpdateBy { get; set; }
 }
 

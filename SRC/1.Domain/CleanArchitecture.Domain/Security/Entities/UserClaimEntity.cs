@@ -12,11 +12,6 @@ public class UserClaimEntity : IdentityUserClaim<long>, IEntity<int>
     [Description("کلید")]
     public Guid Key { get; set; }
 
-    [Description("حذف شده"), DefaultValue(false)]
-    public bool IsDeleted { get; set; }
-
-    [Description("فعال"), DefaultValue(false)]
-    public bool IsActive { get; set; }
 }
 
 

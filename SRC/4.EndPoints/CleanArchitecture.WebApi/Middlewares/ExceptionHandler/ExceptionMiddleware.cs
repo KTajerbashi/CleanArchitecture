@@ -45,7 +45,7 @@ public class ExceptionMiddleware
             UnauthorizedException => exception.Message,
             BadRequestException => exception.Message,
             ForbiddenException => exception.Message,
-            _ => "Internal Server Error from the custom middleware."
+            _ => $"Internal Server Error from the custom middleware.\n{exception.Message}"
         };
 
         return context.Response.WriteAsync(new ErrorDetails()

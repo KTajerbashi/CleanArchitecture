@@ -2,7 +2,11 @@
 using CleanArchitecture.WebApi.BaseEndPoints;
 using CleanArchitecture.WebApi.Controllers.Account.Models;
 using CleanArchitecture.WebApi.UserManagement.Repositories;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace CleanArchitecture.WebApi.Controllers.Account;
 public class AccountController : BaseController
@@ -67,12 +71,6 @@ public class AccountController : BaseController
         var result = await _identityService.SignInManager.PasswordSignInAsync(entity, model.Password,model.IsRemember,true);
         if (result.Succeeded)
         {
-            return await OkResultAsync(new UserModel
-            {
-                //Claims = User.Claims.ToList(),
-                //Identities = User.Identities.ToList(),
-                Identity = User.Identity
-            });
             if (result.RequiresTwoFactor)
             {
                 return await OkResultAsync(result);
@@ -90,4 +88,31 @@ public class AccountController : BaseController
     {
         return OkResultAsync(_identityService.SignInManager.SignOutAsync());
     }
+
+
+    [HttpPost("LoginAsync")]
+    public async Task<IActionResult> LoginAsync(LoginModel model)
+    {
+        var result = await _identityService.SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.IsRemember, lockoutOnFailure: false);
+
+        if (result.Succeeded)
+        {
+            var user = await _identityService.UserManager.FindByNameAsync(model.UserName);
+            var roles = await _identityService.UserManager.GetRolesAsync(user);
+
+            var claims = new List<Claim>{new Claim(ClaimTypes.Name, user.UserName)};
+
+            roles.ToList().ForEach(role => claims.Add(new Claim(ClaimTypes.Role, role)));
+            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
+
+            //await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
+            //await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, new ClaimsPrincipal(identity));
+
+            return await OkResultAsync(result);
+        }
+        return Unauthorized();
+    }
+
 }

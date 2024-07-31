@@ -24,18 +24,6 @@ public class RoleEntity : IdentityRole<long>, IEntity<long>
     [Description("عنوان نقش"), StringLength(100)]
     public string Title { get; set; }
 
-    [Description("تاریخ آخرین ویرایش")]
-    public DateTime? UpdateDate { get; set; }
-
-    [Description("کاربر ویراش")]
-    public long? UpdateBy { get; set; }
-
-    [Description("حذف شده"), DefaultValue(false)]
-    public bool IsDeleted { get; set; }
-
-    [Description("فعال"), DefaultValue(false)]
-    public bool IsActive { get; set; }
-
     public override string ToString()
     {
         return $"{Title} ({Name})";
