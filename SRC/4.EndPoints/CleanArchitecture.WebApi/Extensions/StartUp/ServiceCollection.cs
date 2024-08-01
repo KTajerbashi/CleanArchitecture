@@ -6,6 +6,7 @@ using CleanArchitecture.WebApi.UserManagement.DependencyInjection;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using ObjectMapper.Implementations.Extensions.DependencyInjection;
 using Serilog;
+using System.Reflection;
 using System.Text.Json.Serialization;
 
 namespace CleanArchitecture.WebApi.Extensions.StartUp;
@@ -17,6 +18,7 @@ public static class ServiceCollection
         try
         {
             IConfiguration configuration = builder.Configuration;
+            builder.Services.AddWebApiCore("CleanArchitecture");
             //Add services to the container.
             builder.Host.UseSerilog((context, service, configuration) =>
             {

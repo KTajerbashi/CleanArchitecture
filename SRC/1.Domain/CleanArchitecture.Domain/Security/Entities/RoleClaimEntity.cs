@@ -14,6 +14,7 @@ public class RoleClaimEntity : IdentityRoleClaim<long>, IEntity<int>
     [Description("کلید")]
     public Guid Key { get; set; }
 
+
 }
 
 

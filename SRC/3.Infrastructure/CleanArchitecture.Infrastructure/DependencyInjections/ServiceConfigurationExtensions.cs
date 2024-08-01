@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Application.Repositories.Security.User.Repository;
+using CleanArchitecture.Infrastructure.Configurations.Interceptors;
 using CleanArchitecture.Infrastructure.DatabaseContext;
 using CleanArchitecture.Infrastructure.Repositories.Security.Users;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +21,10 @@ public static class ServiceConfigurationExtensions
     {
         services.AddDbContext<CleanArchitectureDb>(config =>
         {
-            config.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+            config
+            .UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+            .AddInterceptors(new AuditingSaveChangesInterceptor())
+            ;
         });
         return services;
     }

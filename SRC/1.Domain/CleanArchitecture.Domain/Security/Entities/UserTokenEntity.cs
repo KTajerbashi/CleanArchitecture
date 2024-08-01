@@ -14,6 +14,7 @@ public class UserTokenEntity : IdentityUserToken<long>, IEntity<int>
     [Description("کلید")]
     public Guid Key { get; set; }
 
+    [Description("کلید")]
     public int Id { get; set; }
 
 

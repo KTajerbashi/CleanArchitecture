@@ -1,6 +1,4 @@
 ﻿using CleanArchitecture.Domain.Security.Entities;
-using CleanArchitecture.Infrastructure.BaseInfrastructure.BaseDatabaseContext;
-using CleanArchitecture.Infrastructure.DatabaseContext;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,7 +6,7 @@ namespace CleanArchitecture.Infrastructure.Configurations.DataSeeds;
 
 public static class SeedDataConfiguration
 {
-    public static ModelBuilder AddUserSeed(this ModelBuilder builder, CleanArchitectureDb context)
+    public static ModelBuilder AddUserSeed(this ModelBuilder builder)
     {
         var adminUser = new UserEntity
         {
@@ -24,7 +22,7 @@ public static class SeedDataConfiguration
             AvatarFile = "Null",
             NationalCode = "1020304050",
             SignFile = "Null",
-            SecurityStamp=Guid.NewGuid().ToString("D")
+            SecurityStamp=Guid.NewGuid().ToString("D"),
         };
         var adminRole = new RoleEntity
         {
@@ -34,7 +32,6 @@ public static class SeedDataConfiguration
             NormalizedName = "ADMIN",
             Key = Guid.NewGuid(),
         };
-
 
         var normalUser = new UserEntity
         {
@@ -89,53 +86,20 @@ public static class SeedDataConfiguration
                Key = key
             }
         };
-
-        List<object> entities = new List<object>
-        {
-            adminUser,
-            adminRole,
-            normalUser,
-            normalRole,
-            userRoleEntities[0],
-            userRoleEntities[1],
-        };
         builder.Entity<UserRoleEntity>().HasData(userRoleEntities);
 
-        using (var cmd = context)
-        {
-            //context.Database.EnsureCreated();
-            entities.ToList().ForEach(entity => ShadowConfigExtensions.SetShadowEntityProperties(builder, cmd, entity));
-            //ShadowConfigExtensions.SetShadowEntityProperties(builder, context, adminUser);
-            //ShadowConfigExtensions.SetShadowEntityProperties(builder, context, adminRole);
-            //ShadowConfigExtensions.SetShadowEntityProperties(builder, context, normalUser);
-            //ShadowConfigExtensions.SetShadowEntityProperties(builder, context, normalRole);
-            //ShadowConfigExtensions.SetShadowEntityProperties(builder, context, adminUser);
-            context.SaveChanges();
-        }
+        //List<object> entities = new List<object>
+        //{
+        //    adminUser,
+        //    adminRole,
+        //    normalUser,
+        //    normalRole,
+        //    userRoleEntities[0],
+        //    userRoleEntities[1],
+        //};
 
         return builder;
     }
 
 }
 
-public class ShadowConfigExtensions
-{
-    public static void SetShadowEntityProperties(ModelBuilder builder, CleanArchitectureDb context, object entity)
-    {
-        var entry = context.Entry(entity);
-        if (entry.State == EntityState.Detached)
-        {
-            context.Add(entity);
-        }
-        SetShadowProperties(builder, entity);
-    }
-    public static void SetShadowProperties(ModelBuilder builder, object entity)
-    {
-        builder.Entity(entity.GetType()).Property<DateTime>("CreateDate").HasDefaultValue(DateTime.UtcNow);
-        builder.Entity(entity.GetType()).Property<DateTime>("UpdateDate").HasDefaultValue(DateTime.UtcNow);
-        builder.Entity(entity.GetType()).Property<long>("CreateBy").HasDefaultValue(1);
-        builder.Entity(entity.GetType()).Property<long>("UpdateBy").HasDefaultValue(1);
-        builder.Entity(entity.GetType()).Property<bool>("IsActive").HasDefaultValue(true);
-        builder.Entity(entity.GetType()).Property<bool>("IsDelete").HasDefaultValue(false);
-    }
-}

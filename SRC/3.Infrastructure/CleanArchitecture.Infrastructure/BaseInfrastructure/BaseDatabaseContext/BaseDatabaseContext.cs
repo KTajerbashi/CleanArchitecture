@@ -1,5 +1,4 @@
 ﻿using CleanArchitecture.Domain.Security.Entities;
-using CleanArchitecture.Infrastructure.Configurations.Interceptors;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

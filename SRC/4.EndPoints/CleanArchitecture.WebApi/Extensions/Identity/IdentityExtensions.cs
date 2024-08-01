@@ -16,7 +16,7 @@ public static class IdentityExtensions
     =>
         services
                 .AddCookieConfiguration()
-                .AddIdentiyOptions()
+                .AddIdentityOptions()
                 //.AddJWTServices(configuration)
                 .AddPolicies()
                 ;
@@ -54,7 +54,7 @@ public static class IdentityExtensions
         return services;
     }
 
-    private static IServiceCollection AddIdentiyOptions(this IServiceCollection services)
+    private static IServiceCollection AddIdentityOptions(this IServiceCollection services)
     {
         services
             .AddIdentity<UserEntity, RoleEntity>()

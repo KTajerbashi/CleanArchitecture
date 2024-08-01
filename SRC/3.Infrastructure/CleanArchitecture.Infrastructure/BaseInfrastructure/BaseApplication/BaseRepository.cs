@@ -3,6 +3,7 @@ using CleanArchitecture.Application.BaseApplication.Models.Views;
 using CleanArchitecture.Application.BaseApplication.Repositories;
 using CleanArchitecture.Domain.BasesDomain;
 using CleanArchitecture.Infrastructure.DatabaseContext;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ObjectMapper.Abstraction;
 using System.Linq.Expressions;
@@ -186,5 +187,16 @@ public abstract class BaseRepository<TContext, TEntity, TDTO, TView, TId>
     public virtual Task UpdateAsync(TDTO entity, TId id)
     {
         throw new NotImplementedException();
+    }
+
+    public async Task<List<TModel>> ExecuteQueryDataList<TModel>(string query, params object[] parameters)
+    {
+        var result = await context.Database.SqlQueryRaw<TModel>(query,parameters).ToListAsync();
+        return result;
+    }
+    public async Task<TModel> ExecuteQueryData<TModel>(string query, params object[] parameters)
+    {
+        var result = await context.Database.SqlQueryRaw<TModel>(query,parameters).FirstOrDefaultAsync();
+        return await Task.FromResult(result);
     }
 }
