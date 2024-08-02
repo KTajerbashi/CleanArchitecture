@@ -4,7 +4,6 @@ using CleanArchitecture.WebApi.Extensions.Identity.Extensions;
 using CleanArchitecture.WebApi.Extensions.Swagger;
 using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
 using CleanArchitecture.WebApi.UserManagement.DependencyInjection;
-using Microsoft.OpenApi.Models;
 using ObjectMapper.Implementations.Extensions.DependencyInjection;
 using Serilog;
 using System.Text.Json.Serialization;
@@ -43,7 +42,7 @@ public static class ServiceCollection
 
             builder.Services.AddIdentityServiceConfiguration(configuration);
 
-            builder.Services.AddUserManagement(false);
+            builder.Services.AddUserManagement(configuration, false);
 
             // Swagger Services
             builder.Services.AddMvc();
@@ -69,10 +68,12 @@ public static class ServiceCollection
             app.UseExceptionHandler("/Home/Error");
             app.UseHsts();
         }
+        //app.UseMiddleware<JwtMiddleware>();
+
         app.UseMiddleware<ExceptionMiddleware>();
-        
+
         app.UseHttpsRedirection();
-        
+
         app.UseStaticFiles();
 
         app.UseRouting();
@@ -82,7 +83,7 @@ public static class ServiceCollection
         app.UseSwaggerUI("Swagger");
 
         app.MapControllers();
-       
+
         return app;
     }
 }

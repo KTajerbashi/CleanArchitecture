@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.WebApi.UserManagement.Repositories;
+﻿namespace CleanArchitecture.WebApi.UserManagement.Options;
 
 public sealed class UserManagementOptions
 {

@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Application.Repositories.Security.User.Repository;
+﻿using CleanArchitecture.Application.Repositories.Security.User.Model.DTOs;
+using CleanArchitecture.Application.Repositories.Security.User.Repository;
 
 namespace CleanArchitecture.WebApi.UserManagement.Repositories;
 
@@ -14,6 +15,23 @@ public class FakeUserInfoService : IUserInfoService
     {
         _defaultUserId = defaultUserId;
     }
+
+    public AuthenticateResponse Authenticate(AuthenticateRequest model)
+    {
+        var result = new AuthenticateResponse(new UserDTO
+        {
+            Id = 0,
+            FirstName = GetFirstName(),
+            LastName = GetLastName(),
+            UserName = GetUsername(),
+        }, GetToken());
+        return result;
+    }
+    public async Task<AuthenticateResponse?> AuthenticateAsync(AuthenticateRequest model)
+    {
+        return await Task.FromResult(Authenticate(model));
+    }
+
     public string? GetClaim(string claimType)
     {
         return claimType;
@@ -27,6 +45,11 @@ public class FakeUserInfoService : IUserInfoService
     public string GetLastName()
     {
         return "LastName";
+    }
+
+    public string GetToken()
+    {
+        return "FakeToken";
     }
 
     public string GetUserAgent()
@@ -62,4 +85,6 @@ public class FakeUserInfoService : IUserInfoService
     public string UserIdOrDefault() => _defaultUserId;
 
     public string UserIdOrDefault(string defaultValue) => defaultValue;
+
+
 }

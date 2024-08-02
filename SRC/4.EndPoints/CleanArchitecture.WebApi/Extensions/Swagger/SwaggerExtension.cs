@@ -36,11 +36,14 @@ public static class SwaggerExtension
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
                 Name = "Authorization",
-                Type = SecuritySchemeType.Http,
-                Scheme = "bearer",
+                Type = SecuritySchemeType.ApiKey,
+                Scheme = "Bearer",
                 BearerFormat = "JWT",
                 In = ParameterLocation.Header,
-                Description = "Please enter into field the word 'Bearer' following by space and then your token."
+                Description = @"
+JWT Authorization header using the Bearer scheme. 
+Enter 'Bearer' [space] and then your token in the text input below.
+Example: ""Bearer 12345abcde"""
             });
 
             c.AddSecurityRequirement(new OpenApiSecurityRequirement

@@ -1,20 +1,24 @@
-﻿using CleanArchitecture.Domain.Security.Entities;
+﻿using CleanArchitecture.Application.Repositories.Security.User.Repository;
+using CleanArchitecture.Domain.Security.Entities;
+using CleanArchitecture.WebApi.Attributes;
 using CleanArchitecture.WebApi.BaseEndPoints;
 using CleanArchitecture.WebApi.Controllers.Account.Models;
 using CleanArchitecture.WebApi.UserManagement.Repositories;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace CleanArchitecture.WebApi.Controllers.Account;
+
 public class AccountController : BaseController
 {
     private readonly IIdentityService _identityService;
-    public AccountController(IIdentityService identityService)
+    private readonly IUserInfoService _userInfoService;
+    public AccountController(IIdentityService identityService, IUserInfoService userInfoService)
     {
         _identityService = identityService;
+        _userInfoService = userInfoService;
     }
 
     [HttpPost("Register")]
@@ -41,9 +45,30 @@ public class AccountController : BaseController
     }
 
     [HttpGet("GetProfile")]
+    [Authorize]
     public Task<IActionResult> GetProfile()
     {
         return OkResultAsync(User);
+    }
+
+    [HttpGet("GetProfileFree")]
+    public Task<IActionResult> GetProfileFree()
+    {
+        var model = new
+        {
+            Token = _userInfoService.GetToken(),
+            UserAgent = _userInfoService.GetUserAgent(),
+            UserIp = _userInfoService.GetUserIp(),
+            UserId = _userInfoService.UserId(),
+            FirstName = _userInfoService.GetFirstName(),
+            LastName = _userInfoService.GetLastName(),
+            UserName = _userInfoService.GetUsername(),
+            Claim = _userInfoService.GetClaim(""),
+            IsCurrentUser = _userInfoService.IsCurrentUser("1"),
+            UserIdOrDefault = _userInfoService.UserIdOrDefault(),
+            UserIdOrDefault1 = _userInfoService.UserIdOrDefault("1"),
+        };
+        return OkResultAsync(model);
     }
 
     /// <summary>
@@ -54,11 +79,9 @@ public class AccountController : BaseController
     public Task<IActionResult> IsAuthenticated() => OkResultAsync(User.Identity.IsAuthenticated);
 
     [HttpPost("DisActive")]
-    [Authorize]
     public Task<IActionResult> DisActive() => OkResultAsync("DisActive");
 
     [HttpGet("AccessDenied")]
-    [Authorize]
     public Task<IActionResult> AccessDenied() => OkResultAsync("AccessDenied");
 
 

@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace CleanArchitecture.WebApi.UserManagement.Repositories;
+namespace CleanArchitecture.WebApi.UserManagement.DependencyInjection;
 
 public static class ClaimExtensions
 {
@@ -9,5 +9,3 @@ public static class ClaimExtensions
         return userClaimsPrincipal.Claims.FirstOrDefault((x) => x.Type == claimType)?.Value;
     }
 }
-
-
