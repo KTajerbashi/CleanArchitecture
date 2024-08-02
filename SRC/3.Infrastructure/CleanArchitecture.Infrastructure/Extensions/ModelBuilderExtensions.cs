@@ -1,6 +1,6 @@
 ﻿using CleanArchitecture.Domain.Security.Entities;
-using CleanArchitecture.Infrastructure.Configurations.DataSeeds;
-using CleanArchitecture.Infrastructure.Configurations.Security;
+using CleanArchitecture.Infrastructure.DatabaseContext.Configurations.DataSeeds;
+using CleanArchitecture.Infrastructure.DatabaseContext.Configurations.Security;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.Infrastructure.Extensions;

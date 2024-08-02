@@ -1,12 +1,12 @@
 ﻿using CleanArchitecture.Application.Repositories.Security.User.Repository;
-using CleanArchitecture.Infrastructure.Configurations.Interceptors;
 using CleanArchitecture.Infrastructure.DatabaseContext;
+using CleanArchitecture.Infrastructure.DatabaseContext.Configurations.Interceptors;
 using CleanArchitecture.Infrastructure.Repositories.Security.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitecture.Infrastructure.DependencyInjections;
+namespace CleanArchitecture.Infrastructure.Extensions.DependencyInjections;
 
 public static class ServiceConfigurationExtensions
 {

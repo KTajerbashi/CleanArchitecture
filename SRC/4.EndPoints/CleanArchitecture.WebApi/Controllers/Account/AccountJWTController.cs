@@ -1,5 +1,5 @@
-﻿using CleanArchitecture.Application.Repositories.Security.User.Model.DTOs;
-using CleanArchitecture.Application.Repositories.Security.User.Repository;
+﻿using CleanArchitecture.Application.BaseApplication.UserManagement;
+using CleanArchitecture.Application.Repositories.Security.User.Model.DTOs;
 using CleanArchitecture.WebApi.BaseEndPoints;
 using CleanArchitecture.WebApi.Controllers.Account.Models;
 using CleanArchitecture.WebApi.Extensions.Identity.Options;
@@ -13,11 +13,11 @@ namespace CleanArchitecture.WebApi.Controllers.Account;
 public class AccountJWTController : BaseController
 {
     private readonly IIdentityService _identityService;
-    private readonly IUserInfoService _userInfoService;
+    private readonly IUserWebInfoRepositories _userInfoService;
     private readonly IConfiguration _config;
     public AccountJWTController(
         IIdentityService identityService,
-        IUserInfoService userInfoService,
+        IUserWebInfoRepositories userInfoService,
         IConfiguration config)
     {
         _identityService = identityService;

@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.Repositories.Security.User.Repository;
+﻿using CleanArchitecture.Application.BaseApplication.UserManagement;
 using CleanArchitecture.Domain.BasesDomain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -77,7 +77,7 @@ public static class AuditableShadowProperties
     /// <param name="userInfoService"></param>
     public static void SetAuditableEntityPropertyValues(
         this ChangeTracker changeTracker,
-        IUserInfoService userInfoService)
+        IUserWebInfoRepositories userInfoService)
     {
 
         var userAgent = userInfoService.GetUserAgent();

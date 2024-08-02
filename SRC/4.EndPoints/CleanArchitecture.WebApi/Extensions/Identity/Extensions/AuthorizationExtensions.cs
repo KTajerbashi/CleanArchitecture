@@ -1,6 +1,10 @@
 ﻿using CleanArchitecture.Domain.Security.Entities;
 using CleanArchitecture.Infrastructure.DatabaseContext;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace CleanArchitecture.WebApi.Extensions.Identity.Extensions;
 
@@ -9,13 +13,13 @@ public static class AuthorizationExtensions
     public static IServiceCollection AddAuthorizationService(this IServiceCollection services,IConfiguration configuration)
     {
         return services
-            .AddIdentityService()
+            .AddIdentityService(configuration)
             .AddCookieService()
             .AddPoliciesService()
             ;
     }
 
-    private static IServiceCollection AddIdentityService(this IServiceCollection services)
+    private static IServiceCollection AddIdentityService(this IServiceCollection services, IConfiguration configuration)
     {
 
         services.AddIdentity<UserEntity, RoleEntity>(option =>
@@ -24,10 +28,29 @@ public static class AuthorizationExtensions
         })
             .AddRoles<RoleEntity>()
             .AddEntityFrameworkStores<CleanArchitectureDb>()
+            .AddSignInManager()
             .AddDefaultTokenProviders()
             ;
-        services.AddAuthentication();
-        services.AddAuthorization();
+        services.AddAuthentication(option =>
+        {
+            option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddJwtBearer(option =>
+        {
+            option.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = configuration["JWT:Issuer"],
+                ValidAudience = configuration["JWT:Audience"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"])),
+            };
+        });
+        services.AddAuthorization(option =>
+        {
+        });
 
         services.Configure<IdentityOptions>(options =>
         {

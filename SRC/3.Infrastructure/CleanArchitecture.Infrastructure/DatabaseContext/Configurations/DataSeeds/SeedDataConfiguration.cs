@@ -3,7 +3,7 @@ using CleanArchitecture.Domain.Security.Enums;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitecture.Infrastructure.Configurations.DataSeeds;
+namespace CleanArchitecture.Infrastructure.DatabaseContext.Configurations.DataSeeds;
 
 public static class SeedDataConfiguration
 {
@@ -19,19 +19,19 @@ public static class SeedDataConfiguration
         var adminUser = new UserEntity
         {
             Id = 1L,
-            FirstName="ادمین",
-            LastName="ادمین",
-            UserName="Admin",
-            NormalizedUserName="Admin".ToUpper(),
+            FirstName = "ادمین",
+            LastName = "ادمین",
+            UserName = "Admin",
+            NormalizedUserName = "Admin".ToUpper(),
             Email = "Admin@mail.com",
             NormalizedEmail = "Admin@mail.com".ToUpper(),
             EmailConfirmed = false,
-            Gender = Domain.Security.Enums.GenderTypeEnum.Male,
+            Gender = GenderTypeEnum.Male,
             Key = Guid.NewGuid(),
             AvatarFile = "Null",
             NationalCode = "1020304050",
             SignFile = "Null",
-            SecurityStamp=Guid.NewGuid().ToString("D"),
+            SecurityStamp = Guid.NewGuid().ToString("D"),
             ConcurrencyStamp = Guid.NewGuid().ToString("D"),
             PhoneNumberConfirmed = false,
             TwoFactorEnabled = false,
@@ -42,19 +42,19 @@ public static class SeedDataConfiguration
         var normalUser = new UserEntity
         {
             Id = 2L,
-            FirstName="کاربر",
-            LastName="کاربر",
-            UserName="User",
+            FirstName = "کاربر",
+            LastName = "کاربر",
+            UserName = "User",
             NormalizedUserName = "USER",
             Email = "User@mail.com",
             NormalizedEmail = "User@mail.com".ToUpper(),
             EmailConfirmed = false,
-            Gender = Domain.Security.Enums.GenderTypeEnum.Male,
+            Gender = GenderTypeEnum.Male,
             Key = Guid.NewGuid(),
             AvatarFile = "Null",
             NationalCode = "1020304050",
             SignFile = "Null",
-            SecurityStamp=Guid.NewGuid().ToString("D"),
+            SecurityStamp = Guid.NewGuid().ToString("D"),
             ConcurrencyStamp = Guid.NewGuid().ToString("D"),
             PhoneNumberConfirmed = false,
             TwoFactorEnabled = false,
@@ -65,25 +65,25 @@ public static class SeedDataConfiguration
         builder.Entity<UserEntity>().HasData(
             new
             {
-                Id = adminUser.Id,
-                FirstName = adminUser.FirstName,
-                LastName = adminUser.LastName,
-                UserName = adminUser.UserName,
+                adminUser.Id,
+                adminUser.FirstName,
+                adminUser.LastName,
+                adminUser.UserName,
                 NormalizedUserName = adminUser.NormalizedUserName.ToUpper(),
-                Email = adminUser.Email,
+                adminUser.Email,
                 NormalizedEmail = adminUser.NormalizedEmail.ToUpper(),
-                EmailConfirmed = adminUser.EmailConfirmed,
+                adminUser.EmailConfirmed,
                 Gender = GenderTypeEnum.Male,
                 Key = Guid.NewGuid(),
                 AvatarFile = "Null",
                 NationalCode = "1020304050",
                 SignFile = "Null",
-                SecurityStamp = adminUser.SecurityStamp,
-                ConcurrencyStamp = adminUser.ConcurrencyStamp,
-                PasswordHash = GetHash(adminUser,"@Admin#1234"),
+                adminUser.SecurityStamp,
+                adminUser.ConcurrencyStamp,
+                PasswordHash = GetHash(adminUser, "@Admin#1234"),
                 PhoneNumberConfirmed = false,
                 TwoFactorEnabled = false,
-                LockoutEnd = normalUser.LockoutEnd,
+                normalUser.LockoutEnd,
                 LockoutEnabled = true,
                 AccessFailedCount = 0, // Default value
 
@@ -97,25 +97,25 @@ public static class SeedDataConfiguration
             },
             new
             {
-                Id = normalUser.Id,
-                FirstName = normalUser.FirstName,
-                LastName = normalUser.LastName,
-                UserName = normalUser.UserName,
+                normalUser.Id,
+                normalUser.FirstName,
+                normalUser.LastName,
+                normalUser.UserName,
                 NormalizedUserName = normalUser.NormalizedUserName.ToUpper(),
-                Email = normalUser.Email,
+                normalUser.Email,
                 NormalizedEmail = normalUser.NormalizedEmail.ToUpper(),
-                EmailConfirmed = normalUser.EmailConfirmed,
+                normalUser.EmailConfirmed,
                 Gender = GenderTypeEnum.Male,
                 Key = Guid.NewGuid(),
                 AvatarFile = "Null",
                 NationalCode = "1020304050",
                 SignFile = "Null",
-                SecurityStamp = normalUser.SecurityStamp,
-                ConcurrencyStamp = normalUser.ConcurrencyStamp,
+                normalUser.SecurityStamp,
+                normalUser.ConcurrencyStamp,
                 PasswordHash = GetHash(normalUser, "@User#1234"),
                 PhoneNumberConfirmed = false,
                 TwoFactorEnabled = false,
-                LockoutEnd = normalUser.LockoutEnd,
+                normalUser.LockoutEnd,
                 LockoutEnabled = true,
                 AccessFailedCount = 0, // Default value
 
@@ -205,7 +205,7 @@ public static class SeedDataConfiguration
         return builder;
     }
 
-    private static string GetHash(UserEntity entity,string pass)
+    private static string GetHash(UserEntity entity, string pass)
     {
         var hasher = new PasswordHasher<UserEntity>();
         return hasher.HashPassword(entity, pass);

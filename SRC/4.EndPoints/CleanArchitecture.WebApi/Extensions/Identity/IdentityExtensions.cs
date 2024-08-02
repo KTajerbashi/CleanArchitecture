@@ -8,6 +8,6 @@ public static class IdentityExtensions
     =>
         services
             .AddAuthorizationService(configuration)
-            .AddJwtService(configuration)
+            //.AddJwtService(configuration)
                 ;
 }

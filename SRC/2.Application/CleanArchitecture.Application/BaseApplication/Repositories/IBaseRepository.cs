@@ -1,6 +1,7 @@
 ﻿using CleanArchitecture.Application.BaseApplication.Models.DTOs;
 using CleanArchitecture.Application.BaseApplication.Models.Views;
 using CleanArchitecture.Application.BaseApplication.Patterns;
+using CleanArchitecture.Application.BaseApplication.UserManagement;
 using CleanArchitecture.Domain.BasesDomain;
 using System.Linq.Expressions;
 
@@ -17,6 +18,9 @@ public interface IBaseRepository<TEntity, TDTO, TView, TId> : IUnitOfWork
           IEquatable<TId>,
           IFormattable
 {
+
+    IUserWebInfoRepositories CurrentUserInfo { get; }
+
     #region Insert
     /// <summary>
     /// داده‌های جدید را به دیتابیس اضافه می‌کند

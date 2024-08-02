@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Application.Repositories.Security.User.Repository;
+﻿using CleanArchitecture.Application.BaseApplication.UserManagement;
 using CleanArchitecture.Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace CleanArchitecture.Infrastructure.Configurations.Interceptors;
+namespace CleanArchitecture.Infrastructure.DatabaseContext.Configurations.Interceptors;
 /// <summary>
 /// Audit Field 
 /// ها قبل از ذخیره شدن باید مقدار دهی شود و اضافه شود
@@ -47,7 +47,7 @@ public class AddAuditDataInterceptor : SaveChangesInterceptor
     private static void AddShadowProperties(DbContextEventData eventData)
     {
         var changeTracker = eventData.Context.ChangeTracker;
-        var userInfoService = eventData.Context.GetService<IUserInfoService>();
+        var userInfoService = eventData.Context.GetService<IUserWebInfoRepositories>();
         changeTracker.SetAuditableEntityPropertyValues(userInfoService);
     }
 }

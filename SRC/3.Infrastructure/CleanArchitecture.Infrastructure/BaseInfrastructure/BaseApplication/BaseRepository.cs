@@ -1,7 +1,10 @@
 ﻿using CleanArchitecture.Application.BaseApplication.Models.DTOs;
 using CleanArchitecture.Application.BaseApplication.Models.Views;
+using CleanArchitecture.Application.BaseApplication.Patterns;
 using CleanArchitecture.Application.BaseApplication.Repositories;
+using CleanArchitecture.Application.BaseApplication.UserManagement;
 using CleanArchitecture.Domain.BasesDomain;
+using CleanArchitecture.Infrastructure.BaseInfrastructure.UserManagement;
 using CleanArchitecture.Infrastructure.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -26,7 +29,11 @@ public abstract class BaseRepository<TContext, TEntity, TDTO, TView, TId>
     protected readonly ILogger Logger;
     protected readonly TContext context;
     protected readonly IMapperAdapter MapperFacad;
-    protected BaseRepository(TContext context, IMapperAdapter mapperFacad, ILogger logger)
+    public IUserWebInfoRepositories CurrentUserInfo => new UserWebInfoService();
+    protected BaseRepository(
+        TContext context, 
+        IMapperAdapter mapperFacad, 
+        ILogger logger)
     {
         this.context = context;
         MapperFacad = mapperFacad;
@@ -198,5 +205,160 @@ public abstract class BaseRepository<TContext, TEntity, TDTO, TView, TId>
     {
         var result = await context.Database.SqlQueryRaw<TModel>(query,parameters).FirstOrDefaultAsync();
         return await Task.FromResult(result);
+    }
+
+    bool IBaseRepository<TEntity, TDTO, TView, TId>.Insert(TDTO entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task IBaseRepository<TEntity, TDTO, TView, TId>.InsertAsync(TDTO entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    bool IBaseRepository<TEntity, TDTO, TView, TId>.Update(TDTO entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    bool IBaseRepository<TEntity, TDTO, TView, TId>.Update(TDTO entity, TId id)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task IBaseRepository<TEntity, TDTO, TView, TId>.UpdateAsync(TDTO entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task IBaseRepository<TEntity, TDTO, TView, TId>.UpdateAsync(TDTO entity, TId id)
+    {
+        throw new NotImplementedException();
+    }
+
+    bool IBaseRepository<TEntity, TDTO, TView, TId>.Delete(TId id)
+    {
+        throw new NotImplementedException();
+    }
+
+    bool IBaseRepository<TEntity, TDTO, TView, TId>.DeleteGraph(TId id)
+    {
+        throw new NotImplementedException();
+    }
+
+    bool IBaseRepository<TEntity, TDTO, TView, TId>.Delete(TDTO entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    bool IBaseRepository<TEntity, TDTO, TView, TId>.AddOrUpdate(TDTO entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task IBaseRepository<TEntity, TDTO, TView, TId>.AddOrUpdateAsync(TDTO entity)
+    {
+        throw new NotImplementedException();
+    }
+
+    TView IBaseRepository<TEntity, TDTO, TView, TId>.Get(TId id)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<TView> IBaseRepository<TEntity, TDTO, TView, TId>.GetAsync(TId id)
+    {
+        throw new NotImplementedException();
+    }
+
+    TView IBaseRepository<TEntity, TDTO, TView, TId>.Get(Guid Guid)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<TView> IBaseRepository<TEntity, TDTO, TView, TId>.GetAsync(Guid Guid)
+    {
+        throw new NotImplementedException();
+    }
+
+    TView IBaseRepository<TEntity, TDTO, TView, TId>.Get()
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<IEnumerable<TView>> IBaseRepository<TEntity, TDTO, TView, TId>.GetAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    TView IBaseRepository<TEntity, TDTO, TView, TId>.GetGraph(TId id)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<TView> IBaseRepository<TEntity, TDTO, TView, TId>.GetGraphAsync(TId id)
+    {
+        throw new NotImplementedException();
+    }
+
+    TView IBaseRepository<TEntity, TDTO, TView, TId>.GetGraph(Guid Guid)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<TView> IBaseRepository<TEntity, TDTO, TView, TId>.GetGraphAsync(Guid Guid)
+    {
+        throw new NotImplementedException();
+    }
+
+    bool IBaseRepository<TEntity, TDTO, TView, TId>.Exists(Expression<Func<TDTO, bool>> expression)
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<bool> IBaseRepository<TEntity, TDTO, TView, TId>.ExistsAsync(Expression<Func<TDTO, bool>> expression)
+    {
+        throw new NotImplementedException();
+    }
+
+    void IUnitOfWork.BeginTransaction()
+    {
+        throw new NotImplementedException();
+    }
+
+    void IUnitOfWork.BeginTransactionAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    void IUnitOfWork.CommitTransaction()
+    {
+        throw new NotImplementedException();
+    }
+
+    void IUnitOfWork.CommitTransactionAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    void IUnitOfWork.RollbackTransaction()
+    {
+        throw new NotImplementedException();
+    }
+
+    void IUnitOfWork.RollbackTransactionAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    int IUnitOfWork.SaveChange()
+    {
+        throw new NotImplementedException();
+    }
+
+    Task<int> IUnitOfWork.SaveChangeAsync()
+    {
+        throw new NotImplementedException();
     }
 }

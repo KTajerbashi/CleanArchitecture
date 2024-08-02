@@ -4,6 +4,7 @@ using CleanArchitecture.WebApi.Extensions.Identity.Extensions;
 using CleanArchitecture.WebApi.Extensions.Swagger;
 using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
 using CleanArchitecture.WebApi.UserManagement.DependencyInjection;
+using Microsoft.Net.Http.Headers;
 using ObjectMapper.Implementations.Extensions.DependencyInjection;
 using Serilog;
 using System.Text.Json.Serialization;
@@ -17,8 +18,10 @@ public static class ServiceCollection
         try
         {
             IConfiguration configuration = builder.Configuration;
+          
+            //  Add All Web Application
             builder.Services.AddWebApiCore("CleanArchitecture");
-            //Add services to the container.
+            
             builder.Host.UseSerilog((context, service, configuration) =>
             {
                 configuration.WriteTo.Console();
@@ -43,9 +46,6 @@ public static class ServiceCollection
             builder.Services.AddIdentityServiceConfiguration(configuration);
 
             builder.Services.AddUserManagement(configuration, false);
-
-            // Swagger Services
-            builder.Services.AddMvc();
 
             builder.Services.AddSwaggerExtension(configuration, "Swagger");
 
@@ -81,6 +81,16 @@ public static class ServiceCollection
         app.UseIdentity();
 
         app.UseSwaggerUI("Swagger");
+
+        app.UseCors(policy =>
+        {
+            policy.WithOrigins(
+                "http://localhost:7254",
+                "https://localhost:7254")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .WithHeaders(HeaderNames.ContentType);
+        });
 
         app.MapControllers();
 

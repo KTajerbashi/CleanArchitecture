@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Application.Repositories.Security.User.Repository;
+﻿using CleanArchitecture.Application.BaseApplication.UserManagement;
 using CleanArchitecture.WebApi.Extensions.Settings;
 using CleanArchitecture.WebApi.UserManagement.Options;
 using CleanArchitecture.WebApi.UserManagement.Repositories;
@@ -12,9 +12,9 @@ public static class UserManagementExtension
     {
         services.AddScoped<IIdentityService, IdentityService>();
         if (userFake)
-            services.AddScoped<IUserInfoService, FakeUserInfoService>();
+            services.AddSingleton<IUserWebInfoRepositories, FakeUserInfoService>();
         else
-            services.AddScoped<IUserInfoService, WebUserInfoService>();
+            services.AddSingleton<IUserWebInfoRepositories, WebUserInfoService>();
 
         services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
         services.AddScoped<UserManagementOptions>();

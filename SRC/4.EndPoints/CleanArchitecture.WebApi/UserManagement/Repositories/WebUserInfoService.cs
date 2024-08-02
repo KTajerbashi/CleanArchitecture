@@ -1,5 +1,5 @@
-﻿using CleanArchitecture.Application.Repositories.Security.User.Model.DTOs;
-using CleanArchitecture.Application.Repositories.Security.User.Repository;
+﻿using CleanArchitecture.Application.BaseApplication.UserManagement;
+using CleanArchitecture.Application.Repositories.Security.User.Model.DTOs;
 using CleanArchitecture.Domain.Security.Entities;
 using CleanArchitecture.WebApi.Extensions.Settings;
 using CleanArchitecture.WebApi.UserManagement.DependencyInjection;
@@ -12,7 +12,7 @@ using System.Text;
 
 namespace CleanArchitecture.WebApi.UserManagement.Repositories;
 
-public class WebUserInfoService : IUserInfoService
+public class WebUserInfoService : IUserWebInfoRepositories
 {
     private readonly IIdentityService _identityService;
     private readonly IHttpContextAccessor _httpContextAccessor;

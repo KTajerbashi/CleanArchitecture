@@ -1,11 +1,11 @@
 ﻿using CleanArchitecture.Application.Repositories.Security.User.Model.DTOs;
 
-namespace CleanArchitecture.Application.Repositories.Security.User.Repository;
+namespace CleanArchitecture.Application.BaseApplication.UserManagement;
 
 /// <summary>
 /// انتزاع دریافت کلاینت جاری درخواست
 /// </summary>
-public interface IUserInfoService
+public interface IUserWebInfoRepositories
 {
     string GetToken();
     string GetUserAgent();

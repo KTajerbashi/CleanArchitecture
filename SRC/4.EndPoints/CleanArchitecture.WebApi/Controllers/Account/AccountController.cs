@@ -1,11 +1,11 @@
-﻿using CleanArchitecture.Application.Repositories.Security.User.Repository;
+﻿using CleanArchitecture.Application.BaseApplication.UserManagement;
 using CleanArchitecture.Domain.Security.Entities;
-using CleanArchitecture.WebApi.Attributes;
 using CleanArchitecture.WebApi.BaseEndPoints;
 using CleanArchitecture.WebApi.Controllers.Account.Models;
 using CleanArchitecture.WebApi.UserManagement.Repositories;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -14,8 +14,8 @@ namespace CleanArchitecture.WebApi.Controllers.Account;
 public class AccountController : BaseController
 {
     private readonly IIdentityService _identityService;
-    private readonly IUserInfoService _userInfoService;
-    public AccountController(IIdentityService identityService, IUserInfoService userInfoService)
+    private readonly IUserWebInfoRepositories _userInfoService;
+    public AccountController(IIdentityService identityService, IUserWebInfoRepositories userInfoService)
     {
         _identityService = identityService;
         _userInfoService = userInfoService;

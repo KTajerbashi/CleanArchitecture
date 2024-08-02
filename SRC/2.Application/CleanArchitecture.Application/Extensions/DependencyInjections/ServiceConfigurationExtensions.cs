@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitecture.Application.DependencyInjections;
+namespace CleanArchitecture.Application.Extensions.DependencyInjections;
 
 public static class ServiceConfigurationExtensions
 {

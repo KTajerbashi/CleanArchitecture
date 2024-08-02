@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Infrastructure.DependencyInjections;
+﻿using CleanArchitecture.Infrastructure.Extensions.DependencyInjections;
 
 namespace CleanArchitecture.WebApi.Extensions.DependencyInjections;
 

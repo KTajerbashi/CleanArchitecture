@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Application.Repositories.Security.User.Model.DTOs;
-using CleanArchitecture.Application.Repositories.Security.User.Repository;
+﻿using CleanArchitecture.Application.BaseApplication.UserManagement;
+using CleanArchitecture.Application.Repositories.Security.User.Model.DTOs;
 
 namespace CleanArchitecture.WebApi.UserManagement.Repositories;
 
-public class FakeUserInfoService : IUserInfoService
+public class FakeUserInfoService : IUserWebInfoRepositories
 {
     private readonly string _defaultUserId;
 
