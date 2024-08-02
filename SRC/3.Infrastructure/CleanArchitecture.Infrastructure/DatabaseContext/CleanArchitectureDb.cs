@@ -1,5 +1,5 @@
 ﻿using CleanArchitecture.Infrastructure.BaseInfrastructure.BaseDatabaseContext;
-using CleanArchitecture.Infrastructure.Extensions;
+using CleanArchitecture.Infrastructure.DatabaseContext.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanArchitecture.Infrastructure.DatabaseContext;

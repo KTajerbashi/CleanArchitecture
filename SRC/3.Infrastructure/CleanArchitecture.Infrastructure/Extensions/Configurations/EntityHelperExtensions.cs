@@ -1,7 +1,7 @@
 ﻿using CleanArchitecture.Domain.BasesDomain;
 using System.Reflection;
 
-namespace CleanArchitecture.Infrastructure.Extensions;
+namespace CleanArchitecture.Infrastructure.Extensions.Configurations;
 
 public static class EntityHelperExtensions
 {

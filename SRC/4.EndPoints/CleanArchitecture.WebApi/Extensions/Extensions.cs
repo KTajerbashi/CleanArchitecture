@@ -1,21 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyModel;
 using System.Reflection;
 
-namespace CleanArchitecture.WebApi.Extensions.DependencyInjections;
+namespace CleanArchitecture.WebApi.Extensions;
 
-public static class AddApiConfigurationExtensions
-{
-    public static IServiceCollection AddWebApiCore(this IServiceCollection services, params string[] assemblyNamesForLoad)
-    {
-        services
-            .AddControllers();
-            //.AddFluentValidation();
-        services
-            .AddDependencies(assemblyNamesForLoad);
-
-        return services;
-    }
-}
 public static class Extensions
 {
     public static IServiceCollection AddDependencies(this IServiceCollection services,
@@ -24,10 +11,10 @@ public static class Extensions
 
         var assemblies = GetAssemblies(assemblyNamesForSearch);
         //services
-            //.AddApplicationServices(assemblies)
-            //.AddDataAccess(assemblies)
-            //.AddUtilityServices()
-            //.AddCustomDependencies(assemblies);
+        //.AddApplicationServices(assemblies)
+        //.AddDataAccess(assemblies)
+        //.AddUtilityServices()
+        //.AddCustomDependencies(assemblies);
         return services;
     }
     private static List<Assembly> GetAssemblies(string[] assemblyName)

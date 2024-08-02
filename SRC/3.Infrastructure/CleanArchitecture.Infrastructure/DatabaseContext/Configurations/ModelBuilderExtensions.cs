@@ -1,9 +1,10 @@
 ﻿using CleanArchitecture.Domain.Security.Entities;
 using CleanArchitecture.Infrastructure.DatabaseContext.Configurations.DataSeeds;
+using CleanArchitecture.Infrastructure.DatabaseContext.Configurations.Interceptors;
 using CleanArchitecture.Infrastructure.DatabaseContext.Configurations.Security;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitecture.Infrastructure.Extensions;
+namespace CleanArchitecture.Infrastructure.DatabaseContext.Configurations;
 
 public static class ModelBuilderExtensions
 {

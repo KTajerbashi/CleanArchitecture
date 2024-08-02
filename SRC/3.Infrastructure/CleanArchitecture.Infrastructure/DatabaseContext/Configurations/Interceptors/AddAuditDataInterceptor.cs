@@ -1,5 +1,4 @@
 ﻿using CleanArchitecture.Application.BaseApplication.UserManagement;
-using CleanArchitecture.Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 

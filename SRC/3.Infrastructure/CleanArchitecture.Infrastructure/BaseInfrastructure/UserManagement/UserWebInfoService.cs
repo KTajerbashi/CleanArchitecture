@@ -7,66 +7,66 @@ public sealed class UserWebInfoService : IUserWebInfoRepositories
 {
     public AuthenticateResponse Authenticate(AuthenticateRequest model)
     {
-        throw new NotImplementedException();
+        return new AuthenticateResponse(new UserDTO(),"");
     }
 
     public Task<AuthenticateResponse?> AuthenticateAsync(AuthenticateRequest model)
     {
-        throw new NotImplementedException();
+        return Task.FromResult(Authenticate(model));
     }
 
     public string? GetClaim(string claimType)
     {
-        throw new NotImplementedException();
+        return "";
     }
 
     public string GetFirstName()
     {
-        throw new NotImplementedException();
+        return "";
     }
 
     public string GetLastName()
     {
-        throw new NotImplementedException();
+        return "";
     }
 
     public string GetToken()
     {
-        throw new NotImplementedException();
+        return "";
     }
 
     public string GetUserAgent()
     {
-        throw new NotImplementedException();
+        return "";
     }
 
     public string GetUserIp()
     {
-        throw new NotImplementedException();
+        return "";
     }
 
     public string GetUsername()
     {
-        throw new NotImplementedException();
+        return "";
     }
 
     public bool IsCurrentUser(string userId)
     {
-        throw new NotImplementedException();
+        return false;
     }
 
     public string UserId()
     {
-        throw new NotImplementedException();
+        return "1";
     }
 
     public string UserIdOrDefault()
     {
-        throw new NotImplementedException();
+        return "1";
     }
 
     public string UserIdOrDefault(string defaultValue)
     {
-        throw new NotImplementedException();
+        return "1";
     }
 }

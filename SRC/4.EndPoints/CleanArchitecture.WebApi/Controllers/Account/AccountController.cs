@@ -1,167 +1,83 @@
-﻿using CleanArchitecture.Application.BaseApplication.UserManagement;
-using CleanArchitecture.Domain.Security.Entities;
+﻿using CleanArchitecture.Application.Repositories.Identity;
+using CleanArchitecture.Application.Repositories.Identity.Models.DTOs;
 using CleanArchitecture.WebApi.BaseEndPoints;
-using CleanArchitecture.WebApi.Controllers.Account.Models;
-using CleanArchitecture.WebApi.UserManagement.Repositories;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace CleanArchitecture.WebApi.Controllers.Account;
 
 public class AccountController : BaseController
 {
     private readonly IIdentityService _identityService;
-    private readonly IUserWebInfoRepositories _userInfoService;
-    public AccountController(IIdentityService identityService, IUserWebInfoRepositories userInfoService)
+    private readonly ILogger<AccountController> _logger;
+
+    public AccountController(IIdentityService identityService, ILogger<AccountController> logger)
     {
         _identityService = identityService;
-        _userInfoService = userInfoService;
+        _logger = logger;
     }
 
-    [HttpPost("Register")]
-    public async Task<IActionResult> Register(RegisterModel model)
-    {
-        if (!ModelState.IsValid)
-        {
-            return await OkResultAsync(ModelState);
-        }
-        var entity = new UserEntity
-        {
-            FirstName = model.FirstName,
-            LastName = model.LastName,
-            Email = model.Email,
-            UserName = model.Email,
-            AvatarFile = model.AvatarFile,
-            SignFile = model.SignFile,
-            NationalCode = model.NationalCode,
-            Key = Guid.NewGuid()
-        };
-
-        var result = await _identityService.UserManager.CreateAsync(entity,model.Password);
-        return await OkResultAsync(result);
-    }
-
-    [HttpGet("GetProfile")]
-    [Authorize]
-    public Task<IActionResult> GetProfile()
-    {
-        return OkResultAsync(User);
-    }
-
-    [HttpGet("GetProfileFree")]
-    public Task<IActionResult> GetProfileFree()
-    {
-        var model = new
-        {
-            Token = _userInfoService.GetToken(),
-            UserAgent = _userInfoService.GetUserAgent(),
-            UserIp = _userInfoService.GetUserIp(),
-            UserId = _userInfoService.UserId(),
-            FirstName = _userInfoService.GetFirstName(),
-            LastName = _userInfoService.GetLastName(),
-            UserName = _userInfoService.GetUsername(),
-            Claim = _userInfoService.GetClaim(""),
-            IsCurrentUser = _userInfoService.IsCurrentUser("1"),
-            UserIdOrDefault = _userInfoService.UserIdOrDefault(),
-            UserIdOrDefault1 = _userInfoService.UserIdOrDefault("1"),
-        };
-        return OkResultAsync(model);
-    }
-
-    /// <summary>
-    /// Check is Current User Authenticate
-    /// </summary>
-    /// <returns>true or false</returns>
-    [HttpGet("IsAuthenticated")]
-    public Task<IActionResult> IsAuthenticated() => OkResultAsync(User.Identity.IsAuthenticated);
-
-    [HttpPost("DisActive")]
-    public Task<IActionResult> DisActive() => OkResultAsync("DisActive");
-
-    [HttpGet("AccessDenied")]
-    public Task<IActionResult> AccessDenied() => OkResultAsync("AccessDenied");
-
-
-
-    /// <summary>
-    /// Login User.
-    /// </summary>
-    /// <remarks>
-    /// Sample request:
-    /// 
-    ///     POST api/Account/Login
-    ///     {
-    ///       "userName": "User",
-    ///       "password": "User@123",
-    ///       "returnUrl": "/",
-    ///       "isRemember": true
-    ///     }
-    /// </remarks>
-    /// <param name="model"></param>   
-    /// <response code="201">Returns the newly created item</response>
-    /// <response code="400">If the item is null</response>    
     [HttpPost("Login")]
-    [Produces("application/json")]
-    public async Task<IActionResult> Login(LoginModel model)
+    public async Task<IActionResult> Login(LoginDTO model)
     {
-        if (!ModelState.IsValid)
-        {
-            return await OkResultAsync(model);
-        }
-        var entity = await _identityService.UserManager.FindByNameAsync(model.UserName) ?? default;
-        if (entity is null)
-        {
-            return await OkResultAsync("کاربر یافت نشده است");
-        }
-        _identityService.SignInManager.SignOutAsync();
-        var result = await _identityService.SignInManager.PasswordSignInAsync(entity, model.Password,model.IsRemember,true);
-        if (result.Succeeded)
-        {
-            if (result.RequiresTwoFactor)
-            {
-                return await OkResultAsync(result);
-            }
-            if (result.IsLockedOut)
-            {
-                return await OkResultAsync(result);
-            }
-        }
-        return await OkResultAsync(result);
+        return await OkResultAsync(await _identityService.LoginAccount(model));
     }
 
     [HttpGet("SignOut")]
-    public Task<IActionResult> SignOut()
+    public async Task<IActionResult> SignOut()
     {
-        return OkResultAsync(_identityService.SignInManager.SignOutAsync());
+        return await OkResultAsync(_identityService.SignOut());
     }
 
-
-    [HttpPost("LoginAsync")]
-    public async Task<IActionResult> LoginAsync(LoginModel model)
+    [HttpPost("Register")]
+    public async Task<IActionResult> Register(RegisterDTO model)
     {
-        var result = await _identityService.SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.IsRemember, lockoutOnFailure: false);
-
-        if (result.Succeeded)
-        {
-            var user = await _identityService.UserManager.FindByNameAsync(model.UserName);
-            var roles = await _identityService.UserManager.GetRolesAsync(user);
-
-            var claims = new List<Claim>{new Claim(ClaimTypes.Name, user.UserName)};
-
-            roles.ToList().ForEach(role => claims.Add(new Claim(ClaimTypes.Role, role)));
-            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
-
-            //await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
-            //await HttpContext.SignInAsync(IdentityConstants.ApplicationScheme, new ClaimsPrincipal(identity));
-
-            return await OkResultAsync(result);
-        }
-        return Unauthorized();
+        return await OkResultAsync(await _identityService.Register(model));
     }
 
+    [HttpGet("ReadProfile")]
+    [Authorize]
+    public async Task<IActionResult> ReadProfile(long Id)
+    {
+        return await OkResultAsync(await _identityService.ReadProfile(Id));
+    }
+
+    [HttpGet("IsAuthenticated")]
+    public async Task<IActionResult> IsAuthenticated()
+    {
+        return await OkResultAsync(User.Identity.IsAuthenticated);
+    }
+
+    [HttpGet("GetClaims")]
+    public async Task<IActionResult> GetClaims()
+    {
+        return await OkResultAsync(User.Claims.ToList());
+    }
+
+    [HttpGet("GetRoles")]
+    public async Task<IActionResult> GetRoles(long Id)
+    {
+        return await OkResultAsync(_identityService.GetUserRoles(Id));
+    }
+
+    [HttpGet("AccessAdmin")]
+    [Authorize(Roles = "Admin")]
+    public Task<IActionResult> AccessAdmin()
+    {
+        return OkResultAsync("AccessAdmin");
+    }
+
+    [HttpGet("AccessUser")]
+    [Authorize(Roles = "User")]
+    public Task<IActionResult> AccessUser()
+    {
+        return OkResultAsync("AccessUser");
+    }
+
+    [HttpGet("AccessAuthorize")]
+    [Authorize(Roles = "User,Admin")]
+    public Task<IActionResult> AccessAuthorize()
+    {
+        return OkResultAsync("AccessAuthorize");
+    }
 }

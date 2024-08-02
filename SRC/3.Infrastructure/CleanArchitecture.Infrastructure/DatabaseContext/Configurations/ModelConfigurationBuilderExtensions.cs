@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitecture.Infrastructure.Extensions;
+namespace CleanArchitecture.Infrastructure.DatabaseContext.Configurations;
 
 public static class ModelConfigurationBuilderExtensions
 {

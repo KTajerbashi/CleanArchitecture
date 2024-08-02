@@ -3,7 +3,7 @@ using CleanArchitecture.Domain.BasesDomain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace CleanArchitecture.Infrastructure.Extensions;
+namespace CleanArchitecture.Infrastructure.DatabaseContext.Configurations.Interceptors;
 
 public static class AuditableShadowProperties
 {

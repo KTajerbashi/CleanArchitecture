@@ -1,15 +1,14 @@
-﻿using CleanArchitecture.WebApi.Extensions.DependencyInjections;
+﻿using CleanArchitecture.Application.Extensions.DependencyInjections;
+using CleanArchitecture.Infrastructure.Extensions.DependencyInjections;
 using CleanArchitecture.WebApi.Extensions.Identity;
-using CleanArchitecture.WebApi.Extensions.Identity.Extensions;
 using CleanArchitecture.WebApi.Extensions.Swagger;
 using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
-using CleanArchitecture.WebApi.UserManagement.DependencyInjection;
 using Microsoft.Net.Http.Headers;
 using ObjectMapper.Implementations.Extensions.DependencyInjection;
 using Serilog;
 using System.Text.Json.Serialization;
 
-namespace CleanArchitecture.WebApi.Extensions.StartUp;
+namespace CleanArchitecture.WebApi.Extensions;
 
 public static class ServiceCollection
 {
@@ -18,20 +17,20 @@ public static class ServiceCollection
         try
         {
             IConfiguration configuration = builder.Configuration;
-          
+
             //  Add All Web Application
-            builder.Services.AddWebApiCore("CleanArchitecture");
-            
+            builder.Services.AddWebApiCore(configuration, "CleanArchitecture");
+
+            builder.Services.AddDataAccess(configuration);
+
+            builder.Services.AddApplicationServices();
+
             builder.Host.UseSerilog((context, service, configuration) =>
             {
                 configuration.WriteTo.Console();
                 configuration.WriteTo.File($"Log_{DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}.log");
                 configuration.WriteTo.File($"Log_{DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}.txt");
             });
-
-            builder.Services.AddApplicationContainer();
-
-            builder.Services.AddInfrastructureContainer(configuration);
 
             builder.Services.AddEndpointsApiExplorer();
 
@@ -43,9 +42,7 @@ public static class ServiceCollection
 
             builder.Services.AddHttpContextAccessor();
 
-            builder.Services.AddIdentityServiceConfiguration(configuration);
-
-            builder.Services.AddUserManagement(configuration, false);
+            builder.Services.AddAuthorizationService(configuration);
 
             builder.Services.AddSwaggerExtension(configuration, "Swagger");
 
