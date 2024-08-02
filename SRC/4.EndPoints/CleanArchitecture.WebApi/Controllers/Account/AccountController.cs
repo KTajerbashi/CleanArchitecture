@@ -4,7 +4,7 @@ using CleanArchitecture.WebApi.Controllers.Account.Models;
 using CleanArchitecture.WebApi.UserManagement.Repositories;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -46,16 +46,42 @@ public class AccountController : BaseController
         return OkResultAsync(User);
     }
 
+    /// <summary>
+    /// Check is Current User Authenticate
+    /// </summary>
+    /// <returns>true or false</returns>
     [HttpGet("IsAuthenticated")]
     public Task<IActionResult> IsAuthenticated() => OkResultAsync(User.Identity.IsAuthenticated);
 
     [HttpPost("DisActive")]
+    [Authorize]
     public Task<IActionResult> DisActive() => OkResultAsync("DisActive");
 
     [HttpGet("AccessDenied")]
+    [Authorize]
     public Task<IActionResult> AccessDenied() => OkResultAsync("AccessDenied");
 
+
+
+    /// <summary>
+    /// Login User.
+    /// </summary>
+    /// <remarks>
+    /// Sample request:
+    /// 
+    ///     POST api/Account/Login
+    ///     {
+    ///       "userName": "User",
+    ///       "password": "User@123",
+    ///       "returnUrl": "/",
+    ///       "isRemember": true
+    ///     }
+    /// </remarks>
+    /// <param name="model"></param>   
+    /// <response code="201">Returns the newly created item</response>
+    /// <response code="400">If the item is null</response>    
     [HttpPost("Login")]
+    [Produces("application/json")]
     public async Task<IActionResult> Login(LoginModel model)
     {
         if (!ModelState.IsValid)

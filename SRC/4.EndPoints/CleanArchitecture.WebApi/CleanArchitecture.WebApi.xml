@@ -1,1 +1,33 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CleanArchitecture.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:CleanArchitecture.WebApi.Controllers.Account.AccountController.IsAuthenticated">
+            <summary>
+            Check is Current User Authenticate
+            </summary>
+            <returns>true or false</returns>
+        </member>
+        <member name="M:CleanArchitecture.WebApi.Controllers.Account.AccountController.Login(CleanArchitecture.WebApi.Controllers.Account.Models.LoginModel)">
+            <summary>
+            Login User.
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST api/Account/Login
+                {
+                  "userName": "User",
+                  "password": "User@123",
+                  "returnUrl": "/",
+                  "isRemember": true
+                }
+            </remarks>
+            <param name="model"></param>   
+            <response code="201">Returns the newly created item</response>
+            <response code="400">If the item is null</response>    
+        </member>
+    </members>
+</doc>

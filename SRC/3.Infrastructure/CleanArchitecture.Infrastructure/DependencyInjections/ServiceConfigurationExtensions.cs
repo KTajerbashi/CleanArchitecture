@@ -23,7 +23,8 @@ public static class ServiceConfigurationExtensions
         {
             config
             .UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
-            .AddInterceptors(new AuditingSaveChangesInterceptor())
+            .AddInterceptors(new AddAuditDataInterceptor())
+            //.EnableSensitiveDataLogging()
             ;
         });
         return services;
