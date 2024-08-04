@@ -1,11 +1,10 @@
-﻿using CleanArchitecture.WebApi.Extensions.Swagger.Options;
-using Microsoft.Extensions.DependencyInjection;
+﻿using CleanArchitecture.WebApi.Extensions.Providers.Swagger;
+using CleanArchitecture.WebApi.Extensions.Providers.Swagger.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using System.Reflection;
 
-namespace CleanArchitecture.WebApi.Extensions.Swagger;
+namespace CleanArchitecture.WebApi.Extensions.Providers.Swagger;
 
 public static class SwaggerExtension
 {
@@ -13,7 +12,7 @@ public static class SwaggerExtension
     {
         services.AddSwaggerGen(option =>
         {
-            option.AddSecurityDefinition("oauth2",new OpenApiSecurityScheme
+            option.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
             {
                 In = ParameterLocation.Header,
                 Name = "Authorization",

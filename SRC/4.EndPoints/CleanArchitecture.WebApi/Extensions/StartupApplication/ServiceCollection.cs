@@ -1,14 +1,16 @@
 ﻿using CleanArchitecture.Application.Extensions.DependencyInjections;
 using CleanArchitecture.Infrastructure.Extensions.DependencyInjections;
-using CleanArchitecture.WebApi.Extensions.Identity;
-using CleanArchitecture.WebApi.Extensions.Swagger;
+using CleanArchitecture.WebApi.Extensions.ApiSettings;
+using CleanArchitecture.WebApi.Extensions.Providers.Identity;
+using CleanArchitecture.WebApi.Extensions.Providers.Swagger;
 using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
 using Microsoft.Net.Http.Headers;
 using ObjectMapper.Implementations.Extensions.DependencyInjection;
 using Serilog;
+using BackgroundTaskProvider.HangfireProvider.Extension;
 using System.Text.Json.Serialization;
 
-namespace CleanArchitecture.WebApi.Extensions;
+namespace CleanArchitecture.WebApi.Extensions.StartupApplication;
 
 public static class ServiceCollection
 {
@@ -34,7 +36,9 @@ public static class ServiceCollection
 
             builder.Services.AddEndpointsApiExplorer();
 
-            builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+            builder.Services.AddControllers()
+                //.AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve)
+                ;
 
             builder.Services.AddEndpointsApiExplorer();
 
@@ -45,6 +49,8 @@ public static class ServiceCollection
             builder.Services.AddAuthorizationService(configuration);
 
             builder.Services.AddSwaggerExtension(configuration, "Swagger");
+
+            builder.Services.AddHangfireService(configuration);
 
             return builder.Build();
         }
@@ -65,8 +71,6 @@ public static class ServiceCollection
             app.UseExceptionHandler("/Home/Error");
             app.UseHsts();
         }
-        //app.UseMiddleware<JwtMiddleware>();
-
         app.UseMiddleware<ExceptionMiddleware>();
 
         app.UseHttpsRedirection();
@@ -88,6 +92,8 @@ public static class ServiceCollection
             .AllowAnyHeader()
             .WithHeaders(HeaderNames.ContentType);
         });
+
+        app.UseHangfire();
 
         app.MapControllers();
 

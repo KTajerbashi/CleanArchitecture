@@ -1,4 +1,4 @@
-using CleanArchitecture.WebApi.Extensions;
+using CleanArchitecture.WebApi.Extensions.StartupApplication;
 
 StartUpApplication.StartApplication(() =>
 {

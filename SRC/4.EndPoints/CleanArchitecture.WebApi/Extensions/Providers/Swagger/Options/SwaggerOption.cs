@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.WebApi.Extensions.Swagger.Options;
+﻿namespace CleanArchitecture.WebApi.Extensions.Providers.Swagger.Options;
 
 
 public class SwaggerOption

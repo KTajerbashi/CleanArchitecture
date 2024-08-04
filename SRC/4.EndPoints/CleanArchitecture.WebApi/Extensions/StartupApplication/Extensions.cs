@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyModel;
 using System.Reflection;
 
-namespace CleanArchitecture.WebApi.Extensions;
+namespace CleanArchitecture.WebApi.Extensions.StartupApplication;
 
 public static class Extensions
 {

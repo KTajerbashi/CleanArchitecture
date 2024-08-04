@@ -1,52 +1,37 @@
 ﻿using CleanArchitecture.Domain.Security.Entities;
 using CleanArchitecture.Infrastructure.DatabaseContext;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace CleanArchitecture.WebApi.Extensions.Identity;
+namespace CleanArchitecture.WebApi.Extensions.Providers.Identity;
 
 public static class IdentityExtensions
 {
     public static IServiceCollection AddAuthorizationService(this IServiceCollection services, IConfiguration configuration)
-    {
-        return services
+        => services
             .AddIdentityService(configuration)
+            .AddOpenIdConnect()
+            //.AddJWTService(configuration)
+            .AddIdentityOption()
             .AddCookieService()
             .AddPoliciesService()
             ;
-    }
 
     private static IServiceCollection AddIdentityService(this IServiceCollection services, IConfiguration configuration)
     {
-
         services.AddIdentity<UserEntity, RoleEntity>()
             .AddEntityFrameworkStores<CleanArchitectureDb>()
             .AddSignInManager()
             .AddRoles<RoleEntity>();
+        return services;
+    }
 
-        services.AddAuthentication(option =>
-        {
-            option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-        }).AddJwtBearer(option =>
-        {
-            option.TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                ValidIssuer = configuration["JWT:Issuer"],
-                ValidAudience = configuration["JWT:Audience"],
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"])),
-            };
-        });
-        services.AddAuthorization(option =>
-        {
-        });
-
+    private static IServiceCollection AddIdentityOption(this IServiceCollection services)
+    {
         services.Configure<IdentityOptions>(options =>
         {
             // Password settings
@@ -73,6 +58,56 @@ public static class IdentityExtensions
         return services;
     }
 
+    private static IServiceCollection AddJWTService(this IServiceCollection services, IConfiguration configuration)
+    {
+        services
+            .AddAuthentication(option =>
+            {
+                option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(option =>
+            {
+                option.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = configuration["JWT:Issuer"],
+                    ValidAudience = configuration["JWT:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"])),
+                };
+            });
+        services.AddAuthorization(option =>
+        {
+        });
+        return services;
+    }
+
+    private static IServiceCollection AddOpenIdConnect(this IServiceCollection services)
+    {
+        services
+            .AddAuthentication(cfg =>
+            {
+                cfg.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                cfg.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
+            })
+            .AddCookie()
+            .AddOpenIdConnect(cfg =>
+            {
+                cfg.Authority = "https://demo.identityserver.io";
+                cfg.ClientId = "interactive.confidential";
+                cfg.ClientSecret = "secret";
+                cfg.ResponseType = "code";
+                cfg.UsePkce = true;
+                cfg.Scope.Clear();
+                cfg.Scope.Add("openid");
+                cfg.Scope.Add("profile");
+            });
+        return services;
+    }
+
     private static IServiceCollection AddCookieService(this IServiceCollection services)
     {
         services.ConfigureApplicationCookie(options =>
@@ -96,6 +131,12 @@ public static class IdentityExtensions
 
             options.AddPolicy("UserOnly", policy =>
                 policy.RequireRole("User"));
+
+            options.AddPolicy("Hangfire", cfgPolicy =>
+            {
+                cfgPolicy.AddRequirements().RequireAuthenticatedUser();
+                cfgPolicy.AddAuthenticationSchemes(OpenIdConnectDefaults.AuthenticationScheme);
+            });
         });
         return services;
     }

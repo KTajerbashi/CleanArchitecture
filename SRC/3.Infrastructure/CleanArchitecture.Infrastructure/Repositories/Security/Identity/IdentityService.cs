@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using ObjectMapper.Abstraction;
+using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -56,11 +57,18 @@ public class IdentityService(
         bool checkUserPasswords = await userManager.CheckPasswordAsync(getUser, model.Password);
         if (!checkUserPasswords)
             return new LoginResponse(false, null!, "Invalid email/password");
-
+        var checkLogin = await signInManager.PasswordSignInAsync(getUser,model.Password,model.IsRemember,true);
+        if (!checkLogin.Succeeded)
+            return new LoginResponse(false, null!, "Invalid account");
         var getUserRole = await userManager.GetRolesAsync(getUser);
+
+        var userSessionRoles = new UserSessionWithRoles(getUser.Id, getUser.UserName, getUser.Email, getUserRole.ToList());
         var userSession = new UserSession(getUser.Id, getUser.UserName, getUser.Email, getUserRole.First());
+
+        string tokenRoles = GenerateTokenRoles(userSessionRoles);
         string token = GenerateToken(userSession);
-        return new LoginResponse(true, token!, "Login completed");
+        string result = $"[{token}],[{tokenRoles}]";
+        return new LoginResponse(true, result!, "Login completed");
     }
 
     public Task<GeneralResponse> PasswordSignInAsync(UserDTO entity, string password, bool isRemember, bool failLockOutEnd)
@@ -105,7 +113,7 @@ public class IdentityService(
         {
             var checkUser = await roleManager.FindByNameAsync("User");
             if (checkUser is null)
-                await roleManager.CreateAsync(new RoleEntity() { Name = "User",Key=Guid.NewGuid(),Title="کاربر" });
+                await roleManager.CreateAsync(new RoleEntity() { Name = "User", Key = Guid.NewGuid(), Title = "کاربر" });
 
             await userManager.AddToRoleAsync(newUser, "User");
             return new GeneralResponse(true, "Account Created");
@@ -128,6 +136,31 @@ public class IdentityService(
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.Role, user.Role)
             };
+        var token = new JwtSecurityToken(
+                issuer: configuration["Jwt:Issuer"],
+                audience: configuration["Jwt:Audience"],
+                claims: userClaims,
+                expires: DateTime.Now.AddDays(1),
+                signingCredentials: credentials
+                );
+        return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+    private string GenerateTokenRoles(UserSessionWithRoles user)
+    {
+        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]!));
+        var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+        var RoleClaims =new List<Claim>();
+        foreach (var item in user.Roles)
+        {
+            RoleClaims.Add(new Claim(ClaimTypes.Role, item));
+        }
+        var userClaims = new List<Claim>()
+        {
+            new Claim(ClaimTypes.NameIdentifier, $"{user.Id}"),
+            new Claim(ClaimTypes.Name, user.Name),
+            new Claim(ClaimTypes.Email, user.Email),
+        };
+        userClaims.AddRange(RoleClaims);
         var token = new JwtSecurityToken(
                 issuer: configuration["Jwt:Issuer"],
                 audience: configuration["Jwt:Audience"],
