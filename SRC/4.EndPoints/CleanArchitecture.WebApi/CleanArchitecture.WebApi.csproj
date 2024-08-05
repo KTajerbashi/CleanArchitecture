@@ -5,7 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile>C:\Users\Tajer\Desktop\File\Visual Studio\GitHub\KTajerbashi\CleanArchitecture\SRC\4.EndPoints\CleanArchitecture.WebApi\CleanArchitecture.WebApi.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

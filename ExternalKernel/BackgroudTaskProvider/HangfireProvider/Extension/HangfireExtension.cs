@@ -38,18 +38,6 @@ public static class HangfireExtension
     {
         var Configuration = app.Configuration;
 
-        app.Use(async (context, next) =>
-        {
-            if (context.Request.Path.Equals("/hangfire", StringComparison.OrdinalIgnoreCase)
-            && !context.User.Identity.IsAuthenticated)
-            {
-                await context.ChallengeAsync();
-                return;
-            }
-
-            await next();
-        });
-
         app.UseHangfireServer();
 
         app.UseHangfireDashboard("/dashboard", new DashboardOptions
@@ -57,19 +45,9 @@ public static class HangfireExtension
             DashboardTitle = "Dashboard CleanArchitecture"
         });
 
-        app.UseHangfireDashboard("/dashboard/admin", new DashboardOptions
+        app.UseHangfireDashboard("/dashboard.admin", new DashboardOptions
         {
-            DashboardTitle = "Admin Dashboard",
-            Authorization = new IDashboardAuthorizationFilter[] { new AuthenticationHangfireFilter() }
+            Authorization = new[] { new AuthenticationHangfireFilter() }
         });
-
-        //app.UseHangfireDashboard("/dashboard/JWT", new DashboardOptions
-        //{
-        //    DashboardTitle = "JWT Dashboard",
-        //    Authorization = new[] {new AuthenticationHangfireJWTFilter()}
-        //});
-
-        app.MapHangfireDashboard().RequireAuthorization("Hangfire");
-
     }
 }

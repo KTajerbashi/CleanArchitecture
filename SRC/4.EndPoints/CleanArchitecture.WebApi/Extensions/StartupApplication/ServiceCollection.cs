@@ -9,6 +9,8 @@ using ObjectMapper.Implementations.Extensions.DependencyInjection;
 using Serilog;
 using BackgroundTaskProvider.HangfireProvider.Extension;
 using System.Text.Json.Serialization;
+using Hangfire;
+using BackgroundTaskProvider.HangfireProvider.Filters;
 
 namespace CleanArchitecture.WebApi.Extensions.StartupApplication;
 
@@ -81,6 +83,11 @@ public static class ServiceCollection
 
         app.UseIdentity();
 
+        app.UseHangfire();
+        //app.UseHangfireDashboard("/hangfire", new DashboardOptions
+        //{
+        //    Authorization = new[] { new AuthenticationHangfireFilter() }
+        //});
         app.UseSwaggerUI("Swagger");
 
         app.UseCors(policy =>
@@ -93,8 +100,7 @@ public static class ServiceCollection
             .WithHeaders(HeaderNames.ContentType);
         });
 
-        app.UseHangfire();
-
+       
         app.MapControllers();
 
         return app;

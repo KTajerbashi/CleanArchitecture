@@ -245,8 +245,8 @@ namespace CleanArchitecture.Infrastructure.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "CreatedByUserId", "CreatedDateTime", "IsActive", "Key", "ModifiedByUserId", "ModifiedDateTime", "Name", "NormalizedName", "Title" },
                 values: new object[,]
                 {
-                    { 1L, null, "1", new DateTime(2024, 8, 2, 20, 59, 15, 300, DateTimeKind.Local).AddTicks(5598), true, new Guid("bd61a534-0aaf-4b97-901d-1e5a452be9af"), "1", new DateTime(2024, 8, 2, 17, 29, 15, 300, DateTimeKind.Utc).AddTicks(5616), "Admin", "ADMIN", "ادمین" },
-                    { 2L, null, "1", new DateTime(2024, 8, 2, 20, 59, 15, 300, DateTimeKind.Local).AddTicks(5622), true, new Guid("2e6b6529-53ad-4372-8083-9b4ce6a2a1a4"), "1", new DateTime(2024, 8, 2, 17, 29, 15, 300, DateTimeKind.Utc).AddTicks(5623), "User", "USER", "کاربر" }
+                    { 1L, null, "1", new DateTime(2024, 8, 5, 10, 19, 56, 656, DateTimeKind.Local).AddTicks(8571), true, new Guid("d9eaa319-1c0c-44c6-8160-0a5a10d68c5a"), "1", new DateTime(2024, 8, 5, 6, 49, 56, 656, DateTimeKind.Utc).AddTicks(8586), "Admin", "ADMIN", "ادمین" },
+                    { 2L, null, "1", new DateTime(2024, 8, 5, 10, 19, 56, 656, DateTimeKind.Local).AddTicks(8607), true, new Guid("8ef9cf6b-9c8a-419a-b952-af356d121535"), "1", new DateTime(2024, 8, 5, 6, 49, 56, 656, DateTimeKind.Utc).AddTicks(8607), "User", "USER", "کاربر" }
                 });
 
             migrationBuilder.InsertData(
@@ -255,8 +255,8 @@ namespace CleanArchitecture.Infrastructure.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "AvatarFile", "ConcurrencyStamp", "CreatedByUserId", "CreatedDateTime", "Email", "EmailConfirmed", "FirstName", "Gender", "IsActive", "Key", "LastName", "LockoutEnabled", "LockoutEnd", "ModifiedByUserId", "ModifiedDateTime", "NationalCode", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "SignFile", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { 1L, 0, "Null", "aa316dcb-cbc2-4fa9-87bf-0e57086e03dc", "1", new DateTime(2024, 8, 2, 20, 59, 15, 392, DateTimeKind.Local).AddTicks(6644), "Admin@mail.com", false, "ادمین", (byte)0, true, new Guid("eb3f8472-3962-4a1f-a5b5-b7be8720e002"), "ادمین", true, null, "1", new DateTime(2024, 8, 2, 17, 29, 15, 392, DateTimeKind.Utc).AddTicks(6661), "1020304050", "ADMIN@MAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEAMJKgVCirntRdF5WqZH0V4VkFSOwvPh8yEWPKu/l8l3rdeN9D+44mI8L41syr/JJQ==", null, false, "b6f522a5-7ada-48f3-bf1b-0df22833b4e3", "Null", false, "Admin" },
-                    { 2L, 0, "Null", "b4c6de49-57be-46d9-824c-83cb9de071a3", "1", new DateTime(2024, 8, 2, 20, 59, 15, 488, DateTimeKind.Local).AddTicks(9306), "User@mail.com", false, "کاربر", (byte)0, true, new Guid("e935f340-163e-4633-b0d9-282c61fa0125"), "کاربر", true, null, "1", new DateTime(2024, 8, 2, 17, 29, 15, 488, DateTimeKind.Utc).AddTicks(9327), "1020304050", "USER@MAIL.COM", "USER", "AQAAAAIAAYagAAAAEAezptjm3P1c3W0c6gOXXXiJ51RdN9w79dT+s4T54VNw+qGspyS+CTW+YI5gbCfwOw==", null, false, "db235a89-903f-4be9-b171-ee64f0a7c447", "Null", false, "User" }
+                    { 1L, 0, "Null", "78314760-b953-4961-894f-f71e670a2499", "1", new DateTime(2024, 8, 5, 10, 19, 56, 743, DateTimeKind.Local).AddTicks(652), "Admin@mail.com", false, "ادمین", (byte)0, true, new Guid("675f8a17-110c-4f25-924d-dce582462be5"), "ادمین", true, null, "1", new DateTime(2024, 8, 5, 6, 49, 56, 743, DateTimeKind.Utc).AddTicks(668), "1020304050", "ADMIN@MAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEGabsW9T7SyMecc03MVcXd88oqU2OfLdYajb8tWnjJtR60PkNfz3VXuNrKIfvlkwpQ==", null, false, "a33e0566-4840-4c44-bb63-f2d0301b9fb7", "Null", false, "Admin" },
+                    { 2L, 0, "Null", "5b6b5fa6-365a-4a42-a28f-b760ebd20e42", "1", new DateTime(2024, 8, 5, 10, 19, 56, 829, DateTimeKind.Local).AddTicks(3092), "User@mail.com", false, "کاربر", (byte)0, true, new Guid("ac332562-e218-417c-87db-0c1060871e0b"), "کاربر", true, null, "1", new DateTime(2024, 8, 5, 6, 49, 56, 829, DateTimeKind.Utc).AddTicks(3108), "1020304050", "USER@MAIL.COM", "USER", "AQAAAAIAAYagAAAAEO+PP4VrNDK37+C50WYBEN1x6CksdMo5OlAoWor9lktSd700ChhFR754hd1I1bUAAA==", null, false, "fe6e9fdd-f7ed-4893-a21a-5ec485440da7", "Null", false, "User" }
                 });
 
             migrationBuilder.InsertData(
@@ -265,8 +265,8 @@ namespace CleanArchitecture.Infrastructure.Migrations
                 columns: new[] { "RoleId", "UserId", "CreatedByUserId", "CreatedDateTime", "EndDate", "Id", "IsActive", "IsDefault", "Key", "ModifiedByUserId", "ModifiedDateTime", "StartDate" },
                 values: new object[,]
                 {
-                    { 1L, 1L, "1", new DateTime(2024, 8, 2, 20, 59, 15, 488, DateTimeKind.Local).AddTicks(9866), new DateTime(2124, 8, 2, 20, 59, 15, 488, DateTimeKind.Local).AddTicks(9825), 1L, true, true, new Guid("5c375fb6-0f7d-4a11-9bdf-85126d726dae"), "1", new DateTime(2024, 8, 2, 17, 29, 15, 488, DateTimeKind.Utc).AddTicks(9868), new DateTime(2024, 8, 2, 20, 59, 15, 488, DateTimeKind.Local).AddTicks(9822) },
-                    { 2L, 2L, "1", new DateTime(2024, 8, 2, 20, 59, 15, 488, DateTimeKind.Local).AddTicks(9874), new DateTime(2124, 8, 2, 20, 59, 15, 488, DateTimeKind.Local).AddTicks(9872), 2L, true, true, new Guid("5c375fb6-0f7d-4a11-9bdf-85126d726dae"), "1", new DateTime(2024, 8, 2, 17, 29, 15, 488, DateTimeKind.Utc).AddTicks(9875), new DateTime(2024, 8, 2, 20, 59, 15, 488, DateTimeKind.Local).AddTicks(9871) }
+                    { 1L, 1L, "1", new DateTime(2024, 8, 5, 10, 19, 56, 829, DateTimeKind.Local).AddTicks(3299), new DateTime(2124, 8, 5, 10, 19, 56, 829, DateTimeKind.Local).AddTicks(3291), 1L, true, true, new Guid("81e02059-8b14-478b-b80a-e33e4209d369"), "1", new DateTime(2024, 8, 5, 6, 49, 56, 829, DateTimeKind.Utc).AddTicks(3299), new DateTime(2024, 8, 5, 10, 19, 56, 829, DateTimeKind.Local).AddTicks(3290) },
+                    { 2L, 2L, "1", new DateTime(2024, 8, 5, 10, 19, 56, 829, DateTimeKind.Local).AddTicks(3304), new DateTime(2124, 8, 5, 10, 19, 56, 829, DateTimeKind.Local).AddTicks(3303), 2L, true, true, new Guid("81e02059-8b14-478b-b80a-e33e4209d369"), "1", new DateTime(2024, 8, 5, 6, 49, 56, 829, DateTimeKind.Utc).AddTicks(3304), new DateTime(2024, 8, 5, 10, 19, 56, 829, DateTimeKind.Local).AddTicks(3302) }
                 });
 
             migrationBuilder.CreateIndex(

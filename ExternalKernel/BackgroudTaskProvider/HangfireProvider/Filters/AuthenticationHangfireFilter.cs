@@ -5,8 +5,10 @@ namespace BackgroundTaskProvider.HangfireProvider.Filters;
 
 public class AuthenticationHangfireFilter : IDashboardAuthorizationFilter
 {
-    public bool Authorize([NotNull] DashboardContext context)
+    public bool Authorize(DashboardContext context)
     {
-        return context.GetHttpContext().User.Identity.IsAuthenticated;
+        var httpContext = context.GetHttpContext();
+        // Allow only authenticated users to see the dashboard
+        return httpContext.User.Identity?.IsAuthenticated ?? false;
     }
 }
