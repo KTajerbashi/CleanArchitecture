@@ -17,6 +17,7 @@
         "@angular-devkit/build-angular": "18.1.1",
         "@angular/cli": "18.1.1",
         "@angular/compiler-cli": "18.1.1",
+        "bootstrap": "^5.3.3",
         "eslint": "^9.8.0",
         "typescript": "^5.5.4"
     },

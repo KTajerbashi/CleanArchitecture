@@ -8,4 +8,6 @@ import { Component, Input } from "@angular/core";
 export default class AppButtonComponent {
     @Input() disabled = false;
     @Input() text!: string;
+    @Input() classStyle!: string;
+
 }

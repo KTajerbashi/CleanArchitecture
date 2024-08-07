@@ -23,17 +23,15 @@ import AppAuth from "src/app/models/auth";
 })
 export default class AppAuthComponent {
     form = inject(FormBuilder).group({
-        username: ["Admin", Validators.required],
+        userName: ["Admin", Validators.required],
         password: ["@Admin#1234", Validators.required],
         returnUrl: ["/", Validators.required],
-        isRemember: [true, Validators.required]
+        isRemember: [true, Validators.required],
     });
 
     constructor(private readonly appAuthService: AppAuthService) { }
 
     auth() {
-        console.log(this.form.value);
-        var data: object = this.form.value;
-        this.appAuthService.auth(data as AppAuth);
+        this.appAuthService.auth(this.form.value as AppAuth);
     }
 }
