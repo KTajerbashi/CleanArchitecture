@@ -47,7 +47,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectMapper", "ExternalKer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extensions.Library", "ExternalKernel\Extensions.Library\Extensions.Library\Extensions.Library.csproj", "{ED240DA7-5EC8-4A03-B396-5CA2A3245224}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundTaskProvider", "ExternalKernel\BackgroudTaskProvider\BackgroundTaskProvider.csproj", "{F5B27AB8-2E93-4B08-B31B-98EAE35D73CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundTaskProvider", "ExternalKernel\BackgroudTaskProvider\BackgroundTaskProvider.csproj", "{F5B27AB8-2E93-4B08-B31B-98EAE35D73CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebServices", "WebServices", "{55C9E215-20E1-448F-811E-4E3968B40E96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SOAP", "SOAP", "{55F78398-4603-4855-896C-2C93D4B6C899}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailProvider.Oragnization", "ExternalKernel\WebServices\SOAP\EmailProvider.Oragnization\EmailProvider.Oragnization.csproj", "{8AC04246-8291-4A18-BDAA-A5EB3515A5D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +109,10 @@ Global
 		{F5B27AB8-2E93-4B08-B31B-98EAE35D73CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5B27AB8-2E93-4B08-B31B-98EAE35D73CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5B27AB8-2E93-4B08-B31B-98EAE35D73CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC04246-8291-4A18-BDAA-A5EB3515A5D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC04246-8291-4A18-BDAA-A5EB3515A5D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC04246-8291-4A18-BDAA-A5EB3515A5D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC04246-8291-4A18-BDAA-A5EB3515A5D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -128,6 +138,9 @@ Global
 		{E15BBF9A-E2EB-4A7B-9F31-36670B4A8576} = {6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}
 		{ED240DA7-5EC8-4A03-B396-5CA2A3245224} = {6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}
 		{F5B27AB8-2E93-4B08-B31B-98EAE35D73CD} = {6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}
+		{55C9E215-20E1-448F-811E-4E3968B40E96} = {6C8D96C1-4D12-4B09-A1E4-2AC0AD4620A8}
+		{55F78398-4603-4855-896C-2C93D4B6C899} = {55C9E215-20E1-448F-811E-4E3968B40E96}
+		{8AC04246-8291-4A18-BDAA-A5EB3515A5D3} = {55F78398-4603-4855-896C-2C93D4B6C899}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A57D86D6-5EF8-4745-9B92-13AE22320AE5}
