@@ -11,6 +11,7 @@ using BackgroundTaskProvider.HangfireProvider.Extension;
 using System.Text.Json.Serialization;
 using Hangfire;
 using BackgroundTaskProvider.HangfireProvider.Filters;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CleanArchitecture.WebApi.Extensions.StartupApplication;
 
@@ -39,6 +40,8 @@ public static class ServiceCollection
             builder.Services.AddEndpointsApiExplorer();
 
             builder.Services.AddControllers()
+                //.AddJsonOptions()
+                //.AddAuthorizationPolicy()
                 //.AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve)
                 ;
 
@@ -53,7 +56,8 @@ public static class ServiceCollection
             builder.Services.AddSwaggerExtension(configuration, "Swagger");
 
             builder.Services.AddHangfireService(configuration);
-
+            builder.Services.AddHangfireService(configuration);
+            builder.Services.AddResponseCompression();
             return builder.Build();
         }
         catch (Exception)
@@ -75,7 +79,13 @@ public static class ServiceCollection
         }
         app.UseMiddleware<ExceptionMiddleware>();
 
+        app.UseHsts().UseHttpsRedirection();
+        
         app.UseHttpsRedirection();
+
+        //app.UseLocalization("en", "pt");
+
+        app.UseResponseCompression();
 
         app.UseStaticFiles();
 
@@ -100,9 +110,8 @@ public static class ServiceCollection
             .WithHeaders(HeaderNames.ContentType);
         });
 
-       
         app.MapControllers();
-
+        app.MapFallbackToFile("index.html");
         return app;
     }
 }
