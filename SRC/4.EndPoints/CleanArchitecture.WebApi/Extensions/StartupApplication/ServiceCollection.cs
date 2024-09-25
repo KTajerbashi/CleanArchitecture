@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Application.Extensions.DependencyInjections;
+﻿using BackgroundTaskProvider.HangfireProvider.Extension;
+using CleanArchitecture.Application.Extensions.DependencyInjections;
 using CleanArchitecture.Infrastructure.Extensions.DependencyInjections;
 using CleanArchitecture.WebApi.Extensions.ApiSettings;
 using CleanArchitecture.WebApi.Extensions.Providers.Identity;
@@ -7,11 +8,6 @@ using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
 using Microsoft.Net.Http.Headers;
 using ObjectMapper.Implementations.Extensions.DependencyInjection;
 using Serilog;
-using BackgroundTaskProvider.HangfireProvider.Extension;
-using System.Text.Json.Serialization;
-using Hangfire;
-using BackgroundTaskProvider.HangfireProvider.Filters;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace CleanArchitecture.WebApi.Extensions.StartupApplication;
 
@@ -80,7 +76,7 @@ public static class ServiceCollection
         app.UseMiddleware<ExceptionMiddleware>();
 
         app.UseHsts().UseHttpsRedirection();
-        
+
         app.UseHttpsRedirection();
 
         //app.UseLocalization("en", "pt");
