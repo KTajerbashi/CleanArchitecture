@@ -2,8 +2,12 @@
 using CleanArchitecture.Application.Providers.MapperProvider.DependencyInjection;
 using CleanArchitecture.Infrastructure.Extensions.DependencyInjections;
 using CleanArchitecture.WebApi.Extensions.DependencyInjection;
+using CleanArchitecture.WebApi.Extensions.Providers.OAuth;
+using CleanArchitecture.WebApi.Extensions.Providers.Swagger;
 using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
 using Microsoft.Net.Http.Headers;
+
+
 namespace CleanArchitecture.WebApi.Extensions.StartupApplication;
 
 public static class ServiceCollection
@@ -13,10 +17,12 @@ public static class ServiceCollection
         try
         {
             IConfiguration configuration = builder.Configuration;
-            
+
             builder.Services.AddWebApplicationService("CleanArchitecture");
-            
+
             builder.Services.AddAutoMapperProfiles(configuration, "AutoMapper");
+
+            builder.Services.AddIdentityServices(configuration, "OAuth");
 
             builder.Services.AddDataAccess(configuration);
 
@@ -31,6 +37,8 @@ public static class ServiceCollection
             builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddResponseCompression();
+
+            builder.Services.AddSwaggerService(configuration, "Swagger");
 
             return builder.Build();
         }
@@ -61,7 +69,11 @@ public static class ServiceCollection
 
         app.UseStaticFiles();
 
+        app.UseIdentity();
+
         app.UseRouting();
+
+        app.UseSwaggerUI("Swagger");
 
         app.UseCors(policy =>
         {

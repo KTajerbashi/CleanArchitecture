@@ -1,11 +1,5 @@
-﻿using CleanArchitecture.Application.BaseApplication.UserManagement;
-using CleanArchitecture.Application.Repositories.Identity;
-using CleanArchitecture.Application.Repositories.Security.User.Repository;
-using CleanArchitecture.Infrastructure.BaseInfrastructure.UserManagement;
-using CleanArchitecture.Infrastructure.DatabaseContext;
+﻿using CleanArchitecture.Infrastructure.DatabaseContext;
 using CleanArchitecture.Infrastructure.DatabaseContext.Configurations.Interceptors;
-using CleanArchitecture.Infrastructure.Repositories.Security.Identity;
-using CleanArchitecture.Infrastructure.Repositories.Security.Users;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,9 +29,9 @@ public static class ServiceConfigurationExtensions
     }
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-        services.AddScoped<IUserWebInfoRepositories, UserWebInfoService>();
-        services.AddScoped<IIdentityService, IdentityService>();
-        services.AddScoped<IUserRepository, UserRepository>();
+        //services.AddScoped<IUserWebInfoRepositories, UserWebInfoService>();
+        //services.AddScoped<IIdentityService, IdentityService>();
+        //services.AddScoped<IUserRepository, UserRepository>();
         return services;
     }
 
