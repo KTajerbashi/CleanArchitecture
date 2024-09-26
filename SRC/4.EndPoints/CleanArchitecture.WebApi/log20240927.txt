@@ -1,0 +1,34 @@
+2024-09-27 01:44:28.834 +03:30 [WRN] The WebRootPath was not found: C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitecture\SRC\4.EndPoints\CleanArchitecture.WebApi\wwwroot. Static files may be unavailable.
+2024-09-27 01:44:28.887 +03:30 [INF] User profile is available. Using 'C:\Users\Tajer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-27 01:44:28.954 +03:30 [WRN] The WebRootPath was not found: C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitecture\SRC\4.EndPoints\CleanArchitecture.WebApi\wwwroot. Static files may be unavailable.
+2024-09-27 01:44:29.053 +03:30 [INF] Now listening on: https://localhost:7162
+2024-09-27 01:44:29.054 +03:30 [INF] Now listening on: http://localhost:5084
+2024-09-27 01:44:29.096 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-27 01:44:29.098 +03:30 [INF] Hosting environment: Development
+2024-09-27 01:44:29.099 +03:30 [INF] Content root path: C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitecture\SRC\4.EndPoints\CleanArchitecture.WebApi
+2024-09-27 01:44:31.389 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7162/swagger - null null
+2024-09-27 01:44:31.453 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7162/swagger/index.html - null null
+2024-09-27 01:44:31.585 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7162/swagger - 499 null null 200.1324ms
+2024-09-27 01:44:31.632 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7162/swagger/index.html - 200 null text/html;charset=utf-8 178.6991ms
+2024-09-27 01:44:31.662 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7162/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-27 01:44:31.665 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7162/swagger/index.js - null null
+2024-09-27 01:44:31.668 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7162/_vs/browserLink - null null
+2024-09-27 01:44:31.682 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7162/swagger/index.js - 200 null application/javascript;charset=utf-8 18.033ms
+2024-09-27 01:44:31.683 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7162/_framework/aspnetcore-browser-refresh.js - 200 13783 application/javascript; charset=utf-8 21.3115ms
+2024-09-27 01:44:31.714 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7162/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.6989ms
+2024-09-27 01:44:31.741 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7162/swagger/favicon-16x16.png - null null
+2024-09-27 01:44:31.756 +03:30 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2024-09-27 01:44:31.758 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7162/swagger/favicon-16x16.png - 499 665 image/png 17.1285ms
+2024-09-27 01:44:31.788 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7162/swagger/v1/swagger.json - null null
+2024-09-27 01:44:31.849 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7162/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 61.8761ms
+2024-09-27 01:44:56.203 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7162/api/User - null 0
+2024-09-27 01:44:56.212 +03:30 [INF] CORS policy execution failed.
+2024-09-27 01:44:56.213 +03:30 [INF] Request origin https://localhost:7162 does not have permission to access the resource.
+2024-09-27 01:44:56.216 +03:30 [INF] Executing endpoint 'CleanArchitecture.WebApi.Controllers.Security.UserController.Create (CleanArchitecture.WebApi)'
+2024-09-27 01:44:56.229 +03:30 [INF] Route matched with {action = "Create", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller CleanArchitecture.WebApi.Controllers.Security.UserController (CleanArchitecture.WebApi).
+2024-09-27 01:44:56.276 +03:30 [INF] Executing action method CleanArchitecture.WebApi.Controllers.Security.UserController.Create (CleanArchitecture.WebApi) - Validation state: "Valid"
+2024-09-27 01:44:56.281 +03:30 [INF] Executed action method CleanArchitecture.WebApi.Controllers.Security.UserController.Create (CleanArchitecture.WebApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.6811ms.
+2024-09-27 01:44:56.287 +03:30 [INF] Executing OkObjectResult, writing value of type 'CleanArchitecture.WebApi.Models._JsonResult`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-27 01:44:56.306 +03:30 [INF] Executed action CleanArchitecture.WebApi.Controllers.Security.UserController.Create (CleanArchitecture.WebApi) in 66.2013ms
+2024-09-27 01:44:56.308 +03:30 [INF] Executed endpoint 'CleanArchitecture.WebApi.Controllers.Security.UserController.Create (CleanArchitecture.WebApi)'
+2024-09-27 01:44:56.310 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7162/api/User - 200 null application/json; charset=utf-8 110.6562ms

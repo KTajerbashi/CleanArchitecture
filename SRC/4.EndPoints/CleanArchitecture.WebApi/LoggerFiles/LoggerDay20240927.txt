@@ -1,0 +1,30 @@
+{"@t":"2024-09-26T22:31:55.0346617Z","@mt":"The WebRootPath was not found: {WebRootPath}. Static files may be unavailable.","@l":"Warning","WebRootPath":"C:\\Users\\Tajer\\Desktop\\GitHub\\KTajerbashi\\CleanArchitecture\\SRC\\4.EndPoints\\CleanArchitecture.WebApi\\wwwroot","EventId":{"Id":16,"Name":"WebRootPathNotFound"},"SourceContext":"Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware","ApplicationName":"YourModuleName"}
+{"@t":"2024-09-26T22:31:55.1214608Z","@mt":"The WebRootPath was not found: {WebRootPath}. Static files may be unavailable.","@l":"Warning","WebRootPath":"C:\\Users\\Tajer\\Desktop\\GitHub\\KTajerbashi\\CleanArchitecture\\SRC\\4.EndPoints\\CleanArchitecture.WebApi\\wwwroot","EventId":{"Id":16,"Name":"WebRootPathNotFound"},"SourceContext":"Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware","ApplicationName":"YourModuleName"}
+{"@t":"2024-09-26T22:31:55.2003582Z","@mt":"Now listening on: {address}","address":"https://localhost:7162","EventId":{"Id":14,"Name":"ListeningOnAddress"},"SourceContext":"Microsoft.Hosting.Lifetime","ApplicationName":"YourModuleName"}
+{"@t":"2024-09-26T22:31:55.2019369Z","@mt":"Now listening on: {address}","address":"http://localhost:5084","EventId":{"Id":14,"Name":"ListeningOnAddress"},"SourceContext":"Microsoft.Hosting.Lifetime","ApplicationName":"YourModuleName"}
+{"@t":"2024-09-26T22:31:55.2352514Z","@mt":"Application started. Press Ctrl+C to shut down.","SourceContext":"Microsoft.Hosting.Lifetime","ApplicationName":"YourModuleName"}
+{"@t":"2024-09-26T22:31:55.2364917Z","@mt":"Hosting environment: {EnvName}","EnvName":"Development","SourceContext":"Microsoft.Hosting.Lifetime","ApplicationName":"YourModuleName"}
+{"@t":"2024-09-26T22:31:55.2376739Z","@mt":"Content root path: {ContentRoot}","ContentRoot":"C:\\Users\\Tajer\\Desktop\\GitHub\\KTajerbashi\\CleanArchitecture\\SRC\\4.EndPoints\\CleanArchitecture.WebApi","SourceContext":"Microsoft.Hosting.Lifetime","ApplicationName":"YourModuleName"}
+2024-09-27 02:02:37.668 +03:30 [WRN] The WebRootPath was not found: C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitecture\SRC\4.EndPoints\CleanArchitecture.WebApi\wwwroot. Static files may be unavailable.
+2024-09-27 02:02:37.754 +03:30 [WRN] The WebRootPath was not found: C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitecture\SRC\4.EndPoints\CleanArchitecture.WebApi\wwwroot. Static files may be unavailable.
+2024-09-27 02:02:37.830 +03:30 [INF] Now listening on: https://localhost:7162
+2024-09-27 02:02:37.832 +03:30 [INF] Now listening on: http://localhost:5084
+2024-09-27 02:02:37.863 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-27 02:02:37.864 +03:30 [INF] Hosting environment: Development
+2024-09-27 02:02:37.865 +03:30 [INF] Content root path: C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitecture\SRC\4.EndPoints\CleanArchitecture.WebApi
+2024-09-27 02:03:02.248 +03:30 [ERR] Something went wrong: System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'CleanArchitecture.WebApi.Controllers.Security.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method4(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at CleanArchitecture.WebApi.Middlewares.ExceptionHandler.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Users\Tajer\Desktop\GitHub\KTajerbashi\CleanArchitecture\SRC\4.EndPoints\CleanArchitecture.WebApi\Middlewares\ExceptionHandler\ExceptionMiddleware.cs:line 21

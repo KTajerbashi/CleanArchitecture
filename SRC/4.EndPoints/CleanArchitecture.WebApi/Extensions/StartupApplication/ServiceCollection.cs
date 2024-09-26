@@ -3,6 +3,7 @@ using CleanArchitecture.Application.Providers.MapperProvider.DependencyInjection
 using CleanArchitecture.Infrastructure.Extensions.DependencyInjections;
 using CleanArchitecture.WebApi.Extensions.DependencyInjection;
 using CleanArchitecture.WebApi.Extensions.Providers.OAuth;
+using CleanArchitecture.WebApi.Extensions.Providers.Serilog;
 using CleanArchitecture.WebApi.Extensions.Providers.Swagger;
 using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
 using Microsoft.Net.Http.Headers;
@@ -17,11 +18,13 @@ public static class ServiceCollection
         try
         {
             IConfiguration configuration = builder.Configuration;
-
-            builder.Services.AddWebApplicationService("CleanArchitecture");
-
+            
+            builder.AddSerilogService(configuration);
+            
             builder.Services.AddAutoMapperProfiles(configuration, "AutoMapper");
 
+            builder.Services.AddWebApplicationService("CleanArchitecture");
+            
             builder.Services.AddIdentityServices(configuration, "OAuth");
 
             builder.Services.AddDataAccess(configuration);
@@ -39,6 +42,7 @@ public static class ServiceCollection
             builder.Services.AddResponseCompression();
 
             builder.Services.AddSwaggerService(configuration, "Swagger");
+
 
             return builder.Build();
         }

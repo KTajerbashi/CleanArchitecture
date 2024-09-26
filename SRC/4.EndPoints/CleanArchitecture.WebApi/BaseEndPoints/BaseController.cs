@@ -9,12 +9,13 @@ namespace CleanArchitecture.WebApi.BaseEndPoints;
 [ApiController]
 public abstract class BaseController : Controller
 {
-    public BaseController()
+    protected readonly ILogger Logger;
+    public BaseController(ILogger logger)
     {
-
+        Logger = logger;
     }
 
-    
+
     public override OkObjectResult Ok([ActionResultObjectValue] object? value)
          => base.Ok(_JsonResult.Success(value ?? true));
 }
@@ -22,5 +23,7 @@ public abstract class BaseController : Controller
 [Authorize]
 public abstract class AuthorizeController : BaseController
 {
-
+    protected AuthorizeController(ILogger logger) : base(logger)
+    {
+    }
 }

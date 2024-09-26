@@ -6,6 +6,10 @@ namespace CleanArchitecture.WebApi.Controllers.Security;
 //public class UserController : AuthorizeController
 public class UserController : BaseController
 {
+    public UserController(ILogger logger) : base(logger)
+    {
+    }
+
     /// <summary>
     /// Create User in System
     /// </summary>
@@ -14,6 +18,7 @@ public class UserController : BaseController
     [HttpPost]
     public IActionResult Create()
     {
+        Logger.LogInformation("Create User");
         return Ok("");
     }
 }
