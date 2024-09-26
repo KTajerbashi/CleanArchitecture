@@ -14,7 +14,7 @@ public static class IdentityExtensions
         IConfiguration configuration, string sectionName)
         => services
         .AddIdentity()
-        .AddIdentityJWT(configuration, sectionName)
+        //.AddIdentityJWT(configuration, sectionName)
         .AddIdentityConfigs()
         .AddIdentityCookies()
         .AddIdentityPolicies();
@@ -25,6 +25,9 @@ public static class IdentityExtensions
             .AddEntityFrameworkStores<CleanArchitectureDb>()
             .AddDefaultTokenProviders()
             ;
+
+        services.AddAuthentication();
+        services.AddAuthorization();
 
         return services;
 
@@ -95,10 +98,12 @@ public static class IdentityExtensions
         services.AddAuthorization();
         return services;
     }
-    public static void UseIdentity(this WebApplication app)
+
+    public static WebApplication UseIdentity(this WebApplication app)
     {
         app.UseAuthentication();
         app.UseAuthorization();
+        return app;
     }
 }
 

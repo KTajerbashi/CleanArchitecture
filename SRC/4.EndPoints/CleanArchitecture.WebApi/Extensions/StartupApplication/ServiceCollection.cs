@@ -85,6 +85,7 @@ public static class ServiceCollection
             .WithHeaders(HeaderNames.ContentType);
         });
 
+
         app.MapControllers();
         app.MapFallbackToFile("index.html");
         return app;
