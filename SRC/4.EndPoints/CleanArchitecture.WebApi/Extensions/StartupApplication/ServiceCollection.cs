@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Application.Extensions.DependencyInjections;
+﻿using BackgroundTaskProvider.HangfireProvider.Extension;
+using CleanArchitecture.Application.Extensions.DependencyInjections;
 using CleanArchitecture.Infrastructure.Extensions.DependencyInjections;
 using CleanArchitecture.WebApi.Middlewares.ExceptionHandler;
 using Microsoft.Net.Http.Headers;
