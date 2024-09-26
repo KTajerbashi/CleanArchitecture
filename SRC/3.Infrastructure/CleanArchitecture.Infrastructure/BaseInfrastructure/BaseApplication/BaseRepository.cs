@@ -3,12 +3,12 @@ using CleanArchitecture.Application.BaseApplication.Models.Views;
 using CleanArchitecture.Application.BaseApplication.Patterns;
 using CleanArchitecture.Application.BaseApplication.Repositories;
 using CleanArchitecture.Application.BaseApplication.UserManagement;
+using CleanArchitecture.Application.Providers.MapperProvider.Abstract;
 using CleanArchitecture.Domain.BasesDomain;
 using CleanArchitecture.Infrastructure.BaseInfrastructure.UserManagement;
 using CleanArchitecture.Infrastructure.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using ObjectMapper.Abstraction;
 using System.Linq.Expressions;
 
 namespace CleanArchitecture.Infrastructure.BaseInfrastructure.BaseApplication;
@@ -31,8 +31,8 @@ public abstract class BaseRepository<TContext, TEntity, TDTO, TView, TId>
     protected readonly IMapperAdapter MapperFacad;
     public IUserWebInfoRepositories CurrentUserInfo => new UserWebInfoService();
     protected BaseRepository(
-        TContext context, 
-        IMapperAdapter mapperFacad, 
+        TContext context,
+        IMapperAdapter mapperFacad,
         ILogger logger)
     {
         this.context = context;

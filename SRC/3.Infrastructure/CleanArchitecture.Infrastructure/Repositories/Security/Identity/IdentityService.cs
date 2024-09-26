@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Application.Repositories.Identity;
+﻿using CleanArchitecture.Application.Providers.MapperProvider.Abstract;
+using CleanArchitecture.Application.Repositories.Identity;
 using CleanArchitecture.Application.Repositories.Identity.Models.DTOs;
 using CleanArchitecture.Application.Repositories.Identity.Models.Responses;
 using CleanArchitecture.Application.Repositories.Security.User.Model.DTOs;
@@ -7,8 +8,6 @@ using CleanArchitecture.Infrastructure.DatabaseContext;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using ObjectMapper.Abstraction;
-using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;

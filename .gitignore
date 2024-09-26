@@ -479,3 +479,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Directory Custome
+*.js

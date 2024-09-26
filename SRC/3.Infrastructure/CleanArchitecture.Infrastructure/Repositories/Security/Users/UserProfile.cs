@@ -9,7 +9,7 @@ public class UserProfile : Profile
 {
     public UserProfile()
     {
-        CreateMap<UserEntity,UserDTO>().ReverseMap();
-        CreateMap<UserEntity,UserView>().ReverseMap();
+        CreateMap<UserEntity, UserDTO>().ReverseMap();
+        CreateMap<UserEntity, UserView>().ReverseMap();
     }
 }
