@@ -2,6 +2,7 @@
 using CleanArchitecture.Application.BaseApplication.Models.Views;
 using CleanArchitecture.Application.BaseApplication.Patterns;
 using CleanArchitecture.Application.BaseApplication.UserManagement;
+using CleanArchitecture.Application.Extensions.DIPattern;
 using CleanArchitecture.Domain.BasesDomain;
 using System.Linq.Expressions;
 

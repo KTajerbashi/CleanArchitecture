@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CleanArchitecture.WebApi.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace CleanArchitecture.WebApi.BaseEndPoints;
 
@@ -11,8 +13,7 @@ public abstract class BaseController : Controller
 
     }
 
-    public async Task<IActionResult> OkResultAsync<T>(T model)
-    {
-        return await Task.FromResult(Ok(model));
-    }
+    
+    public override OkObjectResult Ok([ActionResultObjectValue] object? value)
+         => base.Ok(_JsonResult.Success(value ?? true));
 }
