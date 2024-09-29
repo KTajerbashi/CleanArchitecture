@@ -1,4 +1,6 @@
-﻿using CleanArchitecture.Application.Extensions.DIPattern;
+﻿using CleanArchitecture.Application.BaseApplication.Repositories;
+using CleanArchitecture.Application.Extensions.DIPattern;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyModel;
 using System.Reflection;
 
@@ -9,10 +11,18 @@ public static class DependencyInjectionExtensions
     public static IServiceCollection AddWebApplicationService(this IServiceCollection services, params string[] assemblyNamesForSearch)
     {
         var assemblies = GetAssemblies(assemblyNamesForSearch);
+        //return services.AddRepositoriesServices(assemblies);
         return services.AddLifeDependencies(assemblies);
     }
+
+    public static IServiceCollection AddRepositoriesServices(this IServiceCollection services, IEnumerable<Assembly> assemblies)
+    {
+        assemblies.ToList().ForEach(assembly => services.RegisterAssemblyTypes(assembly, typeof(IBaseRepository<,,,>)));
+        return services;
+    }
+    
     public static IServiceCollection AddLifeDependencies(this IServiceCollection services, IEnumerable<Assembly> assemblies)
-        =>  services.AddWithTransientLifetime(assemblies, typeof(ISingleLifeTime))
+        => services.AddWithTransientLifetime(assemblies, typeof(ISingleLifeTime))
                     .AddWithScopedLifetime(assemblies, typeof(IScopeLifeTime))
                     .AddWithSingletonLifetime(assemblies, typeof(ITransientLifeTime));
 
@@ -60,5 +70,23 @@ public static class DependencyInjectionExtensions
     {
         return assemblyName.Any(d => compilationLibrary.Name.Contains(d))
             || compilationLibrary.Dependencies.Any(d => assemblyName.Any(c => d.Name.Contains(c)));
+    }
+}
+public static class ServiceCollectionExtensions
+{
+    public static IServiceCollection RegisterAssemblyTypes(this IServiceCollection services, Assembly assembly, params Type[] interfaces)
+    {
+        foreach (var type in assembly.GetTypes())
+        {
+            foreach (var interfaceType in interfaces)
+            {
+                if (type.GetInterfaces().Any(i => i.Name == interfaceType.Name))
+                {
+                    services.AddTransient(interfaceType, type);
+                }
+            }
+        }
+
+        return services;
     }
 }

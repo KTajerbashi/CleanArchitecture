@@ -1,6 +1,6 @@
 ﻿namespace CleanArchitecture.Application.BaseApplication.Patterns;
 
-public interface IUnitOfWork
+public interface IUnitOfWork : IDisposable
 {
     /// <summary>
     /// در صورت نیاز به کنترل تراکنش‌ها از این متد جهت شروع تراکنش استفاده می‌شود.

@@ -11,6 +11,6 @@ public static class EntityHelperExtensions
 
         return assembly.GetTypes()
             .Where(t => t.GetInterfaces()
-                         .Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == entityType));
+            .Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == entityType));
     }
 }

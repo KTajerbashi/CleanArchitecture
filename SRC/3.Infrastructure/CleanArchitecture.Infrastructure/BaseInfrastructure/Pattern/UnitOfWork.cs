@@ -3,54 +3,29 @@ using CleanArchitecture.Infrastructure.BaseInfrastructure.BaseDatabaseContexts;
 
 namespace CleanArchitecture.Infrastructure.BaseInfrastructure.Pattern;
 
-public abstract class UnitOfWork<TContext> : IUnitOfWork
+public abstract class UnitOfWork<TContext>(TContext context) : IUnitOfWork
     where TContext : BaseDatabaseContext
 {
 
-    protected TContext Context;
+    protected TContext Context = context;
 
-    protected UnitOfWork(TContext context)
-    {
-        Context = context;
-    }
+    //protected UnitOfWork(TContext context) => Context = context;
 
-    public void BeginTransaction()
-    {
-        Context.Database.BeginTransaction();
-    }
+    public void BeginTransaction() => Context.Database.BeginTransaction();
 
-    public void BeginTransactionAsync()
-    {
-        Context.Database.BeginTransactionAsync();
-    }
+    public void BeginTransactionAsync() => Context.Database.BeginTransactionAsync();
 
-    public void CommitTransaction()
-    {
-        Context.Database.CommitTransaction();
-    }
+    public void CommitTransaction() => Context.Database.CommitTransaction();
 
-    public void CommitTransactionAsync()
-    {
-        Context.Database.CommitTransactionAsync();
-    }
+    public void CommitTransactionAsync() => Context.Database.CommitTransactionAsync();
 
-    public void RollbackTransaction()
-    {
-        Context.Database.RollbackTransaction();
-    }
+    public void Dispose() => Context.Dispose();
 
-    public void RollbackTransactionAsync()
-    {
-        Context.Database.RollbackTransactionAsync();
-    }
+    public void RollbackTransaction() => Context.Database.RollbackTransaction();
 
-    public int SaveChange()
-    {
-        return Context.SaveChanges();
-    }
+    public void RollbackTransactionAsync() => Context.Database.RollbackTransactionAsync();
 
-    public async Task<int> SaveChangeAsync()
-    {
-        return await Context.SaveChangesAsync();
-    }
+    public int SaveChange() => Context.SaveChanges();
+
+    public async Task<int> SaveChangeAsync() => await Context.SaveChangesAsync();
 }
