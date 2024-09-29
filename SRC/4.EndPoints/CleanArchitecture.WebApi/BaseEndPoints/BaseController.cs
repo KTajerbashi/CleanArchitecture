@@ -9,8 +9,8 @@ namespace CleanArchitecture.WebApi.BaseEndPoints;
 [ApiController]
 public abstract class BaseController : Controller
 {
-    protected readonly ILogger Logger;
-    public BaseController(ILogger logger)
+    protected readonly ILogger<BaseController> Logger;
+    public BaseController(ILogger<BaseController> logger)
     {
         Logger = logger;
     }
@@ -23,7 +23,7 @@ public abstract class BaseController : Controller
 [Authorize]
 public abstract class AuthorizeController : BaseController
 {
-    protected AuthorizeController(ILogger logger) : base(logger)
+    protected AuthorizeController(ILogger<AuthorizeController> logger) : base(logger)
     {
     }
 }

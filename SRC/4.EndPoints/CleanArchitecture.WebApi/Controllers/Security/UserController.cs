@@ -6,7 +6,7 @@ namespace CleanArchitecture.WebApi.Controllers.Security;
 //public class UserController : AuthorizeController
 public class UserController : BaseController
 {
-    public UserController(ILogger logger) : base(logger)
+    public UserController(ILogger<UserController> logger) : base(logger)
     {
     }
 
