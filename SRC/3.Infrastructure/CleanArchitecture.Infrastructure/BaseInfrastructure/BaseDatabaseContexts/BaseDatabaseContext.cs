@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitecture.Infrastructure.BaseInfrastructure.BaseDatabaseContext;
+namespace CleanArchitecture.Infrastructure.BaseInfrastructure.BaseDatabaseContexts;
 
 public abstract class BaseDatabaseContext : IdentityDbContext<UserEntity, RoleEntity, long, UserClaimEntity, UserRoleEntity, UserLoginEntity, RoleClaimEntity, UserTokenEntity>
 {

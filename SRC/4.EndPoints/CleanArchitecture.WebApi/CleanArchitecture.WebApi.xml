@@ -4,10 +4,11 @@
         <name>CleanArchitecture.WebApi</name>
     </assembly>
     <members>
-        <member name="M:CleanArchitecture.WebApi.Controllers.Security.UserController.Create">
+        <member name="M:CleanArchitecture.WebApi.Controllers.Security.UserController.Create(CleanArchitecture.Application.Repositories.Security.User.Model.DTOs.UserDTO)">
             <summary>
             Create User in System
             </summary>
+            <param name="model"></param>
             <returns>Key of Record</returns>
             POST : api/User
         </member>

@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Infrastructure.BaseInfrastructure.BaseDatabaseContext;
+﻿using CleanArchitecture.Infrastructure.BaseInfrastructure.BaseDatabaseContexts;
 using CleanArchitecture.Infrastructure.DatabaseContext.Configurations;
 using Microsoft.EntityFrameworkCore;
 

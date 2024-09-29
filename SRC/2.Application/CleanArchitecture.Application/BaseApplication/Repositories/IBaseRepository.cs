@@ -92,13 +92,13 @@ public interface IBaseRepository<TEntity, TDTO, TView, TId> : IUnitOfWork
     /// 
     /// </summary>
     /// <param name="entity"></param>
-    bool AddOrUpdate(TDTO entity);
+    Task<TId> AddOrUpdate(TDTO entity);
     /// <summary>
     /// 
     /// </summary>
     /// <param name="entity"></param>
     /// <returns></returns>
-    Task AddOrUpdateAsync(TDTO entity);
+    Task<TId> AddOrUpdateAsync(TDTO entity);
     #endregion
 
     #region Get
