@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\1.Core\1.Domain\CleanArchitecture.Core.Domain.Library\CleanArchitecture.Core.Domain.Library.csproj" />
     <ProjectReference Include="..\..\1.Core\2.Application\CleanArchitecture.Core.Application.Library\CleanArchitecture.Core.Application.Library.csproj" />
   </ItemGroup>
