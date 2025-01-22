@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\1.Core\2.Application\CleanArchitecture.Core.Application.Library\CleanArchitecture.Core.Application.Library.csproj" />
+    <ProjectReference Include="..\..\2.Infrastructure\CleanArchitecture.Infra.SqlServer.Library\CleanArchitecture.Infra.SqlServer.Library.csproj" />
+  </ItemGroup>
+
+</Project>
