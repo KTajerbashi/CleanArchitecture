@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CleanArchitecture.EndPoint.WebApi.BaseEndPointApi;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers;
 
