@@ -6,6 +6,53 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\.angular\cache\18.1.1\vite\deps\package.json" />
+    <Content Include="ClientApp\.angular\cache\18.1.1\vite\deps\_metadata.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="ClientApp\.angular\cache\18.1.1\frontend\.tsbuildinfo" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\%40angular_common.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\%40angular_common.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\%40angular_common_http.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\%40angular_common_http.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\%40angular_core.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\%40angular_core.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\%40angular_forms.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\%40angular_forms.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\%40angular_platform-browser.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\%40angular_platform-browser.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\%40angular_router.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\%40angular_router.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-56Y3C3CL.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-56Y3C3CL.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-74DRCLNG.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-74DRCLNG.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-E4U7SOWH.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-E4U7SOWH.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-HMZ5JMOE.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-HMZ5JMOE.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-JZ35NJDH.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-JZ35NJDH.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-SJ2OAS7H.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-SJ2OAS7H.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-YKOTZFXB.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\chunk-YKOTZFXB.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\rxjs.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\rxjs.js.map" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\rxjs_operators.js" />
+    <None Include="ClientApp\.angular\cache\18.1.1\vite\deps\rxjs_operators.js.map" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />

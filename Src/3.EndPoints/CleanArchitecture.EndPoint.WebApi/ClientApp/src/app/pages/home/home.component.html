@@ -1,0 +1,13 @@
+<div class="uk-container">
+    <ul>
+        <li *ngFor="let item of data">
+            {{ item }}
+        </li>
+    </ul>
+    <h1>Counter Value: {{ counter }}</h1>
+
+    <app-button [classStyle]="'rounded-5 uk-button-secondary'" text="Increase Counter" (click)="Reset()"></app-button>
+    <app-button [classStyle]="'rounded-5 uk-button-primary'" text="Increase Counter" (click)="AddCounter()"></app-button>
+    <app-button [classStyle]="'rounded-5 uk-button-danger'" text="Decrease Counter" (click)="SubCounter()"></app-button>
+
+</div>

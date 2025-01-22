@@ -31,6 +31,8 @@ public static class DependencyInjections
 
         app.MapControllers();
 
+        app.MapFallbackToFile("index.html");
+
         return app;
     }
 

@@ -1,0 +1,48 @@
+
+<nav class="uk-navbar-container" uk-navbar uk-sticky>
+    <div class="uk-container">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-item uk-logo" href="#" aria-label="Back to Home">Tajerbashi</a>
+            <ul class="uk-navbar-nav">
+                <li class="uk-active" routerLinkActive="uk-active">
+                    <a routerLink="/main/home">
+                        <span uk-icon="icon: home"></span>
+                        <span class="uk-margin-small-left">HOME</span>
+                    </a>
+                </li>
+                <li routerLinkActive="uk-active">
+                    <a routerLink="/main/list">
+                        <span uk-icon="icon: list"></span>
+                        <span class="uk-margin-small-left">LIST</span>
+                    </a>
+                </li>
+                <li routerLinkActive="uk-active">
+                    <a routerLink="/main/form">
+                        <span uk-icon="icon: pencil"></span>
+                        <span class="uk-margin-small-left">FORM</span>
+                    </a>
+                </li>
+                <li routerLinkActive="uk-active">
+                    <a routerLink="/main/files">
+                        <span uk-icon="icon: file-text"></span>
+                        <span class="uk-margin-small-left">FILES</span>
+                    </a>
+                </li>
+                <li routerLinkActive="uk-active">
+                    <a (click)="signout()">
+                        <span uk-icon="icon: sign-out"></span>
+                        <span class="uk-margin-small-left">SIGN OUT</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="uk-navbar-item">
+                <form action="javascript:void(0)">
+                    <input class="uk-input uk-form-width-small" type="text" placeholder="Search ..." aria-label="Input">
+                    <button class="uk-button uk-primary uk-button-default">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
