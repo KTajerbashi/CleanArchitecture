@@ -30,6 +30,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docx", "Docx", "{8A9534DC-8
 		Docs\docx\Architecture.docx = Docs\docx\Architecture.docx
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "File", "File", "{6AC4666D-02A1-42EB-AE93-D2F06FB5CA06}"
+	ProjectSection(SolutionItems) = preProject
+		References.txt = References.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +72,7 @@ Global
 		{D0746EA9-6958-44FE-80E3-E2ED6AEF0CBE} = {9F6A6363-BC75-4201-BD90-CC5E6BB83F0F}
 		{E1BE5B50-BFE6-4E12-8343-372064736FAE} = {BD947425-9666-426C-94EA-3BA545F0506D}
 		{8A9534DC-83CB-45CE-8558-85446111CF90} = {5E07F373-A168-48BB-98F7-115004F0B545}
+		{6AC4666D-02A1-42EB-AE93-D2F06FB5CA06} = {5E07F373-A168-48BB-98F7-115004F0B545}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A57D86D6-5EF8-4745-9B92-13AE22320AE5}
