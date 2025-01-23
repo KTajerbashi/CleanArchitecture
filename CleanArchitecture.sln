@@ -23,6 +23,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Infra.Sql
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.EndPoint.WebApi", "Src\3.EndPoints\CleanArchitecture.EndPoint.WebApi\CleanArchitecture.EndPoint.WebApi.csproj", "{E1BE5B50-BFE6-4E12-8343-372064736FAE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{5E07F373-A168-48BB-98F7-115004F0B545}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docx", "Docx", "{8A9534DC-83CB-45CE-8558-85446111CF90}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\docx\Architecture.docx = Docs\docx\Architecture.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +66,7 @@ Global
 		{5B2FF4F7-DAB5-4649-82C7-789E9FD257A3} = {A2C99B76-2893-45EC-93CF-A9A85E8B5646}
 		{D0746EA9-6958-44FE-80E3-E2ED6AEF0CBE} = {9F6A6363-BC75-4201-BD90-CC5E6BB83F0F}
 		{E1BE5B50-BFE6-4E12-8343-372064736FAE} = {BD947425-9666-426C-94EA-3BA545F0506D}
+		{8A9534DC-83CB-45CE-8558-85446111CF90} = {5E07F373-A168-48BB-98F7-115004F0B545}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A57D86D6-5EF8-4745-9B92-13AE22320AE5}
