@@ -78,12 +78,6 @@ public abstract class AuditableEntity<TId> : Entity<TId>, IAuditableEntity<TId>
     public TId? UpdatedBy { get; private set; }
     public DateTime? UpdatedAt { get; private set; }
 
-    protected AuditableEntity(TId createdBy)
-    {
-        CreatedBy = createdBy;
-        CreatedAt = DateTime.UtcNow;
-    }
-
     /// <summary>
     /// Updates audit information.
     /// </summary>
@@ -100,7 +94,5 @@ public abstract class AuditableEntity<TId> : Entity<TId>, IAuditableEntity<TId>
 /// </summary>
 public abstract class AuditableEntity : AuditableEntity<int>
 {
-    protected AuditableEntity(int createdBy) : base(createdBy)
-    {
-    }
+    
 }
