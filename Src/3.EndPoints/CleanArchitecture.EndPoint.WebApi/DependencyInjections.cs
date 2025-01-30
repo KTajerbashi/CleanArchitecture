@@ -22,13 +22,16 @@ public static class DependencyInjections
         
         return builder.Build();
     }
-    public static WebApplication WebApplication(this WebApplication app) 
+    public static async Task<WebApplication> WebApplication(this WebApplication app) 
     {
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
             app.MapOpenApi();
         }
+        await Task.CompletedTask;
+        app.ConfigureAwait(true);
+        
         app.UseSwaggerService();
 
         app.UseHttpsRedirection();
