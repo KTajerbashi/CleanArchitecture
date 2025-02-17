@@ -2,6 +2,10 @@
 
 public interface IAuditableEntity<TKey> : IEntity<TKey>
 {
+    bool IsDeleted { get; }
+    bool IsActive { get; }
+    void Delete();
+    void Access();
     DateTime CreatedDate { get; }
     TKey CreatedByUserRoleId { get; }
     DateTime? UpdatedDate { get; }

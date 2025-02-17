@@ -1,21 +1,19 @@
 ﻿using CleanArchitecture.Core.Domain.Library.Common;
 using Microsoft.AspNetCore.Identity;
 
-namespace CleanArchitecture.Core.Domain.Library.Identity;
+namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 
-public class UserLoginEntity : IdentityUserLogin<long>, IAuditableEntity<long>
+public class RoleClaimEntity : IdentityRoleClaim<long>, IAuditableEntity<long>
 {
+    public long Id { get; private set; }
+    public Guid EntityId { get; private set; }
 
     public DateTime CreatedDate { get; private set; }
-
     public long CreatedByUserRoleId { get; private set; }
 
     public DateTime? UpdatedDate { get; private set; }
-
     public long UpdatedByUserRoleId { get; private set; }
 
-    public Guid EntityId { get; private set; }
-    public long Id { get; private set; }
     public bool IsDeleted { get; private set; }
     public bool IsActive { get; private set; }
 
@@ -29,8 +27,8 @@ public class UserLoginEntity : IdentityUserLogin<long>, IAuditableEntity<long>
         IsActive = false;
         IsDeleted = true;
     }
-    public UserLoginEntity()
+    public RoleClaimEntity()
     {
-        
+
     }
 }

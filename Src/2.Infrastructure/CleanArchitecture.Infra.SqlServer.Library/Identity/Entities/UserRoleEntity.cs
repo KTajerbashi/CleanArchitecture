@@ -1,7 +1,7 @@
 ﻿using CleanArchitecture.Core.Domain.Library.Common;
 using Microsoft.AspNetCore.Identity;
 
-namespace CleanArchitecture.Core.Domain.Library.Identity;
+namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 
 public class UserRoleEntity : IdentityUserRole<long>, IAuditableEntity<long>
 {
@@ -33,6 +33,6 @@ public class UserRoleEntity : IdentityUserRole<long>, IAuditableEntity<long>
     }
     public UserRoleEntity()
     {
-        
+
     }
 }

@@ -2,6 +2,18 @@
 
 public abstract class BaseAuditableEntity<TKey> : Entity<TKey>, IAuditableEntity<TKey>
 {
+    public bool IsDeleted { get; private set; }
+    public bool IsActive { get; private set; }
+    public void Access()
+    {
+        IsActive = true;
+        IsDeleted = false;
+    }
+    public void Delete()
+    {
+        IsActive = false;
+        IsDeleted = true;
+    }
     public DateTime CreatedDate { get; }
 
     public TKey CreatedByUserRoleId { get; }

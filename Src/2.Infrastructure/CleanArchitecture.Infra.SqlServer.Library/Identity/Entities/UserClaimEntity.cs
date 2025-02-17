@@ -1,9 +1,9 @@
 ﻿using CleanArchitecture.Core.Domain.Library.Common;
 using Microsoft.AspNetCore.Identity;
 
-namespace CleanArchitecture.Core.Domain.Library.Identity;
+namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 
-public class UserTokenEntity : IdentityUserToken<long>, IAuditableEntity<long>
+public class UserClaimEntity : IdentityUserClaim<long>, IAuditableEntity<long>
 {
 
     public DateTime CreatedDate { get; private set; }
@@ -30,8 +30,8 @@ public class UserTokenEntity : IdentityUserToken<long>, IAuditableEntity<long>
         IsActive = false;
         IsDeleted = true;
     }
-    public UserTokenEntity()
+    public UserClaimEntity()
     {
-        
+
     }
 }

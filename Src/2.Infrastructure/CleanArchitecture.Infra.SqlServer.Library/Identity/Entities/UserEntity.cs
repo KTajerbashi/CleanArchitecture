@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Identity;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CleanArchitecture.Core.Domain.Library.Identity;
+namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 
 [Table("Users", Schema = "Identity")]
 public class UserEntity : IdentityUser<long>, IAuditableEntity<long>
 {
-    
+
     [Description("")]
     public string? Name { get; private set; }
     [Description("")]
