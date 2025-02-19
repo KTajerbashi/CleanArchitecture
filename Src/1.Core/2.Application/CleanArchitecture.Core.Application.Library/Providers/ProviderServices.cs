@@ -5,8 +5,8 @@ namespace CleanArchitecture.Core.Application.Library.Providers;
 
 public class ProviderServices
 {
-    private readonly IObjectConvertor Convertor;
-    private readonly IObjectMapper Mapper;
+    public readonly IObjectConvertor Convertor;
+    public readonly IObjectMapper Mapper;
     public ProviderServices(IObjectConvertor convertor, IObjectMapper mapper)
     {
         Convertor = convertor;

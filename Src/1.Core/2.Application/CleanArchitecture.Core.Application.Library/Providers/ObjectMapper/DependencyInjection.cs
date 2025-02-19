@@ -16,7 +16,7 @@ public static class DependencyInjection
         var assembliesLibrary = option.Assemblies.Split(",");
         foreach (var item in assembliesLibrary)
         {
-            var assemblies = AssembliesExtensions.GetAssemblies(item);
+            var assemblies = AssemblyExtensions.GetAssemblies(item);
             services.AddAutoMapper(assemblies);
 
             services.AddSingleton<IObjectMapper, ObjectMapperService>();
@@ -29,7 +29,7 @@ public static class DependencyInjection
         var option = new ObjectMapperOption();
         setupAction.Invoke(option);
 
-        var assemblies = AssembliesExtensions.GetAssemblies(option.Assemblies);
+        var assemblies = AssemblyExtensions.GetAssemblies(option.Assemblies);
 
         return services.AddAutoMapper(assemblies).AddSingleton<IObjectMapper, ObjectMapperService>();
     }
