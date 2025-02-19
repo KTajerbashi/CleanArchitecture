@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Core.Application.Library;
+using CleanArchitecture.Core.Application.Library.Utilities.Extensions;
 using CleanArchitecture.EndPoint.WebApi.Providers;
 using CleanArchitecture.Infra.SqlServer.Library;
 
@@ -9,10 +10,12 @@ public static class DependencyInjections
     public static WebApplication WebApplicationBuilder(this WebApplicationBuilder builder)
     {
         IConfiguration configuration = builder.Configuration;
+        
+        var assemblies = ("CleanArchitecture").GetAssemblies();
+
+        builder.Services.AddApplicationLibrary(configuration, assemblies.ToArray());
 
         builder.Services.AddInfrastructureLibrary(configuration);
-
-        builder.Services.AddApplicationLibrary(configuration);
         
         builder.Services.AddControllers();
         

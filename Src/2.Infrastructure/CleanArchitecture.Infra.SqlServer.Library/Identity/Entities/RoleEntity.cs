@@ -11,7 +11,7 @@ public class RoleEntity : IdentityRole<long>, IAuditableEntity<long>
 
     public DateTime? UpdatedDate { get; private set; }
 
-    public long UpdatedByUserRoleId { get; private set; }
+    public long? UpdatedByUserRoleId { get; private set; }
 
     public Guid EntityId { get; private set; }
 

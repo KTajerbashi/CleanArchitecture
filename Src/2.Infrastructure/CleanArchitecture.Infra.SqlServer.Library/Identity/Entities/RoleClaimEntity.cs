@@ -12,7 +12,7 @@ public class RoleClaimEntity : IdentityRoleClaim<long>, IAuditableEntity<long>
     public long CreatedByUserRoleId { get; private set; }
 
     public DateTime? UpdatedDate { get; private set; }
-    public long UpdatedByUserRoleId { get; private set; }
+    public long? UpdatedByUserRoleId { get; private set; }
 
     public bool IsDeleted { get; private set; }
     public bool IsActive { get; private set; }

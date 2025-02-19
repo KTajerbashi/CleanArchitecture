@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Core.Domain.Library.Common;
+using CleanArchitecture.Infra.SqlServer.Library.Identity.Parameters;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -25,9 +26,9 @@ public class UserEntity : IdentityUser<long>, IAuditableEntity<long>
     [Description("")]
     public DateTime? UpdatedDate { get; private set; }
     [Description("")]
-    public long UpdatedByUserRoleId { get; private set; }
+    public long? UpdatedByUserRoleId { get; private set; }
     [Description("")]
-    public Guid EntityId { get; private set; }
+    public Guid EntityId { get; private set; } = Guid.NewGuid();
 
     public bool IsDeleted { get; private set; }
     public bool IsActive { get; private set; }
@@ -45,6 +46,16 @@ public class UserEntity : IdentityUser<long>, IAuditableEntity<long>
     public UserEntity()
     {
 
+    }
+    public UserEntity(UserCreateParameters parameters)
+    {
+        Name = parameters.Name;
+        Family = parameters.Family;
+        DisplayName = parameters.DisplayName;
+        PersonalCode = parameters.PersonalCode;
+        Email = parameters.Email;
+        UserName = parameters.Username;
+        PhoneNumber = parameters.PhoneNumber;
     }
 
 }
