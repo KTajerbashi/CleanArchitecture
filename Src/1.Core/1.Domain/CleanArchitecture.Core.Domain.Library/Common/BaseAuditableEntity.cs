@@ -1,6 +1,12 @@
 ﻿namespace CleanArchitecture.Core.Domain.Library.Common;
 
 public abstract class BaseAuditableEntity<TKey> : Entity<TKey>, IAuditableEntity<TKey>
+    where TKey : struct,
+          IComparable,
+          IComparable<TKey>,
+          IConvertible,
+          IEquatable<TKey>,
+          IFormattable
 {
     public bool IsDeleted { get; private set; }
     public bool IsActive { get; private set; }

@@ -1,5 +1,7 @@
-﻿namespace CleanArchitecture.Core.Domain.Library.Events;
+﻿using MediatR;
 
-public interface IDomainEvent
+namespace CleanArchitecture.Core.Domain.Library.Events;
+
+public interface IDomainEvent : INotification
 {
 }
