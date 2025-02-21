@@ -15,7 +15,7 @@ public class IdentityService : IIdentityService
     private readonly SignInManager<UserEntity> _signInManager;
     private readonly IUserClaimsPrincipalFactory<UserEntity> _userClaimsPrincipalFactory;
     private readonly IAuthorizationService _authorizationService;
-    private readonly  ProviderServices _providers;
+    private readonly ProviderServices _providers;
     public IdentityService(
         UserManager<UserEntity> userManager,
         SignInManager<UserEntity> signInManager,

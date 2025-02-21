@@ -2,6 +2,7 @@
 using CleanArchitecture.Infra.SqlServer.Library.Data;
 using CleanArchitecture.Infra.SqlServer.Library.Data.Constants;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
+using CleanArchitecture.Infra.SqlServer.Library.Identity.Polymorphism;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -42,15 +43,17 @@ public static class DependencyInjections
         })
         .AddEntityFrameworkStores<DatabaseContext>()  
         .AddRoles<RoleEntity>()                 
-        .AddDefaultTokenProviders();                   
-                                                       //   .AddApiEndpoints();
-                                                       //services.AddScoped(typeof(SignInManager<UserEntity>), typeof(CustomSignInManager<UserEntity>));
-                                                       //services.AddScoped(typeof(UserManager<UserEntity>), typeof(CustomUserManager<UserEntity>));
-                                                       //services.AddScoped<IUserClaimsPrincipalFactory<UserEntity>, CustomUserClaimsFactory>();
+        .AddDefaultTokenProviders();
+        //   .AddApiEndpoints();
+        services.AddScoped(typeof(SignInManager<UserEntity>), typeof(AppSignInManager<UserEntity>));
+        services.AddScoped(typeof(UserManager<UserEntity>), typeof(AppUserManager<UserEntity>));
+        services.AddScoped<IUserClaimsPrincipalFactory<UserEntity>, AppUserClaimsFactory>();
         return services;
     }
     private static IServiceCollection AddIdentityPolicies(this IServiceCollection services)
     {
+        services.AddDistributedMemoryCache();
+
         services.AddSession(options =>
         {
             options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -59,6 +62,7 @@ public static class DependencyInjections
             options.Cookie.IsEssential = true;
             options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
         });
+        
         services.AddAuthentication("AuthorizationCookies")
             .AddCookie(options =>
             {
@@ -75,6 +79,7 @@ public static class DependencyInjections
                     return Task.CompletedTask;
                 };
             });
+        
         services.AddAuthorization(options =>
         {
             options.AddPolicy(Policies.CanPurge, policy => policy.RequireRole(Roles.Administrator));

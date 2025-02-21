@@ -16,7 +16,7 @@ public static class DependencyInjections
         builder.Services.AddApplicationLibrary(configuration, assemblies.ToArray());
 
         builder.Services.AddInfrastructureLibrary(configuration);
-        
+
         builder.Services.AddControllers();
         
         builder.Services.AddOpenApi();
@@ -32,14 +32,19 @@ public static class DependencyInjections
         {
             app.MapOpenApi();
         }
+        
         await Task.CompletedTask;
         app.ConfigureAwait(true);
+
+        app.UseAuthentication();
         
+        app.UseSession();
+        
+        app.UseAuthorization();
+
         app.UseSwaggerService();
 
         app.UseHttpsRedirection();
-
-        app.UseAuthorization();
 
         app.MapControllers();
 
