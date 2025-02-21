@@ -1,5 +1,17 @@
 using CleanArchitecture.EndPoint.WebApi;
+using Serilog;
 
-var builder = WebApplication.CreateBuilder(args).WebApplicationBuilder();
-var app = await builder.WebApplication();
-await app.RunAsync();
+try
+{
+    var builder = WebApplication.CreateBuilder(args).WebApplicationBuilder();
+    Log.Information("Start Application ...");
+    var app = await builder.WebApplication();
+    Log.Information("Application Running ...");
+    await app.RunAsync();
+}
+catch 
+{
+    Log.Fatal(string.Format("Application Down : {0}",DateTime.Now));
+    await Log.CloseAndFlushAsync();
+    throw;
+}

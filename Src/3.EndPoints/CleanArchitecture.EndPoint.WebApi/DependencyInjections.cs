@@ -2,6 +2,7 @@
 using CleanArchitecture.Core.Application.Library.Utilities.Extensions;
 using CleanArchitecture.EndPoint.WebApi.Providers;
 using CleanArchitecture.Infra.SqlServer.Library;
+using Serilog;
 
 namespace CleanArchitecture.EndPoint.WebApi;
 
@@ -10,7 +11,9 @@ public static class DependencyInjections
     public static WebApplication WebApplicationBuilder(this WebApplicationBuilder builder)
     {
         IConfiguration configuration = builder.Configuration;
-        
+
+        builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
+
         var assemblies = ("CleanArchitecture").GetAssemblies();
 
         builder.Services.AddApplicationLibrary(configuration, assemblies.ToArray());
@@ -32,14 +35,18 @@ public static class DependencyInjections
         {
             app.MapOpenApi();
         }
+
+        app.UseStaticFiles();
         
+        app.UseSerilogRequestLogging();
+
         await Task.CompletedTask;
         app.ConfigureAwait(true);
 
         app.UseAuthentication();
         
         app.UseSession();
-        
+
         app.UseAuthorization();
 
         app.UseSwaggerService();

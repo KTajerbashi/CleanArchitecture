@@ -12,41 +12,41 @@ public static class SwaggerExtensions
             // Add metadata for your API
             options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
             {
-                Title = "My API",
+                Title = "Clean Architecture",
                 Version = "v1",
-                Description = "An example API using Swagger in .NET 8",
+                Description = "WebAPI using Swagger",
                 Contact = new Microsoft.OpenApi.Models.OpenApiContact
                 {
-                    Name = "Your Name",
-                    Email = "your.email@example.com",
-                    Url = new Uri("https://yourwebsite.com")
+                    Name = "Tajerbashi",
+                    Email = "kamrantajerbashi@gmail.com",
+                    Url = new Uri("https://github.com/KTajerbashi/CleanArchitecture.git")
                 }
             });
 
             // Configure security for API if needed
-            options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-            {
-                In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-                Description = "Please enter a valid token",
-                Name = "Authorization",
-                Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
-                Scheme = "Bearer"
-            });
+            //options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            //{
+            //    In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+            //    Description = "Please enter a valid token",
+            //    Name = "Authorization",
+            //    Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
+            //    Scheme = "Bearer"
+            //});
 
-            options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
-            {
-                {
-                    new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-                    {
-                        Reference = new Microsoft.OpenApi.Models.OpenApiReference
-                        {
-                            Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
-                            Id = "Bearer"
-                        }
-                    },
-                    new List<string>()
-                }
-            });
+            //options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+            //{
+            //    {
+            //        new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+            //        {
+            //            Reference = new Microsoft.OpenApi.Models.OpenApiReference
+            //            {
+            //                Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+            //                Id = "Bearer"
+            //            }
+            //        },
+            //        new List<string>()
+            //    }
+            //});
         });
 
         return services;
@@ -60,7 +60,7 @@ public static class SwaggerExtensions
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API v1");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1");
                 options.RoutePrefix = string.Empty; // Makes Swagger accessible at the root (e.g., http://localhost:5000)
             });
         }
