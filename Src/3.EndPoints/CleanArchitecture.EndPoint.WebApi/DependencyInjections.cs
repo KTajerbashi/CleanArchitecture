@@ -31,7 +31,9 @@ public static class DependencyInjections
         builder.Services.AddOpenApi();
 
         builder.Services.AddSwaggerService();
-        
+
+        builder.Services.AddHostedService<HostingServices>();
+
         return builder.Build();
     }
     public static async Task<WebApplication> WebApplication(this WebApplication app) 

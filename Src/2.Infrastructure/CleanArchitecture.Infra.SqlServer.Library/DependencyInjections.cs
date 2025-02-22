@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Core.Application.Library.Identity.Interfaces;
 using CleanArchitecture.Core.Application.Library.Identity.Repositories;
+using CleanArchitecture.Core.Application.Library.Providers.CacheSystem;
 using CleanArchitecture.Infra.SqlServer.Library.Data;
 using CleanArchitecture.Infra.SqlServer.Library.Data.Constants;
 using CleanArchitecture.Infra.SqlServer.Library.Data.Interceptors;
@@ -7,6 +8,7 @@ using CleanArchitecture.Infra.SqlServer.Library.Data.Seed;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Polymorphism;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Service;
+using CleanArchitecture.Infra.SqlServer.Library.Providers.CacheSystem.InMemory;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +25,7 @@ public static class DependencyInjections
         .AddDatabaseInterceptors()
         .AddIdentityConfiguration(configuration)
         .AddIdentityPolicies()
+        .AddInMemoryCaching()
         ;
     private static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
     {
@@ -105,4 +108,8 @@ public static class DependencyInjections
         services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventsInterceptor>();
         return services;
     }
+
+    private static IServiceCollection AddInMemoryCaching(this IServiceCollection services)
+        => services.AddMemoryCache().AddTransient<ICacheAdapter, InMemoryCacheAdapter>();
+
 }

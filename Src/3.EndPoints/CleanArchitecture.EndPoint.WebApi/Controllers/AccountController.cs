@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers;
-
 public class AccountController : AuthController
 {
     [HttpPost("Register")]
