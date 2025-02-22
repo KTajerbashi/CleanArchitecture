@@ -40,11 +40,17 @@ public class IdentityService : IIdentityService
 
     public async Task<(Result Result, long UserId)> CreateUserAsync(string userName, string password)
     {
-        var user = new UserEntity
-        {
-            UserName = userName,
-            Email = userName,
-        };
+
+        var user = new UserEntity(new UserCreateParameters(
+            userName,
+            userName,
+            $"{userName}@mail.com",
+            "NOT DEFINED",
+            "NOT DEFINED",
+            "NOT DEFINED",
+            "NOT DEFINED",
+            "NOT DEFINED"
+            ));
 
         var result = await _userManager.CreateAsync(user, password);
 

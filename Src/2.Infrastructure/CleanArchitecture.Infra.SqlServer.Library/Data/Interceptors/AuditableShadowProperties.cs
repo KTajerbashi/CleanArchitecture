@@ -3,7 +3,7 @@ using CleanArchitecture.Core.Domain.Library.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace CleanArchitecture.Infra.SqlServer.Library.Data.Interceptors.ShadowProperty;
+namespace CleanArchitecture.Infra.SqlServer.Library.Data.Interceptors;
 
 public static class AuditableShadowProperties
 {

@@ -31,8 +31,11 @@ public class UserRoleEntity : IdentityUserRole<long>, IAuditableEntity<long>
         IsActive = false;
         IsDeleted = true;
     }
-    public UserRoleEntity()
+    public UserRoleEntity() { }
+    public UserRoleEntity(long userId, long roleId)
     {
-
+        UserId = userId;
+        RoleId = roleId;
     }
+
 }

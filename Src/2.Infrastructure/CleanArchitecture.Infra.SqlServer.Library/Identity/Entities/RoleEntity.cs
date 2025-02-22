@@ -30,6 +30,11 @@ public class RoleEntity : IdentityRole<long>, IAuditableEntity<long>
     }
     public RoleEntity()
     {
-
+        IsActive = true;
+        IsDeleted = false;
+    }
+    public RoleEntity(string name)
+    {
+        Name = name;
     }
 }

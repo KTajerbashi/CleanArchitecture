@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
-namespace CleanArchitecture.Infra.SqlServer.Library.Data.Interceptors.ShadowProperty;
+namespace CleanArchitecture.Infra.SqlServer.Library.Data.Interceptors;
 
 /// <summary>
 /// AddInterceptors into ConnectionString 

@@ -43,7 +43,7 @@ public class UserEntity : IdentityUser<long>, IAuditableEntity<long>
         IsActive = false;
         IsDeleted = true;
     }
-    public UserEntity()
+    private UserEntity()
     {
 
     }
