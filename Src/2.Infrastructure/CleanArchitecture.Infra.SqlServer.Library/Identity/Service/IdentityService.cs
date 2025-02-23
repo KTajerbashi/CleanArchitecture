@@ -1,6 +1,7 @@
 ﻿using CleanArchitecture.Core.Application.Library.Identity.Models.DTOS;
 using CleanArchitecture.Core.Application.Library.Identity.Repositories;
 using CleanArchitecture.Core.Application.Library.Providers;
+using CleanArchitecture.Core.Domain.Library.Entities.Security;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Extensions;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Parameters;
@@ -37,7 +38,6 @@ public class IdentityService : IIdentityService
 
         return user?.UserName;
     }
-
     public async Task<(Result Result, long UserId)> CreateUserAsync(string userName, string password)
     {
 
@@ -56,7 +56,6 @@ public class IdentityService : IIdentityService
 
         return (result.ToApplicationResult(), user.Id);
     }
-
 
     public async Task<bool> IsInRoleAsync(long userId, string role)
     {
@@ -90,13 +89,13 @@ public class IdentityService : IIdentityService
 
     public async Task<Result> DeleteUserAsync(UserEntity user) => (await _userManager.DeleteAsync(user)).ToApplicationResult();
 
-    public async Task<Result> LoginAsUsername(string username, string password)
+    public async Task<Result> LoginAsUsernameAsync(string username, string password)
         => (await _signInManager.PasswordSignInAsync(username, password, true, true)).ToApplicationResult();
 
-    public async Task<Result> LoginAsEmail(string email, string password)
+    public async Task<Result> LoginAsEmailAsync(string email, string password)
         => (await _signInManager.PasswordSignInAsync(email, password, true, true)).ToApplicationResult();
 
-    public async Task<Result> LoginAs(string username)
+    public async Task<Result> LoginAsAsync(string username)
     {
         UserEntity entity = await _userManager.FindByNameAsync(username);
         if (entity != null)
@@ -107,7 +106,7 @@ public class IdentityService : IIdentityService
         return Result.Failure(["Username Not Founded !!!"]);
     }
 
-    public async Task<Result> LoginAs(long id)
+    public async Task<Result> LoginAsAsync(long id)
     {
         UserEntity entity = await _userManager.FindByIdAsync(id.ToString());
         if (entity != null)
@@ -118,11 +117,21 @@ public class IdentityService : IIdentityService
         return Result.Failure(["User Not Founded !!!"]);
     }
 
-    public async Task<Result> Register(RegisterDTO parameter)
+    public async Task<Result> RegisterAsync(AppUserEntity parameter,string password)
     {
-        UserCreateParameters createParams = _providers.Mapper.Map<RegisterDTO,UserCreateParameters>(parameter);
+        UserCreateParameters createParams = _providers.Mapper.Map<AppUserEntity,UserCreateParameters>(parameter);
         var user = new UserEntity(createParams);
-        var result = await _userManager.CreateAsync(user, parameter.Password);
+        var result = await _userManager.CreateAsync(user, password);
         return result.ToApplicationResult();
     }
 }
+
+
+public class IdentityProfile : Profile
+{
+    public IdentityProfile()
+    {
+        CreateMap<AppUserEntity, UserCreateParameters>().ReverseMap();
+    }
+}
+

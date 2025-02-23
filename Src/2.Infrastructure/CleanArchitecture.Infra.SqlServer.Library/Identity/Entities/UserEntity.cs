@@ -54,7 +54,7 @@ public class UserEntity : IdentityUser<long>, IAuditableEntity<long>
         DisplayName = parameters.DisplayName;
         PersonalCode = parameters.PersonalCode;
         Email = parameters.Email;
-        UserName = parameters.Username;
+        UserName = parameters.UserName;
         PhoneNumber = parameters.PhoneNumber;
     }
 

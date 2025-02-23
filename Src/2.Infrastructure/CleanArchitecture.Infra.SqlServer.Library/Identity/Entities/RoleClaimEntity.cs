@@ -6,7 +6,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 public class RoleClaimEntity : IdentityRoleClaim<long>, IAuditableEntity<long>
 {
     public long Id { get; private set; }
-    public Guid EntityId { get; private set; }
+    public Guid EntityId { get; private set; } = Guid.NewGuid(); 
 
     public DateTime CreatedDate { get; private set; }
     public long CreatedByUserRoleId { get; private set; }

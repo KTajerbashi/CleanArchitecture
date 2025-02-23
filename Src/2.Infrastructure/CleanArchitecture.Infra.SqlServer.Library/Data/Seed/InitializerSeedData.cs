@@ -97,12 +97,12 @@ public class InitializerSeedData
             }
             else
             {
-                _logger.LogError($"Failed to create {parameter.Username} user. Errors: {string.Join(", ", createResult.Errors.Select(e => e.Description))}");
+                _logger.LogError($"Failed to create {parameter.UserName} user. Errors: {string.Join(", ", createResult.Errors.Select(e => e.Description))}");
             }
         }
         else
         {
-            _logger.LogWarning($"User with username '{parameter.Username}' or email '{administrator.Email}' already exists.");
+            _logger.LogWarning($"User with username '{parameter.UserName}' or email '{administrator.Email}' already exists.");
         }
     }
 

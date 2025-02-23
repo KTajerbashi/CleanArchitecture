@@ -13,7 +13,7 @@ public class RoleEntity : IdentityRole<long>, IAuditableEntity<long>
 
     public long? UpdatedByUserRoleId { get; private set; }
 
-    public Guid EntityId { get; private set; }
+    public Guid EntityId { get; private set; } = Guid.NewGuid();
 
     public bool IsDeleted { get; private set; }
     public bool IsActive { get; private set; }
