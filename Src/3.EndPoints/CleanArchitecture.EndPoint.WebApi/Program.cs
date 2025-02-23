@@ -5,7 +5,7 @@ try
 {
     var builder = WebApplication.CreateBuilder(args).WebApplicationBuilder();
     Log.Information("Start Application ...");
-    var app = await builder.WebApplication();
+    var app = await builder.ConfigurePipeline();
     Log.Information("Application Running ...");
     await app.RunAsync();
 }

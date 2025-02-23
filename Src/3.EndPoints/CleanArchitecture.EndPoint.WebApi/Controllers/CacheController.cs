@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Core.Application.Library.Providers;
 using CleanArchitecture.EndPoint.WebApi.Common.Controllers;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers;
@@ -9,15 +10,16 @@ public class CacheController : BaseController
 {
     private readonly ProviderServices _providerServices;
 
-    public CacheController(ProviderServices providerServices)
+    public CacheController(IMediator mediator, ProviderServices providerServices) : base(mediator)
     {
         _providerServices = providerServices;
     }
+
     [HttpPut("{key}/{value}")]
-    public IActionResult Add(string key,string value)
+    public IActionResult Add(string key, string value)
     {
         Dictionary<string,string> keys = new Dictionary<string,string>();
-        _providerServices.CacheAdapter.Add(key,value,DateTime.Now.AddMinutes(5),DateTime.Now.TimeOfDay);
+        _providerServices.CacheAdapter.Add(key, value, DateTime.Now.AddMinutes(5), DateTime.Now.TimeOfDay);
         return Ok($"Successfully Added => {key} : {_providerServices.CacheAdapter.Get<string>(key)}");
     }
 

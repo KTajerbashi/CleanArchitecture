@@ -1,15 +1,28 @@
-﻿using CleanArchitecture.EndPoint.WebApi.Common.Controllers;
+﻿using CleanArchitecture.Core.Application.Library.Identity.Repositories;
+using CleanArchitecture.EndPoint.WebApi.Common.Controllers;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers;
 
 public class AuthenticateController : BaseController
 {
+    private readonly IIdentityService _identityService;
+    public AuthenticateController(IMediator mediator, IIdentityService identityService) : base(mediator)
+    {
+        _identityService = identityService;
+    }
+
     [HttpPost("Login")]
     public async Task<IActionResult> Login()
     {
-        await Task.CompletedTask;
         return Ok("Login");
+    }
+    [HttpPost("LoginWithId/{id}")]
+    public async Task<IActionResult> Login(long id)
+    {
+        var result = await _identityService.LoginAsAsync(id);
+        return Ok(result);
     }
 
     [HttpPost("Signin")]
