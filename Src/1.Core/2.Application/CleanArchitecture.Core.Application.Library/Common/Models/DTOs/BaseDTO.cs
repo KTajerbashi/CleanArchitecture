@@ -4,7 +4,7 @@ public interface IBaseDTO{}
 
 public abstract class BaseDTO<TId> : IBaseDTO
 {
-    public TId Id { get; set; }
+    public TId Id { get; set; } = default(TId)!;
     public Guid EntityId { get; }
 }
 public abstract class BaseDTO : BaseDTO<long>

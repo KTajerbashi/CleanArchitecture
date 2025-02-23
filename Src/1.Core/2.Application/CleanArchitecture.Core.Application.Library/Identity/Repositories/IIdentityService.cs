@@ -1,18 +1,19 @@
 ﻿using CleanArchitecture.Core.Application.Library.Identity.Models.DTOS;
+using CleanArchitecture.Core.Domain.Library.Entities.Security;
 
 namespace CleanArchitecture.Core.Application.Library.Identity.Repositories;
 
 public interface IIdentityService
 {
-    Task<Result> LoginAsUsername(string username, string password);
+    Task<Result> LoginAsUsernameAsync(string username, string password);
 
-    Task<Result> LoginAsEmail(string email, string password);
+    Task<Result> LoginAsEmailAsync(string email, string password);
 
-    Task<Result> LoginAs(string username);
+    Task<Result> LoginAsAsync(string username);
 
-    Task<Result> LoginAs(long id);
+    Task<Result> LoginAsAsync(long id);
 
-    Task<Result> Register(RegisterDTO parameter);
+    Task<Result> RegisterAsync(AppUserEntity parameter, string password);
 
     Task<string?> GetUserNameAsync(long userId);
 
