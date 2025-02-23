@@ -11,8 +11,8 @@ public interface IEntity<TKey>
 public abstract class Entity<TKey> : IEntity<TKey>
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public TKey Id { get; }
-    public Guid EntityId { get; }
+    public TKey Id { get; } = default!;
+    public Guid EntityId { get; } = Guid.NewGuid();
 
     private readonly List<BaseEvent> _domainEvents = new();
     public IReadOnlyCollection<BaseEvent> DomainEvents => _domainEvents.AsReadOnly();
