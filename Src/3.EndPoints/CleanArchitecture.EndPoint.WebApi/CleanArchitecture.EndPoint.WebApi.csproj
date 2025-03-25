@@ -26,4 +26,8 @@
     <ProjectReference Include="..\..\2.Infrastructure\CleanArchitecture.Infra.SqlServer.Library\CleanArchitecture.Infra.SqlServer.Library.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
+
 </Project>

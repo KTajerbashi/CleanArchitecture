@@ -9,8 +9,8 @@ public class AccountController : AuthController
 {
     private readonly IIdentityService _identityService;
     public AccountController(
-        IMediator mediator, 
-        IIdentityService identityService) 
+        IMediator mediator,
+        IIdentityService identityService)
         : base(mediator)
     {
         _identityService = identityService;
@@ -22,5 +22,5 @@ public class AccountController : AuthController
         return await RequestAsync<RegisterUserRequest, RegisterUserResponse>(request);
     }
 
-   
+
 }

@@ -46,9 +46,6 @@ public static class DependencyInjections
             app.MapOpenApi(); // Only map OpenAPI in development
         }
 
-        // Exception handling middleware (custom middleware)
-        app.UseExceptionMiddleware();
-
         app.UseAuthorizedMiddleware();
 
         // Static files middleware
@@ -72,6 +69,9 @@ public static class DependencyInjections
         {
             app.UseSwaggerService();
         }
+
+        // Exception handling middleware (custom middleware)
+        app.UseExceptionMiddleware();
 
         // Map controllers
         app.MapControllers();

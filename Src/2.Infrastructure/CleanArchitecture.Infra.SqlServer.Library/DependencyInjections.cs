@@ -57,8 +57,8 @@ public static class DependencyInjections
         })
         .AddEntityFrameworkStores<DatabaseContext>()
         .AddRoles<RoleEntity>()
-        .AddDefaultTokenProviders();
-        //   .AddApiEndpoints();
+        .AddDefaultTokenProviders()
+        .AddApiEndpoints();
         services.AddScoped(typeof(SignInManager<UserEntity>), typeof(AppSignInManager<UserEntity>));
         services.AddScoped(typeof(UserManager<UserEntity>), typeof(AppUserManager<UserEntity>));
         services.AddScoped<IUserClaimsPrincipalFactory<UserEntity>, AppUserClaimsFactory>();

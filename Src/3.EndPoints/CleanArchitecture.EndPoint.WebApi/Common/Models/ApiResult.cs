@@ -16,7 +16,7 @@ public class ApiResult
 
     public static ApiResult<T> Return<T>(T data)
     {
-        if (data is null || data is { } || data is false)
+        if (data is null || data is false)
             return Faild(data);
         return Success(data);
     }
