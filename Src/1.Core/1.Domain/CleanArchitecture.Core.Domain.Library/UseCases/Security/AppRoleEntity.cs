@@ -1,7 +1,6 @@
-﻿
-namespace CleanArchitecture.Core.Domain.Library.Entities.Security;
+﻿namespace CleanArchitecture.Core.Domain.Library.UseCases.Security;
 
-[Table("Roles", Schema ="Security"),Description("Roles Entity Model")]
+[Table("Roles", Schema = "Security"), Description("Roles Entity Model")]
 public class AppRoleEntity : BaseAuditableEntity
 {
     public string? Title { get; private set; }

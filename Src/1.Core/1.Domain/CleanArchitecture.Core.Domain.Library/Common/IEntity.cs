@@ -5,17 +5,21 @@ namespace CleanArchitecture.Core.Domain.Library.Common;
 public interface IEntity<TKey>
 {
     TKey Id { get; }
-    Guid EntityId { get; }
+    EntityId EntityId { get; }
 
 }
 public abstract class Entity<TKey> : IEntity<TKey>
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public TKey Id { get; } = default!;
-    public Guid EntityId { get; } = Guid.NewGuid();
+    public TKey Id { get; }
+    public EntityId EntityId { get; } = Guid.NewGuid();
 
-    private readonly List<BaseEvent> _domainEvents = new();
-    public IReadOnlyCollection<BaseEvent> DomainEvents => _domainEvents.AsReadOnly();
+    protected Entity() => _domainEvents = new();
+
+
+    private readonly List<BaseEvent> _domainEvents;
+    public IEnumerable<IEvent> GetEvents() => _domainEvents;
+
     public void AddDomainEvent(BaseEvent domainEvent) => _domainEvents.Add(domainEvent);
     public void RemoveDomainEvent(BaseEvent domainEvent) => _domainEvents.Remove(domainEvent);
     public void ClearDomainEvents() => _domainEvents.Clear();

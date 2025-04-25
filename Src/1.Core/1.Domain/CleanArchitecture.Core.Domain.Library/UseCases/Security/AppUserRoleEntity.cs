@@ -1,7 +1,6 @@
-﻿
-namespace CleanArchitecture.Core.Domain.Library.Entities.Security;
+﻿namespace CleanArchitecture.Core.Domain.Library.UseCases.Security;
 
-[Table("UserRoles", Schema ="Security"),Description("User Role Entity Model")]
+[Table("UserRoles", Schema = "Security"), Description("User Role Entity Model")]
 public class AppUserRoleEntity : BaseAuditableEntity
 {
     [ForeignKey(nameof(AppUserEntity))]

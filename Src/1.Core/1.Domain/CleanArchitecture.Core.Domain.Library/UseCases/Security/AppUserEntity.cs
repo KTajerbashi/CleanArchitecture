@@ -1,5 +1,4 @@
-﻿
-namespace CleanArchitecture.Core.Domain.Library.Entities.Security;
+﻿namespace CleanArchitecture.Core.Domain.Library.UseCases.Security;
 [Table("Users", Schema = "Security"), Description("User Entity Model")]
 public class AppUserEntity : BaseAuditableEntity
 {
