@@ -1,12 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Identity.Repositories;
-using CleanArchitecture.Core.Application.Library.UseCases.Security.UserHandlers.RegisterUser;
-using CleanArchitecture.EndPoint.WebApi.Common.Controllers;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
-using MediatR;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-
-namespace CleanArchitecture.EndPoint.WebApi.Controllers;
+﻿namespace CleanArchitecture.EndPoint.WebApi.Controllers;
 
 public class UserManagerController : AuthController
 {

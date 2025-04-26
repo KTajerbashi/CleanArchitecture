@@ -1,6 +1,5 @@
-﻿using CleanArchitecture.Core.Application.Library.Identity.Repositories;
-using CleanArchitecture.Core.Application.Library.UseCases.Security.UserHandlers.RegisterUser;
-using CleanArchitecture.EndPoint.WebApi.Common.Controllers;
+﻿using CleanArchitecture.EndPoint.WebApi.Common.Controllers;
+using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,11 +15,11 @@ public class AccountController : AuthController
         _identityService = identityService;
     }
 
-    [HttpPost("Register")]
-    public async Task<IActionResult> Register(RegisterUserRequest request)
-    {
-        return await RequestAsync<RegisterUserRequest, RegisterUserResponse>(request);
-    }
+    //[HttpPost("Register")]
+    //public async Task<IActionResult> Register(RegisterUserRequest request)
+    //{
+    //    return await RequestAsync<RegisterUserRequest, RegisterUserResponse>(request);
+    //}
 
 
 }

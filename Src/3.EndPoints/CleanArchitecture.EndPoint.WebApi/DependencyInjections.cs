@@ -22,13 +22,14 @@ public static class DependencyInjections
             configuration.WriteTo.File(string.Format("./Logs/File_{0}.txt", DateTime.Now.ToString("yyyy_MM_dd")));
         });
 
-        var assemblies = ("CleanArchitecture").GetAssemblies();
+        var assemblies = ("CleanArchitecture").GetAssemblies().ToArray();
 
-        builder.Services.AddApplicationLibrary(configuration, assemblies.ToArray());
+        builder.Services.AddApplicationLibrary(configuration, assemblies);
 
-        builder.Services.AddInfrastructureLibrary(configuration);
+        builder.Services.AddInfrastructureLibrary(configuration, assemblies);
 
         builder.Services.AddControllers();
+        builder.Services.AddHttpContextAccessor();
 
         builder.Services.AddOpenApi();
 

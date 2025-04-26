@@ -12,9 +12,9 @@ namespace CleanArchitecture.EndPoint.WebApi.Middlewares.ExceptionHandler
     {
         private readonly RequestDelegate _next;
         private readonly ILogger<ExceptionMiddleware> _logger;
-        private readonly IObjectConvertor _convertor;
+        private readonly IObjectSerializer _convertor;
 
-        public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger, IObjectConvertor convertor)
+        public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger, IObjectSerializer convertor)
         {
             _next = next ?? throw new ArgumentNullException(nameof(next));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
