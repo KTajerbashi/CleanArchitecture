@@ -4,7 +4,7 @@ using Newtonsoft.Json.Serialization;
 
 namespace CleanArchitecture.Core.Application.Library.Providers.Serializer.Objects;
 
-public class NewtonSoftSerializer : IObjectConvertor, IDisposable
+public class NewtonSoftSerializer : IObjectSerializer, IDisposable
 {
     private readonly ILogger<NewtonSoftSerializer> _logger;
 

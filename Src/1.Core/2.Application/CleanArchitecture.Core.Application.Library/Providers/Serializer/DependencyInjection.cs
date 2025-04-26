@@ -10,8 +10,8 @@ public static class DependencyInjection
         => services.AddSingleton<IExcelSerializer, EPPlusExcelSerializer>();
 
     public static IServiceCollection AddMicrosoftSerializer(this IServiceCollection services)
-        => services.AddSingleton<IObjectConvertor, MicrosoftSerializer>();
+        => services.AddSingleton<IObjectSerializer, MicrosoftSerializer>();
 
     public static IServiceCollection AddNewtonSoftSerializer(this IServiceCollection services)
-        => services.AddSingleton<IObjectConvertor, NewtonSoftSerializer>();
+        => services.AddSingleton<IObjectSerializer, NewtonSoftSerializer>();
 }

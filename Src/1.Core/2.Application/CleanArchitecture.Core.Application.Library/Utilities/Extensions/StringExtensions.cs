@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Globalization;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -35,14 +36,19 @@ public static class StringExtensions
         return !value.IsEmpty();
     }
 
-    //public static string ComputeHash(this string value)
-    //{
-    //    using (var hashComponent = System.Security.Cryptography.HashAlgorithm.Create("SHA512"))
-    //    {
-    //        var hash = hashComponent.ComputeHash(Encoding.UTF8.GetBytes(value));
-    //        return BitConverter.ToString(hash).Replace("-", "");
-    //    }
-    //}
+
+    /// <summary>
+    /// Checks if the string can be parsed to a numeric type (int, double, decimal, etc.)
+    /// </summary>
+    /// <param name="input">The string to check</param>
+    /// <returns>True if the string can be parsed to a number, otherwise false</returns>
+    public static bool IsParsableToNumeric(this string input)
+    {
+        if (string.IsNullOrWhiteSpace(input))
+            return false;
+
+        return double.TryParse(input, NumberStyles.Any, CultureInfo.InvariantCulture, out _);
+    }
 
     public static string ComputeHash(this string inputString)
     {
@@ -73,7 +79,9 @@ public static class StringExtensions
 
     public static int ToInt(this string str)
     {
-        return int.Parse(str);
+        if (str.IsParsableToNumeric())
+            return int.Parse(str);
+        return 0;
     }
 
     public static decimal ToDecimal(this string code)
@@ -99,7 +107,9 @@ public static class StringExtensions
 
     public static long ToLong(this string str)
     {
-        return long.Parse(str);
+        if (str.IsParsableToNumeric())
+            return long.Parse(str);
+        return 0;
     }
 
     public static long? ToNLong(this string str)
@@ -260,8 +270,8 @@ public static class StringExtensions
     /// <param name="considerWhiteSpaceIsEmpty"></param>
     /// <returns></returns>
     public static string DefaultIfEmpty(this string str, string defaultValue, bool considerWhiteSpaceIsEmpty = false)
-        =>  (considerWhiteSpaceIsEmpty || string.IsNullOrWhiteSpace(str) || string.IsNullOrEmpty(str))
-            ? defaultValue 
+        => (considerWhiteSpaceIsEmpty || string.IsNullOrWhiteSpace(str) || string.IsNullOrEmpty(str))
+            ? defaultValue
             : str;
 
 

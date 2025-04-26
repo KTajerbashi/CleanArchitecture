@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Core.Application.Library.Identity.Interfaces;
+﻿namespace CleanArchitecture.Core.Application.Library.Providers.UserManagement;
 
 public interface IUser
 {
@@ -11,5 +11,7 @@ public interface IUser
     long RoleTitle { get; }
     string Ip { get; }
     string Agent { get; }
+    string Username { get; }
+    string Email { get; }
     Dictionary<long, string> RolesName { get; }
 }

@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace CleanArchitecture.Core.Application.Library.Providers.Serializer.Objects;
 
-public class MicrosoftSerializer : IObjectConvertor, IDisposable
+public class MicrosoftSerializer : IObjectSerializer, IDisposable
 {
     private readonly ILogger<MicrosoftSerializer> _logger;
     private readonly JsonSerializerOptions options= new() { PropertyNameCaseInsensitive = true };
