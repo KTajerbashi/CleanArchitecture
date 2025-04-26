@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Identity.Interfaces;
+﻿using CleanArchitecture.Core.Application.Library.Providers.UserManagement;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 

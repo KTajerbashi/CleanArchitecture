@@ -12,10 +12,13 @@ public class UserEntity : IdentityUser<long>, IAuditableEntity<long>
 
     [Description("")]
     public string? Name { get; private set; }
+    
     [Description("")]
     public string? Family { get; private set; }
+    
     [Description("")]
     public string? DisplayName { get; private set; }
+    
     [Description("")]
     public string? PersonalCode { get; private set; }
 
@@ -28,7 +31,7 @@ public class UserEntity : IdentityUser<long>, IAuditableEntity<long>
     [Description("")]
     public long? UpdatedByUserRoleId { get; private set; }
     [Description("")]
-    public Guid EntityId { get; private set; } = Guid.NewGuid();
+    public EntityId EntityId { get; private set; } = Guid.NewGuid();
 
     public bool IsDeleted { get; private set; }
     public bool IsActive { get; private set; }
@@ -42,6 +45,11 @@ public class UserEntity : IdentityUser<long>, IAuditableEntity<long>
     {
         IsActive = false;
         IsDeleted = true;
+    }
+    public void DisActive()
+    {
+        IsActive = true;
+        IsDeleted = false;
     }
     private UserEntity()
     {

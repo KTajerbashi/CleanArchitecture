@@ -8,11 +8,11 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Providers.CacheSystem.InMemo
 public class InMemoryCacheAdapter : ICacheAdapter
 {
     private readonly IMemoryCache _memoryCache;
-    private readonly IObjectConvertor _convertor;
+    private readonly IObjectSerializer _convertor;
     private readonly ILogger<InMemoryCacheAdapter> _logger;
 
     public InMemoryCacheAdapter(IMemoryCache memoryCache,
-                                IObjectConvertor convertor,
+                                IObjectSerializer convertor,
                                 ILogger<InMemoryCacheAdapter> logger)
     {
         _memoryCache = memoryCache;

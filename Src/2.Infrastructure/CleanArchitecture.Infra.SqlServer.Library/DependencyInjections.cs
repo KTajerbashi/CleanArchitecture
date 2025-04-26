@@ -1,26 +1,16 @@
-﻿using CleanArchitecture.Core.Application.Library.Identity.Interfaces;
-using CleanArchitecture.Core.Application.Library.Identity.Repositories;
-using CleanArchitecture.Core.Application.Library.Providers.CacheSystem;
-using CleanArchitecture.Infra.SqlServer.Library.Data;
-using CleanArchitecture.Infra.SqlServer.Library.Data.Constants;
-using CleanArchitecture.Infra.SqlServer.Library.Data.Interceptors;
-using CleanArchitecture.Infra.SqlServer.Library.Data.Seed;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Polymorphism;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Service;
-using CleanArchitecture.Infra.SqlServer.Library.Providers.CacheSystem.InMemory;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.Extensions.Configuration;
+﻿
+using CleanArchitecture.Core.Application.Library.Common.Repository;
+using CleanArchitecture.Core.Application.Library.Common.Service;
+using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
+using CleanArchitecture.Infra.SqlServer.Library.Providers.Scrutor;
 
 namespace CleanArchitecture.Infra.SqlServer.Library;
 
 public static class DependencyInjections
 {
-    public static IServiceCollection AddInfrastructureLibrary(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddInfrastructureLibrary(this IServiceCollection services, IConfiguration configuration, Assembly[] assemblies)
         => services
+        .AddScrutor(configuration, assemblies, [typeof(IRepository<,>), typeof(IEntityService<,,>)])
         .AddDatabase(configuration)
         .AddDatabaseInterceptors()
         .AddIdentityConfiguration(configuration)
@@ -45,8 +35,8 @@ public static class DependencyInjections
     }
     private static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddTransient<IIdentityService, IdentityService>();
-        services.AddTransient<IUser, UserInfoService>();
+        services.AddScoped<IIdentityService, IdentityService>();
+        services.AddScoped<IUser, UserInfoService>();
         services.AddIdentity<UserEntity, RoleEntity>(options =>
         {
             options.Password.RequiredLength = 6;  // Set the minimum password length

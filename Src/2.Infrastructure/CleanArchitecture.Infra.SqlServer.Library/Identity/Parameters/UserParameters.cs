@@ -2,18 +2,14 @@
 
 public class UserCreateParameters
 {
-    public string UserName { get; private set; }
-    public string Password { get; private set; }
-    public string Email { get; private set; }
-    public string Name { get; private set; }
-    public string Family { get; private set; }
-    public string DisplayName { get; private set; }
-    public string PhoneNumber { get; private set; }
-    public string PersonalCode { get; private set; }
-    public UserCreateParameters()
-    {
-        
-    }
+    public string UserName { get; set; }
+    public string Password { get; set; }
+    public string Email { get; set; }
+    public string Name { get; set; }
+    public string Family { get; set; }
+    public string DisplayName { get; set; }
+    public string PhoneNumber { get; set; }
+    public string PersonalCode { get; set; }
     public UserCreateParameters(
         string userName,
         string password,

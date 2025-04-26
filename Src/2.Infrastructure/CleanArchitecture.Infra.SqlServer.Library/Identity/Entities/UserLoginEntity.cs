@@ -14,7 +14,7 @@ public class UserLoginEntity : IdentityUserLogin<long>, IAuditableEntity<long>
 
     public long? UpdatedByUserRoleId { get; private set; }
 
-    public Guid EntityId { get; private set; } = Guid.NewGuid();
+    public EntityId EntityId { get; private set; } = Guid.NewGuid();
     public long Id { get; private set; }
     public bool IsDeleted { get; private set; }
     public bool IsActive { get; private set; }

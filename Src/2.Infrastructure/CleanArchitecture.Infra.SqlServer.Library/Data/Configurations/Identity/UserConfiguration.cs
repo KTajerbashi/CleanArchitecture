@@ -1,5 +1,4 @@
-﻿using CleanArchitecture.Core.Domain.Library.Entities.Security;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
+﻿using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -9,6 +8,23 @@ public class UserConfiguration : IEntityTypeConfiguration<UserEntity>
 {
     public void Configure(EntityTypeBuilder<UserEntity> builder)
     {
+        //// Each User can have many UserClaims
+        //builder.HasMany(e => e.Claims)
+        //    .WithOne()
+        //    .HasForeignKey(uc => uc.UserId)
+        //    .IsRequired();
+
+        //// Each User can have many UserLogins
+        //builder.HasMany(e => e.Logins)
+        //    .WithOne()
+        //    .HasForeignKey(ul => ul.UserId)
+        //    .IsRequired();
+
+        //// Each User can have many UserTokens
+        //builder.HasMany(e => e.Tokens)
+        //    .WithOne()
+        //    .HasForeignKey(ut => ut.UserId)
+        //    .IsRequired();
     }
 }
 

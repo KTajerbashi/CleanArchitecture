@@ -35,11 +35,11 @@ public class DispatchDomainEventsInterceptor : SaveChangesInterceptor
 
         var entities = context.ChangeTracker
             .Entries<BaseAuditableEntity>()
-            .Where(e => e.Entity.DomainEvents.Any())
+            .Where(e => e.Entity.GetEvents().Any())
             .Select(e => e.Entity);
 
         var domainEvents = entities
-            .SelectMany(e => e.DomainEvents)
+            .SelectMany(e => e.GetEvents())
             .ToList();
 
         entities.ToList().ForEach(e => e.ClearDomainEvents());

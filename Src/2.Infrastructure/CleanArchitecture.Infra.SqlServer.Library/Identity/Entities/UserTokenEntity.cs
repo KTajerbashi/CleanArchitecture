@@ -14,11 +14,14 @@ public class UserTokenEntity : IdentityUserToken<long>, IAuditableEntity<long>
 
     public long? UpdatedByUserRoleId { get; private set; }
 
-    public Guid EntityId { get; private set; } = Guid.NewGuid();
+    public EntityId EntityId { get; private set; } = Guid.NewGuid();
     public long Id { get; private set; }
 
     public bool IsDeleted { get; private set; }
     public bool IsActive { get; private set; }
+
+    public string RefreshToken { get; private set; }
+    public void SetToken(string refToken) => RefreshToken = refToken;
 
     public void Access()
     {

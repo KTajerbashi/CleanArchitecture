@@ -1,5 +1,6 @@
-﻿using CleanArchitecture.Core.Application.Library.Identity.Interfaces;
+﻿using CleanArchitecture.Core.Application.Library.Providers.UserManagement;
 using CleanArchitecture.Core.Application.Library.Utilities.Extensions;
+using CleanArchitecture.Infra.SqlServer.Library.Identity.Extensions;
 using Microsoft.AspNetCore.Http;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Service;
@@ -33,9 +34,16 @@ public class UserInfoService : IUser
 
     public Dictionary<long, string> RolesName => getRolesName();
 
+    public string Username => getValue("Username");
+
+    public string Email => getValue("Email");
+
     private string getValue(string name)
     {
-        return $"0844";
+        if (_httpContextAccessor is null) return "Accessor NULL";
+        if (_httpContextAccessor.HttpContext is null) return "Context NULL";
+        if (_httpContextAccessor.HttpContext.User is null) return "User NULL";
+        return _httpContextAccessor!.HttpContext!.User.GetClaimValue(name)!;
     }
     private Dictionary<long, string> getRolesName()
     {

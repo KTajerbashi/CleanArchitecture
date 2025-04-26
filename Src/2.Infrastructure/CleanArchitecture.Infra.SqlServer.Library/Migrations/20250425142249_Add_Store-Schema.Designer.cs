@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20250221191003_InitialDatabase")]
-    partial class InitialDatabase
+    [Migration("20250425142249_Add_Store-Schema")]
+    partial class Add_StoreSchema
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,93 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CategoryEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories", "Store");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductDetailEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductDetails", "Store");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("CategoryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Products", "Store");
+                });
 
             modelBuilder.Entity("CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.RoleClaimEntity", b =>
                 {
@@ -67,7 +154,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetRoleClaims", (string)null);
+                    b.ToTable("RoleClaims", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.RoleEntity", b =>
@@ -118,7 +205,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasDatabaseName("RoleNameIndex")
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
-                    b.ToTable("AspNetRoles", (string)null);
+                    b.ToTable("Roles", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.UserClaimEntity", b =>
@@ -163,7 +250,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserClaims", (string)null);
+                    b.ToTable("UserClaims", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.UserEntity", b =>
@@ -238,6 +325,13 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("RefreshToken")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -264,7 +358,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.ToTable("AspNetUsers", (string)null);
+                    b.ToTable("Users", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.UserLoginEntity", b =>
@@ -309,7 +403,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserLogins", (string)null);
+                    b.ToTable("UserLogins", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.UserRoleEntity", b =>
@@ -348,7 +442,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetUserRoles", (string)null);
+                    b.ToTable("UserRoles", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.UserTokenEntity", b =>
@@ -391,7 +485,29 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("AspNetUserTokens", (string)null);
+                    b.ToTable("UserTokens", "Security");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductDetailEntity", b =>
+                {
+                    b.HasOne("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductEntity", "Product")
+                        .WithMany("ProductDetails")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductEntity", b =>
+                {
+                    b.HasOne("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CategoryEntity", "Category")
+                        .WithMany("ProductEntities")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.RoleClaimEntity", b =>
@@ -443,6 +559,16 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CategoryEntity", b =>
+                {
+                    b.Navigation("ProductEntities");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductEntity", b =>
+                {
+                    b.Navigation("ProductDetails");
                 });
 #pragma warning restore 612, 618
         }
