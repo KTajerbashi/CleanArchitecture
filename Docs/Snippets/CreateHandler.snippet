@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>User Handler</Title>
+      <Shortcut>CreateHandler</Shortcut>
+      <Description>Code snippet for creating a User handler with request/response pattern</Description>
+      <Author>Tajerbashi</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Keywords>
+        <Keyword>User</Keyword>
+        <Keyword>Handler</Keyword>
+        <Keyword>CQRS</Keyword>
+      </Keywords>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Entity</ID>
+          <ToolTip>Name of the entity (e.g., User, Product)</ToolTip>
+          <Default>User</Default>
+        </Literal>
+        <Literal>
+          <ID>repository</ID>
+          <ToolTip>Name of the repository interface</ToolTip>
+          <Default>IUserRepository</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[public class $Entity$CreateResponse : BaseDTO
+{
+    public Result Result { get; set; }
+    public $Entity$CreateResponse(Result result)
+    {
+        Result = result;
+    }
+}
+
+public class $Entity$CreateRequest : RequestModel<$Entity$CreateResponse>
+{
+    public string Email { get; set; }
+    // Add other request properties here
+}
+
+public class $Entity$CreateHandler : Handler<$Entity$CreateRequest, $Entity$CreateResponse>
+{
+    private readonly $repository$ _repository;
+    public $Entity$CreateHandler(ProviderServices providerServices, $repository$ repository) : base(providerServices)
+    {
+        _repository = repository;
+    }
+
+    public override async Task<$Entity$CreateResponse> Handle($Entity$CreateRequest request, CancellationToken cancellationToken)
+    {
+        try
+        {
+            // Add your business logic here
+            // Example:
+            // var user = new User { Email = request.Email };
+            // await _repository.CreateAsync(user);
+            
+            return new $Entity$CreateResponse(Result.Success());
+        }
+        catch (Exception ex)
+        {
+            // Log error if needed
+            return new $Entity$CreateResponse(Result.Failure(ex.Message));
+        }
+    }
+}
+
+public class $Entity$Profile : Profile
+{
+    public $Entity$Profile()
+    {
+        CreateMap<$Entity$CreateRequest, $Entity$CreateRequest>().ReverseMap();
+        // Add other mappings as needed
+    }
+}
+
+public class $Entity$CreateValidator : AbstractValidator<$Entity$CreateRequest>
+{
+    public $Entity$CreateValidator()
+    {
+        RuleFor(item => item.Email).EmailAddress().WithMessage("Email Is Not Correct Format ...");
+        // Add other validation rules as needed
+    }
+}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

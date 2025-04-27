@@ -5,6 +5,7 @@ using CleanArchitecture.EndPoint.WebApi.Middlewares.ExceptionHandler;
 using CleanArchitecture.EndPoint.WebApi.Providers;
 using CleanArchitecture.Infra.SqlServer.Library;
 using CleanArchitecture.Infra.SqlServer.Library.Data;
+using FluentValidation;
 using Serilog;
 
 namespace CleanArchitecture.EndPoint.WebApi;
@@ -37,6 +38,10 @@ public static class DependencyInjections
         builder.Services.AddSwaggerService();
 
         builder.Services.AddHostedService<HostingServices>();
+
+        //builder.Services.AddValidatorsFromAssemblyContaining<Program>();
+
+        builder.Services.AddValidatorsFromAssemblies(assemblies);
 
         return builder.Build();
     }

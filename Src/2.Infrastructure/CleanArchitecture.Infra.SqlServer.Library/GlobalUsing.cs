@@ -1,5 +1,4 @@
 ﻿global using AutoMapper;
-global using CleanArchitecture.Core.Application.Library.Common.Models.Response;
 global using CleanArchitecture.Core.Application.Library.Providers.CacheSystem;
 global using CleanArchitecture.Core.Application.Library.Providers.UserManagement;
 global using CleanArchitecture.Core.Domain.Library.UseCases.Security;
@@ -18,5 +17,4 @@ global using Microsoft.EntityFrameworkCore;
 global using Microsoft.EntityFrameworkCore.Diagnostics;
 global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
-global using Scrutor;
 global using System.Reflection;

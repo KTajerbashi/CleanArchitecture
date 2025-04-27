@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Common.Models.Requests;
-
-namespace CleanArchitecture.Core.Application.Library.Common.Handlers;
+﻿namespace CleanArchitecture.Core.Application.Library.Common.Handlers;
 
 public interface IHandler<TRequest> : IRequestHandler<TRequest>
     where TRequest : RequestModel
