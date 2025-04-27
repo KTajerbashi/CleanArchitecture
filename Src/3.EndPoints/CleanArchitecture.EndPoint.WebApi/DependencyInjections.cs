@@ -29,6 +29,7 @@ public static class DependencyInjections
         builder.Services.AddInfrastructureLibrary(configuration, assemblies);
 
         builder.Services.AddControllers();
+
         builder.Services.AddHttpContextAccessor();
 
         builder.Services.AddOpenApi();

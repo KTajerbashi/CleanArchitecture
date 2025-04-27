@@ -1,5 +1,4 @@
-﻿
-using CleanArchitecture.Core.Application.Library.Common.Repository;
+﻿using CleanArchitecture.Core.Application.Library.Common.Repository;
 using CleanArchitecture.Core.Application.Library.Common.Service;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
 using CleanArchitecture.Infra.SqlServer.Library.Providers.Scrutor;
@@ -9,51 +8,65 @@ namespace CleanArchitecture.Infra.SqlServer.Library;
 public static class DependencyInjections
 {
     public static IServiceCollection AddInfrastructureLibrary(this IServiceCollection services, IConfiguration configuration, Assembly[] assemblies)
-        => services
-        .AddScrutor(configuration, assemblies, [typeof(IRepository<,>), typeof(IEntityService<,,>)])
-        .AddDatabase(configuration)
-        .AddDatabaseInterceptors()
-        .AddIdentityConfiguration(configuration)
-        .AddIdentityPolicies()
-        .AddInMemoryCaching()
-        ;
+    {
+        return services
+            .AddScrutor(configuration, assemblies, [typeof(IRepository<,>), typeof(IEntityService<,,>)])
+            .AddDatabase(configuration)
+            .AddDatabaseInterceptors()
+            .AddIdentity(configuration)
+            .AddIdentityPolicies()
+            .AddInMemoryCaching();
+    }
+
     private static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<DatabaseContext>(options =>
         {
-            options
-            .UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
-            .AddInterceptors(
-                new SetPersianYeKeInterceptor(),
-                new AddAuditDataInterceptor()
-                );
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+                   .AddInterceptors(
+                        new SetPersianYeKeInterceptor(),
+                        new AddAuditDataInterceptor()
+                   );
         });
 
         services.AddScoped<InitializerSeedData>();
 
         return services;
     }
-    private static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, IConfiguration configuration)
+
+    private static IServiceCollection AddDatabaseInterceptors(this IServiceCollection services)
+    {
+        services.AddScoped<ISaveChangesInterceptor, AddAuditDataInterceptor>();
+        services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventsInterceptor>();
+
+        return services;
+    }
+
+    private static IServiceCollection AddIdentity(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<IIdentityService, IdentityService>();
         services.AddScoped<IUser, UserInfoService>();
+
         services.AddIdentity<UserEntity, RoleEntity>(options =>
         {
-            options.Password.RequiredLength = 6;  // Set the minimum password length
-            options.Password.RequireDigit = true;  // Require at least one digit in password
-            options.Password.RequireLowercase = true; // Require at least one lowercase letter
-            options.Password.RequireUppercase = true; // Require at least one uppercase letter
-            options.Password.RequireNonAlphanumeric = false; // Optional: Allow non-alphanumeric characters
+            options.Password.RequiredLength = 6;
+            options.Password.RequireDigit = true;
+            options.Password.RequireLowercase = true;
+            options.Password.RequireUppercase = true;
+            options.Password.RequireNonAlphanumeric = false;
         })
         .AddEntityFrameworkStores<DatabaseContext>()
         .AddRoles<RoleEntity>()
         .AddDefaultTokenProviders()
         .AddApiEndpoints();
-        services.AddScoped(typeof(SignInManager<UserEntity>), typeof(AppSignInManager<UserEntity>));
-        services.AddScoped(typeof(UserManager<UserEntity>), typeof(AppUserManager<UserEntity>));
+
+        services.AddScoped<SignInManager<UserEntity>, AppSignInManager<UserEntity>>();
+        services.AddScoped<UserManager<UserEntity>, AppUserManager<UserEntity>>();
         services.AddScoped<IUserClaimsPrincipalFactory<UserEntity>, AppUserClaimsFactory>();
+
         return services;
     }
+
     private static IServiceCollection AddIdentityPolicies(this IServiceCollection services)
     {
         services.AddDistributedMemoryCache();
@@ -68,7 +81,7 @@ public static class DependencyInjections
         });
 
         services.AddAuthentication("AuthorizationCookies")
-            .AddCookie(options =>
+            .AddCookie("AuthorizationCookies", options =>
             {
                 options.Cookie.Name = "_auth.TK";
                 options.Events.OnRedirectToLogin = context =>
@@ -92,14 +105,10 @@ public static class DependencyInjections
         return services;
     }
 
-    private static IServiceCollection AddDatabaseInterceptors(this IServiceCollection services)
-    {
-        services.AddScoped<ISaveChangesInterceptor, AddAuditDataInterceptor>();
-        services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventsInterceptor>();
-        return services;
-    }
-
     private static IServiceCollection AddInMemoryCaching(this IServiceCollection services)
-        => services.AddMemoryCache().AddTransient<ICacheAdapter, InMemoryCacheAdapter>();
-
+    {
+        return services
+            .AddMemoryCache()
+            .AddTransient<ICacheAdapter, InMemoryCacheAdapter>();
+    }
 }
