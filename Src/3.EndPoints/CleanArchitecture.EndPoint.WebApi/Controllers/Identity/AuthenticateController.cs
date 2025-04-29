@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.EndPoint.WebApi.Models;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Identity;
 
@@ -28,7 +29,8 @@ public class AuthenticateController : BaseController
 
         if (loginResult.Succeeded)
         {
-            return Ok(loginResult);
+            var token = await _identityService.TokenService.GenerateAccessTokenAsync(userEntity);
+            return Ok(token);
         }
         return BadRequest();
     }
@@ -36,7 +38,7 @@ public class AuthenticateController : BaseController
     [HttpGet("Logout")]
     public async Task<IActionResult> Logout()
     {
-        await _identityService.SignInManager.SignOutAsync();
+        await _identityService.LogoutAsync();
         return Ok();
     }
 
@@ -45,5 +47,36 @@ public class AuthenticateController : BaseController
     {
         await Task.CompletedTask;
         return Ok(User?.Identity?.IsAuthenticated);
+    }
+
+    [HttpGet("validate-token")]
+    public IActionResult ValidateToken([FromHeader(Name = "Authorization")] string authHeader)
+    {
+        if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
+        {
+            return BadRequest("Invalid Authorization header");
+        }
+
+        var token = authHeader.Substring("Bearer ".Length).Trim();
+
+        try
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadToken(token) as JwtSecurityToken;
+
+            return Ok(new
+            {
+                isValid = true,
+                claims = jsonToken.Claims.Select(c => new { c.Type, c.Value })
+            });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new
+            {
+                isValid = false,
+                error = ex.Message
+            });
+        }
     }
 }

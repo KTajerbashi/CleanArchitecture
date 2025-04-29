@@ -1,21 +1,21 @@
-﻿namespace CleanArchitecture.EndPoint.WebApi.Providers;
+﻿using CleanArchitecture.EndPoint.WebApi.Filters;
+using Microsoft.OpenApi.Models;
+
+namespace CleanArchitecture.EndPoint.WebApi.Providers;
 
 public static class SwaggerExtensions
 {
     public static IServiceCollection AddSwaggerService(this IServiceCollection services)
     {
-
-        // Add Swagger services
         services.AddEndpointsApiExplorer();
-        services.AddSwaggerGen(options =>
+        services.AddSwaggerGen(c =>
         {
-            // Add metadata for your API
-            options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+            c.SwaggerDoc("v1", new OpenApiInfo
             {
                 Title = "Clean Architecture",
                 Version = "v1",
                 Description = "WebAPI using Swagger",
-                Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                Contact = new OpenApiContact
                 {
                     Name = "Tajerbashi",
                     Email = "kamrantajerbashi@gmail.com",
@@ -23,35 +23,38 @@ public static class SwaggerExtensions
                 }
             });
 
-            // Configure security for API if needed
-            //options.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-            //{
-            //    In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-            //    Description = "Please enter a valid token",
-            //    Name = "Authorization",
-            //    Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
-            //    Scheme = "Bearer"
-            //});
+            // Add 401 response to all operations that have [Authorize]
+            c.OperationFilter<UnauthorizedResponseOperationFilter>();
 
-            //options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
-            //{
-            //    {
-            //        new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-            //        {
-            //            Reference = new Microsoft.OpenApi.Models.OpenApiReference
-            //            {
-            //                Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
-            //                Id = "Bearer"
-            //            }
-            //        },
-            //        new List<string>()
-            //    }
-            //});
+            // Configure security for API
+            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                In = ParameterLocation.Header,
+                Description = "Please enter a valid token",
+                Name = "Authorization",
+                Type = SecuritySchemeType.Http,
+                BearerFormat = "JWT",
+                Scheme = "Bearer"
+            });
+
+            c.AddSecurityRequirement(new OpenApiSecurityRequirement
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                },
+                Array.Empty<string>()
+            }
+        });
         });
 
         return services;
     }
-
     public static WebApplication UseSwaggerService(this WebApplication app)
     {
         // Enable Swagger in development mode

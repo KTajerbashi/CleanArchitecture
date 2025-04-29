@@ -35,6 +35,8 @@ public static class DependencyInjections
 
         builder.Services.AddOpenApi();
 
+        builder.Services.AddIdentity(configuration, "IdentityOption");
+
         builder.Services.AddSwaggerService();
 
         builder.Services.AddHostedService<HostingServices>();
@@ -53,7 +55,6 @@ public static class DependencyInjections
             app.MapOpenApi(); // Only map OpenAPI in development
         }
 
-        app.UseAuthorizedMiddleware();
 
         // Static files middleware
         app.UseStaticFiles();
@@ -67,15 +68,19 @@ public static class DependencyInjections
         // Session middleware
         app.UseSession();
 
-        // Authentication and authorization middleware
-        app.UseAuthentication(); // Must come before UseAuthorization
-        app.UseAuthorization();
-
         // Swagger service (only in development)
         if (app.Environment.IsDevelopment())
         {
             app.UseSwaggerService();
         }
+
+        app.UseRouting();
+
+        // Authentication and authorization middleware
+        app.UseAuthentication(); // Must come before UseAuthorization
+        app.UseAuthorization();
+
+        app.UseAuthorizedMiddleware();
 
         // Exception handling middleware (custom middleware)
         app.UseExceptionMiddleware();

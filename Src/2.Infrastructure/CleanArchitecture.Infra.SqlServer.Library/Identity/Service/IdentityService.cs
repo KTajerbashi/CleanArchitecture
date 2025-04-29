@@ -3,10 +3,7 @@ using CleanArchitecture.Core.Application.Library.UseCases.Security.Role.Reposito
 using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Repositories;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Parameters;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Logging;
-using System.Security.Claims;
-using System.Security.Cryptography;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Service;
 
@@ -22,7 +19,8 @@ public class IdentityService : IIdentityService
     private readonly IUserLoginRepository _userLoginRepository;
     private readonly IUserTokenRepository _userTokenRepository;
     private readonly IUserRoleRepository _userRoleRepository;
-
+    private readonly IRoleRepository _roleRepository;
+    private readonly ProviderServices _providerServices;
     public IdentityService(
         UserManager<UserEntity> userManager,
         SignInManager<UserEntity> signInManager,
@@ -33,7 +31,9 @@ public class IdentityService : IIdentityService
         IUserRepository userRepository,
         IUserLoginRepository userLoginRepository,
         IUserTokenRepository userTokenRepository,
-        IUserRoleRepository userRoleRepository)
+        IUserRoleRepository userRoleRepository,
+        ProviderServices providerServices,
+        IRoleRepository roleRepository)
     {
         _userManager = userManager;
         _signInManager = signInManager;
@@ -45,6 +45,8 @@ public class IdentityService : IIdentityService
         _userLoginRepository = userLoginRepository;
         _userTokenRepository = userTokenRepository;
         _userRoleRepository = userRoleRepository;
+        _providerServices = providerServices;
+        _roleRepository = roleRepository;
     }
 
     public UserManager<UserEntity> UserManager => _userManager;
@@ -54,68 +56,13 @@ public class IdentityService : IIdentityService
     public IUserLoginRepository UserLoginRepository => _userLoginRepository;
     public IUserTokenRepository UserTokenRepository => _userTokenRepository;
     public IUserRoleRepository UserRoleRepository => _userRoleRepository;
+    public IRoleRepository RoleRepository => _roleRepository;
 
-    public IRoleRepository RoleRepository => throw new NotImplementedException();
+    public ITokenService TokenService => _tokenService;
 
-    public string GeneratePersonalCode => GenerateSecureRandomCode();
-    public async Task<string> GenerateJwtTokenAsync(UserEntity user)
+    public Task LogoutAsync()
     {
-        try
-        {
-            return await _tokenService.GenerateAccessTokenAsync(user);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error generating JWT token for user {UserId}", user?.Id);
-            throw;
-        }
-    }
-
-    public async Task<string> GenerateJwtTokenAsync(UserEntity user, IEnumerable<Claim> claims)
-    {
-        try
-        {
-            //await ClearExistingClaimsAsync(user);
-            //await _userManager.AddClaimsAsync(user, claims);
-            return await _tokenService.GenerateAccessTokenAsync(user);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error generating JWT token with custom claims for user {UserId}", user?.Id);
-            throw;
-        }
-    }
-
-    public string GenerateRefreshToken() => _tokenService.GenerateRefreshToken();
-
-    public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
-    {
-        try
-        {
-            return _tokenService.GetPrincipalFromExpiredToken(token);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error validating expired token");
-            throw;
-        }
-    }
-
-    private async Task ClearExistingClaimsAsync(UserEntity user)
-    {
-        var claims = await _userManager.GetClaimsAsync(user);
-        if (claims.Any())
-        {
-            await _userManager.RemoveClaimsAsync(user, claims);
-        }
-    }
-
-    private string GenerateSecureRandomCode()
-    {
-        using var rng = RandomNumberGenerator.Create();
-        var bytes = new byte[4];
-        rng.GetBytes(bytes);
-        return (BitConverter.ToUInt32(bytes, 0) % 900000 + 100000).ToString();
+        throw new NotImplementedException();
     }
 }
 

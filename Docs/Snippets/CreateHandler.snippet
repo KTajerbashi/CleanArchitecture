@@ -2,15 +2,15 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>User Handler</Title>
+      <Title>Create Handler</Title>
       <Shortcut>CreateHandler</Shortcut>
-      <Description>Code snippet for creating a User handler with request/response pattern</Description>
+      <Description>Code snippet for creating a Entity handler with request/response pattern</Description>
       <Author>Tajerbashi</Author>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
       <Keywords>
-        <Keyword>User</Keyword>
+        <Keyword>Entity</Keyword>
         <Keyword>Handler</Keyword>
         <Keyword>CQRS</Keyword>
       </Keywords>
@@ -19,13 +19,13 @@
       <Declarations>
         <Literal>
           <ID>Entity</ID>
-          <ToolTip>Name of the entity (e.g., User, Product)</ToolTip>
-          <Default>User</Default>
+          <ToolTip>Name of the entity (e.g., Entity, Product)</ToolTip>
+          <Default>Entity</Default>
         </Literal>
         <Literal>
           <ID>repository</ID>
           <ToolTip>Name of the repository interface</ToolTip>
-          <Default>IUserRepository</Default>
+          <Default>IEntityRepository</Default>
         </Literal>
       </Declarations>
       <Code Language="csharp">
@@ -58,8 +58,8 @@ public class $Entity$CreateHandler : Handler<$Entity$CreateRequest, $Entity$Crea
         {
             // Add your business logic here
             // Example:
-            // var user = new User { Email = request.Email };
-            // await _repository.CreateAsync(user);
+            // var Entity = new Entity { Email = request.Email };
+            // await _repository.CreateAsync(Entity);
             
             return new $Entity$CreateResponse(Result.Success());
         }
