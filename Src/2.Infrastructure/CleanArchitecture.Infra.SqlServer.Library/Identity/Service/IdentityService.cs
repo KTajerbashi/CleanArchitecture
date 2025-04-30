@@ -3,6 +3,7 @@ using CleanArchitecture.Core.Application.Library.UseCases.Security.Role.Reposito
 using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Repositories;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Parameters;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Service;
@@ -60,9 +61,14 @@ public class IdentityService : IIdentityService
 
     public ITokenService TokenService => _tokenService;
 
-    public Task LogoutAsync()
+    public async Task LoginAsync(UserEntity entity)
     {
-        throw new NotImplementedException();
+        await _signInManager.SignInAsync(entity,true);
+    }
+
+    public async Task LogoutAsync()
+    {
+        await _signInManager.SignOutAsync();
     }
 }
 

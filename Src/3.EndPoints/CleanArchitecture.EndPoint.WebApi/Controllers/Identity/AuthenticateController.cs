@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.EndPoint.WebApi.Models;
+using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
 using System.IdentityModel.Tokens.Jwt;
 
@@ -35,6 +36,19 @@ public class AuthenticateController : BaseController
         return BadRequest();
     }
 
+    [HttpGet("LoginAs/{id}")]
+    public async Task<IActionResult> LoginAs(long id)
+    {
+        var userEntity = await _identityService.UserManager.FindByIdAsync($"{id}");
+        if (userEntity is null)
+        {
+            return NotFound();
+        }
+        var token = await _identityService.TokenService.GenerateAccessTokenAsync(userEntity);
+        await _identityService.LoginAsync(userEntity);
+        return Ok(token);
+    }
+
     [HttpGet("Logout")]
     public async Task<IActionResult> Logout()
     {
@@ -47,6 +61,12 @@ public class AuthenticateController : BaseController
     {
         await Task.CompletedTask;
         return Ok(User?.Identity?.IsAuthenticated);
+    }
+
+    [HttpGet("CurrentUser")]
+    public IActionResult CurrentUser()
+    {
+        return Ok(ProviderServices.User);
     }
 
     [HttpGet("validate-token")]

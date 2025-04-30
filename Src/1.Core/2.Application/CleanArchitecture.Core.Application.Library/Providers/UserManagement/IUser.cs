@@ -7,8 +7,8 @@ public interface IUser
     string DisplayName { get; }
     long UserId { get; }
     long UserRoleId { get; }
-    long RoleName { get; }
-    long RoleTitle { get; }
+    string RoleName { get; }
+    string RoleTitle { get; }
     string Ip { get; }
     string Agent { get; }
     string Username { get; }

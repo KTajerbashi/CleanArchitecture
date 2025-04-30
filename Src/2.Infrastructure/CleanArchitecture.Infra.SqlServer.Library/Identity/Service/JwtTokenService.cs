@@ -94,16 +94,19 @@ public class JwtTokenService : ITokenService
         new(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(), ClaimValueTypes.Integer64),
         new(ClaimTypes.NameIdentifier, user.Id.ToString()),
         new(ClaimTypes.Name, user.UserName),
-        new(ClaimTypes.Email, user.Email),
+        new("Name", user.Name),
+        new("Family", user.Family),
+        new("DisplayName", user.DisplayName),
+        new("UserId", user.Id.ToString()),
+        new("UserRoleId", user.Id.ToString()),//    TODO
+        new("RoleName", user.Id.ToString()), // TODO
+        new("RoleTitle", user.Id.ToString()), //TODO
+        new("Username", user.UserName),
+        new("Email", user.Email),
         new("SecurityStamp", user.SecurityStamp ?? string.Empty)
     };
 
-        // Add simple properties
-        if (!string.IsNullOrEmpty(user.Name))
-            claims.Add(new("Name", user.Name));
-
-        if (!string.IsNullOrEmpty(user.Family))
-            claims.Add(new("Family", user.Family));
+  
 
         // Add roles as individual claims
         var userRoles = await _userManager.GetRolesAsync(user);
