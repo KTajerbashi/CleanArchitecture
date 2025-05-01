@@ -19,6 +19,6 @@ public interface IIdentityService
     public IRoleRepository RoleRepository { get; }
     public ITokenService TokenService { get; }
 
-    Task LoginAsync(UserEntity entity);
+    Task<AuthResponse> LoginAsync(UserEntity entity);
     Task LogoutAsync();
 }

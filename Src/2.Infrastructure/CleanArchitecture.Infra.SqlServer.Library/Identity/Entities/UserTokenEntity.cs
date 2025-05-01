@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Core.Domain.Library.Common;
+using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.Parameters;
 using Microsoft.AspNetCore.Identity;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
@@ -36,5 +37,13 @@ public class UserTokenEntity : IdentityUserToken<long>, IAuditableEntity<long>
     public UserTokenEntity()
     {
 
+    }
+    public UserTokenEntity(UserTokenParameters parameters)
+    {
+        UserId = parameters.UserId;
+        LoginProvider = parameters.LoginProvider;
+        Name = parameters.Name;
+        Value = parameters.Value;
+        RefreshToken = parameters.RefreshToken;
     }
 }

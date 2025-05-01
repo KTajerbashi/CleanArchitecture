@@ -1,6 +1,9 @@
-﻿using CleanArchitecture.Core.Application.Library.Providers;
+﻿using CleanArchitecture.Core.Application.Library.Common.Service;
+using CleanArchitecture.Core.Application.Library.Providers;
 using CleanArchitecture.Core.Application.Library.UseCases.Security.Role.Repositories;
 using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Repositories;
+using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
+using CleanArchitecture.Infra.SqlServer.Library.Identity.Models;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Parameters;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
 using Microsoft.AspNetCore.Identity;
@@ -58,12 +61,15 @@ public class IdentityService : IIdentityService
     public IUserTokenRepository UserTokenRepository => _userTokenRepository;
     public IUserRoleRepository UserRoleRepository => _userRoleRepository;
     public IRoleRepository RoleRepository => _roleRepository;
-
     public ITokenService TokenService => _tokenService;
 
-    public async Task LoginAsync(UserEntity entity)
+    public async Task<AuthResponse> LoginAsync(UserEntity entity)
     {
+        var token = await TokenService.GenerateAccessTokenAsync(entity);
+
         await _signInManager.SignInAsync(entity,true);
+        
+        return token;
     }
 
     public async Task LogoutAsync()

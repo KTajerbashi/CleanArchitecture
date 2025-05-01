@@ -4,21 +4,8 @@ using CleanArchitecture.Infra.SqlServer.Library.Data.Constants;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Models;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Polymorphism;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Service;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json.Linq;
-using OfficeOpenXml.FormulaParsing.LexicalAnalysis;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
-using System.Text.Json;
 
 namespace CleanArchitecture.EndPoint.WebApi.Providers;
-
-
 
 public static class IdentityExtensions
 {

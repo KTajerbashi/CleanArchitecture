@@ -33,3 +33,12 @@ public class AuthResponse
     public DateTime ExpiresIn { get; set; }
 }
 
+public class IdentityResult<T>: IdentityResult
+{
+    public T Result { get; set; }
+    public IdentityResult(bool success,T value)
+    {
+        Succeeded = success;
+        Result = value;
+    }
+}

@@ -1,13 +1,4 @@
-﻿using CleanArchitecture.Infra.SqlServer.Library.Identity.Models;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.Json;
+﻿
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Service;
 
@@ -17,7 +8,9 @@ public class JwtTokenService : ITokenService
     private readonly UserManager<UserEntity> _userManager;
     private readonly IdentityOption _identityOption;
     private readonly ILogger<JwtTokenService> _logger;
-
+    private const string loginProvider = "JWT";
+    private const string tokenName = "AccessToken";
+    private string RefreshToken ="";
     public JwtTokenService(
         UserManager<UserEntity> userManager,
         IOptions<IdentityOption> options,
@@ -26,6 +19,7 @@ public class JwtTokenService : ITokenService
         _userManager = userManager;
         _identityOption = options.Value;
         _logger = logger;
+        RefreshToken = GenerateRefreshToken();
     }
 
     public async Task<AuthResponse> GenerateAccessTokenAsync(UserEntity user)
@@ -33,13 +27,13 @@ public class JwtTokenService : ITokenService
         try
         {
             var claims = await GetUserClaimsAsync(user);
-            var token = GenerateJwtToken(claims);
+            var token = await GenerateJwtToken(user,claims);
             var refreshToken = GenerateRefreshToken();
-
+            //await TrackLoginAsync();
             return new AuthResponse
             {
                 Token = token,
-                RefreshToken = refreshToken,
+                RefreshToken = RefreshToken,
                 ExpiresIn = DateTime.UtcNow.AddMinutes(_identityOption.Jwt.ExpireMinutes),
                 User = MapToUserProfileDto(user)
             };
@@ -87,26 +81,25 @@ public class JwtTokenService : ITokenService
 
     private async Task<List<Claim>> GetUserClaimsAsync(UserEntity user)
     {
-        var claims = new List<Claim>
-    {
-        new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-        new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-        new(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(), ClaimValueTypes.Integer64),
-        new(ClaimTypes.NameIdentifier, user.Id.ToString()),
-        new(ClaimTypes.Name, user.UserName),
-        new("Name", user.Name),
-        new("Family", user.Family),
-        new("DisplayName", user.DisplayName),
-        new("UserId", user.Id.ToString()),
-        new("UserRoleId", user.Id.ToString()),//    TODO
-        new("RoleName", user.Id.ToString()), // TODO
-        new("RoleTitle", user.Id.ToString()), //TODO
-        new("Username", user.UserName),
-        new("Email", user.Email),
-        new("SecurityStamp", user.SecurityStamp ?? string.Empty)
-    };
 
-  
+        var claims = new List<Claim>
+        {
+            new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            new(JwtRegisteredClaimNames.Iat, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString(), ClaimValueTypes.Integer64),
+            new(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new(ClaimTypes.Name, user.UserName),
+            new("Name", user.Name),
+            new("Family", user.Family),
+            new("DisplayName", user.DisplayName),
+            new("UserId", user.Id.ToString()),
+            new("UserRoleId", user.Id.ToString()),//    TODO
+            new("RoleName", user.Id.ToString()), // TODO
+            new("RoleTitle", user.Id.ToString()), //TODO
+            new("Username", user.UserName),
+            new("Email", user.Email),
+            new("SecurityStamp", user.SecurityStamp ?? string.Empty)
+        };
 
         // Add roles as individual claims
         var userRoles = await _userManager.GetRolesAsync(user);
@@ -117,25 +110,14 @@ public class JwtTokenService : ITokenService
 
         // Handle custom claims carefully
         var userClaims = await _userManager.GetClaimsAsync(user);
-        foreach (var claim in userClaims)
-        {
-            try
-            {
-                // Test serialization
-                JsonSerializer.Serialize(claim.Value);
-                claims.Add(claim);
-            }
-            catch
-            {
-                // Convert to JSON if complex
-                claims.Add(new Claim(claim.Type, JsonSerializer.Serialize(claim.Value)));
-            }
-        }
+        await _userManager.RemoveClaimsAsync(user, userClaims);
+        await _userManager.RemoveClaimsAsync(user, claims);
+        await _userManager.AddClaimsAsync(user, claims);
 
         return claims;
     }
 
-    private string GenerateJwtToken(IEnumerable<Claim> claims)
+    private async Task<string> GenerateJwtToken(UserEntity user, IEnumerable<Claim> claims)
     {
         // Validate claims first
         var validClaims = new List<Claim>();
@@ -165,8 +147,9 @@ public class JwtTokenService : ITokenService
         expires: DateTime.UtcNow.AddMinutes(_identityOption.Jwt.ExpireMinutes),
         signingCredentials: creds
         );
-
-        return new JwtSecurityTokenHandler().WriteToken(token);
+        var tokenValue = new JwtSecurityTokenHandler().WriteToken(token);
+        await _userManager.SetAuthenticationTokenAsync(user, loginProvider, RefreshToken, tokenValue);
+        return tokenValue;
     }
 
     private UserProfileDTO MapToUserProfileDto(UserEntity user)

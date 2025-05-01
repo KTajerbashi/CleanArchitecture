@@ -30,7 +30,7 @@ public class AuthenticateController : BaseController
 
         if (loginResult.Succeeded)
         {
-            var token = await _identityService.TokenService.GenerateAccessTokenAsync(userEntity);
+            var token = await _identityService.LoginAsync(userEntity);
             return Ok(token);
         }
         return BadRequest();
@@ -44,8 +44,7 @@ public class AuthenticateController : BaseController
         {
             return NotFound();
         }
-        var token = await _identityService.TokenService.GenerateAccessTokenAsync(userEntity);
-        await _identityService.LoginAsync(userEntity);
+        var token = await _identityService.LoginAsync(userEntity);
         return Ok(token);
     }
 
