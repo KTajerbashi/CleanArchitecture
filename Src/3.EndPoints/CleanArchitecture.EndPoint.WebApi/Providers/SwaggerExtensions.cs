@@ -10,6 +10,7 @@ public static class SwaggerExtensions
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(c =>
         {
+            // Explicitly set OpenAPI version (3.0.1 or higher)
             c.SwaggerDoc("v1", new OpenApiInfo
             {
                 Title = "Clean Architecture",
@@ -20,53 +21,67 @@ public static class SwaggerExtensions
                     Name = "Tajerbashi",
                     Email = "kamrantajerbashi@gmail.com",
                     Url = new Uri("https://github.com/KTajerbashi/CleanArchitecture.git")
+                },
+                // Optional: Explicitly declare OpenAPI spec version (meta-info only)
+                TermsOfService = new Uri("https://example.com/terms"),
+                License = new OpenApiLicense { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
+            });
+
+            // Add XML comments if available
+            var xmlFile = $"{typeof(Program).Assembly.GetName().Name}.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            if (File.Exists(xmlPath))
+                c.IncludeXmlComments(xmlPath);
+
+            // Add 401 response to all [Authorize] endpoints
+            c.OperationFilter<UnauthorizedResponseOperationFilter>();
+
+            // JWT Bearer Authentication
+            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                Name = "Authorization",
+                In = ParameterLocation.Header,
+                Type = SecuritySchemeType.Http,
+                Scheme = "Bearer",
+                BearerFormat = "JWT",
+                Description = "JWT Authorization header using the Bearer scheme."
+            });
+
+            // Global security requirement
+            c.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    Array.Empty<string>()
                 }
             });
 
-            // Add 401 response to all operations that have [Authorize]
-            c.OperationFilter<UnauthorizedResponseOperationFilter>();
-
-            // Configure security for API
-            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-            {
-                In = ParameterLocation.Header,
-                Description = "Please enter a valid token",
-                Name = "Authorization",
-                Type = SecuritySchemeType.Http,
-                BearerFormat = "JWT",
-                Scheme = "Bearer"
-            });
-
-            c.AddSecurityRequirement(new OpenApiSecurityRequirement
-        {
-            {
-                new OpenApiSecurityScheme
-                {
-                    Reference = new OpenApiReference
-                    {
-                        Type = ReferenceType.SecurityScheme,
-                        Id = "Bearer"
-                    }
-                },
-                Array.Empty<string>()
-            }
-        });
+            // Optional: Sort endpoints alphabetically
+            c.OrderActionsBy(apiDesc => $"{apiDesc.ActionDescriptor.RouteValues["controller"]}_{apiDesc.HttpMethod}");
         });
 
         return services;
     }
+
     public static WebApplication UseSwaggerService(this WebApplication app)
     {
-        // Enable Swagger in development mode
-        if (app.Environment.IsDevelopment())
+        // Enable Swagger in all environments (not just Development)
+        app.UseSwagger();
+        app.UseSwaggerUI(options =>
         {
-            app.UseSwagger();
-            app.UseSwaggerUI(options =>
-            {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1");
-                options.RoutePrefix = string.Empty; // Makes Swagger accessible at the root (e.g., http://localhost:5000)
-            });
-        }
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1");
+            options.RoutePrefix = string.Empty; // Access via /swagger/index.html
+            options.DisplayRequestDuration(); // Show request duration
+            options.EnableTryItOutByDefault(); // Enable "Try it out" by default
+        });
+
         return app;
     }
 }

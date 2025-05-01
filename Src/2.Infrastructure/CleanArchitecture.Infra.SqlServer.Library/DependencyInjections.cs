@@ -1,5 +1,7 @@
 ﻿using CleanArchitecture.Core.Application.Library.Common.Repository;
 using CleanArchitecture.Core.Application.Library.Common.Service;
+using CleanArchitecture.Infra.SqlServer.Library.Identity;
+using CleanArchitecture.Infra.SqlServer.Library.Providers.DataDapper;
 using CleanArchitecture.Infra.SqlServer.Library.Providers.Scrutor;
 
 namespace CleanArchitecture.Infra.SqlServer.Library;
@@ -12,7 +14,10 @@ public static class DependencyInjections
             .AddScrutor(configuration, assemblies, [typeof(IRepository<,>), typeof(IEntityService<,,>)])
             .AddDatabase(configuration)
             .AddDatabaseInterceptors()
-            .AddInMemoryCaching();
+            .AddInMemoryCaching()
+            .AddIdentityConfigurations()
+            .AddDataDapper(configuration)
+            ;
     }
 
     private static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)

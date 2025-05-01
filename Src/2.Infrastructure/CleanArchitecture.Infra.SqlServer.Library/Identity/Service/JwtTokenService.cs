@@ -1,5 +1,7 @@
 ﻿
 
+using CleanArchitecture.Core.Application.Library.Providers;
+
 namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Service;
 
 
@@ -11,15 +13,18 @@ public class JwtTokenService : ITokenService
     private const string loginProvider = "JWT";
     private const string tokenName = "AccessToken";
     private string RefreshToken ="";
+    private readonly ProviderServices _providerServices;
     public JwtTokenService(
         UserManager<UserEntity> userManager,
         IOptions<IdentityOption> options,
-        ILogger<JwtTokenService> logger)
+        ILogger<JwtTokenService> logger,
+        ProviderServices providerServices)
     {
         _userManager = userManager;
         _identityOption = options.Value;
         _logger = logger;
         RefreshToken = GenerateRefreshToken();
+        _providerServices = providerServices;
     }
 
     public async Task<AuthResponse> GenerateAccessTokenAsync(UserEntity user)
@@ -107,11 +112,14 @@ public class JwtTokenService : ITokenService
         {
             claims.Add(new(ClaimTypes.Role, role));
         }
-
+        claims.ForEach(item =>
+        {
+            _providerServices.Convertor.Serialize(item.Value);
+        });
         // Handle custom claims carefully
         var userClaims = await _userManager.GetClaimsAsync(user);
-        claims.AddRange(userClaims);
-        await _userManager.RemoveClaimsAsync(user, claims);
+        userClaims.ToArray().ToList().AddRange(userClaims);
+        await _userManager.RemoveClaimsAsync(user, userClaims);
         await _userManager.AddClaimsAsync(user, claims);
 
         return claims;

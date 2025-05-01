@@ -33,7 +33,7 @@ public static class DependencyInjections
 
         builder.Services.AddHttpContextAccessor();
 
-        builder.Services.AddOpenApi();
+        //builder.Services.AddOpenApi();
 
         builder.Services.AddIdentity(configuration, "IdentityOption");
 
@@ -52,7 +52,7 @@ public static class DependencyInjections
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
-            app.MapOpenApi(); // Only map OpenAPI in development
+            //app.MapOpenApi(); // Only map OpenAPI in development
         }
 
 

@@ -1,5 +1,7 @@
 ﻿global using AutoMapper;
+global using Dapper;
 global using CleanArchitecture.Core.Application.Library.Providers.CacheSystem;
+global using CleanArchitecture.Core.Application.Library.Providers.DataDapper;
 global using CleanArchitecture.Core.Application.Library.Providers.UserManagement;
 global using CleanArchitecture.Core.Domain.Library.UseCases.Security;
 global using CleanArchitecture.Infra.SqlServer.Library.Common.Repository;
@@ -20,6 +22,7 @@ global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.Logging;
 global using Microsoft.Extensions.Options;
 global using Microsoft.IdentityModel.Tokens;
+global using System.Data;
 global using System.IdentityModel.Tokens.Jwt;
 global using System.Reflection;
 global using System.Security.Claims;

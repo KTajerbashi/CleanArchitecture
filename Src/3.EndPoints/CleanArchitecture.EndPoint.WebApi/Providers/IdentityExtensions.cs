@@ -2,6 +2,7 @@
 using CleanArchitecture.Infra.SqlServer.Library.Data;
 using CleanArchitecture.Infra.SqlServer.Library.Data.Constants;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
+using CleanArchitecture.Infra.SqlServer.Library.Identity.Handlers;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Models;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Polymorphism;
 
@@ -207,6 +208,35 @@ public static class IdentityExtensions
                 .RequireAuthenticatedUser()
                 .AddAuthenticationSchemes("JWT_OR_COOKIE")
                 .Build();
+
+            // Admin policy - requires Admin role
+            options.AddPolicy(Policies.AdminAccess, policy =>
+            {
+                policy.RequireAuthenticatedUser();
+                policy.RequireRole(Roles.Administrator);
+                // You can add additional requirements
+                // policy.RequireClaim("Department", "IT");
+            });
+
+            // User policy - requires either User or Admin role
+            options.AddPolicy(Policies.UserAccess, policy =>
+            {
+                policy.RequireAuthenticatedUser();
+                policy.RequireAssertion(context =>
+                    context.User.IsInRole(Roles.User) ||
+                    context.User.IsInRole(Roles.Administrator));
+            });
+
+            // Example of a more complex policy
+            options.AddPolicy(Policies.ContentManager, policy =>
+            {
+                policy.RequireAuthenticatedUser();
+                policy.RequireRole(Roles.ContentManager);
+                policy.RequireClaim("CanEditContent", "true");
+            });
+
+            options.AddPolicy("Over18", policy => policy.Requirements.Add(new MinimumAgeRequirement(18)));
+
         });
 
         return services;
