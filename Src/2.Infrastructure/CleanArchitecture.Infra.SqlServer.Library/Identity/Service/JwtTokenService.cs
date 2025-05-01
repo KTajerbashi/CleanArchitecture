@@ -110,7 +110,7 @@ public class JwtTokenService : ITokenService
 
         // Handle custom claims carefully
         var userClaims = await _userManager.GetClaimsAsync(user);
-        await _userManager.RemoveClaimsAsync(user, userClaims);
+        claims.AddRange(userClaims);
         await _userManager.RemoveClaimsAsync(user, claims);
         await _userManager.AddClaimsAsync(user, claims);
 
