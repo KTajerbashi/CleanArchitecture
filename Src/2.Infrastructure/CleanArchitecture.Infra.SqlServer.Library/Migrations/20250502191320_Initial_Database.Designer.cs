@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20250502190406_Initial_Database")]
+    [Migration("20250502191320_Initial_Database")]
     partial class Initial_Database
     {
         /// <inheritdoc />
@@ -68,37 +68,33 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("bit")
+                        .HasColumnName("IsActive");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDeleted");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)")
+                        .HasColumnName("Name");
 
                     b.Property<string>("NormalizedName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)")
+                        .HasColumnName("NormalizedName");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Roles", "Security", t =>
-                        {
-                            t.Property("IsActive")
-                                .HasColumnName("AppRoleEntity_IsActive");
-
-                            t.Property("IsDeleted")
-                                .HasColumnName("AppRoleEntity_IsDeleted");
-
-                            t.Property("Name")
-                                .HasColumnName("AppRoleEntity_Name");
-
-                            t.Property("NormalizedName")
-                                .HasColumnName("AppRoleEntity_NormalizedName");
-                        });
+                    b.ToTable("Roles", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Security.AppUserClaimEntity", b =>
@@ -565,8 +561,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ConcurrencyStamp");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("CreatedByUserRoleId")
                         .HasColumnType("bigint");
@@ -578,19 +573,23 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("bit")
                         .HasColumnName("IsActive");
 
                     b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("bit")
                         .HasColumnName("IsDeleted");
 
                     b.Property<string>("Name")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)")
                         .HasColumnName("Name");
 
                     b.Property<string>("NormalizedName")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)")
                         .HasColumnName("NormalizedName");

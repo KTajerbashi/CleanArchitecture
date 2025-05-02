@@ -48,10 +48,6 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AppRoleEntity_Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AppRoleEntity_NormalizedName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AppRoleEntity_IsDeleted = table.Column<bool>(type: "bit", nullable: true),
-                    AppRoleEntity_IsActive = table.Column<bool>(type: "bit", nullable: true),
                     Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
