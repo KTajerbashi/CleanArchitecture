@@ -2,13 +2,14 @@
 global using CleanArchitecture.Core.Application.Library.Providers;
 global using CleanArchitecture.EndPoint.WebApi.Common.Controllers;
 global using CleanArchitecture.EndPoint.WebApi.Common.Models;
-global using Microsoft.AspNetCore.Mvc;
-global using Microsoft.AspNetCore.Mvc.Infrastructure;
+global using CleanArchitecture.EndPoint.WebApi.HealthChecks;
 global using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
 global using CleanArchitecture.Infra.SqlServer.Library.Identity.Service;
 global using Microsoft.AspNetCore.Authentication.JwtBearer;
 global using Microsoft.AspNetCore.Authorization;
 global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Infrastructure;
 global using Microsoft.IdentityModel.Tokens;
 global using System.IdentityModel.Tokens.Jwt;
 global using System.Text;

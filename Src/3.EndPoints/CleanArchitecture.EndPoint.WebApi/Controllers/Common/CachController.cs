@@ -5,8 +5,7 @@ public class CacheRequest
     public string Key { get; set; }
     public string Value { get; set; }
 }
-
-public class CachController:BaseController
+public class CachController :BaseController
 {
     [HttpPost("Set")]
     public IActionResult Set(CacheRequest request)

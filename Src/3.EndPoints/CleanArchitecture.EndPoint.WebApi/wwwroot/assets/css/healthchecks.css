@@ -1,0 +1,13 @@
+﻿.healthchecks-ui {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --healthy-color: #28a745;
+    --degraded-color: #ffc107;
+    --unhealthy-color: #dc3545;
+}
+
+.healthcheck-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}

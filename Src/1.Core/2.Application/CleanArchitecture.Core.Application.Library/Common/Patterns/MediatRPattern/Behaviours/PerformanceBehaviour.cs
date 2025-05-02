@@ -1,39 +1,72 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CleanArchitecture.Core.Application.Library.Providers.UserManagement;
+using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
 namespace CleanArchitecture.Core.Application.Library.Common.Patterns.MediatRPattern.Behaviours;
 
-public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
+public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    where TRequest : notnull
 {
-    private readonly Stopwatch _timer;
     private readonly ILogger<TRequest> _logger;
-
-    public PerformanceBehaviour(ILogger<TRequest> logger)
+    private const long ThresholdMilliseconds = 500;
+    private readonly IUser user;
+    public PerformanceBehaviour(ILogger<TRequest> logger, IUser user)
     {
-        _timer = new Stopwatch();
-        _logger = logger;
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        this.user = user;
     }
 
-    public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
+    public async Task<TResponse> Handle(
+        TRequest request,
+        RequestHandlerDelegate<TResponse> next,
+        CancellationToken cancellationToken)
     {
-        _timer.Start();
+        var stopwatch = Stopwatch.StartNew();
 
-        var response = await next();
+        try
+        {
+            var response = await next().ConfigureAwait(false);
+            LogPerformanceIfSlow(stopwatch, request);
+            return response;
+        }
+        catch (Exception ex) when (LogPerformanceOnException(stopwatch, request, ex))
+        {
+            // This will never be reached - just for the filter
+            throw;
+        }
+    }
 
-        _timer.Stop();
+    private void LogPerformanceIfSlow(Stopwatch stopwatch, TRequest request)
+    {
+        stopwatch.Stop();
+        var elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
 
-        var elapsedMilliseconds = _timer.ElapsedMilliseconds;
-
-        if (elapsedMilliseconds > 500)
+        if (elapsedMilliseconds > ThresholdMilliseconds)
         {
             var requestName = typeof(TRequest).Name;
-            var userId = "Tajer";
-            var userName = "Tajerbashi";
 
-            _logger.LogWarning("CleanArchitecture Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@UserId} {@UserName} {@Request}",
-                requestName, elapsedMilliseconds, userId, userName, request);
+            _logger.LogWarning(
+                "CleanArchitecture Long Running Request: {Name} ({ElapsedMilliseconds} milliseconds) {@UserId} {@UserName} {@Request}",
+                requestName,
+                elapsedMilliseconds,
+                user.UserId,     // Consider making these configurable
+                user.Username, // Consider making these configurable
+                request);
         }
+    }
 
-        return response;
+    private bool LogPerformanceOnException(Stopwatch stopwatch, TRequest request, Exception ex)
+    {
+        stopwatch.Stop();
+        var elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
+
+        _logger.LogError(
+            ex,
+            "Request {Name} failed after {ElapsedMilliseconds} milliseconds: {@Request}",
+            typeof(TRequest).Name,
+            elapsedMilliseconds,
+            request);
+
+        return false; // Exception will continue to propagate
     }
 }

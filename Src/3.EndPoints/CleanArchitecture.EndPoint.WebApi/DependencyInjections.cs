@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Core.Application.Library;
 using CleanArchitecture.Core.Application.Library.Utilities.Extensions;
+using CleanArchitecture.EndPoint.WebApi.HealthChecks;
 using CleanArchitecture.EndPoint.WebApi.Middlewares.AuthorizedHandler;
 using CleanArchitecture.EndPoint.WebApi.Middlewares.ExceptionHandler;
 using CleanArchitecture.EndPoint.WebApi.Providers;
@@ -22,6 +23,12 @@ public static class DependencyInjections
             configuration.WriteTo.Console();
             configuration.WriteTo.File(string.Format("./Logs/File_{0}.txt", DateTime.Now.ToString("yyyy_MM_dd")));
         });
+        
+        builder.AddHealthCheckServices();
+
+        // Add required services
+        builder.Services.AddHttpContextAccessor();
+        builder.Services.AddHttpClient();
 
         var assemblies = ("CleanArchitecture").GetAssemblies().ToArray();
 
@@ -31,9 +38,7 @@ public static class DependencyInjections
 
         builder.Services.AddControllers();
 
-        builder.Services.AddHttpContextAccessor();
-
-        //builder.Services.AddOpenApi();
+        builder.Services.AddOpenApi();
 
         builder.Services.AddIdentity(configuration, "IdentityOption");
 
@@ -52,9 +57,11 @@ public static class DependencyInjections
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
-            //app.MapOpenApi(); // Only map OpenAPI in development
+            app.UseSwaggerService();
+            app.MapOpenApi(); // Only map OpenAPI in development
         }
-
+        
+        app.UseHealthCheckServices();
 
         // Static files middleware
         app.UseStaticFiles();
@@ -67,12 +74,6 @@ public static class DependencyInjections
 
         // Session middleware
         app.UseSession();
-
-        // Swagger service (only in development)
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseSwaggerService();
-        }
 
         app.UseRouting();
 

@@ -1,7 +1,4 @@
-﻿using CleanArchitecture.Core.Domain.Library.Common;
-using System.Threading.Tasks;
-
-namespace CleanArchitecture.EndPoint.WebApi.Controllers.Common;
+﻿namespace CleanArchitecture.EndPoint.WebApi.Controllers.Common;
 
 public class DapperController : BaseController
 {
