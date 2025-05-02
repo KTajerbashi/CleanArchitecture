@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
-using System.Net.Http.Headers;
 
 namespace CleanArchitecture.EndPoint.WebApi.HealthChecks;
 

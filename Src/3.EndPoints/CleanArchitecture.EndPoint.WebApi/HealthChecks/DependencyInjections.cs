@@ -34,7 +34,7 @@ public static class DependencyInjections
                 option.AddHost(uri.Host, uri.Port);
             })
             .AddCheck<UserApiHealthCheck>("UserApi")
-            //.AddControllerHealthChecks(builder.Services)
+            .AddUrlGroup(new Uri("https://localhost:2235/index.html"), "Swagger")
             ;
 
         // Health Checks UI Configuration
@@ -55,79 +55,6 @@ public static class DependencyInjections
         return builder;
     }
 
-    //public static IHealthChecksBuilder AddControllerHealthChecks(
-    //   this IHealthChecksBuilder builder,
-    //   IServiceCollection services)
-    //{
-    //    try
-    //    {
-    //        var assembly = Assembly.GetExecutingAssembly();
-    //        var baseUrl = GetBaseUrl(services);
-
-    //        if (string.IsNullOrWhiteSpace(baseUrl))
-    //        {
-    //            throw new InvalidOperationException("Base URL could not be determined");
-    //        }
-
-    //        foreach (var controllerType in assembly.GetTypes()
-    //            .Where(t => typeof(BaseController).IsAssignableFrom(t)))
-    //        {
-    //            var controllerRoute = controllerType.GetCustomAttribute<RouteAttribute>()?.Template?.Trim('/');
-
-    //            foreach (var method in controllerType.GetMethods()
-    //                .Where(m => m.GetCustomAttributes<HealthCheckAttribute>().Any()))
-    //            {
-    //                var attr = method.GetCustomAttribute<HealthCheckAttribute>();
-    //                var methodRoute = method.GetCustomAttribute<RouteAttribute>()?.Template?.Trim('/');
-
-    //                // Skip if no route attributes found
-    //                if (controllerRoute == null && methodRoute == null)
-    //                {
-    //                    continue;
-    //                }
-
-    //                // Build the full path
-    //                var pathParts = new List<string>();
-    //                if (!string.IsNullOrEmpty(controllerRoute)) pathParts.Add(controllerRoute);
-    //                if (!string.IsNullOrEmpty(methodRoute)) pathParts.Add(methodRoute);
-    //                var fullPath = string.Join("/", pathParts);
-
-    //                if (string.IsNullOrEmpty(fullPath))
-    //                {
-    //                    continue;
-    //                }
-
-    //                // Ensure the base URL ends with a slash
-    //                if (!baseUrl.EndsWith("/"))
-    //                {
-    //                    baseUrl += "/";
-    //                }
-
-    //                // Construct and validate the full URL
-    //                var fullUrl = $"{baseUrl}{fullPath}";
-    //                if (!Uri.TryCreate(fullUrl, UriKind.Absolute, out var uri))
-    //                {
-    //                    continue; // Skip invalid URLs
-    //                }
-
-    //                builder.AddUrlGroup(
-    //                    uri: uri,
-    //                    name: attr.Name,
-    //                    failureStatus: HealthStatus.Degraded,
-    //                    tags: attr.Tags,
-    //                    timeout: TimeSpan.FromSeconds(attr.TimeoutInSeconds));
-    //            }
-    //        }
-
-    //        return builder;
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        // Log the error or handle it appropriately
-    //        Console.WriteLine($"Error registering health checks: {ex.Message}");
-    //        return builder;
-    //    }
-    //}
 
     private static string GetBaseUrl(IServiceCollection services)
     {
