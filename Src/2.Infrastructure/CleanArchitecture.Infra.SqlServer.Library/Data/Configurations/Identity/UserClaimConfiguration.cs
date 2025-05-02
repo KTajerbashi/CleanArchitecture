@@ -28,11 +28,11 @@ public class AppUserClaimConfiguration : IEntityTypeConfiguration<AppUserClaimEn
             .WithOne()
             .HasForeignKey<AppUserClaimEntity>(x => x.Id);
 
-        //builder.Property(item => item.IsActive).HasColumnName("IsActive");
-        //builder.Property(item => item.IsDeleted).HasColumnName("IsDeleted");
-        //builder.Property(item => item.UserId).HasColumnName("UserId");
-        //builder.Property(item => item.ClaimType).HasColumnName("ClaimType");
-        //builder.Property(item => item.ClaimValue).HasColumnName("ClaimValue");
+        builder.Property(item => item.IsActive).HasColumnName("IsActive");
+        builder.Property(item => item.IsDeleted).HasColumnName("IsDeleted");
+        builder.Property(item => item.UserId).HasColumnName("UserId");
+        builder.Property(item => item.ClaimType).HasColumnName("ClaimType");
+        builder.Property(item => item.ClaimValue).HasColumnName("ClaimValue");
     }
 }
 
