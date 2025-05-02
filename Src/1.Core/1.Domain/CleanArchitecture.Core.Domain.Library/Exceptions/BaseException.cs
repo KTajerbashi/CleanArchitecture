@@ -14,6 +14,8 @@ public class BaseException : Exception
 
     public override string ToString()
     {
+
+        if (Parameters is null) return Message;
         if (Parameters?.Length < 1)
             return Message;
 

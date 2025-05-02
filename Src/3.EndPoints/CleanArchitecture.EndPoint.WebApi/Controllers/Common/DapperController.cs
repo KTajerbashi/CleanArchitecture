@@ -1,5 +1,4 @@
 ﻿namespace CleanArchitecture.EndPoint.WebApi.Controllers.Common;
-
 public class DapperController : BaseController
 {
     [HttpPost("ReadList")]

@@ -62,7 +62,9 @@ public static class DependencyInjections
             app.UseSwaggerService();
             app.MapOpenApi(); // Only map OpenAPI in development
         }
-        
+
+        app.UseExceptionHandler();
+
         app.UseHealthCheckServices();
         app.UseMonitoringAppServices();
 
