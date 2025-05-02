@@ -2,7 +2,7 @@
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Data.Configurations.Identity;
 
-public class RoleCliamConfiguration : IEntityTypeConfiguration<RoleClaimEntity>
+public class RoleClaimConfiguration : IEntityTypeConfiguration<RoleClaimEntity>
 {
     public void Configure(EntityTypeBuilder<RoleClaimEntity> builder)
     {
@@ -17,7 +17,7 @@ public class RoleCliamConfiguration : IEntityTypeConfiguration<RoleClaimEntity>
     }
 }
 
-public class AppRoleCliamConfiguration : IEntityTypeConfiguration<AppRoleClaimEntity>
+public class AppRoleClaimConfiguration : IEntityTypeConfiguration<AppRoleClaimEntity>
 {
     public void Configure(EntityTypeBuilder<AppRoleClaimEntity> builder)
     {
