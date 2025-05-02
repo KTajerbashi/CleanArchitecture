@@ -31,14 +31,14 @@ public class AppUserRoleConfiguration : IEntityTypeConfiguration<AppUserRoleEnti
           .HasForeignKey<AppUserRoleEntity>(e => new { e.Id, e.UserId, e.RoleId })
           .HasPrincipalKey<UserRoleEntity>(e => new { e.Id, e.UserId, e.RoleId });
 
-        //builder.Property(item => item.IsDeleted).HasColumnName("IsDeleted");
-        //builder.Property(item => item.IsActive).HasColumnName("IsActive");
-        //builder.Property(item => item.CreatedDate).HasColumnName("CreatedDate");
-        //builder.Property(item => item.CreatedByUserRoleId).HasColumnName("CreatedByUserRoleId");
-        //builder.Property(item => item.UpdatedDate).HasColumnName("UpdatedDate");
-        //builder.Property(item => item.UpdatedByUserRoleId).HasColumnName("UpdatedByUserRoleId");
-        //builder.Property(item => item.UserId).HasColumnName("UserId");
-        //builder.Property(item => item.RoleId).HasColumnName("RoleId");
+        builder.Property(item => item.IsDeleted).HasColumnName("IsDeleted");
+        builder.Property(item => item.IsActive).HasColumnName("IsActive");
+        builder.Property(item => item.CreatedDate).HasColumnName("CreatedDate");
+        builder.Property(item => item.CreatedByUserRoleId).HasColumnName("CreatedByUserRoleId");
+        builder.Property(item => item.UpdatedDate).HasColumnName("UpdatedDate");
+        builder.Property(item => item.UpdatedByUserRoleId).HasColumnName("UpdatedByUserRoleId");
+        builder.Property(item => item.UserId).HasColumnName("UserId");
+        builder.Property(item => item.RoleId).HasColumnName("RoleId");
 
     }
 }
