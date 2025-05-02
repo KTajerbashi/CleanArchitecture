@@ -3,6 +3,7 @@ using CleanArchitecture.Core.Application.Library.Utilities.Extensions;
 using CleanArchitecture.EndPoint.WebApi.HealthChecks;
 using CleanArchitecture.EndPoint.WebApi.Middlewares.AuthorizedHandler;
 using CleanArchitecture.EndPoint.WebApi.Middlewares.ExceptionHandler;
+using CleanArchitecture.EndPoint.WebApi.MonitoringApp;
 using CleanArchitecture.EndPoint.WebApi.Providers;
 using CleanArchitecture.Infra.SqlServer.Library;
 using CleanArchitecture.Infra.SqlServer.Library.Data;
@@ -25,6 +26,7 @@ public static class DependencyInjections
         });
         
         builder.AddHealthCheckServices();
+        builder.AddMonitoringAppServices();
 
         // Add required services
         builder.Services.AddHttpContextAccessor();
@@ -62,6 +64,7 @@ public static class DependencyInjections
         }
         
         app.UseHealthCheckServices();
+        app.UseMonitoringAppServices();
 
         // Static files middleware
         app.UseStaticFiles();
