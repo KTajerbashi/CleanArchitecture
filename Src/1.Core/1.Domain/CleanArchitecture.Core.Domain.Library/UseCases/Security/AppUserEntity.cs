@@ -20,7 +20,7 @@ public class AppUserEntity : BaseAuditableEntity
     public string PhoneNumber { get; private set; }
     public bool PhoneNumberConfirmed { get; private set; }
     public bool TwoFactorEnabled { get; private set; }
-    public DateTime? LockoutEnd { get; private set; }
+    public DateTimeOffset? LockoutEnd { get; private set; }
     public bool LockoutEnabled { get; private set; }
     public int AccessFailedCount { get; private set; }
 

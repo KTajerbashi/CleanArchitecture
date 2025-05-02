@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20250502191320_Initial_Database")]
+    [Migration("20250502192836_Initial_Database")]
     partial class Initial_Database
     {
         /// <inheritdoc />
@@ -140,134 +140,118 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("int")
+                        .HasColumnName("AccessFailedCount");
 
                     b.Property<string>("DisplayName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("DisplayName");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)")
+                        .HasColumnName("Email");
 
                     b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("bit")
+                        .HasColumnName("EmailConfirmed");
 
                     b.Property<string>("Family")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Family");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("bit")
+                        .HasColumnName("IsActive");
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDeleted");
 
                     b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("bit")
+                        .HasColumnName("LockoutEnabled");
 
-                    b.Property<DateTime?>("LockoutEnd")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("datetimeoffset")
+                        .HasColumnName("LockoutEnd");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Name");
 
                     b.Property<string>("NormalizedEmail")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)")
+                        .HasColumnName("NormalizedEmail");
 
                     b.Property<string>("NormalizedUserName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)")
+                        .HasColumnName("NormalizedUserName");
 
                     b.Property<string>("PasswordHash")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("PasswordHash");
 
                     b.Property<string>("PersonalCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("PersonalCode");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("PhoneNumber");
 
                     b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("bit")
+                        .HasColumnName("PhoneNumberConfirmed");
 
                     b.Property<string>("SecurityStamp")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("SecurityStamp");
 
                     b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasColumnType("bit")
+                        .HasColumnName("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .ValueGeneratedOnUpdateSometimes()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)")
+                        .HasColumnName("UserName");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", "Security", t =>
-                        {
-                            t.Property("AccessFailedCount")
-                                .HasColumnName("AppUserEntity_AccessFailedCount");
-
-                            t.Property("DisplayName")
-                                .HasColumnName("AppUserEntity_DisplayName");
-
-                            t.Property("Email")
-                                .HasColumnName("AppUserEntity_Email");
-
-                            t.Property("EmailConfirmed")
-                                .HasColumnName("AppUserEntity_EmailConfirmed");
-
-                            t.Property("Family")
-                                .HasColumnName("AppUserEntity_Family");
-
-                            t.Property("IsActive")
-                                .HasColumnName("AppUserEntity_IsActive");
-
-                            t.Property("IsDeleted")
-                                .HasColumnName("AppUserEntity_IsDeleted");
-
-                            t.Property("LockoutEnabled")
-                                .HasColumnName("AppUserEntity_LockoutEnabled");
-
-                            t.Property("LockoutEnd")
-                                .HasColumnName("AppUserEntity_LockoutEnd");
-
-                            t.Property("Name")
-                                .HasColumnName("AppUserEntity_Name");
-
-                            t.Property("NormalizedEmail")
-                                .HasColumnName("AppUserEntity_NormalizedEmail");
-
-                            t.Property("NormalizedUserName")
-                                .HasColumnName("AppUserEntity_NormalizedUserName");
-
-                            t.Property("PasswordHash")
-                                .HasColumnName("AppUserEntity_PasswordHash");
-
-                            t.Property("PersonalCode")
-                                .HasColumnName("AppUserEntity_PersonalCode");
-
-                            t.Property("PhoneNumber")
-                                .HasColumnName("AppUserEntity_PhoneNumber");
-
-                            t.Property("PhoneNumberConfirmed")
-                                .HasColumnName("AppUserEntity_PhoneNumberConfirmed");
-
-                            t.Property("SecurityStamp")
-                                .HasColumnName("AppUserEntity_SecurityStamp");
-
-                            t.Property("TwoFactorEnabled")
-                                .HasColumnName("AppUserEntity_TwoFactorEnabled");
-
-                            t.Property("UserName")
-                                .HasColumnName("AppUserEntity_UserName");
-                        });
+                    b.ToTable("Users", "Security");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Security.AppUserLoginEntity", b =>
@@ -674,6 +658,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<int>("AccessFailedCount")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("int")
                         .HasColumnName("AccessFailedCount");
 
@@ -689,15 +674,18 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("DisplayName")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("DisplayName");
 
                     b.Property<string>("Email")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)")
                         .HasColumnName("Email");
 
                     b.Property<bool>("EmailConfirmed")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("bit")
                         .HasColumnName("EmailConfirmed");
 
@@ -705,60 +693,74 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Family")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Family");
 
                     b.Property<bool>("IsActive")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("bit")
                         .HasColumnName("IsActive");
 
                     b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("bit")
                         .HasColumnName("IsDeleted");
 
                     b.Property<bool>("LockoutEnabled")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("bit")
                         .HasColumnName("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("datetimeoffset")
                         .HasColumnName("LockoutEnd");
 
                     b.Property<string>("Name")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Name");
 
                     b.Property<string>("NormalizedEmail")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)")
                         .HasColumnName("NormalizedEmail");
 
                     b.Property<string>("NormalizedUserName")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)")
                         .HasColumnName("NormalizedUserName");
 
                     b.Property<string>("PasswordHash")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("PasswordHash");
 
                     b.Property<string>("PersonalCode")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("PersonalCode");
 
                     b.Property<string>("PhoneNumber")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("PhoneNumber");
 
                     b.Property<bool>("PhoneNumberConfirmed")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("bit")
                         .HasColumnName("PhoneNumberConfirmed");
 
                     b.Property<string>("SecurityStamp")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("SecurityStamp");
 
                     b.Property<bool>("TwoFactorEnabled")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasColumnType("bit")
                         .HasColumnName("TwoFactorEnabled");
 
@@ -769,6 +771,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserName")
+                        .ValueGeneratedOnUpdateSometimes()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)")
                         .HasColumnName("UserName");
