@@ -29,12 +29,12 @@ public class AppUserTokenConfiguration : IEntityTypeConfiguration<AppUserTokenEn
              .WithOne()
              .HasForeignKey<AppUserTokenEntity>(x => x.Id);
 
-        //builder.Property(item => item.IsActive).HasColumnName("IsActive");
-        //builder.Property(item => item.IsDeleted).HasColumnName("IsDeleted");
-        //builder.Property(item => item.UserId).HasColumnName("UserId");
-        //builder.Property(item => item.LoginProvider).HasColumnName("LoginProvider");
-        //builder.Property(item => item.Name).HasColumnName("Name");
-        //builder.Property(item => item.Value).HasColumnName("Value");
+        builder.Property(item => item.IsActive).HasColumnName("IsActive");
+        builder.Property(item => item.IsDeleted).HasColumnName("IsDeleted");
+        builder.Property(item => item.UserId).HasColumnName("UserId");
+        builder.Property(item => item.LoginProvider).HasColumnName("LoginProvider");
+        builder.Property(item => item.Name).HasColumnName("Name");
+        builder.Property(item => item.Value).HasColumnName("Value");
 
     }
 }
