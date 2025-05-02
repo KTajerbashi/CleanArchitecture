@@ -1,11 +1,6 @@
-﻿using CleanArchitecture.Infra.SqlServer.Library.Data.Constants;
-using HealthChecks.SqlServer;
+﻿using HealthChecks.SqlServer;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-using System.Net.Mime;
-using System.Reflection;
-using System.Text.Json.Serialization;
 
 namespace CleanArchitecture.EndPoint.WebApi.HealthChecks;
 
