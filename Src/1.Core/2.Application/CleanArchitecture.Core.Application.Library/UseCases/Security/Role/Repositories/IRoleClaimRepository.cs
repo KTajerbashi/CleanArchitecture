@@ -3,7 +3,6 @@ using CleanArchitecture.Core.Domain.Library.UseCases.Security;
 
 namespace CleanArchitecture.Core.Application.Library.UseCases.Security.Role.Repositories;
 
-public interface IRoleRepository : IRepository<AppRoleEntity, long>
+public interface IRoleClaimRepository : IRepository<AppRoleClaimEntity, int>
 {
-    Task<AppRoleEntity> FindByNameAsync(string roleName, CancellationToken cancellationToken);
 }

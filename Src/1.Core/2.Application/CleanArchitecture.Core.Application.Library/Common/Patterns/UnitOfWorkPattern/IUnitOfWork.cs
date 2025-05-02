@@ -4,7 +4,7 @@ namespace CleanArchitecture.Core.Application.Library.Common.Patterns.UnitOfWorkP
 
 public interface IUnitOfWork : IScopeLifeTime
 {
-    Task<int> SaveChangeAsync();
+    Task<int> SaveChangeAsync(CancellationToken cancellationToken = default);
     int SaveChange();
 
     void BeginTransaction();

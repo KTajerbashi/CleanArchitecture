@@ -63,7 +63,8 @@ public static class DependencyInjections
             app.MapOpenApi(); // Only map OpenAPI in development
         }
 
-        app.UseExceptionHandler();
+        //app.UseExceptionHandler();
+        app.UseExceptionMiddleware();
 
         app.UseHealthCheckServices();
         app.UseMonitoringAppServices();
@@ -89,7 +90,7 @@ public static class DependencyInjections
         app.UseAuthorizedMiddleware();
 
         // Exception handling middleware (custom middleware)
-        app.UseExceptionMiddleware();
+        //app.UseExceptionMiddleware();
 
         // Map controllers
         app.MapControllers();

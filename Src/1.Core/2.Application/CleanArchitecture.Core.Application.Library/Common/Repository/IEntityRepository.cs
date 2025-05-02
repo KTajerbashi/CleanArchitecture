@@ -35,6 +35,6 @@ public interface IRepository<TEntity, TId> : IUnitOfWork
     TEntity GetAsNoTracking(Guid entityId, CancellationToken cancellationToken);
     Task<TEntity> GetAsNoTrackingAsync(Guid entityId, CancellationToken cancellationToken);
 
-    IReadOnlyCollection<TEntity> Get(CancellationToken cancellationToken);
-    Task<IReadOnlyCollection<TEntity>> GetAsync(CancellationToken cancellationToken);
+    IEnumerable<TEntity> Get(CancellationToken cancellationToken);
+    Task<IEnumerable<TEntity>> GetAsync(CancellationToken cancellationToken);
 }
