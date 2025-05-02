@@ -1,7 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Common.Repository;
-using CleanArchitecture.Core.Domain.Library.Common;
-
-namespace CleanArchitecture.Infra.SqlServer.Library.Common.Repository;
+﻿namespace CleanArchitecture.Infra.SqlServer.Library.Common.Repository;
 
 public abstract class Repository<TEntity, TId> : IRepository<TEntity, TId>
     where TEntity : BaseAuditableEntity<TId>
@@ -12,133 +9,164 @@ public abstract class Repository<TEntity, TId> : IRepository<TEntity, TId>
           IEquatable<TId>,
           IFormattable
 {
+    protected readonly DatabaseContext Context;
+    protected readonly DbSet<TEntity> Entity;
+
+    protected Repository(DatabaseContext context)
+    {
+        Context = context ?? throw new ArgumentNullException(nameof(context));
+        Entity = Context.Set<TEntity>();
+    }
+
     public TEntity Add(TEntity entity, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        if (entity == null) throw new ArgumentNullException(nameof(entity));
+        return Entity.Add(entity).Entity;
     }
 
-    public Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken)
+    public async Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        if (entity == null) throw new ArgumentNullException(nameof(entity));
+        return (await Entity.AddAsync(entity, cancellationToken)).Entity;
     }
 
-    public void BeginTransaction()
-    {
-        throw new NotImplementedException();
-    }
+    public void BeginTransaction() => Context.Database.BeginTransaction();
 
-    public Task BeginTransactionAsync()
-    {
-        throw new NotImplementedException();
-    }
+    public async Task BeginTransactionAsync() => await Context.Database.BeginTransactionAsync();
 
-    public void CommitTransaction()
-    {
-        throw new NotImplementedException();
-    }
+    public void CommitTransaction() => Context.Database.CommitTransaction();
 
-    public Task CommitTransactionAsync()
-    {
-        throw new NotImplementedException();
-    }
+    public async Task CommitTransactionAsync() => await Context.Database.CommitTransactionAsync();
 
     public TEntity Get(TId id, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+        => Entity.Find(id) ?? throw new KeyNotFoundException($"Entity with ID {id} not found");
 
     public TEntity Get(Guid entityId, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+        => Entity.FirstOrDefault(item => item.EntityId.Equals(entityId))
+           ?? throw new KeyNotFoundException($"Entity with EntityId {entityId} not found");
 
-    public IReadOnlyCollection<TEntity> Get(CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+    public IEnumerable<TEntity> Get(CancellationToken cancellationToken)
+        => Entity.ToList();
 
     public TEntity GetAsNoTracking(TId id, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+        => Entity.AsNoTracking().FirstOrDefault(e => e.Id.Equals(id))
+           ?? throw new KeyNotFoundException($"Entity with ID {id} not found");
 
     public TEntity GetAsNoTracking(Guid entityId, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+        => Entity.AsNoTracking().FirstOrDefault(item => item.EntityId.Equals(entityId))
+           ?? throw new KeyNotFoundException($"Entity with EntityId {entityId} not found");
 
-    public Task<TEntity> GetAsNoTrackingAsync(TId id, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<TEntity> GetAsNoTrackingAsync(TId id, CancellationToken cancellationToken)
+        => await Entity.AsNoTracking().FirstOrDefaultAsync(e => e.Id.Equals(id), cancellationToken)
+           ?? throw new KeyNotFoundException($"Entity with ID {id} not found");
 
-    public Task<TEntity> GetAsNoTrackingAsync(Guid entityId, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<TEntity> GetAsNoTrackingAsync(Guid entityId, CancellationToken cancellationToken)
+        => await Entity.AsNoTracking().FirstOrDefaultAsync(item => item.EntityId.Equals(entityId), cancellationToken)
+           ?? throw new KeyNotFoundException($"Entity with EntityId {entityId} not found");
 
-    public Task<TEntity> GetAsync(TId id, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<TEntity> GetAsync(TId id, CancellationToken cancellationToken)
+        => await Entity.FindAsync(new object[] { id }, cancellationToken)
+           ?? throw new KeyNotFoundException($"Entity with ID {id} not found");
 
-    public Task<TEntity> GetAsync(Guid entityId, CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<TEntity> GetAsync(Guid entityId, CancellationToken cancellationToken)
+        => await Entity.FirstOrDefaultAsync(item => item.EntityId.Equals(entityId), cancellationToken)
+           ?? throw new KeyNotFoundException($"Entity with EntityId {entityId} not found");
 
-    public Task<IReadOnlyCollection<TEntity>> GetAsync(CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<IEnumerable<TEntity>> GetAsync(CancellationToken cancellationToken)
+        => await Entity.ToListAsync(cancellationToken);
 
     public bool Remove(TEntity entity, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        if (entity == null) throw new ArgumentNullException(nameof(entity));
+        Entity.Remove(entity);
+        return SaveChange() > 0;
     }
 
     public bool Remove(TId id, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var entity = Get(id, cancellationToken);
+        return Remove(entity, cancellationToken);
     }
 
     public bool Remove(Guid entityId, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var entity = Get(entityId, cancellationToken);
+        return Remove(entity, cancellationToken);
     }
 
-    public Task<bool> RemoveAsync(TEntity entity, CancellationToken cancellationToken)
+    public async Task<bool> RemoveAsync(TEntity entity, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        if (entity == null) throw new ArgumentNullException(nameof(entity));
+        Entity.Remove(entity);
+        return await SaveChangeAsync(cancellationToken) > 0;
     }
 
-    public Task<bool> RemoveAsync(TId id, CancellationToken cancellationToken)
+    public async Task<bool> RemoveAsync(TId id, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var entity = await GetAsync(id, cancellationToken);
+        return await RemoveAsync(entity, cancellationToken);
     }
 
-    public Task<bool> RemoveAsync(Guid entityId, CancellationToken cancellationToken)
+    public async Task<bool> RemoveAsync(Guid entityId, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var entity = await GetAsync(entityId, cancellationToken);
+        return await RemoveAsync(entity, cancellationToken);
     }
 
-    public void RollbackTransaction()
-    {
-        throw new NotImplementedException();
-    }
+    public void RollbackTransaction() => Context.Database.RollbackTransaction();
 
-    public Task RollbackTransactionAsync()
-    {
-        throw new NotImplementedException();
-    }
+    public async Task RollbackTransactionAsync() => await Context.Database.RollbackTransactionAsync();
 
     public int SaveChange()
     {
-        throw new NotImplementedException();
+        try
+        {
+            return Context.SaveChanges();
+        }
+        catch (DbUpdateConcurrencyException ex)
+        {
+            throw new Exception("Concurrency violation occurred", ex);
+        }
+        catch (DbUpdateException ex)
+        {
+            throw new Exception("Database update failed", ex);
+        }
     }
 
-    public Task<int> SaveChangeAsync()
+    public async Task<int> SaveChangeAsync(CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        try
+        {
+            return await Context.SaveChangesAsync(cancellationToken);
+        }
+        catch (DbUpdateConcurrencyException ex)
+        {
+            throw new Exception("Concurrency violation occurred", ex);
+        }
+        catch (DbUpdateException ex)
+        {
+            throw new Exception("Database update failed", ex);
+        }
     }
+
+    // Additional helpful methods
+    public IQueryable<TEntity> GetAll()
+        => Entity.AsQueryable();
+
+    public IQueryable<TEntity> GetAllAsNoTracking()
+        => Entity.AsNoTracking();
+
+    public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
+        => Entity.Where(predicate).ToList();
+
+    public async Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate,
+        CancellationToken cancellationToken = default)
+        => await Entity.Where(predicate).ToListAsync(cancellationToken);
+
+    public bool Exists(Expression<Func<TEntity, bool>> predicate)
+        => Entity.Any(predicate);
+
+    public async Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> predicate,
+        CancellationToken cancellationToken = default)
+        => await Entity.AnyAsync(predicate, cancellationToken);
 }

@@ -1,11 +1,9 @@
-﻿using CleanArchitecture.Core.Domain.Library.Common;
-using Microsoft.AspNetCore.Identity;
-
-namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
+﻿namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 
 public class UserClaimEntity : IdentityUserClaim<long>, IAuditableEntity<long>
 {
 
+    public long Id { get; private set; }
     public DateTime CreatedDate { get; private set; }
 
     public long CreatedByUserRoleId { get; private set; }
@@ -15,10 +13,10 @@ public class UserClaimEntity : IdentityUserClaim<long>, IAuditableEntity<long>
     public long? UpdatedByUserRoleId { get; private set; }
 
     public EntityId EntityId { get; private set; } = Guid.NewGuid();
-    public long Id { get; private set; }
 
     public bool IsDeleted { get; private set; }
     public bool IsActive { get; private set; }
+
 
     public void Access()
     {

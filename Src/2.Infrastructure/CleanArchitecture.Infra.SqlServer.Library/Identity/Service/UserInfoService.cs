@@ -23,7 +23,7 @@ public class UserInfoService : IUser
     public long UserRoleId => GetClaimValueAsLong("UserRoleId");
     public string RoleName => GetClaimValue("Role");
     public string RoleTitle => GetClaimValue("RoleTitle");
-    public string Ip => _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
+    public string Ip => _httpContextAccessor?.HttpContext?.Connection?.RemoteIpAddress?.ToString() ?? "null";
     public string Agent => GetClaimValue("Agent");
     public Dictionary<long, string> RolesName => GetRoles();
     public string Username => GetClaimValue("Username");

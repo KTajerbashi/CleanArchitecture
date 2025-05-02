@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Core.Domain.Library.Common;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Parameters;
-using Microsoft.AspNetCore.Identity;
+﻿using CleanArchitecture.Infra.SqlServer.Library.Identity.Parameters;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -12,13 +10,13 @@ public class UserEntity : IdentityUser<long>, IAuditableEntity<long>
 
     [Description("")]
     public string? Name { get; private set; }
-    
+
     [Description("")]
     public string? Family { get; private set; }
-    
+
     [Description("")]
     public string? DisplayName { get; private set; }
-    
+
     [Description("")]
     public string? PersonalCode { get; private set; }
 

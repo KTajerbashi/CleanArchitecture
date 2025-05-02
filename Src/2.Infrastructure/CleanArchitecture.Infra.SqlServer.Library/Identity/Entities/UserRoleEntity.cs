@@ -1,5 +1,7 @@
 ﻿using CleanArchitecture.Core.Domain.Library.Common;
 using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 
@@ -16,6 +18,8 @@ public class UserRoleEntity : IdentityUserRole<long>, IAuditableEntity<long>
 
     public EntityId EntityId { get; private set; } = Guid.NewGuid();
 
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public long Id { get; private set; }
 
     public bool IsDeleted { get; private set; }

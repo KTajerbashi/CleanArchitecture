@@ -32,7 +32,8 @@ public static class DependencyInjections
         });
 
         services.AddScoped<InitializerSeedData>();
-
+        // Register the password hasher
+        services.AddScoped<IPasswordHasher<AppUserEntity>, PasswordHasher<AppUserEntity>>();
         return services;
     }
 

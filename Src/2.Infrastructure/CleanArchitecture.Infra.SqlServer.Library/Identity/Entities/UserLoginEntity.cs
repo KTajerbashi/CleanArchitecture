@@ -1,7 +1,4 @@
-﻿using CleanArchitecture.Core.Domain.Library.Common;
-using Microsoft.AspNetCore.Identity;
-
-namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
+﻿namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 
 public class UserLoginEntity : IdentityUserLogin<long>, IAuditableEntity<long>
 {

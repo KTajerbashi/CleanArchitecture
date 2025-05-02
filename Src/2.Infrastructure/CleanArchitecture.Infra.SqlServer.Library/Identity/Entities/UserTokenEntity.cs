@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Core.Domain.Library.Common;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.Parameters;
-using Microsoft.AspNetCore.Identity;
+﻿using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.Parameters;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 

@@ -1,18 +1,14 @@
-﻿using CleanArchitecture.Core.Domain.Library.Common;
-using Microsoft.AspNetCore.Identity;
+﻿namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 
-namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
-
-public class RoleClaimEntity : IdentityRoleClaim<long>, IAuditableEntity<long>
+public class RoleClaimEntity : IdentityRoleClaim<long>, IAuditableEntity<int>
 {
-    public long Id { get; private set; }
-    public EntityId EntityId { get; private set; } = Guid.NewGuid(); 
+    public EntityId EntityId { get; private set; } = Guid.NewGuid();
 
     public DateTime CreatedDate { get; private set; }
-    public long CreatedByUserRoleId { get; private set; }
+    public int CreatedByUserRoleId { get; private set; }
 
     public DateTime? UpdatedDate { get; private set; }
-    public long? UpdatedByUserRoleId { get; private set; }
+    public int? UpdatedByUserRoleId { get; private set; }
 
     public bool IsDeleted { get; private set; }
     public bool IsActive { get; private set; }
