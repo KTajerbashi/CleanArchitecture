@@ -22,6 +22,7 @@ public class AppUserRoleEntity : BaseAuditableEntity
         UserId = userId;
         RoleId = roleId;
     }
+    public void SetId(long id) => Id = id;
 }
 
 

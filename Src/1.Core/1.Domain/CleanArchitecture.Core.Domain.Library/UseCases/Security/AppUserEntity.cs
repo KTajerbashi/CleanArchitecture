@@ -1,5 +1,4 @@
 ﻿using CleanArchitecture.Core.Domain.Library.UseCases.Security.Parameters;
-using System.Security.Cryptography;
 
 namespace CleanArchitecture.Core.Domain.Library.UseCases.Security;
 [Table("Users", Schema = "Security"), Description("User Entity Model")]
@@ -16,7 +15,7 @@ public class AppUserEntity : BaseAuditableEntity
     public bool EmailConfirmed { get; private set; }
     public string PasswordHash { get; private set; }
     public string SecurityStamp { get; private set; }
-    //public string? ConcurrencyStamp { get; set; }
+    public string? ConcurrencyStamp { get; set; } = Guid.NewGuid().ToString();
     public string PhoneNumber { get; private set; }
     public bool PhoneNumberConfirmed { get; private set; }
     public bool TwoFactorEnabled { get; private set; }
@@ -32,10 +31,13 @@ public class AppUserEntity : BaseAuditableEntity
 
     }
 
+    public void SetId(long id) => Id = id;
+
     public AppUserEntity(AppUserCreateParameters parameters)
     {
         Name = parameters.Name;
         Family = parameters.Family;
+        DisplayName = $"{parameters.Name} {parameters.Family}"; 
         PersonalCode = parameters.PersonalCode;
         UserName = parameters.UserName;
         NormalizedUserName = UserName.ToUpper();
@@ -45,11 +47,11 @@ public class AppUserEntity : BaseAuditableEntity
 
     }
 
-    public void SetPassword(string securityStamp,string passwordHash,string concurrencyStamp)
+    public void SetPassword(string securityStamp, string passwordHash, string concurrencyStamp)
     {
         SecurityStamp = securityStamp;
         PasswordHash = passwordHash;
-        //ConcurrencyStamp = concurrencyStamp;
+        ConcurrencyStamp = concurrencyStamp;
     }
 
     public void AddUserRole(AppUserRoleEntity entity)
@@ -60,7 +62,7 @@ public class AppUserEntity : BaseAuditableEntity
         }
         _userRoleEntities.Add(entity);
     }
- 
+
 }
 
 

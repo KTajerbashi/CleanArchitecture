@@ -11,7 +11,7 @@ public interface IEntity<TKey>
 public abstract class Entity<TKey> : IEntity<TKey>
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public TKey Id { get; }
+    public TKey Id { get; protected set; }
     public EntityId EntityId { get; } = Guid.NewGuid();
 
     protected Entity() => _domainEvents = new();
