@@ -5,4 +5,7 @@ namespace CleanArchitecture.Core.Application.Library.UseCases.Security.User.Repo
 
 public interface IUserRepository : IRepository<AppUserEntity, long>
 {
+    Task<AppUserEntity> GetByEmailAsync (string email);
+    Task<AppUserEntity> GetByUsernameAsync(string username);
+    void SetPassword(string password);
 }

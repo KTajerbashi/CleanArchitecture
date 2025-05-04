@@ -1,5 +1,6 @@
 ﻿using CleanArchitecture.Core.Application.Library.Common.Patterns.UnitOfWorkPattern;
 using CleanArchitecture.Core.Domain.Library.Common;
+using System.Linq.Expressions;
 
 namespace CleanArchitecture.Core.Application.Library.Common.Repository;
 
@@ -37,4 +38,14 @@ public interface IRepository<TEntity, TId> : IUnitOfWork
 
     IEnumerable<TEntity> Get(CancellationToken cancellationToken);
     Task<IEnumerable<TEntity>> GetAsync(CancellationToken cancellationToken);
+
+    IQueryable<TEntity> GetAll();
+    IQueryable<TEntity> GetAllAsNoTracking();
+    IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
+    Task<IEnumerable<TEntity>> FindAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
+    bool Exists(Expression<Func<TEntity, bool>> predicate);
+    Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default);
+
+
+
 }

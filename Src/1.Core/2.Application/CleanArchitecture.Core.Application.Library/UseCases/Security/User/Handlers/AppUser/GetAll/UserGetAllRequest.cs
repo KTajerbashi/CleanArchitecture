@@ -1,11 +1,16 @@
 ﻿using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Repositories;
+using CleanArchitecture.Core.Domain.Library.UseCases.Security;
 
 namespace CleanArchitecture.Core.Application.Library.UseCases.Security.User.Handlers.AppUser.GetAll;
 
 
 public class UserGetAllResponse : BaseDTO
 {
-
+    public string Name { get; set; }
+    public string Family { get; set; }
+    public string Username { get; set; }
+    public string DisplayName { get; set; }
+    public string Email { get; set; }
 }
 
 public class UserGetAllRequest : RequestModel<List<UserGetAllResponse>>
@@ -26,11 +31,9 @@ public class UserGetAllHandler : Handler<UserGetAllRequest, List<UserGetAllRespo
     {
         try
         {
-            // Add your business logic here
-            // Example:
-            // var user = new User { Email = request.Email };
-            // await _repository.CreateAsync(user);
-            return new List<UserGetAllResponse>();
+            var data = await _repository.GetAsync(cancellationToken);
+            var result = ProviderServices.Mapper.Map<AppUserEntity,UserGetAllResponse>(data);
+            return result.ToList();
         }
         catch (Exception ex)
         {
@@ -45,7 +48,7 @@ public class UserProfile : Profile
 {
     public UserProfile()
     {
-        CreateMap<UserGetAllRequest, UserGetAllRequest>().ReverseMap();
+        CreateMap<AppUserEntity, UserGetAllResponse>().ReverseMap();
         // Add other mappings as needed
     }
 }
