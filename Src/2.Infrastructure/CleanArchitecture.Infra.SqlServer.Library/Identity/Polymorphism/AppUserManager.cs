@@ -1,8 +1,4 @@
-﻿using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.Parameters;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+﻿using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities.Parameters;
 using Newtonsoft.Json;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Polymorphism;
@@ -58,9 +54,9 @@ public class AppUserManager<TUser> : UserManager<TUser> where TUser : UserEntity
         var userToken = new UserTokenEntity(parameters);
         await Context.Set<UserTokenEntity>().AddAsync(userToken);
         await Context.SaveChangesAsync();
-        await AddLoginAsync(user,new UserLoginInfo(LoginProvider,TokenName,user.DisplayName));
+        await AddLoginAsync(user, new UserLoginInfo(LoginProvider, TokenName, user.DisplayName));
         return new IdentityResult<string>(true, JsonConvert.SerializeObject(parameters));
     }
 
-  
+
 }

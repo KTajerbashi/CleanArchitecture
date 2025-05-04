@@ -1,7 +1,4 @@
-﻿using CleanArchitecture.Core.Domain.Library.Common;
-using Microsoft.AspNetCore.Identity;
-
-namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
+﻿namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 
 public class RoleEntity : IdentityRole<long>, IAuditableEntity<long>
 {
@@ -17,7 +14,7 @@ public class RoleEntity : IdentityRole<long>, IAuditableEntity<long>
 
     public bool IsDeleted { get; private set; }
     public bool IsActive { get; private set; }
-
+    public string Title { get; private set; }
     public void Access()
     {
         IsActive = true;
@@ -33,8 +30,9 @@ public class RoleEntity : IdentityRole<long>, IAuditableEntity<long>
         IsActive = true;
         IsDeleted = false;
     }
-    public RoleEntity(string name)
+    public RoleEntity(string name,string title)
     {
         Name = name;
+        Title = title;
     }
 }

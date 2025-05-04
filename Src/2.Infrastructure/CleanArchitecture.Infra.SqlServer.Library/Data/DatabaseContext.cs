@@ -24,13 +24,13 @@ public class DatabaseContext : BaseDatabaseContext
         base.OnModelCreating(builder);
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
     }
-    public virtual DbSet<AppUserEntity> AppUserEntities => Set<AppUserEntity>();
-    public virtual DbSet<AppUserClaimEntity> AppUserClaimEntities => Set<AppUserClaimEntity>();
-    public virtual DbSet<AppUserLoginEntity> AppUserLoginEntities => Set<AppUserLoginEntity>();
-    public virtual DbSet<AppUserRoleEntity> AppUserRoleEntities => Set<AppUserRoleEntity>();
-    public virtual DbSet<AppUserTokenEntity> AppUserTokenEntities => Set<AppUserTokenEntity>();
-    public virtual DbSet<AppRoleEntity> AppRoleEntities => Set<AppRoleEntity>();
-    public virtual DbSet<AppRoleClaimEntity> AppRoleClaimEntities => Set<AppRoleClaimEntity>();
+    //public virtual DbSet<AppUserEntity> AppUserEntities => Set<AppUserEntity>();
+    //public virtual DbSet<AppUserClaimEntity> AppUserClaimEntities => Set<AppUserClaimEntity>();
+    //public virtual DbSet<AppUserLoginEntity> AppUserLoginEntities => Set<AppUserLoginEntity>();
+    //public virtual DbSet<AppUserRoleEntity> AppUserRoleEntities => Set<AppUserRoleEntity>();
+    //public virtual DbSet<AppUserTokenEntity> AppUserTokenEntities => Set<AppUserTokenEntity>();
+    //public virtual DbSet<AppRoleEntity> AppRoleEntities => Set<AppRoleEntity>();
+    //public virtual DbSet<AppRoleClaimEntity> AppRoleClaimEntities => Set<AppRoleClaimEntity>();
 
     //public virtual DbSet<CategoryEntity> CategoryEntities => Set<CategoryEntity>();
     //public virtual DbSet<ProductEntity> ProductEntities => Set<ProductEntity>();

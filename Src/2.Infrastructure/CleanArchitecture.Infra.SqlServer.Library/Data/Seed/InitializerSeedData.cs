@@ -62,7 +62,7 @@ public class InitializerSeedData
 
     private async Task SeedRolesAsync()
     {
-        var administratorRole = new RoleEntity(Roles.Administrator);
+        var administratorRole = new RoleEntity(Roles.Administrator,Roles.Administrator);
 
         if (await _roleManager.Roles.AllAsync(r => r.Name != administratorRole.Name))
         {
@@ -71,10 +71,10 @@ public class InitializerSeedData
     }
     private async Task SeedUsersAsync()
     {
-        await createUser(new UserCreateParameters("tajerbashi","@Tajer123","tajer@mail.com","Kamran","Tajerbashi","Tajerbashi","1234561111","111-10"));
-        await createUser(new UserCreateParameters("alex", "@Alex123", "tajeralexmail.com", "Alex","Mahoon", "Mahoon", "1234562222","222-10"));
-        await createUser(new UserCreateParameters("trump", "@Trump123", "trump@mail.com", "Trump","Tio", "Tio", "1234562222","333-10"));
-        await createUser(new UserCreateParameters("jourge", "@Jourge123", "jourge@mail.com", "Jourge","Minda", "Minda", "1234563333", "444-10"));
+        await createUser(new UserCreateParameters("tajerbashi", "@Tajer123", "tajer@mail.com", "Kamran", "Tajerbashi", "Tajerbashi", "1234561111", "111-10"));
+        await createUser(new UserCreateParameters("alex", "@Alex123", "tajeralexmail.com", "Alex", "Mahoon", "Mahoon", "1234562222", "222-10"));
+        await createUser(new UserCreateParameters("trump", "@Trump123", "trump@mail.com", "Trump", "Tio", "Tio", "1234562222", "333-10"));
+        await createUser(new UserCreateParameters("jourge", "@Jourge123", "jourge@mail.com", "Jourge", "Minda", "Minda", "1234563333", "444-10"));
     }
     private async Task createUser(UserCreateParameters parameter)
     {

@@ -1,14 +1,8 @@
-﻿using CleanArchitecture.Core.Application.Library.Common.Service;
-using CleanArchitecture.Core.Application.Library.Providers;
+﻿using CleanArchitecture.Core.Application.Library.Providers;
 using CleanArchitecture.Core.Application.Library.UseCases.Security.Role.Repositories;
 using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Repositories;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Models;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Parameters;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Service;
 
