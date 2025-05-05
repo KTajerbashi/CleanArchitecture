@@ -124,6 +124,36 @@ Clean architecture aims to create an architecture that can withstand changes and
 </div>
 <hr/>
 </div>
+<div align="left">
+  <h4>.Net Library Used</h4>
+  <ol>
+    <li>✅Swagger</li>
+    <li>✅Serilog</li>
+    <li>✅AutoMapper</li>
+    <li>✅Serializer</li>
+    <li>✅Cache Manager</li>
+    <li>✅Fluent Validation</li>
+    <li>✅MediatR</li>
+    <li>✅Dapper</li>
+    <li>✅AppMetric</li>
+    <li>✅Diagnostics.healthchecks</li>
+    <li>✅.Net Identity</li>
+    <li>✅JWT Authentication</li>
+    <li>Hangfire</li>
+    <li>SignalR</li>
+    <li>Bogus</li>
+    <li>Moq</li>
+    <li>EPPlus</li>
+    <li>CsvHelper</li>
+    <li>Bcrypt.net</li>
+    <li>MailKit</li>
+    <li>Polly</li>
+    <li>MailKit</li>
+    <li>FluentEmail</li>
+    <li>SharpCompress</li>
+    <li>RestSharp</li>
+  </ol>
+</div>
 <div>
   <h4>Best Practices for Clean Architecture</h4>
   <p>
