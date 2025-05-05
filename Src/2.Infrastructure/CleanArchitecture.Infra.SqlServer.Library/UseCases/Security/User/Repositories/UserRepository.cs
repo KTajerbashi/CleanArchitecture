@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Repositories;
+using CleanArchitecture.Infra.SqlServer.Library.Exceptions;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Parameters;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.UseCases.Security.User.Repositories;
@@ -37,7 +38,7 @@ public class UserRepository : Repository<AppUserEntity, long>, IUserRepository
             var result = await _userManager.CreateAsync(userEntity,Password);
             if (!result.Succeeded)
             {
-                throw new ApplicationException($"User Not Create {string.Join('|', result.Errors)}");
+                throw new IdentityException(result.Errors);
             }
             entity.SetId(userEntity.Id);
             return entity;

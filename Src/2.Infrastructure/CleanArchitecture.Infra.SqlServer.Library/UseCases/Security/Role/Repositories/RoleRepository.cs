@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Core.Application.Library.UseCases.Security.Role.Repositories;
+using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.UseCases.Security.Role.Repositories;
 
@@ -12,7 +13,10 @@ public class RoleRepository : Repository<AppRoleEntity, long>, IRoleRepository
 
     public async Task<AppRoleEntity> FindByNameAsync(string roleName, CancellationToken cancellationToken)
     {
-        return await Entity.Where(item => item.Name.ToLower().Equals(roleName)).SingleOrDefaultAsync(cancellationToken)!;
+        var role = await _roleManager.FindByNameAsync(roleName);
+        if (role is null)
+            return null;
+        return role.AppRoleEntity();
     }
     public override async Task<AppRoleEntity> AddAsync(AppRoleEntity entity, CancellationToken cancellationToken)
     {

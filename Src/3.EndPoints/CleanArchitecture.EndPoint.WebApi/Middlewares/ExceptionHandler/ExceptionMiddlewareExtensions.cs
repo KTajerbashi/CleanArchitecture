@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
+﻿using CleanArchitecture.Infra.SqlServer.Library.Exceptions;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.Net.Mime;
@@ -24,25 +25,35 @@ public static class ExceptionMiddlewareExtensions
         {
             exceptionHandlerApp.Run(async context =>
             {
+                string getMessage(Exception exception)
+                {
+                    if (exception is IdentityException)
+                    {
+                        return (exception as IdentityException).Errors.JoinAsString("|");
+                    }
+                    return exception.Message;
+                }
+
                 var logger = context.RequestServices.GetRequiredService<ILogger<ApiError>>();
                 var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
                 var exception = exceptionHandlerPathFeature?.Error;
-
+           
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 context.Response.ContentType = MediaTypeNames.Application.Json;
 
                 if (exception != null)
                 {
                     var routeData = context.GetRouteData();
-
+                    
                     var error = new ApiError
                     {
-                        Message = exception.Message,
+                        Message = getMessage(exception),
                         Controller = routeData?.Values["controller"]?.ToString() ?? context.Request.Path,
                         Method = routeData?.Values["action"]?.ToString() ?? context.Request.Method,
                         Error = exception.GetType().Name,
-                        StackTrace = exception.StackTrace
+                        //StackTrace = exception.StackTrace
                     };
+
 
                     // Build inner exception chain
                     var innerException = exception.InnerException;

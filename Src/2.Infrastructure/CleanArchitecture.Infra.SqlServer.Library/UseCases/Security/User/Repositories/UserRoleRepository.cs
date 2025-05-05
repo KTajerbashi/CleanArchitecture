@@ -23,14 +23,9 @@ public class UserRoleRepository : Repository<AppUserRoleEntity, long>, IUserRole
         if (role == null)
             throw new InfraException("Role not found");
 
-        var result = await _userManager.AddToRoleAsync(user, role.Name);
-
-        if (!result.Succeeded)
-        {
-            var errors = string.Join(", ", result.Errors.Select(e => e.Description));
-            throw new InfraException($"Failed to add role: {errors}");
-        }
-
+        var userRoleEntity = new UserRoleEntity(entity.UserId,entity.RoleId);
+        await Context.UserRoles.AddAsync(userRoleEntity);
+        entity.SetId(userRoleEntity.Id);
         return entity;
     }
 }

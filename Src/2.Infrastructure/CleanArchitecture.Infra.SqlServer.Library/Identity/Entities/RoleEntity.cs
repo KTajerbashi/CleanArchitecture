@@ -1,4 +1,6 @@
-﻿namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
+﻿using System.Runtime.CompilerServices;
+
+namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 
 public class RoleEntity : IdentityRole<long>, IAuditableEntity<long>
 {
@@ -34,5 +36,18 @@ public class RoleEntity : IdentityRole<long>, IAuditableEntity<long>
     {
         Name = name;
         Title = title;
+    }
+
+    public AppRoleEntity AppRoleEntity()
+    {
+        return new AppRoleEntity(
+            Id,
+            Name,
+            NormalizedName,
+            ConcurrencyStamp,
+            Title,
+            IsActive,
+            IsDeleted
+            );
     }
 }

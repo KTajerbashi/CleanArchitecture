@@ -1,14 +1,51 @@
-﻿namespace CleanArchitecture.Core.Application.Library.UseCases.Security.User.Handlers.AppUser.Create;
+﻿using CleanArchitecture.Core.Application.Library.UseCases.Security.Role.Repositories;
+using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Repositories;
+using CleanArchitecture.Core.Domain.Library.UseCases.Security;
+
+namespace CleanArchitecture.Core.Application.Library.UseCases.Security.User.Handlers.AppUser.Create;
 
 public class UserCreateHandler : Handler<UserCreateRequest, UserCreateResponse>
 {
-    public UserCreateHandler(ProviderServices providerServices) : base(providerServices)
+    private readonly IUserRepository _userRepository;
+    private readonly IUserRoleRepository _userRoleRepository;
+    private readonly IRoleRepository _roleRepository;
+    public UserCreateHandler(ProviderServices providerServices, IUserRepository userRepository, IUserRoleRepository userRoleRepository, IRoleRepository roleRepository) : base(providerServices)
     {
+        _userRepository = userRepository;
+        _userRoleRepository = userRoleRepository;
+        _roleRepository = roleRepository;
     }
 
-    public override Task<UserCreateResponse> Handle(UserCreateRequest request, CancellationToken cancellationToken)
+    public override async Task<UserCreateResponse> Handle(UserCreateRequest request, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        try
+        {
+            await _userRepository.BeginTransactionAsync();
+            //  Check duplicate email, username, phonenumber, PersonalCode
+            var entity = ProviderServices.Mapper.Map<UserCreateRequest,AppUserEntity>(request);
+            _userRepository.SetPassword(request.Password);
+            entity = await _userRepository.AddAsync(entity, cancellationToken);
+            //  find role
+            var roleEntity = await _roleRepository.FindByNameAsync(request.RoleName,cancellationToken);
+            if (roleEntity is null)
+            {
+                roleEntity = new AppRoleEntity(request.RoleName, request.RoleName);
+                roleEntity = await _roleRepository.AddAsync(roleEntity, cancellationToken);
+            }
+            //  create user role
+            var userRoleEntity = new AppUserRoleEntity(entity.Id,roleEntity.Id);
+            userRoleEntity = await _userRoleRepository.AddAsync(userRoleEntity, cancellationToken);
+            //  save changes
+            await _userRepository.SaveChangeAsync();
+            await _userRepository.CommitTransactionAsync();
+            return new UserCreateResponse($"Create Success User : {entity.DisplayName}");
+        }
+        catch (Exception)
+        {
+
+            await _userRepository.RollbackTransactionAsync();
+            throw;
+        }
     }
 
     //private readonly IUserRepository _repository;
