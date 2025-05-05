@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Repositories;
+using CleanArchitecture.Core.Domain.Library.UseCases.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace CleanArchitecture.Core.Application.Library.UseCases.Security.User.Hand
 
 public class UserGetByIdResponse : BaseDTO
 {
+    public string Email { get; set; }
+    public string DisplayName { get; set; }
 }
 
 public class UserGetByIdRequest : RequestModel<UserGetByIdResponse>
@@ -37,12 +40,10 @@ public class UserGetByIdHandler : Handler<UserGetByIdRequest, UserGetByIdRespons
     {
         try
         {
-            // Add your business logic here
-            // Example:
-            // var user = new User { Email = request.Email };
-            // await _repository.CreateAsync(user);
 
-            return new UserGetByIdResponse();
+            var entity = await _repository.GetAsync(request.EntityId,cancellationToken);
+
+            return ProviderServices.Mapper.Map<AppUserEntity,UserGetByIdResponse>(entity);
         }
         catch (Exception ex)
         {
@@ -56,8 +57,8 @@ public class UserProfile : Profile
 {
     public UserProfile()
     {
-        CreateMap<UserGetByIdRequest, UserGetByIdRequest>().ReverseMap();
         // Add other mappings as needed
+        CreateMap<AppUserEntity, UserGetByIdResponse>().ReverseMap();
     }
 }
 

@@ -31,6 +31,8 @@ public class UserDeleteHandler : Handler<UserDeleteRequest, UserDeleteResponse>
     {
         try
         {
+            await _repository.RemoveAsync(request.EntityId,cancellationToken);
+            await _repository.SaveChangeAsync();
             // Add your business logic here
             // Example:
             // var user = new User { Email = request.Email };
