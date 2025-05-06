@@ -1,12 +1,14 @@
 ﻿using CleanArchitecture.Core.Application.Library;
 using CleanArchitecture.Core.Application.Library.Utilities.Extensions;
 using CleanArchitecture.EndPoint.WebApi.HealthChecks;
+using CleanArchitecture.EndPoint.WebApi.HostedServer;
 using CleanArchitecture.EndPoint.WebApi.Middlewares.AuthorizedHandler;
 using CleanArchitecture.EndPoint.WebApi.Middlewares.ExceptionHandler;
 using CleanArchitecture.EndPoint.WebApi.MonitoringApp;
 using CleanArchitecture.EndPoint.WebApi.Providers;
 using CleanArchitecture.Infra.SqlServer.Library;
 using CleanArchitecture.Infra.SqlServer.Library.Data;
+using CleanArchitecture.Infra.SqlServer.Library.Providers.HangfireBackgroundTask;
 using FluentValidation;
 using Serilog;
 
@@ -24,7 +26,7 @@ public static class DependencyInjections
             configuration.WriteTo.Console();
             configuration.WriteTo.File(string.Format("./Logs/File_{0}.txt", DateTime.Now.ToString("yyyy_MM_dd")));
         });
-        
+
         builder.AddHealthCheckServices();
         builder.AddMonitoringAppServices();
 
@@ -37,6 +39,8 @@ public static class DependencyInjections
         builder.Services.AddApplicationLibrary(configuration, assemblies);
 
         builder.Services.AddInfrastructureLibrary(configuration, assemblies);
+        //  Hangfire
+        builder.Services.AddHangfireServices(configuration);
 
         builder.Services.AddControllers();
 
@@ -46,8 +50,7 @@ public static class DependencyInjections
 
         builder.Services.AddSwaggerService();
 
-        builder.Services.AddHostedService<HostingServices>();
-
+        builder.Services.RegisterHostedService();
         //builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
         builder.Services.AddValidatorsFromAssemblies(assemblies);
@@ -103,6 +106,8 @@ public static class DependencyInjections
 
         // Configure await for async operations
         app.ConfigureAwait(true);
+
+        app.UseHangfireServices();
 
         return app;
     }

@@ -1,13 +1,13 @@
 ﻿using CleanArchitecture.Core.Application.Library.Providers.CacheSystem;
 
-namespace CleanArchitecture.EndPoint.WebApi;
+namespace CleanArchitecture.EndPoint.WebApi.HostedServer;
 
-public class HostingServices : IHostedService
+public class ServiceHost: IHostedService
 {
-    private readonly ILogger<HostingServices> _logger;
+    private readonly ILogger<ServiceHost> _logger;
     private readonly ICacheAdapter _cacheAdapter;
     private readonly Dictionary<string, string> _data;
-    public HostingServices(ILogger<HostingServices> logger, ICacheAdapter cacheAdapter)
+    public ServiceHost(ILogger<ServiceHost> logger, ICacheAdapter cacheAdapter)
     {
         _logger = logger;
         _cacheAdapter = cacheAdapter;

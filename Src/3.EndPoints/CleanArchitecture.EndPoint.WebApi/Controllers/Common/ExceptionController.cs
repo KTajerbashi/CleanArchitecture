@@ -1,7 +1,6 @@
 ﻿using CleanArchitecture.EndPoint.WebApi.Exceptions;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Common;
-
 public class ExceptionController : BaseController
 {
     [HttpGet]
