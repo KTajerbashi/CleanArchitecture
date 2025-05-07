@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.EndPoint.WebApi.HealthChecks;
-using System.Diagnostics;
-using System.Net.Http;
+﻿using System.Diagnostics;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Common;
 

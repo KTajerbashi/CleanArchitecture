@@ -2,7 +2,6 @@
 global using CleanArchitecture.Core.Application.Library.Providers;
 global using CleanArchitecture.EndPoint.WebApi.Common.Controllers;
 global using CleanArchitecture.EndPoint.WebApi.Common.Models;
-global using CleanArchitecture.EndPoint.WebApi.HealthChecks;
 global using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
 global using CleanArchitecture.Infra.SqlServer.Library.Identity.Service;
 global using Microsoft.AspNetCore.Authentication.JwtBearer;

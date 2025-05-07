@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.EndPoint.WebApi.HostedServer;
+﻿namespace CleanArchitecture.EndPoint.WebApi.Providers.HostedServer;
 
 public static class DependencyInjections
 {

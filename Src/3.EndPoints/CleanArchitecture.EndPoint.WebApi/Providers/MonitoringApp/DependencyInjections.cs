@@ -2,7 +2,7 @@
 using OpenTelemetry.Trace;
 using Prometheus;
 
-namespace CleanArchitecture.EndPoint.WebApi.MonitoringApp;
+namespace CleanArchitecture.EndPoint.WebApi.Providers.MonitoringApp;
 
 public static class DependencyInjections
 {
@@ -17,7 +17,7 @@ public static class DependencyInjections
                                                                         .AddAspNetCoreInstrumentation()
                                                                         .AddHttpClientInstrumentation()
                                                                         .AddOtlpExporter()
-                                                                        .AddConsoleExporter()
+                                                                        //.AddConsoleExporter()
                                                                         ); // Export to Jaeger/Zipkin
 
         builder.Services.AddOpenTelemetry().WithTracing(tracing =>
@@ -27,7 +27,8 @@ public static class DependencyInjections
             .AddHttpClientInstrumentation()
             //.AddSqlClientInstrumentation()
             .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("CleanArchitecture"))
-            .AddConsoleExporter();
+            //.AddConsoleExporter()
+            ;
         });
         return builder;
     }

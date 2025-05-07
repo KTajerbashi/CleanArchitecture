@@ -1,7 +1,6 @@
-﻿
-using CleanArchitecture.Infra.SqlServer.Library.Providers.HangfireBackgroundTask;
+﻿using CleanArchitecture.Infra.SqlServer.Library.Providers.HangfireBackgroundTask;
 
-namespace CleanArchitecture.EndPoint.WebApi.HostedServer;
+namespace CleanArchitecture.EndPoint.WebApi.Providers.HostedServer;
 
 public class HangfireHost : IHostedService
 {

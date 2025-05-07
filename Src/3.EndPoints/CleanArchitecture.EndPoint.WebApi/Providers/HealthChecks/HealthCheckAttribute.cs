@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.EndPoint.WebApi.HealthChecks;
+﻿namespace CleanArchitecture.EndPoint.WebApi.Providers.HealthChecks;
 
 //[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
 //public class HealthCheckAttribute : Attribute

@@ -1,51 +1,75 @@
-﻿using CleanArchitecture.Core.Application.Library.Providers.HangfireBackgroundTask;
-using Hangfire;
-using Hangfire.MemoryStorage;
+﻿using Hangfire;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Mvc.Filters;
+using System.IO;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Providers.HangfireBackgroundTask;
 
-public static class DependencyInjection
+public static class HangfireDependencyInjection
 {
     public static IServiceCollection AddHangfireServices(this IServiceCollection services, IConfiguration configuration)
     {
-        // Add Hangfire services
-        services.AddHangfire(config =>
+        var hangfireSettings = configuration.GetSection("Hangfire").Get<HangfireSettings>();
+        services.Configure<HangfireSettings>(configuration.GetSection("Hangfire"));
+
+        if (hangfireSettings?.Enable == true)
         {
-            config.SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
-                .UseSimpleAssemblyNameTypeSerializer()
-                .UseRecommendedSerializerSettings()
-                .UseMemoryStorage(); // For development
+            services.AddHangfire(config =>
+                config.UseSqlServerStorage(hangfireSettings.ConnectionString, new Hangfire.SqlServer.SqlServerStorageOptions
+                {
+                    SchemaName = hangfireSettings.SchemaName
+                }));
 
-            // For production, use SQL Server:
-            // .UseSqlServerStorage(configuration.GetConnectionString("HangfireConnection"));
-        });
-
-        // Add Hangfire server
-        services.AddHangfireServer(options =>
-        {
-            options.ServerName = "CleanArchitecture.Hangfire";
-            options.Queues = new[] { "default" };
-        });
-
-        services.AddScoped<IBackgroundJobService, BackgroundJobService>();
+            services.AddHangfireServer();
+        }
 
         return services;
     }
 
     public static WebApplication UseHangfireServices(this WebApplication app)
     {
-        // Configure the HTTP request pipeline
-        if (app.Environment.IsDevelopment())
+
+
+        var hangfireSettings = app.Services.GetRequiredService<IOptions<HangfireSettings>>().Value;
+
+        if (hangfireSettings.Enable)
         {
-            app.UseHangfireDashboard("/hangfire", new DashboardOptions
+            app.UseHangfireDashboard(hangfireSettings.Dashboard.BaseUrl, new DashboardOptions
             {
-                DashboardTitle = "CleanArchitecture Jobs Dashboard",
-                Authorization = new[] { new HangfireAuthorizationFilter() }
+                DashboardTitle = hangfireSettings.Dashboard.Title,
+                StatsPollingInterval = hangfireSettings.Dashboard.StatsPollingIntervalMs,
+                DisplayStorageConnectionString = hangfireSettings.Dashboard.DisplayConnectionString,
+                Authorization = new[] { new HangfireAuthorizationFilter(hangfireSettings.Dashboard.RoleAccess) }
             });
+            var adminDashboard = hangfireSettings.Dashboard.RoleAccess.First(item => item.Role == "Administrator");
+            if (adminDashboard.Enabled)
+            {
+                app.UseHangfireDashboard(adminDashboard.Path, new DashboardOptions
+                {
+                    DashboardTitle = adminDashboard.Title,
+                    StatsPollingInterval = hangfireSettings.Dashboard.StatsPollingIntervalMs,
+                    DisplayStorageConnectionString = hangfireSettings.Dashboard.DisplayConnectionString,
+                    Authorization = new[] { new HangfireAuthorizationFilter([adminDashboard]) }
+                });
+
+            }
+
+            var userDashbaord = hangfireSettings.Dashboard.RoleAccess.First(item => item.Role == "User");
+            if (userDashbaord.Enabled)
+            {
+                app.UseHangfireDashboard(userDashbaord.Path, new DashboardOptions
+                {
+                    DashboardTitle = userDashbaord.Title,
+                    StatsPollingInterval = hangfireSettings.Dashboard.StatsPollingIntervalMs,
+                    DisplayStorageConnectionString = hangfireSettings.Dashboard.DisplayConnectionString,
+                    Authorization = new[] { new HangfireAuthorizationFilter([userDashbaord]) }
+                });
+            }
         }
 
+        app.MapHangfireDashboard();
         return app;
     }
+
 }
+

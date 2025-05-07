@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace CleanArchitecture.EndPoint.WebApi.HealthChecks;
+namespace CleanArchitecture.EndPoint.WebApi.Providers.HealthChecks;
 
 public class UserApiHealthCheck : IHealthCheck
 {

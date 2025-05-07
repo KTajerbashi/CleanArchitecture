@@ -2,7 +2,7 @@
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
-namespace CleanArchitecture.EndPoint.WebApi.HealthChecks;
+namespace CleanArchitecture.EndPoint.WebApi.Providers.HealthChecks;
 
 public static class DependencyInjections
 {
