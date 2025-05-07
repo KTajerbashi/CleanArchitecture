@@ -1,7 +1,6 @@
 ﻿using CleanArchitecture.Infra.SqlServer.Library.Data.Constants;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
 using CleanArchitecture.Infra.SqlServer.Library.Identity.Parameters;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -14,11 +13,12 @@ public class InitializerSeedData
     private readonly DatabaseContext _context;
     private readonly UserManager<UserEntity> _userManager;
     private readonly RoleManager<RoleEntity> _roleManager;
+
     public InitializerSeedData(
-      ILogger<InitializerSeedData> logger,
-      DatabaseContext context,
-      UserManager<UserEntity> userManager,
-      RoleManager<RoleEntity> roleManager)
+        ILogger<InitializerSeedData> logger,
+        DatabaseContext context,
+        UserManager<UserEntity> userManager,
+        RoleManager<RoleEntity> roleManager)
     {
         _logger = logger;
         _context = context;
@@ -28,10 +28,11 @@ public class InitializerSeedData
 
     public async Task RunAsync()
     {
-        await InitialiseAsync();
-        await SeedAsync();
+        await ApplyMigrationsAsync();
+        await SeedDataAsync();
     }
-    private async Task InitialiseAsync()
+
+    private async Task ApplyMigrationsAsync()
     {
         try
         {
@@ -39,19 +40,17 @@ public class InitializerSeedData
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "An error occurred while initialising the database.");
+            _logger.LogError(ex, "An error occurred while applying database migrations.");
             throw;
         }
     }
 
-
-    private async Task SeedAsync()
+    private async Task SeedDataAsync()
     {
         try
         {
             await SeedRolesAsync();
             await SeedUsersAsync();
-            await SeedDefaultDataAsync();
         }
         catch (Exception ex)
         {
@@ -62,58 +61,69 @@ public class InitializerSeedData
 
     private async Task SeedRolesAsync()
     {
-        var administratorRole = new RoleEntity(Roles.Administrator,Roles.Administrator);
+        await CreateRoleIfNotExistsAsync(Roles.Administrator);
+        await CreateRoleIfNotExistsAsync(Roles.User);
+    }
 
-        if (await _roleManager.Roles.AllAsync(r => r.Name != administratorRole.Name))
+    private async Task CreateRoleIfNotExistsAsync(string roleName)
+    {
+        if (!await _roleManager.RoleExistsAsync(roleName))
         {
-            await _roleManager.CreateAsync(administratorRole);
+            var role = new RoleEntity(roleName, roleName);
+            var result = await _roleManager.CreateAsync(role);
+            if (!result.Succeeded)
+            {
+                _logger.LogError($"Failed to create role '{roleName}': {string.Join(", ", result.Errors.Select(e => e.Description))}");
+            }
         }
     }
+
     private async Task SeedUsersAsync()
     {
-        await createUser(new UserCreateParameters("tajerbashi", "@Tajer123", "tajer@mail.com", "Kamran", "Tajerbashi", "Tajerbashi", "1234561111", "111-10"));
-        await createUser(new UserCreateParameters("alex", "@Alex123", "alex@.com", "Alex", "Mahoon", "Mahoon", "1234562222", "222-10"));
-        await createUser(new UserCreateParameters("trump", "@Trump123", "trump@mail.com", "Trump", "Tio", "Tio", "1234562222", "333-10"));
-        await createUser(new UserCreateParameters("jourge", "@Jourge123", "jourge@mail.com", "Jourge", "Minda", "Minda", "1234563333", "444-10"));
-    }
-    private async Task createUser(UserCreateParameters parameter)
-    {
-        var administrator = new UserEntity(parameter);
-
-        // Check if the username or email already exists
-        if (!await _userManager.Users.AnyAsync(u => u.UserName == administrator.UserName && u.Email == administrator.Email))
+        var usersToSeed = new List<(UserCreateParameters Parameters, string Role)>
         {
-            var createResult = await _userManager.CreateAsync(administrator, parameter.Password);
-            if (createResult.Succeeded)
-            {
-                // Manually create a UserRoleEntity
-                var role = _context.Set<RoleEntity>().Single(item => item.Name == Roles.Administrator);
-                var userRoleEntity = new UserRoleEntity(administrator.Id,role.Id);
-                // Add the user role entity to your context
-                _context.UserRoles.Add(userRoleEntity);
-                await _context.SaveChangesAsync();  // Save changes to commit the role assignment
+            (new UserCreateParameters("tajerbashi", "@Tajer123", "tajer@mail.com", "Kamran", "Tajerbashi", "Tajerbashi", "1234561111", "111-10"), Roles.Administrator),
+            (new UserCreateParameters("alex", "@Alex123", "alex@.com", "Alex", "Mahoon", "Mahoon", "1234562222", "222-10"), Roles.User),
+            (new UserCreateParameters("trump", "@Trump123", "trump@mail.com", "Trump", "Tio", "Tio", "1234562222", "333-10"), Roles.User),
+            (new UserCreateParameters("jourge", "@Jourge123", "jourge@mail.com", "Jourge", "Minda", "Minda", "1234563333", "444-10"), Roles.User)
+        };
 
-                _logger.LogInformation($"User {administrator.UserName} assigned to Administrator role.");
-            }
-            else
-            {
-                _logger.LogError($"Failed to create {parameter.UserName} user. Errors: {string.Join(", ", createResult.Errors.Select(e => e.Description))}");
-            }
-        }
-        else
+        foreach (var (parameters, role) in usersToSeed)
         {
-            _logger.LogWarning($"User with username '{parameter.UserName}' or email '{administrator.Email}' already exists.");
+            await CreateUserAsync(parameters, role);
         }
     }
 
-
-    private async Task SeedDefaultDataAsync()
+    private async Task CreateUserAsync(UserCreateParameters parameters, string roleName)
     {
-        if (!await _context.Users.AnyAsync())
+        var user = new UserEntity(parameters);
+
+        bool userExists = await _userManager.Users
+            .AnyAsync(u => u.UserName == user.UserName || u.Email == user.Email);
+
+        if (userExists)
         {
-
-
-            await _context.SaveChangesAsync();
+            _logger.LogWarning($"User '{user.UserName}' or email '{user.Email}' already exists.");
+            return;
         }
+
+        var result = await _userManager.CreateAsync(user, parameters.Password);
+        if (!result.Succeeded)
+        {
+            _logger.LogError($"Failed to create user '{user.UserName}': {string.Join(", ", result.Errors.Select(e => e.Description))}");
+            return;
+        }
+
+        var role = await _roleManager.FindByNameAsync(roleName);
+        if (role == null)
+        {
+            _logger.LogWarning($"Role '{roleName}' not found. User '{user.UserName}' was created without role assignment.");
+            return;
+        }
+
+        _context.UserRoles.Add(new UserRoleEntity(user.Id, role.Id));
+        await _context.SaveChangesAsync();
+
+        _logger.LogInformation($"User '{user.UserName}' assigned to '{roleName}' role.");
     }
 }

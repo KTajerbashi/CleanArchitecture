@@ -9,9 +9,6 @@ using CleanArchitecture.EndPoint.WebApi.Providers.MonitoringApp;
 using CleanArchitecture.Infra.SqlServer.Library;
 using CleanArchitecture.Infra.SqlServer.Library.Data;
 using CleanArchitecture.Infra.SqlServer.Library.Providers.HangfireBackgroundTask;
-using FluentValidation;
-using Hangfire;
-using Serilog;
 
 namespace CleanArchitecture.EndPoint.WebApi;
 
@@ -41,9 +38,9 @@ public static class DependencyInjections
 
         builder.Services.AddInfrastructureLibrary(configuration, assemblies);
         //  Hangfire
-        builder.Services.AddHangfireServices(configuration);
+        //builder.Services.AddHangfireServices(configuration);
         
-        builder.Services.RegisterHostedService();
+        //builder.Services.RegisterHostedService();
 
         builder.Services.AddControllers();
 
@@ -59,62 +56,6 @@ public static class DependencyInjections
 
         return builder.Build();
     }
-    //public static async Task<WebApplication> ConfigurePipeline(this WebApplication app)
-    //{
-    //    // Configure the HTTP request pipeline.
-    //    if (app.Environment.IsDevelopment())
-    //    {
-    //        app.UseSwaggerService();
-    //        app.MapOpenApi(); // Only map OpenAPI in development
-    //    }
-
-    //    //app.UseExceptionHandler();
-    //    app.UseExceptionMiddleware();
-
-    //    app.UseHealthCheckServices();
-    //    app.UseMonitoringAppServices();
-
-    //    // Static files middleware
-    //    app.UseStaticFiles();
-
-    //    // Logging middleware
-    //    app.UseSerilogRequestLogging();
-
-    //    // HTTPS redirection middleware (should be early in the pipeline)
-    //    app.UseHttpsRedirection();
-
-    //    // Session middleware
-    //    app.UseSession();
-
-    //    app.UseRouting();
-
-    //    // Authentication and authorization middleware
-    //    app.UseAuthentication(); // Must come before UseAuthorization
-    //    app.UseAuthorization();
-
-    //    app.UseAuthorizedMiddleware();
-
-    //    // Exception handling middleware (custom middleware)
-    //    //app.UseExceptionMiddleware();
-
-    //    // Map controllers
-    //    app.MapControllers();
-
-    //    // Fallback to index.html for SPA (ensure this is after MapControllers)
-    //    app.MapFallbackToFile("index.html");
-
-    //    // Initialize the database asynchronously
-    //    await app.InitialiseDatabaseAsync();
-
-    //    // Configure await for async operations
-    //    app.ConfigureAwait(true);
-
-    //    app.UseHangfireServices();
-
-    //    return app;
-    //}
-
-
     public static async Task<WebApplication> ConfigurePipeline(this WebApplication app)
     {
         // Development-only services
@@ -153,7 +94,7 @@ public static class DependencyInjections
         app.UseAuthorizedMiddleware();
 
         // Hangfire dashboard setup
-        app.UseHangfireServices(); // Should be placed after auth if it relies on it
+        //app.UseHangfireServices(); // Should be placed after auth if it relies on it
 
         // Controllers and endpoints
         app.MapControllers();
