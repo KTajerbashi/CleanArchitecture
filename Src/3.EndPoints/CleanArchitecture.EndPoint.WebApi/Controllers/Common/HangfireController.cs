@@ -2,7 +2,6 @@
 using Hangfire;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Common;
-
 public class HangfireController : BaseController
 {
     private readonly IBackgroundJobClient _backgroundJob;

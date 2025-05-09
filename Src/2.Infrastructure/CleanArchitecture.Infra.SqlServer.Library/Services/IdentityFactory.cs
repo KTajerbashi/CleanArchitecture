@@ -3,7 +3,6 @@ using CleanArchitecture.Core.Application.Library.Providers.UserManagement;
 using Microsoft.AspNetCore.Identity;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Services;
-
 public class IdentityFactory : IIdentityFactory
 {
     private readonly IPasswordHasher<AppUserEntity> _passwordHasher;
