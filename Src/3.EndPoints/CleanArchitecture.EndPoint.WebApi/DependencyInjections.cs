@@ -39,8 +39,11 @@ public static class DependencyInjections
         builder.Services.AddInfrastructureLibrary(configuration, assemblies);
         //  Hangfire
         //builder.Services.AddHangfireServices(configuration);
-        
+
         //builder.Services.RegisterHostedService();
+
+        builder.Services.AddHostedService<MessageBrokerHost>();
+
 
         builder.Services.AddControllers();
 

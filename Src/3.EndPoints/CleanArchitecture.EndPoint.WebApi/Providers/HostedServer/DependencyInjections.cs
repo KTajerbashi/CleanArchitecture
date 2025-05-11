@@ -6,6 +6,7 @@ public static class DependencyInjections
     {
         services.AddHostedService<HangfireHost>();
         services.AddHostedService<ServiceHost>();
+        services.AddHostedService<MessageBrokerHost>();
         return services;
     }
 }
