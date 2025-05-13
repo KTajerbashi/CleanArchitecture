@@ -1,9 +1,5 @@
 ﻿namespace CleanArchitecture.EndPoint.WebApi.Providers.Excel.Attributes;
 
-
-
-
-
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property)]
 public class ExcelPropertyAttribute : Attribute
 {

@@ -52,7 +52,7 @@ public class ExcelExporterController : BaseController
         var models = _excelSerializer.ExportExcelFile(data.Teachers,folderName:"Export\\Excel\\Teachers");
         return Ok(models);
     }
-        
+
     [HttpGet("ExportExcelFilePath")]
     public IActionResult ExportExcelFilePath()
     {
@@ -63,6 +63,42 @@ public class ExcelExporterController : BaseController
 
         // Export list of items (e.g., Teachers)
         var filePath2 = _excelSerializer.ExportExcelFile(data.Teachers);
+        return Ok(new
+        {
+            SchoolPath = filePath1,
+            TeachersPath = filePath2,
+        });
+    }
+
+
+
+    [HttpGet("OpenCloseGenerator")]
+    public IActionResult OpenCloseGenerator()
+    {
+        var data = getData();
+
+        // Export single model (SchoolModel)
+        var filePath1 = _excelSerializer.ExportExcelFile(data);
+
+        // Export list of items (e.g., Teachers)
+        var filePath2 = _excelSerializer.ExportExcelFile(data.Teachers);
+        return Ok(new
+        {
+            SchoolPath = filePath1,
+            TeachersPath = filePath2,
+        });
+    }
+
+    [HttpGet("EPPlusGenerator")]
+    public IActionResult EPPlusGenerator()
+    {
+        var data = getData();
+
+        // Export single model (SchoolModel)
+        var filePath1 = _excelSerializer.ExportExcelFile(data,Providers.Excel.Attributes.ExcelPropertyAttribute.ExcelGenerator.EPPlus);
+
+        // Export list of items (e.g., Teachers)
+        var filePath2 = _excelSerializer.ExportExcelFile(data.Teachers,Providers.Excel.Attributes.ExcelPropertyAttribute.ExcelGenerator.EPPlus);
         return Ok(new
         {
             SchoolPath = filePath1,
