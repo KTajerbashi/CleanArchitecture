@@ -14,8 +14,6 @@ public static class DependencyInjections
     {
         services.AddAutoMapperProfiles(configuration);
 
-        services.AddEPPlusExcelSerializer();
-
         services.AddMicrosoftSerializer();
 
         services.AddScoped<ProviderServices>();

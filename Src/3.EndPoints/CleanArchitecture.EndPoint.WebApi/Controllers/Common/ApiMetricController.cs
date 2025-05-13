@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Common;
-
 public class ApiMetricController : BaseController
 {
     private readonly IHttpClientFactory _httpClientFactory;

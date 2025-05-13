@@ -1,4 +1,5 @@
 ﻿using CleanArchitecture.Core.Application.Library;
+using CleanArchitecture.Core.Application.Library.Providers.Serializer.Excel;
 using CleanArchitecture.Core.Application.Library.Utilities.Extensions;
 using CleanArchitecture.EndPoint.WebApi.Middlewares.AuthorizedHandler;
 using CleanArchitecture.EndPoint.WebApi.Middlewares.ExceptionHandler;
@@ -37,6 +38,8 @@ public static class DependencyInjections
         builder.Services.AddApplicationLibrary(configuration, assemblies);
 
         builder.Services.AddInfrastructureLibrary(configuration, assemblies);
+
+        builder.Services.AddEPPlusExcelSerializer();
         //  Hangfire
         //builder.Services.AddHangfireServices(configuration);
 
