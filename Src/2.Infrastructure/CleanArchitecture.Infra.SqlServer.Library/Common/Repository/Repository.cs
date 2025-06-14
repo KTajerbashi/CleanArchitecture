@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace CleanArchitecture.Infra.SqlServer.Library.Common.Repository;
+﻿namespace CleanArchitecture.Infra.SqlServer.Library.Common.Repository;
 
 public abstract class Repository<TEntity, TId> : IRepository<TEntity, TId>
     where TEntity : BaseAuditableEntity<TId>
@@ -69,7 +67,7 @@ public abstract class Repository<TEntity, TId> : IRepository<TEntity, TId>
     public virtual async Task<TEntity> GetAsync(TId id, CancellationToken cancellationToken)
         => await Entity.FindAsync(new object[] { id }, cancellationToken)
            ?? throw new KeyNotFoundException($"Entity with ID {id} not found");
-    
+
     public virtual async Task<TEntity> GetAsync(Guid entityId, CancellationToken cancellationToken)
     {
         return await Entity

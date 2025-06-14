@@ -1,9 +1,4 @@
-﻿using CleanArchitecture.Infra.SqlServer.Library.Data.Constants;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Parameters;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+﻿using CleanArchitecture.Infra.SqlServer.Library.Identity.Parameters;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Data.Seed;
 

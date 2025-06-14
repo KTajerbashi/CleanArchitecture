@@ -24,21 +24,21 @@ public class AccountController : AuthorizationController
     public async Task<IActionResult> Remove()
     {
         await Task.CompletedTask;
-        return Ok("Removed");
+        return Ok(true);
     }
 
     [HttpPut("DisActive")]
     public async Task<IActionResult> DisActive()
     {
         await Task.CompletedTask;
-        return Ok("DisActive");
+        return Ok(true);
     }
 
     [HttpGet("Profile")]
     public async Task<IActionResult> Profile()
     {
         await Task.CompletedTask;
-        return Ok("Profile");
+        return Ok(true);
     }
 
 
@@ -47,7 +47,7 @@ public class AccountController : AuthorizationController
     public async Task<IActionResult> AdminAccess()
     {
         await Task.CompletedTask;
-        return Ok("Profile");
+        return Ok(true);
     }
 
 
@@ -56,7 +56,7 @@ public class AccountController : AuthorizationController
     public async Task<IActionResult> UserAccess()
     {
         await Task.CompletedTask;
-        return Ok("Profile");
+        return Ok(true);
     }
 
 

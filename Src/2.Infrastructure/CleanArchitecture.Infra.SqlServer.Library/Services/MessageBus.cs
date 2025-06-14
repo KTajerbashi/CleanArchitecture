@@ -34,7 +34,6 @@ public class MessageBus : IMessageBroker, IDisposable
 
     public void Dispose()
     {
-        throw new NotImplementedException();
     }
 
     public async Task PublishAsync<T>(T data, string queueName, string exchangeName, string routingKey)
@@ -61,7 +60,7 @@ public class MessageBus : IMessageBroker, IDisposable
         var factory = new ConnectionFactory() { HostName = _option.HostName };
         var connection = await factory.CreateConnectionAsync();
         var channel = await connection.CreateChannelAsync();
-
+        var response = Activator.CreateInstance<T>();
         await channel.ExchangeDeclareAsync(exchange: exchangeName, type: ExchangeType.Fanout);
 
         var queueDeclareOk = await channel.QueueDeclareAsync(queue: queueName, durable: false, exclusive: false, autoDelete: false);
@@ -72,13 +71,13 @@ public class MessageBus : IMessageBroker, IDisposable
         {
             var body = ea.Body.ToArray();
             var message = Encoding.UTF8.GetString(body);
-            var obj = JsonSerializer.Deserialize<T>(message);
-            if (obj is not null)
-                await onMessage(obj);
+            response = JsonSerializer.Deserialize<T>(message);
+            if (response is not null)
+                await onMessage(response);
         };
 
         await channel.BasicConsumeAsync(queue: queueName, autoAck: true, consumer: consumer);
 
-        return default;
+        return response;
     }
 }

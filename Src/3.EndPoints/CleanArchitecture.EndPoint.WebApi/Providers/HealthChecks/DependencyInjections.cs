@@ -8,10 +8,11 @@ public static class DependencyInjections
 {
     public static WebApplicationBuilder AddHealthCheckServices(this WebApplicationBuilder builder)
     {
+        IConfiguration configuration = builder.Configuration;
         // Configuration values
-        var sqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");
-        var externalServiceUri = builder.Configuration["ExtenalApi:OpenId"];
-        var userApiBaseUrl = builder.Configuration["UserApi:BaseUrl"] ?? "https://localhost:2235";
+        var sqlConnection = configuration.GetConnectionString("DefaultConnection");
+        var externalServiceUri = configuration["ExtenalApi:OpenId"];
+        var userApiBaseUrl = configuration["BaseUrl"];
 
         // Required services
         builder.Services.AddHttpContextAccessor();
@@ -29,7 +30,7 @@ public static class DependencyInjections
                 option.AddHost(uri.Host, uri.Port);
             })
             .AddCheck<UserApiHealthCheck>("UserApi")
-            .AddUrlGroup(new Uri("https://localhost:2235/index.html"), "Swagger")
+            .AddUrlGroup(new Uri($"{userApiBaseUrl}/index.html"), "Swagger")
             ;
 
         // Health Checks UI Configuration
