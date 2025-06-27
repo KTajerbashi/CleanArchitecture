@@ -62,6 +62,14 @@ public class AuthenticateController : BaseController
         return Ok(User?.Identity?.IsAuthenticated);
     }
 
+    [Authorize]
+    [HttpGet("IsAuthorize")]
+    public async Task<IActionResult> Authorize()
+    {
+        await Task.CompletedTask;
+        return Ok(User?.Identity?.IsAuthenticated);
+    }
+
     [HttpGet("CurrentUser")]
     public IActionResult CurrentUser()
     {

@@ -10,7 +10,7 @@ public static class AuditableShadowProperties
     public static readonly Func<object, bool> EFPropertyIsActive = entity => EF.Property<bool>(entity, IsActive);
     public static readonly string IsActive = nameof(IsActive);
 
-    public static readonly Func<object, string> EFPropertyIsDeleted = entity => EF.Property<string>(entity, IsDeleted);
+    public static readonly Func<object, bool> EFPropertyIsDeleted = entity => EF.Property<bool>(entity, IsDeleted);
     public static readonly string IsDeleted = nameof(IsDeleted);
 
     public static readonly Func<object, long> EFPropertyCreatedByUserRoleId = entity => EF.Property<long>(entity, CreatedByUserRoleId);

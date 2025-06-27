@@ -1,8 +1,6 @@
 ﻿using CleanArchitecture.Core.Application.Library.UseCases.Security.Role.Repositories;
 using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Repositories;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Models;
 using Microsoft.AspNetCore.Authorization;
-using System.Security.Claims;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
 
