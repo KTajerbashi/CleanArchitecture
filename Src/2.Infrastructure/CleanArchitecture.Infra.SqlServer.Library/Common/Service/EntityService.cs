@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Common.Repository;
-using CleanArchitecture.Core.Application.Library.Common.Service;
-using CleanArchitecture.Core.Domain.Library.Common;
+﻿using CleanArchitecture.Core.Application.Library.Common.Service;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Common.Service;
 
@@ -22,37 +20,37 @@ public abstract class EntityService<TRepository, TEntity, TId>
         Repository = repository;
     }
 
-    public Task<TEntity> CreateAsync(TEntity entity)
+    public virtual Task<TEntity> CreateAsync(TEntity entity)
     {
         throw new NotImplementedException();
     }
 
-    public Task<TEntity> DeleteAsync(EntityId entityId)
+    public virtual Task<TEntity> DeleteAsync(EntityId entityId)
     {
         throw new NotImplementedException();
     }
 
-    public Task<TEntity> DeleteAsync(TId id)
+    public virtual Task<TEntity> DeleteAsync(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<TEntity> GetAsync(TId id)
+    public virtual Task<TEntity> GetAsync(TId id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<TEntity> GetAsync(EntityId entityId)
+    public virtual Task<TEntity> GetAsync(EntityId entityId)
     {
         throw new NotImplementedException();
     }
 
-    public Task<IEnumerable<TEntity>> GetAsync()
+    public virtual Task<IEnumerable<TEntity>> GetAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<TEntity> UpdateAsync(TEntity entity)
+    public virtual Task<TEntity> UpdateAsync(TEntity entity)
     {
         throw new NotImplementedException();
     }

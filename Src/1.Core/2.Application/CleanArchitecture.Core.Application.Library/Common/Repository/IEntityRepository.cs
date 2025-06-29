@@ -1,8 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Common.Patterns.UnitOfWorkPattern;
-using CleanArchitecture.Core.Domain.Library.Common;
-using System.Linq.Expressions;
-
-namespace CleanArchitecture.Core.Application.Library.Common.Repository;
+﻿namespace CleanArchitecture.Core.Application.Library.Common.Repository;
 
 public interface IRepository<TEntity, TId> : IUnitOfWork
     where TEntity : BaseAuditableEntity<TId>

@@ -1,8 +1,8 @@
 ﻿
 namespace CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities;
 
-[Table("Categories", Schema = "Store")]
-public class CategoryEntity : BaseAuditableEntity
+[Table("Cards", Schema = "Store")]
+public class CardEntity : BaseAuditableEntity
 {
     #region Properties
     public Title Title { get; set; }
@@ -13,7 +13,7 @@ public class CategoryEntity : BaseAuditableEntity
     #endregion
 
     #region Constructor
-    private CategoryEntity() { }
+    private CardEntity() { }
     #endregion
 
     #region Methods

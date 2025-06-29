@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Authorization;
-
 namespace CleanArchitecture.EndPoint.WebApi.Common.Controllers;
 
 [Authorize]

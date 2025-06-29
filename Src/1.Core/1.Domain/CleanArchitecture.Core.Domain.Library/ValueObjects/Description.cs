@@ -28,7 +28,6 @@ public class Description : BaseValueObject<Description>
     }
     #endregion
 
-
     #region Equality Check
     protected override IEnumerable<object> GetEqualityComponents()
     {
