@@ -20,6 +20,10 @@ public class ProductDetailEntity : BaseAuditableEntity
     #endregion
 
     #region Methods
+    public static ProductDetailEntity CreateInstance(Title title,string value)
+    {
+        return new ProductDetailEntity() { Title = title, Value = value };
+    }
     #endregion
 
 

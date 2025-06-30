@@ -1,5 +1,6 @@
 ﻿namespace CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities;
 
+
 [Table("Products", Schema = "Store")]
 public class ProductEntity : BaseAuditableEntity
 {
@@ -9,11 +10,13 @@ public class ProductEntity : BaseAuditableEntity
     #endregion
 
     #region Relations
+    public virtual List<ProductDetailEntity> ProductDetails { get; set; } = new();
+    public virtual List<ProductCardEntity> ProductCards { get; set; } = new();
+    public virtual List<ProductCommentEntity> ProductComments { get; set; } = new();
+
     [ForeignKey(nameof(Category))]
     public long CategoryId { get; set; }
-    public virtual CategoryEntity Category { get; set; }
-    
-    public virtual List<ProductDetailEntity> ProductDetails { get; set; }
+    public virtual CategoryEntity  Category { get; set; }
     #endregion
 
     #region Constructor
@@ -21,6 +24,12 @@ public class ProductEntity : BaseAuditableEntity
     #endregion
 
     #region Methods
+    public static ProductEntity CreateInstance(Title title, Description description)
+    {
+        return new ProductEntity() { Title = title, Description = description };
+    }
+    public void AddDetail(ProductDetailEntity entity) => ProductDetails.Add(entity);
+    public void AddComment(ProductCommentEntity entity) => ProductComments.Add(entity);
     #endregion
 
 }

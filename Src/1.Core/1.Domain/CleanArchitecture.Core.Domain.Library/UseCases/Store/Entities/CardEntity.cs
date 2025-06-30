@@ -9,7 +9,7 @@ public class CardEntity : BaseAuditableEntity
     #endregion
 
     #region Relations
-    public virtual List<ProductEntity> ProductEntities { get; set; }
+    public virtual List<ProductCardEntity> ProductCards { get; set; } = new();
     #endregion
 
     #region Constructor
@@ -17,6 +17,10 @@ public class CardEntity : BaseAuditableEntity
     #endregion
 
     #region Methods
+    public static CardEntity CreateInstance(Title title)
+    {
+        return new CardEntity() { Title = title };
+    }
     #endregion
 
 }

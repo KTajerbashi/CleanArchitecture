@@ -9,7 +9,7 @@ public class CategoryEntity : BaseAuditableEntity
     #endregion
 
     #region Relations
-    public virtual List<ProductEntity> ProductEntities { get; set; }
+    public virtual List<ProductEntity> ProductEntities { get; set; } = new();
     #endregion
 
     #region Constructor
@@ -17,6 +17,11 @@ public class CategoryEntity : BaseAuditableEntity
     #endregion
 
     #region Methods
+    public static CategoryEntity CreateInstance(string title)
+    {
+        return new CategoryEntity() { Title = title };
+    }
+    public void AddProduct(ProductEntity entity) => ProductEntities.Add(entity);
     #endregion
 
 }

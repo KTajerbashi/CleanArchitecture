@@ -10,7 +10,8 @@ public class CustomerEntity : BaseAuditableEntity
     #endregion
 
     #region Relations
-    public virtual List<CardEntity> CardEntities{ get; set; }
+    public virtual List<CardEntity> Cards { get; set; }
+    public virtual List<ProductCommentEntity> ProductComments { get; set; }
     #endregion
 
     #region Constructor
@@ -18,6 +19,10 @@ public class CustomerEntity : BaseAuditableEntity
     #endregion
 
     #region Methods
+    public static CustomerEntity CreateInstance(string name,string phone)
+    {
+        return new CustomerEntity() { Name = name, Phone = phone };
+    }
     #endregion
 
 }
