@@ -25,12 +25,31 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Customers",
+                schema: "Store",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -41,12 +60,12 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByUserRoleId = table.Column<long>(type: "bigint", nullable: false),
+                    CreatedByUserRoleId = table.Column<long>(type: "bigint", maxLength: 50, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedByUserRoleId = table.Column<long>(type: "bigint", nullable: true),
+                    UpdatedByUserRoleId = table.Column<long>(type: "bigint", maxLength: 50, nullable: true),
                     EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -69,12 +88,12 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     DisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PersonalCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByUserRoleId = table.Column<long>(type: "bigint", nullable: false),
+                    CreatedByUserRoleId = table.Column<long>(type: "bigint", maxLength: 50, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedByUserRoleId = table.Column<long>(type: "bigint", nullable: true),
+                    UpdatedByUserRoleId = table.Column<long>(type: "bigint", maxLength: 50, nullable: true),
                     EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -105,6 +124,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CategoryId = table.Column<long>(type: "bigint", nullable: false),
+                    EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -116,6 +136,31 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         column: x => x.CategoryId,
                         principalSchema: "Store",
                         principalTable: "Categories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Cards",
+                schema: "Store",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CustomerId = table.Column<long>(type: "bigint", nullable: false),
+                    EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cards", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Cards_Customers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalSchema: "Store",
+                        principalTable: "Customers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -158,12 +203,12 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByUserRoleId = table.Column<long>(type: "bigint", nullable: false),
+                    CreatedByUserRoleId = table.Column<long>(type: "bigint", maxLength: 50, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedByUserRoleId = table.Column<long>(type: "bigint", nullable: true),
+                    UpdatedByUserRoleId = table.Column<long>(type: "bigint", maxLength: 50, nullable: true),
                     EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
                     UserId = table.Column<long>(type: "bigint", nullable: false),
                     ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -188,13 +233,13 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByUserRoleId = table.Column<long>(type: "bigint", nullable: false),
+                    CreatedByUserRoleId = table.Column<long>(type: "bigint", maxLength: 50, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedByUserRoleId = table.Column<long>(type: "bigint", nullable: true),
+                    UpdatedByUserRoleId = table.Column<long>(type: "bigint", maxLength: 50, nullable: true),
                     EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Id = table.Column<long>(type: "bigint", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<long>(type: "bigint", nullable: false)
                 },
@@ -220,12 +265,12 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByUserRoleId = table.Column<long>(type: "bigint", nullable: false),
+                    CreatedByUserRoleId = table.Column<long>(type: "bigint", maxLength: 50, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedByUserRoleId = table.Column<long>(type: "bigint", nullable: true),
+                    UpdatedByUserRoleId = table.Column<long>(type: "bigint", maxLength: 50, nullable: true),
                     EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
                 },
                 constraints: table =>
                 {
@@ -255,13 +300,13 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedByUserRoleId = table.Column<long>(type: "bigint", nullable: false),
+                    CreatedByUserRoleId = table.Column<long>(type: "bigint", maxLength: 50, nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedByUserRoleId = table.Column<long>(type: "bigint", nullable: true),
+                    UpdatedByUserRoleId = table.Column<long>(type: "bigint", maxLength: 50, nullable: true),
                     EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Id = table.Column<long>(type: "bigint", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
                     RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -278,15 +323,51 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ProductComments",
+                schema: "Store",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Rate = table.Column<byte>(type: "tinyint", nullable: false),
+                    CustomerId = table.Column<long>(type: "bigint", nullable: false),
+                    ProductId = table.Column<long>(type: "bigint", nullable: false),
+                    EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductComments", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProductComments_Customers_CustomerId",
+                        column: x => x.CustomerId,
+                        principalSchema: "Store",
+                        principalTable: "Customers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProductComments_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalSchema: "Store",
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProductDetails",
                 schema: "Store",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductId = table.Column<long>(type: "bigint", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProductId = table.Column<long>(type: "bigint", nullable: false),
+                    EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -301,6 +382,68 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "ProductCards",
+                schema: "Store",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CardId = table.Column<long>(type: "bigint", nullable: false),
+                    ProductId = table.Column<long>(type: "bigint", nullable: false),
+                    EntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductCards", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProductCards_Cards_CardId",
+                        column: x => x.CardId,
+                        principalSchema: "Store",
+                        principalTable: "Cards",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProductCards_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalSchema: "Store",
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Cards_CustomerId",
+                schema: "Store",
+                table: "Cards",
+                column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductCards_CardId",
+                schema: "Store",
+                table: "ProductCards",
+                column: "CardId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductCards_ProductId",
+                schema: "Store",
+                table: "ProductCards",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductComments_CustomerId",
+                schema: "Store",
+                table: "ProductComments",
+                column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductComments_ProductId",
+                schema: "Store",
+                table: "ProductComments",
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductDetails_ProductId",
@@ -371,6 +514,14 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "ProductCards",
+                schema: "Store");
+
+            migrationBuilder.DropTable(
+                name: "ProductComments",
+                schema: "Store");
+
+            migrationBuilder.DropTable(
                 name: "ProductDetails",
                 schema: "Store");
 
@@ -395,6 +546,10 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                 schema: "Security");
 
             migrationBuilder.DropTable(
+                name: "Cards",
+                schema: "Store");
+
+            migrationBuilder.DropTable(
                 name: "Products",
                 schema: "Store");
 
@@ -405,6 +560,10 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
             migrationBuilder.DropTable(
                 name: "Users",
                 schema: "Security");
+
+            migrationBuilder.DropTable(
+                name: "Customers",
+                schema: "Store");
 
             migrationBuilder.DropTable(
                 name: "Categories",

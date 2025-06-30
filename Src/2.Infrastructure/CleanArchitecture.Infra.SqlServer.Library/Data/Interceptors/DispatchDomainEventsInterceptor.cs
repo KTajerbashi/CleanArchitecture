@@ -1,7 +1,4 @@
-﻿using CleanArchitecture.Core.Domain.Library.Common;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
+﻿using MediatR;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Data.Interceptors;
 

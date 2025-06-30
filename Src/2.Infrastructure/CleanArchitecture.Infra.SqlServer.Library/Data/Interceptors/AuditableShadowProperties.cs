@@ -1,7 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Providers.UserManagement;
-using CleanArchitecture.Core.Domain.Library.Common;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Data.Interceptors;
 
@@ -16,14 +13,17 @@ public static class AuditableShadowProperties
     public static readonly Func<object, long> EFPropertyCreatedByUserRoleId = entity => EF.Property<long>(entity, CreatedByUserRoleId);
     public static readonly string CreatedByUserRoleId = nameof(CreatedByUserRoleId);
 
-    public static readonly Func<object, long> EFPropertyUpdatedByUserRoleId = entity => EF.Property<long>(entity, UpdatedByUserRoleId);
+    public static readonly Func<object, long?> EFPropertyUpdatedByUserRoleId = entity => EF.Property<long?>(entity, UpdatedByUserRoleId);
     public static readonly string UpdatedByUserRoleId = nameof(UpdatedByUserRoleId);
 
-    public static readonly Func<object, DateTime?> EFPropertyCreatedDate = entity => EF.Property<DateTime?>(entity, CreatedDate);
+    public static readonly Func<object, DateTime> EFPropertyCreatedDate = entity => EF.Property<DateTime>(entity, CreatedDate);
     public static readonly string CreatedDate = nameof(CreatedDate);
 
     public static readonly Func<object, DateTime?> EFPropertyUpdatedDate = entity => EF.Property<DateTime?>(entity, UpdatedDate);
     public static readonly string UpdatedDate = nameof(UpdatedDate);
+
+    public static readonly Func<object, EntityId> EFPropertyEntityId = entity => EF.Property<EntityId>(entity, EntityId);
+    public static readonly string EntityId = nameof(EntityId);
 
     /// <summary>
     /// 
@@ -48,13 +48,15 @@ public static class AuditableShadowProperties
             modelBuilder.Entity(entityType.ClrType)
                         .Property<bool>(IsActive).IsRequired().HasDefaultValue(true);
             modelBuilder.Entity(entityType.ClrType)
-                        .Property<string>(CreatedByUserRoleId).HasMaxLength(50);
+                        .Property<long>(CreatedByUserRoleId).HasMaxLength(50);
             modelBuilder.Entity(entityType.ClrType)
-                        .Property<string>(UpdatedByUserRoleId).HasMaxLength(50);
+                        .Property<long?>(UpdatedByUserRoleId).HasMaxLength(50);
             modelBuilder.Entity(entityType.ClrType)
-                        .Property<DateTime?>(CreatedDate);
+                        .Property<DateTime>(CreatedDate);
             modelBuilder.Entity(entityType.ClrType)
                         .Property<DateTime?>(UpdatedDate);
+            modelBuilder.Entity(entityType.ClrType)
+                        .Property<EntityId>(EntityId).IsRequired().ValueGeneratedOnAdd();
         }
         return modelBuilder;
     }

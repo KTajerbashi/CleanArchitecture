@@ -1,8 +1,6 @@
-﻿using CleanArchitecture.Core.Domain.Library.Common;
-using CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities;
+﻿using CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities;
 using CleanArchitecture.Core.Domain.Library.ValueObjects;
 using CleanArchitecture.Infra.SqlServer.Library.Data.Conversions;
-using System.Reflection;
 
 namespace CleanArchitecture.Infra.SqlServer.Library.Data;
 
@@ -16,14 +14,26 @@ public class DatabaseContext : BaseDatabaseContext
         base.ConfigureConventions(configurationBuilder);
         configurationBuilder.Properties<Title>().HaveConversion<TitleConversion>();
         configurationBuilder.Properties<Description>().HaveConversion<DescriptionConversion>();
-        configurationBuilder.Properties<EntityId>().HaveConversion<EntityIdConversion>();
     }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        builder.AddAuditableShadowProperties<long>();
         base.OnModelCreating(builder);
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        
     }
+
+    #region Store
+    public virtual DbSet<CategoryEntity> Categories => Set<CategoryEntity>();
+    public virtual DbSet<CardEntity> Cards => Set<CardEntity>();
+    public virtual DbSet<CustomerEntity> Customers => Set<CustomerEntity>();
+    public virtual DbSet<ProductCardEntity> ProductCards => Set<ProductCardEntity>();
+    public virtual DbSet<ProductCommentEntity> ProductComments => Set<ProductCommentEntity>();
+    public virtual DbSet<ProductDetailEntity> ProductDetails => Set<ProductDetailEntity>();
+    public virtual DbSet<ProductEntity> Products => Set<ProductEntity>();
+    #endregion
+
     //public virtual DbSet<AppUserEntity> AppUserEntities => Set<AppUserEntity>();
     //public virtual DbSet<AppUserClaimEntity> AppUserClaimEntities => Set<AppUserClaimEntity>();
     //public virtual DbSet<AppUserLoginEntity> AppUserLoginEntities => Set<AppUserLoginEntity>();

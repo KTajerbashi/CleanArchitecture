@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using CleanArchitecture.Infra.SqlServer.Library.Data.Conversions;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using System.Globalization;
 
@@ -25,6 +26,12 @@ public abstract class BaseDatabaseContext : IdentityDbContext<
     {
         base.OnModelCreating(builder);
         builder.AddSecurityConfiguration();
+    }
+    protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+    {
+        base.ConfigureConventions(configurationBuilder);
+        configurationBuilder.Properties<EntityId>().HaveConversion<EntityIdConversion>();
+
     }
     public T GetShadowPropertyValue<T>(object entity, string propertyName) where T : IConvertible
     {

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20250504190443_Initial_Database")]
-    partial class Initial_Database
+    [Migration("20250630220157_Add_Store_Schema")]
+    partial class Add_Store_Schema
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,56 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CardEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("CustomerId")
+                        .HasColumnType("bigint");
+
+                    b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Cards", "Store");
+                });
+
             modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CategoryEntity", b =>
                 {
                     b.Property<long>("Id")
@@ -33,19 +83,203 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
                     b.HasKey("Id");
 
                     b.ToTable("Categories", "Store");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CustomerEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customers", "Store");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductCardEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("CardId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CardId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductCards", "Store");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductCommentEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("CustomerId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<long>("ProductId")
+                        .HasColumnType("bigint");
+
+                    b.Property<byte>("Rate")
+                        .HasColumnType("tinyint");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductComments", "Store");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductDetailEntity", b =>
@@ -56,11 +290,26 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<long>("ProductId")
                         .HasColumnType("bigint");
@@ -68,6 +317,13 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Value")
                         .IsRequired()
@@ -91,19 +347,41 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     b.Property<long>("CategoryId")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -170,19 +448,25 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Name")
                         .HasMaxLength(256)
@@ -197,6 +481,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -227,21 +512,28 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -273,6 +565,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedDate")
@@ -289,16 +582,21 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("bit");
 
                     b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Family")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -336,6 +634,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("bit");
 
                     b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -367,27 +666,34 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<long>("Id")
                         .HasColumnType("bigint");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -418,21 +724,28 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -459,28 +772,35 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<long>("CreatedByUserRoleId")
+                        .HasMaxLength(50)
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("EntityId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<long>("Id")
                         .HasColumnType("bigint");
 
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("RefreshToken")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("UpdatedByUserRoleId")
+                        .HasMaxLength(50)
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("UpdatedDate")
@@ -492,6 +812,55 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("UserTokens", "Security");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CardEntity", b =>
+                {
+                    b.HasOne("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CustomerEntity", "Customer")
+                        .WithMany("Cards")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductCardEntity", b =>
+                {
+                    b.HasOne("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CardEntity", "Card")
+                        .WithMany("ProductCards")
+                        .HasForeignKey("CardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductEntity", "Product")
+                        .WithMany("ProductCards")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Card");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductCommentEntity", b =>
+                {
+                    b.HasOne("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CustomerEntity", "Customer")
+                        .WithMany("ProductComments")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductEntity", "Product")
+                        .WithMany("ProductComments")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductDetailEntity", b =>
@@ -567,13 +936,29 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CardEntity", b =>
+                {
+                    b.Navigation("ProductCards");
+                });
+
             modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CategoryEntity", b =>
                 {
                     b.Navigation("ProductEntities");
                 });
 
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CustomerEntity", b =>
+                {
+                    b.Navigation("Cards");
+
+                    b.Navigation("ProductComments");
+                });
+
             modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductEntity", b =>
                 {
+                    b.Navigation("ProductCards");
+
+                    b.Navigation("ProductComments");
+
                     b.Navigation("ProductDetails");
                 });
 #pragma warning restore 612, 618
