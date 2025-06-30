@@ -3,6 +3,8 @@ global using CleanArchitecture.Core.Application.Library.Common.Handlers;
 global using CleanArchitecture.Core.Application.Library.Common.Models.DTOs;
 global using CleanArchitecture.Core.Application.Library.Common.Models.Requests;
 global using CleanArchitecture.Core.Application.Library.Common.Patterns.UnitOfWorkPattern;
+global using CleanArchitecture.Core.Application.Library.Common.Repository;
+global using CleanArchitecture.Core.Application.Library.Exceptions;
 global using CleanArchitecture.Core.Application.Library.Providers;
 global using CleanArchitecture.Core.Domain.Library.Common;
 global using FluentValidation;
