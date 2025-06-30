@@ -10,6 +10,10 @@ public class CardEntity : BaseAuditableEntity
 
     #region Relations
     public virtual List<ProductCardEntity> ProductCards { get; set; } = new();
+
+    [ForeignKey(nameof(Customer))]
+    public long CustomerId { get; set; }
+    public CustomerEntity Customer { get; set; }
     #endregion
 
     #region Constructor

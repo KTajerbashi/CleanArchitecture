@@ -6,6 +6,7 @@ public class EntityId : BaseValueObject<EntityId>
 {
     public static EntityId FromString(string value) => new(value);
     public static EntityId FromGuid(Guid value) => new() { Value = value };
+    public static EntityId CreateInstance() => Guid.NewGuid();
 
     public EntityId(string value)
     {

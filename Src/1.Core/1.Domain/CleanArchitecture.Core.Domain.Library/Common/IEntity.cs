@@ -12,7 +12,7 @@ public abstract class Entity<TKey> : IEntity<TKey>
 {
     [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public TKey Id { get; protected set; }
-    public EntityId EntityId { get; } = Guid.NewGuid();
+    public EntityId EntityId { get; private set; } = EntityId.CreateInstance();
 
     protected Entity() => _domainEvents = new();
 
