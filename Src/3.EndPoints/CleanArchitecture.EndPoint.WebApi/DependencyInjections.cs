@@ -45,8 +45,7 @@ public static class DependencyInjections
 
         //builder.Services.RegisterHostedService();
 
-        builder.Services.AddHostedService<MessageBrokerHost>();
-
+        //builder.Services.AddHostedService<MessageBrokerHost>();
 
         builder.Services.AddControllers();
 
