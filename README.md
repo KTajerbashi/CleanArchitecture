@@ -134,6 +134,60 @@ Clean Architecture is a software design approach that promotes maintainability, 
    - Query optimization with MiniProfiler
 
 
+## Key Subjects , Libraries & Patterns to Include
+   # Domain
+      ✅1. Entity (Pattern) 
+      ✅2. Value Object (Pattern)
+      ✅3. Event (Pattern)
+       
+   # Application
+      ✅1. MediateR (Pattern)
+      ✅2. DTO & CQRS Model (Pattern)
+      ✅3. Unit Of Work (Abstraction)
+      ✅4. Repository (Pattern)
+      ✅5. Service (Pattern)
+      ✅6. Identity Facade (Pattern)
+      ✅7. Message Broker (Abstraction)
+      ✅8. Caching (Abstraction)
+      ✅9. Micro-Orm (Abstraction)
+      ✅10. Background JOB (Abstraction)
+      ✅11. Object Mapper (Auto Mapper)
+      ✅12. Validation (Fluent Validation)
+      ✅13. Serializer (Newtonsoft, Microsoft)
+      ✅14. Dependency Injection (Abstraction)
+      ✅15. User Management (Abstraction)
+      ✅16. Utilities (Extension, Guards, Datetime, etc.)
+      
+   # Infrastructure
+      ✅1. EF (ORM)
+      ✅2. Database (EF SQL Server)
+      ✅3. Unit Of Work (Pattern)
+      ✅4. Repository (Pattern)
+      ✅5. Service (Pattern)
+      ✅6. Identity Auth (AspNetCore)
+      ✅7. Message Broker (RabbitMQ)
+      ✅8. Caching (InMemory)
+      ✅9. Dapper (Micro-ORM)
+      ✅10. Background Job (Hangfire)
+      ✅11. Database (EF SQL Server)
+      ✅12. JWT Token
+      ✅13. Message BUS (RabbitMQ)
+      ✅14. Dependency Injection (Scrutor)
+       
+   # Presentation
+      ✅1. Logging (Serilog, Elastic)
+      ✅2. Health Checks (AspNetCore.HealthChecks)
+      ✅3. Excel Report (ClosedXML, EPPlus)
+      ✅4. Authentication (JwtBearer, AspNetCore.Identity)
+      ✅5. MiniProfiler
+      ✅6. Monitoring (OpenTelemetry)
+      ✅7. Swagger (Swashbuckle)
+      ✅8. Exception Handler
+      ✅9. Authorized Handler
+      ✅10. Host Service
+      ✅11. OpenTelemetry
+      
+
 ## Getting Started
 
 1. Clone the repository
