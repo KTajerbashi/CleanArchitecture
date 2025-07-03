@@ -11,7 +11,7 @@ public class ProductEntity : BaseAuditableEntity
 
     #region Relations
     public virtual List<ProductDetailEntity> ProductDetails { get; set; } = new();
-    public virtual List<ProductCardEntity> ProductCards { get; set; } = new();
+    public virtual List<ProductCartEntity> ProductCarts { get; set; } = new();
     public virtual List<ProductCommentEntity> ProductComments { get; set; } = new();
 
     [ForeignKey(nameof(Category))]

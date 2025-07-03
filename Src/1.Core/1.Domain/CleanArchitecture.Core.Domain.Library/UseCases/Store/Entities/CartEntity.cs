@@ -1,15 +1,15 @@
 ﻿
 namespace CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities;
 
-[Table("Cards", Schema = "Store")]
-public class CardEntity : BaseAuditableEntity
+[Table("Carts", Schema = "Store")]
+public class CartEntity : BaseAuditableEntity
 {
     #region Properties
     public Title Title { get; set; }
     #endregion
 
     #region Relations
-    public virtual List<ProductCardEntity> ProductCards { get; set; } = new();
+    public virtual List<ProductCartEntity> ProductCarts { get; set; } = new();
 
     [ForeignKey(nameof(Customer))]
     public long CustomerId { get; set; }
@@ -17,13 +17,13 @@ public class CardEntity : BaseAuditableEntity
     #endregion
 
     #region Constructor
-    private CardEntity() { }
+    private CartEntity() { }
     #endregion
 
     #region Methods
-    public static CardEntity CreateInstance(Title title)
+    public static CartEntity CreateInstance(Title title)
     {
-        return new CardEntity() { Title = title };
+        return new CartEntity() { Title = title };
     }
     #endregion
 

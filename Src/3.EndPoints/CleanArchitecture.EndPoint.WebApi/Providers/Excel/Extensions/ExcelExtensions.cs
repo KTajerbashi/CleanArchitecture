@@ -3,7 +3,7 @@ using OfficeOpenXml.Style;
 using System.Data;
 using System.Drawing;
 
-namespace CleanArchitecture.Core.Application.Library.Providers.Serializer.Excel.Extensions;
+namespace CleanArchitecture.EndPoint.WebApi.Providers.Excel.Extensions;
 
 public static class ExcelExtensions
 {

@@ -1,4 +1,4 @@
-﻿namespace CleanArchitecture.Core.Application.Library.Providers.Serializer.Excel;
+﻿namespace CleanArchitecture.EndPoint.WebApi.Providers.Excel;
 
 public static class DependencyInjection
 {

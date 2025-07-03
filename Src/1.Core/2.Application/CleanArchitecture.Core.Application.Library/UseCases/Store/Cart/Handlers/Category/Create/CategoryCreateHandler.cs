@@ -1,8 +1,7 @@
-﻿using CleanArchitecture.Core.Application.Library.Exceptions;
-using CleanArchitecture.Core.Application.Library.UseCases.Store.Card.Repositories;
+﻿using CleanArchitecture.Core.Application.Library.UseCases.Store.Cart.Repositories;
 using CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities;
 
-namespace CleanArchitecture.Core.Application.Library.UseCases.Store.Card.Handlers.Category.Create;
+namespace CleanArchitecture.Core.Application.Library.UseCases.Store.Cart.Handlers.Category.Create;
 
 public class CategoryCreateHandler : Handler<CategoryCreateRequest, CategoryCreateResponse>
 {

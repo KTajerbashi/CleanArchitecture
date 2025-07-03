@@ -1,9 +1,9 @@
 ﻿using CleanArchitecture.Core.Application.Library;
-using CleanArchitecture.Core.Application.Library.Providers.Serializer.Excel;
 using CleanArchitecture.Core.Application.Library.Utilities.Extensions;
 using CleanArchitecture.EndPoint.WebApi.Middlewares.AuthorizedHandler;
 using CleanArchitecture.EndPoint.WebApi.Middlewares.ExceptionHandler;
 using CleanArchitecture.EndPoint.WebApi.Providers;
+using CleanArchitecture.EndPoint.WebApi.Providers.Excel;
 using CleanArchitecture.EndPoint.WebApi.Providers.HealthChecks;
 using CleanArchitecture.EndPoint.WebApi.Providers.HostedServer;
 using CleanArchitecture.EndPoint.WebApi.Providers.MonitoringApp;

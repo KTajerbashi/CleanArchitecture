@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Providers.Serializer.Excel;
+﻿using CleanArchitecture.EndPoint.WebApi.Providers.Excel;
 using CleanArchitecture.EndPoint.WebApi.Providers.Excel.Sample;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Common;

@@ -10,7 +10,7 @@ public class CustomerEntity : BaseAuditableEntity
     #endregion
 
     #region Relations
-    public virtual List<CardEntity> Cards { get; set; }
+    public virtual List<CartEntity> Carts { get; set; }
     public virtual List<ProductCommentEntity> ProductComments { get; set; }
     #endregion
 

@@ -1,7 +1,7 @@
-﻿using CleanArchitecture.Core.Application.Library.UseCases.Store.Card.Repositories;
+﻿using CleanArchitecture.Core.Application.Library.UseCases.Store.Cart.Repositories;
 using CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities;
 
-namespace CleanArchitecture.Core.Application.Library.UseCases.Store.Card.Handlers.Product.Create;
+namespace CleanArchitecture.Core.Application.Library.UseCases.Store.Cart.Handlers.Product.Create;
 
 public class ProductCreateHandler : Handler<ProductCreateRequest, ProductCreateResponse>
 {

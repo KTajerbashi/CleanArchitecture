@@ -1,12 +1,12 @@
-﻿using CleanArchitecture.Core.Application.Library.Providers.Serializer.Excel.Extensions;
-using CleanArchitecture.Core.Application.Library.Providers.Serializer.Objects.Extensions;
+﻿using CleanArchitecture.Core.Application.Library.Providers.Serializer.Objects.Extensions;
 using CleanArchitecture.EndPoint.WebApi.Providers.Excel.Attributes;
+using CleanArchitecture.EndPoint.WebApi.Providers.Excel.Extensions;
 using ClosedXML.Excel;
 using OfficeOpenXml;
 using System.Data;
 using static CleanArchitecture.EndPoint.WebApi.Providers.Excel.Attributes.ExcelPropertyAttribute;
 
-namespace CleanArchitecture.Core.Application.Library.Providers.Serializer.Excel;
+namespace CleanArchitecture.EndPoint.WebApi.Providers.Excel;
 
 public class EPPlusExcelSerializer : IExcelSerializer
 {

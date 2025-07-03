@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20250630220157_Add_Store_Schema")]
+    [Migration("20250703141918_Add_Store_Schema")]
     partial class Add_Store_Schema
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CardEntity", b =>
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CartEntity", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -72,7 +72,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Cards", "Store");
+                    b.ToTable("Carts", "Store");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CategoryEntity", b =>
@@ -169,7 +169,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     b.ToTable("Customers", "Store");
                 });
 
-            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductCardEntity", b =>
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductCartEntity", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -177,7 +177,7 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<long>("CardId")
+                    b.Property<long>("CartId")
                         .HasColumnType("bigint");
 
                     b.Property<long>("CreatedByUserRoleId")
@@ -213,11 +213,11 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CardId");
+                    b.HasIndex("CartId");
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductCards", "Store");
+                    b.ToTable("ProductCarts", "Store");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductCommentEntity", b =>
@@ -814,10 +814,10 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     b.ToTable("UserTokens", "Security");
                 });
 
-            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CardEntity", b =>
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CartEntity", b =>
                 {
                     b.HasOne("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CustomerEntity", "Customer")
-                        .WithMany("Cards")
+                        .WithMany("Carts")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -825,21 +825,21 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductCardEntity", b =>
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductCartEntity", b =>
                 {
-                    b.HasOne("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CardEntity", "Card")
-                        .WithMany("ProductCards")
-                        .HasForeignKey("CardId")
+                    b.HasOne("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CartEntity", "Cart")
+                        .WithMany("ProductCarts")
+                        .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductEntity", "Product")
-                        .WithMany("ProductCards")
+                        .WithMany("ProductCarts")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Card");
+                    b.Navigation("Cart");
 
                     b.Navigation("Product");
                 });
@@ -936,9 +936,9 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CardEntity", b =>
+            modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CartEntity", b =>
                 {
-                    b.Navigation("ProductCards");
+                    b.Navigation("ProductCarts");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CategoryEntity", b =>
@@ -948,14 +948,14 @@ namespace CleanArchitecture.Infra.SqlServer.Library.Migrations
 
             modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.CustomerEntity", b =>
                 {
-                    b.Navigation("Cards");
+                    b.Navigation("Carts");
 
                     b.Navigation("ProductComments");
                 });
 
             modelBuilder.Entity("CleanArchitecture.Core.Domain.Library.UseCases.Store.Entities.ProductEntity", b =>
                 {
-                    b.Navigation("ProductCards");
+                    b.Navigation("ProductCarts");
 
                     b.Navigation("ProductComments");
 

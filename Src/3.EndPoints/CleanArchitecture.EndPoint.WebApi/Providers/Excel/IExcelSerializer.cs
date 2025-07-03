@@ -2,7 +2,7 @@
 using System.Data;
 using static CleanArchitecture.EndPoint.WebApi.Providers.Excel.Attributes.ExcelPropertyAttribute;
 
-namespace CleanArchitecture.Core.Application.Library.Providers.Serializer.Excel;
+namespace CleanArchitecture.EndPoint.WebApi.Providers.Excel;
 
 public interface IExcelSerializer
 {

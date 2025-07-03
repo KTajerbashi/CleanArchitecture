@@ -26,9 +26,9 @@ public class DatabaseContext : BaseDatabaseContext
 
     #region Store
     public virtual DbSet<CategoryEntity> Categories => Set<CategoryEntity>();
-    public virtual DbSet<CardEntity> Cards => Set<CardEntity>();
+    public virtual DbSet<CartEntity> Carts => Set<CartEntity>();
     public virtual DbSet<CustomerEntity> Customers => Set<CustomerEntity>();
-    public virtual DbSet<ProductCardEntity> ProductCards => Set<ProductCardEntity>();
+    public virtual DbSet<ProductCartEntity> ProductCarts => Set<ProductCartEntity>();
     public virtual DbSet<ProductCommentEntity> ProductComments => Set<ProductCommentEntity>();
     public virtual DbSet<ProductDetailEntity> ProductDetails => Set<ProductDetailEntity>();
     public virtual DbSet<ProductEntity> Products => Set<ProductEntity>();
