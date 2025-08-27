@@ -1,0 +1,13 @@
+﻿global using AutoMapper;
+global using CleanArchitecture.Core.Application.Common.Handlers;
+global using CleanArchitecture.Core.Application.Common.Models.DTOs;
+global using CleanArchitecture.Core.Application.Common.Models.Requests;
+global using CleanArchitecture.Core.Application.Common.Patterns.UnitOfWorkPattern;
+global using CleanArchitecture.Core.Application.Common.Repository;
+global using CleanArchitecture.Core.Application.Exceptions;
+global using CleanArchitecture.Core.Application.Providers;
+global using CleanArchitecture.Core.Domain.Common;
+global using FluentValidation;
+global using MediatR;
+global using System.ComponentModel.DataAnnotations.Schema;
+global using System.Linq.Expressions;
