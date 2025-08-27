@@ -1,6 +1,5 @@
-﻿using CleanArchitecture.Core.Application.Library.Interfaces;
+﻿using CleanArchitecture.Core.Application.Interfaces;
 using CleanArchitecture.EndPoint.WebApi.Controllers.Common;
-using CleanArchitecture.Infra.SqlServer.Library.Common.Models;
 
 namespace CleanArchitecture.EndPoint.WebApi.Providers.HostedServer;
 
@@ -11,7 +10,7 @@ public class MessageBrokerHost(IMessageBroker messageBroker) : BackgroundService
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         await _messageBroker.SubscribeAsync<MessageParameter>(
-            _messageBroker.QueueName, 
+            _messageBroker.QueueName,
             _messageBroker.ExchageName,
             _messageBroker.RoutingKey, async (model) =>
         {

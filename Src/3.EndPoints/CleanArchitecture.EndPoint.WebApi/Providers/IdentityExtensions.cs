@@ -1,10 +1,12 @@
-﻿using CleanArchitecture.Core.Application.Library.Providers.UserManagement;
-using CleanArchitecture.Infra.SqlServer.Library.Data;
-using CleanArchitecture.Infra.SqlServer.Library.Data.Constants;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Handlers;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Models;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Polymorphism;
+﻿using CleanArchitecture.Core.Application.Providers.UserManagement;
+using CleanArchitecture.Infra.SqlServer.Data;
+using CleanArchitecture.Infra.SqlServer.Data.Constants;
+using CleanArchitecture.Infra.SqlServer.Identity.Entities;
+using CleanArchitecture.Infra.SqlServer.Identity.Handlers;
+using CleanArchitecture.Infra.SqlServer.Identity.Models;
+using CleanArchitecture.Infra.SqlServer.Identity.Polymorphism;
+using CleanArchitecture.Infra.SqlServer.Identity.Repositories;
+using CleanArchitecture.Infra.SqlServer.Identity.Service;
 
 namespace CleanArchitecture.EndPoint.WebApi.Providers;
 
@@ -13,7 +15,7 @@ public static class IdentityExtensions
     public static IServiceCollection AddIdentity(this IServiceCollection services, IConfiguration configuration, string sectionName)
     {
         // Add this to your service configuration
-        services.Configure<IdentityOption>(configuration.GetSection(sectionName));
+        services.Configure<IdentityOptions>(configuration.GetSection(sectionName));
 
         services.AddIdentityServices(configuration);
         services.AddIdentityPolicies(configuration, sectionName);

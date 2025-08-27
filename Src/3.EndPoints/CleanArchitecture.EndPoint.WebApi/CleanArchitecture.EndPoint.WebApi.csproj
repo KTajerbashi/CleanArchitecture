@@ -43,8 +43,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\1.Core\2.Application\CleanArchitecture.Core.Application.Library\CleanArchitecture.Core.Application.Library.csproj" />
-    <ProjectReference Include="..\..\2.Infrastructure\CleanArchitecture.Infra.SqlServer.Library\CleanArchitecture.Infra.SqlServer.Library.csproj" />
+    <ProjectReference Include="..\..\1.Core\CleanArchitecture.Core.Application\CleanArchitecture.Core.Application.csproj" />
+    <ProjectReference Include="..\..\1.Core\CleanArchitecture.Core.Domain\CleanArchitecture.Core.Domain.csproj" />
+    <ProjectReference Include="..\..\2.Infrastructure\CleanArchitecture.Infra.SqlServer\CleanArchitecture.Infra.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Providers.CacheSystem;
+﻿using CleanArchitecture.Core.Application.Providers.CacheSystem;
 
 namespace CleanArchitecture.EndPoint.WebApi.Providers.HostedServer;
 

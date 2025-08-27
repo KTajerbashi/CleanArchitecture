@@ -1,16 +1,9 @@
-﻿using CleanArchitecture.EndPoint.WebApi.Middlewares.ExceptionHandler;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
+﻿using CleanArchitecture.Infra.SqlServer.Identity.Models;
 using System.Security.Claims;
-using System.Text;
-using System.Text.Json;
 
 namespace CleanArchitecture.EndPoint.WebApi.Middlewares.AuthorizedHandler;
 
-   
+
 public class AuthorizedMiddleware
 {
     private readonly RequestDelegate _next;

@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Infra.SqlServer.Library.Providers.HangfireBackgroundTask;
+﻿using CleanArchitecture.Infra.SqlServer.Providers.HangfireBackgroundTask;
 
 namespace CleanArchitecture.EndPoint.WebApi.Providers.HostedServer;
 

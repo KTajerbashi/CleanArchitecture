@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Core.Domain.Library.Exceptions;
+﻿using CleanArchitecture.Core.Domain.Exceptions;
 
 namespace CleanArchitecture.EndPoint.WebApi.Exceptions;
 

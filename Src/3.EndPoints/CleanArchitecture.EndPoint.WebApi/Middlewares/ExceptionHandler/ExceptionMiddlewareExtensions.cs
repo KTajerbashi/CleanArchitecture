@@ -1,9 +1,7 @@
-﻿using CleanArchitecture.Infra.SqlServer.Library.Exceptions;
+﻿using CleanArchitecture.Infra.SqlServer.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System.Net.Mime;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace CleanArchitecture.EndPoint.WebApi.Middlewares.ExceptionHandler;
 
@@ -37,14 +35,14 @@ public static class ExceptionMiddlewareExtensions
                 var logger = context.RequestServices.GetRequiredService<ILogger<ApiError>>();
                 var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
                 var exception = exceptionHandlerPathFeature?.Error;
-           
+
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 context.Response.ContentType = MediaTypeNames.Application.Json;
 
                 if (exception != null)
                 {
                     var routeData = context.GetRouteData();
-                    
+
                     var error = new ApiError
                     {
                         Message = getMessage(exception),

@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Providers.HangfireBackgroundTask;
+﻿using CleanArchitecture.Core.Application.Providers.HangfireBackgroundTask;
 using Hangfire;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Common;

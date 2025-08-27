@@ -1,7 +1,5 @@
 ﻿using CleanArchitecture.EndPoint.WebApi.Models;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Entities;
-using CleanArchitecture.Infra.SqlServer.Library.Identity.Repositories;
-using System.IdentityModel.Tokens.Jwt;
+using CleanArchitecture.Infra.SqlServer.Identity.Repositories;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Identity;
 
@@ -26,7 +24,7 @@ public class AuthenticateController : BaseController
             return NotFound();
         }
 
-        var loginResult = await _identityService.SignInManager.PasswordSignInAsync(userEntity,parameter.Password,parameter.IsRemember,true);
+        var loginResult = await _identityService.SignInManager.PasswordSignInAsync(userEntity, parameter.Password, parameter.IsRemember, true);
 
         if (loginResult.Succeeded)
         {

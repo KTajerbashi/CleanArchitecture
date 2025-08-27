@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Providers;
+﻿using CleanArchitecture.Core.Application.Providers;
 
 namespace CleanArchitecture.EndPoint.WebApi.Extensions;
 

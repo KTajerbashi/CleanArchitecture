@@ -1,6 +1,6 @@
 ﻿using CleanArchitecture.EndPoint.WebApi.Models;
-using CleanArchitecture.Infra.SqlServer.Library.Data.Constants;
-using Microsoft.AspNetCore.Authorization;
+using CleanArchitecture.Infra.SqlServer.Data.Constants;
+using CleanArchitecture.Infra.SqlServer.Identity.Repositories;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Identity;
 

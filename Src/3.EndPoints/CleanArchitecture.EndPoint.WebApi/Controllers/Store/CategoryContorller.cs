@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.UseCases.Store.Cart.Handlers.Category.Create;
+﻿using CleanArchitecture.Core.Application.UseCases.Store.Cart.Handlers.Category.Create;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Store;
 

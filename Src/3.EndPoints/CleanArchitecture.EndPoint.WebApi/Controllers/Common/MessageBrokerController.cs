@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Interfaces;
+﻿using CleanArchitecture.Core.Application.Interfaces;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Common;
 

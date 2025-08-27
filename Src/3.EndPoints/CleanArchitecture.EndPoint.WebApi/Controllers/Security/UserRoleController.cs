@@ -1,4 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Handlers.AppUserRole.GetAll;
+﻿using CleanArchitecture.Core.Application.UseCases.Security.User.Handlers.AppUserRole.GetAll;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Security;
 

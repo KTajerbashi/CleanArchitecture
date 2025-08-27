@@ -1,8 +1,8 @@
-﻿using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Handlers.AppUser.Create;
-using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Handlers.AppUser.Delete;
-using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Handlers.AppUser.GetAll;
-using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Handlers.AppUser.GetById;
-using CleanArchitecture.Core.Application.Library.UseCases.Security.User.Handlers.AppUser.Update;
+﻿using CleanArchitecture.Core.Application.UseCases.Security.User.Handlers.AppUser.Create;
+using CleanArchitecture.Core.Application.UseCases.Security.User.Handlers.AppUser.Delete;
+using CleanArchitecture.Core.Application.UseCases.Security.User.Handlers.AppUser.GetAll;
+using CleanArchitecture.Core.Application.UseCases.Security.User.Handlers.AppUser.GetById;
+using CleanArchitecture.Core.Application.UseCases.Security.User.Handlers.AppUser.Update;
 
 namespace CleanArchitecture.EndPoint.WebApi.Controllers.Security;
 

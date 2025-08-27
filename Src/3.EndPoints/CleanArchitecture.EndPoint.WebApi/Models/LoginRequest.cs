@@ -1,6 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Library.Common.Models.DTOs;
-using System.ComponentModel.DataAnnotations;
-
+﻿
 namespace CleanArchitecture.EndPoint.WebApi.Models;
 
 public class LoginRequest
@@ -10,6 +8,6 @@ public class LoginRequest
 
     [Required]
     public string Password { get; set; }
-   
+
     public bool IsRemember { get; set; }
 }

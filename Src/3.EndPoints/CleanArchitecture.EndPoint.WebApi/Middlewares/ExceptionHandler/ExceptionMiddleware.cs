@@ -1,5 +1,5 @@
-﻿using CleanArchitecture.Core.Application.Library.Exceptions;
-using CleanArchitecture.Core.Application.Library.Providers.Serializer.Objects;
+﻿using CleanArchitecture.Core.Application.Exceptions;
+using CleanArchitecture.Core.Application.Providers.Serializer.Objects;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System;
