@@ -1,5 +1,4 @@
 using CleanArchitecture.EndPoint.WebApi;
-using Serilog;
 
 try
 {
@@ -9,9 +8,9 @@ try
     Log.Information("Application Running ...");
     await app.RunAsync();
 }
-catch 
+catch
 {
-    Log.Fatal(string.Format("Application Down : {0}",DateTime.Now));
+    Log.Fatal(string.Format("Application Down : {0}", DateTime.Now));
     await Log.CloseAndFlushAsync();
     throw;
 }

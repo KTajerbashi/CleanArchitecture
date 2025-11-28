@@ -6,6 +6,7 @@ using CleanArchitecture.EndPoint.WebApi.Providers;
 using CleanArchitecture.EndPoint.WebApi.Providers.Excel;
 using CleanArchitecture.Infra.SqlServer;
 using CleanArchitecture.Infra.SqlServer.Data;
+using CleanArchitecture.Infra.SqlServer.Identity.Models;
 
 namespace CleanArchitecture.EndPoint.WebApi;
 
@@ -14,6 +15,10 @@ public static class DependencyInjections
     public static WebApplication WebApplicationBuilder(this WebApplicationBuilder builder)
     {
         IConfiguration configuration = builder.Configuration;
+
+        builder.Services.Configure<IdentityOption>(configuration.GetSection("IdentityOption"));
+
+
 
         builder.Host.UseSerilog((context, configuration) =>
         {

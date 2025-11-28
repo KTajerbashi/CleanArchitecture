@@ -8,35 +8,36 @@ public static class SwaggerExtensions
     public static IServiceCollection AddSwaggerService(this IServiceCollection services)
     {
         services.AddEndpointsApiExplorer();
+
         services.AddSwaggerGen(c =>
         {
-            // Explicitly set OpenAPI version (3.0.1 or higher)
+            // Swagger document info
             c.SwaggerDoc("v1", new OpenApiInfo
             {
-                Title = "Clean Architecture",
+                Title = "Clean Architecture WebAPI",
                 Version = "v1",
-                Description = "WebAPI using Swagger",
+                Description = "An example of Clean Architecture WebAPI with Swagger and JWT Authentication",
                 Contact = new OpenApiContact
                 {
-                    Name = "Tajerbashi",
+                    Name = "Kamran Tajerbashi",
                     Email = "kamrantajerbashi@gmail.com",
                     Url = new Uri("https://github.com/KTajerbashi/CleanArchitecture.git")
                 },
-                // Optional: Explicitly declare OpenAPI spec version (meta-info only)
                 TermsOfService = new Uri("https://example.com/terms"),
-                License = new OpenApiLicense { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
+                License = new OpenApiLicense
+                {
+                    Name = "MIT",
+                    Url = new Uri("https://opensource.org/licenses/MIT")
+                }
             });
 
-            // Add XML comments if available
+            // XML Comments
             var xmlFile = $"{typeof(Program).Assembly.GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
             if (File.Exists(xmlPath))
                 c.IncludeXmlComments(xmlPath);
 
-            // Add 401 response to all [Authorize] endpoints
-            c.OperationFilter<UnauthorizedResponseOperationFilter>();
-
-            // JWT Bearer Authentication
+            // JWT Bearer Security Definition
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
                 Name = "Authorization",
@@ -44,25 +45,21 @@ public static class SwaggerExtensions
                 Type = SecuritySchemeType.Http,
                 Scheme = "Bearer",
                 BearerFormat = "JWT",
-                Description = "JWT Authorization header using the Bearer scheme."
+                Description = "Enter 'Bearer' followed by your JWT token. Example: 'Bearer abc123...'"
             });
 
-            //// Global security requirement
-            //c.AddSecurityRequirement(new OpenApiSecurityRequirement
-            //{
-            //     new OpenApiSecurityScheme
-            //        {
-            //            Reference = new OpenApiReference
-            //            {
-            //                Type = ReferenceType.SecurityScheme,
-            //                Id = "Bearer"
-            //            }
-            //        },
-            //        Array.Empty<string>()
-            //});
+            // Global Security Requirement for JWT
+            c.AddSecurityRequirement(doc => new OpenApiSecurityRequirement());
+
+            // Add global operation filter for 401 responses
+            c.OperationFilter<UnauthorizedResponseOperationFilter>();
 
             // Optional: Sort endpoints alphabetically
-            c.OrderActionsBy(apiDesc => $"{apiDesc.ActionDescriptor.RouteValues["controller"]}_{apiDesc.HttpMethod}");
+            c.OrderActionsBy(apiDesc =>
+                $"{apiDesc.ActionDescriptor.RouteValues["controller"]}_{apiDesc.HttpMethod}");
+
+            // Optional: Use camelCase schema IDs
+            c.CustomSchemaIds(type => type.FullName!.Replace("+", "."));
         });
 
         return services;
@@ -70,14 +67,15 @@ public static class SwaggerExtensions
 
     public static WebApplication UseSwaggerService(this WebApplication app)
     {
-        // Enable Swagger in all environments (not just Development)
         app.UseSwagger();
+
         app.UseSwaggerUI(options =>
         {
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1");
-            options.RoutePrefix = string.Empty; // Access via /swagger/index.html
-            options.DisplayRequestDuration(); // Show request duration
-            options.EnableTryItOutByDefault(); // Enable "Try it out" by default
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "Clean Architecture WebAPI v1");
+            options.RoutePrefix = "swagger"; // Access via /swagger
+            options.DisplayRequestDuration();
+            options.EnableTryItOutByDefault();
+            options.DocExpansion(Swashbuckle.AspNetCore.SwaggerUI.DocExpansion.List); // Expand endpoints list
         });
 
         return app;
