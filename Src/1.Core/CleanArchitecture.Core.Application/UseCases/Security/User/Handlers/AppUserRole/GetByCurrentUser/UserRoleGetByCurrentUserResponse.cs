@@ -1,12 +1,4 @@
-﻿using CleanArchitecture.Core.Application.Common.Handlers;
-using CleanArchitecture.Core.Application.Common.Models.Requests;
-using CleanArchitecture.Core.Application.Providers;
-using CleanArchitecture.Core.Application.UseCases.Security.User.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CleanArchitecture.Core.Application.UseCases.Security.User.Repositories;
 
 namespace CleanArchitecture.Core.Application.UseCases.Security.User.Handlers.AppUserRole.GetByCurrentUser;
 

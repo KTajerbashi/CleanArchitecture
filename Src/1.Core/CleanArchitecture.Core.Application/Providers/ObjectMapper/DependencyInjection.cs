@@ -17,7 +17,10 @@ public static class DependencyInjection
         foreach (var item in assembliesLibrary!)
         {
             var assemblies = item.GetAssemblies().ToArray();
-            services.AddAutoMapper(assemblies);
+            services.AddAutoMapper(opt =>
+            {
+                opt.AddMaps(assemblies);
+            });
         }
 
         services.AddSingleton<IObjectMapper, ObjectMapperService>();
@@ -31,7 +34,10 @@ public static class DependencyInjection
 
         var assemblies = option.Assemblies.GetAssemblies().ToArray();
 
-        services.AddAutoMapper(assemblies);
+        services.AddAutoMapper(opt =>
+        {
+            opt.AddMaps(assemblies);
+        });
         services.AddSingleton<IObjectMapper, ObjectMapperService>();
 
         return services;

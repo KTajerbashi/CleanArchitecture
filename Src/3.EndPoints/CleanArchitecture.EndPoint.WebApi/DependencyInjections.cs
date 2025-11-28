@@ -4,8 +4,6 @@ using CleanArchitecture.EndPoint.WebApi.Middlewares.AuthorizedHandler;
 using CleanArchitecture.EndPoint.WebApi.Middlewares.ExceptionHandler;
 using CleanArchitecture.EndPoint.WebApi.Providers;
 using CleanArchitecture.EndPoint.WebApi.Providers.Excel;
-using CleanArchitecture.EndPoint.WebApi.Providers.HealthChecks;
-using CleanArchitecture.EndPoint.WebApi.Providers.MonitoringApp;
 using CleanArchitecture.Infra.SqlServer;
 using CleanArchitecture.Infra.SqlServer.Data;
 
@@ -24,8 +22,6 @@ public static class DependencyInjections
             configuration.WriteTo.File(string.Format("./Logs/File_{0}.txt", DateTime.Now.ToString("yyyy_MM_dd")));
         });
 
-        builder.AddHealthCheckServices();
-        builder.AddMonitoringAppServices();
 
         // Add required services
         builder.Services.AddHttpContextAccessor();
@@ -71,10 +67,6 @@ public static class DependencyInjections
         // Exception handling
         app.UseExceptionMiddleware(); // Custom middleware should be early
                                       // app.UseExceptionHandler(); // Uncomment if using the built-in exception page
-
-        // Health checks and monitoring
-        app.UseHealthCheckServices();
-        app.UseMonitoringAppServices();
 
         // Static files and HTTPS redirection
         app.UseStaticFiles();

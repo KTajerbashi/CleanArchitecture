@@ -1,5 +1,5 @@
 ﻿using CleanArchitecture.EndPoint.WebApi.Filters;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 namespace CleanArchitecture.EndPoint.WebApi.Providers;
 
@@ -47,21 +47,19 @@ public static class SwaggerExtensions
                 Description = "JWT Authorization header using the Bearer scheme."
             });
 
-            // Global security requirement
-            c.AddSecurityRequirement(new OpenApiSecurityRequirement
-            {
-                {
-                    new OpenApiSecurityScheme
-                    {
-                        Reference = new OpenApiReference
-                        {
-                            Type = ReferenceType.SecurityScheme,
-                            Id = "Bearer"
-                        }
-                    },
-                    Array.Empty<string>()
-                }
-            });
+            //// Global security requirement
+            //c.AddSecurityRequirement(new OpenApiSecurityRequirement
+            //{
+            //     new OpenApiSecurityScheme
+            //        {
+            //            Reference = new OpenApiReference
+            //            {
+            //                Type = ReferenceType.SecurityScheme,
+            //                Id = "Bearer"
+            //            }
+            //        },
+            //        Array.Empty<string>()
+            //});
 
             // Optional: Sort endpoints alphabetically
             c.OrderActionsBy(apiDesc => $"{apiDesc.ActionDescriptor.RouteValues["controller"]}_{apiDesc.HttpMethod}");
